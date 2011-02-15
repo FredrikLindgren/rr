@@ -24,12 +24,24 @@ LANGUAGE ~English~ ~ENGLISH~ ~RR/TRA/ENGLISH/RR.TRA~
 LANGUAGE ~Francais (by the d'Oghmatiques)~ ~FRENCH~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/FRENCH/RR.TRA~
 LANGUAGE ~Espanol (by Immortality, SirLancelot, Nieve and Clan DLAN)~ ~SPANISH~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/SPANISH/RR.TRA~
 LANGUAGE ~Deutsch (by Cronox and Leomar)~ ~GERMAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/GERMAN/RR.TRA~
-LANGUAGE ~Russian *BETA* (by the Aerie.ru team)~ ~RUSSIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/RUSSIAN/RR.TRA~
+LANGUAGE ~Russian (by the Aerie.ru team)~ ~RUSSIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/RUSSIAN/RR.TRA~
 LANGUAGE ~Italian (by Andrea C.)~ ~ITALIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/ITALIAN/RR.TRA~
 LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANESE/RR.TRA~
 
 
 
+//////////////////////
+//ToBEX
+//////////////////////
+
+BEGIN @900 DESIGNATED 100 //ToBEx (required for the Revised Thievery component)
+REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X
+REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre @10 //ToB installation check
+
+OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
+LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tra"
+ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2026,6 +2038,7 @@ COPY_EXISTING ~ARLED.CRE~ ~override~                                // Arledrian
   WRITE_BYTE 0x54 10                                                // save vs. death
   WRITE_BYTE 0x55 12                                                // save vs. wands
   WRITE_BYTE 0x56 11                                                // save vs. polymorph
+
   WRITE_BYTE 0x57 12                                                // save vs. breath
   WRITE_BYTE 0x58 13                                                // save vs. spells
   WRITE_BYTE 0x64 0                                                 // Detect Illusions skill
@@ -2750,6 +2763,7 @@ END
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
 
+REQUIRE_PREDICATE FILE_EXISTS ~tobex_ini/tobextweak.ini~ @903       //This component requires TobEx
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)
@@ -4476,6 +4490,7 @@ PATCH_IF FILE_EXISTS_IN_GAME ~RR#TSB01.SPL~ THEN BEGIN           // check for th
   SET parameter4 = "0"                                           // param4: 0
   SET power = "0"                                                // power: 0
   SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
+
   SET duration = "0"                                             // duration: 0
   SET probability1 = "100"                                       // probability1: 100%
   SET probability2 = "0"                                         // probability2: 0%

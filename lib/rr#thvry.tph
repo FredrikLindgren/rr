@@ -15,6 +15,7 @@ COMPILE ~RR/RR_CORE/COMPILE/AMNCEN1.D~                               // Amnish C
 COMPILE EVALUATE_BUFFER ~RR/RR_CORE/COMPILE/FLAMEN.D~                // Flaming Fist Enforcer theft dialogue revision
 
 
+/* //RR now uses ToBEx
 // Taimon and Miloch's EXE patch for re-enabling the PickPocketFailed() trigger
 
 ACTION_IF NOT MOD_IS_INSTALLED TOB_HACKS.TP2 20 THEN BEGIN                         // Checks for Taimon's ToB hacks in order to prevent content duplication
@@ -27,7 +28,11 @@ COPY bgmain.exe bgmain.exe
     END ELSE INNER_ACTION BEGIN FAIL ~Target bytes don't match. Aborting ...~ END
 BUT_ONLY_IF_IT_CHANGES
 END                                                                                // ends check for Taimon's ToB hacks
+*/
 
+COPY "tobex_ini/tobextweak.ini" "tobex_ini/tobextweak.ini"
+  REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Enable PickpocketFailed Trigger=0~ ~Enable PickpocketFailed Trigger=1~
+BUT_ONLY
 
 // Allow all merchants whose dialogue implies that their wares are stolen to buy fenced goods
 

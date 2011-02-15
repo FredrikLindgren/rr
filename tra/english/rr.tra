@@ -1616,8 +1616,12 @@ Usable By:
 @781 = ~Nothing there. Must have been rats.~
 @782 = ~Bah! I must be hearing things.~
 
-
+@900 = ~ToBEx (required for the Revised Thievery component)~
+@901 = ~ToBEx is already installed~
+@902 = ~ToBEx is not available for Mac/OS X~
+@903 = ~This component requires ToBEx~
 @911 = ~(No need to install. G3 fixpack version already present.)~
+
 
 
 
@@ -2668,12 +2672,12 @@ This ability allows the rogue to set a powerful trap that splashes nearby oppone
 An experienced Swashbuckler can use the knowledge of his opponent's weak spots to gain an advantage in combat. During the round when this ability is activated, the Swashbuckler receives a +5 bonus to his critical hit rolls and deals maximum damage with each attack.~
 @8014 = ~Avoid Death
 
-With a superhuman effort, a high level rogue can avoid almost certain death. The effect lasts for 5 rounds and during this time the rogue's save vs. death receives a bonus of 5, hit points are increased by 20 and the rogue becomes immune to death magic for the duration of the ability.
+With a superhuman effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds and during this time the rogue's save vs. death receives a bonus of 5, hit points are increased by 20 and the rogue becomes immune to death magic for the duration of the ability.
 
 Requires: Danger Sense~
 @8015 = ~Avoid Death
 
-With a superhuman effort, a high level rogue can avoid almost certain death. The effect lasts for 5 rounds and during this time the rogue's save vs. death receives a bonus of 5, hit points are increased by 20 and the rogue becomes immune to death magic for the duration of the ability.~
+With a superhuman effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds and during this time the rogue's save vs. death receives a bonus of 5, hit points are increased by 20 and the rogue becomes immune to death magic for the duration of the ability.~
 
 // Revised Alchemy HLA and assorted dialogue (8100 - 8199)
 

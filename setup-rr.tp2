@@ -34,13 +34,13 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANES
 //ToBEX
 //////////////////////
 
-BEGIN @900 DESIGNATED 100 //ToBEx (required for the Revised Thievery component)
+BEGIN @900 DESIGNATED 100 //ToBEx (required for the component "Revised Thievery")
 REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X
 REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre @10 //ToB installation check
 
 OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
-LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tra"
+LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/english/TobEx.tra" "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/%LANGUAGE%/TobEx.tra"
 ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"
 
 

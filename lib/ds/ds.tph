@@ -74,159 +74,6 @@ DEFINE_ACTION_MACRO ~detectable_spells~ BEGIN
 >>>>>>>>
 
 
-// tasks only to be done once
-
-ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
-  COPY_EXISTING ~SPWI103.SPL~ ~override/cddetect.spl~
-
-//first, special patches. We need to remove melis02's existing script state modifier
-
-ACTION_FOR_EACH ~spellfile~ IN ~melis02.spl~ ~spcl741.spl~ BEGIN
- ACTION_IF FILE_EXISTS_IN_GAME ~%spellfile%~ BEGIN
-  COPY_EXISTING ~%spellfile%~ ~override~
-    READ_LONG  0x64 "ab_off" ELSE 0
-    READ_SHORT 0x68 "abil_num" ELSE 0
-    READ_LONG  0x6a "fx_off" ELSE 0
-    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-      READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-      READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-      FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN
-        READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
-        PATCH_IF ("%opcode%" = 282) BEGIN // if modify prof already exists
-          WRITE_BYTE ("%fx_off%" + 0x12 + (0x30 * ("%abil_fx_idx%" + "%index2%"))) 0 // set prob to 0
-        END
-      END
-    END
-    BUT_ONLY_IF_IT_CHANGES
-  END
-END
-
-// this code modified by DW to correct a bug in the (as-of-2007) G3 wiki
-//khelben's is another special case
-    COPY_EXISTING ~spwi705.spl~ ~override~
-      PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
-        READ_LONG  0x64 "ab_off"
-        READ_SHORT 0x68 "abil_num"
-        READ_LONG  0x6a "fx_off"
-        SET "delta" = 0
-        FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-          READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-          READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-          SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
-          WRITE_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "%abil_fx_idx%"
-	  SET "index2" = 0
-	  WHILE (index2<abil_fx_num) BEGIN
-            READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
-            SET "local_delta" = 0
-            PATCH_IF ("%opcode%" = 230) BEGIN // opcode to clone
-              READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (0x30)
-              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
-                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
-                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
-                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 7   // script state/prof
-              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
-                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
-                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
-                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 5   // script state/prof
-              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
-                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
-                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
-                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 129   // script state/prof
-              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
-                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
-                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
-                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
-                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 116   // script state/prof
-              SET "delta" = ("%delta%" + 4)
-              SET "abil_fx_num" = ("%abil_fx_num%" + 4)
-	    SET "index2"=("%index2%" + 4)
-            END
-	    SET "index2"=("%index2%" + 1)
-          END
-      INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
-      WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
-      WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
-      WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 1  // value
-      WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 132   // script state/prof
-      WRITE_BYTE            ("%fx_off%" + 0x0c + (0x30 * "%abil_fx_idx%")) 0 // instant/limited
-      WRITE_BYTE            ("%fx_off%" + 0x0d + (0x30 * "%abil_fx_idx%")) 0 // no dispel/no bypass
-      SET "delta" = ("%delta%" + 1)
-      SET "abil_fx_num" = ("%abil_fx_num%" + 1)
-
-      WRITE_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) ("%abil_fx_num%")
-     END
-
-      END
-      BUT_ONLY_IF_IT_CHANGES
-
-
-  // adds ds dtuff to items for level draining
-
-
-
-  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-                            ~^.+\.spl$~ ~override~
-    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
-      READ_LONG   0x64 "ab_off"
-      READ_SHORT  0x68 "abil_num"
-      READ_LONG   0x6a "fx_off"
-      READ_SHORT  0x70 "fx_num"
-      // set the only difference between ITM and SPL files.
-      READ_ASCII 0 first_chars (3)
-      PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
-        SET extended_size = 0x38
-      END ELSE BEGIN
-        SET extended_size = 0x28
-      END
-      SET "delta" = 0
-      FOR (index3 = 0; index3 < fx_num; index3 = index3 + 1) BEGIN // looks through global effects
-        READ_SHORT  ("%fx_off%" +        ("%index3%" * 0x30)) "opcode" ELSE 999999 // allowing for possible corruption
-        PATCH_IF ("%opcode%" = 216) BEGIN // level drain - note: we won't get here if there's corruption
-          READ_ASCII ("%fx_off%" +        ("%index3%" * 0x30)) "clone" (0x30)
-          SET "fx_num" = "%fx_num%"  + 1
-          SET "index3" = "%index3%"  + 1
-          INSERT_BYTES            ("%fx_off%" +        (("%index3%") * 0x30)) 0x30 // new effect
-            WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%index3%") * 0x30)) "%clone%" #48
-            WRITE_SHORT           ("%fx_off%" +        (("%index3%") * 0x30)) 233 // modify prof opcode
-            WRITE_BYTE            ("%fx_off%" + 0x03 + (("%index3%") * 0x30)) 4   // power
-            WRITE_LONG            ("%fx_off%" + 0x04 + (("%index3%") * 0x30)) 1   // value
-            WRITE_LONG            ("%fx_off%" + 0x08 + (("%index3%") * 0x30)) 134 // script state/prof
-          SET "delta" = ("%delta%" + 1)
-        END
-      END
-      WRITE_SHORT  0x70 "%fx_num%"
-      FOR (index = 0; index < abil_num; index = index + 1) BEGIN // loop through abilities
-        READ_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "abil_fx_num" ELSE 999999
-        READ_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "abil_fx_idx" ELSE 999999
-        SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
-	PATCH_IF !(~%abil_fx_num%~=999999 OR ~%abil_fx_idx%~=999999) THEN BEGIN // blocking corruption
-	        WRITE_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "%abil_fx_idx%"
-	        FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN // looks for effects for abilities
-		          READ_SHORT  ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "opcode" ELSE 999999 // more anti-corruption
-		          PATCH_IF ("%opcode%" = 216) BEGIN // level drain
-		       	     READ_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "clone" (0x30)
-       			     SET "abil_fx_num" = "%abil_fx_num%"  + 1
-       			     SET "index2" = "%index2%"  + 1
-       			     INSERT_BYTES            ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 0x30 // new effect
-     			         WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "%clone%" #48
-     			         WRITE_SHORT           ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 233 // modify prof opcode
-     			         WRITE_BYTE            ("%fx_off%" + 0x03 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 4   // power
-     			         WRITE_LONG            ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 1   // value
-     			         WRITE_LONG            ("%fx_off%" + 0x08 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 134 // script state/prof
-     			       SET "delta" = ("%delta%" + 1)
-     			     END
-     		   END
-        	WRITE_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "%abil_fx_num%"
-	END // closing anti-corruption loop
-      END
-    END
-    BUT_ONLY_IF_IT_CHANGES
-END
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////	DW block - completely clean out any previous version of DS. Only do this once.
 ////	Use an independent checkfile from the earlier block
@@ -315,14 +162,160 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~dw#DScleanout.mrk~ THEN BEGIN
 	BUT_ONLY_IF_IT_CHANGES
 
 
-
-
-
-
-
-
-
 END // end of clean-out-previous-versions block
+
+
+// tasks only to be done once
+
+ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
+  COPY_EXISTING ~SPWI103.SPL~ ~override/cddetect.spl~
+
+  //first, special patches. We need to remove melis02's existing script state modifier
+  ACTION_FOR_EACH ~spellfile~ IN ~melis02.spl~ ~spcl741.spl~ BEGIN
+   ACTION_IF FILE_EXISTS_IN_GAME ~%spellfile%~ BEGIN
+    COPY_EXISTING ~%spellfile%~ ~override~
+      READ_LONG  0x64 "ab_off" ELSE 0
+      READ_SHORT 0x68 "abil_num" ELSE 0
+      READ_LONG  0x6a "fx_off" ELSE 0
+      FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+        READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+        READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+        FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN
+          READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+          PATCH_IF ("%opcode%" = 282) BEGIN // if modify prof already exists
+            WRITE_BYTE ("%fx_off%" + 0x12 + (0x30 * ("%abil_fx_idx%" + "%index2%"))) 0 // set prob to 0
+          END
+        END
+      END
+      BUT_ONLY_IF_IT_CHANGES
+    END
+  END
+
+  // this code modified by DW to correct a bug in the (as-of-2007) G3 wiki
+  //khelben's is another special case
+    COPY_EXISTING ~spwi705.spl~ ~override~
+      PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+        READ_LONG  0x64 "ab_off"
+        READ_SHORT 0x68 "abil_num"
+        READ_LONG  0x6a "fx_off"
+        SET "delta" = 0
+        FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+          READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+          READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+          SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+          WRITE_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "%abil_fx_idx%"
+          SET "index2" = 0
+          WHILE (index2<abil_fx_num) BEGIN
+            READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+            SET "local_delta" = 0
+            PATCH_IF ("%opcode%" = 230) BEGIN // opcode to clone
+              READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (0x30)
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 7   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 5   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 129   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 116   // script state/prof
+              SET "delta" = ("%delta%" + 4)
+              SET "abil_fx_num" = ("%abil_fx_num%" + 4)
+              SET "index2"=("%index2%" + 4)
+            END
+            SET "index2"=("%index2%" + 1)
+          END
+      INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+      WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+      WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+      WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 1  // value
+      WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 132   // script state/prof
+      WRITE_BYTE            ("%fx_off%" + 0x0c + (0x30 * "%abil_fx_idx%")) 0 // instant/limited
+      WRITE_BYTE            ("%fx_off%" + 0x0d + (0x30 * "%abil_fx_idx%")) 0 // no dispel/no bypass
+      SET "delta" = ("%delta%" + 1)
+      SET "abil_fx_num" = ("%abil_fx_num%" + 1)
+
+      WRITE_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) ("%abil_fx_num%")
+     END
+
+      END
+      BUT_ONLY_IF_IT_CHANGES
+
+
+  // adds ds dtuff to items for level draining
+
+
+
+  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+                            ~^.+\.spl$~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+      READ_LONG   0x64 "ab_off"
+      READ_SHORT  0x68 "abil_num"
+      READ_LONG   0x6a "fx_off"
+      READ_SHORT  0x70 "fx_num"
+      // set the only difference between ITM and SPL files.
+      READ_ASCII 0 first_chars (3)
+      PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
+        SET extended_size = 0x38
+      END ELSE BEGIN
+        SET extended_size = 0x28
+      END
+      SET "delta" = 0
+      FOR (index3 = 0; index3 < fx_num; index3 = index3 + 1) BEGIN // looks through global effects
+        READ_SHORT  ("%fx_off%" +        ("%index3%" * 0x30)) "opcode" ELSE 999999 // allowing for possible corruption
+        PATCH_IF ("%opcode%" = 216) BEGIN // level drain - note: we won't get here if there's corruption
+          READ_ASCII ("%fx_off%" +        ("%index3%" * 0x30)) "clone" (0x30)
+          SET "fx_num" = "%fx_num%"  + 1
+          SET "index3" = "%index3%"  + 1
+          INSERT_BYTES            ("%fx_off%" +        (("%index3%") * 0x30)) 0x30 // new effect
+            WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%index3%") * 0x30)) "%clone%" #48
+            WRITE_SHORT           ("%fx_off%" +        (("%index3%") * 0x30)) 233 // modify prof opcode
+            WRITE_BYTE            ("%fx_off%" + 0x03 + (("%index3%") * 0x30)) 4   // power
+            WRITE_LONG            ("%fx_off%" + 0x04 + (("%index3%") * 0x30)) 1   // value
+            WRITE_LONG            ("%fx_off%" + 0x08 + (("%index3%") * 0x30)) 134 // script state/prof
+          SET "delta" = ("%delta%" + 1)
+        END
+      END
+      WRITE_SHORT  0x70 "%fx_num%"
+      FOR (index = 0; index < abil_num; index = index + 1) BEGIN // loop through abilities
+        READ_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "abil_fx_num" ELSE 999999
+        READ_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "abil_fx_idx" ELSE 999999
+        SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+	PATCH_IF !(~%abil_fx_num%~=999999 OR ~%abil_fx_idx%~=999999) THEN BEGIN // blocking corruption
+	        WRITE_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "%abil_fx_idx%"
+	        FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN // looks for effects for abilities
+		          READ_SHORT  ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "opcode" ELSE 999999 // more anti-corruption
+		          PATCH_IF ("%opcode%" = 216) BEGIN // level drain
+		       	     READ_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "clone" (0x30)
+       			     SET "abil_fx_num" = "%abil_fx_num%"  + 1
+       			     SET "index2" = "%index2%"  + 1
+       			     INSERT_BYTES            ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 0x30 // new effect
+     			         WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "%clone%" #48
+     			         WRITE_SHORT           ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 233 // modify prof opcode
+     			         WRITE_BYTE            ("%fx_off%" + 0x03 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 4   // power
+     			         WRITE_LONG            ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 1   // value
+     			         WRITE_LONG            ("%fx_off%" + 0x08 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 134 // script state/prof
+     			       SET "delta" = ("%delta%" + 1)
+     			     END
+     		   END
+        	WRITE_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "%abil_fx_num%"
+	END // closing anti-corruption loop
+      END
+    END
+    BUT_ONLY_IF_IT_CHANGES
+END
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // End of the do-this-only-once block

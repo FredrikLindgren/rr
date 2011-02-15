@@ -1,0 +1,21 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("RR#ClickedButton","RR#010",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,37346) // You click the button and hear a door open off in the distance.
+		Unlock("DOOR06")
+		OpenDoor("DOOR06")
+		AddexperienceParty(17500)
+		SetGlobal("RR#ClickedButton","RR#010",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("RR#ClickedButton","RR#010",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,39585) // You have already pressed the button.
+END

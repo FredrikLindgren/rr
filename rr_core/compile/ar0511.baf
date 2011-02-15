@@ -1,0 +1,57 @@
+IF
+	Global("RR#ARLED_JOURNAL","GLOBAL",0)
+        Global("RR#ARLED_MOVE_GRAVEYARD","GLOBAL",1)
+	OR(2)
+    	Global("RR#ARLED_QUEST","GLOBAL",1)
+    	Global("RR#ARLED_QUEST","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_JOURNAL","GLOBAL",1)
+		ActionOverride("Container1",CreateItem("RR#BK03",0,0,0)) // Arledrian's Journal (non-translated version)
+		Lock("Container1")
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_JOURNAL","GLOBAL",1)
+	OR(2)
+    	Global("RR#ARLED_QUEST","GLOBAL",1)
+    	Global("RR#ARLED_QUEST","GLOBAL",2)
+	PartyHasItem("RR#BK03") // Arledrian's Journal (non-translated version)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_JOURNAL","GLOBAL",2)
+		CreateCreature("RR#ARLEJ",[242.773],10) // Arledrian's Journal (dialogue creature)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_JOURNAL","GLOBAL",2)
+	OR(2)
+    	Global("RR#ARLED_QUEST","GLOBAL",1)
+    	Global("RR#ARLED_QUEST","GLOBAL",2)
+	OR(2)
+		PartyHasItem("RR#BK01") // Arledrian's Journal (translated version and Silverblaze not stolen)
+		PartyHasItem("RR#BK02") // Arledrian's Journal (translated version but Silverblaze stolen)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_JOURNAL","GLOBAL",3)
+		ActionOverride("RR#ARLEJ",DestroySelf())
+		PlaySong(37)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_JOURNAL","GLOBAL",3)
+	OR(2)
+    	Global("RR#ARLED_QUEST","GLOBAL",1)
+    	Global("RR#ARLED_QUEST","GLOBAL",2)
+	PartyHasItem("RR#BK03") // Arledrian's Journal (non-translated version)
+
+THEN
+	RESPONSE #100
+		ActionOverride("RR#ARLEJ",DestroySelf())
+END

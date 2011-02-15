@@ -1,0 +1,10 @@
+IF
+	HasItem("SW1H10","MaeVar")
+	Global("RR#MSSOB","AR0301",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#MSSOB","AR0301",1)
+		TakeItemReplace("SW1H74","SW1H10","MaeVar")
+		ActionOverride("MaeVar",EquipItem("SW1H74"))
+		ActionOverride("MaeVar",EquipMostDamagingMelee())
+END

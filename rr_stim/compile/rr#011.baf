@@ -1,0 +1,18 @@
+IF
+	Global("RR#Doors","RR#011",0)
+	ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Doors","RR#011",1)
+END
+
+IF
+	Global("RR#Doors","RR#011",1)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Doors","RR#011",2)
+		DetectSecretDoor("Secret01")
+		Unlock("Door01")
+		Unlock("Door02")
+END

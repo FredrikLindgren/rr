@@ -1,0 +1,19 @@
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	Heard([ANYONE],2) // Heard shout 2 (leave)
+        InMyGroup(LastHeardBy(Myself)) // the heard creature has the same specifics value as the object running the script
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		EscapeArea()
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	Heard([ANYONE],1) // Heard shout 1 (attack)
+	InMyGroup(LastHeardBy(Myself)) // the heard creature has the same specifics value as the object running the script
+THEN
+	RESPONSE #100
+		Enemy()
+END

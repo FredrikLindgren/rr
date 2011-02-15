@@ -1,0 +1,33 @@
+IF
+	GlobalLT("RR#SB_STOLEN","GLOBAL",2)
+	PartyHasItem("RR#SILV") // Silverblaze
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SB_STOLEN","GLOBAL",2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_MOVE_GRAVEYARD","GLOBAL",0)
+	OR(2)
+	  Global("RR#ARLED_QUEST","GLOBAL",1)
+	  Global("RR#ARLED_QUEST","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("Arledrian",MoveBetweenAreas("AR0801",[1200.2202],6))
+		ActionOverride("Container3",CreateItem("RR#BK04",0,0,0)) // Promotion poster
+		SetGlobal("RR#ARLED_MOVE_GRAVEYARD","GLOBAL",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#AR_POSTER","AR0312",0)
+        GlobalGT("RR#ARLED_QUEST","GLOBAL",0)
+	PartyHasItem("RR#BK04") // Promotion poster
+THEN
+	RESPONSE #100
+		SetGlobal("RR#AR_POSTER","AR0312",1)
+		AddJournalEntry(@652,QUEST)
+END

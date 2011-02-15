@@ -1,0 +1,12 @@
+// This simple macro is used for making it easier to implement the proper BGT and Tutu compatibility
+
+
+// First, define the use of the underscore prefix if Tutu is detected
+// Files prefixed with %tutu_var% will use an underscore if Tutu is detected
+// Otherwise they won't have a prefix at all
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~fw0100.are~) THEN BEGIN             // Tutu check
+  OUTER_SPRINT ~tutu_var~ ~_~                                       // set the Tutu underscore variable
+END ELSE BEGIN
+  OUTER_SPRINT ~tutu_var~ ~~                                        // otherwise don't set an underscore variable
+END

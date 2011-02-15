@@ -1,0 +1,27 @@
+IF
+	Global("RR#CTRIG","AR0800",0)
+	Global("RR#CEASY","AR0800",0)
+	Dead("c6bodhi") // Bodhi
+	InMyArea(Player1)
+	Difficulty(EASIEST)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#CGRAV","GLOBAL",0)
+		SetGlobal("RR#CEASY","AR0800",1)
+		TriggerActivation("RR#COC01",FALSE)
+		TriggerActivation("RR#COC02",FALSE)
+END
+
+IF
+	Global("RR#CTRIG","AR0800",0)
+	Global("RR#CGRAV","GLOBAL",0)
+	Dead("c6bodhi") // Bodhi
+	InMyArea(Player1)
+	!Difficulty(EASIEST)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#CGRAV","GLOBAL",1)
+		SetGlobal("RR#CEASY","AR0800",0)
+		TriggerActivation("RR#COC01",TRUE)
+		TriggerActivation("RR#COC02",TRUE)
+END

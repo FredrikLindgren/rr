@@ -1,0 +1,41 @@
+IF
+	IsOverMe([PC])
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	!Dead("aran") // Aran Linvail
+	Global("RR#TalkedDedral","RR#010",1)
+	Global("RR#SpawnThieves","RR#010",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#SpawnThieves","RR#010",1)
+		CreateCreature("RR#SAW01",[2470.1349],4)  // Shadow Thief Archer
+		CreateCreature("RR#SAW09",[2011.1328],15) // Priestess of Mask
+		CreateCreature("RR#SAW01",[1872.1455],13) // Shadow Thief Archer
+		CreateCreature("RR#STI02",[2373.1396],7) // Kara-Tur Mercenary
+		CreateCreature("RR#SAW02",[2015.1594],10) // Shadow Thief Thug
+		CreateCreature("RR#SAW04",[2270.1439],10) // Assassin
+		CreateCreature("RR#SAW01",[2425.1133],4)  // Shadow Thief Archer
+		CreateCreature("RR#DEDRL",[2276.1099],0)  // Dedral
+		ActionOverride("RR#DEDRL",StartDialogueNoSet(Player1))
+END
+
+IF
+	IsOverMe([PC])
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	!Dead("aran") // Aran Linvail
+	OR(2)
+	  Dead("RR#DEDRL") // Dedral
+	  Global("RR#TalkedDedral","RR#010",0)
+	Global("RR#SpawnThieves","RR#010",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#SpawnThieves","RR#010",1)
+		CreateCreature("RR#SAW01",[2470.1349],4) // Shadow Thief Archer
+		CreateCreature("RR#SAW09",[2011.1328],15) // Priestess of Mask
+		CreateCreature("RR#SAW01",[1872.1455],13) // Shadow Thief Archer
+		CreateCreature("RR#STI02",[2373.1396],7) // Kara-Tur Mercenary
+		CreateCreature("RR#SAW02",[2015.1594],10) // Shadow Thief Thug
+		CreateCreature("RR#SAW04",[2270.1439],10) // Assassin
+		CreateCreature("RR#SAW01",[2425.1133],4) // Shadow Thief Archer
+END

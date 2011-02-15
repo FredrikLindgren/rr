@@ -1,0 +1,773 @@
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////	Detectable Spells macro
+/////
+/////	This version is assembled by David Wallace, based substantially on material on the G3
+/////	wiki. It is designed to be callable multiple times, by the same or different mods.
+/////   
+/////	The code makes use of three files:
+/////
+/////	~statfile~ - a list of new / replacement entries for STATS.IDS
+/////
+/////	~detectfile~ - a table listing all the spells and items to be changed, based on the format
+/////	developed by (I think) Cam.
+/////
+/////   ~khelbenfile~ - a version of Khelben's Warding Whip correctly outfitted with detectable-spells
+/////	effects. (This is only there as a bugfix for earlier versions of DS: hopefully it won't be 
+/////	used at all.)
+/////
+/////	Each file's name needs to be set in the TP2, e.g.
+/////
+/////	OUTER_SPRINT ~statfile~ ~scsII/DS/stats.2da~
+/////
+/////	If any is not set, the macro will fail; however, if any are set to "nofile" then the relevant
+/////	file need not be present.
+/////
+/////
+/////	The code has two sections:
+/////
+/////	1) a "run-once" section. This section marks itself as having been run by dumping "cddetect.spl" 
+/////	into the override directory, and will be silently skipped if that file is already there. Note
+/////	that this is the same file used to detect earlier versions of DS (e.g., the ones in the 2007 
+/////	versions of QP and SCS2); this is intentional. It contains:
+/////
+/////	- a fix for the spells melis02 and spcl741, lifted verbatim from the wiki
+/////	- a fix for Khelben's Warding Whip, based on the wiki but modified to remove a bug identified 
+/////	  in SCS2 playtesting.
+////	- a component to make undead level drain detectable, lifted from the wiki.
+/////
+/////	
+/////	2) a "run often" section. This section can safely be run even if other copies of DS are already
+/////	installed. It contains:
+/////
+/////	- A crude fix for the above bug in Warding Whip: if the spell is detected to be bugged, a 
+/////	  replacement - the spell in "khelbenfile" - is copied over.
+/////	- a STATS.IDS updater. It takes any entry in statsfile - e.g. 133 CLERIC_DEFENSIVE_HARMONY -
+/////	  and (a) replaces all entries having that number OR that description (e.g. 133 WIZARD_FIRE_SHIELD
+/////	  or 176 CLERIC_DEFENSIVE_HARMONY; (b) if there are no entries, it adds the line as a new entry.
+/////	  (this is original code: it works by a method that's hopefully more bug-resilient than extant ones.)
+/////	- the core spell-and-item updater. This is pretty closely based on the wiki version, but I've 
+/////	  modified it so that any existing detectable-spell blocks for that spell/item *which refer to 
+/////	  exactly the required stat* are removed before the new blocks are added. This means that the 
+/////	  macro can be run multiple times without clogging up the spell with repetitions; it should also
+/////	  aid compatibility with older versions of DS (e.g., the one in BPv177). I've also tried to make
+/////	  it at least a bit tolerant of corrupted files.
+/////
+/////	  How does the ~detectfile~ format work? Short answer: "spell" is the file to be changed (spell or item);
+/////	  "new op" is the new opcode to be added (the crucial values are 233 for modified proficiencies, 282 for 
+/////	  modified scripting states); "value" is the value for the proficiency-or-state-or-whatever to be set to;
+/////	  "clone op" is the opcode (hopefully already present in the spell) to be used as the basis of the new effect.
+/////	  "stat" is the actual proficiency or state being added. If we're modifying a proficiency, this is just the
+/////     number in the stats.ids; if we're modifying a script state, it's the number in the stats.ids minus 155 (scripting
+/////	  states start from 156).
+/////	   
+/////	  
+/////	
+/////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_MACRO ~detectable_spells~ BEGIN
+
+// needed later
+
+<<<<<<<< .../DS-macro-inline/blank.2da
+
+>>>>>>>>
+
+
+// tasks only to be done once
+
+ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
+  COPY_EXISTING ~SPWI103.SPL~ ~override/cddetect.spl~
+
+//first, special patches. We need to remove melis02's existing script state modifier
+
+ACTION_FOR_EACH ~spellfile~ IN ~melis02.spl~ ~spcl741.spl~ BEGIN
+ ACTION_IF FILE_EXISTS_IN_GAME ~%spellfile%~ BEGIN
+  COPY_EXISTING ~%spellfile%~ ~override~
+    READ_LONG  0x64 "ab_off" ELSE 0
+    READ_SHORT 0x68 "abil_num" ELSE 0
+    READ_LONG  0x6a "fx_off" ELSE 0
+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+      READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+      READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+      FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN
+        READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+        PATCH_IF ("%opcode%" = 282) BEGIN // if modify prof already exists
+          WRITE_BYTE ("%fx_off%" + 0x12 + (0x30 * ("%abil_fx_idx%" + "%index2%"))) 0 // set prob to 0
+        END
+      END
+    END
+    BUT_ONLY_IF_IT_CHANGES
+  END
+END
+
+// this code modified by DW to correct a bug in the (as-of-2007) G3 wiki
+//khelben's is another special case
+    COPY_EXISTING ~spwi705.spl~ ~override~
+      PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+        READ_LONG  0x64 "ab_off"
+        READ_SHORT 0x68 "abil_num"
+        READ_LONG  0x6a "fx_off"
+        SET "delta" = 0
+        FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+          READ_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+          READ_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+          SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+          WRITE_SHORT ("%ab_off%" + 0x20 + (0x28 * "%index%")) "%abil_fx_idx%"
+	  SET "index2" = 0
+	  WHILE (index2<abil_fx_num) BEGIN
+            READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+            SET "local_delta" = 0
+            PATCH_IF ("%opcode%" = 230) BEGIN // opcode to clone
+              READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (0x30)
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 7   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 282 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 5   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 129   // script state/prof
+              INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+                WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0  // value
+                WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 116   // script state/prof
+              SET "delta" = ("%delta%" + 4)
+              SET "abil_fx_num" = ("%abil_fx_num%" + 4)
+	    SET "index2"=("%index2%" + 4)
+            END
+	    SET "index2"=("%index2%" + 1)
+          END
+      INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+      WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+      WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 233 // modify script state/prof
+      WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 1  // value
+      WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 132   // script state/prof
+      WRITE_BYTE            ("%fx_off%" + 0x0c + (0x30 * "%abil_fx_idx%")) 0 // instant/limited
+      WRITE_BYTE            ("%fx_off%" + 0x0d + (0x30 * "%abil_fx_idx%")) 0 // no dispel/no bypass
+      SET "delta" = ("%delta%" + 1)
+      SET "abil_fx_num" = ("%abil_fx_num%" + 1)
+
+      WRITE_SHORT ("%ab_off%" + 0x1e + (0x28 * "%index%")) ("%abil_fx_num%")
+     END
+
+      END
+      BUT_ONLY_IF_IT_CHANGES
+
+
+  // adds ds dtuff to items for level draining
+
+
+
+  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+                            ~^.+\.spl$~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+      READ_LONG   0x64 "ab_off"
+      READ_SHORT  0x68 "abil_num"
+      READ_LONG   0x6a "fx_off"
+      READ_SHORT  0x70 "fx_num"
+      // set the only difference between ITM and SPL files.
+      READ_ASCII 0 first_chars (3)
+      PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
+        SET extended_size = 0x38
+      END ELSE BEGIN
+        SET extended_size = 0x28
+      END
+      SET "delta" = 0
+      FOR (index3 = 0; index3 < fx_num; index3 = index3 + 1) BEGIN // looks through global effects
+        READ_SHORT  ("%fx_off%" +        ("%index3%" * 0x30)) "opcode" ELSE 999999 // allowing for possible corruption
+        PATCH_IF ("%opcode%" = 216) BEGIN // level drain - note: we won't get here if there's corruption
+          READ_ASCII ("%fx_off%" +        ("%index3%" * 0x30)) "clone" (0x30)
+          SET "fx_num" = "%fx_num%"  + 1
+          SET "index3" = "%index3%"  + 1
+          INSERT_BYTES            ("%fx_off%" +        (("%index3%") * 0x30)) 0x30 // new effect
+            WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%index3%") * 0x30)) "%clone%" #48
+            WRITE_SHORT           ("%fx_off%" +        (("%index3%") * 0x30)) 233 // modify prof opcode
+            WRITE_BYTE            ("%fx_off%" + 0x03 + (("%index3%") * 0x30)) 4   // power
+            WRITE_LONG            ("%fx_off%" + 0x04 + (("%index3%") * 0x30)) 1   // value
+            WRITE_LONG            ("%fx_off%" + 0x08 + (("%index3%") * 0x30)) 134 // script state/prof
+          SET "delta" = ("%delta%" + 1)
+        END
+      END
+      WRITE_SHORT  0x70 "%fx_num%"
+      FOR (index = 0; index < abil_num; index = index + 1) BEGIN // loop through abilities
+        READ_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "abil_fx_num" ELSE 999999
+        READ_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "abil_fx_idx" ELSE 999999
+        SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+	PATCH_IF !(~%abil_fx_num%~=999999 OR ~%abil_fx_idx%~=999999) THEN BEGIN // blocking corruption
+	        WRITE_SHORT  ("%ab_off%" + 0x20 + ("%index%" * ~%extended_size%~)) "%abil_fx_idx%"
+	        FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN // looks for effects for abilities
+		          READ_SHORT  ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "opcode" ELSE 999999 // more anti-corruption
+		          PATCH_IF ("%opcode%" = 216) BEGIN // level drain
+		       	     READ_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "clone" (0x30)
+       			     SET "abil_fx_num" = "%abil_fx_num%"  + 1
+       			     SET "index2" = "%index2%"  + 1
+       			     INSERT_BYTES            ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 0x30 // new effect
+     			         WRITE_EVALUATED_ASCII ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) "%clone%" #48
+     			         WRITE_SHORT           ("%fx_off%" +        (("%abil_fx_idx%" + "%index2%") * 0x30)) 233 // modify prof opcode
+     			         WRITE_BYTE            ("%fx_off%" + 0x03 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 4   // power
+     			         WRITE_LONG            ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 1   // value
+     			         WRITE_LONG            ("%fx_off%" + 0x08 + (("%abil_fx_idx%" + "%index2%") * 0x30)) 134 // script state/prof
+     			       SET "delta" = ("%delta%" + 1)
+     			     END
+     		   END
+        	WRITE_SHORT  ("%ab_off%" + 0x1e + ("%index%" * ~%extended_size%~)) "%abil_fx_num%"
+	END // closing anti-corruption loop
+      END
+    END
+    BUT_ONLY_IF_IT_CHANGES
+END
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////	DW block - completely clean out any previous version of DS. Only do this once.
+////	Use an independent checkfile from the earlier block
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~dw#DScleanout.mrk~ THEN BEGIN
+	COPY_EXISTING ~misc01.itm~ ~override/dw#DScleanout.mrk~
+
+  COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~  // deliberately "regexp", not "regexp glob". BP uses the same .IDS and has lots of custom spells; we don't want to break them
+                       ~^.+\.spl$~ ~override~
+            PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+  
+
+              READ_LONG  0x64 "ab_off"
+              READ_SHORT 0x68 "abil_num"
+              READ_LONG  0x6a "fx_off"
+  
+              // set the only difference between ITM and SPL files.
+              READ_ASCII 0 first_chars (3)
+              PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
+                SET extended_size = 0x38
+              END ELSE BEGIN
+                SET extended_size = 0x28
+              END
+
+  	      // clean out any previous versions; while I'm at it, try to look out for major corruption issues
+
+		READ_SHORT 0x6e ~eff_num~
+
+		// start with global effects
+
+		SET ~totalnumdeleted~=0
+		SET ~isbroken~=0
+		SET ~i~=0
+			WHILE (~%i%~<~%eff_num%~ AND ~%isbroken%~=0) BEGIN
+
+			READ_SHORT ~%fx_off%~+~%i%~*0x30 ~efftype~ ELSE 999999
+			READ_LONG ~%fx_off%~+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+			PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+				SET ~isbroken~=1
+			END ELSE BEGIN
+				PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
+					DELETE_BYTES ~%fx_off%~+~%i%~*0x30 0x30
+					SET ~eff_num~=~%eff_num%~-1
+					SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+				END ELSE BEGIN
+					SET ~i~=~%i%~+1
+				END
+			END
+		END
+
+		// now do ability-specific effects
+		PATCH_IF ~%isbroken%~=0 THEN BEGIN
+			FOR (j=0;j<~%abil_num%~;j=j+1) BEGIN
+				READ_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~ind_here~ ELSE 999999
+				SET ~ind_here~=~%ind_here%~-~%totalnumdeleted%~
+				PATCH_IF ~%ind_here%~=999999 THEN BEGIN
+					SET ~isbroken~=1
+				END ELSE BEGIN
+					WRITE_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~%ind_here%~
+					READ_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~num_here~
+				END			
+				SET ~i~=0
+				WHILE (~%i%~<~%num_here%~ AND ~isbroken~=0) BEGIN
+					READ_SHORT ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 ~efftype~ ELSE 999999
+					READ_LONG ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+					PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+						SET ~isbroken~=1
+					END ELSE BEGIN
+						PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
+							DELETE_BYTES ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 0x30
+							SET ~num_here~=~%num_here%~-1
+							SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+						END ELSE BEGIN
+							SET ~i~=~%i%~+1
+						END
+					END		
+				END
+				PATCH_IF ~%isbroken%~=0 THEN BEGIN
+					WRITE_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~%num_here%~
+				END
+
+			END
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+
+
+
+
+
+
+
+
+END // end of clean-out-previous-versions block
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// End of the do-this-only-once block
+// The rest to be done multiple times if needs be, to allow for various different forms of DS in use.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Check that Warding Whip isn't broken (which earlier versions of DS did); if it is, replace it with a backup.
+
+ACTION_IF !(~%khelbenfile%~ STRING_EQUAL_CASE ~NO_FILE~) THEN BEGIN
+	OUTER_SET ~khelben_broken~=0
+
+	COPY_EXISTING ~spwi705.spl~ ~override~
+		READ_SHORT 0x68 ~num_ab~
+		READ_LONG 0x64 ~ab_off~
+		READ_LONG 0x6a ~eff_off~
+		SET ~efftotal~=0
+		FOR (i=0;i<~%num_ab%~;i=i+1) BEGIN
+			READ_SHORT 0x90+~%i%~*0x28 ~num_eff_here~
+			SET ~efftotal~=~%efftotal%~+~%num_eff_here%~
+		END
+		PATCH_IF !(~%SOURCE_SIZE%~=0x30*~%efftotal%~+~%eff_off%~) THEN BEGIN
+			SET ~khelben_broken~=1
+		END
+	BUT_ONLY_IF_IT_CHANGES
+
+
+	ACTION_IF (~%khelben_broken%~=1) THEN BEGIN
+		COPY ~%khelbenfile%~ ~override~
+	END
+END
+
+
+// The STATS.IDS file
+
+ACTION_IF ~%statsfile%~ STRING_EQUAL_CASE ~NO_FILE~ THEN BEGIN
+	OUTER_SPRINT ~statsfile~ ~.../DS-macro-inline/blank.2da~
+END
+
+// read in the changes
+
+OUTER_FOR (i=1;i<200;i=i+1) BEGIN
+	OUTER_SPRINT $statarray(~%i%~) "NOT_IN_USE"
+END
+
+OUTER_SET ~statarray2_NOT_IN_USE~=300
+
+COPY_EXISTING ~stats.ids~ ~override~
+	COUNT_2DA_ROWS 2 ~rowcount~
+	FOR (j=0;j<~%rowcount%~;j=j+1) BEGIN
+		READ_2DA_ENTRY ~%j%~ 0 2 ~stat~
+		READ_2DA_ENTRY ~%j%~ 1 2 ~desc~
+		SPRINT $statarray(~%stat%~) ~%desc%~
+		SET $statarray2(~%desc%~)=~%stat%~
+	END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY ~%statsfile%~ ~override~
+	COUNT_2DA_ROWS 2 ~rowcount~
+	FOR (j=0;j<~%rowcount%~;j=j+1) BEGIN
+		READ_2DA_ENTRY ~%j%~ 0 2 ~stat~
+		READ_2DA_ENTRY ~%j%~ 1 2 ~desc~
+		SPRINT $statarray(~%stat%~) ~%desc%~
+		SET $statarray2(~%desc%~)=~%stat%~
+	END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY ~.../DS-macro-inline/blank.2da~ ~override/stats.ids~
+
+OUTER_FOR (i=1;i<201;i=i+1) BEGIN
+	OUTER_SPRINT ~desc~ $statarray(~%i%~)
+	OUTER_SET ~icheck~=$statarray2(~%desc%~)
+	ACTION_IF (~%icheck%~=~%i%~) THEN BEGIN
+		OUTER_SPRINT ~thestring~ ~%i%~^~   ~^~%desc%~
+		APPEND ~stats.ids~ ~%thestring%~
+	END
+END
+
+
+// The main loop. It doesn't matter if we do it multiple times for one spell, because the code itself
+// checks for that. - DW
+
+ACTION_IF ~%detectfile%~ STRING_EQUAL_CASE ~NO_FILE~ THEN BEGIN
+	OUTER_SPRINT ~detectfile~ ~.../DS-macro-inline/blank.2da~
+END
+
+
+  COPY ~%detectfile%~  ~override~
+    COUNT_2DA_ROWS 6 "rows"
+    FOR( index3 = 1 ; index3 < rows ; index3 = index3 + 1 ) BEGIN
+      READ_2DA_ENTRY "%index3%" 0 6 "spell" // may also be an item now, but I don't feel like changing the variable
+      										// in all places  :) -Bigg
+      READ_2DA_ENTRY "%index3%" 1 6 "new_op"
+      READ_2DA_ENTRY "%index3%" 2 6 "value"
+      READ_2DA_ENTRY "%index3%" 3 6 "stat"
+      READ_2DA_ENTRY "%index3%" 4 6 "clone_op"
+      READ_2DA_ENTRY "%index3%" 5 6 "patch_what" // 'A'    = all headers
+                                                 // 'G'    = global/equiped
+                                                 // number = specific header (so you can EG detect stun from Chromatic
+                                                 //           orb or whatever now  :D)
+                                                 // please don't put other symbols in that coloumn  ;D
+
+      INNER_ACTION BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME EVALUATE_BUFFER ~%spell%~ THEN BEGIN
+          COPY_EXISTING ~%spell%~ ~override~
+           PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+  
+
+              READ_LONG  0x64 "ab_off"
+              READ_SHORT 0x68 "abil_num"
+              READ_LONG  0x6a "fx_off"
+  
+              // set the only difference between ITM and SPL files.
+              READ_ASCII 0 first_chars (3)
+              PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
+                SET extended_size = 0x38
+              END ELSE BEGIN
+                SET extended_size = 0x28
+              END
+
+  	      // clean out any previous versions; while I'm at it, try to look out for major corruption issues
+
+		READ_SHORT 0x6e ~eff_num~
+
+		// start with global effects
+
+		SET ~totalnumdeleted~=0
+		SET ~isbroken~=0
+		SET ~i~=0
+		WHILE (~%i%~<~%eff_num%~ AND ~%isbroken%~=0) BEGIN
+
+			READ_SHORT ~%fx_off%~+~%i%~*0x30 ~efftype~ ELSE 999999
+			READ_LONG ~%fx_off%~+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+			PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+				SET ~isbroken~=1
+			END ELSE BEGIN
+				PATCH_IF (~%new_op%~=~%efftype%~ AND ~%stat%~=~%effcode%~) THEN BEGIN
+					DELETE_BYTES ~%fx_off%~+~%i%~*0x30 0x30
+					SET ~eff_num~=~%eff_num%~-1
+					SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+				END ELSE BEGIN
+					SET ~i~=~%i%~+1
+				END
+			END
+		END
+
+		// now do ability-specific effects
+		PATCH_IF ~%isbroken%~=0 THEN BEGIN
+			FOR (j=0;j<~%abil_num%~;j=j+1) BEGIN
+				READ_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~ind_here~ ELSE 999999
+				SET ~ind_here~=~%ind_here%~-~%totalnumdeleted%~
+				PATCH_IF ~%ind_here%~=999999 THEN BEGIN
+					SET ~isbroken~=1
+				END ELSE BEGIN
+					WRITE_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~%ind_here%~
+					READ_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~num_here~
+				END			
+				SET ~i~=0
+				WHILE (~%i%~<~%num_here%~ AND ~isbroken~=0) BEGIN
+					READ_SHORT ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 ~efftype~ ELSE 999999
+					READ_LONG ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+					PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+						SET ~isbroken~=1
+					END ELSE BEGIN
+						PATCH_IF (~%new_op%~=~%efftype%~ AND ~%stat%~=~%effcode%~) THEN BEGIN
+							DELETE_BYTES ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 0x30
+							SET ~num_here~=~%num_here%~-1
+							SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+						END ELSE BEGIN
+							SET ~i~=~%i%~+1
+						END
+					END		
+				END
+				PATCH_IF ~%isbroken%~=0 THEN BEGIN
+					WRITE_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~%num_here%~
+				END
+
+			END
+		END
+		PATCH_IF ~%isbroken%~=1 THEN BEGIN 
+			PATCH_PRINT ~DS error: %SOURCE_FILE% is corrupted, probably by a previous mod. I'm skipping it.~
+		END ELSE BEGIN
+
+
+              SET patch_specific_header = 0
+              SET specific_header = 0
+              PATCH_IF ( ~%patch_what%~ STRING_COMPARE_CASE ~A~ ) && ( ~%patch_what%~ STRING_COMPARE_CASE ~G~ ) BEGIN
+              // if it isn't either "[A]ll headers" or "[G]lobal/equiped effects" I suppose it's the number
+              // of a specific effect: extract it and then mark that it was a number
+                SET patch_specific_header = 1
+                SET specific_header = ~%patch_what%~
+              END
+  
+                   // if it's either 'A' or 'a' or a number
+              PATCH_IF !( ~%patch_what%~ STRING_COMPARE_CASE ~A~ ) || patch_specific_header BEGIN
+                SET "delta" = 0
+  
+                   // if I want to patch a specific header, I'll use different initializations 
+                    /* (can I use goto or break, Weimer? Pleaseeee  :D */
+                PATCH_IF patch_specific_header BEGIN
+                  SET index = specific_header
+                  SET abil_num_true = abil_num
+                  SET abil_num = index + 1
+                  SET patch_specific_header = index < abil_num_true ? 1 : 0 // prevent errors if %number% is too big.
+                  // while I'm here, patch the offset table, as this wouldn't happen otherwise
+                  FOR (i = specific_header + 1; i < abil_num_true; i+=1) BEGIN
+                    READ_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%i%")) "abil_fx_idx"
+                    WRITE_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%i%")) "%abil_fx_idx%" + 1
+                  END
+                END ELSE BEGIN
+                  SET index = 0
+                END
+  
+                FOR (/* initialized before */; index < abil_num; index = index + 1) BEGIN
+                  READ_SHORT ("%ab_off%" + 0x1e + ("%extended_size%" * "%index%")) "abil_fx_num"
+                  READ_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%index%")) "abil_fx_idx"
+                  PATCH_IF (!patch_specific_header) BEGIN
+                    SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+                    WRITE_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%index%")) "%abil_fx_idx%"
+                  END
+                  FOR (index2 = 0; index2 < abil_fx_num; index2 = index2 + 1) BEGIN
+                    READ_SHORT   ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+                    READ_SHORT   ("%fx_off%" + 0x08 + (0x30 * ("%abil_fx_idx%" + "%index2%"))) "old_stat"
+                    PATCH_IF ("%opcode%" = "%clone_op%") BEGIN // opcode to clone
+                      READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (0x30)
+                    END ELSE
+                    PATCH_IF ("%opcode%" = "%new_op%") && ("%old_stat%" = "%stat%") BEGIN // if modify prof already exists
+                      WRITE_BYTE ("%fx_off%" + 0x12 + (0x30 * ("%abil_fx_idx%" + "%index2%"))) 0 // set prob to 0
+                    END
+                  END
+                  INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30       // insert bytes for new effect
+                    WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%"  // clones portrait icon effect
+                    WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%new_op%" // modify script state/prof
+                    WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) "%value%"  // value
+                    WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) "%stat%"   // script state/prof
+                  SET "delta" = ("%delta%" + 1)
+                  WRITE_SHORT ("%ab_off%" + 0x1e + ("%extended_size%" * "%index%")) ("%abil_fx_num%" + 1)
+                END // closes for... all extended headers
+              END // closes PATCH_IF [A]ll headers or specific header to patch
+  
+              PATCH_IF !( ~%patch_what%~ STRING_COMPARE_CASE ~G~ ) BEGIN // if I want to patch [G]lobal/equiped effects
+                READ_SHORT 0x6e "fx_idx"
+                READ_SHORT 0x70 "fx_num"
+                WRITE_SHORT 0x70 "%fx_num%" + 1
+                FOR (index = 0; index < abil_num; index += 1) BEGIN // index update
+                  READ_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%index%")) "abil_fx_idx"
+                  WRITE_SHORT ("%ab_off%" + 0x20 + ("%extended_size%" * "%index%")) "%abil_fx_idx%" + 1
+                END
+                FOR (index2 = 0; index2 < fx_num; index2 = index2 + 1) BEGIN
+                  READ_SHORT   ("%fx_off%" +        (0x30 * ("%fx_idx%" + "%index2%"))) "opcode"
+                  PATCH_IF ("%opcode%" = "%clone_op%") BEGIN // opcode to clone
+                    READ_ASCII ("%fx_off%" +        (0x30 * ("%fx_idx%" + "%index2%"))) "clone" (0x30)
+                  END ELSE
+                    PATCH_IF ("%opcode%" = "%new_op%") && ("%old_stat%" = "%stat%") BEGIN // if modify prof already exists
+                    WRITE_BYTE ("%fx_off%" + 0x12 + (0x30 * ("%fx_idx%" + "%index2%"))) 0 // set prob to 0
+                  END
+                END
+                INSERT_BYTES            ("%fx_off%" +        (0x30 * "%fx_idx%")) 0x30       // insert bytes for new effect
+                  WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%fx_idx%")) "%clone%"  // clones portrait icon effect
+                  WRITE_SHORT           ("%fx_off%" +        (0x30 * "%fx_idx%")) "%new_op%" // modify script state/prof
+                  WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%fx_idx%")) "%value%"  // value
+                  WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%fx_idx%")) "%stat%"   // script state/prof
+                SET "delta" = ("%delta%" + 1)
+              END // closes PATCH_IF [G]lobal/equiped effects
+	  	END // closes corruption-blocking loop
+ 
+            END // closes PATCH_IF %FILE_SIZE% is correct
+            BUT_ONLY_IF_IT_CHANGES
+         END // closes inner_action
+      END // closes PATCH_IF file_exists
+    END // closes FOR loops
+
+
+
+
+/*
+ * This section is commented out because I think it's easier to just list 
+ * the ITM and SPl files. Uncomment if you find EFF files that may be worth detecting.
+
+  // duplicate EFF stuff - directly from the RTWP beta (yes, you read correctly!)
+  // Sorry for old fashioned constructs, different writing style et al.
+  COPY ~SCSII/DS/effects.2da~ ~override/tb#det_effects.txt~
+    COUNT_2DA_ROWS 5 rows
+    FOR (cycle = 1; cycle < rows; cycle = cycle + 1) BEGIN
+      READ_2DA_ENTRY cycle 0 5 old_file
+      READ_2DA_ENTRY cycle 1 5 new_file
+      READ_2DA_ENTRY cycle 2 5 new_op
+      READ_2DA_ENTRY cycle 3 5 value
+      READ_2DA_ENTRY cycle 4 5 stat
+
+      INNER_ACTION BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME EVALUATE_BUFFER ~%old_file%.eff~ THEN BEGIN
+          COPY_EXISTING ~%old_file%.eff~ ~override/%new_file%.eff~
+            WRITE_LONG 0x10 new_op
+            WRITE_LONG 0x1c value
+            WRITE_LONG 0x20 stat
+        END // if file exists
+      END // inner_action
+    END  // FOR
+
+    // find all calls of such effects in ITM or SPL files and add secondary.
+  COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+                            ~.*\.spl~ ~override~
+    PATCH_IF (~%SOURCE_SIZE%~ > 0x71) BEGIN // protects from invalid files
+      // initializing phase
+      SPRINT ~realname~ ~%SOURCE_RES%~
+      READ_LONG 0x64 ext_off            // har har  ;D
+      READ_SHORT 0x68 ext_count
+      READ_LONG 0x6a eff_off
+      READ_SHORT 0x6e eq_eff_indx
+      READ_SHORT 0x70 eq_eff_count
+      READ_ASCII 0 typeoffile (3)
+      SET needsneweff = 0
+  
+      PATCH_IF (~%typeoffile%~ STRING_COMPARE ~SPL~) BEGIN
+        extended_header_size = 0x38 // the file is an item
+      END ELSE BEGIN
+        extended_header_size = 0x28 // the file is a spell
+      END
+  
+      // First, we'll deal with the equipped effects (which need no shifting ahead of other stuff)
+      FOR (eq_eff_cyc = 0 ; eq_eff_cyc < eq_eff_count ; eq_eff_cyc = eq_eff_cyc + 1) BEGIN
+        READ_SHORT (eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) opcode ELSE 0
+        needsneweff = 0
+  
+        PATCH_IF ((opcode = 0x110) OR (opcode = 0xb1) OR (opcode = 0x11b)
+               OR (opcode = 0xf8) OR (opcode = 0xf9)) BEGIN // calling an external EFF
+          READ_ASCII (0x14 + eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) resref
+          needsneweff = 0
+          PATCH_IF FILE_CONTAINS_EVALUATED (~detectable_spells/effects.2da~ ~^%resref% ~) BEGIN
+            // search the updated effect; if exists in the listing, it needs copying
+            INNER_PATCH_FILE ~detectable_spells/effects.2da~ BEGIN
+              COUNT_2DA_ROWS 5 rows
+              FOR (cycle = 1; (cycle < rows) && (~%old_file%~ STRING_COMPARE_CASE ~%resref%~); cycle = cycle + 1) BEGIN
+                READ_2DA_ENTRY cycle 0 5 old_file
+                READ_2DA_ENTRY cycle 1 5 new_file
+              END  // FOR
+              needsneweff = 1
+            END // INNER_PATCH_FILE
+          END // PATCH_IF... is the list of 'to be copied'
+        END // PATCH_IF uses EFFS
+
+        PATCH_IF needsneweff BEGIN
+          // Create a new item effect, a direct copy of the old one
+          INSERT_BYTES (eff_off + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) 0x30
+        // Weidu cannot INSERT at EOF: correct this
+          PATCH_IF 1 BEGIN // the usual IF_EVAL tumor
+          	READ_BYTE (eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) + 0x2f temp
+    	    END
+          WRITE_BYTE (eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) - 1 temp
+          FOR (byte_cyc = 0; byte_cyc < 0x30; byte_cyc = byte_cyc + 1) BEGIN
+            READ_BYTE (eff_off + byte_cyc + (ext_eff_indx + eq_eff_cyc) * 0x30) mybyte
+            WRITE_BYTE (eff_off + byte_cyc + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) mybyte
+          END
+
+          PATCH_IF (needsneweff = 1) BEGIN
+            WRITE_EVALUATED_ASCII (eff_off + 0x14 + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) ~%new_file%~ #8
+          END
+
+          eq_eff_count = eq_eff_count + 1 // obviously
+
+          // what follows will update /all/ the extension header effect index if they come after this one.
+
+          FOR (ext_cyc_1 = 0; ext_cyc_1 < ext_count; ext_cyc_1 = ext_cyc_1 + 1) BEGIN
+            READ_SHORT (ext_off + (ext_cyc_1 * extended_header_size) + 0x20) ext1_eff_idx
+            PATCH_IF (ext1_eff_idx > eq_eff_indx) BEGIN
+              WRITE_SHORT (ext_off + (ext_cyc_1 * extended_header_size) + 0x20) ext1_eff_idx + 1
+            END
+          END //FOR
+          WRITE_SHORT 0x70 eq_eff_count // an extra effect in the itm
+          eq_eff_cyc += 1
+        END // PATCH_IF needs to be updated
+      END // FOR... (equipped effects cycle)
+
+      // then the same deal for header effect. The only tricky-er thing is updating all those indexes.
+      FOR (ext_cyc = 0; ext_cyc < ext_count; ext_cyc = ext_cyc + 1) BEGIN
+        READ_SHORT (ext_off + (ext_cyc * extended_header_size) + 0x1e) ext_eff_count ELSE 0
+        READ_SHORT (ext_off + (ext_cyc * extended_header_size) + 0x20) ext_eff_indx ELSE 0
+
+        FOR (eq_eff_cyc = 0 ; eq_eff_cyc < ext_eff_count ; eq_eff_cyc = eq_eff_cyc + 1) BEGIN
+          READ_SHORT (eff_off + (ext_eff_indx + eq_eff_cyc) * 0x30) opcode ELSE 0
+          needsneweff = 0
+
+          PATCH_IF ((opcode = 0x110) OR (opcode = 0xb1) OR (opcode = 0x11b)
+                 OR (opcode = 0xf8) OR (opcode = 0xf9)) BEGIN // calling an external EFF
+            READ_ASCII (0x14 + eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) resref
+            needsneweff = 0
+            PATCH_IF FILE_CONTAINS_EVALUATED (~detectable_spells/effects.2da~ ~^%resref% ~) BEGIN
+              // search the updated effect; if exists in the listing, it needs copying
+              INNER_PATCH_FILE ~detectable_spells/effects.2da~ BEGIN
+                COUNT_2DA_ROWS 5 rows
+                FOR (cycle = 1; (cycle < rows) && (~%old_file%~ STRING_COMPARE_CASE ~%resref%~); cycle = cycle + 1) BEGIN
+                  READ_2DA_ENTRY cycle 0 5 old_file
+                  READ_2DA_ENTRY cycle 1 5 new_file
+                END  // FOR
+                needsneweff = 1
+              END // INNER_PATCH_FILE
+            END // PATCH_IF... is the list of 'to be copied'
+          END // PATCH_IF uses EFFS
+
+          PATCH_IF needsneweff BEGIN
+            // Create a new item effect, a direct copy of the old one
+            INSERT_BYTES (eff_off + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) 0x30
+          // Weidu cannot INSERT at EOF: correct this
+            PATCH_IF 1 BEGIN // the usual IF_EVAL tumor
+            	READ_BYTE (eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) + 0x2f temp
+      	    END
+            WRITE_BYTE (eff_off + (eq_eff_indx + eq_eff_cyc) * 0x30) - 1 temp
+            FOR (byte_cyc = 0; byte_cyc < 0x30; byte_cyc = byte_cyc + 1) BEGIN
+              READ_BYTE (eff_off + byte_cyc + (ext_eff_indx + eq_eff_cyc) * 0x30) mybyte
+              WRITE_BYTE (eff_off + byte_cyc + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) mybyte
+            END
+
+            PATCH_IF (needsneweff = 1) BEGIN
+              WRITE_EVALUATED_ASCII (eff_off + 0x14 + (ext_eff_indx + eq_eff_cyc + 1) * 0x30) ~%new_file%~ #8
+            END
+            ext_eff_count = ext_eff_count + 1 // obviously
+            FOR (ext_cyc_1 = 0; ext_cyc_1 < ext_count; ext_cyc_1 = ext_cyc_1 + 1) BEGIN
+              READ_SHORT (ext_off + (ext_cyc_1 * extended_header_size) + 0x20) ext1_eff_idx
+              PATCH_IF ((ext1_eff_idx > ext_eff_indx) AND (ext_cyc_1 != ext_cyc)) BEGIN
+                WRITE_SHORT (ext_off + (ext_cyc_1 * extended_header_size) + 0x20) ext1_eff_idx + 1
+              END
+            END //FOR
+
+              // Also update equipped effect index
+            PATCH_IF 1 BEGIN // IF_EVAL tumor
+              READ_SHORT 0x6e eq_eff_indx
+            END
+            PATCH_IF ((eq_eff_indx > ext_eff_indx)) BEGIN
+              WRITE_SHORT 0x6e eq_eff_indx + 1
+            END
+
+            WRITE_SHORT (ext_off + (ext_cyc * extended_header_size) + 0x1e) ext_eff_count // an extra effect in the itm
+            eq_eff_cyc += 1
+
+          END // PATCH_IF needs to be updated
+        END // FOR... (header effects cycle)
+
+      END // FOR... (extended headers cycle)
+    END // PATCH_IF FILE_SIZE is correct
+  BUT_ONLY_IF_IT_CHANGES
+ 
+ * End of commenting out the EFF files section
+ */
+
+END // ends macro
+

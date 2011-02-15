@@ -1,0 +1,723 @@
+IF
+	OR(3)
+	  GlobalLT("RR#CSAVE","GLOBAL",2)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!Detect([GOODCUTOFF])
+	!ModalState(STEALTH)
+	!Global("dvgldust","LOCALS",1)
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("RR#HIDE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#HIDE","LOCALS",6)
+		DisplayStringHead(Myself,@711) //  attempts to hide in shadows
+		Hide()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPGT(Myself,93)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPLT(Myself,80)
+	!Global("RR#Heal","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",1)
+END
+
+IF
+	HPLT(Myself,80)
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN10",Myself) // Potion of Invisibility
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPLT(Myself,94)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN56",Myself) // Rogue's Potion of Frost Giant Strength
+	CheckStatLT(Myself,21,STR)
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  RandomNum(5,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN56",Myself) // Rogue's Potion of Frost Giant Strength
+		DisplayStringHead(Myself,46150) // quaffs a potion
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	!GlobalTimerNotExpired("RR#VDET","LOCALS")
+	!GlobalTimerNotExpired("RR#VDI","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#VDET","LOCALS",30)
+		SetGlobalTimer("RR#VDI","LOCALS",6)
+		ReallyForceSpellRES("RR#VDET",Myself) // No such index
+		DisplayStringHead(Myself,31858) // Detects Illusion
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!GlobalTimerNotExpired("RR#VDI","LOCALS")
+	DifficultyGT(EASY)
+	OR(7)
+	  StateCheck(Player1,STATE_ILLUSIONS)
+	  StateCheck(Player2,STATE_ILLUSIONS)
+	  StateCheck(Player3,STATE_ILLUSIONS)
+	  StateCheck(Player4,STATE_ILLUSIONS)
+	  StateCheck(Player5,STATE_ILLUSIONS)
+	  StateCheck(Player6,STATE_ILLUSIONS)
+	  Detect([GOODCUTOFF.0.0.0.0.ILLUSIONARY])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#VDI","LOCALS",6)
+		ReallyForceSpellRES("RR#VDET",Myself) // No such index
+		DisplayStringHead(Myself,31858) // Detects Illusion
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!GlobalTimerNotExpired("RR#VDI","LOCALS")
+	!Difficulty(EASIEST)
+	OR(7)
+		StateCheck(Player1,STATE_INVISIBLE)
+		StateCheck(Player2,STATE_INVISIBLE)
+		StateCheck(Player3,STATE_INVISIBLE)
+		StateCheck(Player4,STATE_INVISIBLE)
+		StateCheck(Player5,STATE_INVISIBLE)
+		StateCheck(Player6,STATE_INVISIBLE)
+		Detect([GOODCUTOFF.0.0.0.0.ILLUSIONARY])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#VDI","LOCALS",6)
+		ReallyForceSpellRES("RR#VDET",Myself) // No such index
+		DisplayStringHead(Myself,31858) // Detects Illusion
+		Continue()
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #40
+		MoveToPoint([1000.245])
+	RESPONSE #30
+		MoveToPoint([714.348])
+	RESPONSE #30
+		MoveToPoint([1001.534])
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	DifficultyGT(EASY)
+	StateCheck(Myself,STATE_INVISIBLE)
+	!StateCheck(Myself,STATE_SILENCED)
+        HaveSpellRES("RR#TAS01") // Death Attack
+	Detect([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SpellRES("RR#TAS01",Myself) // Death Attack
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!Difficulty(EASIEST)
+	HasItemEquipedReal("SW1H07",Myself)  // Short Sword (non-enchanted)
+	StateCheck(Myself,STATE_INVISIBLE)
+	!StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(ASSASSIN_POISON)
+	!CheckStat(Myself,4,SCRIPTINGSTATE4) // Poison Weapon
+	!Detect([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,ASSASSIN_POISON)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!CheckStat(SixthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FifthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FourthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+	!Kit([GOODCUTOFF],BARBARIAN)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.BARD_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SixthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FifthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FourthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+	!Kit([GOODCUTOFF],BARBARIAN)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is under the effects of PfMW
+	!HasItemEquipedReal("SW1H07",Myself)  // Short Sword (non-enchanted)
+THEN
+	RESPONSE #100
+		SelectWeaponAbility(SLOT_WEAPON1,0)  // equip the non-enchanted shortsword for dealing with PfMW
+END
+
+IF
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is not under the effects of PfMW
+	!HasItemEquipedReal("RR#SDEAT",Myself)  // Silent Death
+THEN
+	RESPONSE #100
+		SelectWeaponAbility(SLOT_WEAPON,0)  // equip the Silent Death shortsword
+END
+
+IF
+	DifficultyGT(EASY)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!Global("RR#Heal","LOCALS",1)
+	StateCheck(Myself,STATE_INVISIBLE)
+	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Difficulty(EASY)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#VEND_BS","LOCALS")
+	StateCheck(Myself,STATE_INVISIBLE)
+	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#VEND_BS","LOCALS",18)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Difficulty(EASIEST)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#VEND_BS","LOCALS")
+	StateCheck(Myself,STATE_INVISIBLE)
+	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#VEND_BS","LOCALS",24)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	StateCheck(Myself,STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	Detect([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!HasItem("POTN10",Myself) // Potion of Invisibility
+	Detect([GOODCUTOFF])
+THEN
+	RESPONSE #10
+		RandomWalkContinuous()
+END

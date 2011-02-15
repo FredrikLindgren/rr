@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("RR#VEND",Enemy())
+		ActionOverride("RR#KERT",Enemy())
+		ActionOverride("RR#BODK",Enemy())
+		ActionOverride("RR#GROK",Enemy())
+		ActionOverride("RR#ZAER",Enemy())
+		ActionOverride("RR#SELI",Enemy())
+		DisplayStringHead("RR#VEND",47318) // uses a ring of invisibility
+		ActionOverride("RR#VEND",SetSequence(SEQ_CAST)) // Displays the proper casting animation (for cosmetic purposes) 
+		SmallWait(7)
+		ActionOverride("RR#VEND",ReallyForceSpellRES("RR#WI721",Myself)) // Mass Invisibility (Ring of Concealment version)
+		SmallWait(25)
+		SetGlobal("RR#CSAVE","GLOBAL",2)
+		SaveGame(2)
+		EndCutSceneMode()
+		UnhideGUI()
+		SetInterrupt(TRUE)
+END

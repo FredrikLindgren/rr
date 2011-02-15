@@ -1,0 +1,260 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		CreateVisualEffectObject("SPHOLY",Myself)
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		LeaveParty()
+		ChangeEnemyAlly(Myself,ALLY)
+                DialogueInterrupt(FALSE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	  NumCreatureGT("RR#WSPI",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DisplayString(Myself,14065) // Unsummoned
+		DisplayStringNoName(Player1,74090) // You cannot summon another creature of that type at this time.
+		CreateVisualEffectObject("SPGFLSH1",Myself)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	  !InActiveArea(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#WSIC","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#WSIC","LOCALS",1)
+		ReallyForceSpellRES("RR#WSIC",Myself) // Aura of Courage
+		Continue()
+END
+
+IF
+	Global("RR#WSSK","LOCALS",0)
+	InParty(LastSummonerOf(Myself))
+        Kit(LastSummonerOf(Myself),SKALD)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#WSSK","LOCALS",1)
+		ApplySpellRES("RR#WSSK",Myself) // power up slightly when summoned by a Skald
+		Continue()
+END
+
+IF
+	HaveSpell(BERSERKER_RAGE)
+	See([EVILCUTOFF])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself,BERSERKER_RAGE)
+		RemoveSpell(BERSERKER_RAGE)
+		DisplayString(Myself,33783) // RRRAAAUUGH!!
+		SetInterrupt(TRUE)
+END
+
+IF
+	!InParty([EVILCUTOFF])
+	See([EVILCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(SixthNearest([EVILCUTOFF]))
+	!CheckStatGT(SixthNearest([EVILCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT(SixthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(SixthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SixthNearest([EVILCUTOFF]),STATE_PANIC)
+	See(SixthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(FifthNearest([EVILCUTOFF]))
+	!CheckStatGT(FifthNearest([EVILCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT(FifthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(FifthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FifthNearest([EVILCUTOFF]),STATE_PANIC)
+	See(FifthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(FourthNearest([EVILCUTOFF]))
+	!CheckStatGT(FourthNearest([EVILCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT(FourthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(FourthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FourthNearest([EVILCUTOFF]),STATE_PANIC)
+	See(FourthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(ThirdNearest([EVILCUTOFF]))
+	!CheckStatGT(ThirdNearest([EVILCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT(ThirdNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(ThirdNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([EVILCUTOFF]),STATE_PANIC)
+	See(ThirdNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(SecondNearest([EVILCUTOFF]))
+	!CheckStatGT(SecondNearest([EVILCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT(SecondNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(SecondNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([EVILCUTOFF]),STATE_PANIC)
+	See(SecondNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty([EVILCUTOFF])
+	!CheckStatGT([EVILCUTOFF],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	CheckStatLT([EVILCUTOFF],1,STONESKINS)
+	CheckStatLT([EVILCUTOFF],100,RESISTSLASHING)
+	!StateCheck([EVILCUTOFF],STATE_MIRRORIMAGE)
+	!StateCheck([EVILCUTOFF],STATE_PANIC)
+	See([EVILCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(SixthNearest([EVILCUTOFF.0.TROLL]))  // Check for downed trolls in order to finish them off quickly
+	CheckStat(SixthNearest([EVILCUTOFF.0.TROLL]),100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT(SixthNearest([EVILCUTOFF.0.TROLL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See(SixthNearest([EVILCUTOFF.0.TROLL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(FifthNearest([EVILCUTOFF.0.TROLL]))  // Check for downed trolls in order to finish them off quickly
+	CheckStat(FifthNearest([EVILCUTOFF.0.TROLL]),100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT(FifthNearest([EVILCUTOFF.0.TROLL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See(FifthNearest([EVILCUTOFF.0.TROLL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(FourthNearest([EVILCUTOFF.0.TROLL]))  // Check for downed trolls in order to finish them off quickly
+	CheckStat(FourthNearest([EVILCUTOFF.0.TROLL]),100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT(FourthNearest([EVILCUTOFF.0.TROLL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See(FourthNearest([EVILCUTOFF.0.TROLL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(ThirdNearest([EVILCUTOFF.0.TROLL]))  // Check for downed trolls in order to finish them off quickly
+	CheckStat(ThirdNearest([EVILCUTOFF.0.TROLL]),100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT(ThirdNearest([EVILCUTOFF.0.TROLL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See(ThirdNearest([EVILCUTOFF.0.TROLL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(SecondNearest([EVILCUTOFF.0.TROLL]))  // Check for downed trolls in order to finish them off quickly
+	CheckStat(SecondNearest([EVILCUTOFF.0.TROLL]),100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT(SecondNearest([EVILCUTOFF.0.TROLL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See(SecondNearest([EVILCUTOFF.0.TROLL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty([EVILCUTOFF.0.TROLL])  // Check for downed trolls in order to finish them off quickly
+	CheckStat([EVILCUTOFF.0.TROLL],100,RESISTSLASHING)  // a troll has been knocked down
+	!CheckStatGT([EVILCUTOFF.0.TROLL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity or PfMW
+	See([EVILCUTOFF.0.TROLL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!InParty(LastSeenBy(Myself))
+	Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	HPGT(LastSeenBy(Myself),0)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	!See([EVILCUTOFF])
+	ActionListEmpty()
+	InParty(LastSummonerOf(Myself))
+	InMyArea(LastSummonerOf(Myself))
+	!Range(LastSummonerOf(Myself),15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@405) // FOR FAME AND GREATER GLORY, I WILL FIGHT BY YOUR SIDE!
+		Formation(LastSummonerOf(Myself),[4.-4])
+END
+
+IF
+	!See([EVILCUTOFF])
+	ActionListEmpty()
+	!InParty(LastSummonerOf(Myself))
+	InMyArea(Player1)
+	!Range(Player1,15)
+THEN
+	RESPONSE #100
+		Formation(Player1,[4.-4])
+END

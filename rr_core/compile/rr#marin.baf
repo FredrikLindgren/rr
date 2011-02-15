@@ -1,0 +1,101 @@
+IF
+	OR(7)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_FLESH_TO_STONE)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_IMPRISONMENT)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_MAZE)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_FEEBLEMIND)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		Allegiance(Myself,EVILCUTOFF)
+		Die()
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		Shout(99)
+		Continue()
+END
+
+IF
+	Global("AttackedThieves","GLOBAL",1)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		SetInterrupt(TRUE)
+		EscapeArea()
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	Global("RR#PPFL","LOCALS",0)
+	!Allegiance(LastTrigger,FAMILIAR)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1090) // Hands off. Now.
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	Global("RR#PPFL","LOCALS",1)
+	!Allegiance(LastTrigger,FAMILIAR)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1091) // Try that again and you'll pull back a stump.
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	Global("RR#PPFL","LOCALS",2)
+	!Allegiance(LastTrigger,FAMILIAR)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1092) // I warned you!
+		Shout(99)
+		Continue()
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([FAMILIAR])
+	Allegiance(Myself,NEUTRAL)
+	General(Myself,HUMANOID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@9703) // Get away from me you filthy creature!
+		SetSequence(SEQ_ATTACK)
+		ApplySpellRES("RR#FEAR",LastTrigger)
+		SetInterrupt(TRUE)
+END
+
+IF
+	StealFailed([ANYONE])
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		StartDialogue("stolen",LastTrigger)
+END

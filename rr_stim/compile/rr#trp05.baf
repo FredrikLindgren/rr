@@ -1,0 +1,17 @@
+IF
+	OR(2)
+		Entered([GOODCUTOFF])
+		Opened([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		DisplayString([GOODCUTOFF],14381) // Trap Sprung
+		ForceSpell([GOODCUTOFF],TRAP_DARTS)
+END
+
+IF
+		Disarmed([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayStringHead(LastTrigger,@710) // Trap Recovered
+		GiveItemCreate("DART04",LastTrigger,10,0,0)
+END

@@ -1,0 +1,6 @@
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

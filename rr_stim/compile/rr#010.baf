@@ -1,0 +1,88 @@
+IF
+    	Global("RR#STI_ALARM","GLOBAL",0) // Guildhall alarm stage
+    	Global("RR#STI_SPATH","GLOBAL",0) // Stealth path indicator
+	StateCheck(Player1,STATE_INVISIBLE)
+	OR(3)
+	  StateCheck(Player2,STATE_INVISIBLE)
+	  StateCheck(Player2,STATE_REALLY_DEAD)
+	  !Exists(Player2)
+	OR(3)
+	  StateCheck(Player3,STATE_INVISIBLE)
+	  StateCheck(Player3,STATE_REALLY_DEAD)
+	  !Exists(Player3)
+	OR(3)
+	  StateCheck(Player4,STATE_INVISIBLE)
+	  StateCheck(Player4,STATE_REALLY_DEAD)
+	  !Exists(Player4)
+	OR(3)
+	  StateCheck(Player5,STATE_INVISIBLE)
+	  StateCheck(Player5,STATE_REALLY_DEAD)
+	  !Exists(Player5)
+	OR(3)
+	  StateCheck(Player6,STATE_INVISIBLE)
+	  StateCheck(Player6,STATE_REALLY_DEAD)
+	  !Exists(Player6)
+THEN
+	RESPONSE #100
+        	SetGlobal("RR#STI_SPATH","GLOBAL",1) // Stealth path indicator
+END
+
+IF
+    	Global("RR#STI_ALARM","GLOBAL",0) // Guildhall alarm stage
+    	Global("RR#STI_SPATH","GLOBAL",1) // Stealth path indicator
+        Global("RR#ADoor","RR#010",0) // The door to Aran's chamber has not yet been opened
+	OR(2)
+	  ActuallyInCombat()
+          GlobalGT("RR#TalkedDedral","RR#010",0) // Dedral has seen a partymember
+THEN
+	RESPONSE #100
+        	SetGlobal("RR#STI_ALARM","GLOBAL",1)
+        	SetGlobal("RR#STI_SPATH","GLOBAL",2) // Stealth path indicator
+		DisplayStringNoNameHead(Player1,@714) // The Shadow Thieves have become aware of your presence. An alarm has been sounded and all exits from the guildhall have been sealed.
+		PlaySound("ALARM1")
+		TriggerActivation("Tran0327",FALSE)
+		TriggerActivation("Tran300b",FALSE)
+		TriggerActivation("Tran300a",FALSE)
+		PlaySound("AMB_D04B")
+END
+
+IF
+    	Global("RR#STI_ALARM","GLOBAL",0) // Guildhall alarm stage
+    	!Global("RR#STI_SPATH","GLOBAL",1) // Stealth path indicator
+        Global("RR#ADoor","RR#010",0) // The door to Aran's chamber has not yet been opened
+THEN
+	RESPONSE #100
+        	SetGlobal("RR#STI_ALARM","GLOBAL",1)
+		DisplayStringNoNameHead(Player1,@704) // As you descend the stairs you hear an alarm being sounded and the door behind you slams shut. It appears that all exits from the guildhall have been sealed.
+		PlaySound("ALARM1")
+		TriggerActivation("Tran0327",FALSE)
+		TriggerActivation("Tran300b",FALSE)
+		TriggerActivation("Tran300a",FALSE)
+		PlaySound("AMB_D04B")
+END
+
+IF
+    	Dead("Aran")
+    	GlobalLT("RR#STI_ALARM","GLOBAL",3)
+	CombatCounter(0)
+	Delay(5)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		TriggerActivation("Tran0327",TRUE)
+		TriggerActivation("Tran300b",TRUE)
+		TriggerActivation("Tran300a",TRUE)
+		TriggerActivation("Falseroom Ambush",FALSE)
+		Unlock("Door08")
+		OpenDoor("Door08")
+		Unlock("Door02")
+		OpenDoor("Door02")
+		Unlock("DOOR06")
+		OpenDoor("DOOR06")
+		DisplayStringNoNameHead(Player1,@705) // With the death of Aran Linvail the last of the remaining thieves flee the guildhall. The way out is now clear.
+		AddJournalEntry(5819,QUEST)
+    		SetGlobal("RR#STI_ALARM","GLOBAL",3)
+		RemoveAreaFlag(1) // Allows saving the game again after the cutscenes are over
+		PlaySong(39)
+		SetInterrupt(TRUE)
+END

@@ -1,0 +1,25 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetGlobal("RR#CSLAY","GLOBAL",1)
+        MoveViewObject(Player1,INSTANT)
+	SmallWait(12)
+        ReallyForceSpell(Player1,CLERIC_HOLY_POWER)
+	CreateVisualEffectObject("POLYBACK",Player1)
+	CreateVisualEffectObject("SPROTECT",Player1)
+	SmallWait(12)
+        ForceSpell(Player1,SLAYER_CHANGE_CUT_SCENE)
+        ApplySpell(Player1,WIZARD_INFRAVISION)
+        ReputationInc(-2)
+        Wait(1)
+        DisplayStringHead(Player1,@550) // *SNARL* BOW DOWN BEFORE THE MIGHT OF THE SLAYER !
+        PlaySound("SLAY01")
+        Wait(1)
+        Swing()
+	SmallWait(10)
+        DisplayStringHead("RR#VEND",@551) // What... <PRO_HESHE> controls it!?
+        Wait(3)
+        ActionOverride("RR#VEND",StartDialogueNoSet(Player1))
+END

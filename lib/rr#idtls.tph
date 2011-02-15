@@ -1,0 +1,79 @@
+// Identify Top Level Script function
+// This Function browses throgh all scripts of a creture and identifies the one with the highest priority
+// It also identifies creatures who have no scripts assigned to any of their script slots
+// Sample use:
+// LAUNCH_PATCH_FUNCTION ~RR#IDTLS~ RET rr#topnw = rr#topsc rr#aemnw = rr#allem END
+// PATCH_PRINT ~The top script is %rr#topnw% and the all empty variable is %rr#aemnw%~
+
+
+DEFINE_PATCH_FUNCTION ~RR#IDTLS~  
+
+INT_VAR                                                                            // initialize starting variables
+"rr#ovrem"  = "0"                                                                  // variable which marks the override script as empty
+"rr#clsem"  = "0"                                                                  // variable which marks the class script as empty
+"rr#racem"  = "0"                                                                  // variable which marks the race script as empty
+"rr#genem"  = "0"                                                                  // variable which marks the general script as empty
+"rr#defem"  = "0"                                                                  // variable which marks the default script as empty
+"rr#allem"  = "0"                                                                  // variable which marks all script slots as empty
+
+STR_VAR                                                                            // initialize strings
+"rr#topsc"   = "rr#none"                                                           // variable which identifies the top level script
+
+RET                                                                                // mark variables which will be returned
+
+rr#topsc rr#allem
+
+BEGIN                                                                              // Start FUNCTION
+
+READ_ASCII  0x248 ~rr#aiovr~                                                       // override script
+READ_ASCII  0x250 ~rr#aicls~                                                       // class script
+READ_ASCII  0x258 ~rr#airac~                                                       // race script
+READ_ASCII  0x260 ~rr#aigen~                                                       // general script
+READ_ASCII  0x268 ~rr#aidef~                                                       // default script
+
+PATCH_FOR_EACH ~rr#ainul~ IN ~None~ ~~ BEGIN
+  PATCH_IF ("%rr#aiovr%" STRING_EQUAL_CASE "%rr#ainul%") BEGIN             
+    SET "rr#ovrem" = "1"                                                           // mark override script slot as empty
+  END
+  PATCH_IF ("%rr#aicls%" STRING_EQUAL_CASE "%rr#ainul%") BEGIN             
+    SET "rr#clsem" = "1"                                                           // mark class script slot as empty
+  END
+  PATCH_IF ("%rr#airac%" STRING_EQUAL_CASE "%rr#ainul%") BEGIN             
+    SET "rr#racem" = "1"                                                           // mark race script slot as empty
+  END
+  PATCH_IF ("%rr#aigen%" STRING_EQUAL_CASE "%rr#ainul%") BEGIN             
+    SET "rr#genem" = "1"                                                           // mark general script slot as empty
+  END
+  PATCH_IF ("%rr#aidef%" STRING_EQUAL_CASE "%rr#ainul%") BEGIN             
+    SET "rr#defem" = "1"                                                           // mark default script slot as empty
+  END
+END
+
+
+// Identify the top level script and assign its string to the rr#topsc variable
+
+PATCH_IF ("rr#defem" = "0") BEGIN
+  SPRINT "rr#topsc" "%rr#aidef%"
+END
+PATCH_IF ("rr#genem" = "0") BEGIN
+  SPRINT "rr#topsc" "%rr#aigen%"
+END
+PATCH_IF ("rr#racem" = "0") BEGIN
+  SPRINT "rr#topsc" "%rr#airac%"
+END
+PATCH_IF ("rr#clsem" = "0") BEGIN
+  SPRINT "rr#topsc" "%rr#aicls%"
+END
+PATCH_IF ("rr#ovrem" = "0") BEGIN
+  SPRINT "rr#topsc" "%rr#aiovr%"
+END
+
+
+// If all creature scripts are empty, set the rr#allem variable
+
+PATCH_IF (("rr#ovrem" = "1") AND ("rr#clsem" = "1") AND ("rr#racem" = "1") AND ("rr#genem" = "1") AND ("rr#defem" = "1")) BEGIN     // if all script slots are empty
+  SET "rr#allem" = "1"                                                             // mark all creature script slots as empty
+END
+
+
+END                                                                                // End FUNCTION

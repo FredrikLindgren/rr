@@ -1,0 +1,110 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		ReallyForceSpellDead(Myself,VAMPIRE_GAS_FORM_CHANGE)
+		IncrementGlobal("RR#VAM01_DEAD","GLOBAL",1)
+END
+
+IF
+	GlobalLT("RR#ARLED_VAMP_SPAWN","GLOBAL",2)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#HELPED_ARLED","GLOBAL",0)
+	OR(2)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#HELPED_ARLED","GLOBAL",1)
+END
+
+IF
+	GlobalTimerNotExpired("RR#CAST","LOCALS")
+	Allegiance(Myself,ENEMY)
+	OR(6)
+	  See([PC])
+	  See([PC.0.DWARF])
+	  See([PC.0.HALFLING])
+	  See([PC.0.GNOME])
+	  See([PC.0.HALFORC])
+	  See([PC.0.HUMAN])
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#CAST","LOCALS",12)
+		ForceSpell(LastSeenBy(Myself),VAMPIRE_DOMINATION)
+END
+
+IF
+	!Dead("Arledrian")
+	See("Arledrian")
+THEN
+	RESPONSE #100
+		AttackReevaluate("Arledrian",30)
+END
+
+IF
+	!Dead("Arledrian")
+	!See("Arledrian")
+	OR(3)
+		See(ThirdNearestEnemyOf(Myself))
+		See(SecondNearestEnemyOf(Myself))
+		See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	!Dead("Arledrian")
+	!See("Arledrian")
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #20
+		MoveToObject("Arledrian")
+	RESPONSE #20
+		Face(0)
+	RESPONSE #20
+		Face(5)
+	RESPONSE #20
+		Face(10)
+	RESPONSE #20
+		Face(15)
+END
+
+IF
+	Dead("Arledrian")
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #20
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+	RESPONSE #20
+		Face(0)
+		SmallWait(8)
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+	RESPONSE #20
+		Face(5)
+		SmallWait(4)
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+	RESPONSE #20
+		Face(10)
+		SmallWait(15)
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+	RESPONSE #20
+		Face(15)
+		SmallWait(20)
+		ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+END
+
+IF
+	Dead("Arledrian")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END

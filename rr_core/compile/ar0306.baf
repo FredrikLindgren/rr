@@ -1,0 +1,83 @@
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player1) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player1) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player2) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player2) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player3) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player3) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player4) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player4) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player5) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player5) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#SSoBExploitFix","GLOBAL",0)
+	Global("RR#GIVE_SSOB","GLOBAL",0)
+	Global("WorkingForBodhi","GLOBAL",0)
+	!Dead("aran")
+	HasItem("SW1H10",Player6) // Short Sword of Backstabbing 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#SSoBExploitFix","GLOBAL",1)
+		TakeItemReplace("SW1H74","SW1H10",Player6) // Short Sword of Backstabbing 
+		SetInterrupt(TRUE)
+END

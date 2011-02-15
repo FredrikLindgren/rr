@@ -1,0 +1,12 @@
+IF
+	Global("RescuedPalern","GLOBAL",0)
+	!Dead("Palern") // Palern Flynn
+	!StateCheck("RR#SFL04",STATE_REALLY_DEAD)
+	StateCheck(Myself,STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		SetGlobal("RescuedPalern","GLOBAL",1)
+		DisplayStringHead(Myself,@754) // Thank you! I'll slip out quietly before the guards notice that my cell is empty.
+		AddexperienceParty(12500)
+		EscapeAreaDestroy(2)
+END

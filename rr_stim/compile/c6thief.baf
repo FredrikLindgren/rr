@@ -1,0 +1,369 @@
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	!Detect([EVILCUTOFF])
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("RR#HIDE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#HIDE","LOCALS",6)
+		DisplayStringHead(Myself,@711) //  attempts to hide in shadows
+		Hide()
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN11",Myself) // Potion of Invulnerability
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN11",Myself) // Potion of Invulnerability
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	HasItem("POTN24",Myself) // Potion of Defense
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN24",Myself) // Potion of Defense
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPPercentGT(Myself,84)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,75)
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN14",Myself) // Oil of Speed
+	!StateCheck(Myself,STATE_HASTED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN14",Myself) // Oil of Speed
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	HasItem("SCRL3H",Myself) // Protection from Evil
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+        CheckStat(Myself,0,PROTECTION_FROM_EVIL)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL3H",Myself) // Protection from Evil
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL3H") // Protection from Evil
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL85",Myself) // Blur
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_BLUR)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL85",Myself) // Blur
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL85") // Blur
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HaveSpell(KENSAI_KIA)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStat(Myself,2,SCRIPTINGSTATE4) // Kensai Kia
+	OR(2)
+		!HasItem("POTN10",Myself) // Potion of Invisibility
+		RandomNum(3,1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,KENSAI_KIA)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([EVILCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),55,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),55,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),55,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	See([EVILCUTOFF])
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	See([EVILCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SixthNearest([EVILCUTOFF]),1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT(SixthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(SixthNearest([EVILCUTOFF]),STATE_CHARMED)
+	!StateCheck(SixthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	See(SixthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FifthNearest([EVILCUTOFF]),1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT(FifthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(FifthNearest([EVILCUTOFF]),STATE_CHARMED)
+	!StateCheck(FifthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	See(FifthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FourthNearest([EVILCUTOFF]),1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT(FourthNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(FourthNearest([EVILCUTOFF]),STATE_CHARMED)
+	!StateCheck(FourthNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	See(FourthNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([EVILCUTOFF]),1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT(ThirdNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(ThirdNearest([EVILCUTOFF]),STATE_CHARMED)
+	!StateCheck(ThirdNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	See(ThirdNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([EVILCUTOFF]),1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT(SecondNearest([EVILCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([EVILCUTOFF]),100,RESISTSLASHING)
+	!StateCheck(SecondNearest([EVILCUTOFF]),STATE_CHARMED)
+	!StateCheck(SecondNearest([EVILCUTOFF]),STATE_MIRRORIMAGE)
+	See(SecondNearest([EVILCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([EVILCUTOFF],1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle, Absolute Immunity or PfMW
+	CheckStatLT([EVILCUTOFF],1,STONESKINS)
+	CheckStatLT([EVILCUTOFF],100,RESISTSLASHING)
+	!StateCheck([EVILCUTOFF],STATE_CHARMED)
+	!StateCheck([EVILCUTOFF],STATE_MIRRORIMAGE)
+	See([EVILCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!InParty(LastSeenBy(Myself))
+	Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	HPGT(LastSeenBy(Myself),0)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	Detect([EVILCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

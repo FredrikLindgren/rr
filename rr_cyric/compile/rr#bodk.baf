@@ -1,0 +1,1280 @@
+IF
+	OR(3)
+	  GlobalLT("RR#CSAVE","GLOBAL",2)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Difficulty(EASIEST)
+	HasItem("AROW05",Myself) // Arrow of Biting
+THEN
+	RESPONSE #100
+		DestroyItem("AROW07") // Arrows of Dispelling
+		DestroyItem("AROW05") // Arrow of Biting
+		Continue()
+END
+
+IF
+	!Detect([GOODCUTOFF])
+	!ModalState(STEALTH)
+	!Global("dvgldust","LOCALS",1)
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("RR#HIDE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#HIDE","LOCALS",6)
+		DisplayStringHead(Myself,@711) //  attempts to hide in shadows
+		Hide()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+	  HPPercentGT(Myself,79)
+	  !HasItem("POTN52",Myself) // Potion of Extra Healing
+	
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",0)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HPPercentLT(Myself,80)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	Global("RR#Heal","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	StateCheck(Myself,STATE_POISONED)
+	HasItem("POTN17",Myself) // Elixir of Health
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN17",Myself) // Elixir of Health
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+		Range([GOODCUTOFF],4)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("RR#RCOWL","LOCALS",3)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#RCOWL","LOCALS",1)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("RR#RCOWL",Myself) // Rogue's Cowl
+		SetSequence(SEQ_CAST) // Displays the proper casting animation (for cosmetic purposes)
+		DisplayStringHead(Myself,@713) //  uses an item
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN11",Myself) // Potion of Invulnerability
+	CheckStatGT(Myself,0,SAVEVSSPELL)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN11",Myself) // Potion of Invulnerability
+		DisplayStringHead(Myself,46150) // quaffs a potion
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	CheckStatGT("RR#SELI",0,CLERIC_INSECT_PLAGUE)
+	See("RR#SELI")
+	HPGT("RR#SELI",19)
+	!StateCheck("RR#SELI",STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		DisplayStringHead("RR#SELI",@355) //  Bodak! Help me!
+		FaceObject("RR#SELI")
+		DisplayStringHead(Myself,@356) //  Alright girlie, stand still.
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#SELI",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	CheckStatGT("RR#KERT",0,CLERIC_INSECT_PLAGUE)
+	See("RR#KERT")
+	HPGT("RR#KERT",19)
+	!StateCheck("RR#KERT",STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		DisplayStringHead("RR#KERT",@359) //  Halfling! Aid me! Now!
+		FaceObject("RR#KERT")
+		DisplayStringHead(Myself,@360) //  As you wish, priest.
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#KERT",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	StateCheck("RR#KERT",STATE_SILENCED)  // Note: Kerith can't speak while silenced, hence the separate block
+	See("RR#KERT")
+	HPGT("RR#KERT",19)
+	!StateCheck("RR#KERT",STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject("RR#KERT")
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#KERT",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	CheckStatGT("RR#ZAER",0,CLERIC_INSECT_PLAGUE)
+	See("RR#ZAER")
+	HPGT("RR#ZAER",19)
+	!StateCheck("RR#ZAER",STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		DisplayStringHead("RR#ZAER",@357) //  Bodak! I need your assistance!
+		FaceObject("RR#ZAER")
+		DisplayStringHead(Myself,@358) //  Fine, just stop squirming elfling.
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#ZAER",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+        StateCheck("RR#VEND",STATE_CHARMED)
+	!StateCheck("RR#VEND",STATE_REALLY_DEAD)
+	!StateCheck("RR#VEND",STATE_INVISIBLE)
+	HPGT("RR#VEND",19)
+	See("RR#VEND")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#VEND",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+        StateCheck("RR#SELI",STATE_CHARMED)
+	!StateCheck("RR#SELI",STATE_REALLY_DEAD)
+	!StateCheck("RR#SELI",STATE_INVISIBLE)
+	HPGT("RR#SELI",19)
+	See("RR#SELI")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#SELI",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+        StateCheck("RR#GROK",STATE_CHARMED)
+	!StateCheck("RR#GROK",STATE_REALLY_DEAD)
+	!StateCheck("RR#GROK",STATE_INVISIBLE)
+	HPGT("RR#GROK",19)
+	See("RR#GROK")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#GROK",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	StateCheck("RR#ZAER",STATE_CHARMED)
+	!StateCheck("RR#ZAER",STATE_REALLY_DEAD)
+	!StateCheck("RR#ZAER",STATE_INVISIBLE)
+	HPGT("RR#ZAER",19)
+	See("RR#ZAER")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#ZAER",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	OR(2)
+	  StateCheck("RR#KERT",STATE_CHARMED)
+	  StateCheck("RR#KERT",STATE_FEEBLEMINDED)
+	!StateCheck("RR#KERT",STATE_REALLY_DEAD)
+	!StateCheck("RR#KERT",STATE_INVISIBLE)
+	HPGT("RR#KERT",19)
+	See("RR#KERT")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#KERT",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	Dead("RR#KERT") // Kerith
+        StateCheck("RR#VEND",STATE_FEEBLEMINDED)
+	!StateCheck("RR#VEND",STATE_REALLY_DEAD)
+	!StateCheck("RR#VEND",STATE_INVISIBLE)
+	HPGT("RR#VEND",19)
+	See("RR#VEND")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#VEND",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	Dead("RR#KERT") // Kerith
+        StateCheck("RR#SELI",STATE_FEEBLEMINDED)
+	!StateCheck("RR#SELI",STATE_REALLY_DEAD)
+	!StateCheck("RR#SELI",STATE_INVISIBLE)
+	HPGT("RR#SELI",19)
+	See("RR#SELI")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#SELI",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	Dead("RR#KERT") // Kerith
+        StateCheck("RR#GROK",STATE_FEEBLEMINDED)
+	!StateCheck("RR#GROK",STATE_REALLY_DEAD)
+	!StateCheck("RR#GROK",STATE_INVISIBLE)
+	HPGT("RR#GROK",19)
+	See("RR#GROK")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#GROK",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	Dead("RR#KERT") // Kerith
+	StateCheck("RR#ZAER",STATE_FEEBLEMINDED)
+	!StateCheck("RR#ZAER",STATE_REALLY_DEAD)
+	!StateCheck("RR#ZAER",STATE_INVISIBLE)
+	HPGT("RR#ZAER",19)
+	See("RR#ZAER")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("RR#VSBL",Myself) // Become visible (in case the actor was invisible)
+		FaceObject(LastSeenBy(Myself))
+		EquipRanged()
+		SwingOnce()
+		ReallyForceSpell("RR#ZAER",TRAP_ARROW_DISPELLING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	OR(3)
+	  Range([GOODCUTOFF],4)
+	  AttackedBy([ANYONE],DEFAULT)
+	  TookDamage()
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+	!ModalState(DETECTTRAPS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+        Dead("RR#VEND") // Venduris
+	!ModalState(DETECTTRAPS)
+	OR(4)
+	  See([GOODCUTOFF.0.0.0.0.ILLUSIONARY.0]) // illusionary clones such as Mislead or Project Image
+	  StateCheck([GOODCUTOFF],STATE_ILLUSIONS)
+          StateCheck(SecondNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+          StateCheck(ThirdNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	ModalState(DETECTTRAPS)
+	!GlobalTimerNotExpired("RR#DI","LOCALS")
+THEN
+	RESPONSE #40
+		SetGlobalTimer("RR#DI","LOCALS",6)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #30
+		SetGlobalTimer("RR#DI","LOCALS",7)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #30
+		SetGlobalTimer("RR#DI","LOCALS",8)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player1)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player2)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player3)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player4)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player5)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player6)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player1)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player2)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player3)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player4)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player5)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player6)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	!CheckStatGT(LastSeenBy(Myself),3,SCRIPTINGSTATE4) // Not Whirlwind
+	CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player1)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player2)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player3)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player4)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player5)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player6)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatGT(LastSeenBy(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player1)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player2)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player3)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player4)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player5)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW07",Myself) // Arrows of Dispelling
+	DifficultyGT(EASY)
+	See(Player6)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStatGT(LastSeenBy(Myself),0,HELD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	OR(7)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	  CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	  CheckStatGT(LastSeenBy(Myself),0,WIZARD_FIRE_SHIELD)
+	  CheckStatGT(LastSeenBy(Myself),0,PROTECTION_FROM_EVIL)
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE2) // Death Ward
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE5) // Barkskin, Wizard Shield, Wizard Armor, Ghost Armor, Spirit Armor
+	  CheckStatGT(LastSeenBy(Myself),0,SCRIPTINGSTATE6) // Divine Power, Strength of One, Wizard Strength, Holy Power...
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See([PC.0.0.MAGE_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See(SecondNearest([PC.0.0.MAGE_ALL]))
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See(ThirdNearest([PC.0.0.MAGE_ALL]))
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See([PC.0.0.DRUID_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See([PC.0.0.BARD_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW05",Myself) // Arrow of Biting
+	See([PC.0.0.CLERIC_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	!CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW04",Myself) // Acid Arrows
+	See([PC.0.0.MAGE_ALL])
+	CheckStatLT(LastSeenBy(Myself),100,RESISTACID)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW04",Myself) // Acid Arrows
+	See([PC.0.0.BARD_ALL])
+	CheckStatLT(LastSeenBy(Myself),100,RESISTACID)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW04",Myself) // Acid Arrows
+	See([PC.0.0.DRUID_ALL])
+	CheckStatLT(LastSeenBy(Myself),100,RESISTACID)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("AROW04",Myself) // Acid Arrows
+	See([PC.0.0.CLERIC_ALL])
+	CheckStatLT(LastSeenBy(Myself),100,RESISTACID)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("DAGG16",Myself) // Poisoned Throwing Dagger
+	See([PC.0.0.MAGE_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is under the effects of PfMW
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_WEAPON1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("DAGG16",Myself) // Poisoned Throwing Dagger
+	See(SecondNearest([PC.0.0.MAGE_ALL]))
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is under the effects of PfMW
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_WEAPON1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("DAGG16",Myself) // Poisoned Throwing Dagger
+	See(ThirdNearest([PC.0.0.MAGE_ALL]))
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is under the effects of PfMW
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_WEAPON1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	HasItem("DAGG16",Myself) // Poisoned Throwing Dagger
+	See([PC.0.0.BARD_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_POISONED)
+	CheckStatLT(LastSeenBy(Myself),100,RESISTPOISON)
+	CheckStat(LastSeenBy(Myself),4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // target is under the effects of PfMW
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		SelectWeaponAbility(SLOT_WEAPON1,0)
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	OR(5)
+		See([GOODCUTOFF])
+		See([GOODCUTOFF.0.0.CLERIC_ALL])
+		See([GOODCUTOFF.0.0.DRUID_ALL])
+		See([GOODCUTOFF.0.0.BARD_ALL])
+		See([GOODCUTOFF.0.0.MAGE_ALL])
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!See([GOODCUTOFF])
+	InMyArea(Player1)
+	ActionListEmpty()
+	RandomNum(5,1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!See([GOODCUTOFF])
+	ActionListEmpty()
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

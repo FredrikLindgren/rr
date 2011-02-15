@@ -1,0 +1,55 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+	DisplayString(Myself,16493) // You have been waylaid by enemies and must defend yourself!
+	DayNight(MIDNIGHT)
+        TriggerActivation("RR#BLUP",TRUE)
+        TriggerActivation("RR#BLDN",TRUE)
+        Explore()
+        ClearAllActions()
+        ActionOverride(Player2,MakeUnselectable(10))
+        ActionOverride(Player3,MakeUnselectable(10))
+        ActionOverride(Player4,MakeUnselectable(10))
+        ActionOverride(Player5,MakeUnselectable(10))
+        ActionOverride(Player6,MakeUnselectable(10))
+        SmallWait(1)
+        ApplySpellRES("RR#GONE!",Player1) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        ApplySpellRES("RR#GONE!",Player2) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        ApplySpellRES("RR#GONE!",Player3) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        ApplySpellRES("RR#GONE!",Player4) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        ApplySpellRES("RR#GONE!",Player5) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        ApplySpellRES("RR#GONE!",Player6) // Removes partymembers' avatars for cutscene purposes (my battleground cutscene spell)
+        Weather(RAIN)
+        SetGlobal("RR#CAMB","GLOBAL",2)
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        SetGlobal("RR#CAMB","GLOBAL",3)
+        ClearAllActions()
+        CreateCreature("RR#SELI",[359.511],0)  // Selina Shadowstorm
+        CreateCreature("RR#GROK",[395.575],6)  // Grok
+        CreateCreature("RR#BODK",[325.575],9)  // Bodak Hangthorn
+        CreateCreature("RR#CAMN",[890.461],0)  // Amnish Soldier
+        CreateCreature("RR#VEND",[890.461],0)  // Venduris
+        CreateCreature("RR#VEND2",[880.461],0) // Venduris 2 (trapfix)
+        CreateCreature("RR#OBSRV",[387.590],0) // Observer (reveals fog of war)
+	Wait(1)
+        ActionOverride("RR#BODK",EquipRanged())
+        ActionOverride("RR#VEND",ApplySpell(Myself,WIZARD_INVISIBILITY))
+        ActionOverride("RR#VEND2",ReallyForceSpellPoint([900.360],SET_SNARE_TRAP))
+        ActionOverride("RR#VEND2",ReallyForceSpellPoint([1000.245],SET_SNARE_TRAP))
+        ActionOverride("RR#VEND2",ReallyForceSpellPoint([910.330],SET_SNARE_TRAP))
+        ActionOverride("RR#VEND2",ReallyForceSpellPoint([714.348],SET_SNARE_TRAP))
+        ActionOverride("RR#VEND2",ReallyForceSpellPoint([1001.534],SET_SNARE_TRAP))
+        MoveViewPoint([450.560],INSTANT)
+	Wait(1)
+        ActionOverride("RR#VEND2",DestroySelf())
+        FadeFromColor([20.0],0)
+        StartCutScene("RR#CAMB1")
+END

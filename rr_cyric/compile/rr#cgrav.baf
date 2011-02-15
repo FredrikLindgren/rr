@@ -1,0 +1,27 @@
+IF
+	Global("RR#CTRIG","AR0800",0)
+	OR(2)
+		WalkedToTrigger([ANYONE])
+		Clicked([ANYONE])
+	Range([PC],8)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#CTRIG","AR0800",1)
+		SetGlobal("RR#CAMB","GLOBAL",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		HideGUI()
+		FadeToColor([6.0],0)
+		Weather(NOWEATHER)
+		TriggerActivation("RR#COC01",FALSE)
+		TriggerActivation("RR#COC02",FALSE)
+		ActionOverride(Player2,LeaveAreaLUA("RR#001","",[330.930],0))
+		ActionOverride(Player3,LeaveAreaLUA("RR#001","",[280.930],0))
+		ActionOverride(Player4,LeaveAreaLUA("RR#001","",[240.930],0))
+		ActionOverride(Player5,LeaveAreaLUA("RR#001","",[200.930],0))
+		ActionOverride(Player6,LeaveAreaLUA("RR#001","",[160.930],0))
+		ActionOverride(Player1,LeaveAreaLUA("RR#001","",[330.930],0))
+		StartCutScene("RR#CAMB0")
+		SetInterrupt(TRUE)
+END

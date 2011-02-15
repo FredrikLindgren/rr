@@ -1,0 +1,13 @@
+IF
+  GlobalTimerExpired("RR#STL01","LOCALS")
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  !GlobalTimerNotExpired("RR#STL01","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("RR#STL01","LOCALS",6)
+END

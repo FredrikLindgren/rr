@@ -1,0 +1,1869 @@
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+		Heard([ANYONE],124)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!Dead("RR#BOOTR") // Booter
+	HasItem("KEY13",[PC]) // Shadow Thief Prison Key
+	OR(6)
+	  See([GOODCUTOFF])
+	  See(SecondNearest([GOODCUTOFF]))
+	  See(ThirdNearest([GOODCUTOFF]))
+	  See(FourthNearest([GOODCUTOFF]))
+	  See(FifthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!Dead("Mook") // Mook02
+	HasItem("MISC6V",[PC]) // Smuggled Shipment
+	OR(6)
+	  See([GOODCUTOFF])
+	  See(SecondNearest([GOODCUTOFF]))
+	  See(ThirdNearest([GOODCUTOFF]))
+	  See(FourthNearest([GOODCUTOFF]))
+	  See(FifthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(2)
+	  TookDamage()
+	  See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	HasItem("RR#STS04",Myself) // Jasper Gem -> Tier 4 marker (Potion of Haste)
+	!Difficulty(EASIEST)
+THEN
+	RESPONSE #70
+                DestroyItem("RR#STS04") // Tier 4 marker
+		Continue()
+	RESPONSE #30
+		GiveItemCreate("POTN14",Myself,1,1,0) // Oil of Speed
+                DestroyItem("RR#STS04") // Tier 4 marker
+		Continue()
+END
+
+IF
+	Global("RR#STI_P02","LOCALS",0)
+	HasItem("SCRL1H",Myself) // Haste
+THEN
+	RESPONSE #60
+		SetGlobal("RR#STI_P02","LOCALS",1)
+		DestroyItem("SCRL1H") // Haste
+		GiveItemCreate("POTN14",Myself,1,1,0) // Oil of Speed
+		Continue()
+	RESPONSE #40
+		SetGlobal("RR#STI_P02","LOCALS",1)
+		Continue()
+END
+
+IF
+	HasItem("RR#STS01",Myself) // Bloodstone Gem -> Tier 1 marker (Shield, Blur, Ghost Armor, Potion of Fortitude)
+	!HasItem("POTN11",Myself) // Potion of Invulnerability
+	!HasItem("POTN24",Myself) // Potion of Defense
+THEN
+	RESPONSE #68
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #8
+		GiveItemCreate("SCRL79",Myself,1,1,0) // Shield
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #8
+		GiveItemCreate("SCRL85",Myself,1,1,0) // Blur
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #8
+		GiveItemCreate("SCRL1T",Myself,1,1,0) // Ghost Armor
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #8
+		GiveItemCreate("POTN28",Myself,1,1,0) // Potion of Fortitude
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+END
+
+IF
+	HasItem("RR#STS01",Myself) // Bloodstone Gem -> Tier 1 scroll marker (Shield, Blur, Ghost Armor, Potion of Fortitude)
+	OR(2)
+	  HasItem("POTN11",Myself) // Potion of Invulnerability
+	  HasItem("POTN24",Myself) // Potion of Defense
+THEN
+	RESPONSE #68
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #16
+		GiveItemCreate("SCRL85",Myself,1,1,0) // Blur
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+	RESPONSE #16
+		GiveItemCreate("POTN28",Myself,1,1,0) // Potion of Fortitude
+                DestroyItem("RR#STS01") // Tier 1 marker
+		Continue()
+END
+
+IF
+	HasItem("RR#STS02",Myself) // Skydrop Gem -> Tier 2 marker (Ray of Enfeeblement, Blindness, Spook, Glitterdust, Deafness)
+	!Difficulty(EASIEST)
+THEN
+	RESPONSE #70
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+	RESPONSE #6
+		GiveItemCreate("SCRL6F",Myself,1,1,0) // Ray of Enfeeblement
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+	RESPONSE #6
+		GiveItemCreate("SCRL71",Myself,1,1,0) // Blindness
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+	RESPONSE #6
+		GiveItemCreate("SCRLA6",Myself,1,1,0) // Spook
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+	RESPONSE #6
+		GiveItemCreate("SCRLA3",Myself,1,1,0) // Glitterdust
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+	RESPONSE #6
+		GiveItemCreate("SCRLA2",Myself,1,1,0) // Deafness
+                DestroyItem("RR#STS02") // Tier 2 marker
+		Continue()
+END
+
+IF
+	HasItem("RR#STS03",Myself) // Andar Gem -> Tier 3 marker (Mirror Image, Slow, Hold Person, Vampiric Touch, Potion of Hill Giant Strength)
+	DifficultyGT(EASY)
+THEN
+	RESPONSE #20
+		GiveItemCreate("SCRL96",Myself,1,1,0) // Mirror Image
+                DestroyItem("RR#STS03") // Tier 3 marker
+		Continue()
+	RESPONSE #20
+		GiveItemCreate("SCRL1O",Myself,1,1,0) // Slow
+                DestroyItem("RR#STS03") // Tier 3 marker
+		Continue()
+	RESPONSE #20
+		GiveItemCreate("SCRL1I",Myself,1,1,0) // Hold Person
+                DestroyItem("RR#STS03") // Tier 3 marker
+		Continue()
+	RESPONSE #20
+		GiveItemCreate("SCRL1Q",Myself,1,1,0) // Vampiric Touch
+                DestroyItem("RR#STS03") // Tier 3 marker
+		Continue()
+	RESPONSE #20
+		GiveItemCreate("POTN03",Myself,1,1,0) // Potion of Hill Giant Strength
+                DestroyItem("RR#STS03") // Tier 3 marker
+		Continue()
+END
+
+IF
+	OR(3)
+	  Global("RR#Active","LOCALS",0)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",1)
+	!InActiveArea(Myself)
+	!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Detect([GOODCUTOFF])
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("RR#HIDE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#HIDE","LOCALS",6)
+		DisplayStringHead(Myself,@711) //  attempts to hide in shadows
+		Hide()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPPercentGT(Myself,84)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,75)
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN11",Myself) // Potion of Invulnerability
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN11",Myself) // Potion of Invulnerability
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN24",Myself) // Potion of Defense
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN24",Myself) // Potion of Defense
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	HasItem("POTN14",Myself) // Oil of Speed
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_HASTED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN14",Myself) // Oil of Speed
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HaveSpell(KENSAI_KIA)
+	!Difficulty(EASIEST)
+	!CheckStat(Myself,2,SCRIPTINGSTATE4) // Kensai Kia
+	!StateCheck(Myself,STATE_SILENCED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	RandomNum(5,1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,KENSAI_KIA)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HaveSpell(ASSASSIN_POISON)
+	!Difficulty(EASIEST)
+	!CheckStat(Myself,4,SCRIPTINGSTATE4) // Poison Weapon
+  	!StateCheck(Myself,STATE_SILENCED)
+  	StateCheck(Myself,STATE_INVISIBLE)
+	!HasItem("SCRL1H",Myself) // Haste
+	!HasItem("SCRL96",Myself) // Mirror Image
+	!HasItem("SCRL1T",Myself) // Ghost Armor
+	!HasItem("POTN03",Myself) // Potion of Hill Giant Strength
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,ASSASSIN_POISON)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1H",Myself) // Haste
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_HASTED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1H") // Haste
+		SpellNoDec(Myself,WIZARD_HASTE) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1H") // Haste
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL96",Myself) // Mirror Image
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL96") // Mirror Image
+		SpellNoDec(Myself,WIZARD_MIRROR_IMAGE) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL96") // Mirror Image
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN03",Myself) // Potion of Hill Giant Strength
+	CheckStatLT(Myself,19,STR)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN03",Myself) // Potion of Hill Giant Strength
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1T",Myself) // Ghost Armor
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	CheckStatGT(Myself,0,ARMORCLASS)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1T") // Ghost Armor
+		SpellNoDec(Myself,WIZARD_GHOST_ARMOR) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1T") // Ghost Armor
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL79",Myself) // Shield
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!CheckStatGT(Myself,0,SCRIPTINGSTATE4) // Barkskin, Wizard Shield, Ghost Armor, Spirit Armor
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL79") // Shield
+		SpellNoDec(Myself,WIZARD_SHIELD) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL79") // Shield
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL85",Myself) // Blur
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_BLUR)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL85") // Blur
+		SpellNoDec(Myself,WIZARD_BLUR) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL85") // Blur
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN28",Myself) // Potion of Fortitude
+	CheckStatLT(Myself,18,CON)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN28",Myself) // Potion of Fortitude
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!GlobalTimerNotExpired("RR#STI_BS","LOCALS")
+	RandomNum(5,1)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself)) // Firecam Full Plate Mail +1
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself)) // Firecam Full Plate Mail +1
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1O",Myself) // Slow
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF]))
+	!Class(LastSeenBy(Myself),MONK)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquiped("NPPLAT",LastSeenBy(Myself)) // Firecam Full Plate Mail +1
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Alteration
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1O") // Slow
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1I",Myself) // Hold Person
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF.HUMANOID])
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+        CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(LastSeenBy(Myself),WIZARD_HOLD_PERSON) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1I",Myself) // Hold Person
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF.HUMANOID]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+        CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(LastSeenBy(Myself),WIZARD_HOLD_PERSON) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1I",Myself) // Hold Person
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+        CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(LastSeenBy(Myself),WIZARD_HOLD_PERSON) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1I") // Hold Person
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1Q",Myself) // Vampiric Touch
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),30,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(LastSeenBy(Myself),WIZARD_VAMPIRIC_TOUCH) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1Q",Myself) // Vampiric Touch
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),30,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(LastSeenBy(Myself),WIZARD_VAMPIRIC_TOUCH) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL1Q",Myself) // Vampiric Touch
+	DifficultyGT(EASY)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),30,RESISTMAGIC)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(LastSeenBy(Myself),WIZARD_VAMPIRIC_TOUCH) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL1Q") // Vampiric Touch
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA6",Myself) // Spook
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself)) // Dragonslayer
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SPOOK) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA6",Myself) // Spook
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself)) // Dragonslayer
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SPOOK) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA6",Myself) // Spook
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!HasItemEquipedReal("SW1H32",LastSeenBy(Myself)) // Dragonslayer
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(LastSeenBy(Myself),WIZARD_SPOOK) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA6") // Spook
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA3",Myself) // Glitterdust
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Conjuration
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself))  // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself))  // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(LastSeenBy(Myself),WIZARD_GLITTERDUST) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA3",Myself) // Glitterdust
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Conjuration
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself))  // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself))  // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(LastSeenBy(Myself),WIZARD_GLITTERDUST) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA3",Myself) // Glitterdust
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Conjuration
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself))  // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself))  // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(LastSeenBy(Myself),WIZARD_GLITTERDUST) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA3") // Glitterdust
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL71",Myself) // Blindness
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself)) // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself)) // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(LastSeenBy(Myself),WIZARD_BLINDNESS) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL71",Myself) // Blindness
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself)) // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself)) // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(LastSeenBy(Myself),WIZARD_BLINDNESS) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL71",Myself) // Blindness
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF]))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+	!HasItemEquiped("NPMISC1",LastSeenBy(Myself)) // Jansen Spectroscopes
+	!HasItemEquiped("RR#HEL02",LastSeenBy(Myself)) // Cowl of Acuity
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(LastSeenBy(Myself),WIZARD_BLINDNESS) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL71") // Blindness
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL6F",Myself) // Ray of Enfeeblement
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(3)
+	  See([PC.0.0.PALADIN_ALL])
+	  See([PC.0.0.RANGER_ALL])
+	  See([PC.0.0.FIGHTER_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatGT(LastSeenBy(Myself),5,STR)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRL6F") // Ray of Enfeeblement
+		SpellNoDec(LastSeenBy(Myself),WIZARD_RAY_OF_ENFEEBLEMENT) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRL6F") // Ray of Enfeeblement
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRLA2",Myself) // Deafness
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(4)
+	  See([PC.0.0.CLERIC_ALL])
+	  See([PC.0.0.DRUID_ALL])
+	  See([PC.0.0.BARD_ALL])
+	  See([PC.0.0.MAGE_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	CheckStatLT(LastSeenBy(Myself),50,SPELLFAILUREMAGE) // target is not already deaf
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),5,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Illusion
+THEN
+	RESPONSE #75
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,46153) // uses a scroll
+		DestroyItem("SCRLA2") // Deafness
+		SpellNoDec(LastSeenBy(Myself),WIZARD_DEAFNESS) // spells cast from scrolls should be disruptable as per PnP rules
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		DisplayStringHead(Myself,@707) // fails to use a scroll
+		DestroyItem("SCRLA2") // Deafness
+		SpellNoDec(Myself,DO_NOTHING)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HaveSpell(ASSASSIN_POISON)
+	!Difficulty(EASIEST)
+	!CheckStat(Myself,4,SCRIPTINGSTATE4) // Poison Weapon
+  	!StateCheck(Myself,STATE_SILENCED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,ASSASSIN_POISON)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HaveSpell(KENSAI_KIA)
+	!Difficulty(EASIEST)
+	!CheckStat(Myself,2,SCRIPTINGSTATE4) // Kensai Kia
+	!StateCheck(Myself,STATE_SILENCED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+	  !HasItem("POTN10",Myself) // Potion of Invisibility
+	  RandomNum(3,1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,KENSAI_KIA)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	DifficultyGT(EASY)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!GlobalTimerNotExpired("RR#STI_BS","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#STI_BS","LOCALS",18)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	Difficulty(EASIEST)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!GlobalTimerNotExpired("RR#STI_BS","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#STI_BS","LOCALS",24)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+	CheckStatGT(Myself,20,DETECTILLUSIONS)
+	!ModalState(DETECTTRAPS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	CheckStatGT(Myself,20,DETECTILLUSIONS)
+	!ModalState(DETECTTRAPS)
+	OR(4)
+	  See([GOODCUTOFF.0.0.0.0.ILLUSIONARY.0]) // illusionary clones such as Mislead or Project Image
+	  StateCheck([GOODCUTOFF],STATE_ILLUSIONS)
+          StateCheck(SecondNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+          StateCheck(ThirdNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	CheckStatGT(Myself,20,DETECTILLUSIONS)
+	ModalState(DETECTTRAPS)
+	!GlobalTimerNotExpired("RR#DI","LOCALS")
+THEN
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",6)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",7)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",8)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",9)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",10)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	Global("RR#Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Myself,STATE_BLIND)
+	ActionListEmpty()
+	OR(2)
+	  RandomNum(5,1)
+	  CombatCounter(0)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	!See([GOODCUTOFF])
+	ActionListEmpty()
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck(Myself,STATE_INVISIBLE)
+	OR(2)
+	  HasItem("SCRL96",Myself) // Mirror Image
+	  HasItem("SCRL1H",Myself) // Haste
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+	!Kit([GOODCUTOFF],BARBARIAN)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange([GOODCUTOFF.0.0.CLERIC_ALL])
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange([GOODCUTOFF.0.0.BARD_ALL])
+	See([GOODCUTOFF.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange([GOODCUTOFF.0.0.DRUID_ALL])
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	OR(2)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	  InWeaponRange([GOODCUTOFF.0.0.MAGE_ALL])
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HitBy([ANYONE],CRUSHING) // hit by any damage type
+	!CheckStatGT(LastHitter(Myself),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(LastHitter(Myself),1,STONESKINS)
+	!StateCheck(LastHitter(Myself),STATE_MIRRORIMAGE)
+	!StateCheck(LastHitter(Myself),STATE_PANIC)
+	!CheckStatGT(LastHitter(Myself),0,175)  // no Backstab immunity
+	!StateCheck(Myself,STATE_INVISIBLE) // don't retaliate while invisible (might waste a backstab)
+	OR(2)
+	  InWeaponRange(LastHitter(Myself))
+          RandomNum(4,1)
+	See(LastHitter(Myself))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+	!Kit([GOODCUTOFF],BARBARIAN)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

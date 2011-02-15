@@ -1,0 +1,54 @@
+IF
+  Global("RR#Items","ar0334",1)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#BUC11",Player1,1,0,0)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+  Global("RR#Items","ar0334",2)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#FDAR2",Player1,0,0,0)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+  Global("RR#Items","ar0334",3)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#KEEP2",Player1,0,3,1)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+  Global("RR#Items","ar0334",4)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#WEAR2",Player1,0,0,0)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+  Global("RR#Items","ar0334",5)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#RWAR2",Player1,3,0,0)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END

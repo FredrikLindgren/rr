@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head>
+<script type="text/javascript">
+<!--
+function mail(text)
+{
+bits=text.split("###");
+document.write("<a href=\"mailto:"+bits[0]+"@"+bits[2]+"\">"+bits[4]+"</a>");
+}
+-->
+</script><style type="text/css">
+/*<![CDATA[*/
+<!--
+body {
+cursor: default;
+text-align: center;
+color: #000;
+background-color: #A1A1A1;
+margin-top: 20px;
+margin-bottom: -20px;
+xwidth: 98%;
+}
+#headerdiv-top {
+text-align: center;
+font-family: Verdana, Trebuchet MS, Arial, serif;
+font-size: 200%;
+font-weight: bold;
+line-height: 73%;
+color #020f1d;
+background-color: #fff;
+padding: 15px 0px 15px 0px;
+margin: 0px auto;
+border-left: solid 1px #532529;
+border-right: solid 1px #532529;
+border-bottom: solid 1px #532529;
+border-top: solid 3px #532529;
+width: 90%;
+position: relative;
+display: block;
+}
+#headerdiv-middle {
+text-align: center;
+font: italic 75% Verdana, Trebuchet MS, Arial, serif;
+color: #bbb;
+font-weight: normal;
+background-color: #F1F1F1;
+width: 90%;
+border-left: solid 1px #532529;
+border-right: solid 1px #532529;
+margin: 0px auto;
+padding: 10px 0px 10px 0px;
+position: relative;
+display: block;
+}
+.headerdiv-line {
+color: #532529;
+}
+#headerdiv-middle a:link, #headerdiv-middle a:visited {
+text-decoration: underline;
+background-color: transparent;
+color: #000;
+}
+#headerdiv-middle a:focus, #headerdiv-middle a:hover {
+text-decoration: underline;
+color: #532539;
+}
+#headerdiv-middle a:active {
+color: #000;
+text-decoration: line-through;
+border: none;
+}
+#headerdiv-bottom {
+text-align: center;
+font: 83% Verdana, Trebuchet MS, Arial, serif;
+color: #aaa;
+padding: 8px 0px 8px 0px;
+margin: 0px auto;
+border-left: solid 1px #532529;
+border-right: solid 1px #532529;
+border-bottom: solid 3px #532529;
+border-top: solid 1px #bbb;
+width: 90%;
+background-color: #F1F1F1;
+position: relative;
+display: block;
+}
+#maindiv {
+text-align: center;
+font-family: Verdana, Trebuchet MS, Arial, serif;
+}
+#maindiv div {
+background-color: #F1F1F1;
+color: #020F1D;
+padding: 11px 0px 25px 0px;
+margin: 50px auto;
+border-width: 1px 1px 4px 10px;
+border-style: solid;
+border-color: #532529;
+width: 80%;
+position: relative;
+display: block;
+}
+#maindiv div::before {
+content: counter(kman, lower-roman);
+counter-increment: kman;
+font-size: 100%;
+font-weight: bold;
+color: #fff;
+background-color: #532529;
+width: 42px;
+position: absolute;
+top: 0px;
+left: 0px;
+display: block;
+}
+#maindiv p {
+font-size: 83%;
+font-style: normal;
+text-align: justify;
+line-height: 160%;
+padding: 0px;
+margin: 10px auto;
+width: 90%;
+display: block;
+}
+#headerdiv-bottom a:link, #headerdiv-bottom a:visited {
+font-weight: bold;
+text-decoration: none;
+background-color: transparent;
+color: #000;
+}
+#headerdiv-bottom a:focus, #headerdiv-bottom a:hover {
+text-decoration: none;
+color: #532539;
+}
+#headerdiv-bottom a:active {
+color: #000;
+text-decoration: line-through;
+border: none;
+}
+#maindiv address a:link, #maindiv address a:visited {
+font-weight: bold;
+text-decoration: underline;
+background-color: transparent;
+color: #fff;
+}
+#maindiv address a:focus, #maindiv address a:hover {
+text-decoration: underline;
+color: #532539;
+}
+#maindiv address a:active {
+color: #fff;
+text-decoration: line-through;
+border: none;
+}
+#maindiv address {
+font-size: 70%;
+font-style: normal;
+text-decoration: none;
+color: #959FAA;
+background-color: #532529;
+padding: 3px 0px 0px;
+margin: 0px;
+width: 100%;
+position: absolute;
+bottom: -1px;
+left: 0px;
+display: block;
+text-align: right;
+}
+.address-footer-1 {
+letter-spacing: 0.2em;
+}
+h4 {
+font-family: Verdana, Trebuchet MS, Arial, serif;
+font-size: 150%;
+text-align: left;
+text-indent: 30px;
+padding: 0px 0px 0px 0px;
+border-bottom: dotted 2px #ddd;
+}
+h5 {
+font-family: Verdana, Trebuchet MS, Arial, serif;
+font-size: 120%;
+text-align: left;
+text-indent: 30px;
+padding: 0px 0px 0px 0px;
+}
+h4::first-letter {
+color: #532529;
+background-color: transparent;
+}
+body h1, body #maindiv h3, h1+h2, body #maindiv h4 {
+font-weight: bold;
+display: block;
+}
+#maindiv .divimp {
+font-size: 80%;
+font-family: Verdana;
+text-align: justify;
+background-color: #E1E1E1;
+border-top: solid 1px #bbb;
+border-bottom: solid 1px #bbb;
+border-left: solid 6px #bbb;
+border-right: solid 6px #bbb;
+padding: 10px;
+margin: 20px auto;
+line-height: 150%;
+}
+#maindiv .divimp::before {
+display: none;
+}
+#maindiv .divimp p {
+font-size: 100%;
+text-indent: 0px;
+} .list-numbered {
+list-style-type: decimal;
+margin-top: 0px;
+}
+#headerdiv-top-fw {
+font-size: 40%;
+color: #532529;
+margin: 0px;
+padding-top: 9px;
+display: block;
+}
+.faq-q {
+font-weight: bold;
+font-style: italic;
+text-align: justify;
+}
+.faq-a {
+text-align: justify; }
+#maindiv .version {
+display: block;
+width: 100%;
+background-color: #F1F1F1;
+text-align: left;
+text-indent: 30px;
+font-style: italic;
+padding-top: 1px;
+padding-bottom: 1px;
+border-bottom: solid 1px #bbb;
+border-top: solid 1px #bbb;
+}
+.version-list {
+line-height: 150%;
+font-size: 80%;
+text-align: left;
+list-style-type: square;
+}
+-->
+/*]]>*/
+</style><title>Rogue Rebalancing Mod</title><!--<script language="javascript" src="SPELLHOLD%20STUDIOS%20-%20readme_files/js.js"></script>--></head>
+<body style="direction: ltr;"> <div style="text-align: justify;"><a name="top" id="top"></a></div><div id="headerdiv-top">Rogue
+Rebalancing<br /> <span id="headerdiv-top-fw">A
+Spellhold Studios mod</span> </div> <div id="headerdiv-middle"> <span class="headerdiv-line">Author:
+aVENGER</span> | <span class="headerdiv-line"><a href="http://www.shsforums.net/index.php?s=8c6bbc7f8389580cd94da1425e71df16&amp;showforum=79" target="_blank">Forum</a>&nbsp;</span>| <span class="headerdiv-line"><a href="http://www.spellholdstudios.net/ie/rr" target="_blank">Mod
+homepage</a>&nbsp;</span>| <span class="headerdiv-line">Version: 4.38</span></div> <div id="headerdiv-bottom"> <a href="#intro">Introduction</a> | <a href="#compatibility">Compatibility notes</a> | <a href="#installation">Installation</a> | <a href="#components">Components</a> | <a href="#faq">FAQ</a>
+| <a href="#version">Version history</a> | <a href="#credits">Credits</a> |&nbsp;<a href="#Legal_Notice:_">Legal Notice</a> | <a href="#contact">Contact
+info</a> </div><a name="intro" id="intro"></a>
+<div id="maindiv"><!-- ================== I n t r o d u c t i o n ================== --><div><h4>Introduction
+</h4> <p><big><span style="font-weight: bold;"></span></big><br />The
+Rogue Rebalancing mod is a gameplay modification for Baldur's Gate 2:
+Throne of Bhaal which strives to bring the Rogues (Bards and Thieves)
+of&nbsp;<acronym title="Baldur's Gate 2">BG2</acronym>
+closer to their Pen and Paper&nbsp;<acronym title="Advanced Dungeons and Dragons">AD&amp;D</acronym>
+counterparts.
+The mod is divided into multiple components all of which can be
+installed
+separately and are completely independent of each other. In so far,
+Rogue Rebalancing can restore proper dual-wielding skills to Bards and
+Thieves, revise the Bard and Thief kits and their respective
+high level ability tables, restore the proper <acronym title="Pen and Paper">PnP</acronym>
+spell progression table for Bards, add more items useful for Rogues to
+the game,
+slightly revise the thievery aspect of the game,&nbsp;enhance the
+Shadow Thief quests related to Bodhi's tasks in Chapter 2 and introduce
+a new challenging encounter with a group of
+Cyric's followers in Chapter 6.&nbsp;<span style="font-style: italic;"></span>Detailed
+documentation
+for each of the mod's components can be found in their respective
+readme
+files.</p><div class="divimp"> <span style="font-style: italic;">Note: In order to
+experience
+all of the new content introduced by the Rogue Rebalancing mod </span><span style="font-weight: bold; font-style: italic;">you
+must start a new game
+</span><span style="font-style: italic;">after
+installing it</span><span style="font-style: italic;">.</span><br /></div><address>
+<span class="address-footer-1">Rogue Rebalancing</span><span class="address-footer-1">&nbsp;&gt; Introduction</span>
+<a href="#top">BACK TO TOP</a> </address> </div>
+<!-- ================== C o m p a t i b i l i t y ================== --><a name="compatibility" id="compatibility"></a><div><h4>Compatibility
+notes </h4> <p> The
+Rogue Rebalancing mod should be compatible
+with most other&nbsp;<a href="http://www.weidu.org/%7Ethebigg/README-WeiDU.html" target="_blank"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>
+mods. Unless otherwise instructed, always
+install Rogue Rebalancing after any other mods&nbsp;in order&nbsp;to ensure maximum compatibility. Specific
+compatibility issues for each component are listed in their respective
+readme files.<span style="font-style: italic;"></span><br /></p><div style="font-style: italic;" class="divimp"> Note:&nbsp;If
+you intend to install Rogue Rebalancing alongside other mods please
+consult the <a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showtopic=27171" target="_blank">Compatibility Guide</a> beforehand. Furthermore, since aTweaks and Rogue Rebalancing share certain resources,
+it's very important to always install aTweaks last. To emphasize the
+point, never install <span style="font-weight: bold;">any</span> component of Rogue Rebalancing after aTweaks.</div><br /><address>
+<span class="address-footer-1">Rogue Rebalancing
+&gt; Compatibility Notes</span> <a href="#top">BACK
+TO TOP</a> </address> </div><!-- ================== I n s t a l l a t i o n ================== -->
+<a name="installation" id="installation"></a><div><h4>Installation
+</h4> <h5> </h5> <p>The Rogue
+Rebalancing mod is packaged and installed with&nbsp;<a href="http://www.weidu.org/%7Ethebigg/README-WeiDU.html" target="_blank"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> and is
+distributed as
+a self-extracting archive. To
+start the installation procedure simply double click on the
+self-extracting archive (RR_V436.EXE) and point the installer to your
+Baldur's Gate 2 folder (default C:\Program Files\Black Isle\BGII -
+SoA\). In case you are installing this mod for a&nbsp;<acronym title="Baldur's Gate 1 to 2">BG1Tutu</acronym> or
+a&nbsp;<acronym title="Baldur's Gate Trilogy">BGT</acronym>
+game point the installer to your&nbsp;<acronym title="Baldur's Gate 1 to 2">BG1Tutu</acronym>/<acronym title="Baldur's Gate Trilogy">BGT</acronym> folder
+instead. Before starting the installation&nbsp;procedure make sure that neither
+Baldur's Gate 2 nor any third party editors such as <a href="http://www.mud-master.com/shadowkeeper/" target="_blank">Shadow
+Keeper</a> and <a href="http://infexp.sourceforge.net/" target="_blank">Infinity Explorer</a> are currently
+running. After installing the mod you can re-run "Setup-RR.exe"
+in your&nbsp;<acronym title="Baldur's Gate 2">BG2</acronym>
+folder to reinstall, uninstall or otherwise change
+its components.<br /></p><span style="font-style: italic;"></span><div class="divimp"> <span style="font-style: italic; font-weight: bold;"></span><span style="font-style: italic;">Note: The Rogue
+Rebalancing&nbsp;mod </span><span style="font-weight: bold; font-style: italic;">requires </span><span style="font-style: italic;">that </span><a style="font-style: italic;" href="http://www.bioware.com/games/shadows_amn/" target="_blank">Baldur's
+Gate 2</a><span style="font-weight: bold; font-style: italic;">
+</span><span style="font-style: italic;">and its</span><span style="font-weight: bold; font-style: italic;"> </span><a style="font-style: italic;" href="http://www.bioware.com/games/throne_bhaal/" target="_blank">Throne of Bhaal expansion</a><span style="font-weight: bold; font-style: italic;">&nbsp;</span><span style="font-style: italic;">as well as
+the </span><a style="font-style: italic;" href="http://www.bioware.com/games/throne_bhaal/support/patches/" target="_blank">latest
+official patch</a><span style="font-style: italic;">
+(version 26498) are&nbsp;installed on your system.&nbsp;Furthermore, it
+is&nbsp;</span><span style="font-weight: bold; font-style: italic;">strongly recommended</span><span style="font-style: italic;">
+to also download and install the </span><a style="font-style: italic;" href="http://www.gibberlings3.net/bg2fixpack/" target="_blank">G3 BG2 Fixpack</a><span style="font-style: italic;">
+before proceeding with the installation of the Rogue Rebalancing mod.</span></div><br /><address>
+<span class="address-footer-1">Rogue Rebalancing</span><span class="address-footer-1">&nbsp;&gt; Installation</span>
+<a href="#top">BACK TO TOP</a> </address> </div>
+<!-- ================== C o m p o n e n t s ================== --><a name="components" id="components"></a> <div><h4 style="text-align: justify;"> Components </h4> <h3 style="text-align: justify; margin-left: 40px;"><br /></h3><h3 style="text-align: justify; margin-left: 40px;"><small><span style="font-weight: bold; text-decoration: underline;">Proper
+dual-wielding
+implementation for Thieves and Bards</span></small><span style="font-weight: bold;"></span></h3><div class="divimp"> This
+component will allow all rogues (Bards, Thieves and their respective
+Kits and Multi-Classes) to assign up to three points into "Two Weapon
+Fighting Style", as per <acronym title="Pen and Paper">PnP</acronym>&nbsp;rules.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Proper_dual-wielding_implementation_for">More
+information</a><br /></div><br /><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;"></span><span style="font-weight: bold;">Thief
+kit
+revisions</span></small></h3><div class="divimp">This
+component will modify all Thief kits and make them match their&nbsp;<acronym title="Pen and Paper">PnP</acronym>&nbsp;counterparts
+more closely. In summary, Assassins can no longer be good aligned and
+receive an innate bonus to saving throws vs. poison as well as a new
+Death Attack ability at higher levels,&nbsp;the
+Bounty Hunters' special snares have been replaced with Alchemical
+Traps and they can now coat their weapons in Paralytic Toxin while Swashbucklers now use the Fighter's <acronym title="To Hit Armor Class 0">THAC0</acronym>&nbsp;table when wielding melee weapons.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Thief_kit_revisions">More
+information</a>
+</div><span style="font-weight: bold;"></span><br /><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Thief High Level Ability revisions</span></small></h3><div class="divimp">This component will revise the Thief High Level Ability table by&nbsp;replacing all magic-based <acronym title="High Level Ability">HLAs</acronym>&nbsp;with new abilities which are more fitting for the Thief class. Furthermore, some of the non-magical Thief&nbsp;<acronym title="High Level Ability">HLAs</acronym>&nbsp;will be modified in order to match their&nbsp;<acronym title="Pen and Paper">PnP</acronym> counterparts more closely. In effect,&nbsp;Scribe
+Scrolls&nbsp;<acronym title="High Level Ability"></acronym>will
+be replaced with Crippling Strike,&nbsp;Time Trap will be replaced with Acid Trap, Greater Evasion&nbsp;will be replaced
+with Danger Sense while Evasion and Alchemy now work more akin to their <acronym title="Pen and Paper">PnP</acronym> counterparts.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Thief_High_Level_Ability_revisions">More
+information</a>
+</div><span style="font-weight: bold;"></span><h3 style="text-align: justify; margin-left: 40px;"><br /><small><span style="font-weight: bold; text-decoration: underline;"></span></small></h3><h3 style="text-align: justify; margin-left: 40px;"><small><span style="font-weight: bold; text-decoration: underline;">Proper racial adjustments for thieving skills</span></small><span style="font-weight: bold;"></span></h3><div class="divimp">
+This
+component will restore the proper <acronym title="Pen and Paper">PnP</acronym>
+<acronym title="Advanced Dungeons and Dragons">AD&amp;D</acronym>
+racial adjustments for&nbsp;thieving skills. For the most part,
+the&nbsp;adjustment values were
+correctly implemented in&nbsp;<acronym title="Baldur's Gate 2">BG2</acronym>, however, the base 10% chance to Detect
+Illusions was missing for all races and a few entries for Elves,
+Half-Elves, Halfling and Half-Orcs were inaccurate.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Proper_racial_adjustments_for_thieving">More
+information</a><br /></div><h3 style="text-align: left; margin-left: 40px;"></h3><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><br /><small><span style="font-weight: bold;"></span></small></h3><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Bard
+Kit
+revisions</span></small></h3><div class="divimp">This
+component will modify all Bard kits and make them match their&nbsp;<acronym title="Pen and Paper">PnP</acronym>&nbsp;counterparts
+more closely. In summary, the kits now get additional benefits but also
+receive new disadvantages which make them more&nbsp;distinctive from
+each other. Furthermore, the battlesongs of all kits have been modified
+and their hearing range has been extended slightly above the visual
+range of the performing Bard.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Bard_kit_revisions">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"><br /></span><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Bard
+High
+Level Ability revisions</span></small></h3><div class="divimp">This
+component
+will remove all Trap<acronym title="High Level Ability"></acronym>s and other Thief-specific&nbsp;<acronym title="High Level Ability">HLAs</acronym> from the Bard High Level Ability table
+and replace them with new abilities which&nbsp;are more fitting for the Bard class. These new <acronym title="High Level Ability">HLA</acronym>s are: Mass
+Charm, Sound
+Burst, Enthralling Melody, Lingering Song, Resonating Weapon and Sound Barrier<acronym title="High Level Ability"></acronym>. Furthermore,&nbsp;the Magic Flute, Scribe Scrolls and Alchemy <acronym title="High Level Ability">HLAs</acronym> will
+be revised and each Bard kit will&nbsp;get a&nbsp;unique version of the Enhanced Battlesong <acronym title="High Level Ability">HLA</acronym>. <br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Bard_High_Level_Ability_revisions">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"><br /></span><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Proper
+spell progression for Bards</span></small></h3><div class="divimp">This
+component will restore the proper <acronym title="Pen and Paper">PnP</acronym>
+<acronym title="Advanced Dungeons and Dragons">AD&amp;D</acronym>
+spell progression to
+Bards, effectively granting them the ability to cast&nbsp;7<sup>th</sup> and 8<sup>th</sup>
+level spells once they reach the appropriate experience levels.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Proper_spell_progression_for_Bards">More
+information</a><span style="font-weight: bold;"></span><br /></div><br /><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Additional
+equipment for Thieves and Bards</span></small></h3><div class="divimp">This
+component adds more magic items&nbsp;suitable for
+Thieves and Bards (bucklers, bardic instruments, hoods, cowls, ioun stones...etc.) to the game and modifies the Short
+Sword of Backstabbing in order to bring it closer to its <acronym title="Pen and Paper">PnP</acronym>
+counterpart. Most of the new equipment can be
+purchased from
+Marina, the Black Market merchant, who resides on the main floor
+of&nbsp;the Shadow Thief guildhall in Athkatla's Dock District. Besides
+adding new equipment, this component also restores several lost items
+from&nbsp;<acronym title="Baldur's Gate 1">BG1</acronym> (i.e. the Dagger of Venom and&nbsp;Kiel's Buckler). In return, a few of the new items are also available in the&nbsp;<acronym title="Baldur's Gate 1">BG1</acronym> portion of the game for&nbsp;<acronym title="Baldur's Gate 1 to 2">BG1Tutu</acronym> and&nbsp;<acronym title="Baldur's Gate Trilogy">BGT</acronym> players. Finally, a small quest involving
+Arledrian (the fence who resides on the top floor of Gaelan Bayle's
+house) will be added as well.&nbsp;<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Additional_equipment_for_Thieves_and">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"><br /></span><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Upgradeable equipment</span></small></h3><div class="divimp">Baldur's Gate 2 allows Cromwell (the dwarven blacksmith
+who lives in the Docks District of Atkhatla) and Cespenar (the imp
+servant who resides in the Pocket Plane) to upgrade and
+improve certain magical items by fusing them with additional
+ingredients. This
+component expands upon that feature and allows these characters to
+upgrade some of the items which are added or modified by
+various components of the
+Rogue Rebalancing mod.<br /><a href="http://readme.spellholdstudios.net/RR_UPGR.HTML">More
+information</a><span style="font-weight: bold;"></span><br /></div><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><br /><small><span style="font-weight: bold;"></span></small></h3><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Revised thievery</span></small></h3><div class="divimp">This
+component will slightly revise the thievery aspect of the game.
+Firstly, it will allow
+all merchants whose dialogue implies that their wares are stolen to buy
+fenced goods. Secondly, it will prevent&nbsp;<acronym title="Player Character">PC</acronym>
+thieves from
+stealing from
+any merchants who can buy fenced goods in order to close the "infinite money" exploit.&nbsp;Thirdly, this component
+will prevent the
+effects of thievery&nbsp;potions from
+stacking&nbsp;(in case of multiple uses) and can optionally replace
+them with their corresponding <acronym title="Pen and Paper">PnP</acronym>
+counterparts. Lastly, this component will&nbsp;standardize the
+reactions of
+neutral characters who have witnessed a theft and prevent animals and incapacitated characters from calling the guards.<br /><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Revised_Thievery">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"><br /></span><h3 style="text-align: left; margin-left: 40px; text-decoration: underline;"><small><span style="font-weight: bold;">Chosen of
+Cyric encounter</span></small></h3><div class="divimp">This
+component will
+add a
+challenging encounter with a hostile party belonging to the Chosen of
+Cyric (a fanatical order of Cyric's most devoted followers) to the
+game. The
+encounter takes place in Chapter 6, after the final confrontation with
+Bodhi. It can be resolved through diplomacy, insight,
+intimidation or combat depending on your preference and your
+character's abilities. The combat portion of the encounter is balanced
+for a six-person party with an experience range of 2,950,000 to
+4,000,000 <acronym title="Experience Points">XP</acronym>.
+Defeating the Chosen of Cyric&nbsp;in direct combat yields several
+magic items which are most suitable for Thieves and
+Bards.<br /><a href="http://readme.spellholdstudios.net/RR_CYRIC.HTML">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><span style="font-weight: bold;"><br /></span><h3 style="text-align: left; margin-left: 40px;"><small style="text-decoration: underline;"><span style="font-weight: bold;">Shadow Thief
+improvements</span></small><br /></h3><span style="font-weight: bold;"></span><div class="divimp"><span style="font-weight: bold;"></span>This
+component enhances the <acronym title="Artificial Intelligence">AI</acronym>
+and the combat prowess&nbsp;of all Shadow Thief opponents which the
+party faces after siding with
+Bodhi at the end of
+Chapter 2. At the same time, it introduces a special stealth path which
+allows the player to avoid all combat encounters with the Shadow
+Thieves save
+for the final battle with Aran Linvail and&nbsp;his personal guards. Furthermore, it allows single-classed Thief protagonists to
+side with Bodhi in Chapter 2. Finally, this component also improves the&nbsp;<acronym title="Artificial Intelligence">AI</acronym>
+of the Shadow
+Thief allies which come to the party's aid in
+Chapter 6 in case the player sides with Aran Linvail and requests his
+assistance.<br /><a href="http://readme.spellholdstudios.net/RR_STIM.HTML">More
+information</a><span style="font-weight: bold;"></span><br /></div><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><span style="font-weight: bold;"><br /></span><a href="http://readme.spellholdstudios.net/RR_STIM.HTML"><br /></a><br /><address>
+<span class="address-footer-1">Rogue Rebalancing</span><span class="address-footer-1">&nbsp;&gt; Components</span>
+<a href="#top">BACK TO TOP</a> </address> </div>
+<!-- ================== F A Q ================== --> <a name="faq" id="faq"></a> <div> <h4>Frequently
+Asked Questions</h4> <p> <span class="faq-q">Q:
+Do I need the Throne of Bhaal expansion and the latest official patch
+in order to play this mod?</span><br />
+<span class="faq-a">A: Yes, the Throne of Bhaal expansion
+as well as the <a href="http://www.bioware.com/games/throne_bhaal/support/patches/" target="_blank">latest official patch</a> (version
+26498) are both required in order to play this mod. &nbsp;</span></p><p><span class="faq-a"></span></p><p> <span class="faq-q">Q: Do I need one of the unofficial fixpacks in order to play this mod?</span><br />
+<span class="faq-a">A: </span>It is&nbsp;strongly recommended
+to&nbsp;download and install the <a href="http://www.gibberlings3.net/bg2fixpack/" target="_blank">G3 BG2 Fixpack</a>
+before installing&nbsp;the Rogue Rebalancing mod.<span class="faq-a"></span></p><p><span class="faq-q"></span></p><p><span class="faq-q">Q: Can I use the Baldurdash fixpack instead?</span><br />
+<span class="faq-a">A: Possibly, but since Baldurdash doesn't fix some
+of the recently discovered bugs, certain issues may arise in that
+combination.</span></p><p><span class="faq-a"></span></p><p><span class="faq-q">Q:
+I've found a bug in Rogue Rebalancing. What should I do?</span><br />
+<span class="faq-a">A: Visit the <a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showtopic=27170" target="_blank">Bug Report thread</a> on the Rogue
+Rebalancing forum and follow the instructions provided there.&nbsp;</span></p><p><span class="faq-a"></span>
+</p> <p> <span class="faq-q">Q: I've found a
+compatibility issue between Rogue Rebalancing and another mod.</span><span class="faq-q"> What should I do?</span><br />
+<span class="faq-a">A:&nbsp;</span><span class="faq-a">Visit the <a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showtopic=27171" target="_blank">Compatibility&nbsp;thread</a> on
+the Rogue Rebalancing forum and follow the instructions provided there.</span></p><p><span class="faq-a"></span>
+</p> <p> <span class="faq-q">Q: I'd like to </span><span class="faq-q">suggest a change/</span><span class="faq-q">criticize</span><span class="faq-q">/praise</span><span class="faq-q">/review Rogue Rebalancing. How can I do that?</span><span class="faq-q"></span><br />
+<span class="faq-a">A:&nbsp;</span><span class="faq-a">Visit the <a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showtopic=28647" target="_blank">Feedback thread</a> on the Rogue
+Rebalancing forum and follow the instructions provided there.</span></p><p><span class="faq-a"></span><span class="faq-a"></span></p><p>
+<span class="faq-q">Q: I'd like to translate Rogue
+Rebalancing
+into a different language. </span><span class="faq-q">How
+should I do that?</span><br />
+<span class="faq-a">A:&nbsp;</span><span class="faq-a">Visit the <a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showtopic=27172" target="_blank">Translation thread</a> on the Rogue
+Rebalancing forum and follow the instructions provided there.</span></p><p><span class="faq-a"></span></p><p>
+<span class="faq-q">Q: I have a question about Rogue
+Rebalancing which is not covered by this FAQ.</span><span class="faq-q"></span><span class="faq-q">
+What should I do?</span><span class="faq-q"></span><br />
+<span class="faq-a">A:&nbsp;</span><span class="faq-a">Visit the&nbsp;<a href="http://www.shsforums.net/index.php?s=0c89bbe47b6c229ccc490c95776393b7&amp;showforum=79" target="_blank">Rogue Rebalancing forum</a> and post
+your question there.</span><br /></p><div class="divimp"> <span style="font-style: italic;">Note:
+You <span style="font-weight: bold;">don't need to
+register</span> on the Rogue Rebalancing forum in order to post
+there.</span> </div> <address>
+<span class="address-footer-1">Rogue Rebalancing</span><span class="address-footer-1">&nbsp;&gt;
+Frequently Asked Questions</span> <a href="#top">BACK
+TO TOP</a> </address> </div><!-- ================== Version History ================== -->
+<a name="version" id="version"></a> <div><h4>Version
+History </h4> <p class="version">The
+complete version history for all components of the Rogue Rebalancing
+mod can be
+found in their respective readme files: </p> <ul class="version-list"> <li><a href="http://readme.spellholdstudios.net/RR_CORE.HTML#Version_changes">Core Components
+version history</a></li><li><a href="http://readme.spellholdstudios.net/RR_CYRIC.HTML#Version_changes">Chosen of
+Cyric&nbsp;version history</a></li> <li><a href="http://readme.spellholdstudios.net/RR_STIM.HTML#Version_changes">Shadow Thief
+Improvements version history</a></li><li><a href="http://readme.spellholdstudios.net/RR_UPGR.HTML#Version_changes">Upgradeable equipment version history</a></li></ul><br /><address>
+<span class="address-footer-1">Rogue Rebalancing</span><span class="address-footer-1">&nbsp;&gt; Version History</span>
+<a href="#top">BACK TO TOP</a> </address> </div>
+<!-- ================== Credits ================== --> <a name="credits" id="credits"></a> <div> <h4>Credits
+</h4> <p style="text-align: left; margin-left: 40px;"><span style="font-weight: bold;">Mod author:</span><br /></p><span style="font-weight: bold;"></span><ul class="version-list"><li>aVENGER</li></ul><br />
+<p style="text-align: left; margin-left: 40px;" class="faq-q"></p><p style="text-align: left; margin-left: 40px;" class="faq-q">The
+creators of the
+Baldur's Gate series:</p><ul class="version-list"><li><a href="http://www.bioware.com/" target="_blank">Bioware</a></li><li><a href="http://www.obsidian.net/" target="_blank">Black
+Isle Studios</a></li></ul><p class="faq-q"></p><br /><p style="margin-left: 40px; text-align: left;" class="faq-q">
+<strong>Tools Used in the creation</strong> of Rogue
+Rebalancing: </p> <ul class="version-list">
+<li><a target="_blank" href="http://www.weidu.org/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>
+by Westley Weimer and the bigg</li><li><a href="http://www.idi.ntnu.no/%7Ejoh/ni/" target="_blank">Near
+Infinity</a> by Jon
+Olav Hauglid</li><li><a target="_blank" href="http://forums.gibberlings3.net/index.php?s=727f49f029e1b99d95758f1217a434fe&amp;showforum=137">
+<acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a>
+by my namesake Avenger</li><li><a target="_blank" href="http://iesdp.gibberlings3.net/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>
+maintained by igi</li><li><a target="_blank" href="http://teambg.eu/index.php?page=tools&amp;cat=32">BAM
+Workshop</a> by Glenn Flansburg</li><li><a target="_blank" href="http://infexp.sourceforge.net/">Infinity
+Explorer</a> by Dmitry Jemerov and bigmoshi</li></ul> <p class="faq-q"></p><br /><p style="text-align: left; margin-left: 40px;" class="faq-q">Special
+thanks:
+</p> <ul class="version-list"><li>SConrad
+and K'aeloree of<span style="text-decoration: underline;"></span>
+<a href="http://www.spellholdstudios.net/" target="_blank">Spellhold
+Studios</a> for providing a&nbsp;forum for Rogue Rebalancing
+and hosting the mod</li><li>Kevin
+Dorner for creating the <a href="http://www.baldurdash.org/" target="_blank">Baldurdash BG2 Fixpacks</a>&nbsp;and
+in doing so inspiring me to start
+modding the game myself.&nbsp;Kevin also helped me with the Elven
+Charm/Sleep resistance
+fix which is now incorporated into the <a href="http://www.gibberlings3.net/bg2fixpack/" target="_blank">G3
+BG2 Fixpack</a></li><li>My namesake Avenger
+(of&nbsp;<a target="_blank" href="http://forums.gibberlings3.net/index.php?s=727f49f029e1b99d95758f1217a434fe&amp;showforum=91"><acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a>
+and <a href="http://forums.gibberlings3.net/index.php?s=727f49f029e1b99d95758f1217a434fe&amp;showforum=91" target="_blank">GemRB</a>
+fame) for&nbsp;helping me with the Elven Charm/Sleep
+resistance fix. It was based on his EFF research</li><li><a href="http://www.teambg.eu/" target="_blank">TeamBG</a>
+for all of their modding tools which I've used in the creation of the
+early versions of my mod</li><li>T.G.
+Maestro for extensive playtesting of my Chosen of Cyric encounter
+and providing valuable input regarding the Bard&nbsp;<acronym title="High Level Ability">HLA</acronym> revisions<br /></li><li>Longinus
+for playtesting my Shadow Thief Improvements and providing several
+interesting mod ideas</li><li>Idobek, Littiz, CamDawg,
+Nythrun,
+devSin, the bigg, Ascension64, cmorgan and
+pro5 for clarifying&nbsp;various intricacies
+of&nbsp;<acronym title="Weimer Dialogue Utility">WeiDU</acronym>
+coding</li><li>CamDawg and the&nbsp;<a href="http://www.gibberlings3.net/bg2fixpack/" target="_blank">G3
+BG2 Fixpack</a> team for letting me borrow some of their code</li><li>Blucher
+and the <a href="http://www.gibberlings3.net/bg2tweaks/" target="_blank">G3 BG2 Tweaks</a> team for letting me borrow the&nbsp;<acronym title="Pen and Paper">PnP</acronym> spell progression
+table for Bards</li><li>DavidW,
+CamDawg, Nythrun, devSin, Horred,&nbsp;the bigg, cirerrek, igi,
+SimDing0, Vulgar Zildrah, Kensai Ryu, Xyx and all the other&nbsp;<a href="http://dev.gibberlings3.net/index.php/Category:Detectable_Affects" target="_blank">Detectable Spells</a>&nbsp;contributors</li><li>Jason Compton for
+displaying the Rogue Rebalancing banner on&nbsp;<a href="http://forums.pocketplane.net/" target="_blank"><acronym title="Pocket Plane Group">PPG</acronym></a></li><li>Taimon
+and Miloch for providing the EXE patch which re-enables the
+PickPocketFailed() trigger and prevents a successful pickpocket check
+from breaking invisibility</li><li>The
+Frozen
+North
+website for letting me borrow a few of the wonderful portraits from
+their&nbsp;gallery</li><li>The&nbsp;<a href="http://en.wikipedia.org/wiki/Icewind_Dale_II" target="_blank"><acronym title="Icewind Dale 2">IWD2</acronym></a>
+
+and&nbsp;<a href="http://nwn.bioware.com/" target="_blank"><acronym title="Neverwinter Nights">NWN</acronym></a> artists for
+creating such fantastic looking icons and portraits, some of which I've borrowed for this
+mod</li><li>Silmarillion
+of <a href="http://www.ufrealms.net/" target="_blank">Unforgotten
+Realms</a> and EraseR
+of TRoN for hosting my mod in the past<br /></li><li>Everyone else from the <a href="http://www.obsidianent.com/" target="_blank">Black Isle Studious</a>, <a href="http://www.interplay.com/" target="_blank">Interplay</a>,
+<a href="http://www.bioware.com/" target="_blank">Bioware</a>,&nbsp;<a href="http://www.spellholdstudios.net/" target="_blank">Spellhold
+Studios</a>, <a href="http://www.gibberlings3.net/" target="_blank">Gibberlings Three</a>, <a href="http://www.pocketplane.net/" target="_blank">Pocket
+Plane
+Group</a>, <a href="http://www.blackwyrmlair.net/" target="_blank">Black Wyrm Lair</a> and the other Infinity Engine gaming and modding communities who offered their help and
+support<br /></li></ul><p class="faq-q"></p><br /><p style="text-align: left; margin-left: 40px;" class="faq-q">Translation
+team: </p> <ul class="version-list"> <li>French
+Translation:&nbsp;Mornagest, Thot, Mathrim Cauthon, Lothringen, Maël and Graoumf (of the d'Oghmatiques)</li> <li>Spanish
+Translation:&nbsp;Immortality,
+SirLancelot, Nieve and <a href="http://www.clandlan.net/" target="_blank">Clan
+DLAN</a>&nbsp;</li><li>German Translation: Cronox and Leomar</li><li>Russian Translation: Alina, Pilferer, Fess, ATG, Vit MG, Prowler, Tanger Soto and the <a href="http://www.aerie.ru/" target="_blank">Aerie.ru</a> team<br /></li> </ul><p style="text-align: left; margin-left: 40px;" class="faq-q">Beta testers:
+</p> <ul class="version-list"><li>Longinus, T.G.
+Maestro, Caedwyr,
+Daulmakan, Toxeus, SirLancelot,&nbsp;Shaitan and&nbsp;cmorgan</li></ul>
+<address> <span class="address-footer-1">Rogue
+Rebalancing</span><span class="address-footer-1">&nbsp;&gt;
+Credits</span>
+<a href="#top">BACK TO TOP</a> </address> </div>
+<!-- ================== L E G A L N O T I C E ================== --><a name="legal" id="legal"></a> <div style="text-align: justify;"><h4><a name="Legal_Notice:_"></a>Legal
+Notice:&nbsp;&nbsp; &nbsp;</h4><address>
+<span class="address-footer-1">Rogue
+Rebalancing</span><span class="address-footer-1">&nbsp;&gt;
+Legal Notice</span>
+<a href="README_RR.HTML#top">BACK TO TOP</a> </address><ul><li><small><span style="font-weight: bold;"></span> This
+work is licensed under the Creative Commons
+Attribution-Noncommercial-Share Alike 3.0 Unported License. To view a
+copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">http://creativecommons.org/licenses/by-nc-sa/3.0/</a> or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.</small></li></ul></div>
+<!-- ================== C O N T A C T I N F O ================== --><a name="contact" id="contact"></a> <div style="text-align: left;"><h4>Contact
+Info:&nbsp;&nbsp; &nbsp;</h4><address>
+<span class="address-footer-1">Rogue
+Rebalancing</span><span class="address-footer-1">&nbsp;&gt;
+Contact Info</span>
+<a href="README_RR.HTML#top">BACK TO TOP</a> </address><ul><li><small><span style="font-weight: bold;">web
+site:</span>&nbsp;<a href="http://www.spellholdstudios.net/ie/rr"><span style="text-decoration: underline;">http://www.spellholdstudios.net/ie/rr</span></a></small></li><li><small><span style="font-weight: bold;">forum:&nbsp;&nbsp;</span><a href="http://www.shsforums.net/forum/79-rogue-rebalancing/">http://www.shsforums.net/forum/79-rogue-rebalancing/</a></small></li></ul></div></div>
+</body></html>

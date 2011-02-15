@@ -1,0 +1,364 @@
+// Revised Thievery macro
+// This saves space in the main tp2 and prevents needless content duplication in subcomponents
+
+
+DEFINE_ACTION_MACRO ~RR#THVRY~ BEGIN
+
+
+// New thievery related dialogues
+
+COMPILE ~RR/RR_CORE/COMPILE/RR#STLN1.D~                              // RR's new steal failure related dialogue (SoA standard)
+COMPILE ~RR/RR_CORE/COMPILE/RR#STLN0.D~                              // RR's new dialogue for merchants who won't deal with the party due to past thefts
+COMPILE ~RR/RR_CORE/COMPILE/RR#PICKP.D~                              // RR's new pickpocket related dialogue
+COMPILE ~RR/RR_CORE/COMPILE/RR#PPF0.D~                               // RR's new dialogue for characters who have been pickpocketed too many times
+COMPILE ~RR/RR_CORE/COMPILE/AMNCEN1.D~                               // Amnish Centurion theft dialogue revision
+COMPILE EVALUATE_BUFFER ~RR/RR_CORE/COMPILE/FLAMEN.D~                // Flaming Fist Enforcer theft dialogue revision
+
+
+// Taimon and Miloch's EXE patch for re-enabling the PickPocketFailed() trigger
+
+ACTION_IF NOT MOD_IS_INSTALLED TOB_HACKS.TP2 20 THEN BEGIN                         // Checks for Taimon's ToB hacks in order to prevent content duplication
+COPY bgmain.exe bgmain.exe
+    PATCH_IF ((LONG_AT 0x005437B2) == 0x00AA5E6C) THEN BEGIN
+        WRITE_LONG 0x005437B2 0x00AA5F22
+    END ELSE
+    PATCH_IF ((LONG_AT 0x005437B2) == 0x00AA5F22) THEN BEGIN
+        PATCH_PRINT ~Patch already applied. Skipping ...~
+    END ELSE INNER_ACTION BEGIN FAIL ~Target bytes don't match. Aborting ...~ END
+BUT_ONLY_IF_IT_CHANGES
+END                                                                                // ends check for Taimon's ToB hacks
+
+
+// Allow all merchants whose dialogue implies that their wares are stolen to buy fenced goods
+
+ACTION_FOR_EACH ~file~ IN                 // for each of the following files
+                 ~ARLED~                  // Arledrian's store (fence on the top floor of Gaelan Bayle's house)
+              ~SLSHOP01~                  // halfling male thief merchant in the Slums
+              ~SLSHOP02~                  // half-orc female thief merchant in the Slums
+                 ~DMARK~                  // Fovem (human male thief merchant in the Docks District, appears at night)
+              ~AMSMUG01~                  // Carras' regular store (Amkathran smuggler in ToB)
+              ~AMSMUG02~                  // Carras' discount store (Amkathran smuggler in ToB)
+              ~_TOBLACK~                  // Black Lily's store (Tutu version)
+              ~STOBLACK~                  // Black Lily's store (BGT version)
+              ~_TOSILEN~                  // Shop of Silence (Tutu version)
+              ~STOSILEN~                  // Shop of Silence (BGT version)
+               ~_ERDANE~                  // Erdane's store (Tutu version)
+                ~ERDANE~                  // Erdane's store (BGT version)
+BEGIN                                                                              // execute the following
+ACTION_IF FILE_EXISTS_IN_GAME ~%file%.sto~ BEGIN                                   // if the designated file with a STO extension exists
+COPY_EXISTING ~%file%.sto~ ~override~
+PATCH_IF (%SOURCE_SIZE% > 0x9b) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
+// =============================================================================== // the actual work starts from here
+READ_LONG  0x10 "flags"
+  SET "flags" |= 0x1000                                                            // allow the store to accept stolen goods
+  WRITE_LONG 0x10 "flags"
+// =============================================================================== // the actual work ends here
+END                                                                                // ends file size check
+BUT_ONLY_IF_IT_CHANGES
+END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
+END                                                                                // ends ACTION_FOR_EACH block
+
+
+// Disallow stealing from fences
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~                                   // parses through all stores in the game (even those added by mods)
+PATCH_IF (%SOURCE_SIZE% > 0x9b) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
+ READ_LONG  0x10 "flags"
+   PATCH_IF (("%flags%" BAND 0x1000) = 0x1000) BEGIN                               // if the store is flagged as a fence
+      PATCH_IF (("%flags%" BAND 0x08) = 0x08) BEGIN                                // and if that store can be stolen from
+        SET "flags" &= (` 0x08)                                                    // clear the "Can Steal from Store" flag
+        WRITE_LONG 0x10 "flags"
+      END
+    END
+END
+BUT_ONLY_IF_IT_CHANGES
+
+
+// Revised BG2 merchant behavior on failed theft attempts
+
+
+ACTION_FOR_EACH ~file~ IN                                                          // for each of the following files
+              ~STEALAMN~                                                           // SoA generic merchant anti-steal script
+              ~STEALPIR~                                                           // SoA Pirate island merchant anti-steal script
+              ~STEALHOS~                                                           // SoA hostile anti-steal script (requries a specific approach)
+               ~STEAL25~                                                           // ToB generic merchant anti-steal script
+              ~RR#ARLED~                                                           // Arledrian's custom AI script (introduced by RR)
+              ~RR#MARIN~                                                           // Marina's custom AI script (introduced by RR)
+BEGIN                                                                              // execute the following
+ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN                                   // if the designated file with a BCS extension exists
+COPY_EXISTING ~%file%.bcs~ ~override~
+PATCH_IF (%SOURCE_SIZE% > 0x01) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
+// =============================================================================== // the actual work starts from here
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY EXACT_MATCH ~StartDialogue("stolen",LastTrigger)~ ~StartDialogOverride("RR#STLN1",LastTrigger)~
+    PATCH_IF ("%SOURCE_RES%" STRING_EQUAL_CASE ~STEALHOS~) BEGIN                   // SoA hostile anti-steal script (requries a specific approach)
+      REPLACE_TEXTUALLY EXACT_MATCH ~Enemy()~ ~StartDialogOverride("RR#STLN1",LastTrigger)~
+    END
+  COMPILE_BAF_TO_BCS
+// =============================================================================== // the actual work ends here
+END                                                                                // ends file size check
+BUT_ONLY_IF_IT_CHANGES
+END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
+END                                                                                // ends ACTION_FOR_EACH block
+
+
+// Revised BG1 merchant behavior on failed theft attempts (BGT and Tutu version)
+
+ACTION_FOR_EACH ~file~ IN                                                          // for each of the following files
+               ~SHOUT~                                                                 
+              ~_SHOUT~                                                                 
+              ~BENTLY~                                                                 
+              ~INNKE3~                    
+             ~_INNKE3~                     
+             ~INNKEEP~ 
+            ~_INNKEEP~
+              ~MERCH2~
+             ~_MERCH2~
+              ~MERCH4~
+             ~_MERCH4~
+              ~MERCH5~
+             ~_MERCH5~
+              ~MERCH6~
+             ~_MERCH6~
+              ~MERCHA~ // BGT only
+              ~MYSMER~ // BGT only
+              ~SHOP03~
+             ~_SHOP03~
+              ~SHOP04~
+             ~_SHOP04~
+              ~SHOP05~ // BGT only
+              ~SHOP06~
+             ~_SHOP06~
+              ~SHOP07~
+             ~_SHOP07~
+              ~SHOP08~
+             ~_SHOP08~
+              ~SHOPKN~
+             ~_SHOPKN~
+              ~TAEROM~
+             ~_TAEROM~
+BEGIN                                                                              // execute the following
+ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN                                   // if the designated file with a BCS extension exists
+COPY_EXISTING ~%file%.bcs~ ~override~
+// =============================================================================== // the actual work starts from here
+PATCH_IF (%SOURCE_SIZE% > 0x01) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
+DECOMPILE_BCS_TO_BAF
+  REPLACE_TEXTUALLY EXACT_MATCH ~StealFailed([ANYONE])~ ~False() StealFailed([ANYONE])~ // Disable the default anti-steal script block
+COMPILE_BAF_TO_BCS
+END                                                                                // ends file size check
+BUT_ONLY_IF_IT_CHANGES
+EXTEND_TOP ~%file%.bcs~  ~RR/RR_CORE/COMPILE/RR#STEAL.BAF~                         // extend the script with the new anti-steal behaviour
+// =============================================================================== // the actual work ends here
+END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
+END                                                                                // ends ACTION_FOR_EACH block
+
+
+// Revised behavior on failed pickpocket checks
+
+COMPILE ~RR/RR_CORE/COMPILE/RR#PICKP.BAF~                                          // compile the new anti-pickpocketing script
+
+
+// Extend creature scripts
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~                                   // parse through all creatures in the game
+PATCH_INCLUDE ~RR/lib/fj_cre_validity.tpp~                                         // Nythrun's CRE validity macro (detects corrupt and invalid CREs)
+PATCH_IF valid BEGIN
+// =============================================================================== // the actual work starts from here
+LAUNCH_PATCH_FUNCTION ~RR#IDTLS~ RET rr#aemnw = rr#allem END                       // Starts FUNCTION call (my custom "Identify Top Level Script" function)
+READ_ASCII 0x248 "ovrscript"
+READ_BYTE  0x270 "allegiance"
+READ_BYTE  0x271 "general"
+READ_BYTE  0x275 "gender"
+READ_ASCII 0x280 "deathvar"
+ PATCH_IF (("%rr#aemnw%" = "0") AND ("%allegiance%" = "128") AND ("%general%" = "1") AND ("%gender%" > "0") AND ("%gender%" < "3")) BEGIN  // only patch neutral humanoid male or female creatures whcih have at least one AI script assigned to them (the gender check is used for skipping over summoned creatures and such, the top level function is used for skipping over cutscene only CREs which have no scripts assigned)
+  PATCH_IF ("%SOURCE_RES%" STRING_CONTAINS_REGEXP ~RR#~ = 1) BEGIN                 // don't patch files prefixed with the designated strings (i.e. skip RR's own creatures)
+   PATCH_IF !FILE_CONTAINS_EVALUATED (~pdialog.2da~ ~%deathvar%~) BEGIN            // exclude joinable NPCs
+    PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                      // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
+    PATCH_IF NOT FILE_EXISTS_IN_GAME ~%ovrscript%.bcs~ THEN BEGIN                  // if the override script doesn't exist
+     WRITE_ASCII 0x248 ~RR#PICKP~ #8                                               // assign RR#PICKP.BCS as the new override script
+    END ELSE
+       INNER_ACTION BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%ovrscript%.bcs~ AND (NOT FILE_CONTAINS_EVALUATED (~%ovrscript%.bcs~ ~RR#PICKP~)) AND ("%ovrscript%" STRING_CONTAINS_REGEXP ~RR#~ = 1) BEGIN
+        EXTEND_TOP ~%ovrscript%.bcs~ ~RR/RR_CORE/COMPILE/RR#PICKP.BAF~             // otherwise just extend the script unless it was already done
+        END                                                                        // ends ACTION_IF check which prevents extending the same script multiple times
+       END                                                                         // ends inner action
+   END                                                                             // ends joinable NPC check
+  END                                                                              // ends prefix check
+ END                                                                               // ends allegiance, general and gender check
+// =============================================================================== // the actual work ends here
+END                                                                                // ends file validity check
+BUT_ONLY_IF_IT_CHANGES
+
+
+
+// Add the proper STATE_SLEEPING flag to sleeping characters so that they can't call the guards
+
+ACTION_FOR_EACH ~file~ IN                                                          // for each of the following files
+              ~SLEEPDW~                                                            // Sleeping Dwarf
+             ~_SLEEPDW~                                                            // Sleeping Dwarf (Tutu)
+              ~SLEEPFH~                                                            // Sleeping Woman
+             ~_SLEEPFH~                                                            // Sleeping Woman (Tutu)
+              ~SLEEPMH~                                                            // Sleeping Man
+             ~_SLEEPMH~                                                            // Sleeping Man (Tutu)
+              ~SLEEPEL~                                                            // Sleeping Elf
+             ~_SLEEPEL~                                                            // Sleeping Elf (Tutu)
+             ~SLEEPFAT~                                                            // Sleeping Fat Man (BGT version)
+             ~_LEEPFAT~                                                            // Sleeping Fat Man  (Tutu version)
+             ~SLEEPHAL~                                                            // Sleeping Halfling (BGT version)
+             ~_LEEPHAL~                                                            // Sleeping Halfling (Tutu version)
+BEGIN                                                                              // execute the following
+ACTION_IF FILE_EXISTS_IN_GAME ~%file%.cre~ BEGIN                                   // if the file exists
+COPY_EXISTING ~%file%.cre~ ~override~
+PATCH_INCLUDE ~RR/lib/fj_cre_validity.tpp~                                         // Nythrun's CRE validity macro (detects corrupt and invalid CREs)
+PATCH_IF valid BEGIN
+  PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                        // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
+// =============================================================================== // the actual work starts from here
+READ_BYTE  0x20 "state"
+WRITE_BYTE 0x20 ("%state%" BOR 0b00000001)                                         // add the STATE_SLEEPING flag
+// =============================================================================== // the actual work ends here
+END                                                                                // ends file validity check
+BUT_ONLY_IF_IT_CHANGES
+END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
+END                                                                                // ends ACTION_FOR_EACH block
+
+
+
+// Revise anti-stealing scripts so that sleeping, held, stunned, blind, charmed, dead and feebleminded characters and animals do not call the guards (BG2 & ToB version)
+
+COPY_EXISTING ~AMNCEN1.CRE~ ~override~                           // Amnish Centurion
+              ~AMNLEG1.CRE~ ~override~                           // Amnish Legionary
+              ~COWENF1.CRE~ ~override~                           // Cowled Enforcer
+             ~SARMIL01.CRE~ ~override~                           // Militia Soldier
+             ~SARMIL02.CRE~ ~override~                           // Militia Captain
+  WRITE_BYTE  0x270 128                                          // set allegiance to NEUTRAL (prevents AI from interfering with the dialogue)
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ENFORAM.BCS~  ~override~ // Alarmed enforcer SoA script (invisible creature)
+              ~ALARM25.BCS~  ~override~ // Alarmed enforcer ToB script (invisible creature)
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+SetInterrupt(TRUE)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) \1~
+    REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0)~
+    REPLACE_TEXTUALLY ~\(CreateCreatureObject("SARMIL02",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("SARMIL02",Myself,0,0,0)\)~ ~CreateCreatureObject("SARMIL02",Myself,0,0,0) CreateCreatureObject("SARMIL01",Myself,0,0,0)~
+    REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride(LastSeenBy(Myself),Enemy())~ ~~
+    REPLACE_TEXTUALLY EXACT_MATCH ~DisplayStringHead(Myself,9896)~ ~DisplayStringHead(Myself,9896) ReputationInc(-1)~
+    REPLACE_TEXTUALLY EXACT_MATCH ~See([NEUTRAL.HUMANOID])~ ~See([NOTGOOD.HUMANOID])
+OR(10)
+!StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
+!StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+EXTEND_BOTTOM ~ENFORAM.BCS~  ~RR/RR_CORE/COMPILE/RR#STL01.BAF~ // prevent a raised alarm from lingering infinitely in SoA
+EXTEND_BOTTOM ~ALARM25.BCS~  ~RR/RR_CORE/COMPILE/RR#STL01.BAF~ // prevent a raised alarm from lingering infinitely in ToB
+EXTEND_BOTTOM ~ENFORCED.BCS~ ~RR/RR_CORE/COMPILE/ENFORCED.BAF~ // make the guards leave after the fine has been paid
+
+COPY_EXISTING ~SARMIL02.BCS~ ~override~ // Saradush Militia Soldier script
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY EXACT_MATCH ~DisplayStringHead(Myself,71641)~ ~StartDialogOverride("AMNCEN1",[PC])~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+
+// Expand various law enforcer dialogues with additional options for talking your way out of a theft
+
+ACTION_FOR_EACH ~FLAMENF~ IN ~FLAMEN2~ ~_GUARDS~ BEGIN               // for each of the listed items
+  ACTION_IF FILE_EXISTS_IN_GAME "%FLAMENF%.BCS" BEGIN
+    EXTEND_BOTTOM ~%FLAMENF%.BCS~  ~RR/RR_CORE/COMPILE/FLAMEN2.BAF~  // extend the script
+  END
+END                                                                  // end the ACTION_FOR_EACH command block
+
+
+// Modify the container alarm scripts
+
+ACTION_FOR_EACH ~file~ IN                                                          // for each of the following files
+               ~ACT01~
+              ~_ACT01~
+               ~ACT02~
+              ~_ACT02~
+               ~ACT03~
+              ~_ACT03~
+               ~ACT04~
+              ~_ACT04~
+               ~ACT05~
+              ~_ACT05~
+               ~ACT06~
+              ~_ACT06~
+               ~ACT07~ // unused in Tutu
+               ~ACT08~
+              ~_ACT08~
+               ~ACT09~ // unused in Tutu
+               ~ACT10~
+              ~_ACT10~
+               ~ACT11~
+              ~_ACT11~
+               ~ACT12~
+              ~_ACT12~
+               ~ACT13~ // unused in Tutu
+BEGIN                                                                              // execute the following
+ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN                                   // if the designated file with a BCS extension exists
+COPY_EXISTING ~%file%.bcs~ ~override~
+PATCH_IF (%SOURCE_SIZE% > 0x01) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
+// =============================================================================== // the actual work starts from here
+DECOMPILE_BCS_TO_BAF
+REPLACE_TEXTUALLY EXACT_MATCH ~See([NOTGOOD])~ ~See([NOTGOOD.HUMANOID])
+OR(10)
+!StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
+!StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)~
+COMPILE_BAF_TO_BCS
+// =============================================================================== // the actual work ends here
+END                                                                                // ends file size check
+BUT_ONLY_IF_IT_CHANGES
+END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
+END                                                                                // ends ACTION_FOR_EACH block
+
+
+// BGT specific compatibility for anti-stealing container script changes (Note: this block *deliberately* affects *only* BGT due to its own thievery fixes)
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bg1start.2da~ THEN BEGIN               // BGT check
+COMPILE ~RR/RR_CORE/COMPILE/HALFEN.D~ // Halfling Enforcer theft dialogue revision
+COPY_EXISTING ~ACT01.BCS~  ~override~ // container alarm script
+              ~ACT02.BCS~  ~override~ 
+              ~ACT03.BCS~  ~override~ 
+              ~ACT04.BCS~  ~override~ 
+              ~ACT05.BCS~  ~override~ 
+              ~ACT06.BCS~  ~override~ 
+              ~ACT08.BCS~  ~override~ 
+              ~ACT10.BCS~  ~override~ 
+              ~ACT11.BCS~  ~override~ 
+              ~ACT12.BCS~  ~override~ 
+  DECOMPILE_BCS_TO_BAF
+REPLACE_TEXTUALLY EXACT_MATCH ~!StateCheck(LastTrigger,STATE_INVISIBLE)~ ~OR(10)
+!StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
+!StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)
+!StateCheck(LastTrigger,STATE_INVISIBLE)~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+END // ends BGT check
+
+
+
+END  // ends macro

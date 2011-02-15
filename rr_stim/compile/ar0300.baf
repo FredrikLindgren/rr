@@ -1,0 +1,30 @@
+IF
+	Global("RR#STI","AR0300",0)
+	GlobalGT("BodhiJob","GLOBAL",0)
+	Global("ETG2Dave","AR0300",1)
+	OR(2)                                   // Check the Bodies mod "Captured!" quest compatibility block
+          Global("CbShadowThievesCapturePC","GLOBAL",0)
+          Global("CbShadowThievesCapturePC","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#STI","AR0300",1)
+		TriggerActivation("Tran0327",FALSE)
+		TriggerActivation("Tran0328",FALSE)
+		TriggerActivation("Tran0329a",FALSE)
+		TriggerActivation("Tran0329b",FALSE)
+		TriggerActivation("Info307a",TRUE)
+		TriggerActivation("Info307b",TRUE)
+		TriggerActivation("RR#STI01",TRUE)
+		TriggerActivation("RR#STI02",TRUE)
+END
+
+IF
+	Global("RR#STI","AR0300",1)
+        GlobalGT("CbShadowThievesCapturePC","GLOBAL",1) // Check the Bodies mod "Captured!" quest compatibility block
+        GlobalLT("CbShadowThievesCapturePC","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#STI","AR0300",0)
+		TriggerActivation("RR#STI01",FALSE)
+		TriggerActivation("RR#STI02",FALSE)
+END

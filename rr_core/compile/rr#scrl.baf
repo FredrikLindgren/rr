@@ -1,0 +1,31 @@
+IF
+	OR(3)
+	  !Detect(LastSummonerOf(Myself))
+	  Global("RR#SCRLT","LOCALS",1)
+	  StateCheck(LastSummonerOf(Myself),CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	OR(4)
+	  Detect([EVILCUTOFF])
+	  ActuallyInCombat()
+	  CombatCounterGT(0)
+	  AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		DisplayStringNoNameHead(LastSummonerOf(Myself),@8120) // This ability cannot be used in a hostile environment
+		DestroySelf()
+END
+
+IF
+	Exists(LastSummonerOf(Myself))
+	Global("RR#SCRLT","LOCALS",0)
+	!StateCheck(LastSummonerOf(Myself),CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#SCRLT","LOCALS",1)
+		ActionOverride(LastSummonerOf(Myself),StartDialogOverride("RR#SCRL",Myself))
+END

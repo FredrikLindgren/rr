@@ -1,0 +1,494 @@
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("RR#TalkedDedral","RR#010",0)
+	Global("RR#SpawnThieves","RR#010",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+		Heard([ANYONE],124)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	Global("RR#SpawnThieves","RR#010",0)
+	Global("RR#HGRODXP","RR#010",0) // needs to be an area variable due to Dedral's double spawning
+	PartyHasItem("RR#HGROD") // Rod of Golem Control
+	!Dead("RR#DEDRL")
+THEN
+	RESPONSE #100
+		SetGlobal("RR#HGRODXP","RR#010",1) // needs to be an area variable due to Dedral's double spawning
+		AddexperienceParty(12500)
+		SetSequence(SEQ_HEAD_TURN) // Prevents the character from "twitching" upon running this script block.
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!HasItem("RR#HGROD",Myself) // Rod of Golem Control
+	Global("RR#HGRODXP","RR#010",0) // needs to be an area variable due to Dedral's double spawning
+	!PartyHasItem("RR#HGROD") // Rod of Golem Control
+THEN
+	RESPONSE #100
+		GiveItemCreate("RR#HGROD",Myself,1,0,0) // Rod of Golem Control
+		Continue()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!Dead("RR#DEDRL")
+	Global("RR#SpawnThieves","RR#010",0)
+	HasItem("RR#HGROD",[PC]) // Shadow Thief Prison Key
+	OR(6)
+	  See([GOODCUTOFF])
+	  See(SecondNearest([GOODCUTOFF]))
+	  See(ThirdNearest([GOODCUTOFF]))
+	  See(FourthNearest([GOODCUTOFF]))
+	  See(FifthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(2)
+	  TookDamage()
+	  See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	OR(3)
+	  Global("RR#Active","LOCALS",0)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",1)
+	!InActiveArea(Myself)
+	!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		Shout(124)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+	  HPPercentGT(Myself,84)
+	  !HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,60)
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,90)
+	HPPercentGT(Myself,61)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN14",Myself) // Oil of Speed
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	DifficultyGT(EASY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN14",Myself) // Oil of Speed
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	Global("RR#Active","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Myself,STATE_BLIND)
+	ActionListEmpty()
+	OR(2)
+	  RandomNum(5,1)
+	  CombatCounter(0)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	!See([GOODCUTOFF])
+	ActionListEmpty()
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF],STATE_PANIC)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
+	InWeaponRange([GOODCUTOFF.0.0.BARD_ALL])
+	See([GOODCUTOFF.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
+	InWeaponRange([GOODCUTOFF.0.0.DRUID_ALL])
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
+	InWeaponRange([GOODCUTOFF.0.0.CLERIC_ALL])
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
+	InWeaponRange([GOODCUTOFF.0.0.MAGE_ALL])
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HitBy([ANYONE],CRUSHING) // hit by any damage type
+	!CheckStatGT(LastHitter(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(LastHitter(Myself),1,STONESKINS)
+	!StateCheck(LastHitter(Myself),STATE_MIRRORIMAGE)
+	!StateCheck(LastHitter(Myself),STATE_PANIC)
+	OR(2)
+	  InWeaponRange(LastHitter(Myself))
+          RandomNum(4,1)
+	See(LastHitter(Myself))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
+	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

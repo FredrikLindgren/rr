@@ -1,0 +1,795 @@
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+		Heard([ANYONE],124)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!Dead("RR#BOOTR") // Booter
+	HasItem("KEY13",[PC]) // Shadow Thief Prison Key
+	OR(6)
+	  See([GOODCUTOFF])
+	  See(SecondNearest([GOODCUTOFF]))
+	  See(ThirdNearest([GOODCUTOFF]))
+	  See(FourthNearest([GOODCUTOFF]))
+	  See(FifthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(2)
+	  TookDamage()
+	  See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	HasItem("RR#STS04",Myself) // Jasper Gem -> Tier 4 marker (Potion of Haste)
+	!Difficulty(EASIEST)
+THEN
+	RESPONSE #70
+                DestroyItem("RR#STS04") // Tier 4 marker
+		Continue()
+	RESPONSE #30
+		GiveItemCreate("POTN14",Myself,1,1,0) // Oil of Speed
+                DestroyItem("RR#STS04") // Tier 4 marker
+		Continue()
+END
+
+IF
+	HasItem("SCRL06",Myself) // Protection from Fire
+    	!Global("RR#STI_SPATH","GLOBAL",1) // Stealth path indicator
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL06",Myself) // Protection from Fire
+		SelectWeaponAbility(SLOT_AMMO0,0)
+		SetInterrupt(TRUE)
+END
+
+IF
+	DifficultyLT(NORMAL)
+	OR(2)
+	  HasItem("AROW05",Myself) // Arrow of Biting
+	  HasItem("AROW06",Myself) // Arrow of Detonation
+THEN
+	RESPONSE #100
+		DestroyItem("AROW05") // Arrow of Biting
+		DestroyItem("AROW06") // Arrow of Detonation
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO1,0)
+		Continue()
+END
+
+IF
+	Difficulty(EASIEST)
+	OR(2)
+	  HasItem("AROW02",Myself) // Arrow +1
+	  HasItem("AROW08",Myself) // Arrow of Fire
+THEN
+	RESPONSE #100
+		DestroyItem("AROW02") // Arrow +1
+		DestroyItem("AROW08") // Arrow of Fire
+		EquipRanged()
+		SelectWeaponAbility(SLOT_AMMO2,0)
+		Continue()
+END
+
+IF
+	OR(3)
+	  Global("RR#Active","LOCALS",0)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",1)
+	!InActiveArea(Myself)
+	!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Detect([GOODCUTOFF])
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("RR#HIDE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#HIDE","LOCALS",6)
+		DisplayStringHead(Myself,@711) //  attempts to hide in shadows
+		Hide()
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("POTN02",Myself) // Potion of Fire Resistance
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN02",Myself) // Potion of Fire Resistance
+		DisplayString(Myself,46150) // quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Difficulty(EASIEST)
+	HasItem("POTN37",Myself) // Potion of Mind Focusing
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN37",Myself) // Potion of Mind Focusing
+		DisplayString(Myself,46150) // quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPPercentGT(Myself,84)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,75)
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Melee","LOCALS",0)
+	Range(NearestEnemyOf(Myself),4)
+	!HasItem("RING17",Myself) // Flamedance Ring
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Melee","LOCALS",1)
+		SetGlobal("RR#Ranged","LOCALS",0)
+		EquipMostDamagingMelee()
+		Continue()
+END
+
+IF
+	Global("RR#Ranged","LOCALS",0)
+	!Range(NearestEnemyOf(Myself),4)
+	!HasItem("RING17",Myself) // Flamedance Ring
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Ranged","LOCALS",1)
+		SetGlobal("RR#Melee","LOCALS",0)
+		EquipRanged()
+		Continue()
+END
+
+IF
+	Global("RR#Melee","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetGlobal("RR#Ranged","LOCALS",1)
+		SetGlobal("RR#Melee","LOCALS",0)
+		EquipRanged()
+		SetInterrupt(TRUE)
+		RandomWalkContinuous()
+END
+
+IF
+	HasItem("POTN14",Myself) // Oil of Speed
+	!Difficulty(EASIEST)
+	!StateCheck(Myself,STATE_HASTED)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN14",Myself) // Oil of Speed
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	CheckStatGT(Myself,20,DETECTILLUSIONS)
+	!ModalState(DETECTTRAPS)
+	OR(4)
+	  See([GOODCUTOFF.0.0.0.0.ILLUSIONARY.0]) // illusionary clones such as Mislead or Project Image
+	  StateCheck([GOODCUTOFF],STATE_ILLUSIONS)
+          StateCheck(SecondNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+          StateCheck(ThirdNearest([GOODCUTOFF]),STATE_ILLUSIONS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	CheckStatGT(Myself,20,DETECTILLUSIONS)
+	ModalState(DETECTTRAPS)
+	!GlobalTimerNotExpired("RR#DI","LOCALS")
+THEN
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",6)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",7)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",8)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",9)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+	RESPONSE #20
+		SetGlobalTimer("RR#DI","LOCALS",10)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	Global("RR#Active","LOCALS",1)
+	!HasItem("RING17",Myself) // Flamedance Ring
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	!StateCheck(Myself,STATE_BLIND)
+	ActionListEmpty()
+	OR(2)
+	  RandomNum(5,1)
+	  CombatCounter(0)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#Active","LOCALS",1)
+	!HasItem("RING17",Myself) // Flamedance Ring
+	!See([GOODCUTOFF])
+	ActionListEmpty()
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!HasItemEquiped("shld24",[GOODCUTOFF]) // Reflection Shield +1
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SixthNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(SixthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SixthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",FifthNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(FifthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(FifthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",FourthNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(FourthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(FourthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",ThirdNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[GOODCUTOFF]) // Reflection Shield +1
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.DRUID_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.DRUID_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.DRUID_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
+	CheckStatLT([PC.0.0.DRUID_ALL],100,RESISTMISSILE)
+	See([PC.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.CLERIC_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.CLERIC_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
+	CheckStatLT([PC.0.0.CLERIC_ALL],100,RESISTMISSILE)
+	See([PC.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.BARD_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.BARD_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.BARD_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.BARD_ALL],1,STONESKINS)
+	CheckStatLT([PC.0.0.BARD_ALL],100,RESISTMISSILE)
+	See([PC.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.MAGE_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.MAGE_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([PC.0.0.MAGE_ALL],100,RESISTMISSILE)
+	See([PC.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[GOODCUTOFF]) // Reflection Shield +1
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",ThirdNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",Nearest([GOODCUTOFF])) // Reflection Shield +1
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.DRUID_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.DRUID_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.DRUID_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.DRUID_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.DRUID_ALL],100,RESISTMISSILE)
+	See([PC.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.CLERIC_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.CLERIC_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.CLERIC_ALL],100,RESISTMISSILE)
+	See([PC.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.BARD_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.BARD_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.BARD_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.BARD_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.BARD_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.BARD_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.BARD_ALL],100,RESISTMISSILE)
+	See([PC.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",ThirdNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
+	!CheckStat(ThirdNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(ThirdNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(ThirdNearest([PC.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",SecondNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
+	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([PC.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",[PC.0.0.MAGE_ALL]) // Reflection Shield +1
+	!CheckStat([PC.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	CheckStatGT([PC.0.0.MAGE_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.MAGE_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.MAGE_ALL],100,RESISTMISSILE)
+	See([PC.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Melee","LOCALS",0)
+	Global("RR#Heal","LOCALS",0)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!HasItemEquiped("shld24",LastSeenBy(Myself)) // Reflection Shield +1
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("RR#Melee","LOCALS",1)
+	Global("RR#Heal","LOCALS",0)
+	!HasItem("RING17",Myself) // Flamedance Ring
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

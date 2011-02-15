@@ -1,0 +1,62 @@
+IF
+	AreaCheck("RR#001")
+	Global("RR#CSPAWN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringNoNameHead(Player1,@561) // You can not start the encounter from this area.
+		DestroySelf()
+END
+
+IF
+	Global("RR#CSPAWN","GLOBAL",0)
+	!Difficulty(EASIEST)
+	!AreaCheck("RR#001")
+	!Dead("RR#VEND") // Venduris
+	!Dead("RR#ZAER") // Zaeron T'ane
+	!Dead("RR#BODK") // Bodak Hangthorn
+	!Dead("RR#SELI") // Selina Shadowstorm
+	!Dead("RR#GROK") // Grok
+	!Dead("RR#KERT") // Kerith the Bleak
+THEN
+	RESPONSE #100
+	SetInterrupt(FALSE)
+	SetGlobal("RR#CSPAWN","GLOBAL",1)
+	SetGlobal("RR#CTRIG","AR0800",1)
+	SetGlobal("RR#CAMB","GLOBAL",1)
+	ClearAllActions()
+	StartCutSceneMode()
+	FadeToColor([6.0],0)
+	HideGUI()
+	DayNight(MIDNIGHT)
+	Weather(0)
+	SetInterrupt(TRUE)
+        ActionOverride(Player2,LeaveAreaLUA("RR#001","",[330.930],0))
+        ActionOverride(Player3,LeaveAreaLUA("RR#001","",[280.930],0))
+        ActionOverride(Player4,LeaveAreaLUA("RR#001","",[240.930],0))
+        ActionOverride(Player5,LeaveAreaLUA("RR#001","",[200.930],0))
+        ActionOverride(Player6,LeaveAreaLUA("RR#001","",[160.930],0))
+        ActionOverride(Player1,LeaveAreaLUA("RR#001","",[330.930],0))
+        StartCutScene("RR#CAMB0")
+END
+
+IF
+	Global("RR#CSPAWN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#CSPAWN","GLOBAL",2)
+		DestroySelf()
+END
+
+IF
+	Dead("RR#VEND") // Venduris
+	Dead("RR#ZAER") // Zaeron T'ane
+	Dead("RR#BODK") // Bodak Hangthorn
+	Dead("RR#SELI") // Selina Shadowstorm
+	Dead("RR#GROK") // Grok
+	Dead("RR#KERT") // Kerith the Bleak
+	Global("RR#CSPAWN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringNoNameHead(Player1,@562) // The Chosen of Cyric are already dead. 
+		DestroySelf()
+END

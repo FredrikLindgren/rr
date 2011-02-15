@@ -1,0 +1,39 @@
+DEFINE_ACTION_MACRO ~fix_old_DS_scripts~ BEGIN
+
+	ACTION_IF !(FILE_EXISTS_IN_GAME ~%marker%~) THEN BEGIN
+
+		COPY_EXISTING ~misc01.itm~ ~override/%marker%~
+
+		COPY_EXISTING ~%oldswapfile%~ ~override~
+			COUNT_2DA_ROWS 0 ~entrycount~
+			FOR (i=0;i<~%entrycount%~;i=i+1) BEGIN
+				READ_2DA_ENTRY ~%i%~ 0 0 ~oldname~
+				READ_2DA_ENTRY ~%i%~ 1 0 ~newname~
+				SPRINT $oldentry(~%i%~) ~%oldname%~
+				SPRINT $newentry(~%i%~) ~%newname%~
+			END
+		BUT_ONLY_IF_IT_CHANGES
+	
+		COPY_EXISTING ~%oldfiles%~ ~override~
+			COUNT_2DA_ROWS 0 ~filenum~
+			FOR (i=0;i<~%filenum%~;i=i+1) BEGIN
+				READ_2DA_ENTRY ~%i%~ 0 0 ~filename~
+				INNER_ACTION BEGIN
+					ACTION_IF FILE_EXISTS_IN_GAME ~%filename%.bcs~ THEN BEGIN
+						COPY_EXISTING ~%filename%.bcs~ ~override~
+							DECOMPILE_BCS_TO_BAF
+							FOR (j=0;j<~%entrycount%~;j=j+1) BEGIN
+								SPRINT ~oldname~ $oldentry(~%j%~)
+								SPRINT ~newname~ $newentry(~%j%~)
+								REPLACE_TEXTUALLY ~,%oldname%)~ ~,%newname%)~
+							END
+							COMPILE_BAF_TO_BCS
+						BUT_ONLY_IF_IT_CHANGES
+					END
+				END
+			END
+		BUT_ONLY_IF_IT_CHANGES	
+
+	END
+
+END

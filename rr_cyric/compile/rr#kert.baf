@@ -1,0 +1,1495 @@
+IF
+	OR(3)
+	  GlobalLT("RR#CSAVE","GLOBAL",2)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+	  StateCheck(Myself,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player1,29)
+	!StateCheck(Player1,STATE_INVISIBLE)
+	!StateCheck(Player1,STATE_MIRRORIMAGE)
+	CheckStatLT(Player1,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player1) // Cloak of Mirroring
+	!CheckStat(Player1,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player1,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player1,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player1,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player1,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player1,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player2,29)
+	!StateCheck(Player2,STATE_INVISIBLE)
+	!StateCheck(Player2,STATE_MIRRORIMAGE)
+	CheckStatLT(Player2,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player2) // Cloak of Mirroring
+	!CheckStat(Player2,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player2,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player2,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player2,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player2,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player2,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player3,29)
+	!StateCheck(Player3,STATE_INVISIBLE)
+	!StateCheck(Player3,STATE_MIRRORIMAGE)
+	CheckStatLT(Player3,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player3) // Cloak of Mirroring
+	!CheckStat(Player3,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player3,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player3,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player3,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player3,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player3,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player4,29)
+	!StateCheck(Player4,STATE_INVISIBLE)
+	!StateCheck(Player4,STATE_MIRRORIMAGE)
+	CheckStatLT(Player4,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player4) // Cloak of Mirroring
+	!CheckStat(Player4,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player4,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player4,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player4,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player4,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player4,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player5,29)
+	!StateCheck(Player5,STATE_INVISIBLE)
+	!StateCheck(Player5,STATE_MIRRORIMAGE)
+	CheckStatLT(Player5,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player5) // Cloak of Mirroring
+	!CheckStat(Player5,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player5,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player5,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player5,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player5,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player5,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	HPGT(Player6,29)
+	!StateCheck(Player6,STATE_INVISIBLE)
+	!StateCheck(Player6,STATE_MIRRORIMAGE)
+	CheckStatLT(Player6,50,RESISTMAGIC)
+	!HasItemEquiped("CLCK26",Player6) // Cloak of Mirroring
+	!CheckStat(Player6,4,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT(Player6,0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(Player6,0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(Player6,0,WIZARD_SPELL_TURNING)
+	!CheckStat(Player6,1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(Player6,7,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Necromancy
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	HasItem("HARM",Myself) // Harm
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	OR(2)
+	  CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	  StateCheck(Myself,STATE_SILENCED)
+	StateCheck(Myself,STATE_INVISIBLE)
+	Detect("RR#BODK")
+	!Dead("RR#BODK") // Bodak Hangthorn
+	!StateCheck("RR#BODK",STATE_DISABLED)
+THEN
+	RESPONSE #100
+		FaceObject("RR#BODK")
+		ApplySpellRES("JWTRUE",Myself) // Become visible
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	OR(2)
+	  CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	  StateCheck(Myself,STATE_SILENCED)
+	Detect("RR#BODK")
+	!Dead("RR#BODK") // Bodak Hangthorn
+	!StateCheck("RR#BODK",STATE_DISABLED)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	OR(2)
+	  CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	  StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#BODK") // Bodak Hangthorn
+	!StateCheck("RR#BODK",STATE_DISABLED)	
+	!Detect("RR#BODK")
+THEN
+	RESPONSE #100
+		MoveToObject("RR#BODK")
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPGT(Myself,84)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,85)
+	!Global("RR#Heal","LOCALS",1)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	HaveSpell(CLERIC_SANCTUARY)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!CheckStat(Myself,1,SANCTUARY)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HPPercentLT(Myself,50)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_SANCTUARY)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	HPPercentLT(Myself,80)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck(Myself,STATE_POISONED)
+		StateCheck(Myself,STATE_BLIND)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59",Myself) // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck(Myself,STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	!HasItem("SCRL59",Myself) // Neutralize Poison
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_CURE_DISEASE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#VEND",STATE_STUNNED)
+		CheckStatGT("RR#VEND",0,HELD)
+	!Dead("RR#VEND")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	!GlobalTimerNotExpired("RR#RParal","LOCALS")
+	!StateCheck("RR#VEND",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#VEND",STATE_CONFUSED)
+	!StateCheck("RR#VEND",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobalTimer("RR#RParal","LOCALS",12)
+		Spell("RR#VEND",CLERIC_REMOVE_PARALYSIS)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#SELI",STATE_STUNNED)
+		CheckStatGT("RR#SELI",0,HELD)
+	!Dead("RR#SELI")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	!GlobalTimerNotExpired("RR#RParal","LOCALS")
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	CheckStat("RR#SELI",0,MINORGLOBE)
+	!StateCheck("RR#SELI",STATE_CONFUSED)
+	!StateCheck("RR#SELI",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobalTimer("RR#RParal","LOCALS",12)
+		Spell("RR#SELI",CLERIC_REMOVE_PARALYSIS)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#GROK",STATE_STUNNED)
+		CheckStatGT("RR#GROK",0,HELD)
+	!Dead("RR#GROK")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	!GlobalTimerNotExpired("RR#RParal","LOCALS")
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_CONFUSED)
+	!StateCheck("RR#GROK",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobalTimer("RR#RParal","LOCALS",12)
+		Spell("RR#GROK",CLERIC_REMOVE_PARALYSIS)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#ZAER",STATE_STUNNED)
+		CheckStatGT("RR#ZAER",0,HELD)
+	!Dead("RR#ZAER")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	!GlobalTimerNotExpired("RR#RParal","LOCALS")
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	CheckStat("RR#ZAER",0,MINORGLOBE)
+	!CheckStatGT("RR#ZAER",0,WIZARD_SPELL_DEFLECTION)
+	!StateCheck("RR#ZAER",STATE_CONFUSED)
+	!StateCheck("RR#ZAER",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobalTimer("RR#RParal","LOCALS",12)
+		Spell("RR#ZAER",CLERIC_REMOVE_PARALYSIS)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	OR(2)
+		StateCheck("RR#BODK",STATE_STUNNED)
+		CheckStatGT("RR#BODK",0,HELD)
+	!Dead("RR#BODK")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)
+	!GlobalTimerNotExpired("RR#RParal","LOCALS")
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_CONFUSED)
+	!StateCheck("RR#BODK",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobalTimer("RR#RParal","LOCALS",12)
+		Spell("RR#BODK",CLERIC_REMOVE_PARALYSIS)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck("RR#VEND",STATE_POISONED)
+		StateCheck("RR#VEND",STATE_BLIND)
+	!Dead("RR#VEND")
+	!StateCheck("RR#VEND",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#VEND",STATE_CONFUSED)
+	!StateCheck("RR#VEND",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59","RR#VEND") // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck("RR#SELI",STATE_POISONED)
+		StateCheck("RR#SELI",STATE_BLIND)
+	!Dead("RR#SELI")
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#SELI",STATE_CONFUSED)
+	!StateCheck("RR#SELI",STATE_CHARMED)
+	!CheckStatGT("RR#SELI",0,WIZARD_SPELL_TURNING)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59","RR#SELI") // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck("RR#GROK",STATE_POISONED)
+		StateCheck("RR#GROK",STATE_BLIND)
+	!Dead("RR#GROK")
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_CONFUSED)
+	!StateCheck("RR#GROK",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59","RR#GROK") // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck("RR#ZAER",STATE_POISONED)
+		StateCheck("RR#ZAER",STATE_BLIND)
+	!Dead("RR#ZAER")
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	!CheckStatGT("RR#ZAER",0,WIZARD_SPELL_DEFLECTION)
+	!StateCheck("RR#ZAER",STATE_CONFUSED)
+	!StateCheck("RR#ZAER",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59","RR#ZAER") // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL59",Myself) // Neutralize Poison
+	OR(2)
+		StateCheck("RR#BODK",STATE_POISONED)
+		StateCheck("RR#BODK",STATE_BLIND)
+	!Dead("RR#BODK")
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_CONFUSED)
+	!StateCheck("RR#BODK",STATE_CHARMED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL59","RR#BODK") // Neutralize Poison
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#VEND",STATE_FEEBLEMINDED)
+		StateCheck("RR#VEND",STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#VEND")
+	!StateCheck("RR#VEND",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#VEND",STATE_CONFUSED)
+	!StateCheck("RR#VEND",STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#VEND",CLERIC_CURE_DISEASE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#SELI",STATE_FEEBLEMINDED)
+		StateCheck("RR#SELI",STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#SELI")
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#SELI",STATE_CONFUSED)
+	!StateCheck("RR#SELI",STATE_CHARMED)
+	CheckStat("RR#SELI",0,MINORGLOBE)
+	!CheckStatGT("RR#SELI",0,WIZARD_SPELL_TURNING)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#SELI",CLERIC_CURE_DISEASE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#GROK",STATE_FEEBLEMINDED)
+		StateCheck("RR#GROK",STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#GROK")
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_CONFUSED)
+	!StateCheck("RR#GROK",STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#GROK",CLERIC_CURE_DISEASE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#ZAER",STATE_FEEBLEMINDED)
+		StateCheck("RR#ZAER",STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#ZAER")
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#ZAER",STATE_CONFUSED)
+	!StateCheck("RR#ZAER",STATE_CHARMED)
+	CheckStat("RR#ZAER",0,MINORGLOBE)
+	!CheckStatGT("RR#ZAER",0,WIZARD_SPELL_DEFLECTION)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#ZAER",CLERIC_CURE_DISEASE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		StateCheck("RR#BODK",STATE_FEEBLEMINDED)
+		StateCheck("RR#BODK",STATE_BLIND)
+	HaveSpell(CLERIC_CURE_DISEASE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Dead("RR#BODK")
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_CONFUSED)
+	!StateCheck("RR#BODK",STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#BODK",CLERIC_CURE_DISEASE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck("RR#VEND",STATE_PANIC)
+	!Dead("RR#VEND")
+	!StateCheck("RR#VEND",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#VEND",STATE_CONFUSED)
+	!StateCheck("RR#VEND",STATE_CHARMED)
+	HaveSpell(CLERIC_REMOVE_FEAR)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#VEND",CLERIC_REMOVE_FEAR)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck("RR#SELI",STATE_PANIC)
+	!Dead("RR#SELI")
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	CheckStat("RR#SELI",0,MINORGLOBE)
+	!StateCheck("RR#SELI",STATE_CONFUSED)
+	!StateCheck("RR#SELI",STATE_CHARMED)
+	HaveSpell(CLERIC_REMOVE_FEAR)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#SELI",CLERIC_REMOVE_FEAR)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck("RR#ZAER",STATE_PANIC)
+	!Dead("RR#ZAER")
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	CheckStat("RR#ZAER",0,MINORGLOBE)
+	!StateCheck("RR#ZAER",STATE_CONFUSED)
+	!StateCheck("RR#ZAER",STATE_CHARMED)
+	HaveSpell(CLERIC_REMOVE_FEAR)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#ZAER",CLERIC_REMOVE_FEAR)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	StateCheck("RR#BODK",STATE_PANIC)
+	!Dead("RR#BODK")
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_CONFUSED)
+	!StateCheck("RR#BODK",STATE_CHARMED)
+	HaveSpell(CLERIC_REMOVE_FEAR)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#BODK",CLERIC_REMOVE_FEAR)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)
+	OR(4)
+		SpellCast([ANYONE],WIZARD_INCENDIARY_CLOUD)
+		SpellCast([ANYONE],WIZARD_STINKING_CLOUD)
+		SpellCast([ANYONE],WIZARD_CLOUDKILL)
+		SpellCast([ANYONE],WIZARD_DEATH_FOG)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!HasItem("HARM",Myself) // Harm
+	OR(2)
+	  HaveSpell(CLERIC_HARM)
+	  RandomNum(4,1)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+END
+
+IF
+	Dead("RR#VEND") // Venduris
+	Dead("RR#ZAER") // Zaeron T'ane
+	HaveSpell(CLERIC_TRUE_SIGHT)
+	CheckStat(Myself,0,TRUE_SIGHT)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!See([PC])
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_TRUE_SIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	Dead("RR#VEND") // Venduris
+	Dead("RR#ZAER") // Zaeron T'ane
+	HaveSpell(CLERIC_TRUE_SIGHT)
+	CheckStat(Myself,0,TRUE_SIGHT)
+	OR(7)
+		StateCheck(Player1,STATE_NOT_TARGETABLE)
+		StateCheck(Player2,STATE_NOT_TARGETABLE)
+		StateCheck(Player3,STATE_NOT_TARGETABLE)
+		StateCheck(Player4,STATE_NOT_TARGETABLE)
+		StateCheck(Player5,STATE_NOT_TARGETABLE)
+		StateCheck(Player6,STATE_NOT_TARGETABLE)
+		Detect([GOODCUTOFF.0.0.0.0.ILLUSIONARY])
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_TRUE_SIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_WORD)
+	DifficultyGT(EASY)
+	See([GOODCUTOFF.0.0.MAGE_ALL.0.0.MASK_GOOD])
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		MoveToObjectNoInterrupt(LastSeenBy(Myself))
+		Spell(Myself,CLERIC_UNHOLY_WORD)
+		MoveToPointNoInterrupt([944.268])
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_WORD)
+	DifficultyGT(EASY)
+	See([GOODCUTOFF.0.0.CLERIC_ALL.0.0.MASK_GOOD])
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		MoveToObjectNoInterrupt(LastSeenBy(Myself))
+		Spell(Myself,CLERIC_UNHOLY_WORD)
+		MoveToPointNoInterrupt([944.268])
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_WORD)
+	DifficultyGT(EASY)
+	See([GOODCUTOFF.0.0.DRUID_ALL.0.0.MASK_GOOD])
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		MoveToObjectNoInterrupt(LastSeenBy(Myself))
+		Spell(Myself,CLERIC_UNHOLY_WORD)
+		MoveToPointNoInterrupt([944.268])
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_WORD)
+	DifficultyGT(EASY)
+	See([GOODCUTOFF.0.0.BARD_ALL.0.0.MASK_GOOD])
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		MoveToObjectNoInterrupt(LastSeenBy(Myself))
+		Spell(Myself,CLERIC_UNHOLY_WORD)
+		MoveToPointNoInterrupt([944.268])
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_REGENERATE)
+	!Dead("RR#GROK") // Grok
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_DISABLED)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#GROK",CLERIC_REGENERATE)
+END
+
+IF
+	HasItem("SCRL5F",Myself) // Chaotic Commands
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		!HaveSpell(CLERIC_HARM)
+		RandomNum(3,1)
+	!Dead("RR#SELI")
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#SELI",STATE_DISABLED)
+	!CheckStatGT("RR#SELI",0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT("RR#SELI",0,WIZARD_SPELL_TURNING)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL5F","RR#SELI") // Chaotic Commands
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL5F",Myself) // Chaotic Commands
+	OR(2)
+		!HaveSpell(CLERIC_HARM)
+		RandomNum(3,1)
+	!Dead("RR#GROK") // Grok
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_DISABLED)
+	!CheckStatGT("RR#GROK",0,CLERIC_CHAOTIC_COMMANDS)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL5F","RR#GROK") // Chaotic Commands
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL5F",Myself) // Chaotic Commands
+	OR(2)
+		!HaveSpell(CLERIC_HARM)
+		RandomNum(3,1)
+	!Dead("RR#BODK") // Bodak
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_DISABLED)
+	!CheckStatGT("RR#BODK",0,CLERIC_CHAOTIC_COMMANDS)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL5F","RR#BODK") // Chaotic Commands
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("SCRL5F",Myself) // Chaotic Commands
+	OR(2)
+		!HaveSpell(CLERIC_HARM)
+		RandomNum(3,1)
+	!Dead("RR#ZAER") // Zaeron
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#ZAER",STATE_DISABLED)
+	!CheckStatGT("RR#ZAER",0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT("RR#ZAER",0,WIZARD_SPELL_DEFLECTION)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL5F","RR#ZAER") // Chaotic Commands
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	HasItem("SCRL5F",Myself) // Chaotic Commands
+	OR(2)
+		!HaveSpell(CLERIC_HARM)
+		RandomNum(3,1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!CheckStatGT(Myself,0,CLERIC_CHAOTIC_COMMANDS)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("SCRL5F",Myself) // Chaotic Commands
+		DisplayStringHead(Myself,46153) // uses a scroll
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_HOLY_POWER)
+	CheckStatLT(Myself,18,STR)
+	OR(2)
+		HaveSpell(CLERIC_HARM)
+		RandomNum(5,1)
+	!StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_HOLY_POWER)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!HasItem("HARM",Myself) // Harm
+	HaveSpell(CLERIC_HARM)
+	DifficultyGT(EASY)
+	OR(2)
+	  RandomNum(2,1)
+	  StateCheck(Myself,STATE_INVISIBLE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #10
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_HARM)
+		MoveToObjectNoInterrupt(Player1)
+END
+
+IF
+	!HasItem("HARM",Myself) // Harm
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+	OR(3)
+	  Range([GOODCUTOFF],4)
+	  AttackedBy([ANYONE],DEFAULT)
+	  TookDamage()
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END 
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		RandomNum(4,2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Difficulty(EASIEST)
+	See([PC.0.0.0.0.0.MASK_GOOD])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Necromancy
+	!HasItemEquiped("clck26",LastSeenBy(Myself)) // Cloak of Mirroring
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(4,2)
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Difficulty(EASIEST)
+	See(SecondNearest([PC.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Necromancy
+	!HasItemEquiped("clck26",LastSeenBy(Myself)) // Cloak of Mirroring
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(4,2)
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!Difficulty(EASIEST)
+	See(ThirdNearest([PC.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Necromancy
+	!HasItemEquiped("clck26",LastSeenBy(Myself)) // Cloak of Mirroring
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEFENSIVE_HARMONY)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(5,1)
+	CheckStat(Myself,0,CLERIC_DEFENSIVE_HARMONY)
+	Detect([EVILCUTOFF])
+	Detect(SecondNearest([EVILCUTOFF]))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_DEFENSIVE_HARMONY)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEATH_WARD)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(4,1)
+	Global("RR#DW_Self","LOCALS",0)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+	        SetGlobal("RR#DW_Self","LOCALS",1)
+		Spell(Myself,CLERIC_DEATH_WARD)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEATH_WARD)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(4,1)
+	!Dead("RR#SELI") // Selina
+	!StateCheck("RR#SELI",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#SELI",STATE_DISABLED)
+	!CheckStatGT("RR#SELI",0,SCRIPTINGSTATE2) // Death Ward
+	!CheckStatGT("RR#SELI",0,WIZARD_SPELL_TURNING)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#SELI",CLERIC_DEATH_WARD)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEATH_WARD)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(4,1)
+	!Dead("RR#GROK") // Grok
+	!StateCheck("RR#GROK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#GROK",STATE_DISABLED)
+	!CheckStatGT("RR#GROK",0,SCRIPTINGSTATE2) // Death Ward
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#GROK",CLERIC_DEATH_WARD)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEATH_WARD)
+	OR(2)
+		RandomNum(4,1)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+	!Dead("RR#BODK") // Bodak
+	!StateCheck("RR#BODK",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#BODK",STATE_DISABLED)
+	!CheckStatGT("RR#BODK",0,SCRIPTINGSTATE2) // Death Ward
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#BODK",CLERIC_DEATH_WARD)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DEATH_WARD)
+	OR(2)
+		RandomNum(4,1)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+	!Dead("RR#ZAER") // Zaeron
+	!StateCheck("RR#ZAER",STATE_NOT_TARGETABLE)
+	!StateCheck("RR#ZAER",STATE_DISABLED)
+	!CheckStatGT("RR#ZAER",0,SCRIPTINGSTATE2) // Death Ward
+	!CheckStatGT("RR#ZAER",0,WIZARD_SPELL_DEFLECTION)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell("RR#ZAER",CLERIC_DEATH_WARD)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_AERIAL_SERVANT)
+	See([GOODCUTOFF])
+	!SpellCast([ANYONE],WIZARD_DEATH_FOG)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(5,1)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_AERIAL_SERVANT)
+END
+
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_ARMOR_OF_FAITH)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(6,1)
+	CheckStatLT(Myself,25,MAGICDAMAGERESISTANCE)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_ARMOR_OF_FAITH)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)
+	!StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(6,1)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_CHANT)
+	!StateCheck(Myself,STATE_CHANT)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(6,1)
+	OR(5)
+	  Range("RR#VEND",8)
+	  Range("RR#SELI",8)
+	  Range("RR#GROK",8)
+	  Range("RR#ZAER",8)
+	  Range("RR#BODK",8)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_CHANT)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_BLESS)
+	!StateCheck(Myself,STATE_BLESS)
+	OR(2)
+		!HaveSpell(CLERIC_FLAME_STRIKE)
+		RandomNum(6,1)
+	OR(5)
+	  Range("RR#VEND",8)
+	  Range("RR#SELI",8)
+	  Range("RR#GROK",8)
+	  Range("RR#ZAER",8)
+	  Range("RR#BODK",8)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(Myself,CLERIC_BLESS)
+END
+
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_FLAME_STRIKE)
+	See([GOODCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),75,RESISTFIRE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Evocation
+	!HasItemEquiped("CLCK26",LastSeenBy(Myself)) // Cloak of Mirroring
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_FLAME_STRIKE)
+	See(SecondNearest([GOODCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),75,RESISTFIRE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Evocation
+	!HasItemEquiped("CLCK26",LastSeenBy(Myself)) // Cloak of Mirroring
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_FLAME_STRIKE)
+	See(ThirdNearest([GOODCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),75,RESISTFIRE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Evocation
+	!HasItemEquiped("CLCK26",LastSeenBy(Myself)) // Cloak of Mirroring
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See([GOODCUTOFF.HUMANOID])
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See(SecondNearest([GOODCUTOFF.HUMANOID]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
+	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
+	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
+	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
+	!HasItemEquipedReal("NPSW01",LastSeenBy(Myself)) // Sword of Arvoreen
+	!HasItemEquipedReal("SW1H27",LastSeenBy(Myself)) // Arbane's Sword +2
+	!HasItemEquipedReal("SW2H06",LastSeenBy(Myself)) // Spider's Bane
+	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
+	!HasItemEquipedReal("SPER07",LastSeenBy(Myself)) // Spear of the Unicorn +2
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	!See([GOODCUTOFF])
+	InMyArea(Player1)
+	ActionListEmpty()
+	RandomNum(5,1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("RR#Heal","LOCALS",1)
+	!See([GOODCUTOFF])
+	ActionListEmpty()
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

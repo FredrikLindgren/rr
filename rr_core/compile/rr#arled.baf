@@ -1,0 +1,466 @@
+IF
+	Die()
+	Global("RR#INCINERATE_ARLED","GLOBAL",0)
+	Global("RR#FOUND_ARLED_DEAD","GLOBAL",0)
+	AreaCheck("AR0801")
+THEN
+	RESPONSE #100
+		SetGlobal("RR#FOUND_ARLED_DEAD","GLOBAL",1)
+		AddJournalEntry(@664,QUEST)
+END
+
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		SetGlobal("RR#ATTACKED_ARLED","GLOBAL",1)
+		Enemy()
+		Shout(124)
+		Continue()
+END
+
+IF
+	Global("RR#ACTIVE","LOCALS",0)
+	Heard([ANYONE],124)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	Global("RR#ACTIVE","LOCALS",0)
+	OR(3)
+	  TookDamage()
+	  See(NearestEnemyOf(Myself))
+          Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		Shout(124)
+		Continue()
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	!Allegiance(LastTrigger,FAMILIAR)
+	Global("RR#PPFL","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1090) // Hands off. Now.
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	!Allegiance(LastTrigger,FAMILIAR)
+	Global("RR#PPFL","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1091) // Try that again and you'll pull back a stump.
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([PC])
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+	!Allegiance(LastTrigger,FAMILIAR)
+	Global("RR#PPFL","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		IncrementGlobal("RR#PPFL","LOCALS",1)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@1092) // I warned you!
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		SetGlobal("RR#ATTACKED_ARLED","GLOBAL",1)
+		Enemy()
+		Shout(124)
+		Continue()
+		SetInterrupt(TRUE)
+END
+
+IF
+	PickPocketFailed([FAMILIAR])
+	Allegiance(Myself,NEUTRAL)
+	General(Myself,HUMANOID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	See(LastTrigger)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		FaceObject(LastTrigger)
+		DisplayStringHead(Myself,@9703) // Get away from me you filthy creature!
+		SetSequence(SEQ_ATTACK)
+		ApplySpellRES("RR#FEAR",LastTrigger)
+		SetInterrupt(TRUE)
+END
+
+IF
+	StealFailed([ANYONE])
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		StartDialogue("stolen",LastTrigger)
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#ARLED_SPIDERS","GLOBAL",0)
+	Global("RR#ARLED_MOVE_GRAVEYARD","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#ARLED_SPIDERS","GLOBAL",1)
+		SpawnPtDeactivate("Spawn Point 1")
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#ARLED_VAMP_SPAWN","GLOBAL",0)
+	Global("RR#ARLED_MOVE_GRAVEYARD","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_VAMP_SPAWN","GLOBAL",1)
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		CreateCreature("RR#VAM01",[1087.2163],14) // Top Vampire
+		CreateCreature("RR#VAM01",[1053.2210],10) // Middle Vampire
+		CreateCreature("RR#VAM01",[980.2251],12)  // Bottom Vampire
+		DestroyItem("POTN52") // Potion of Extra Healing
+		DestroyItem("POTN52") // Potion of Extra Healing
+		DestroyItem("POTN52") // Potion of Extra Healing
+		DestroyItem("POTN52") // Potion of Extra Healing
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_VAMP_SPAWN","GLOBAL",1)
+	HasItem("RR#SILV",Myself) // Silverblaze
+	AreaCheck("AR0801")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_VAMP_SPAWN","GLOBAL",2)
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		SetGlobalTimer("RR#CAST","LOCALS",6)
+		DestroyItem("DAGG02") // Dagger +1
+		FillSlot(SLOT_WEAPON)
+		EquipMostDamagingMelee()
+		DisplayStringHead(Myself,@680) //  Selune's light protect me!
+		ReallyForceSpell(Myself,CLERIC_NEGATIVE_PLANE_PROTECTION)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#ARLED_VAMP_SPAWN","GLOBAL",1)
+	!HasItem("RR#SILV",Myself) // Silverblaze
+	AreaCheck("AR0801")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_VAMP_SPAWN","GLOBAL",2)
+		SetGlobal("RR#ACTIVE","LOCALS",1)
+		DisplayStringHead(Myself,@681) // I may be outmatched, but I shall not be defeated!
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("AR0312")
+	Global("WorkingForBodhi","GLOBAL",1)
+	Global("RR#ArledAttacks","GLOBAL",0)
+	Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeAIScript("RR#ARLED",OVERRIDE)
+		FaceObject(LastSeenBy(Myself))
+		StartDialogueNoSet(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+	  Global("RR#ACTIVE","LOCALS",0)
+	  !Detect([PC])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Script","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Script","LOCALS",1)
+		ChangeAIScript("",DEFAULT)
+		ChangeAIScript("",GENERAL)
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",CLASS)
+		Continue()
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#VAM01_DEAD","GLOBAL",3)
+	!Allegiance(Myself,ENEMY)
+	Global("RR#ARLED_RUN","LOCALS",1)
+	OR(3)
+		StateCheck(Myself,STATE_INVISIBLE)
+		!Detect([PC])
+		!GlobalTimerNotExpired("RR#ARLED_ESCAPE","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#VAM01_DEAD","GLOBAL",3)
+	!Allegiance(Myself,ENEMY)
+	Global("RR#ARLED_RUN","LOCALS",1)
+	OR(3)
+		!StateCheck(Myself,STATE_INVISIBLE)
+		Detect([PC])
+		!GlobalTimerNotExpired("RR#ARLED_ESCAPE","LOCALS")
+THEN
+	RESPONSE #100
+		MoveToPoint([739.2487])
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#VAM01_DEAD","GLOBAL",3)
+	Global("RR#INCINERATE_ARLED","GLOBAL",0)
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("JWTRUE",Myself) // Become visible
+		DisplayStringHead(Myself,@682) //  Selune be praised, it is finally over.
+		Wait(1)
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		StartDialogueNoSet(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#VAM01_DEAD","GLOBAL",3)
+	!Allegiance(Myself,ENEMY)
+	!See([PC])
+	Global("RR#ARLED_RUN","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#ARLED_RUN","LOCALS",1)
+		ApplySpellRES("JWTRUE",Myself) // Become visible
+		Face(12)
+		Wait(1)
+		Face(6)
+		Wait(1)
+		DisplayStringHead(Myself,@683) // My task here is done. Now I must report my findings to the Council.
+		Wait(1)
+		SetGlobalTimer("RR#ARLED_ESCAPE","LOCALS",6)
+		SetInterrupt(TRUE)
+END
+
+IF
+	AreaCheck("AR0801")
+	Global("RR#INCINERATE_ARLED","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#INCINERATE_ARLED","GLOBAL",2)
+		SmallWait(5)
+		DisplayStringHead(Myself,16233) // Gulp!
+		ApplySpell(Myself,CLERIC_DOOM)
+		DestroyItem("POTN26") // Potion of Explosions
+		DestroyItem("POTN13") // Oil of Fiery Burning
+		DestroyItem("POTN52") // Potion of Extra Healing
+		DestroyItem("POTN52") // Potion of Extra Healing
+		DestroyItem("POTN52") // Potion of Extra Healing
+		SmallWait(20)
+		DisplayStringHead(Myself,35167) // ggrrrrlglAAAAARRRRGHGHGHG!!
+		SmallWait(7)
+		ReallyForceSpell(Myself,WIZARD_FIREBALL)
+		ApplyDamage(Myself,999,FIRE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	OR(2)
+		HPPercentGT(Myself,84)
+		!HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Heal","LOCALS",0)
+END
+
+IF
+	HPPercentLT(Myself,85)
+	Global("RR#Heal","LOCALS",0)
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#Heal","LOCALS",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	HasItem("POTN52",Myself) // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		UseItem("POTN52",Myself) // Potion of Extra Healing
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!AreaCheck("AR0801")
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#ACTIVE","LOCALS",1)
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+	!ModalState(DETECTTRAPS)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	!AreaCheck("AR0801")
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#ACTIVE","LOCALS",1)
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+	ModalState(DETECTTRAPS)
+	!GlobalTimerNotExpired("RR#DI","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#DI","LOCALS",6)
+		DisplayStringHead(Myself,@709) // attempts to detect illusions
+		Continue()
+END
+
+IF
+	!AreaCheck("AR0801")
+	!Global("RR#Heal","LOCALS",1)
+	Global("RR#ACTIVE","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	InMyArea(Player1)
+	RandomNum(5,1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!AreaCheck("AR0801")
+	!Global("Healing","LOCALS",1)
+	Global("RR#ACTIVE","LOCALS",1)
+	!Detect([GOODCUTOFF])
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself) // Potion of Invisibility
+	!GlobalTimerNotExpired("RR#CAST","LOCALS")
+	GlobalLT("RR#VAM01_DEAD","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("RR#CAST","LOCALS",6)
+		UseItem("POTN10",Myself) // Potion of Invisibility
+		DisplayStringHead(Myself,46150) //  quaffs a potion
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	See([EVILCUTOFF.0.VAMPIRE])
+THEN
+	RESPONSE #100
+		AttackReevaluate([EVILCUTOFF.0.VAMPIRE],15)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!Global("RR#Heal","LOCALS",1)
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",1)
+	GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("RR#Heal","LOCALS",1)
+	GlobalLT("RR#VAM01_DEAD","GLOBAL",3)
+	!See("RR#VAM01")
+THEN
+	RESPONSE #100
+		MoveToObject("RR#VAM01")
+END

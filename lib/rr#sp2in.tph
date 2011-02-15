@@ -1,0 +1,33 @@
+// Convert spell into innate ability macro
+// Useful for assigning spells-like abilities to creatures who have no caster levels
+
+DEFINE_PATCH_FUNCTION ~RR#SP2IN~  
+
+INT_VAR                                                                            // initialize starting variables
+
+"rr#ctime"   = "99"                                                                // new casting time
+"rr#rinvs"   = "0"                                                                 // spell removes invisibility when cast
+
+BEGIN                                                                              // Start FUNCTION
+
+READ_LONG  0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+WRITE_SHORT 0x1c "4"                                                               // Set spell type to Innate (4)
+WRITE_LONG 0x34 "1"                                                                // Set spell level to 1 to avoid scripting issues
+ FOR ("index" = 0; "%index%" < "%abil_num%"; "index" = ("%index%" + 1)) BEGIN      // cycle through headers
+  WRITE_BYTE ("%abil_off%" + 0x02 + (0x28 * "%index%")) "4"                        // change ability icon location to Innate (4)
+    PATCH_IF ("rr#ctime" != "99") BEGIN
+      WRITE_SHORT ("%abil_off%" + 0x12 + ("%index%" * 0x28)) "rr#ctime"            // set casting time to the predetermined value
+    END
+ END
+    PATCH_IF ("rr#rinvs" = "1") BEGIN                                               // if the spell should remove invisibility
+      LAUNCH_PATCH_FUNCTION ~RR#AGLEF~                                              // Start FUNCTION call (my custom "Add Global Effect" function)
+      INT_VAR                                                                       // initialize variables
+      "rr#opcode" = "136"                                                           // effect: #136 (force visible)
+      "rr#target" = "1"                                                             // target: 1 (self)
+      "rr#timing" = "1"                                                             // timing mode: 1 (permanent)
+      "rr#prob1" = "100"                                                            // probability1: 100%
+      END                                                                           // end FUNCTION call
+    PATCH_INCLUDE ~RR/LIB/fj_spl_itm_reindex.tpp~                                   // Nythrun's SPL/ITM re-indexer macro (needed for Global Effects)
+    END                                                                             // end FUNCTION call (my custom "Add Global Effect" function)
+END                                                                                 // End FUNCTION (my custom "Spell to Innate" function)

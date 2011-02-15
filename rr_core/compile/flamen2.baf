@@ -1,0 +1,14 @@
+IF
+	Heard("FlamingEnforcer",2) // Shout: Leave
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Heard("FlamingEnforcer",1) // Shout: Attack
+	!Allegiance(Myself,EVILCUTOFF)
+THEN
+	RESPONSE #100
+		Enemy()
+END

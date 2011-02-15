@@ -1,0 +1,14 @@
+IF
+	Global("BodhiJob","GLOBAL",3)
+	Global("PalernSpawn","RR#012",0)
+THEN
+	RESPONSE #100
+		SetGlobal("PalernSpawn","RR#012",1)
+		CreateCreature("PALERN",[567.256],0) // Palern Flynn
+		CreateCreature("RR#SFL02",[547.753],6) // Kara-Tur Mercenary
+		CreateCreature("RR#SFL02",[381.591],4) // Kara-Tur Mercenary
+		CreateCreature("RR#SFL02",[282.658],6) // Kara-Tur Mercenary
+		CreateCreature("RR#SFL03",[474.620],5) // Assassin
+		CreateCreature("RR#SFL03",[424.678],5) // Assassin
+		CreateCreature("RR#SFL04",[505.664],5) // Zhentarim Mercenary
+END

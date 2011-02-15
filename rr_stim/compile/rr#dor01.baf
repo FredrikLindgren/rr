@@ -1,0 +1,16 @@
+IF
+	OpenState(Myself,TRUE)
+	Global("RR#ADoor","RR#010",0)
+	!Dead("aran")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddAreaFlag(1) // No saving until the cutscenes are over, otherwise they might get disrupted
+		CloseDoor("Door06")
+		Lock("Door06")
+		Lock("Door07")
+		CreateCreature("RR#SAW04",[3929.1983],10) // Assassin
+		CreateCreature("RR#SAW04",[3995.1982],10) // Assassin
+		SetGlobal("RR#ADoor","RR#010",1)
+		SetInterrupt(TRUE)
+END

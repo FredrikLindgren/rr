@@ -1,0 +1,29 @@
+IF
+	OR(2)
+	  !Detect(LastSummonerOf(Myself))
+	  StateCheck(LastSummonerOf(Myself),CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	OR(4)
+	  Detect([EVILCUTOFF])
+	  ActuallyInCombat()
+	  CombatCounterGT(0)
+	  AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		DisplayStringNoNameHead(LastSummonerOf(Myself),@8120) // This ability cannot be used in a hostile environment
+		DestroySelf()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	Exists(LastSummonerOf(Myself))
+	!StateCheck(LastSummonerOf(Myself),CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSummonerOf(Myself))
+END

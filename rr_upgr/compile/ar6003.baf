@@ -1,0 +1,8 @@
+IF
+  Global("RR#Lapis","AR6003",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RR#Lapis","AR6003",1)
+    ActionOverride("Table 1",CreateItem("RR#LAPIS",1,0,0))
+    Continue()
+END

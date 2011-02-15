@@ -1,0 +1,7 @@
+IF
+	StealFailed([ANYONE])
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		StartDialogOverride("RR#STLN1",LastTrigger)
+END

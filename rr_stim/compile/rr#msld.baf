@@ -1,0 +1,16 @@
+IF
+	  !See(LastAttackerOf(Myself))
+	  !Range([GOODCUTOFF],8)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	OR(2)
+	  See(LastAttackerOf(Myself))
+	  Range([GOODCUTOFF],8)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

@@ -1,0 +1,139 @@
+IF
+	Global("RR#STI_ALARM","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(2)
+	  AttackedBy([ANYONE],DEFAULT)
+	  TookDamage()
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	!Dead("RR#HAZ") // Haz
+	HasItem("KEY12",[PC]) // Key to Aran's Lair
+	OR(6)
+	  See([GOODCUTOFF])
+	  See(SecondNearest([GOODCUTOFF]))
+	  See(ThirdNearest([GOODCUTOFF]))
+	  See(FourthNearest([GOODCUTOFF]))
+	  See(FifthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	  See(SixthNearest([GOODCUTOFF]))
+	StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("RR#Active","LOCALS",0)
+	OR(3)
+	  TookDamage()
+	  See([GOODCUTOFF])
+	  Heard("RR#HAZ",124)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		Continue()
+END
+
+IF
+	OR(2)
+	  Global("RR#Active","LOCALS",0)
+	  StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Global("RR#GDeact","LOCALS",2)
+	Detect("RR#HAZ")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#GDeact","LOCALS",2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#GDeact","LOCALS",1)
+	OR(2)
+	  AttackedBy([GOODCUTOFF],DEFAULT)
+	  Detect("RR#HAZ")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#GDeact","LOCALS",2)
+		Enemy()
+		DisplayStringHead(Myself,@724) // Hostile behavior detected... resuming combat routine
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#GDeact","LOCALS",0)
+	Allegiance(Myself,EVILCUTOFF)
+	See([PC])
+	!Detect("RR#HAZ")
+	HasItemEquipedReal("RR#HGROD",LastSeenBy(Myself)) // Haz's Rod of Golem Control
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("RR#GDeact","LOCALS",1)
+		FaceObject(LastSeenBy(Myself))
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		DisplayStringHead(Myself,@723) // Master's insignia detected... this servant will now deactivate
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("RR#GDeact","LOCALS",1)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!StateCheck(Myself,STATE_HASTED)
+	!Difficulty(EASIEST)
+	See([GOODCUTOFF])
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		ReallyForceSpell(Myself,GOLEM_HASTE)
+		Continue()
+END
+
+IF
+	See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	!See([GOODCUTOFF])
+	Detect([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Detect([GOODCUTOFF])
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END

@@ -1,0 +1,88 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#VEND")
+		MoveToPointNoInterrupt([551.654])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#VEND")
+		Face(0)
+		Wait(4)
+		UseItem("POTN56",Myself) // Rogue's Potion of Frost Giant Strength
+		UseItem("POTN34",Myself) // Potion of Magic Protection
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#GROK")
+		MoveToPointNoInterrupt([631.654])
+		Face(0)
+		Wait(3)
+		UseItem("POTN24",Myself) // Potion of Defense
+		UseItem("POTN35",Myself) // Potion of Magic Shielding
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#BODK")
+		MoveToPointNoInterrupt([522.605])
+		Face(0)
+		Wait(4)
+		UseItem("POTN21",Myself) // Potion of Clarity
+		UseItem("POTN11",Myself) // Potion of Invulnerability
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#SELI")
+		MoveToPointNoInterrupt([599.595])
+		Face(0)
+		Wait(4)
+		UseItem("POTN45",Myself) // Potion of Freedom
+		UseItem("RR#AMULB",Myself) // Barrier Amulet
+		SetSequence(SEQ_CAST) // Displays the proper casting animation (for cosmetic purposes)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#ZAER")
+		MoveToPointNoInterrupt([712.654])
+		Face(0)
+		Wait(4)
+		UseItem("POTN41",Myself) // Potion of Power
+		UseItem("POTN04",Myself) // Potion of Frost Giant Strength
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#KERT")
+		MoveToPointNoInterrupt([502.545])
+		Face(0)
+		Wait(1)
+		Spell(Myself,CLERIC_MAGIC_RESISTANCE)
+		Spell(Myself,CLERIC_HOLY_POWER)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("RR#VEND")
+		Wait(12)
+   		StartCutScene("RR#CAMB3")
+END

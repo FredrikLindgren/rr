@@ -39,7 +39,7 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANES
 
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#DWF.RR
 
-BEGIN @1
+BEGIN @1 DESIGNATED 0
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#DWF.RR~                     // allow other mods to detect this component
@@ -68,7 +68,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#TRNQ.EFF
 
-BEGIN @2
+BEGIN @2 DESIGNATED 1
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch the RR Assorted Fixes macro
@@ -310,7 +310,7 @@ STRING_SET ~71467~ @34                                              // Tracking 
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#THL01.SPL
 
 
-BEGIN @19
+BEGIN @19 DESIGNATED 2
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                // ToB installation check
 FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid installation on Tutu
@@ -385,6 +385,11 @@ PATCH_IF ("%SOURCE_FILE%" STRING_COMPARE_CASE "LUTH4.2DA" = 0) BEGIN
 END
 PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING spcl917.spl override
+  SAY 0x50 @8014
+BUT_ONLY
+
 END                                                                  // Ends Refinements compatible 2DA block
 
 COPY    ~RR/RR_CORE/BAM/RR#THL2B.BAM~      ~override~                // Danger Sense icon
@@ -470,7 +475,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#ALCHT.SPL~   ~override~                // Alchemy 
 
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#PPTSK.RR
 
-BEGIN @17
+BEGIN @17 DESIGNATED 3
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                 // ToB installation check
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPTSK.RR~                     // allow other mods to detect this component
@@ -500,7 +505,7 @@ BUT_ONLY_IF_IT_CHANGES
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#BDF01.SPL
 
 
-BEGIN @3
+BEGIN @3 DESIGNATED 4
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                // ToB installation check
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
@@ -797,7 +802,7 @@ BUT_ONLY_IF_IT_CHANGES
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#BHL01.SPL
 
 
-BEGIN @4
+BEGIN @4 DESIGNATED 5
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                // ToB installation check
 FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid installation on Tutu
@@ -954,17 +959,22 @@ END
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
+//Remove mention of a dependency on Evasion from Avoid Death. Thieves still need to pick Evasion if RR's thief HLAs are also installed
+COPY_EXISTING spcl917.spl "override/fl#cl917.spl"
+  SAY 0x50 @8015
+BUT_ONLY
+
 // Restore the Avoid Death HLA to Bards (only needed with Refinements)
 COPY_EXISTING ~LUBA0.2DA~ ~override~                                 // True Bard HLA table
               ~LUBA2.2DA~ ~override~                                 // Blade HLA table
               ~LUBA3.2DA~ ~override~                                 // Jester HLA table
-SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 1 ~GA_SPCL917~                     // Aviod Death HLA
+SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 1 ~GA_fl#cl917~                     // Aviod Death HLA
 SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 4 ~1~                              // Minimum level for Aviod Death
 SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 5 ~99~                             // Maximum level for Aviod Death
 SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 6 ~16~                             // Number of times that Aviod Death can be acquired
 SET_2DA_ENTRIES_NOW ~RR#REFAD~ 1                                     // Actually make the changes
 COPY_EXISTING ~LUBA4.2DA~ ~override~                                 // Skald HLA table (different row from others)
-SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 1 ~GA_SPCL917~                     // Aviod Death HLA
+SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 1 ~GA_fl#cl917~                     // Aviod Death HLA
 SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 4 ~1~                              // Minimum level for Aviod Death
 SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 5 ~99~                             // Maximum level for Aviod Death
 SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 6 ~16~                             // Number of times that Aviod Death can be acquired
@@ -1345,7 +1355,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.SPL~    ~override~                // Scribe S
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#PPBRD.RR
 
 
-BEGIN @9
+BEGIN @9 DESIGNATED 6
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                         // ToB installation check
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPBRD.RR~                             // allow other mods to detect this component
 
@@ -1409,7 +1419,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#GUARA.ITM
 
-BEGIN @5                                                            // Additional equipment for Thieves and Bards
+BEGIN @5 DESIGNATED 7                                               // Additional equipment for Thieves and Bards
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
@@ -2650,7 +2660,7 @@ END                                                                            /
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#BUC11.ITM
 
 
-BEGIN @18
+BEGIN @18 DESIGNATED 8
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 FORBID_FILE ~override/_sw1h01.itm~ @11                              // Forbid installation on Tutu
@@ -2737,7 +2747,7 @@ END
 // Rogue Rebalancing - Revised Thievery
 ///////////////////////////////////////////////////////////////////////
 
-BEGIN @15  // Use PnP thievery potions and prevent their effects from stacking
+BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
@@ -2852,7 +2862,7 @@ END                                                                             
 // ************************************ Subcomponent marker ***************************************************************************
 
 
-BEGIN @16  // Retain default thievery potions and prevent their effects from stacking
+BEGIN @16 DESIGNATED 10  // Retain default thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
 LAUNCH_ACTION_MACRO ~RR#AFIX~            // Launch the RR Assorted Fixes macro
 
@@ -2967,7 +2977,7 @@ END                                                                             
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#SDEAT.ITM
 
 
-BEGIN @6
+BEGIN @6 DESIGNATED 11
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                        // ToB installation check
 FORBID_FILE ~override/_sw1h01.itm~ @11                                       // Forbid installation on Tutu
@@ -3615,7 +3625,7 @@ END                                                                             
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#STF01.BCS
 
 
-BEGIN @7
+BEGIN @7 DESIGNATED 12
 
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                         // ToB installation check
 FORBID_FILE ~override/_sw1h01.itm~ @11                                        // Forbid installation on Tutu
@@ -4086,6 +4096,7 @@ COPY_EXISTING ~AR0300.ARE~ ~override~                                      // Do
     READ_LONG 0xbc "song_off"
     READ_LONG 0xc0 "rest_off"
     READ_LONG 0xc4 "note_off"
+
     WRITE_SHORT 0x80 ("%vert_num%" + 4)
     INSERT_BYTES ("%vert_off%" + (0x04 * "%vert_num%")) 0x10
         WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%") 1327     // Vertex1.X

@@ -3,7 +3,7 @@
 
 BEGIN ~RR#SCRL~
 
-IF ~~ THEN BEGIN RR#SCRL00
+IF ~True()~ THEN BEGIN RR#SCRL00
 SAY @8222 // (Select a spell level:)
 IF ~PartyGoldGT(49)~ THEN REPLY @8230 GOTO RR#SCRL01 // 1st level spells (50 gp)
 IF ~PartyGoldGT(99)~ THEN REPLY @8231 GOTO RR#SCRL02 // 2nd level spells (100 gp)

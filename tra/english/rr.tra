@@ -45,13 +45,13 @@ Unusable By:
 
 
 @24 = ~The Guardian~
-@25 = ~This odd looking shield appears to be entirely made up of large hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shield bearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound who's strength and size seem to be directly linked to the power of the shield bearer.
+@25 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
 
 STATISTICS:
 
 Equipped Abilities:
     +5 to maximum hit points
-     Shield bearer regenerates 1 hit point per round
+     Shieldbearer regenerates 1 hit point per round
 
 Special Abilities:
     Summon Lesser Shambler 1x/day
@@ -97,13 +97,13 @@ Disadvantages:
 -  Cannot acquire the Assassination ability
 -  Cannot acquire the Crippling Strike ability~
 
-@29 = ~BARD: The bard is also a rogue, but he is very different from the thief. His strength is his pleasant and charming personality. With it and his wits he makes his way through the world. A bard is a talented musician and a walking storehouse of gossip, tall tales, and lore. He learns a little bit about everything that crosses his path; he is a jack-of-all- trades but master of none. While many bards are scoundrels, their stories and songs are welcome almost everywhere and are often inspirational to the listeners. A bard can rally his allies by singing heroic songs or weaving inspiring tales about how his companions will overcome their foes and win the day. The effect of the bard's song varies according to his level:
+@29 = ~BARD: The bard is also a rogue, but he is very different from the thief. His strength is his pleasant and charming personality. With it and his wits he makes his way through the world. A bard is a talented musician and a walking storehouse of gossip, tall tales, and lore. He learns a little bit about everything that crosses his path; he is a jack of all trades but master of none. While many bards are scoundrels, their stories and songs are welcome almost everywhere and are often inspirational to the listeners. A bard can rally his allies by singing heroic songs or weaving inspiring tales about how his companions will overcome their foes and win the day. The effect of the bard's song varies according to his level:
 
 1st:   +1 to hit and all saving throws, song raises morale
 9th:   +2 to hit and all saving throws, song removes fear
 18th:  +3 to hit and all saving throws, song protects from fear~
 
-@30 = ~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make him appear more intimidating and fearsome. If there is a showy way to wield or perform with a weapon, a Blade knows how to do it better than anyone. Blades often perform amazing displays of skill and control as they whirl various weapons about their bodies with deadly precision. The weapons of a Blade are always kept in perfect condition and highly polished for maximum effect during a battle or a performance. Blades regularly train and perform with weapons in both hands eventually developing complete ambidexterity.
+@30 = ~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make him appear more intimidating and fearsome. If there is a showy way to wield or perform with a weapon, a Blade knows how to do it better than anyone. Blades often perform amazing displays of skill and control as they whirl various weapons about their bodies with deadly precision. The weapons of a Blade are always kept in perfect condition and highly polished for maximum effect during a battle or a performance. Blades regularly train and perform with weapons in both hands, eventually developing complete ambidexterity.
 
 Advantages:
 -  May use the Offensive Spin and Defensive Spin abilities once per day per 4 levels
@@ -119,7 +119,7 @@ Disadvantages:
 -  Cannot acquire the Lingering Song ability
 
 Offensive Spin: 
-This ability lasts for 24 seconds granting the Blade +2 bonus to hit and damage and an extra attack. All of the Blade's attacks do maximum damage for the duration.
+This ability lasts for 24 seconds and grants the Blade +2 bonus to hit and damage and an extra attack. All of the Blade's attacks do maximum damage for the duration.
 
 Defensive Spin: 
 This ability lasts for 24 seconds and grants the Blade a +1 bonus to Armor Class per each level of experience, up to a maximum of 10. The Blade cannot move away from the initial spot while performing a Defensive Spin.
@@ -137,7 +137,7 @@ Advantages:
 
 Disadvantages:
 -  Can only become proficient with weapons that are usable by the Thief class
--  Must be Chaotic aligned
+-  Must be Chaotically aligned
 -  Battlesong doesn't help allies
 
 Jester's Song:
@@ -147,7 +147,7 @@ A Jester's Song doesn't help allies. Instead, it distracts every opponent within
 9th:   Enemies must save vs. spells or become distracted (+2 save bonus) and confused (+4 save bonus)
 18th:  Enemies must save vs. spells or become distracted (no save bonus), confused (+2 save bonus) and mesmerized (+4 save bonus)
 
-Distracted opponents have a 20% chance of spellcasting failure and suffer a 2 point penalty to their THAC0 and AC. Confused opponents either go berserk and attack the nearest creature, stand still and babble incoherently or wander about aimlessly. Mesmerized opponents have their flow of thoughts disrupted to such an extent that they are unable to take any rational actions while listening to Jester's song which effectively incapacitates them. However, even in that state opponents can still perceive danger on a subconscious level, so any hostile action taken against them automatically breaks this effect. The Jester's song has no effect on mindless creatures such as Constructs, Skeletons, Zombies and Slimes.
+Distracted opponents have a 20% chance of spellcasting failure and suffer a 2 point penalty to their THAC0 and AC. Confused opponents either go berserk and attack the nearest creature, stand still and babble incoherently or wander about aimlessly. Mesmerized opponents have their flow of thoughts disrupted to such an extent that they are unable to take any rational actions while listening to Jester's song, which effectively incapacitates them. However, even in that state opponents can still perceive danger on a subconscious level, so any hostile action taken against them automatically breaks this effect. The Jester's song has no effect on mindless creatures such as Constructs, Skeletons, Zombies and Slimes.
 
 Fool's Luck:
 Jesters are careless, foolish and given to whimsical decisions, yet they seem to possess some uncanny ability which allows them to survive in almost any situation. Fool's Luck adds a +1 bonus to the Jester's base Armor Class, a +1 bonus to all of his saving throws and a +5% bonus to his pickpocket skill checks.
@@ -163,7 +163,7 @@ Advantages:
 
 Disadvantages:
 -  Pick pockets ability one-quarter normal
--  Suffers a 1 point penalty to spellcasting speed
+-  Suffers a 1-point penalty to spellcasting speed
 
 Skald's Song:
 By chanting a war song, a Skald can inspire allies as they go forward into combat. Chanting can elevate spirits, remove concerns about danger, keep men's minds focused on combat and fill friendly forces with a sense of being larger than life. The effects of the song further improve as the Skald gains more levels:
@@ -189,7 +189,7 @@ Disadvantages:
 -  Must be of evil or neutral alignment
 
 Poison Weapon:
-Due to the requirements of his profession, an Assassin becomes adapt at coating his weapons in poison early during his career. Any weapon prepared in this manner will deal an extra 1d3 points of poison damage upon contact. Furthermore, unless a saving throw vs. poison is made, the poison will be injected into the bloodstream of the victim dealing one additional point of damage per each level of the Assassin (up to a maximum of 20). The poison coating evaporates after 5 rounds. Constructs, Elementals, Slimes and Undead creatures cannot be poisoned.
+Due to the requirements of his profession, an Assassin becomes adapt at coating his weapons in poison early during his career. Any weapon prepared in this manner will deal an extra 1d3 points of poison damage upon contact. Furthermore, unless a saving throw vs. poison is made, the poison will be injected into the bloodstream of the victim, dealing one additional point of damage per each level of the Assassin (up to a maximum of 20). The poison coating evaporates after 5 rounds. Constructs, Elementals, Slimes and Undead creatures cannot be poisoned.
 
 Poison Expertise
 Through training and experience, an Assassin gradually learns to utilize poison more effectively. Furthermore, due to the constant exposure to poison an Assassin slowly becomes desensitized towards it. Each time this ability is acquired, the Assassin gains a permanent +1 bonus to his saving throws vs. poison. At the same time, the saving throw difficulty class of his Poison Weapon ability improves by 1.
@@ -207,7 +207,7 @@ By thoroughly studying the weak spots of his victim, an Assassin can focus all o
 Range: Visual range of the caster
 Duration: 5 rounds
 Casting Time: 6
-Area of Effect: 30 feet radius
+Area of Effect: 30-feet radius
 Saving Throw: Special
 
 An experienced Bard eventually learns to influence the actions of his opponents. By focusing his willpower a Bard can suggest a course of activity which opponents feel strongly compelled to follow. The suggestion must be worded in such a manner as to make the activity sound reasonable. Obviously self-destructive orders are not carried out and break the enchantment. If a common language is shared, the Bard can generally force the subjects to perform as he desires, within the limits of their abilities. If no common language is shared, the character can communicate only by using basic commands, such as "Come here," "Go there," "Fight," "Stand still" etc. Opponents can attempt a saving throw vs. spells in order to avoid being controlled, but even if they succeed, there is still a 25% chance that they will suffer a mental breakdown from the amount of stress that their minds have suffered. This will effectively cause them to enter a Berserk state (no save) and attack the nearest creature for one round.
@@ -220,10 +220,10 @@ Being non-magical in nature, this ability completely ignores any magic resistanc
 Range: Visual range of the caster
 Duration: 5 rounds
 Casting Time: 7
-Area of Effect: 30 feet radius
+Area of Effect: 30-feet radius
 Saving Throw: Special
 
-By softly humming a catchy tune, an experienced Bard can captivate and enthrall any audience, even creatures that do not understand his language. Opponents in the area of effect must successfully save vs. paralyzation or give the Bard their undivided attention, totally ignoring their surroundings and becoming fascinated for the following five rounds. Fascinated creatures can take no actions for the duration of the effect, however, they can still perceive danger on a subconscious level so any hostile action taken against them automatically breaks this state. In addition, even if opponents make their saving throws and avoid the fascination effect, there is still a 25% chance that they will become confused for one round (no save) from being too deeply immersed into the hypnotic pattern of the song.
+By softly humming a catchy tune, an experienced Bard can captivate and enthrall any audience, even creatures that do not understand his language. Opponents in the area of effect must successfully save vs. paralyzation or give the Bard their undivided attention, totally ignoring their surroundings and becoming fascinated for the following five rounds. Fascinated creatures can take no actions for the duration of the effect, however, they can still perceive danger on a subconscious level, so any hostile action taken against them automatically breaks this state. In addition, even if opponents make their saving throws and avoid the fascination effect, there is still a 25% chance that they will become confused for one round (no save) from being too deeply immersed into the hypnotic pattern of the song.
 
 Being non-magical in nature, this ability completely ignores any magic resistance of the targets. However, it has no effect on mindless creatures such as Constructs, Skeletons, Zombies and Slimes.~
 
@@ -233,10 +233,10 @@ Being non-magical in nature, this ability completely ignores any magic resistanc
 Range: Visual range of the caster
 Duration: Instantaneous
 Casting Time: 5
-Area of Effect: 30 feet radius
+Area of Effect: 30-feet radius
 Saving Throw: Special
 
-The Bard magically amplifies the capabilities of a musical instrument in order to fill his surroundings with high pitched stone-shattering sound waves. Creatures in the nearby area take 15d6 points of sonic damage and are also deafened for five rounds. Deafened creatures suffer a 50% chance of spellcasting failure. A successful save vs. breath halves the damage and negates the deafness.
+The Bard magically amplifies the capabilities of a musical instrument in order to fill his surroundings with high-pitched, stone-shattering sound waves. Creatures in the nearby area take 15d6 points of sonic damage and are also deafened for five rounds. Deafened creatures suffer a 50% chance of spellcasting failure. A successful save vs. breath halves the damage and negates the deafness.
 
 Being non-magical in nature, this ability completely ignores any magic resistance of the targets. However, resistance to energy damage can reduce the amount of damage dealt.~
 
@@ -244,17 +244,17 @@ Being non-magical in nature, this ability completely ignores any magic resistanc
 
 This ability creates an enchanted flute made of pure magical energy which remains in existence for 8 hours. When played by a bard of exceptional talent the flute can be used to break enchantments, which effectively nullifies the effects of all spells and spell-like abilities (but not Psionics) that belong to the Enchantment school, whether they are beneficial or not (three charges). Furthermore, the flute can be used to mimic the effects of any arcane spell from the Enchantment school (two charges). Finally, the flute can summon forth a Spirit Warrior (one charge).
 
-Spirit Warriors are spectral echoes of past heroes whose souls now rest in the halls of Valhalla. If a bard agrees to spread stories and songs of their legendary deeds in order to prevent them from being forgotten, a spirit of one of these valiant fighters will materialize and join the bard's cause for a short while (10 rounds). The mere presence of this fabled warrior instills courage in all nearby allies raising their morale to its highest.~
+Spirit Warriors are spectral echoes of past heroes whose souls now rest in the halls of Valhalla. If a bard agrees to spread stories and songs of their legendary deeds in order to prevent them from being forgotten, a spirit of one of these valiant fighters will materialize and join the bard's cause for a short while (10 rounds). The mere presence of this fabled warrior instills courage in all nearby allies, raising their morale to its highest.~
 
 @47 = ~Enhanced Bard Song~
 @48 = ~Enhanced Bard Song
 
-This mighty battle chant grants the Bard and his allies +4 to hit, +4 to all saving throws, +10% bonus to magic resistance and immunity to Fear and Charm. The Bard himself receives an 8 point bonus to all of his saving throws while singing the song.~
+This mighty battle chant grants the Bard and his allies +4 to hit, +4 to all saving throws, +10% bonus to magic resistance and immunity to Fear and Charm. The Bard himself receives an 8-point bonus to all of his saving throws while singing the song.~
 
 @49 = ~Enhanced Skald Song~
 @50 = ~Enhanced Skald Song
 
-This mighty battle chant grants the Skald and his allies +5 to hit, +5 to damage, -5 to AC, +10% resistance to physical damage, immunity to Fear, Stun and Confusion. The Skald himself receives a 10 point bonus to his armor class while singing the song.~
+This mighty battle chant grants the Skald and his allies +5 to hit, +5 to damage, -5 to AC, +10% resistance to physical damage, immunity to Fear, Stun and Confusion. The Skald himself receives a 10-point bonus to his armor class while singing the song.~
 
 @51 = ~Enhanced Jester Song~
 @52 = ~Enhanced Jester Song
@@ -278,7 +278,7 @@ Not Usable By:
  Cleric~
 
 @54 = ~BOUNTY HUNTER:
-This is a hunter of men, skilled in tracking and capturing quarry, whether for lawful authorities or underworld masters. Due to the frequent need to bring his prey back alive, a Bounty Hunter often relies on alchemical substances that can incapacitate or weaken his victims. A Bounty Hunter's trap making abilities are also well beyond those of the average thief.
+This is a hunter of men, skilled in tracking and capturing quarry, whether for lawful authorities or underworld masters. Due to the frequent need to bring his prey back alive, a Bounty Hunter often relies on alchemical substances that can incapacitate or weaken his victims. A Bounty Hunter's trap-making abilities are also well beyond those of the average thief.
 
 Advantages:
 -  Gains a +15% bonus to the Set Traps skill at 1st level
@@ -291,10 +291,10 @@ Disadvantages:
 -  Gets only 20% to distribute between thief abilities at each level
 
 Paralytic Toxin:
-The Bounty Hunter's intricate understanding of alchemy and herbalism allows him to create a substance that causes severe loss of muscle function when injected into the bloodstream. This paralytic toxin is a transparent, odorless liquid which can be easily applied to weapons without fear of detection. A hit from any weapon coated in this substance causes the target to make a saving throw vs. paralyzation or become paralyzed for one round per every ten levels of the Bounty Hunter. However, the toxin evaporates quickly when exposed to air making the coating last only a single round. Constructs, Elementals, Slimes and Undead creatures are unaffected by the Paralytic Toxin.
+The Bounty Hunter's intricate understanding of alchemy and herbalism allows him to create a substance that causes severe loss of muscular function when injected into the bloodstream. This paralytic toxin is a transparent, odorless liquid which can be easily applied to weapons without fear of detection. A hit from any weapon coated in this substance causes the target to make a saving throw vs. paralyzation or become paralyzed for one round per every ten levels of the Bounty Hunter. However, the toxin evaporates quickly when exposed to air, making the coating last only a single round. Constructs, Elementals, Slimes and Undead creatures are unaffected by the Paralytic Toxin.
 
 Alchemical Traps:
-Combining his superior trap setting skills with alchemical knowledge, a Bounty Hunter can create traps that are primarily designed for incapacitating his opponents, rather than killing them outright. The effects of the traps vary according to the Bounty Hunter's level, but always last for five rounds and can be negated by a successful saving throw vs. breath:
+Combining his superior trap-setting skills with his alchemical knowledge, a Bounty Hunter can create traps that are primarily designed for incapacitating his opponents, rather than killing them outright. The effects of the traps vary according to the Bounty Hunter's level, but always last for five rounds and can be negated by a successful saving throw vs. breath:
 
 1st:  trap deals 2d4 points of subdual damage and dazzles the target
 6th:  trap deals 4d4 points of subdual damage and slows the target
@@ -302,7 +302,7 @@ Combining his superior trap setting skills with alchemical knowledge, a Bounty H
 16th: trap deals 8d4 points of subdual damage and blinds the target
 21st: trap deals 10d4 points of subdual damage and renders the target unconscious
 
-Note: subdual damage is non-lethal and will render the target unconscious if its hit points drop below 0 instead of killing it. Constructs, Elementals, Slimes and Undead creatures are immune to subdual damage.
+Note: subdual damage is non-lethal and will render the target unconscious if its hit points drop below 0, instead of killing it. Constructs, Elementals, Slimes and Undead creatures are immune to subdual damage.
 
 Alchemical Expertise
 Through training and experience, a Bounty Hunter gradually learns to utilize alchemical substances more effectively. Each time this ability is acquired, the saving throw difficulty class of the Bounty Hunter's Paralytic Toxin and Alchemical Traps improves by 1.~
@@ -310,18 +310,18 @@ Through training and experience, a Bounty Hunter gradually learns to utilize alc
 @55 = ~Paralytic Toxin~
 
 @56 = ~Lyre of Progression~
-@57 = ~The Lyre of Progression was created by the bard Sedini Paletto.  Sedini was a teacher of young aspiring bards during difficult times.  This instrument, held close at all times, helped Sedini fight off those who would attack him or his students.  When Sedini grew old, he passed it on to his best student, Galwen Alaman.  Galwen continued teaching for a few years before setting out into the wilderness on a life of adventure.  It is believed that he lost the lyre when he accidentally dropped it in a marsh.
+@57 = ~The Lyre of Progression was created by the bard Sedini Paletto.  Sedini was a teacher of young, aspiring bards during difficult times.  This instrument, held close at all times, helped Sedini fight off those who would attack him or his students.  When Sedini grew old, he passed it on to his best student, Galwen Alaman.  Galwen continued teaching for a few years before setting out into the wilderness on a life of adventure.  It is believed that he lost the lyre when he accidentally dropped it in a marsh.
 
 STATISTICS:
 
-Held under the left arm, this instrument allows a bard to memorize two extra second level spells and an extra third level spell.
+Held under the left arm, this instrument allows a bard to memorize two extra second-level spells and an extra third-level spell.
 
 Only Usable By:
   Bards~
 
 
 @58 = ~Returning Frost Dart~
-@59 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples which are commonly located on the snow covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
+@59 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
 
 STATISTICS:
 
@@ -340,7 +340,7 @@ Not Usable By:
  Cleric~
 
 @60 = ~Short Sword of Backstabbing~
-@61 = ~The Shadow's Blade was created to be the perfect assassin's tool.  It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.  In the hands of any character this sword acts as a standard +3 magical weapon, but in the hands of a Thief it becomes especially potent granting him an additional bonus to hit and increasing his backstab multiplier.
+@61 = ~The Shadow's Blade was created to be the perfect assassin's tool.  It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.  In the hands of any character this sword acts as a standard +3 magical weapon, but in the hands of a Thief it becomes especially potent, granting him an additional bonus to hit and increasing his backstab multiplier.
 
 STATISTICS:
 
@@ -487,7 +487,7 @@ Not Usable By:
  Mage~
 
 @114 = ~Sap~
-@115 = ~Alternatively called a blackjack, the sap is a small leather bag filled with sand, lead shot, coins, or other weighted materials. It can be used to quietly render a victim unconscious by administering a blow to the head or back of the neck. A sap is more suited to an urban environment than to the great outdoors or a dungeon crawl. It's mainly used in situations which make it necessary to capture someone without causing him permanent harm, though thieves often favor this weapon for their own nefarious purposes.
+@115 = ~Alternatively called a blackjack, the sap is a small leather bag filled with sand, lead shots, coins, or other weighted materials. It can be used to quietly render a victim unconscious by administering a blow to the head or back of the neck. A sap is more suited to an urban environment than to the great outdoors or a dungeon crawl. It's mainly used in situations which make it necessary to capture someone without causing him permanent harm, though thieves often favor this weapon for their own nefarious purposes.
 
 STATISTICS:
 
@@ -505,7 +505,7 @@ Not Usable By:
   Mage~
 
 @116 = ~Deep Red Ioun Stone~
-@117 = ~This Ioun Stone is spherical in shape and deep red in color. Once activated, it can enhance the wearer's hand-eye coordination, reflexes and balance which makes it a highly prized accessory among rogues.
+@117 = ~This Ioun Stone is spherical in shape and deep red in color. Once activated, it can enhance the wearer's hand-eye coordination, reflexes and balance, which makes it a highly prized accessory among rogues.
 
 STATISTICS:
 
@@ -572,7 +572,7 @@ Not Usable By:
  Cleric~
 
 @124 = ~Plaguebearer~
-@125 = ~At first glance this roughly crafted, rust covered dagger seems like a very odd choice for a weapon. Only the old goblin runes notched along the blade reveal some of its power and history. Apparently, this weapon was originally a torture device of a powerful goblin shaman called Sharnuk, who above all else sought the knowledge of higher wizardry. Sharnuk's tribe often ambushed lone mages in their sleep and brought them to their leader so that he could rob them of their secrets. During the interrogations, Sharnuk would meticulously stab at his victims until they either became weakened by magical afflictions induced by the blade or simply delirious from the loss of blood. In such a state, it was easy for him to pry the knowledge that he sought from a mage's mind. When he believed that he had acquired enough power, Sharnuk led his tribe to a raid on a nearby gnomish settlement. However, luck was not on his side that day, as he and his entire cohort were scorched to death when he attempted to cast his first fireball.
+@125 = ~At first glance this roughly crafted, rust-covered dagger seems like a very odd choice for a weapon. Only the old goblin runes notched along the blade reveal some of its power and history. Apparently, this weapon was originally a torture device of a powerful goblin shaman called Sharnuk, who above all else sought the knowledge of higher wizardry. Sharnuk's tribe often ambushed lone mages in their sleep and brought them to their leader so that he could rob them of their secrets. During the interrogations, Sharnuk would meticulously stab at his victims until they either became weakened by magical afflictions induced by the blade or simply delirious from the loss of blood. In such a state, it was easy for him to pry the knowledge that he sought from a mage's mind. When he believed that he had acquired enough power, Sharnuk led his tribe to a raid on a nearby gnomish settlement. However, luck was not on his side that day, as he and his entire cohort were scorched to death when he attempted to cast his first fireball.
 
 
 STATISTICS:
@@ -605,8 +605,8 @@ Equipped Abilities:
 Special Abilities: 
     Casts Detect Alignment 2x/day
 
-THAC0: +2 bonus, +4 vs. Chaotic aligned creatures
-Damage:  1D8 +2, +4 vs. Chaotic aligned creatures
+THAC0: +2 bonus, +4 vs. Chaotically aligned creatures
+Damage:  1D8 +2, +4 vs. Chaotically aligned creatures
 Damage type:  piercing
 Weight:  2
 Speed Factor: 1
@@ -614,13 +614,13 @@ Proficiency Type: Scimitar/Wakizashi/Ninja-To
 Type:  1-handed
 Requires: 5 Strength
 Not Usable By:
- Chaotic aligned characters
+ Chaotically aligned characters
  Druid
  Cleric
  Mage~
 
 @128 = ~Black Cat's Claw~
-@129 = ~The profession of a ninja is very versatile, some are skilled assassins while others excel at the art of stealth and thievery. The owner of this blade undoubtedly belonged to the second group. Her true name remains a mystery, though she was known as The Black Cat, an infamous thief renown for acquiring rare commodities for and from the upper class circles of the Kara-Tur nobility. It was not unusual for her to steal a precious jewel from the collection of one noble, sell it to another wealthy aristocrat and then steal it back merely for the thrill of the deed. For her mischiefs, the Black Cat was hunted by many famous Kara-Tur warriors, but through a combination of luck and extraordinary acrobatic skill, she always managed to evade her pursuers. Eventually, as the story goes, she fell in love with a particularly persistent samurai and left her country and her former life together with him.
+@129 = ~The profession of a ninja is very versatile, some are skilled assassins while others excel at the art of stealth and thievery. The owner of this blade undoubtedly belonged to the second group. Her true name remains a mystery, though she was known as The Black Cat, an infamous thief renowned for acquiring rare commodities for and from the upper-class circles of the Kara-Tur nobility. It was not unusual for her to steal a precious jewel from the collection of one noble, sell it to another wealthy aristocrat and then steal it back merely for the thrill of the deed. For her mischiefs, the Black Cat was hunted by many famous Kara-Tur warriors, but through a combination of luck and extraordinary acrobatic skill, she always managed to evade her pursuers. Eventually, as the story goes, she fell in love with a particularly persistent samurai and left her country and her former life together with him.
 
 
 STATISTICS:
@@ -696,7 +696,7 @@ Unusable By:
  Mage~
 
 @136 = ~Masterbelt~
-@137 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
+@137 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
 
 STATISTICS:
 
@@ -727,7 +727,7 @@ Usable By:
   Everyone~
 
 @140 = ~Cowl of Acuity~
-@141 = ~Once a valued property of the Xanathar Thieves Guild, this seemingly plain looking cowl has been treated with magic in order to enhance the acumen and perception of anyone who wears it. The cowl was temporarily lost during a raid on one of the Xanathar slave trading houses in Skullport, but recently, it re-surfaced in Calimport and made its way to Atkhatla on one of the many trading caravans belonging to the Sybarr mercantile company.
+@141 = ~Once a valued property of the Xanathar Thieves Guild, this seemingly plain-looking cowl has been treated with magic in order to enhance the acumen and perception of anyone who wears it. The cowl was temporarily lost during a raid on one of the Xanathar slave-trading houses in Skullport, but recently, it re-surfaced in Calimport and made its way to Atkhatla on one of the many trading caravans belonging to the Sybarr mercantile company.
 
 STATISTICS:
 
@@ -758,7 +758,7 @@ Only Usable by:
   Bards~
 
 @144 = ~Harp of Descant~
-@145 = ~Lady Laxaella Bronshield, the Baroness of Tanistan, had this harp fashioned for her court jester before sending him along with a company of her best soldiers to deal with the recent Umber Hulk infestation of the Thornwood forest. At first, the soldiers were surprised that a jester was to accompany them on this task, merrily mocking his meager physique and his apparent fatuousness, but after they encountered the first Umber Hulk they soon realized the true importance of his role. To the soldier's astonishment, the jester was completely unfazed by the Umber Hulk's terrible gaze, which simultaneously turned one of their most steadfast warriors into a stuporing idiot. Furthermore, the odd, quirky tune which the jester's harp produced somehow seemed to counter the effect of the monster's gaze, restoring the sanity to the afflicted soldier. In the end, the infestation was cleansed with no casualties and only minimal injuries. For the better part of their home trip, the soldiers carried the jester on their shoulders all the time chanting praises in his honor.
+@145 = ~Lady Laxaella Bronshield, the Baroness of Tanistan, had this harp fashioned for her court jester before sending him, along with a company of her best soldiers, to deal with the recent Umber Hulk infestation of the Thornwood forest. At first, the soldiers were surprised that a jester was to accompany them on this task, merrily mocking his meager physique and his apparent fatuousness, but after they encountered the first Umber Hulk they soon realized the true importance of his role. To the soldiers' astonishment, the jester was completely unfazed by the Umber Hulk's terrible gaze, which simultaneously turned one of their most steadfast warriors into a stuporing idiot. Furthermore, the odd, quirky tune which the jester's harp produced somehow seemed to counter the effect of the monster's gaze, restoring the sanity to the afflicted soldier. In the end, the infestation was cleansed with no casualties and only minimal injuries. For the better part of their home trip, the soldiers carried the jester on their shoulders, all the time chanting praises in his honor.
 
 STATISTICS:
 
@@ -771,13 +771,13 @@ Usable by:
   Bards~
 
 @146 = ~Dagger of Acumen~
-@147 = ~The lavish, fiery runes etched into the hilt of this dagger indicate that it was crafted in Thay, presumably for a high ranking member of the Researcher faction. Although the blade may be used by anyone skilled enough to wield it, only those who are versed in the arcane arts can unlock its true potential. The tiny weapon appears to have been imbued with an enchantment which sharpens the mind of its wielder, providing greater acuteness and thereby enhancing the spell memorization capabilities of arcane spellcasters.
+@147 = ~The lavish, fiery runes etched into the hilt of this dagger indicate that it was crafted in Thay, presumably for a high-ranking member of the Researcher faction. Although the blade may be used by anyone skilled enough to wield it, only those who are versed in the arcane arts can unlock its true potential. The tiny weapon appears to have been imbued with an enchantment which sharpens the mind of its wielder, providing greater acuteness and thereby enhancing the spell-memorization capabilities of arcane spellcasters.
 
 STATISTICS:
 
 Equipped Abilities:
     +1 Intelligence
-    Arcane spellcasters can memorize an additional 1st and 2nd level spell
+    Arcane spellcasters can memorize an additional 1st- and 2nd-level spell
 
 THACO:  +3 bonus
 Damage:  1D4 + 3
@@ -877,7 +877,7 @@ Not Usable By:
  Mage~
 
 @158 = ~Darkveil~
-@159 = ~At first glance this item looks like a plain, black hood which obscures the wearer's facial features making him nondescript. However, when its wearer faces a creature that can employ gaze attacks (such as a Basilisk, a Vampire or an Umber Hulk) the hood will magically pull itself over his eyes whenever he is about to meet the creature's gaze, thus shielding him from the harmful effects. Unfortunately, the wearer can not direct this action consciously, and therefore has a harder time fighting against such creatures despite being protected from their gazes.
+@159 = ~At first glance this item looks like a plain, black hood which obscures the wearer's facial features, making him nondescript. However, when its wearer faces a creature that can employ gaze attacks (such as a Basilisk, a Vampire or an Umber Hulk) the hood will magically pull itself over his eyes whenever he is about to meet the creature's gaze, thus shielding him from the harmful effects. Unfortunately, the wearer can not direct this action consciously, and therefore has a harder time fighting against such creatures despite being protected from their gazes.
 
 STATISTICS:
 
@@ -900,7 +900,7 @@ Usable By:
 
 
 Alturiak 14th, 1369
-It seems that the evil we once exiled from our homeland has come back to haunt us. Even though reports from Athkatla have been vague, we are now certain that the two are still hiding somewhere within the city. Despite their treacherous actions, the Council has forbidden us to directly interfere until their motives have been made clear. The General expressed his concern that the exiled ones will eventually attempt to seek revenge on us, but the Council is adamant in its decision.
+It seems that the evil we once exiled from our homeland has come back to haunt us. Even though reports from Athkatla have been vague, we are now certain that the two are still hiding somewhere within the city. Despite their treacherous actions, the Council has forbidden us from directly interfering until their motives have been made clear. The General expressed his concern that the exiled ones will eventually attempt to seek revenge on us, but the Council is adamant in its decision.
 
 ...
 
@@ -920,12 +920,12 @@ I have managed to join the Shadow Thieves and now hold a position of a local fen
 ...
 
 Tarsakh 20th, 1369
-What luck! I was recently appointed to work under a certain Gaelan Bayle who appears to be a high ranking local agent. He provided enough information about the rival guild for me to perceive their true nature. It appears that the General's suspicions were correct, one of the exiles is indeed leading a pack of vampires! I must report this immediately and request further orders.
+What luck! I was recently appointed to work under a certain Gaelan Bayle who appears to be a high-ranking local agent. He provided enough information about the rival guild for me to perceive their true nature. It appears that the General's suspicions were correct, one of the exiles is indeed leading a pack of vampires! I must report this immediately and request further orders.
 
 ...
 
 Tarsakh 27th, 1369
-L'saria sent me another letter today. It smelled of fresh lilies, and now I miss her even more. She warned me of a vision Selune had sent to her during the temple rites. She saw creatures of darkness draining away my soul and is now pleading me to return to her. Oh my sweet flower, know that my heart is always with you, yet my honor demands that I fight on for the safety of our people! As if sensing my choice, she sent me a small blessed blade along with the letter, hoping that it will protect me in times of need.
+L'saria sent me another letter today. It smelled of fresh lilies, and now I miss her even more. She warned me of a vision Selune had sent to her during the temple rites. She saw creatures of darkness draining away my soul and is now pleading me to return to her. Oh my sweet flower, know that my heart is always with you, yet my honor demands that I fight on for the safety of our people! As if sensing my choice, she sent me a small, blessed blade along with the letter, hoping that it will protect me in times of need.
 
 ...
 
@@ -937,7 +937,7 @@ The new orders arrived today. I am to spy directly on the mistress of the vampir
 
 
 Alturiak 14th, 1369
-It seems that the evil we once exiled from our homeland has come back to haunt us. Even though reports from Athkatla have been vague, we are now certain that the two are still hiding somewhere within the city. Despite their treacherous actions, the Council has forbidden us to directly interfere until their motives have been made clear. The General expressed his concern that the exiled ones will eventually attempt to seek revenge on us, but the Council is adamant in its decision.
+It seems that the evil we once exiled from our homeland has come back to haunt us. Even though reports from Athkatla have been vague, we are now certain that the two are still hiding somewhere within the city. Despite their treacherous actions, the Council has forbidden us from directly interfering until their motives have been made clear. The General expressed his concern that the exiled ones will eventually attempt to seek revenge on us, but the Council is adamant in its decision.
 
 ...
 
@@ -957,12 +957,12 @@ I have managed to join the Shadow Thieves and now hold a position of a local fen
 ...
 
 Tarsakh 20th, 1369
-What luck! I was recently appointed to work under a certain Gaelan Bayle who appears to be a high ranking local agent. He provided enough information about the rival guild for me to perceive their true nature. It appears that the General's suspicions were correct, one of the exiles is indeed leading a pack of vampires! I must report this immediately and request further orders.
+What luck! I was recently appointed to work under a certain Gaelan Bayle who appears to be a high-ranking local agent. He provided enough information about the rival guild for me to perceive their true nature. It appears that the General's suspicions were correct, one of the exiles is indeed leading a pack of vampires! I must report this immediately and request further orders.
 
 ...
 
 Tarsakh 27th, 1369
-L'saria sent me another letter today. It smelled of fresh lilies, and now I miss her even more. She warned me of a vision Selune had sent to her during the temple rites. She saw creatures of darkness draining away my soul and is now pleading me to return to her. Oh my sweet flower, know that my heart is always with you, yet my honor demands that I fight on for the safety of our people! As if sensing my choice, she sent me a small blessed blade along with the letter, hoping that it will protect me in times of need.
+L'saria sent me another letter today. It smelled of fresh lilies, and now I miss her even more. She warned me of a vision Selune had sent to her during the temple rites. She saw creatures of darkness draining away my soul and is now pleading me to return to her. Oh my sweet flower, know that my heart is always with you, yet my honor demands that I fight on for the safety of our people! As if sensing my choice, she sent me a small, blessed blade along with the letter, hoping that it will protect me in times of need.
 ...
 
 <DAYANDMONTH>, <YEAR>
@@ -997,7 +997,7 @@ The new orders arrived today. I am to spy directly on the mistress of the vampir
 STATISTICS:
 
 Equipped Abilities:
-    Any undead creature who strikes the shield bearer in melee takes 1d2 points of fire damage and must save vs. spells or become blinded for 2 rounds
+    Any undead creature who strikes the shieldbearer in melee takes 1d2 points of fire damage and must save vs. spells or become blinded for 2 rounds
 
 Armor Class Bonus:  2
 Special:  No Missile/Piercing Attack Protection
@@ -1032,7 +1032,7 @@ Not Usable By:
   Wizard Slayer~
 
 @206 = ~Stormcharged Axe~
-@207 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and soon afterward struck by a bolt of lightning. Because of the pre placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
+@207 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and was soon afterward struck by a bolt of lightning. Because of the pre-placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high-ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
 
 STATISTICS:
 
@@ -1056,7 +1056,7 @@ Not Usable By:
  Thief~
 
 @208 = ~Hold Fast~
-@209 = ~A Zhentarim battle mage crafted this blade hoping it would help him prevail in melee combat when he was challenged to a duel. The powerful sword was supposed to deflect most incoming blows and incapacitate his enemy at the same time. Unfortunately, the mage lacked any real skill with the weapon and was easily defeated by his opponent.
+@209 = ~A Zhentarim battle mage crafted this blade, hoping it would help him prevail in melee combat when he was challenged to a duel. The powerful sword was supposed to deflect most incoming blows and incapacitate his enemy at the same time. Unfortunately, the mage lacked any real skill with the weapon and was easily defeated by his opponent.
 
 
 STATISTICS:
@@ -1080,7 +1080,7 @@ Not Usable By:
  Mage~
 
 @210 = ~Abishai Hide~
-@211 = ~There is great mystery surrounding this armor and no one is certain how or where it came into existence. What is known is that the leather was cut from the hide of an abishai, although it is impossible to tell what color the abishai had since the armor is tinted in deep black. In addition, it has an unusual, very light, vinegary smell. Those who wear this armor are bestowed with slight resistance to physical damage and the ability to regenerate wounds. It is unclear whether these properties come from the leather itself or an enchantment placed upon the armor.
+@211 = ~There is great mystery surrounding this armor and no one is certain how or where it came into existence. What is known is that the leather was cut from the hide of an abishai, although it is impossible to tell what color the abishai had since the armor is tinted a deep black. In addition, it has an unusual, very light, vinegary smell. Those who wear this armor are bestowed with slight resistance to physical damage and the ability to regenerate wounds. It is unclear whether these properties come from the leather itself or an enchantment placed upon the armor.
 
 STATISTICS:
 
@@ -1136,7 +1136,7 @@ Usable By:
  Bard~
 
 @216 = ~Silent Death~
-@217 = ~This sword once belonged to Venduris, a cunning assassin in service of Cyric - the reigning God of Murder. When the rogue was initially accepted into the order of Cyric's Chosen he received a small, plain looking blade as a welcoming gift. Though the sword held only minor enchantments back then, its power and sharpness seemed to grow with each kill Venduris made in the name of his new master. The assassin preferred to fulfill these tasks swiftly and silently, so his victims were almost never aware of their nearing demise. However, on certain occasions when a foe had particularly angered the Prince of Lies, Venduris would apply a deadly venom to his blade before striking. The victim would then start choking, rendered unable to speak or cry for help, while Cyric laughed in glee as the mute face of his adversary twisted from the pain and agony caused by the subsequent poison effects which eventually led to a slow, tormented death.
+@217 = ~This sword once belonged to Venduris, a cunning assassin in service of Cyric - the reigning God of Murder. When the rogue was initially accepted into the order of Cyric's Chosen he received a small, plain-looking blade as a welcoming gift. Though the sword held only minor enchantments back then, its power and sharpness seemed to grow with each kill Venduris made in the name of his new master. The assassin preferred to fulfill these tasks swiftly and silently, so his victims were almost never aware of their nearing demise. However, on certain occasions when a foe had particularly angered the Prince of Lies, Venduris would apply a deadly venom to his blade before striking. The victim would then start choking, rendered unable to speak or cry for help, while Cyric laughed in glee as the mute face of his adversary twisted from the pain and agony caused by the subsequent poison effects, which eventually led to a slow, tormented death.
 
 This sword pulsates with a dim, greenish glow and emanates a powerful evil aura. The tip and edges of the blade are extremely sharp and constantly coated with a layer of magical poison which makes it very difficult to use the sword without harming oneself. Only rogues of exceptional skill and cunning may attempt to wield this weapon.
 
@@ -1157,10 +1157,10 @@ Proficiency Type: Short Sword
 Type:  1-handed
 Requires: 15 Dexterity and 15 Intelligence
 Usable By:
- Evil and Neutral Aligned Thieves~
+ Evil and Neutral Thieves~
 
 @218 = ~Shadowed Boots~
-@219 = ~Upon closer inspection of these boots, the fabric seems to be made of some odd, incorporeal material.  Wearing these boots causes the user to take on an almost shadowed or ghostly appearance. Additionally, sound becomes eerily muffled as if heard from a distance.
+@219 = ~Upon closer inspection of these boots, the fabric seems to be made of some odd, incorporeal material.  Wearing these boots causes the user to take on an almost shadowed or ghostly appearance. Additionally, sound becomes eerily muffled, as if heard from a distance.
 
 STATISTICS:
 
@@ -1174,7 +1174,7 @@ Only usable by:
  Thief~
 
 @220 = ~The Salamander's Tongue~
-@221 = ~A wicked-looking dagger with a dark history, the Salamander's Tongue is prized both for its use as a weapon and its hidden magical powers.  The blade appears to be an exotic looking dagger with a kris-like wavy blade ending in two small points.  A small portion of a slimy, bright red living salamander's tongue is somehow embedded in the heart of the blade, near the grip.  It pulses and writhes randomly without intervention from the owner.  
+@221 = ~A wicked-looking dagger with a dark history, the Salamander's Tongue is prized both for its use as a weapon and its hidden magical powers.  The blade appears to be an exotic-looking dagger with a kris-like wavy blade ending in two small points.  A small portion of a slimy, brightly red, living salamander's tongue is somehow embedded in the heart of the blade, near the grip.  It pulses and writhes randomly without intervention from the owner.  
 
 The exact origins of the blade are unknown, but it is believed that the first owner of the weapon was a respected and feared gnomish thief and assassin from Westgate named Turlam Shallowhill.  Turlam was killed in a fight with a rival, a halfling called Deder Seven Fingers.  Deder kept the weapon as a trophy, not knowing its powers until after it was stolen by an underling, a fellow halfling named Kreshinal Blackhound.  Kreshinal fled to Selgaunt with the dagger for five years, relying on its powers to hide him from divination.  Kreshinal lost the dagger in a botched gambling scam, and was killed by Deder's agents within the month.  Deder attempted to reclaim the dagger from the Sembian criminals who had captured it.  He succeeded at routing the thieves and reclaiming his dagger, but he focused so much attention on the blade that he didn't notice that the Sembian criminals had employed a priest of Mask to infiltrate and break down his interests in Westgate.  The ensuing war between the Westgate and Selgaunt factions ended when the priest of Mask, Pieter the Feeble, made the two sides so paranoid that they ate themselves away from the inside.  Pieter grabbed the dagger when he had the opportunity and escaped to Hillsfar, confident that the unorganized demihuman supporters of the late Deder Seven Fingers wouldn't follow him to a place so hostile to their kind.
 
@@ -1205,7 +1205,7 @@ Not Usable By:
  Cleric~
 
 @222 = ~Dead Man's Face~
-@223 = ~These ancient helms were once common among the Reghedmen barbarians who came to what is now known as Icewind Dale.  The design of the armor is relatively simple: a plain iron helm with a hinged faceplate.  Once the basic construction of the helm had been finished, craftsmen would tool the image of a dead warrior onto the faceplate.  The name of the warrior and a one word description of his death were carved into the forehead of the mask.  The helm was then left in the dead warrior's funeral pyre.  The priests believed that the mask would hide the dead man's fear of the afterlife when he was judged by Tempos.  After a month had passed, the helms of particularly valiant warriors were recovered by the priests.  Over the next few years, the priests praised the valiant warriors by name in their daily rituals.  According to legend, if Tempos found the warrior to be truly valiant, the helm would gain the power to make the wearer immune to fear.  This particular helm bears the ancient name "Siglef" and the word "Axe".
+@223 = ~These ancient helms were once common among the Reghedmen barbarians who came to what is now known as Icewind Dale.  The design of the armor is relatively simple: a plain iron helm with a hinged faceplate.  Once the basic construction of the helm had been finished, craftsmen would tool the image of a dead warrior onto the faceplate.  The name of the warrior and a one-word description of his death were carved into the forehead of the mask.  The helm was then left in the dead warrior's funeral pyre.  The priests believed that the mask would hide the dead man's fear of the afterlife when he was judged by Tempos.  After a month had passed, the helms of particularly valiant warriors were recovered by the priests.  Over the next few years, the priests praised the valiant warriors by name in their daily rituals.  According to legend, if Tempos found the warrior to be truly valiant, the helm would gain the power to make the wearer immune to fear.  This particular helm bears the ancient name "Siglef" and the word "Axe".
 
 STATISTICS:
 
@@ -1236,7 +1236,7 @@ Not Usable By:
   Evil characters~
 
 @226 = ~Venduris' Luckstone~
-@227 = ~Originally stolen from the nymphs of Stormshire, this Ioun Stone has malcontently served Venduris for the past ten years. The essence of luck contained within it was abused by the evil assassin for guiding his hands towards the weakpoints of his foes and thus ensuring the maximum lethality of his attacks. Once beautiful to behold, resembling a radiant rainbow-patterned jewel, the Luckstone's magic eventually started to fade as it became corrupted under the influence of its new owner. The darkness that now resides within it stands as a reminder of Venduris' vile deeds.
+@227 = ~Originally stolen from the nymphs of Stormshire, this Ioun Stone has malcontently served Venduris for the past ten years. The essence of luck contained within it was abused by the evil assassin for guiding his hands towards the weak points of his foes and thus ensuring the maximum lethality of his attacks. Once beautiful to behold, resembling a radiant rainbow-patterned jewel, the Luckstone's magic eventually started to fade as it became corrupted under the influence of its new owner. The darkness that now resides within it stands as a reminder of Venduris' vile deeds.
 
 STATISTICS:
 
@@ -1254,7 +1254,7 @@ Only Usable By:
  Bard~
 
 @228 = ~Venduris' Ring of Concealment~
-@229 = ~This item was originally taken from an over ambitious Thayvian illusionist who somehow managed to cross Cyric's plans. When Venduris was sent to remove the mage he also picked up this invisibility ring from his personal treasury. The assassin rarely felt the need to employ it as he was highly skilled in the art of stealth, but the ring proved useful on a few rare occasions when he had to capture his victims alive and drag them back to his master's temple for interrogation or torture without being exposed to magical detection.
+@229 = ~This item was originally taken from an over-ambitious Thayvian illusionist who somehow managed to cross Cyric's plans. When Venduris was sent to remove the mage he also picked up this invisibility ring from his personal treasury. The assassin rarely felt the need to employ it as he was highly skilled in the art of stealth, but the ring proved useful on a few rare occasions when he had to capture his victims alive and drag them back to his master's temple for interrogation or torture without being exposed to magical detection.
 
 STATISTICS:
 
@@ -1272,7 +1272,7 @@ Only Usable By:
 @230 = ~Venduris' Scroll~
 @231 = ~This magic scroll was found on the corpse of the rogue Venduris. The inscription on this side appears to be a note from the spellcaster who had created it, the other side of the paper is covered with various arcane runes. The note reads:
 
-"As you requested Venduris, the warding glyphs that will trap <CHARNAME> have been directly linked to the runes on this scroll. Since you insisted on being the only one who should know the Command Phrase for their activation I have left an empty line near the bottom of the opposite side where you can inscribe it. Be warned, once you do so, absolutely make sure that the scroll is kept safe and well hidden at all times. Because of this unusual casting method I can make no guarantee of what will happen to the wards should this scroll be damaged or destroyed."
+"As you requested, Venduris, the warding glyphs that will trap <CHARNAME> have been directly linked to the runes on this scroll. Since you insisted on being the only one who should know the Command Phrase for their activation I have left an empty line near the bottom of the opposite side where you can inscribe it. Be warned, once you do so, absolutely make sure that the scroll is kept safe and well hidden at all times. Because of this unusual casting method I can make no guarantee of what will happen to the wards should this scroll be damaged or destroyed."
 
 -S.~
 
@@ -1293,7 +1293,7 @@ Usable by:
   Thieves~
 
 @234 = ~Blindstrike Bow~
-@235 = ~This composite short bow radiates with strong, necromatic enchantments which are commonly used by Yuan-Ti priests. The shaft of the bow resembles two snakes, each trying to swallow an eyeball carved at the grip. Along both sides of the shaft the phrase "May the greatness of Sseth blind the unworthy!" is inscribed. The bow was primarily used by Yuan-Ti sentries to prevent unwary trespassers from discovering the location of a secret temple which was hidden deep inside Ashendale forest. For some reason Beholders and their kin seem to be highly vulnerable to any arrows fired from this bow.
+@235 = ~This composite short bow radiates with strong, necromatic enchantments which are commonly used by Yuan-Ti priests. The shaft of the bow resembles two snakes, each trying to swallow an eyeball carved at the grip. Along both sides of the shaft the phrase "May the greatness of Sseth blind the unworthy!" is inscribed. The bow was primarily used by Yuan-Ti sentries to prevent unwary trespassers from discovering the location of a secret temple which was hidden deep inside the Ashendale forest. For some reason Beholders and their kin seem to be highly vulnerable to any arrows fired from this bow.
 
 STATISTICS:
 
@@ -1313,7 +1313,7 @@ Not Usable By:
  Mage~
 
 @236 = ~Drow Chain Mail~
-@237 = ~Drow chain mail is a finely-crafted, satiny black metal mesh that does not encumber its wearer in the least. It is similar, but not identical to, the magical elven chain mail. It is typically fashioned only into tunics, as drow elves share their forest-bound cousins' preference for armor that adequately protects without being overly weighty or restrictive. The exceptional lightness of this armor allows it to be worn by thieves and fighter/mages with few restrictions. Furthermore, drow chain mail grants a small bonus to magic resistance and slightly reduces the casting time of all spells while worn.
+@237 = ~Drow chain mail is a finely crafted, satiny black metal mesh that does not encumber its wearer in the least. It is similar to, but not identical to, the magical elven chain mail. It is typically fashioned only into tunics, as drow elves share their forest-bound cousins' preference for armor that adequately protects without being overly weighty or restrictive. The exceptional lightness of this armor allows it to be worn by thieves and fighter/mages with few restrictions. Furthermore, drow chain mail grants a small bonus to magic resistance and slightly reduces the casting time of all spells while worn.
 
 Unlike most drow equipment, this particular drow chain mail was not crafted using Adamantine since it was designed for scouts who regularly travel to the surface. Therefore, it will not decay when exposed to direct sunlight but it doesn't provide as much protection as regular drow armor.
 
@@ -1338,7 +1338,7 @@ Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitation
 STATISTICS:
 
 Equipped Abilities:
-    Doubles the amount of 1st and 2nd level spells a mage can memorize
+    Doubles the amount of 1st- and 2nd-level spells a mage can memorize
 
 Only usable by:
   Mage~
@@ -1427,11 +1427,11 @@ Only Usable By:
 
 @600 = ~Ambushed by the City Gates
 
-Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. I didn't get a chance to talk to them much, but their leader managed to trap me within some sort of magical barrier hoping that it would help him defeat me.~
+Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. I didn't get a chance to talk to them much, but their leader managed to trap me within some sort of magical barrier, hoping that it would help him defeat me.~
 
 @601 = ~Ambushed by Cyric's Chosen
 
-Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. They identified themselves as the highest ranking among Cyric's Chosen in the entire Sword Coast area. Their fanatical order firmly believes in Cyric's superiority and work to sow discord and bring about his ascension to power over the other faiths. Apparently, they wanted to end my life in order to please their patron deity and prevent me from fulfilling the prophecies of Alaundo. Their leader, the assassin Venduris, managed to trap me within some sort of magical barrier hoping that it would help him defeat me.~
+Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. They identified themselves as the highest ranking among Cyric's Chosen in the entire Sword Coast area. Their fanatical order firmly believes in Cyric's superiority and work to sow discord and bring about his ascension to power over the other faiths. Apparently, they wanted to end my life in order to please their patron deity and prevent me from fulfilling the prophecies of Alaundo. Their leader, the assassin Venduris, managed to trap me within some sort of magical barrier, hoping that it would help him defeat me.~
 
 @602 = ~Ambushed by Cyric's Chosen: The Warding Glyphs
 
@@ -1443,11 +1443,11 @@ I have bested Venduris and his group in combat, but the way out still seems to b
 
 @611 = ~Ambushed by Cyric's Chosen: The Slayer's fury
 
-As I expected, the cowardly rogue and his petty band tried to flee after I displayed the true power of the Slayer, but I was too infuriated to let them get away so easily! I lunged towards the leader and tore his head of in delight before he could react, as the rest of his company helplessly watched and screamed in terror. Unfortunately, I was unable to hold the avatar form much longer as the released energies began to toil heavily at my body. No matter, I can take the remaining fools even without the aid of my infernal heritage!~
+As I expected, the cowardly rogue and his petty band tried to flee after I displayed the true power of the Slayer, but I was too infuriated to let them get away so easily! I lunged towards the leader and tore his head off in delight before he could react, as the rest of his company helplessly watched and screamed in terror. Unfortunately, I was unable to hold the avatar form much longer as the released energies began to toil heavily at my body. No matter, I can take the remaining fools even without the aid of my infernal heritage!~
 
 @620 = ~Ambushed by Cyric's Chosen: The scroll backfired!
 
-I have found an arcane scroll in Venduris' pack. It was inscribed with many runes and symbols which clearly resembled the design of the wards that were blocking my path. Since I had no skill to interpret them, I decided to simply destroy the scroll and hope for the best. Luckily, it worked, and the warding glyphs were dispelled though the magical backslash from the released energy had nearly killed me.~
+I have found an arcane scroll in Venduris' pack. It was inscribed with many runes and symbols which clearly resembled the design of the wards that were blocking my path. Since I had no skill to interpret them, I decided to simply destroy the scroll and hope for the best. Luckily, it worked, and the warding glyphs were dispelled, though the magical backslash from the released energy nearly killed me.~
 
 @621 = ~Ambushed by Cyric's Chosen: The wards are defeated
 
@@ -1467,7 +1467,7 @@ I was able to convince Venduris and his followers that engaging in battle with m
 
 @630 = ~Ambushed by Cyric's Chosen: The Slayer unleashed!
 
-As I expected, the cowardly rogue and his petty band have fled after I demonstrated the power of the Slayer. Ha! Those foolish half-wits thought they knew everything about me, but they quickly realized the true degree of their ignorance after facing a display of my infernal fury. Should those pathetic weaklings dare to harass me once more, I may not be so forgiving and let them leave unscathed again!~
+As I expected, the cowardly rogue and his petty band have fled after I demonstrated the power of the Slayer. Ha! Those foolish half-wits thought they knew everything about me, but they quickly realized the true degree of their ignorance after facing a display of my infernal fury. Should those pathetic weaklings dare to harass me once more, I may not be so forgiving to let them leave unscathed again!~
 
 @650 = ~A missing fence?
 
@@ -1574,7 +1574,7 @@ Fighter
 Thief~
 
 @721 = ~Control Rod~
-@722 = ~When Haz began crafting the first batch of defense golems which were commissioned by the local Cloakmaster, several of his fellow Shadow Thieves insisted that the mage should provide a foolproof way to deactivate the powerful constructs, should the need arise. Haz initially dismissed these concerns as unfounded, but after several high ranking guild members began to express their doubts and openly question Haz's motives, the mage finally gave in and fashioned several Control Rods which were then given to the most vocal disbelievers. In effect, anyone who wields one of these items is able to deactivate any golem of Haz's making by merely holding up the Control Rod and walking into the construct's field of view. Naturally, it is impossible to deactivate a golem while it is in the immediate vicinity of its maker. Furthermore, the inscription on the rod's shaft specifically warns against attacking deactivated golems as doing so will make them resume their standard combat routine.
+@722 = ~When Haz began crafting the first batch of defense golems which were commissioned by the local Cloakmaster, several of his fellow Shadow Thieves insisted that the mage should provide a foolproof way to deactivate the powerful constructs, should the need arise. Haz initially dismissed these concerns as unfounded, but after several high-ranking guild members began to express their doubts and openly question Haz's motives, the mage finally gave in and fashioned several Control Rods which were then given to the most vocal disbelievers. In effect, anyone who wields one of these items is able to deactivate any golem of Haz's making by merely holding up the Control Rod and walking into the construct's field of view. Naturally, it is impossible to deactivate a golem while it is in the immediate vicinity of its maker. Furthermore, the inscription on the rod's shaft specifically warns against attacking deactivated golems as doing so will make them resume their standard combat routine.
 
 STATISTICS:
 
@@ -1590,7 +1590,7 @@ Usable By:
 @725 = ~\[Lore\] - As you might know, there is much more to the Shadow Thieves than meets the eye, no organized crime in the city goes without their influence and approval. It is rumored that they may have even infiltrated the Council of Six by now. Face it, you will need every ally you can get if you truly seek to overthrow them.~
 @726 = ~\[Intelligence\] - Hold on, think of the advantage that you could gain from my employment. The Shadow Thieves are highly resourceful and exceptionally skilled adversaries. Having an ally by your side who possesses similar traits would make dealing with them considerably easier.~
 @727 = ~\[Wisdom\] - Would it be so unreasonable to have one of their ilk work for you? After all, as a thief I am quite familiar with their strengths and weaknesses as well as their mindset. Surely you must realize that such insight could prove very useful under the right circumstances.~
-@728 = ~\[Charisma\] - My involvement with the Shadow Thieves is of a temporary nature. Trust me, I would have no qualms about betraying them should your offer suite me better.~
+@728 = ~\[Charisma\] - My involvement with the Shadow Thieves is of a temporary nature. Trust me, I would have no qualms about betraying them should your offer suit me better.~
 
 @735 = ~Hmm, you have chosen your words cunningly and by that I am... intrigued. Very well then, I shall give you a chance to prove your worth.~
 
@@ -1598,7 +1598,7 @@ Usable By:
 @750 = ~Wha--!!? Where did *you* come from?~
 @751 = ~Wait, did Mistress Bodhi send you? Are you here to rescue me?~
 @752 = ~Excellent, I have some valuable information that the Mistress needs to hear. Cast the spell then, whenever you're ready.~
-@753 = ~Alright, I'll leave that to you then. Be careful though, I've heard that the Shadow Thieves recently started hiring mercenaries as their own ranks began to grow thin due to the guild war.~
+@753 = ~Alright, I'll leave that to you then. Be careful though, I've heard that the Shadow Thieves recently started hiring mercenaries, as their own ranks began to grow thin due to the guild war.~
 @754 = ~Thank you! I'll slip out quietly before the guards notice that my cell is empty.~
 @755 = ~Has there been a change of plans?~
 @756 = ~Thank you! I will report to the Mistress immediately.~
@@ -1633,14 +1633,14 @@ Usable By:
 @1003 = ~\[Thieves' Cant\] - Hello Marina. Can I see your special stock again?~
 @1004 = ~Excuse me... but do you happen to have a sister, or another close relative who practices the arcane arts?  I've recently met a sorceress who looked very much like you.~
 @1005 = ~I have found Arledrian.~
-@1006 = ~I most certainly do, but you will have to pay a small... 'insurance fee' of 50 gold pieces first. (she smiles)  'Acquiring' items of great power is a risky business you know.~
+@1006 = ~I most certainly do, but you will have to pay a small... 'insurance fee' of 50 gold pieces first. (she smiles)  'Acquiring' items of great power is a risky business, you know.~
 @1007 = ~Hmm...   (she studies you quizzically for a moment)~
 @1008 = ~Well, you seem to be alright.~
-@1009 = ~But of course, friend.  (She smiles pleasantly awaiting your purchase with interest)~
+@1009 = ~But of course, friend.  (She smiles pleasantly, awaiting your purchase with interest)~
 @1010 = ~(Marina's usually cheerful demeanor fades away at the sound of your words. Her face becomes serious and slightly troubled.)~
 @1011 = ~I- I do actually. My younger sister...Selina, she practices the art...or at least, she still was, the last time I saw her.~
-@1012 = ~Here...take a look at this <GABBER>. Was that the woman you saw?~
-@1013 = ~(Marina takes off her golden locket and opens up the medallion revealing a picture of her and Selina. You are now certain that the woman you saw was indeed her sister.)~
+@1012 = ~Here...take a look at this, <GABBER>. Was that the woman you saw?~
+@1013 = ~(Marina takes off her golden locket and opens up the medallion, revealing a picture of her and Selina. You are now certain that the woman you saw was indeed her sister.)~
 @1014 = ~Have you spoken to her? Is she...alright? Please, you must tell me! (her face becomes filled with desperation)~
 @1015 = ~Yes, I believe that I have met her near the City Gates a while ago. She seemed to belong to a company of Cyric's followers who wanted to kill me, but I have convinced them that it was not worth the risk. She then left, along with the others.~
 @1016 = ~I'm sorry Marina, your sister is dead. I have killed her, but it was in self defense. She seemed to belong to a company of Cyric's followers and assaulted me. I had no choice.~
@@ -1651,15 +1651,15 @@ Usable By:
 @1021 = ~After all that malicious cutthroat did to us... my deluded sister still trusts him so blindly?  (she lowers her head)  I must go and seek her out at once.~
 @1022 = ~(Marina hastily gathers her belongings and prepares to leave. Before heading through the door she turns to you once more.)~
 @1023 = ~Thank you <GABBER>, I will not forget this, and I hope you won't forget me so soon either. Catch!~
-@1024 = ~(She smiles at you and tosses you a brilliant rainbow-patterned gem before dashing out through the door)~
+@1024 = ~(She smiles at you and tosses you a brilliant, rainbow-patterned gem before dashing out through the door)~
 @1025 = ~What!? (She cringes) You... you fiend!~
 @1026 = ~Selina... my dear sister...  (Marina is visibly shaken, barely holding back her tears)~
 @1027 = ~(After a moment, she manages to gather her composure. She then slowly pulls out a scroll from her vest and looks straight at you with eyes full of hatred.)~
-@1028 = ~Murderer! I will NEVER forget this <GABBER>!~
+@1028 = ~Murderer! I will NEVER forget this, <GABBER>!~
 @1029 = ~(At the sound of your words Marina's face stiffens. She grows pale and is obviously deeply stricken with grief.)~
 @1030 = ~(After a moment, she manages to gather her composure.)~
 @1031 = ~You...~
-@1032 = ~(She looks toward you barely holding back the tears in her eyes.)~
+@1032 = ~(She looks toward you, barely holding back the tears in her eyes.)~
 @1033 = ~You did... what you had to do.~
 @1034 = ~My sister chose the path of evil for herself. It was her fault for following that... monster...~
 @1035 = ~...and it was my fault for not preventing it.~
@@ -1714,7 +1714,7 @@ Usable By:
 @1113 = ~Alright then, show me the items that *are* for sale.~
 @1114 = ~Well that's too bad. I will be going then, farewell.~
 @1115 = ~(You have successfully occupied Arledrian's attention with trivial trading activities.)~
-@1116 = ~(With a casual looking move you carefully detach the dagger from the scabbard and hide it behind your palm.)~
+@1116 = ~(With a casual-looking move you carefully detach the dagger from the scabbard and hide it behind your palm.)~
 @1117 = ~(While Arledrian is still busy presenting his wares to you, you manage to calmly secure the dagger inside your backpack. He didn't notice a thing!)~
 @1118 = ~So, my <LADYLORD> what will it be then?~
 @1119 = ~Actually, I think I have all I need from you right now, Arledrian. Farewell.~
@@ -1746,7 +1746,7 @@ Usable By:
 @1145 = ~\[Lie\] - But I don't have that much gold!~
 @1146 = ~Fine with me. But *don't* try to pull that off again!  (he smirks at you and takes the gold)~
 @1147 = ~Alright, then I'll take whatever you have. Let's see...~
-@1148 = ~(With a sudden swift motion Arledrian cuts one of the gold pouches from your belt)~
+@1148 = ~(With a sudden, swift motion Arledrian cuts one of the gold pouches from your belt)~
 @1149 = ~There, now we are even.  (he smirks at you and takes the gold)~
 @1150 = ~(Arledrian's voice is growing weaker, and he seems to be straining with his every breath.)~
 @1151 = ~Right... I should have thought that much... ~
@@ -1758,8 +1758,8 @@ Usable By:
 @1157 = ~\[Lie\] - Hmm, you look pretty weak. Here, drink this... "healing potion", it will make you feel nice and warm. (give potion of explosions)~
 @1158 = ~\[Lie\] - Hmm, you look pretty weak. Here, rub this... "healing salve" into your wounds, it will sear... err, seal your wounds shut. (give oil of fiery burning)~
 @1159 = ~I wish I had something to ease your pain, but alas, I don't. I could take you to a healer if you'd like.~
-@1160 = ~(Half blinded by the dripping blood and stunned from the pain, the rogue prepares to gulp down the potion, not having the strength to check its contents.)~
-@1161 = ~(Half blinded by the dripping blood and stunned from the pain, the rogue prepares to use the oil flask, not having the strength to check its contents.)~
+@1160 = ~(Half-blinded by the dripping blood and stunned from the pain, the rogue prepares to gulp down the potion, not having the strength to check its contents.)~
+@1161 = ~(Half-blinded by the dripping blood and stunned from the pain, the rogue prepares to use the oil flask, not having the strength to check its contents.)~
 @1162 = ~(The rogue gratefully gulps down the potion and his face begins to brighten again.)  Thank you again, I feel much better now.~
 @1163 = ~I was traveling light, hoping I wouldn't get noticed, but those things appeared out of thin air and ambushed me.~
 @1164 = ~I dropped some of my potions during the battle and used the rest. Had you not come this way I would have surely perished.  (He gives you a brief, friendly smile.)~
@@ -1892,7 +1892,7 @@ Usable By:
 @1329 = ~No, not really. Is he the fence you are missing?~
 @1330 = ~Aye, and that be mighty strange too. Arledrian's always been the trustworthy kind, ne'er botched a deal since I've hired him.~
 @1331 = ~Not like him to just disappear without a word. I reckon somethin's a foul here.~
-@1332 = ~\[Insight\] - Have you tried searching his room? Perhaps we could find some clues  about your fence's disappearance by looking through his personal belongings.~
+@1332 = ~\[Insight\] - Have you tried searching his room? Perhaps we could find some clues about your fence's disappearance by looking through his personal belongings.~
 @1333 = ~Aran thinks he might have crossed over and joined the rival guild.~
 @1334 = ~Have you noticed anything strange about him lately?~
 @1335 = ~Any ideas where he might have gone?~
@@ -1934,7 +1934,7 @@ Usable By:
 @1500 = ~And he would be right, my good Samuel. The plays here are truly exquisite, even if I do say so myself.~
 @1501 = ~Somehow, I do not think that will present a problem. And while we're at it, we could "search" the other rooms as well, just to make sure we don't miss anything.~
 @1502 = ~Mind your manners, rogue!~
-@1503 = ~Pray tell my raven, does that riddle puzzle you greatly?~
+@1503 = ~Pray tell, my raven, does that riddle puzzle you greatly?~
 @1504 = ~Mayhaps I can be of assistance. During my travels I have picked up bits and pieces of many languages, elvish being one of my favorites.~
 @1505 = ~(Haer'Dalis quickly pages through the recent entries, scribbling some notes on the side)~
 @1506 = ~Hmm... what an unexpected turn of events! As it seems, this tale has only just begun to truly unfold.~
@@ -1943,7 +1943,7 @@ Usable By:
 @1509 = ~(Cernd quickly pages through the recent entries, scribbling some notes on the side)~
 @1510 = ~Interesting, there seems to be more to that rogue than meets the eye.~
 @1511 = ~See for yourself <CHARNAME>, I have translated the last couple of pages.~
-@1512 = ~Allow me <CHARNAME>. Even though its very sound sickens me, I'm quite familiar with the language of the darthir.~
+@1512 = ~Allow me <CHARNAME>. Even though its very sound sickens me, I'm quite familiar with the language of the darthiir.~
 @1513 = ~(Viconia quickly pages through the recent entries, scribbling some notes on the side)~
 @1514 = ~My, my how... intriguing. Here <CHARNAME>, I have translated the most important passages for you. You should be able to understand the context now.~
 @1515 = ~Umm... I could help you with that, <CHARNAME>.~
@@ -1976,16 +1976,16 @@ Usable By:
 @1542 = ~Har! This oughta' be fun to watch.~
 @1543 = ~Ahh, Thieves' Cant - the art of innuendo! Although the accent is somewhat off by Athkatlan standards, I believe that she understood the meaning behind your words, <GABBER>.~
 @1544 = ~Eh, what kind of crazy talk is that? <GABBER> sounds like a mad gibberling with all those twisted words! See how Boo scratches his little head in confusion?~
-@1545 = ~Ach, ye're making me head spin with that doublespeak jabber of yers <GABBER>. Just get it over wit' already an' see if the girl be havin' some decent weapons fer us!~
-@1546 = ~Hmm, I've picked up bit and pieces of Thieves' Cant while slumming, but you seem to be exceptionally proficient at it <GABBER>.~
+@1545 = ~Ach, ye're making me head spin with that doublespeak jabber of yers, <GABBER>. Just get it over wit' already an' see if the girl be havin' some decent weapons fer us!~
+@1546 = ~Hmm, I've picked up bit and pieces of Thieves' Cant while slumming, but you seem to be exceptionally proficient at it, <GABBER>.~
 @1547 = ~Well now, that was a mighty fine display of doublespeak, <GABBER>, but you have to be careful with your tongue. My cousin Sammy once twisted his so hard that it got all sore and the poor fellow couldn't eat anything but turnip mash for weeks!~
-@1548 = ~Astounding <GABBER>, you seem to have captured the very essence of chaos in your words! I am almost tempted to write down that riveting conversation of yours.~
+@1548 = ~Astounding, <GABBER>, you seem to have captured the very essence of chaos in your words! I am almost tempted to write down that riveting conversation of yours.~
 
 
 
 // Chosen of Cyric main dialogue (2000-2999)
 
-@2000 = ~(Upon closer inspection, this tiny cowled figure turns out to be a middle aged halfling with a slight stubble on his chin and dark circles beneath his eyes.)~
+@2000 = ~(Upon closer inspection, this tiny cowled figure turns out to be a middle-aged halfling with a slight stubble on his chin and dark circles beneath his eyes.)~
 @2001 = ~(He is tightly griping a short bow and impatiently shuffling through his arrow case. Every few seconds he looks towards Venduris as if waiting for a sign.)~
 @2002 = ~(Furthermore, you notice that the shaft of his bow actually resembles two snakes, each trying to swallow an eyeball carved at the grip. You also manage to catch a faint glint coming from his quiver. Apparently, it holds three different types of arrows, two of which seem to be dipped in different hues of a greenish liquid while the third one is clearly pulsating with magic.)~
 @2003 = ~(You feel pinpricks over the entire surface of your hands... a strong aura of evil surrounds this man.)~
@@ -1999,13 +1999,13 @@ Usable By:
 @2025 = ~(He seems to truly relish in committing evil acts and is to be blamed for the deaths of countless innocents across the realms.)~
 
 @2040 = ~(You see an older man with long, silvery-black hair and weathered yellow skin. Beneath the sleaves of his worn robe several silver bracelets are faintly glinting.)~
-@2041 = ~(In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a large plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half crazed expression.)~
-@2042 = ~(You see an older man with long, silvery-black hair and weathered yellow skin covered with many tattoos. Beneath the sleaves of his worn purple robe several silver bracelets are faintly glinting.)~
-@2043 = ~(Despite his venerable age he seems to bear the weight of the platemail armor which he hides beneath the robe with relative ease. In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half crazed expression.)~
+@2041 = ~(In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a large, plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half-crazed expression.)~
+@2042 = ~(You see an older man with long, silvery-black hair and weathered yellow skin covered with many tattoos. Beneath the sleeves of his worn, purple robe several silver bracelets are faintly glinting.)~
+@2043 = ~(Despite his venerable age he seems to bear the weight of the platemail armor which he hides beneath the robe with relative ease. In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half-crazed expression.)~
 @2044 = ~(You feel a sharp pain in your hands accompanied by an agonizing headache... an overwhelming aura of evil surrounds this man.)~
 @2045 = ~(The man is undoubtedly evil to the core. From the nature and the intensity of his aura, you are quite certain that he is a priest of an evil god. He is fully corrupted, and willingly commits even the most despicable acts for the pleasure of his patron deity.)~
 
-@2060 = ~(This dark-haired, pale-skinned young woman has a cultured and refined look about her. Her long flowing hair stirs lightly in the heavy wind, but otherwise she doesn't appear to be bothered by the rain or the raging storm.)~
+@2060 = ~(This dark-haired, pale-skinned young woman has a cultured and refined look about her. Her long, flowing hair stirs lightly in the heavy wind, but otherwise she doesn't appear to be bothered by the rain or the raging storm.)~
 @2061 = ~(She is wearing a black robe and holding an oaken staff in her right hand. Her eyes are closed, and she seems to be concentrating.)~
 @2062 = ~(She is wearing a black robe trimmed with silvery lines and holding a long oaken staff in her right hand. You notice that several magic scrolls and potions are tightly strapped to her belt. Her eyes are closed, and she seems to be concentrating.)~
 @2063 = ~(Although you can barely see her face through the rain, its features look vaguely familiar to you for some reason. She reminds you of someone that you've met during your travels but you can't quite remember who it was.)~
@@ -2013,12 +2013,12 @@ Usable By:
 @2065 = ~(Although you can barely see her face through the rain, her features look vaguely familiar to you for some reason. Suddenly, you realize that this woman bears a striking resemblance to Marina, the half-elven merchant from the Shadow Thief guild. It is very likely that the two women are related.)~
 @2066 = ~(You feel a slight itch on the tips of your fingers...a faint aura of evil surrounds this woman.)~
 @2067 = ~(She does not appear to be truly evil by nature, but rather, she seems to be committing evil acts because of an affection of some sort.)~
-@2068 = ~(Upon hearing your words, the dark-haired young woman who seemed to be meditating until now, slowly opens her eyes and gives you a cold, inquiring stare.)~
+@2068 = ~(Upon hearing your words, the dark-haired young woman, who seemed to be meditating until now, slowly opens her eyes and gives you a cold, inquiring stare.)~
 @2069 = ~(She glances towards Venduris for a second, but then quickly lowers her head and resumes her focus.)~
 
-@2080 = ~(To Venduris' right stands a handsome young man of well kept appearance.  He has a grim and determined expression on his face.)~
+@2080 = ~(To Venduris' right stands a handsome young man of well-kept appearance.  He has a grim and determined expression on his face.)~
 @2081 = ~(In his left hand he holds a long, forked dagger, while in his right hand rests a masterfully crafted short sword. From time to time, he tauntingly swipes the two blades against each other.)~
-@2082 = ~(To Venduris' right stands a handsome young man of well kept appearance. His shoulder-length black hair appears to be intentionally combed in a way which obscures the slightly pointy ears.)~
+@2082 = ~(To Venduris' right stands a handsome young man of well-kept appearance. His shoulder-length black hair appears to be intentionally combed in a way which obscures the slightly pointy ears.)~
 @2083 = ~(To untrained eyes, he would look like a normal human, but judging by your previous observation and the delicate facial features, you are quite certain that at least some elven blood flows through his veins.)~
 @2084 = ~(In his left hand he holds a long, forked dagger with a red-hot tip, while in his right hand rests a masterfully crafted short sword etched with fine elvish runes. From time to time, he tauntingly swipes the two blades against each other.)~
 @2085 = ~(The darkly colored mail which he wears seems more akin to cloth than a suit of armor. It folds with ease, fluently following his every move. Judging by its design, the chainmail appears to be of Underdark origin, but this man is clearly not a dark elf.)~
@@ -2071,13 +2071,13 @@ Usable By:
 @2506 = ~(The rogue notices the half-surprised expression forming on your face after you heard him utter your name so casually.)~
 @2507 = ~Before you start wondering how I discerned your identity, I should tell you that I am, in fact, quite familiar with both your history and your lineage.~
 @2508 = ~Though, I remain somewhat intrigued... do *you* have any idea who now stands before you, Bhaalspawn?~
-@2509 = ~\[Religious Knowledge\] - I recognize the markings on your armor rogue. The White Skull and the Dark Sun are both symbols of the Prince of Lies. You are followers of Cyric.~
-@2510 = ~(Due to your severe lack of charisma you only manage to stare at the rogue and snarl angrily being unable to create a coherent sentence and address him.)~
+@2509 = ~\[Religious Knowledge\] - I recognize the markings on your armor, rogue. The White Skull and the Dark Sun are both symbols of the Prince of Lies. You are followers of Cyric.~
+@2510 = ~(Due to your severe lack of charisma you only manage to stare at the rogue and snarl angrily, being unable to create a coherent sentence and address him.)~
 @2511 = ~\[Lore\] - Hmm, those markings on your armor look familiar. As I recall, the White Skull and the Dark Sun are both symbols of the Prince of Lies, so you must be followers of Cyric.~
 @2512 = ~\[Insight\] - Judging by your distinctive appearance and my previous encounters with your ilk, I would say that you are servants of Cyric.~
 @2513 = ~No... should I?~
-@2514 = ~I don't know nor do I care. Now step aside rogue, or I'll slaughter you like anyone else who gets in my way!  \[Prepare to attack him\]~
-@2515 = ~(Due to your severe lack of charisma you only manage to stare at the rogue and snarl angrily being unable to utter a coherent sentence and address him.)~
+@2514 = ~I don't know nor do I care. Now step aside, rogue, or I'll slaughter you like anyone else who gets in my way!  \[Prepare to attack him\]~
+@2515 = ~(Due to your severe lack of charisma you only manage to stare at the rogue and snarl angrily, being unable to utter a coherent sentence and address him.)~
 @2516 = ~(Due to your severe lack of intelligence you are straining heavily in an attempt to make a comprehensive sentence.)
 - Uhmm... cloak-man wants talk with <CHARNAME>?~
 @2517 = ~(Due to your severe lack of wisdom you do not have enough reasoning to do anything other than scratch your head and drool uncontrollably.)~
@@ -2087,34 +2087,34 @@ Usable By:
 @2521 = ~So be it then, let our blades speak for us now!  \[He Attacks\]~
 @2522 = ~(The rogue sneers contemptuously at you)  So, you lack the common sense to even take notice of me? Then let us see if you will acknowledge my blade!~
 @2523 = ~I shall do the realms a favor and relieve you of your misery. Prepare to die half-wit!  \[He Attacks\]~
-@2524 = ~Hmm, so you are indeed clueless... I should have expected that much.   (A faint half-sneer forms on his face)   Let me enlighten you then, by who's orders you die today.~
+@2524 = ~Hmm, so you are indeed clueless... I should have expected that much.   (A faint half-sneer forms on his face)   Let me enlighten you then, by whose orders you die today.~
 @2525 = ~The will of the Prince of Lies guides our path, but rest assured Bhaalspawn, we are no mere followers of Cyric.~
 @2526 = ~(The rogue's voice drops to a more menacing tone) Know, that we belong to the order of his Chosen.~
 @2527 = ~What exactly do you want from me ?~
 @2528 = ~Get to the point rogue.~
-@2529 = ~You poor deluded fool...  (he looks at you contemptuously)  then you will know only this!~
+@2529 = ~You poor, deluded fool...  (he looks at you contemptuously)  then you will know only this!~
 @2530 = ~I am an assassin and *you* are my mark. One of us shall not outlive this day!  \[He attacks\]~
 @2531 = ~Hmm, so the reports were true, you indeed have some wit about you.  (A faint half-sneer forms on his face)~
-@2532 = ~Though the will of the Prince of Lies truly guides our path, rest assured Bhaalspawn, we are no mere followers of Cyric.~
+@2532 = ~Though the will of the Prince of Lies truly guides our path, rest assured, Bhaalspawn, we are no mere followers of Cyric.~
 @2533 = ~(The rogue's voice drops to a more menacing tone)   Know, that we belong to the order of his Chosen.~
 @2534 = ~\[Religious Knowledge\] - You belong to Cyric's Chosen? Then I suppose your fanatical order has somehow found out about my divine heritage, and you still hope to bring Cyric closer to his ascension by ritually sacrificing all of Bhaal's children. Am I right?~
 @2535 = ~(The man slowly raises his head and his eyes flickers over you. His gaze falls on you with the force of a sledgehammer.)~
-@2536 = ~Know, that there is a growing conflict of interests between us Bhaalspawn.~
+@2536 = ~Know, that there is a growing conflict of interests between us, Bhaalspawn.~
 @2537 = ~By observing and carefully studying your actions over a lengthy time period, we have come to the only possible conclusion.~
-@2538 = ~It is now more than evident to us that you are developing into a significant problem for our Lord and master.~
-@2539 = ~(With a faint swishing sound the rogue's cloak splits, and an ominous looking blade springs into his hand.)~
-@2540 = ~I, am Venduris, and as the highest ranking assassin within our order, it is my sacred duty to make sure that this does not occur... by any means necessary!   \[He prepares to attack\]~
+@2538 = ~It is now more than evident to us that you are developing into a significant problem for our Lord and Master.~
+@2539 = ~(With a faint swishing sound the rogue's cloak splits, and an ominous-looking blade springs into his hand.)~
+@2540 = ~I, am Venduris, and as the highest-ranking assassin within our order, it is my sacred duty to make sure that this does not occur... by any means necessary!   \[He prepares to attack\]~
 @2541 = ~\[Persuade\] - Hold your weapons Venduris, I would like to ask some questions first. Perhaps a battle between us is unnecessary.~
 @2542 = ~\[Insight\] - Would you care to elaborate your point a bit further, rogue? I would prefer to know more of your motives.~
 @2543 = ~\[Thieves' Cant\] - Come now Venduris, will there be no honor among thieves? Let us parley about this and lay our blades to rest for a while.~
-@2544 = ~\[Flirt\] - Easy there, tall dark and handsome... you wouldn't hurt a beautiful lady now would you?  (you display your most innocent smile and wink at Venduris seductively)~
+@2544 = ~\[Flirt\] - Easy there, tall, dark and handsome... you wouldn't hurt a beautiful lady now would you?  (you display your most innocent smile and wink at Venduris seductively)~
 @2545 = ~\[Beg\] - Wait! Spare me, please, I-I don't want to die yet!~
 @2546 = ~Hah, an ambush! You will not get the best of me today rogue!  \[Attack him\]~
 @2547 = ~(Venduris' expression remains unchanged, he seems to be completely unfazed by the whole display.)~
 @2548 = ~(He says nothing, but his sword is still drawn and pointing straight at your throat. You are certain that he intends to attack you in a matter of seconds.)~
 @2549 = ~\[Insight\] - Would you care to elaborate your point a bit further, rogue? I would prefer to know more of your motives.~
 @2550 = ~(The rogue sneers disdainfully at your reply)~
-@2551 = ~No, you offer no credible reason to delay this any further. It is time for me to end your existence Bhaalspawn!  \[He Attacks\]~
+@2551 = ~No, you offer no credible reason to delay this any further. It is time for me to end your existence, Bhaalspawn!  \[He Attacks\]~
 @2552 = ~(As you swing your weapon towards Venduris he skillfully evades the blow, springing back smoothly.)~
 @2553 = ~(As he catches his balance again he looks upon you with a wicked smile on his face.)~
 @2554 = ~You are a <PRO_MANWOMAN> of action <CHARNAME>, just as I had expected, but do not think that I can be taken so lightly.~
@@ -2123,16 +2123,16 @@ Usable By:
 @2557 = ~Very well, I can indulge that request <CHARNAME>, though you better not strain my patience too far. (He tightens the grip on his sword menacingly)~
 @2558 = ~You may speak to me, but do so quickly and choose your words wisely.~
 @2559 = ~(stall Venduris for a moment in order to examine the tactical options of this situation)~
-@2560 = ~\[Arcane Lore\] - Those Warding Glyphs which prevent me from leaving, are they your work Venduris?~
+@2560 = ~\[Arcane Lore\] - Those Warding Glyphs which prevent me from leaving, are they your work, Venduris?~
 @2561 = ~Are those magics surrounding this area your work rogue?~
 @2562 = ~I am curious... how come you know so much about me ?~
 @2563 = ~You said that I was becoming a problem for Cyric. Could you elaborate this further?~
 @2564 = ~I have changed my mind, I think I want to fight you after all!  \[Attack him\].~
-@2565 = ~\[Insight\] - So Venduris, you are evidently aware of my divine descent, but you do not seem to realize that direct, as well as, indirect intervention from the gods in the Bhaalspawn lineage was prohibited by Lord Ao himself. Therefore, any and all of your actions against me, taken in the name of Cyric, would mean that you and your patron deity are purposely defying the will of the Overfather. Even Cyric himself could be displeased by your interference.~
-@2566 = ~\[Persuade\] - Since you were observing my actions so closely Venduris, you should know by now that I have always stood on the side of Good. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
+@2565 = ~\[Insight\] - So Venduris, you are evidently aware of my divine descent, but you do not seem to realize that direct, as well as indirect, intervention of the gods in the Bhaalspawn lineage was prohibited by Lord Ao himself. Therefore, any and all of your actions against me, taken in the name of Cyric, would mean that you and your patron deity are purposely defying the will of the Overfather. Even Cyric himself could be displeased by your interference.~
+@2566 = ~\[Persuade\] - Since you were observing my actions so closely, Venduris, you should know by now that I have always stood on the side of Good. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
 @2567 = ~\[Persuade\] -  If you have been studying me as closely as you claim, then by now you should be aware that I, as a Paladin, have always stood as a power of light and righteousness. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
-@2568 = ~\[Intimidate\] - Enough of this charade Venduris! I faced off with Irenicus himself at Spellhold and forced him into a retreat. I escaped the gloom of the Underdark unscathed, and I have just eradicated the most powerful vampire of Amn, together with a host of her strongest minions. Do you really think that you and your feeble-minded band of zealots can stop me?~
-@2569 = ~It has always been common practice of our order to observe an enemy over a lengthy time period before acting <CHARNAME>. Information, not brute strength, is the key to true power.~
+@2568 = ~\[Intimidate\] - Enough of this charade, Venduris! I faced off with Irenicus himself at Spellhold and forced him into a retreat. I escaped the gloom of the Underdark unscathed, and I have just eradicated the most powerful vampire of Amn, together with a host of her strongest minions. Do you really think that you and your feeble-minded band of zealots can stop me?~
+@2569 = ~It has always been common practice of our order to observe an enemy over a lengthy time period before acting, <CHARNAME>. Information, not brute strength, is the key to true power.~
 @2570 = ~So now, we know how you act, how you fight and how you judge. We are aware of your every detail, no matter how insignificant it may seem.~
 @2571 = ~Your alignment, your goals, your strengths and your weaknesses are all known to us, while you remain completely oblivious to our own plans.~
 @2572 = ~As you can see, we are at a clear advantage here.~
@@ -2143,9 +2143,9 @@ Usable By:
 @2577 = ~Do you take my party for some amateurish band of pickpockets?  (Venduris pierces you with a reproachful gaze)~
 @2578 = ~In truth, what you are facing now are some of the most capable adherents that our order has to offer.~
 @2579 = ~Furthermore, a number of our agents, placed within most major cities of the Sword Coast, are constantly obtaining vital information and insight about all who would oppose us, including yourself. They are highly adept at the art of subterfuge and have many ways of acting unseen should the need arise.~
-@2580 = ~So you see, it is truly no wonder that you, as most of our other victims, have never discovered our presence let alone our plans.~
+@2580 = ~So you see, it is truly no wonder that you, as most of our other victims, have never discovered our presence, let alone our plans.~
 @2581 = ~Our order first took notice of you some time ago when you had slain two of our valuable members who were operating near the city of Baldur's Gate.~
-@2582 = ~The two priests of Cyric that you've killed back then, Mulahey and Bassilus, were our agents, and their murder served as a triggering point for our current actions against you.~
+@2582 = ~The two priests of Cyric that you killed back then, Mulahey and Bassilus, were our agents, and their murders served as a triggering point for our current actions against you.~
 @2583 = ~We then followed your path until the final standoff with your half-brother Sarevok, who was also being carefully monitored at that time.~
 @2584 = ~The order wisely decided to let you slaughter each other so that we could easily take care of the weakened survivor.~
 @2585 = ~But then why do you attack me now, and not before? You surely had plenty of opportunities to do so in the past.~
@@ -2162,38 +2162,38 @@ Usable By:
 @2596 = ~Once we dispose of you, our Lord will certainly acknowledge the deed and reward us accordingly.~
 @2597 = ~(you make a mental note of what was just said)   Hmm... let me ask you something else then.~
 @2598 = ~(Venduris pauses for a moment and then starts gazing at you suspiciously)~
-@2599 = ~Hmm, that is indeed a possibility <CHARNAME>, though merely one of many.~
+@2599 = ~Hmm, that is indeed a possibility, <CHARNAME>, though merely one of many.~
 @2600 = ~With equal right, I could clam that disposing of you was the Overfather's will all along, and that we were actually predestined to be its executors.~
 @2601 = ~Either way, while I can not be fully certain in this matter, I would prefer to eliminate you. Unhindered, you could possibly rise even further and try to take the place of our Lord. This can not be allowed to happen.~
-@2602 = ~\[Lore\] - Then hear me out Venduris. As soon as I found out about my true descent, I began actively studying the prophecies concerning Bhaalspawn. Nonetheless, in all this time, I've found nothing that openly suggests that one of us *must* doubtlessly rise up and take our father's place. Quite contrary, my inquiries have shown that our future is not set in stone and that we are free to shape it as we see fit.~
+@2602 = ~\[Lore\] - Then hear me out, Venduris. As soon as I found out about my true descent, I began actively studying the prophecies concerning Bhaalspawn. Nonetheless, in all this time, I've found nothing that openly suggests that one of us *must* doubtlessly rise up and take our father's place. Quite contrary, my inquiries have shown that our future is not set in stone and that we are free to shape it as we see fit.~
 @2603 = ~\[Insight\] - Then think about it this way, you say that you want to murder me in order to please Cyric, but are you aware that after my death, the part of Bhaal's essence which lies inside me will return to its source? So in truth, killing me shall only speed up my father's recovery.~
-@2604 = ~\[Reason\] - Yet you can not be sure, for you said yourself that you are acting without approval of Cyric. Perhaps it would be wiser to reconsider your course Venduris... while you still can.~
+@2604 = ~\[Reason\] - Yet you can not be sure, for you said yourself that you are acting without approval of Cyric. Perhaps it would be wiser to reconsider your course, Venduris... while you still can.~
 @2605 = ~(Venduris ponders over your words for an instant, but his face remains an undecipherable riddle to you)~
-@2606 = ~What you say... holds some merit <CHARNAME>, but I can not be certain of the truth from merely hearing those words from your mouth.~
+@2606 = ~What you say... holds some merit, <CHARNAME>, but I can not be certain of the truth from merely hearing those words from your mouth.~
 @2607 = ~\[Insight\] - Nonetheless, you can no longer risk killing me, until you have confirmed this information. The risk of accidentally contributing to Bhaal's resurrection by freeing the essence held inside me would be too high to take, even for someone in your position.~
 @2608 = ~(Venduris looks like he is about to reply but instead, he pauses again, reflecting.)~
 @2609 = ~(After a moment of thought, he looks up to you again, but his gaze is different now. The malice has disappeared from his eyes, and you even think that you can trace a bit of respect in his current demeanor.)~
 @2610 = ~You... speak convincing words <CHARNAME>, and I can no longer dispute your arguments.~
 @2611 = ~Then, there is only one solution left.  (Venduris reaches for the ring on his left hand)~
 @2612 = ~We must depart now and observe from afar how the events unfold... as we always have. When another opportunity shows itself, and we are fully aware of all the consequences, we can always strike anew if need be.~
-@2613 = ~Pray that we never meet again Bhaalspawn, your wits may not save you once more as they have this day!  (He finishes the sentence with a wicked smile)~
+@2613 = ~Pray that we never meet again, Bhaalspawn. Your wits may not save you once more, as they have this day!  (He finishes the sentence with a wicked smile)~
 @2614 = ~I admit, your knowledge on the subject is quite impressive. But then again, why should I believe anything you say? You could just as easily be lying to save your life.~
-@2615 = ~\[Lore\] - Then consider this. If the prophecies of ascension are truly referring to me, and you are indeed supposed to kill me today, don't you think *that* would have also been foreseen? Yet, there is no mention of such an event in any of the texts. On the other hand, the warning to those who would interfere in the destiny of the Bhaalspawn is quite clear. As you well know, even Cyric himself could not risk to defy the will of the Overfather. So tell me Venduris, do you really think that you can take such a chance?~
+@2615 = ~\[Lore\] - Then consider this. If the prophecies of ascension are truly referring to me, and you are indeed supposed to kill me today, don't you think *that* would have also been foreseen? Yet, there is no mention of such an event in any of the texts. On the other hand, the warning to those who would interfere in the destiny of the Bhaalspawn is quite clear. As you well know, even Cyric himself could not risk to defy the will of the Overfather. So tell me, Venduris, do you really think that you can take such a chance?~
 @2616 = ~I see, let me ask you something else.~
-@2617 = ~Indeed, what you say is true, but in my line of work, I have often seen a good <PRO_MANWOMAN> fall in the reach of great power and scrupulously betray <PRO_HISHER> former life and beliefs. You would not be the first nor the last one to make that choice.~
-@2618 = ~\[Persuade\] -  All my life I have lived and served by the principals and beliefs of my faith and ethos. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
-@2619 = ~\[Reputation\] - My deeds speak for me Venduris. If you are so familiar with my life then you are surely aware of my accomplishments. I have never betrayed trust, and have always strived to help the ones in need. Think about it, are those the traits of a <PRO_MANWOMAN> who desires the power of Cyric and Bhaal?~
+@2617 = ~Indeed, what you say is true, but in my line of work, I have often seen a good <PRO_MANWOMAN> fall in the reach of great power and unscrupulously betray <PRO_HISHER> former life and beliefs. You would not be the first nor the last one to make that choice.~
+@2618 = ~\[Persuade\] -  All my life I have lived and served by the principles and beliefs of my faith and ethos. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me, Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
+@2619 = ~\[Reputation\] - My deeds speak for me, Venduris. If you are so familiar with my life then you are surely aware of my accomplishments. I have never betrayed trust, and have always strived to help the ones in need. Think about it, are those the traits of a <PRO_MANWOMAN> who desires the power of Cyric and Bhaal?~
 @2620 = ~(After a moment of thought, he looks up to you again, but his gaze is different now. The malice has disappeared from his eyes, and you even think that you can trace a bit of respect in his new demeanor.)~
 @2621 = ~You... are right <CHARNAME>. The arguments you displayed are solid, I should have not doubted your ways.~
 @2622 = ~In fact, now that I am certain that you have no plans to usurp my Lord's rulership, I am willing to let you live.~
 @2623 = ~Do not mistake this for charity though, I assure you, it is purely an act of self interest.~
 @2624 = ~What do you mean?~
 @2625 = ~I've never doubted that, but what do you imply?~
-@2626 = ~You will soon find out on your own <CHARNAME>. For now, I shall say only this much, you were by far not the only contender for your father's throne. And now that I have assured myself of your allegiance, I can shift my efforts toward others of your kind.~
-@2627 = ~Most of them are not as good natured as you appear to be, therefore they require my immediate attention. However, if I let you live, you will probably dispose of a few of your brethren and save me some effort.   (Venduris finishes the sentence with a wicked smile)~
-@2628 = ~But enough... we shall depart now and leave you to your destiny. Farewell <CHARNAME>, hope that we never meet again! (He reaches for the ring on his left hand)~
-@2629 = ~\[Persuade\] -  All my life I have lived by the same principals and beliefs - the ones of the Greater Good. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
-@2630 = ~I agree, those are most impressive accomplishments <CHARNAME>. However, we are much more resourceful than one would think, and your actions have been observed long enough for us to discover several ways of dealing with you swiftly and effectively.~
+@2626 = ~You will soon find out on your own, <CHARNAME>. For now, I shall say only this much, you were by far not the only contender for your father's throne. And now that I have assured myself of your allegiance, I can shift my efforts toward others of your kind.~
+@2627 = ~Most of them are not as good-natured as you appear to be, therefore they require my immediate attention. However, if I let you live, you will probably dispose of a few of your brethren and save me some effort.   (Venduris finishes the sentence with a wicked smile)~
+@2628 = ~But enough... we shall depart now and leave you to your destiny. Farewell, <CHARNAME>. Hope that we never meet again! (He reaches for the ring on his left hand)~
+@2629 = ~\[Persuade\] -  All my life I have lived by the same principles and beliefs - the ones of the Greater Good. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me, Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
+@2630 = ~I agree, those are most impressive accomplishments, <CHARNAME>. However, we are much more resourceful than one would think, and your actions have been observed long enough for us to discover several ways of dealing with you swiftly and effectively.~
 @2631 = ~Ignorant fool! I hold the power of a GOD at my disposal. You WILL learn to fear me!  \[Transform into the Slayer\]~
 @2632 = ~\[Truth\] - Venduris, if you have studied me as closely as you claim, then you must be aware of the power that I wield. Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
 @2633 = ~\[Bluff\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
@@ -2208,36 +2208,36 @@ Usable By:
 @2642 = ~Hmm, your little escapade at Spellhold seems to have actually strengthened you. I must reconsider my approach.~
 @2643 = ~(He glances at you malevolently while reaching for the ring on his left hand)~
 @2644 = ~We are departing... for now, but rest assured <CHARNAME>, this will not be the last time we meet!~
-@2645 = ~I am not impressed by your empty boasts <CHARNAME>. As I have already said, you have been studied with great detail and care. I am positive that our skill and competence can easily match your own.~
+@2645 = ~I am not impressed by your empty boasts, <CHARNAME>. As I have already said, you have been studied with great detail and care. I am positive that our skill and competence can easily match your own.~
 @2646 = ~Ha! Let us do battle then, and find out who is truly superior here!  \[Attack him\]~
-@2647 = ~You poor deluded fool...  (he sneers at you contemptuously)  Those empty boasts mean nothing to me. I am perfectly aware of my own abilities, as well as the skills of my companions.~
+@2647 = ~You poor, deluded fool...  (he sneers at you contemptuously)  Those empty boasts mean nothing to me. I am perfectly aware of my own abilities, as well as the skills of my companions.~
 @2648 = ~Our combined might will be more than enough to crush you!  \[He prepares to attack\]~
-@2649 = ~You are the only fool here Venduris! I hold the power of a GOD at my disposal. You WILL learn to fear me!  \[Transform into the Slayer\]~
+@2649 = ~You are the only fool here, Venduris! I hold the power of a GOD at my disposal. You WILL learn to fear me!  \[Transform into the Slayer\]~
 @2650 = ~Damn, he saw right through it!  \[Prepare for battle\]~
 @2651 = ~Though your abilities may truly be greater than mine, I shall not give up so easily.~
 @2652 = ~(He confidently looks straight into your eyes)~
-@2653 = ~You do realize <CHARNAME>, that you are but a single <PRO_MANWOMAN> facing against the six of us. Even with all the power that you wield, we are still at an advantage here. You alone stand no chance against the combined might of the Chosen of Cyric.~
+@2653 = ~You do realize <CHARNAME>, that you are but a single <PRO_MANWOMAN> against the six of us. Even with all the power that you wield, we are still at an advantage here. You alone stand no chance against the combined might of the Chosen of Cyric.~
 @2654 = ~Even though your abilities may truly be greater than my own, I shall not give up so easily.~
-@2655 = ~You do realize <CHARNAME>, that you are facing against superior numbers here. Even with all the power that you wield, the six of us are still at an advantage here. Your petty lot stands no chance against the combined might of the Chosen of Cyric.~
+@2655 = ~You do realize <CHARNAME>, that you are facing superior numbers here. Even with all the power that you wield, the six of us are still at an advantage here. Your petty lot stands no chance against the combined might of the Chosen of Cyric.~
 @2656 = ~(You manage to successfully distract Venduris and take a moment to examine your surroundings.)~
 @2657 = ~\[Focus your eyesight\] - try to get a better view of your opponents despite the darkness and the storm.~
 @2658 = ~\[Infravision\] - use your keen eyesight to get a better view of your opponents.~
 @2659 = ~\[Infravision\] - use your enhanced perception to get a better view of your opponents.~
 @2660 = ~\[Detect Evil Intent\] - focus yourself and attempt to determine the measure of evil within your opponents.~
 @2661 = ~\[Find Traps\] - scan the area for traps, as discreetly as possible.~
-@2662 = ~\[Detect Slope\] - try to discover any irregularities of the surrounding terrain using your refined <PRO_RACE> senses.~
+@2662 = ~\[Detect Slope\] - try to discover any irregularities of the surrounding terrain, using your refined <PRO_RACE> senses.~
 @2663 = ~\[Tracking\] - examine the markings on the ground, as discreetly as possible.~
 @2664 = ~\[Arcane Lore\] - Examine the shimmering runes inscribed on the ground.~
 @2665 = ~(Resume the normal conversation)~
-@2666 = ~(As Venduris has stepped closer, you are now able to see the remainder of his face. The rogue's expression is still calm and collected, failing to give away any notable emotion, but you now notice that his pale green eyes look cold and cruel.)~
-@2667 = ~(No matter how hard you try, you cannot see the rest of Venduris' features and equipment as they are completely obscured by his long black cloak. Furthermore, the few visible parts of his armor seem to meld into the surrounding darkness, making him look like an ominous shadow.)~
-@2668 = ~(The only clearly visible detail on him is his short sword which is pulsating in a radiant green glow. The tip is pointing directly towards your throat.)~
+@2666 = ~(As Venduris has stepped closer, you are now able to see the remainder of his face. The rogue's expression is still calm and collected, failing to give away any notable emotion, but you now notice that his pale, green eyes look cold and cruel.)~
+@2667 = ~(No matter how hard you try, you cannot see the rest of Venduris' features and equipment, as they are completely obscured by his long, black cloak. Furthermore, the few visible parts of his armor seem to meld into the surrounding darkness, making him look like an ominous shadow.)~
+@2668 = ~(The only clearly visible detail on him is his short sword, which is pulsating in a radiant green glow. The tip is pointing directly towards your throat.)~
 @2669 = ~(Despite your infravision, no matter how hard you try you cannot see the rest of Venduris' features and equipment as they are completely obscured by his long black cloak. Furthermore, the few visible parts of his leather armor seem to meld into the surrounding darkness, making him look like an ominous shadow.)~
-@2670 = ~(The only clearly visible detail on Venduris is his sword, which seems to be pulsating in a radiant green glow. The tip is pointing directly towards your throat.)~
+@2670 = ~(The only clearly visible detail on Venduris is his sword, which seems to be pulsating with a radiant, green glow. The tip is pointing directly towards your throat.)~
 @2671 = ~(No matter how hard you concentrate, you can not detect any evil emanations from Venduris. You feel absolutely nothing in his presence.)~
 @2672 = ~(You are uncertain whether he actually holds no evil intents or if some unknown force purposely blocks your senses.)~
 @2673 = ~(You notice several freshly dug holes near the gates. They are fairly shallow and almost perfectly covered up by the muddy ground.)~
-@2674 = ~(Judging by the dig marks, you suspect that a bulky mechanical device has been recently buried there, most likely a proximity triggered snare. It would be wise to keep a safe distance from the gateway.)~
+@2674 = ~(Judging by the dig marks, you suspect that a bulky mechanical device has been recently buried there, most likely a proximity-triggered snare. It would be wise to keep a safe distance from the gateway.)~
 @2675 = ~(You manage to notice several freshly dug holes near the gates. They are fairly shallow and almost perfectly covered up by the muddy ground.)~
 @2676 = ~(Judging by the dig marks, you suspect that something bulky has been recently buried there, possibly a snare of some sort. It would be wise to keep a safe distance from the gateway.)~
 @2677 = ~(You throw a quick glance at the tracks in the mud, hoping that Venduris won't notice your intent. Although most footprints were wiped out by the rain, you manage to make a quick overview of the area.)~
@@ -2250,20 +2250,20 @@ Usable By:
 @2684 = ~Don't even bother trying, you will quickly find yourself unable to do anything against their influence.  (You catch a spark of superiority in his eyes)~
 @2685 = ~What makes you so sure of that?~
 @2686 = ~A simple, yet extremely effective precaution was made to prevent anyone from interfering. The warding glyphs which surround this area can not be undone without a unique command phrase which is known only by me.~
-@2687 = ~Furthermore, your own blood <CHARNAME> has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
-@2688 = ~\[Arcane Lore\] - Ahh, but you didn't actually cast the original spell yourself, did you Venduris? You are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
-@2689 = ~\[Insight]\ - *Your* permission? You mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type Venduris.~
+@2687 = ~Furthermore, your own blood, <CHARNAME>, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
+@2688 = ~\[Arcane Lore\] - Ahh, but you didn't actually cast the original spell yourself, did you, Venduris? You are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
+@2689 = ~\[Insight]\ - *Your* permission? You mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type, Venduris.~
 @2690 = ~And how did you manage to dispell my protections and enchantments so easily? Even the most skilled members of the Cowled Wizards would have had difficulties with that, considering the degree of my power.~
 @2691 = ~My blood...? And just how did you get ahold of that?~
-@2692 = ~Furthermore, your own blood <CHARNAME>, as well as that of your fellow party members, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
+@2692 = ~Furthermore, your own blood, <CHARNAME>, as well as that of your fellow party members, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
 @2693 = ~Our blood...? And just how did you get ahold of that?~
 @2694 = ~(Venduris lightly traces the edge of his blade)   I can assure you, that was easier than one would imagine.~
-@2695 = ~You have fought countless battles, leaving a trail of chaos and destruction in your wake. But at the same time, you Bhaalspawn, have suffered many wounds as well.~
+@2695 = ~You have fought countless battles, leaving a trail of chaos and destruction in your wake. But at the same time, you, Bhaalspawn, have suffered many wounds as well.~
 @2696 = ~(A devious half-sneer briefly forms on his face)  Gathering the few precious drops, which my spellcasters required, from a blood-soaked battlefield was a trivial matter.~
-@2697 = ~\[Arcane Lore\] - You said earlier that I need *your* permission to leave this place. Hmm, somehow I don't think that you've actually cast the original spell by yourself Venduris. In fact, I believe that you are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
-@2698 = ~\[Insight]\ - You said earlier that I need *your* permission to leave this place. Do you mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type Venduris.~
+@2697 = ~\[Arcane Lore\] - You said earlier that I need *your* permission to leave this place. Hmm, somehow I don't think that you've actually cast the original spell by yourself, Venduris. In fact, I believe that you are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
+@2698 = ~\[Insight]\ - You said earlier that I need *your* permission to leave this place. Do you mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type, Venduris.~
 @2699 = ~(Venduris' eyes flicker fiercely and he scowls at you for a second, as if suddenly realizing that he has just said something that he shouldn't have, but he quickly manages to recompose himself.)~
-@2700 = ~*That* is of no consequence. Suffice to say that I now have full control over the wards, and that it is not possible to get by them without my approval. You <CHARNAME>, will remain trapped here as long as I require it.~
+@2700 = ~*That* is of no consequence. Suffice to say that I now have full control over the wards, and that it is not possible to get by them without my approval. You, <CHARNAME>, will remain trapped here as long as I require it.~
 @2701 = ~(you make a mental note of what was just said)   Hmm... alright, but you said earlier that you used my blood for the incantation. Just how did you get ahold of that?~
 @2702 = ~(you make a mental note of what was just said)   Hmm... alright, but you said earlier that you used our blood for the incantation. Just how did you get ahold of that?~
 @2703 = ~(you make a mental note of what was just said)   Hmm... I see, let me ask you something else then.~
@@ -2282,43 +2282,43 @@ Usable By:
 
 //  Chosen of Cyric partymember interjectons (3000-3999)
 
-@3000 = ~Oh, come on <CHARNAME>, they are Cyric's goons! Don't you recognize those huge jawless skulls sprawled all over their clothes? We've dealt with their ilk many times before.~
-@3001 = ~By Torm's blade! Judging by the symbols on their clothes these villains are surely followers of Cyric, and likely high ranking ones at that. Be on your guard <CHARNAME>!~
+@3000 = ~Oh, come on, <CHARNAME>, they are Cyric's goons! Don't you recognize those huge jawless skulls sprawled all over their clothes? We've dealt with their ilk many times before.~
+@3001 = ~By Torm's blade! Judging by the symbols on their clothes these villains are surely followers of Cyric, and likely high-ranking ones at that. Be on your guard, <CHARNAME>!~
 @3002 = ~These fanatics are most certainly worshipers of the Prince of Lies. Helm, grant us strength!~
-@3003 = ~The Harpers have had plenty of dealings with their kind <CHARNAME>. There is little doubt that these rogues are servants of Cyric.~
+@3003 = ~The Harpers have had plenty of dealings with their kind, <CHARNAME>. There is little doubt that these rogues are servants of Cyric.~
 @3004 = ~I've never seen this cloaked man before, but Boo can smell his evil from here, and Boo's nose is never wrong!~
-@3005 = ~What are you doing <CHARNAME>? This isn't like you at all! Don't give in... don't become like them. Resist little <PRO_BROTHERSISTER>, I beg you!~
-@3006 = ~Restrain yourself <CHARNAME>! Do not let the taint take your mind. Stay your anger, and let it pass <PRO_GIRLBOY>!~
-@3007 = ~Gorion would be ashamed, if he could see you now <CHARNAME>. Don't forfeit everything he thought you so easily! Recompose yourself, and defy the taint.~
+@3005 = ~What are you doing, <CHARNAME>? This isn't like you at all! Don't give in... don't become like them. Resist little <PRO_BROTHERSISTER>, I beg you!~
+@3006 = ~Restrain yourself, <CHARNAME>! Do not let the taint take your mind. Stay your anger, and let it pass, <PRO_GIRLBOY>!~
+@3007 = ~Gorion would be ashamed if he could see you now <CHARNAME>. Don't forfeit everything he taught you so easily! Recompose yourself, and defy the taint.~
 @3008 = ~N-No! <CHARNAME>, you must resist! If you let yourself go like that, you'll never be the same person again. Please, don't... don't give in!~
-@3009 = ~The power of your heritage is manifesting itself <CHARNAME>. Embrace it, and show them your true strength!~
-@3010 = ~Ach, 'tis been a while since I've seen a proper bloodbath. Ye be sure to give 'em what they're askin' fer <CHARNAME>!~
+@3009 = ~The power of your heritage is manifesting itself, <CHARNAME>. Embrace it, and show them your true strength!~
+@3010 = ~Ach, 'tis been a while since I've seen a proper bloodbath. Ye be sure to give 'em what they're askin' fer, <CHARNAME>!~
 @3011 = ~Hmm, magical wards attuned to our very blood? A most impressive technique. (I better take some notes).~
-@3012 = ~They really used our... blood? Eww, that's just gross! You'd never get me to cast such a spell <CHARNAME>, not in a million years.~
+@3012 = ~They really used our... blood? Eww, that's just gross! You'd never get me to cast such a spell, <CHARNAME>, not in a million years.~
 @3013 = ~So that's when this all started then? Hmm, I admit that I've always wondered why we kept facing so many Cyric's agents during our travels. It seems that you have really piqued their interest <CHARNAME>.~
-@3014 = ~They've been stalking us all this time huh? Hmm, now that I think about it, that strange halfling does look kind of familiar. I think I've seen him sneaking around Gullykin before.~
+@3014 = ~They've been stalking us all this time, huh? Hmm, now that I think about it, that strange halfling does look kind of familiar. I think I've seen him sneaking around Gullykin before.~
 @3015 = ~A-hah! I kept telling you simians that we were being followed but, of course, nobody paid attention. (They even called me paranoid. Such ignorant fools!)~
 @3016 = ~Boo thinks these strange people smell funny, and he remembers that smell way back from Nashkel mines. Be wary <CHARNAME>, evil is afoot!~
 @3017 = ~My raven, may I take one last look at that scroll before it makes acquaintance with entropy?~
-@3018 = ~Ah, though the fair sorceress was cunning as she was beautiful, I do believe I've found a way to undo her work. A simple Command Phrase, but it should do the trick.~
+@3018 = ~Ah, though the fair sorceress was as cunning as she was beautiful, I do believe I've found a way to undo her work. A simple Command Phrase, but it should do the trick.~
 @3019 = ~Observe my raven, I've marked a few lines which you need to read in order to restore our freedom. And try to make it sound dramatic, for should you fail, we are most assuredly doomed to spend an eternity inside this devious magical entrapment.~
 @3020 = ~Just a minute there <CHARNAME>! You don't want to end up like my uncle Cinders after he fell into a wagon full of fireworks and accidentally blew it up with a single spark from his pipe. Well, at least it was his own birthday party that he ruined. Anyway, you better let me take a look at that thing.~
 @3021 = ~Hmm.. I think I've solved it! By the looks of it, that poor lass had attuned the wards to a simple Command Phrase. Not very ingenious, but it can be effective at times.~
-@3022 = ~<CHARNAME> my dear friend, I've marked here a few lines you should read. And make it loud too, so that we can finally escape this invisible cage.~
-@3023 = ~W-Wait <CHARNAME>! Can I take a look at that first, please?~
+@3022 = ~<CHARNAME>, my dear friend, I've marked here a few lines you should read. And make it loud too, so that we can finally escape this invisible cage.~
+@3023 = ~W-Wait, <CHARNAME>! Can I take a look at that first, please?~
 @3024 = ~Oh! I-I believe I can understand this, and if I'm it right, the wards can be lowered with a simple Command Phrase! Do you... do you think it could actually be that easy?~
 @3025 = ~Um, <CHARNAME>, I've marked the lines you need to read. Just say that out loud and we should be free again, I h-hope.~
-@3026 = ~Hold on there <CHARNAME>! Can I take a look at that scroll before you needlessly endanger the whole city with your recklessness?~
+@3026 = ~Hold on there, <CHARNAME>! Can I take a look at that scroll before you needlessly endanger the whole city with your recklessness?~
 @3027 = ~Hmm... if I'm reading this correctly, the wards can be lowered with a special Command Phrase. Simple, but also very effective.~
-@3028 = ~Here <CHARNAME>, I've marked the lines you need to read. Now say that out loud so we can finally be free of this nightmare.~
+@3028 = ~Here, <CHARNAME>, I've marked the lines you need to read. Now say that out loud so we can finally be free of this nightmare.~
 @3029 = ~Wait! Little <PRO_BROTHERSISTER>, why don't you let *me* take a look at that thing before you trash it.~
 @3030 = ~Just a moment. Hmm, now what was that Gorion always used to say about magical barriers? If I could only remember...~
-@3031 = ~Oh, right! Ahem, as I recall: "They can often be broken with a proper Command Phrase." (she unsuccessfully attempts to imitate Gorion's stern lecturing voice while pronouncing this)~
-@3032 = ~Look here <CHARNAME>, it's really simple. I've marked the lines which you need to read. Just make sure you're loud enough and we should be out of here in no time.~
+@3031 = ~Oh, right! Ahem, as I recall: "They can often be broken with a proper Command Phrase." (she unsuccessfully attempts to imitate Gorion's stern, lecturing voice while pronouncing this)~
+@3032 = ~Look here, <CHARNAME>, it's really simple. I've marked the lines which you need to read. Just make sure you're loud enough and we should be out of here in no time.~
 @3033 = ~Wait, you incompetent oaf! Give *me* that thing before you blow us all up. (Such insolence! Ignoring my genius and needlessly endangering us all.)~
 @3034 = ~Hmm, now let's see...~
 @3035 = ~A-hah! This petty sorcery is no match for my sagacity - a simple Command Phrase! Bah, how pathetic.~
-@3036 = ~Now, look closely <CHARNAME>, I'll mark a few lines here, you just need to read them out loud. (Even *<PRO_HESHE>* should be able to accomplish that.)~
+@3036 = ~Now, look closely, <CHARNAME>, I'll mark a few lines here, you just need to read them out loud. (Even *<PRO_HESHE>* should be able to accomplish that.)~
 @3037 = ~There, now hurry it up so we can finally get going.~
 @3038 = ~Yes, I have felt this rivvil's chilling stare on my back before. I always presumed that he was after me, though it appears that your heritage outweighs even my own infamy, <CHARNAME>.~
 
@@ -2336,7 +2336,7 @@ STATISTICS:
 
 Equipped Abilities:
     +2 extra bonus to AC vs. undead creatures
-    Any undead creature who strikes the shield bearer in melee takes 2d4 points of fire damage and must save vs. spells or become blinded for 4 rounds
+    Any undead creature who strikes the shieldbearer in melee takes 2d4 points of fire damage and must save vs. spells or become blinded for 4 rounds
 
 Special Abilities: 
     Casts Sunfire 1x/day
@@ -2349,13 +2349,13 @@ Unusable By:
  Mage~
 
 @5002 = ~The Guardian +2~
-@5003 = ~This odd-looking shield appears to be entirely made up of large hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shield bearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shield bearer.
+@5003 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
 
 STATISTICS:
 
 Equipped Abilities:
     +10 to maximum hit points
-     Shield bearer regenerates 2 hit points per round
+     Shieldbearer regenerates 2 hit points per round
 
 Special Abilities:
     Summon Shambling Mound 1x/day
@@ -2367,13 +2367,13 @@ Only Usable By:
  Druids~
 
 @5004 = ~The Guardian +3~
-@5005 = ~This odd-looking shield appears to be entirely made up of large hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shield bearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shield bearer.
+@5005 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
 
 STATISTICS:
 
 Equipped Abilities:
     +15 to maximum hit points
-     Shield bearer regenerates 3 hit points per round
+     Shieldbearer regenerates 3 hit points per round
 
 Special Abilities:
     Summon Greater Shambler 1x/day
@@ -2385,9 +2385,9 @@ Only Usable By:
  Druids~
 
 @5006 = ~Stormcharged Axe +5~
-@5007 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and soon afterward struck by a bolt of lightning. Because of the pre placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
+@5007 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and soon afterward struck by a bolt of lightning. Because of the pre-placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high-ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
 
-Coated with the other worldly Starfall Ore and infused with the essence of a Lapiz Lazuli, the powers of this already formidable weapon are greatly enhanced.
+Coated with the other worldly Starfall Ore and infused with the essence of a Lapis Lazuli, the powers of this already formidable weapon are greatly enhanced.
 
 STATISTICS:
 
@@ -2438,7 +2438,7 @@ Not Usable By:
   Mage~
 
 @5010 = ~Masterbelt of Fortune~
-@5011 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
+@5011 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
 
 The masterwork tools have been infused with the essence of luck and enchanted with magic. They now confer additional benefits.
 
@@ -2455,7 +2455,7 @@ Usable by:
   Thieves~
 
 @5012 = ~Returning Frost Dart +3~
-@5013 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples which are commonly located on the snow covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
+@5013 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
 
 The mithril coating appears to have enhanced the dart's magical capabilities a bit further.
 
@@ -2503,7 +2503,7 @@ Not Usable By:
 @5019 = ~Keeper of the Law +3~
 @5020 = ~This blade once belonged Lao-Tzu, a samurai from one of the southern provinces of Kara-Tur. Upon finishing his training the warrior had sworn an oath to finally free his lands from the bandits and brigands which had plagued his people for the last ten years. However, that task proved fairly difficult as his opponents were cunning, and only struck late at night, always wearing hoods and masks. Lao-Tzu understood that these bandits had no honor and that may well be hiding among the very people which he sought to protect, but he dared not act merely on impulse for his code of conduct would not permit him to falsely accuse an innocent. To aid him in this task, Lao-Tzu sought a great Wu Jen master and asked him to enchant his wakizashi with the ability to sense the true intentions of a person and to strike vigorously against those without honor. The samurai organized a feast for the people in order to lift the spirits of the robbed ones and to drive out the bandits into the open. The people answered his call and Lao-Tzu was pleased. Using the power of his new weapon he managed to separate the cunning bandits from the simple peasants and to seat them inside a separate dining hall. Once they were all rounded up, the samurai barred the only exit and fought alone against a dozen rogues. After a short battle Lao-Tzu emerged victorious, but his honor did not allow him to kill even such unworthy foes. Instead, the samurai exiled the bandits from the province and his people finally knew peace.
 
-Infused with the properties of Illithid brine water, the sword has become even more effective against Chaotic aligned opponents. Furthermore, it can now protect the mind of its wielder against chaos-based magic for a small amount of time.
+Infused with the properties of Illithid brine water, the sword has become even more effective against Chaotically aligned opponents. Furthermore, it can now protect the mind of its wielder against chaos-based magic for a small amount of time.
 
 STATISTICS:
 
@@ -2514,8 +2514,8 @@ Special Abilities:
     Casts Detect Alignment 3x/day
     Casts Chaotic Commands 1x/day
 
-THAC0: +3 bonus, +5 vs. Chaotic aligned creatures
-Damage:  1D8 +3, +5 vs. Chaotic aligned creatures
+THAC0: +3 bonus, +5 vs. Chaotically aligned creatures
+Damage:  1D8 +3, +5 vs. Chaotically aligned creatures
 Damage type:  piercing
 Weight:  2
 Speed Factor: 0
@@ -2523,7 +2523,7 @@ Proficiency Type: Scimitar/Wakizashi/Ninja-To
 Type:  1-handed
 Requires: 5 Strength
 Not Usable By:
- Chaotic aligned characters
+ Chaotically aligned characters
  Druid
  Cleric
  Mage~
@@ -2581,7 +2581,7 @@ Only Usable By:
 // Cromwell's new dailogue (6000-6999)
 
 @6000 = ~Hmmm... aye, now, this looks interesting...~
-@6001 = ~That ol' battered buckler yer're holdin' was once a mighty relic that belonged to a high priest of Amaunator, if me eyes don't be deceiving me. In case ye somehow stumble upon a holy symbol of the lost sun god, I could infuse the shield with its essence and restore some of the relic's old power.~
+@6001 = ~That ol' battered buckler ye're holdin' was once a mighty relic that belonged to a high priest of Amaunator, if me eyes don't be deceiving me. In case ye somehow stumble upon a holy symbol of the lost sun god, I could infuse the shield with its essence and restore some of the relic's old power.~
 @6002 = ~Ye have the old relic of Amaunator and the sun god's holy symbol. For 7,500 gold, I could try to fuse them together for ye.~
 @6003 = ~Well, let's see what else ye got.~
 
@@ -2589,13 +2589,13 @@ Only Usable By:
 @6011 = ~If ye ever get yer hands on some mithril, I could use it to coat the dart's tip and make it a wee bit stronger. Even a small piece will do.~
 @6012 = ~Ach, ye have a mithril piece! For 5,000 gold I could use it to coat the tip of that dart ye're holdin' and make it a wee bit stronger. Well, what say ye?~
 
-@6020 = ~Ye've a fancy sword there <GIRLBOY>, Kara-Tur craftmanship aye? Let me take a look...~
+@6020 = ~Ye've a fancy sword there, <GIRLBOY>. Kara-Tur craftmanship, aye? Let me take a look...~
 @6021 = ~Hmm... the craft be truly flawless, I cannae do much 'bout that. Still, I could strengthen the anti-chaos enchantments on the blade if ye ever get ahold of some Illithid brine water.~
-@6022 = ~Ay, now... ye found some Illithid brine water didn't ye? Well, for 5,000 gold I could use it to strengthen the anti-chaos enchantments on that fancy Kara-Tur blade of yers. Are ye interested?~
+@6022 = ~Ay, now... ye found some Illithid brine water, didn't ye? Well, for 5,000 gold I could use it to strengthen the anti-chaos enchantments on that fancy Kara-Tur blade of yers. Are ye interested?~
 
 @6030 = ~Eh, what have ye got there? A club of some sort? Let's see...~
 @6031 = ~Uthgardt craftsmanship? Aye, though it looks unfinished. Hmm... if ye can get me a Beljuril gem, I might be able to do something about that.~
-@6032 = ~Ye've found a Beljuril gem, aye? For 5,000 gold I could use it to finish the enchantments on that club of yers. What say ye <GIRLBOY>?~
+@6032 = ~Ye've found a Beljuril gem, aye? For 5,000 gold I could use it to finish the enchantments on that club of yers. What say ye, <GIRLBOY>?~
 
 @6040 = ~That's a fairly sturdy buckler ye got there. Made of darksteel eh? Let me see that up close...~
 @6041 = ~Oy, if ye can get me a Rogue Stone and some adamantine dust, I could strengthen the darksteel alloy a bit.~
@@ -2638,7 +2638,7 @@ By studying his surroundings intently, an experienced Thief can predict the acti
 @8002 = ~Evades effects~
 @8003 = ~Evasion
 
-Thieves of exceptional skill can avoid damage from energy discharges such as breath weapons, fireball spells and the like through a combination of superior reflexes and extraordinary agility. Through nearly superhuman effort, a Thief can position himself out of harm's way mere seconds before an energy discharge reaches him. After activating this ability the Thief can evade the effects of the following spells: Burning Hands, Fireball, Lightning Bolt, Call Lightning, Flame Strike, Cone of Cold, Sunfire, Chain Lightning, Delayed Blast Fireball and all forms of Dragon's Breath. The Evasion ability expires after five rounds.
+Thieves of exceptional skill can avoid damage from energy discharges, such as breath weapons, fireball spells and the like through a combination of superior reflexes and extraordinary agility. Through nearly superhuman effort, a Thief can position himself out of harm's way mere seconds before an energy discharge reaches him. After activating this ability the Thief can evade the effects of the following spells: Burning Hands, Fireball, Lightning Bolt, Call Lightning, Flame Strike, Cone of Cold, Sunfire, Chain Lightning, Delayed Blast Fireball and all forms of Dragon's Breath. The Evasion ability expires after five rounds.
 
 Requires: Danger Sense~
 
@@ -2657,7 +2657,7 @@ Bards eventually achieve a high degree of control over sound which enables them 
 @8008 = ~Sound Barrier~
 @8009 = ~Sound Barrier
 
-The most skilled of all Bards are able to fully control the intensity, speed, and direction of the very waves which compose sound, which allows them to shape and bend it as they see fit. By utilizing this ability, the Bard encases himself within a sphere of swirling sound waves thereby forming a barrier which protects him from all sound-based spells and attacks (Silence, Deafness, Command/Greater Command, Power Word (any), Holy/Unholy Word, Wail of the Banshee and Demilich Howl). Anyone who attempts to break through the barrier and strike the Bard in melee takes 2d8 points of sonic damage. Furthermore, the attacker may become deafened (75% chance) or stunned (25% chance) during the following round unless a save vs. breath is made. The sound barrier dissipates after 5 rounds.
+The most skilled of all Bards are able to fully control the intensity, speed, and direction of the very waves which compose sound, which allows them to shape and bend it as they see fit. By utilizing this ability, the Bard encases himself within a sphere of swirling sound waves, thereby forming a barrier which protects him from all sound-based spells and attacks (Silence, Deafness, Command/Greater Command, Power Word (any), Holy/Unholy Word, Wail of the Banshee and Demilich Howl). Anyone who attempts to break through the barrier and strike the Bard in melee takes 2d8 points of sonic damage. Furthermore, the attacker may become deafened (75% chance) or stunned (25% chance) during the following round unless a save vs. breath is made. The sound barrier dissipates after 5 rounds.
 
 Requires: Resonating Weapon~
 
@@ -2774,10 +2774,10 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 
 
 
-// Revised Thievery store steal failure related dialogues (9000-9999)
+// Revised Thievery store steal failure-related dialogues (9000-9999)
 
 @9000 = ~\[Lore\] - Calm down. I was merely trying to ascertain the history behind this item. Here, you can have it back.~
-@9001 = ~\[Intelligence\] - I resent those baseless accusations. Or do you forbid your customers to inspect the wares before making a purchase? Here, have your petty trinket back.~
+@9001 = ~\[Intelligence\] - I resent those baseless accusations. Or do you forbid your customers from inspecting the wares before making a purchase? Here, have your petty trinket back.~
 @9002 = ~\[Wisdom\] - Show some common sense before making such brash assumptions. I simply wanted to make sure that the quality of your wares was up to my standards. Here, you can have this back.~
 @9003 = ~\[Charisma\] - Easy there, I just wanted to admire this remarkable item up close and hold it for a second. Here, you can have it back.~
 @9004 = ~\[Reputation\] - Hmph, I will kindly remind you that you are speaking to an upstanding citizen here. For the record, I was simply perusing your wares. Now take this trinket back and stop spreading such falsehoods.~
@@ -2799,10 +2799,10 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 @9202 = ~For the last time, I will not be robbed by the likes of you! Return my wares this instant!~
 
 
-// Revised Thievery pickpocket failure related dialogues
+// Revised Thievery pickpocket failure-related dialogues
 
 @9500 = ~\[Lore\] - On the contrary. I was fascinated by this trinket which fell out of your pocket and merely wanted to examine it up close before returning it to you.~
-@9501 = ~\[Intelligence\] - I resent those baseless accusations. I was nowhere near you when the even occurred and I can summon several witnesses who will gladly confirm that.~
+@9501 = ~\[Intelligence\] - I resent those baseless accusations. I was nowhere near you when the event occurred and I can summon several witnesses who will gladly confirm that.~
 @9502 = ~\[Wisdom\] - Show some common sense before making such brash assumptions. I was in a hurry and must have accidentally brushed you while passing by. As you can see, no harm was done.~
 @9503 = ~\[Charisma\] - I assure you, that wasn't my doing. However, I did see a hooded <MANWOMAN> pass nearby mere moments ago. Perhaps that was the real culprit?~
 @9504 = ~\[Reputation\] - Hmph, I will kindly remind you that you are speaking to an upstanding citizen here. Your coin purse was hanging loose and I simply wanted to alert you before you dropped it.~
@@ -2816,7 +2816,7 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 @9703 = ~Get away from me you filthy creature!~
 
 
-// Revised Thievery caught in theft dialogues
+// Revised Thievery caught-in-theft dialogues
 
 @9800 = ~\[Charisma\] - This is simply a misunderstanding, I assure you. I will gladly pay the appropriate fine and resolve this issue peacefully.~
 @9801 = ~\[Reputation\] - My sincere apologies, officer. As an upstanding citizen, I would prefer to pay the appropriate fine and settle this matter in a civilized manner.~

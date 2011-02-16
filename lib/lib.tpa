@@ -15,10 +15,6 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
       END
     END
     PATCH_IF !"%cell%" STRING_EQUAL_CASE "****" BEGIN
-/*      FOR (j = c;j < f_MinLevel - 1;++j) BEGIN //- 1 because that's where we'd want our entry
-        SPRINT newrow "%newrow% ****"
-        ++c
-      END */
       FOR (j = c;j < i - 1;++j) BEGIN //- 1 because that's where we'd want our entry
         SPRINT newrow "%newrow% ****"
         ++c

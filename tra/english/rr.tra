@@ -1,5 +1,3 @@
-@-1004="PLEASE report the error message in the file"
-@-1005= "to" 
 
 @1 = ~Proper dual-wielding implementation for Thieves and Bards~
 @2 = ~Thief kit revisions~
@@ -2841,3 +2839,8 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 @9850 = ~Thank you for your cooperation.~
 @9851 = ~In that case, I must confiscate all of your belongings instead.~
 @9852 = ~Resisting arrest? To arms then!~
+
+//WeiDU prompts
+
+@-1004="PLEASE report the error message in the file"
+@-1005= "to" 

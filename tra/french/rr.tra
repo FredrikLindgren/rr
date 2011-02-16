@@ -274,6 +274,7 @@ Type : arme à 1 main
 Non utilisable par :
  Clerc~
 
+
 @54 = ~CHASSEUR DE PRIMES :
 C'est un chasseur d'hommes, spécialisé dans la traque et la capture de proies, que ce soit pour le compte d' une autorité ou pour des maîtres du crime. À cause de la fréquente nécessité de ramener sa proie vivante, un Chasseur de Primes s'en remet souvent aux substances alchimiques qui peuvent neutraliser ou affaiblir ses victimes. Sa capacité à poser des pièges est également meilleure que celle du commun des voleurs.
 
@@ -1345,6 +1346,7 @@ Utilisable par :
 @302 = ~Kerith le Lugubre~
 @303 = ~Selina Tempête-ombre~
 @304 = ~Venduris~
+
 @305 = ~Zaeron T'ane~
 
 @355 = ~Bodak ! Aide-moi !~
@@ -2796,7 +2798,7 @@ Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
 @-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
 Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 
-@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1004="S'IL VOUS PLAIT, signalez le message d'erreur dans le fichier"
 @-1005= "a"
 
 @-1006= "Installer le composant ["

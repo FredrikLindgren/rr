@@ -2565,3 +2565,9 @@ Nota: scrivere pergamene è un'operazione delicata che può essere svolta solo in 
 @9851 = ~In questo caso, dovremo confiscare tutti i vostri beni.~
 
 @9852 = ~Resistenza all'arresto? All'armi, dunque!~
+
+
+//WeiDU prompts
+
+@-1004="PER FAVORE riporta il messaggio d'errore nel file"
+@-1005= "a"

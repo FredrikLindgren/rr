@@ -14,6 +14,7 @@ INCLUDE ~RR/LIB/RR#BG1V.TPA~                                        // Include t
 INCLUDE ~RR/LIB/REGEXP.TPH~                                         // allows regexp to match tabs and newlines (borrowed from the G3 BG2 Fixpack)
 INCLUDE ~RR/LIB/RR#AGLEF.TPH~                                       // Include my custom "Add Global Effect" function
 INCLUDE ~RR/LIB/RR#SP2IN.TPH~                                       // Include my custom "Spell to Innate" function
+INCLUDE "rr/lib/lib.tpa"
 END                                                                 // End the ALWAYS block
 
 README ~RR/README_RR.HTML~                                          // Offer to display the main readme
@@ -210,8 +211,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~                              // kit list 
 // Bounty Hunter kit revision
 
 COPY_EXISTING ~CLABTH03.2DA~               ~override~               // Bounty Hunter's kit ability table
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1    STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability at level 1
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10  STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1    STR_VAR f_Entry = GA_RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability at level 1
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10  STR_VAR f_Entry = GA_RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 

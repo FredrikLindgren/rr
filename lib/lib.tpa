@@ -15,10 +15,10 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
       END
     END
     PATCH_IF !"%cell%" STRING_EQUAL_CASE "****" BEGIN
-      FOR (j = c;j < f_MinLevel - 1;++j) BEGIN //- 1 because that's where we'd want our entry
+/*      FOR (j = c;j < f_MinLevel - 1;++j) BEGIN //- 1 because that's where we'd want our entry
         SPRINT newrow "%newrow% ****"
         ++c
-      END 
+      END */
       FOR (j = c;j < i - 1;++j) BEGIN //- 1 because that's where we'd want our entry
         SPRINT newrow "%newrow% ****"
         ++c
@@ -36,7 +36,7 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
   END
 END
 
-DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Icon = * f_Strref = * f_MinLevel = 1 f_MaxLevel = 99 f_NumAllowed = 16 f_Prereq = * f_ExcludedBy = * f_Alignment = * BEGIN
+DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Icon = "*" f_Strref = "*" f_MinLevel = 1 f_MaxLevel = 99 f_NumAllowed = 16 f_Prereq = "*" f_ExcludedBy = "*" f_Alignment = "*" BEGIN
   COUNT_2DA_COLS num_col
   READ_2DA_ENTRIES_NOW r2en num_col
   SPRINT cell ""

@@ -167,8 +167,8 @@ COPY_EXISTING ~CLABTH02.2DA~               ~override~               // Assassin 
   PATCH_IF "%entry%" STRING_EQUAL_CASE GA_SPCL423 BEGIN
     SET_2DA_ENTRY 5 1 1 ~****~                                      // Empty the first column of the row (contains leftover Poison Weapon use)
   END
-  LPF set_clab_entries INT_VAR f_StartingLevel = 8  f_Increment = 8 STR_VAR f_Entry = AP_RR#TAS00 END //Give the Assassin the save vs. poison bonus
-  LPF set_clab_entries INT_VAR f_StartingLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 8  f_Increment = 8 STR_VAR f_Entry = AP_RR#TAS00 END //Give the Assassin the save vs. poison bonus
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
@@ -186,8 +186,8 @@ BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~CLABTH04.2DA~ ~override~                             // Swashbuckler's kit ability table
   REPLACE_TEXTUALLY ~AP_SPCL141~ ~****~                             // Remove the Swashbuckler's innate damage bonus
-  LPF set_clab_entries INT_VAR f_StartingLevel = 2 f_MaxLevel = 20 f_Increment = 2 STR_VAR f_Entry = AP_RR#TSB01 END // Give the Swashbuckler the new to hit bonus
-  LPF set_clab_entries INT_VAR f_StartingLevel = 1 f_MaxLevel = 1                  STR_VAR f_Entry = AP_RR#TSB03 END // Prevent Swashbucklers from recieving a backstab bonus from items
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 2 f_MaxLevel = 20 f_Increment = 2 STR_VAR f_Entry = AP_RR#TSB01 END // Give the Swashbuckler the new to hit bonus
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1                  STR_VAR f_Entry = AP_RR#TSB03 END // Prevent Swashbucklers from recieving a backstab bonus from items
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
@@ -210,8 +210,8 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~                              // kit list 
 // Bounty Hunter kit revision
 
 COPY_EXISTING ~CLABTH03.2DA~               ~override~               // Bounty Hunter's kit ability table
-  LPF set_clab_entries INT_VAR f_StartingLevel = 1  f_MaxLevel = 1    STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability at level 1
-  LPF set_clab_entries INT_VAR f_StartingLevel = 10 f_Increment = 10  STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1    STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability at level 1
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10  STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
@@ -281,13 +281,8 @@ COPY_EXISTING     ~LUABBR.2DA~             ~override~               // Master HL
 SET_2DA_ENTRY 39 1 1 ~Th3~                                          // Give Bounty Hunters a new HLA table designation
 
 COPY_EXISTING     ~LUTH0.2DA~               ~override/LUTH3.2DA~    // Bountu Hunter's new HLA table (spawned from default Thief)
-SET_2DA_ENTRY_LATER ~RR#LUTH03~ 13 1 ~GA_SPCL922~                   // Allow Bounty Hunters to pick the Tracking HLA
-SET_2DA_ENTRY_LATER ~RR#LUTH03~ 13 4 ~1~                            // Minimum level for Tracking HLA
-SET_2DA_ENTRY_LATER ~RR#LUTH03~ 13 5 ~99~                           // Maximum level for Tracking HLA
-SET_2DA_ENTRY_LATER ~RR#LUTH03~ 13 6 ~1~                            // Number of times that Tracking HLA can be acquired
-SET_2DA_ENTRY_LATER ~RR#LUTH03~ 13 8 ~GA_SPCL922~                   // Tracking HLA is excluded by itself
-SET_2DA_ENTRIES_NOW ~RR#LUTH03~ 1                                   // Actually make the changes
-PRETTY_PRINT_2DA
+  LPF set_lu_2da_entries STR_VAR f_Ability = GA_SPCL922 f_ExcludedBy = GA_SPCL922 END //Tracking HLA
+  PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 STRING_SET ~71467~ @34                                              // Tracking HLA description updated to include Bounty Hunters
 
@@ -355,33 +350,30 @@ END                                                                  // Ends nor
 // Therefore, this component must be installed AFTER Refinements
 
 ACTION_IF FILE_EXISTS_IN_GAME ~tg#mass.spl~ THEN BEGIN               // Begin Refinements compatible 2DA block
-COPY_EXISTING ~LUTH0.2DA~ ~override~
-              ~LUTH1.2DA~ ~override~
-              ~LUTH2.2DA~ ~override~
-              ~LUTH3.2DA~ ~override~
-              ~LUTH4.2DA~ ~override~                                 // Refinements Swashbuckler
-              ~LUMT0.2DA~ ~override~
-              ~LUCT0.2DA~ ~override~
-              ~LUFT0.2DA~ ~override~
-              ~LUFMT.2DA~ ~override~                                 // G3 BG2 Fixpack Fighter/Mage/Thief (triple class)
-REPLACE_TEXTUALLY ~TG#EVAS~ ~RR#THL02~                               // Replace Refinements' Evasion with Danger Sense
-REPLACE_TEXTUALLY ~SPCL912~ ~RR#THL04~                               // Replace Time Trap with Acid Trap
-REPLACE_TEXTUALLY ~SPCL914~ ~RR#THL03~                               // Replace (unmodded) Greater Evasion with Evasion (RR version)
-REPLACE_TEXTUALLY ~SPCL918~ ~RR#ALCHT~                               // Replace (unmodded) Alchemy with Alchemy (RR Thief version)
-REPLACE_TEXTUALLY ~TG#CRIP~ ~RR#THL01~                               // Replace Refinements' Cripple with RR's Crippling Strike
-PATCH_IF ("%SOURCE_FILE%" STRING_COMPARE_CASE "LUTH4.2DA" = 0) BEGIN
-    SET_2DA_ENTRY 12 1 7 ~GA_RR#THL05~                               // Give Insightful Strike to Swashbucklers
-    SET_2DA_ENTRY 12 4 7 ~1~                                         // Insightful Strike minimum level
-    SET_2DA_ENTRY 12 5 7 ~99~                                        // Insightful Strike maximum level
-    SET_2DA_ENTRY 12 6 7 ~16~                                        // Insightful Strike number allowed
-END
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
+  COPY_EXISTING ~LUTH0.2DA~ ~override~
+                ~LUTH1.2DA~ ~override~
+                ~LUTH2.2DA~ ~override~
+                ~LUTH3.2DA~ ~override~
+                ~LUTH4.2DA~ ~override~                                 // Refinements Swashbuckler
+                ~LUMT0.2DA~ ~override~
+                ~LUCT0.2DA~ ~override~
+                ~LUFT0.2DA~ ~override~
+                ~LUFMT.2DA~ ~override~                                 // G3 BG2 Fixpack Fighter/Mage/Thief (triple class)
+  REPLACE_TEXTUALLY ~TG#EVAS~ ~RR#THL02~                               // Replace Refinements' Evasion with Danger Sense
+  REPLACE_TEXTUALLY ~SPCL912~ ~RR#THL04~                               // Replace Time Trap with Acid Trap
+  REPLACE_TEXTUALLY ~SPCL914~ ~RR#THL03~                               // Replace (unmodded) Greater Evasion with Evasion (RR version)
+  REPLACE_TEXTUALLY ~SPCL918~ ~RR#ALCHT~                               // Replace (unmodded) Alchemy with Alchemy (RR Thief version)
+  REPLACE_TEXTUALLY ~TG#CRIP~ ~RR#THL01~                               // Replace Refinements' Cripple with RR's Crippling Strike
+  PATCH_IF ("%SOURCE_FILE%" STRING_COMPARE_CASE "LUTH4.2DA" = 0) BEGIN
+    LPF set_lu_2da_entries STR_VAR f_Ability = GA_RR#THL05 END         // Give Insightful Strike to Swashbucklers
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING spcl917.spl override
-  SAY 0x50 @8014
-BUT_ONLY
-
+  //Avoid Death requires Danger Sense, rather than Evasion
+  COPY_EXISTING spcl917.spl override
+    SAY 0x50 @8014
+  BUT_ONLY
 END                                                                  // Ends Refinements compatible 2DA block
 
 COPY    ~RR/RR_CORE/BAM/RR#THL2B.BAM~      ~override~                // Danger Sense icon
@@ -522,16 +514,13 @@ COPY    ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~   ~override~                // True Bar
 COPY    ~RR/RR_CORE/SPELLS/RR#BBLIT.SPL~   ~override~                // New innate traits for the Blade kit
 
 COPY_EXISTING ~CLABBA02.2DA~               ~override~                // Blade kit ability table
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 5 1  ~GA_RR#WDIS~                  // Assign the Weapons Display ability at level 1
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 5 10 ~GA_RR#WDIS~                  // Assign the Weapons Display ability at level 10
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 5 20 ~GA_RR#WDIS~                  // Assign the Weapons Display ability at level 20
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 5 30 ~GA_RR#WDIS~                  // Assign the Weapons Display ability at level 30
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 5 40 ~GA_RR#WDIS~                  // Assign the Weapons Display ability at level 40
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 6 1 ~AP_RR#BBL01~                  // Grant the Blade his own version of the Bard song
-SET_2DA_ENTRY_LATER ~RR#CLABBA02~ 7 1 ~AP_RR#BBLIT~                  // Grant the Blade 3 points in TWF
-SET_2DA_ENTRIES_NOW ~RR#CLABBA02~ 1                                  // Actually make the changes
-PRETTY_PRINT_2DA
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability at level 1
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBLIT END // Grant the Blade 3 points in TWF
+  PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
+
 COPY    ~RR/RR_CORE/SPELLS/RR#BBL01.SPL~   ~override~                // Blade new song part 1
 COPY    ~RR/RR_CORE/SPELLS/RR#BBL02.SPL~   ~override~                // Blade new song part 2
 COPY    ~RR/RR_CORE/BAM/RR#WDIS.BAM~       ~override~                // Weapons Display icon
@@ -875,14 +864,10 @@ SET_2DA_ENTRY_LATER ~RR#LUBA3~ 3  1 ~GA_RR#BHL01~                    // Replace 
 SET_2DA_ENTRY_LATER ~RR#LUBA3~ 4  1 ~GA_RR#BHL02~                    // Replace Exploding Trap with Enthralling Melody
 SET_2DA_ENTRY_LATER ~RR#LUBA3~ 5  1 ~GA_RR#BHL03~                    // Replace Time Trap with Sound Burst
 SET_2DA_ENTRY_LATER ~RR#LUBA3~ 12 1 ~AP_RR#BJS01~                    // Jester's Enhanced Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 1 ~AP_RR#BJS03~                    // Jester's Lingering Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 4 ~1~                              // Minimum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 5 ~99~                             // Maximum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 6 ~1~                              // Number of times that Lingering Song can be acquired
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 7 ~AP_RR#BJS01~                    // Lingering Song requires Enhanced Jester Song
-SET_2DA_ENTRY_LATER ~RR#LUBA3~ 14 8 ~AP_RR#BJS03~                    // Lingering Song is excluded by itself
 SET_2DA_ENTRIES_NOW ~RR#LUBA3~ 1                                     // Actually make the changes
-
+LPF set_lu_2da_entries STR_VAR f_Ability = AP_RR#BJS03 f_Prereq = AP_RR#BJS01 f_ExcludedBy = AP_RR#BJS03 END // Jester's Lingering Song HLA
+PRETTY_PRINT_2DA
+BUT_ONLY
 
 // Skald kit HLA table
 
@@ -891,14 +876,10 @@ SET_2DA_ENTRY_LATER ~RR#LUBA4~ 3  1 ~GA_RR#BHL01~                    // Replace 
 SET_2DA_ENTRY_LATER ~RR#LUBA4~ 4  1 ~GA_RR#BHL02~                    // Replace Exploding Trap with Enthralling Melody
 SET_2DA_ENTRY_LATER ~RR#LUBA4~ 5  1 ~GA_RR#BHL03~                    // Replace Time Trap with Sound Burst
 SET_2DA_ENTRY_LATER ~RR#LUBA4~ 12 1 ~AP_RR#BSK01~                    // Skald's Enhanced Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 1 ~AP_RR#BSK03~                    // Skald's Lingering Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 4 ~1~                              // Minimum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 5 ~99~                             // Maximum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 6 ~1~                              // Number of times that Lingering Song can be acquired
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 7 ~AP_RR#BSK01~                    // Lingering Song requires Enhanced Skald Song
-SET_2DA_ENTRY_LATER ~RR#LUBA4~ 14 8 ~AP_RR#BSK03~                    // Lingering Song is excluded by itself
 SET_2DA_ENTRIES_NOW ~RR#LUBA4~ 1                                     // Actually make the changes
-
+LPF set_lu_2da_entries STR_VAR f_Ability = AP_RR#BSK03 f_Prereq = AP_RR#BSK01 f_ExcludedBy = AP_RR#BSK03 END // Skald's Lingering Song HLA
+PRETTY_PRINT_2DA
+BUT_ONLY
 
 // True Bard HLA table  (needs to be processed last due to spawning)
 
@@ -907,13 +888,11 @@ SET_2DA_ENTRY_LATER ~RR#LUBA0~ 3  1 ~GA_RR#BHL01~                    // Replace 
 SET_2DA_ENTRY_LATER ~RR#LUBA0~ 4  1 ~GA_RR#BHL02~                    // Replace Exploding Trap with Enthralling Melody
 SET_2DA_ENTRY_LATER ~RR#LUBA0~ 5  1 ~GA_RR#BHL03~                    // Replace Time Trap with Sound Burst
 SET_2DA_ENTRY_LATER ~RR#LUBA0~ 12 1 ~AP_RR#BDF03~                    // True Bard's Enhanced Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 1 ~AP_RR#BDF05~                    // True Bard's Lingering Song HLA
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 4 ~1~                              // Minimum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 5 ~99~                             // Maximum level for Lingering Song
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 6 ~1~                              // Number of times that Lingering Song can be acquired
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 7 ~AP_RR#BDF03~                    // Lingering Song requires Enhanced Bard Song
-SET_2DA_ENTRY_LATER ~RR#LUBA0~ 14 8 ~AP_RR#BDF05~                    // Lingering Song is excluded by itself
 SET_2DA_ENTRIES_NOW ~RR#LUBA0~ 1                                     // Actually make the changes
+LPF set_lu_2da_entries STR_VAR f_Ability = AP_RR#BDF05 f_Prereq = AP_RR#BDF03 f_ExcludedBy = AP_RR#BDF05 END // True Bard's Lingering Song HLA
+PRETTY_PRINT_2DA
+BUT_ONLY
+
 END                                                                  // ends normal (non-Refinements) 2DA block
 
 
@@ -960,17 +939,9 @@ BUT_ONLY
 COPY_EXISTING ~LUBA0.2DA~ ~override~                                 // True Bard HLA table
               ~LUBA2.2DA~ ~override~                                 // Blade HLA table
               ~LUBA3.2DA~ ~override~                                 // Jester HLA table
-SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 1 ~GA_fl#cl917~                     // Aviod Death HLA
-SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 4 ~1~                              // Minimum level for Aviod Death
-SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 5 ~99~                             // Maximum level for Aviod Death
-SET_2DA_ENTRY_LATER ~RR#REFAD~ 13 6 ~16~                             // Number of times that Aviod Death can be acquired
-SET_2DA_ENTRIES_NOW ~RR#REFAD~ 1                                     // Actually make the changes
-COPY_EXISTING ~LUBA4.2DA~ ~override~                                 // Skald HLA table (different row from others)
-SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 1 ~GA_fl#cl917~                     // Aviod Death HLA
-SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 4 ~1~                              // Minimum level for Aviod Death
-SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 5 ~99~                             // Maximum level for Aviod Death
-SET_2DA_ENTRY_LATER ~RR#REFA2~ 15 6 ~16~                             // Number of times that Aviod Death can be acquired
-SET_2DA_ENTRIES_NOW ~RR#REFA2~ 1                                     // Actually make the changes
+              ~LUBA4.2DA~ ~override~                                 // Skald HLA table 
+LPF set_lu_2da_entries STR_VAR f_Ability = GA_fl#cl917 END           // Aviod Death HLA 
+
 END                                                                  // ends Refinements compatible 2DA block
 
 

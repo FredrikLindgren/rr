@@ -161,31 +161,15 @@ SET "new_fx" = 2                                                    //  number o
   END
 BUT_ONLY_IF_IT_CHANGES
 
-ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#clabth02.2da_array BEGIN
-  8,0  => AP_RR#TAS00
-  16,0 => AP_RR#TAS00
-  24,0 => AP_RR#TAS00
-  32,0 => AP_RR#TAS00
-  40,0 => AP_RR#TAS00
-  16,1 => GA_RR#TAS01
-  32,1 => GA_RR#TAS01
-  40,1 => GA_RR#TAS01
-END 
-
 COPY_EXISTING ~CLABTH02.2DA~               ~override~               // Assassin kit ability table
-REPLACE_TEXTUALLY ~AP_SPCL421~ ~GA_SPCL423~                         // Remove the Assassin's innate to hit and damage bonus
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 1  ~****~                       // Empty the first column of the row (contains leftover Poison Weapon use)
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 8  ~AP_RR#TAS00~                // Give the Assassin the save vs. poison bonus at level 8
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 16 ~AP_RR#TAS00~                // Give the Assassin the save vs. poison bonus at level 16
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 24 ~AP_RR#TAS00~                // Give the Assassin the save vs. poison bonus at level 24
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 32 ~AP_RR#TAS00~                // Give the Assassin the save vs. poison bonus at level 32
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 5 40 ~AP_RR#TAS00~                // Give the Assassin the save vs. poison bonus at level 40
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 6 16 ~GA_RR#TAS01~                // Give the Assassin the Death Attack ability at level 16
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 6 24 ~GA_RR#TAS01~                // Give the Assassin the Death Attack ability at level 24
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 6 32 ~GA_RR#TAS01~                // Give the Assassin the Death Attack ability at level 32
-SET_2DA_ENTRY_LATER ~RR#CLABTH02~ 6 40 ~GA_RR#TAS01~                // Give the Assassin the Death Attack ability at level 40
-SET_2DA_ENTRIES_NOW ~RR#CLABTH02~ 1                                 // Actually make the changes
-PRETTY_PRINT_2DA
+  REPLACE_TEXTUALLY ~AP_SPCL421~ ~GA_SPCL423~                       // Remove the Assassin's innate to hit and damage bonus
+  READ_2DA_ENTRY 5 1 1 entry
+  PATCH_IF "%entry%" STRING_EQUAL_CASE GA_SPCL423 BEGIN
+    SET_2DA_ENTRY 5 1 1 ~****~                                      // Empty the first column of the row (contains leftover Poison Weapon use)
+  END
+  LPF set_clab_entries INT_VAR f_StartingLevel = 8  f_Increment = 8 STR_VAR f_Entry = AP_RR#TAS00 END //Give the Assassin the save vs. poison bonus
+  LPF set_clab_entries INT_VAR f_StartingLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability
+  PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~ALIGNMNT.2DA~       ~override~                       // Disallow good alignments for Assassins
@@ -201,20 +185,10 @@ BUT_ONLY_IF_IT_CHANGES
 // Swashbuckler kit revision
 
 COPY_EXISTING ~CLABTH04.2DA~ ~override~                             // Swashbuckler's kit ability table
-    REPLACE_TEXTUALLY ~AP_SPCL141~ ~****~                           // Remove the Swashbuckler's innate damage bonus
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 2  ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 2
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 4  ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 4
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 6  ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 6
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 8  ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 8
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 10 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 10
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 12 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 12
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 14 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 14
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 16 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 16
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 18 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 18
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 20 ~AP_RR#TSB01~                // Give the Swashbuckler the new to hit bonus at level 20
-SET_2DA_ENTRY_LATER ~RR#CLABTH04~ 5 1  ~AP_RR#TSB03~                // Prevent Swashbucklers from recieving a backstab bonus from items
-SET_2DA_ENTRIES_NOW ~RR#CLABTH04~ 1                                 // Actually make the changes
-PRETTY_PRINT_2DA
+  REPLACE_TEXTUALLY ~AP_SPCL141~ ~****~                             // Remove the Swashbuckler's innate damage bonus
+  LPF set_clab_entries INT_VAR f_StartingLevel = 2 f_MaxLevel = 20 f_Increment = 2 STR_VAR f_Entry = AP_RR#TSB01 END // Give the Swashbuckler the new to hit bonus
+  LPF set_clab_entries INT_VAR f_StartingLevel = 1 f_MaxLevel = 1                  STR_VAR f_Entry = AP_RR#TSB03 END // Prevent Swashbucklers from recieving a backstab bonus from items
+  PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
 COPY    ~RR/RR_CORE/SPELLS/RR#TSB01.SPL~   ~override~               // Swashbuckler's new to hit bonus
@@ -236,13 +210,9 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~                              // kit list 
 // Bounty Hunter kit revision
 
 COPY_EXISTING ~CLABTH03.2DA~               ~override~               // Bounty Hunter's kit ability table
-SET_2DA_ENTRY_LATER ~RR#CLABTH03~ 6 1  ~GA_RR#TRNQ~                 // Give the Bounty Hunter the Paralytic Toxin ability at level 1
-SET_2DA_ENTRY_LATER ~RR#CLABTH03~ 6 10 ~GA_RR#TRNQ~                 // Give the Bounty Hunter the Paralytic Toxin ability at level 10
-SET_2DA_ENTRY_LATER ~RR#CLABTH03~ 6 20 ~GA_RR#TRNQ~                 // Give the Bounty Hunter the Paralytic Toxin ability at level 20
-SET_2DA_ENTRY_LATER ~RR#CLABTH03~ 6 30 ~GA_RR#TRNQ~                 // Give the Bounty Hunter the Paralytic Toxin ability at level 30
-SET_2DA_ENTRY_LATER ~RR#CLABTH03~ 6 40 ~GA_RR#TRNQ~                 // Give the Bounty Hunter the Paralytic Toxin ability at level 40
-SET_2DA_ENTRIES_NOW ~RR#CLABTH03~ 1                                 // Actually make the changes
-PRETTY_PRINT_2DA
+  LPF set_clab_entries INT_VAR f_StartingLevel = 1  f_MaxLevel = 1    STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability at level 1
+  LPF set_clab_entries INT_VAR f_StartingLevel = 10 f_Increment = 10  STR_VAR f_Entry = RR#TRNQ END // Give the Bounty Hunter the Paralytic Toxin ability
+  PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~SPCL414.SPL~ ~override~                              // patch the Special Snare shell spell to use the revised RR version and rename it

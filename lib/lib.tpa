@@ -1,0 +1,31 @@
+
+DEFINE_PATCH_FUNCTION set_2da_entries BEGIN
+  COUNT_2DA_COLS num_col
+  READ_2DA_ENTRIES_NOW "fl#r2en_f_2DA_%SOURCE_FILE%" num_col 
+  ACTION_PHP_EACH "%f_Array%" AS entry => result BEGIN
+    FOR (i=1;i<num_col;++i) BEGIN
+      READ_2DA_ENTRY_FORMER "fl#r2en_f_2DA_%SOURCE_FILE%" 0 i level
+      PATCH_IF level = "%entry_0%" BEGIN
+        SPRINT data ""
+        FOR (j=0;i<"fl#r2en_f_2DA_%SOURCE_FILE%" AND !"%data%" STRING_EQUAL_CASE "****";++j) BEGIN
+          rownum = j + 1
+          READ_2DA_ENTRY_FORMER "fl#r2en_f_2DA_%SOURCE_FILE%" rownum i data
+          PATCH_IF "%data%" STRING_EQUAL_CASE "****" BEGIN
+            SET_2DA_ENTRY_LATER "fl#s2el_f_2DA_%SOURCE_FILE%" rownum i "%result%"
+            i = num_col
+            SPRINT "fl#r2en_f_2DA_%SOURCE_FILE%_%rownum%_%i%" "%result%"
+          END
+        END
+        PATCH_IF !"%data%" STRING_EQUAL_CASE "****" BEGIN
+          rownum = j + 1
+          SPRINT newrow "fl#row%rownum%"
+          FOR (j=0;j<entry_0;++j) BEGIN
+            SPRINT newrow "%newrow% ****"
+          END
+          SPRINT newrow "%newrow% %result%"
+          FOR (k=j + 1;k<num_col;++k) BEGIN
+            SPRINT newrow "%newrow% ****"
+          END
+          INSERT_2DA_ROW "fl#r2en_f_2DA_%SOURCE_FILE%" num_col "%newrow%"
+          //and wth do we do about the table in memory?
+          

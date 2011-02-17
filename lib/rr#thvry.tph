@@ -32,6 +32,7 @@ END                                                                             
 
 COPY "tobex_ini/tobextweak.ini" "tobex_ini/tobextweak.ini"
   REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Enable PickpocketFailed Trigger=0~ ~Enable PickpocketFailed Trigger=1~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Remain Hidden On Pickpocket Success=0~ ~Remain Hidden On Pickpocket Success=1~
 BUT_ONLY
 
 // Allow all merchants whose dialogue implies that their wares are stolen to buy fenced goods

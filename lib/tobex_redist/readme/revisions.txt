@@ -1,3 +1,16 @@
+Beta 0019
+---------
+-Assertion updates
+-Class/structure updates
+-Added: Expanded Triggers
+-Attacks Per Round Mod Fix: Moved invalid number of attacks console message to verbose logging
+-Configurable Critical Hit Aversion: Fixed a typo that prevented this hack from being activated ("Critial")
+-Expanded Stats: Shifted stats to 300 and above for GemRB compatibility
+-Enable PickpocketFailed Trigger: Fixed a typo that prevented this hack from being activated ("Tweak:")
+-Scrollable Level Up Mage Spell Selection: Prevented assertion failed crash if TobEx-modified GUIREC.CHU is overwritten by a modification
+-Scrollable Mage Spellbook: Fixed a bug where the maximum scroll bar position was calculated incorrectly
+-Scrollable Priest Spellbook: Fixed a bug where the maximum scroll bar position was calculated incorrectly
+
 Beta 0018
 ---------
 -Overhauled installation process: TobEx can now be included in mods in a redistributable format. Please see readme.txt for more details.

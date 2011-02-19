@@ -1,4 +1,4 @@
-//990 This file contains descriptions for all the hack options found in TobEx .ini files
+//1000 This file contains descriptions for all the hack options found in TobEx .ini files
 
 Description format:
 -------------------
@@ -777,17 +777,17 @@ Known values for 'Type' are:
 9   Bitwise OR Modifier -> Value = Value | 'Statistic Modifier' value
 10  Inverse Modifier -> Value = !Value
 
-Note: You cannot set any stats with opcode < 301 with this effect. New stats 202-300 are reserved for new hard-coded stats.
+Note: You cannot set any stats with opcode < 400 with this effect. New stats 202-400 are reserved for new hard-coded stats.
 
 New hard-coded stats
-202 FIGHTERLEVEL - true fighter level (does not include monk)
-203 MAGELEVEL - true mage level (does not include sorcerer)
-204 CLERICLEVEL - true cleric level
-205 THIEFLEVEL - true thief level
-206 DRUIDLEVEL - true druid level
-207 RANGERLEVEL - true ranger level
-208 EFFECTCLERICLEVEL - equivalent cleric casting level (Cleric 1 = Ranger 8 = Paladin 9; Cleric-Rangers use cleric level)
-300 WEIGHTALLOWANCEMOD - custom stat that modiifies by sum the amount a character is allowed to carry (total weight allowance = StrMod value + StrModEx value + WeightAllowanceMod)
+301 FIGHTERLEVEL - true fighter level (does not include monk)
+302 MAGELEVEL - true mage level (does not include sorcerer)
+303 CLERICLEVEL - true cleric level
+304 THIEFLEVEL - true thief level
+305 DRUIDLEVEL - true druid level
+306 RANGERLEVEL - true ranger level
+307 EFFECTCLERICLEVEL - equivalent cleric casting level (Cleric 1 = Ranger 8 = Paladin 9; Cleric-Rangers use cleric level)
+400 WEIGHTALLOWANCEMOD - custom stat that modiifies by sum the amount a character is allowed to carry (total weight allowance = StrMod value + StrModEx value + WeightAllowanceMod)
 
 Options:
 -0: disabled
@@ -1099,6 +1099,19 @@ Options:
 -----320 Enable PickpocketFailed Trigger [C, M, T]
 (Identical to tob_hacks)
 When pickpocketing fails, a PickPocketFailed() trigger is sent instead of Attacked()
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1000 Expanded Triggers [M]
+Enables the use of new triggers
+
+Descriptions
+0x4100 NextTriggerObject(O:Object*)
+Defines the object that the next trigger will be evaluated in reference to
+The trigger itself does not evaluate and does not count as a trigger in an OR() block
+If the object cannot be found, the next trigger will evaluate to false
 
 Options:
 -0: disabled

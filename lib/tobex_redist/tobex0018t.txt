@@ -18,5 +18,5 @@ Engine:Weapon Specialisation Number of Attacks Mod=0
 Items:Use Animation Percentages for Throwing Weapons=0
 Sound:Dialogue Greeting Subtitles=0
 Sound:Enable Animation Attack Sounds=0
-Tweak:Enable PickpocketFailed Trigger=0
+Trigger:Enable PickpocketFailed Trigger=0
 UI:Universal Four Inventory Weapon Slots=0

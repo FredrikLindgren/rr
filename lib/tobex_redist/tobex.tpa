@@ -1,4 +1,4 @@
-OUTER_SET tobex_redist_version = 18
+OUTER_SET tobex_redist_version = 19
 
 ACTION_IF NOT (FILE_EXISTS "TobEx_ini/TobExVer.txt") BEGIN
 
@@ -142,6 +142,15 @@ END
 //incremental updates
 ACTION_IF (%tobex_installed_version% < 18) BEGIN
   INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0018.tpa"
+  
   COPY "TobEx_ini/TobExTweak.ini" "TobEx_ini/TobExTweak.ini"
     APPEND_FILE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0018t.txt"
+END
+
+ACTION_IF (%tobex_installed_version% < 19) BEGIN
+  INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0019.tpa"
+
+  COPY "TobEx_ini/TobExTweak.ini" "TobEx_ini/TobExTweak.ini"
+    REPLACE_TEXTUALLY "Tweak:Enable PickpocketFailed Trigger" "Trigger:Enable PickpocketFailed Trigger"
+  BUT_ONLY_IF_IT_CHANGES
 END

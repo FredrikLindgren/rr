@@ -74,97 +74,6 @@ DEFINE_ACTION_MACRO ~detectable_spells~ BEGIN
 >>>>>>>>
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-////	DW block - completely clean out any previous version of DS. Only do this once.
-////	Use an independent checkfile from the earlier block
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ACTION_IF !FILE_EXISTS_IN_GAME ~dw#DScleanout.mrk~ THEN BEGIN
-	COPY_EXISTING ~misc01.itm~ ~override/dw#DScleanout.mrk~
-
-  COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~  // deliberately "regexp", not "regexp glob". BP uses the same .IDS and has lots of custom spells; we don't want to break them
-                       ~^.+\.spl$~ ~override~
-            PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
-  
-
-              READ_LONG  0x64 "ab_off"
-              READ_SHORT 0x68 "abil_num"
-              READ_LONG  0x6a "fx_off"
-  
-              // set the only difference between ITM and SPL files.
-              READ_ASCII 0 first_chars (3)
-              PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
-                SET extended_size = 0x38
-              END ELSE BEGIN
-                SET extended_size = 0x28
-              END
-
-  	      // clean out any previous versions; while I'm at it, try to look out for major corruption issues
-
-		READ_SHORT 0x6e ~eff_num~
-
-		// start with global effects
-
-		SET ~totalnumdeleted~=0
-		SET ~isbroken~=0
-		SET ~i~=0
-			WHILE (~%i%~<~%eff_num%~ AND ~%isbroken%~=0) BEGIN
-
-			READ_SHORT ~%fx_off%~+~%i%~*0x30 ~efftype~ ELSE 999999
-			READ_LONG ~%fx_off%~+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
-			PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
-				SET ~isbroken~=1
-			END ELSE BEGIN
-				PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
-					DELETE_BYTES ~%fx_off%~+~%i%~*0x30 0x30
-					SET ~eff_num~=~%eff_num%~-1
-					SET ~totalnumdeleted~=~%totalnumdeleted%~+1
-				END ELSE BEGIN
-					SET ~i~=~%i%~+1
-				END
-			END
-		END
-
-		// now do ability-specific effects
-		PATCH_IF ~%isbroken%~=0 THEN BEGIN
-			FOR (j=0;j<~%abil_num%~;j=j+1) BEGIN
-				READ_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~ind_here~ ELSE 999999
-				SET ~ind_here~=~%ind_here%~-~%totalnumdeleted%~
-				PATCH_IF ~%ind_here%~=999999 THEN BEGIN
-					SET ~isbroken~=1
-				END ELSE BEGIN
-					WRITE_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~%ind_here%~
-					READ_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~num_here~
-				END			
-				SET ~i~=0
-				WHILE (~%i%~<~%num_here%~ AND ~isbroken~=0) BEGIN
-					READ_SHORT ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 ~efftype~ ELSE 999999
-					READ_LONG ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
-					PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
-						SET ~isbroken~=1
-					END ELSE BEGIN
-						PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
-							DELETE_BYTES ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 0x30
-							SET ~num_here~=~%num_here%~-1
-							SET ~totalnumdeleted~=~%totalnumdeleted%~+1
-						END ELSE BEGIN
-							SET ~i~=~%i%~+1
-						END
-					END		
-				END
-				PATCH_IF ~%isbroken%~=0 THEN BEGIN
-					WRITE_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~%num_here%~
-				END
-
-			END
-		END
-	END
-	BUT_ONLY_IF_IT_CHANGES
-
-
-END // end of clean-out-previous-versions block
-
-
 // tasks only to be done once
 
 ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
@@ -315,6 +224,97 @@ ACTION_IF NOT FILE_EXISTS ~override/cddetect.spl~ THEN BEGIN
     END
     BUT_ONLY_IF_IT_CHANGES
 END
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////	DW block - completely clean out any previous version of DS. Only do this once.
+////	Use an independent checkfile from the earlier block
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~dw#DScleanout.mrk~ THEN BEGIN
+	COPY_EXISTING ~misc01.itm~ ~override/dw#DScleanout.mrk~
+
+  COPY_EXISTING_REGEXP ~^.+\.itm$~ ~override~  // deliberately "regexp", not "regexp glob". BP uses the same .IDS and has lots of custom spells; we don't want to break them
+                       ~^.+\.spl$~ ~override~
+            PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+  
+
+              READ_LONG  0x64 "ab_off"
+              READ_SHORT 0x68 "abil_num"
+              READ_LONG  0x6a "fx_off"
+  
+              // set the only difference between ITM and SPL files.
+              READ_ASCII 0 first_chars (3)
+              PATCH_IF ~%first_chars%~ STRING_COMPARE_CASE ~SPL~ BEGIN // if it's an ITM (_not_ a SPL)
+                SET extended_size = 0x38
+              END ELSE BEGIN
+                SET extended_size = 0x28
+              END
+
+  	      // clean out any previous versions; while I'm at it, try to look out for major corruption issues
+
+		READ_SHORT 0x6e ~eff_num~
+
+		// start with global effects
+
+		SET ~totalnumdeleted~=0
+		SET ~isbroken~=0
+		SET ~i~=0
+			WHILE (~%i%~<~%eff_num%~ AND ~%isbroken%~=0) BEGIN
+
+			READ_SHORT ~%fx_off%~+~%i%~*0x30 ~efftype~ ELSE 999999
+			READ_LONG ~%fx_off%~+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+			PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+				SET ~isbroken~=1
+			END ELSE BEGIN
+				PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
+					DELETE_BYTES ~%fx_off%~+~%i%~*0x30 0x30
+					SET ~eff_num~=~%eff_num%~-1
+					SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+				END ELSE BEGIN
+					SET ~i~=~%i%~+1
+				END
+			END
+		END
+
+		// now do ability-specific effects
+		PATCH_IF ~%isbroken%~=0 THEN BEGIN
+			FOR (j=0;j<~%abil_num%~;j=j+1) BEGIN
+				READ_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~ind_here~ ELSE 999999
+				SET ~ind_here~=~%ind_here%~-~%totalnumdeleted%~
+				PATCH_IF ~%ind_here%~=999999 THEN BEGIN
+					SET ~isbroken~=1
+				END ELSE BEGIN
+					WRITE_SHORT ~%ab_off%~+ 0x20 +~%extended_size%~*~%j%~ ~%ind_here%~
+					READ_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~num_here~
+				END			
+				SET ~i~=0
+				WHILE (~%i%~<~%num_here%~ AND ~isbroken~=0) BEGIN
+					READ_SHORT ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 ~efftype~ ELSE 999999
+					READ_LONG ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30+0x8 ~effcode~ ELSE 999999
+					PATCH_IF ~%efftype%~=999999 OR ~%effcode%~=999999 THEN BEGIN
+						SET ~isbroken~=1
+					END ELSE BEGIN
+						PATCH_IF ((~%efftype%~=233 AND ~%effcode%~>115) OR (~%efftype%~=282 AND ~%effcode%~>6)) THEN BEGIN
+							DELETE_BYTES ~%fx_off%~+~%ind_here%~*0x30+~%i%~*0x30 0x30
+							SET ~num_here~=~%num_here%~-1
+							SET ~totalnumdeleted~=~%totalnumdeleted%~+1
+						END ELSE BEGIN
+							SET ~i~=~%i%~+1
+						END
+					END		
+				END
+				PATCH_IF ~%isbroken%~=0 THEN BEGIN
+					WRITE_SHORT ~%ab_off%~ + 0x1e+~%extended_size%~*~%j%~ ~%num_here%~
+				END
+
+			END
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+
+END // end of clean-out-previous-versions block
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

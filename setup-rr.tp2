@@ -7,7 +7,7 @@
 
 BACKUP ~RR/BACKUP~                                                  // Backup directory
 AUTHOR "Wisp, shsforums.net"                                        // Author and e-mail address
-VERSION ~v4.38~                                                     // Mod version
+VERSION ~v4.40~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~RR/LIB/RR#AFIX.TPH~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~RR/LIB/RR#BG1V.TPA~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -35,16 +35,16 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANES
 //ToBEX
 //////////////////////
 
-BEGIN @900 DESIGNATED 100 //ToBEx (required for the component "Revised Thievery")
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre @10 //ToB installation check
-REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X <-This breaks under Wine4Mac
+//BEGIN @900 DESIGNATED 100 //ToBEx (required for the component "Revised Thievery")
+//REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre @10 //ToB installation check
+//REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X <-This breaks under Wine4Mac
 //REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
-DEPRECATED ~Now done the way it should have been done in the first place~
+//DEPRECATED ~Now done the way it should have been done in the first place~
 
 
-OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
-LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/english/TobEx.tra" "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/%LANGUAGE%/TobEx.tra"
-ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"
+//OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
+//LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/english/TobEx.tra" "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/%LANGUAGE%/TobEx.tra"
+//ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////

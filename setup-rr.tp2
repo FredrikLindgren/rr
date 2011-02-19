@@ -25,7 +25,7 @@ LANGUAGE ~English~ ~ENGLISH~ ~RR/TRA/ENGLISH/RR.TRA~
 LANGUAGE ~Francais (by the d'Oghmatiques)~ ~FRENCH~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/FRENCH/RR.TRA~
 LANGUAGE ~Espanol (by Immortality, SirLancelot, Nieve and Clan DLAN)~ ~SPANISH~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/SPANISH/RR.TRA~
 LANGUAGE ~Deutsch (by Cronox and Leomar)~ ~GERMAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/GERMAN/RR.TRA~
-LANGUAGE ~Russian (by the Aerie.ru team)~ ~RUSSIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/RUSSIAN/RR.TRA~
+LANGUAGE ~Russian (by the Aerie.ru and arcanecoast.ru teams)~ ~RUSSIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/RUSSIAN/RR.TRA~
 LANGUAGE ~Italian (by Andrea C. and ilot)~ ~ITALIAN~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/ITALIAN/RR.TRA~
 LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANESE/RR.TRA~
 
@@ -36,9 +36,11 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~RR/TRA/ENGLISH/RR.TRA~ ~RR/TRA/JAPANES
 //////////////////////
 
 BEGIN @900 DESIGNATED 100 //ToBEx (required for the component "Revised Thievery")
-REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X
-REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre @10 //ToB installation check
+REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X <-This breaks under Wine4Mac
+//REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
+DEPRECATED ~Now done the way it should have been done in the first place~
+
 
 OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
 LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/english/TobEx.tra" "%TOBEX_MOD_DIRECTORY%/TobEx_redist/language/%LANGUAGE%/TobEx.tra"
@@ -364,9 +366,10 @@ ACTION_IF FILE_EXISTS_IN_GAME ~tg#mass.spl~ THEN BEGIN               // Begin Re
   REPLACE_TEXTUALLY ~SPCL912~ ~RR#THL04~                               // Replace Time Trap with Acid Trap
   REPLACE_TEXTUALLY ~SPCL914~ ~RR#THL03~                               // Replace (unmodded) Greater Evasion with Evasion (RR version)
   REPLACE_TEXTUALLY ~SPCL918~ ~RR#ALCHT~                               // Replace (unmodded) Alchemy with Alchemy (RR Thief version)
-  REPLACE_TEXTUALLY ~TG#CRIP~ ~RR#THL01~                               // Replace Refinements' Cripple with RR's Crippling Strike
+  LPF set_lu_2da_entries STR_VAR f_Replace = GA_TG#CRIP f_Ability = GA_RR#THL01 f_Prereq = GA_SPCL916 END // Replace Refinements' Cripple with RR's Crippling Strike
+  //REPLACE_TEXTUALLY ~TG#CRIP~ ~RR#THL01~                               // Replace Refinements' Cripple with RR's Crippling Strike
   PATCH_IF ("%SOURCE_FILE%" STRING_COMPARE_CASE "LUTH4.2DA" = 0) BEGIN
-    LPF set_lu_2da_entries STR_VAR f_Ability = GA_RR#THL05 END         // Give Insightful Strike to Swashbucklers
+    LPF set_lu_2da_entries STR_VAR f_Replace = GA_RR#THL01 f_Ability = GA_RR#THL05 END // Replace Crippling Strike with Insightful Strike for Swashbucklers
   END
   PRETTY_PRINT_2DA
   BUT_ONLY_IF_IT_CHANGES
@@ -791,6 +794,7 @@ FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid i
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
 
 // G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
+
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
  COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
@@ -2390,6 +2394,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%file%.sto~ BEGIN                                
 COPY_EXISTING ~%file%.sto~ ~override~
 PATCH_IF (%SOURCE_SIZE% > 0x9b) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
 // =============================================================================== // the actual work starts from here
+
  ADD_STORE_ITEM ~RR#BOW04~ AFTER   ~BOW18~ #0 #0 #0 ~IDENTIFIED~ #1                // Adds 1x Composite Short Bow +2
 // =============================================================================== // the actual work ends here
 END                                                                                // ends file size check
@@ -2717,7 +2722,7 @@ END
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
 
-REQUIRE_PREDICATE FILE_EXISTS ~tobex_ini/tobextweak.ini~ @903       //This component requires TobEx
+REQUIRE_PREDICATE FILE_EXISTS bgmain.exe @900                       //This component is only available for the Windows version of the game
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB installation check
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)
@@ -2999,6 +3004,7 @@ COPY_EXISTING ~AR0800.ARE~ ~override~                                        // 
     READ_LONG 0xb0 "anim_off"
     READ_LONG 0xb8 "tiled_off"
     READ_LONG 0xbc "song_off"
+
     READ_LONG 0xc0 "rest_off"
     READ_LONG 0xc4 "note_off"
     SET "Left" = 1675

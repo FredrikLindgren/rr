@@ -32,13 +32,13 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
   END
 END
 
-DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Icon = "*" f_Strref = "*" f_MinLevel = 1 f_MaxLevel = 99 f_NumAllowed = 16 f_Prereq = "*" f_ExcludedBy = "*" f_Alignment = "*" BEGIN
+DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Replace = "*" f_Icon = "*" f_Strref = "*" f_MinLevel = 1 f_MaxLevel = 99 f_NumAllowed = 16 f_Prereq = "*" f_ExcludedBy = "*" f_Alignment = "*" BEGIN
   COUNT_2DA_COLS num_col
   READ_2DA_ENTRIES_NOW r2en num_col
   SPRINT cell ""
-  FOR (i = 0;!"%cell%" STRING_EQUAL_CASE "*" AND i < r2en;++i) BEGIN
+  FOR (i = 0;!"%cell%" STRING_EQUAL_CASE "%f_Replace%" AND !"%cell%" STRING_EQUAL_CASE "*" AND i < r2en;++i) BEGIN
     READ_2DA_ENTRY_FORMER r2en i 1 cell
-    PATCH_IF "%cell%" STRING_EQUAL_CASE "*" BEGIN
+    PATCH_IF "%cell%" STRING_EQUAL_CASE "%f_Replace%" OR "%cell%" STRING_EQUAL_CASE "*" BEGIN
       SET_2DA_ENTRY_LATER s2el i 1 "%f_Ability%"
       SET_2DA_ENTRY_LATER s2el i 2 "%f_Icon%"
       SET_2DA_ENTRY_LATER s2el i 3 "%f_Strref%"
@@ -51,7 +51,7 @@ DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Icon = "*" f_Strref = "*" f_M
     END
   END
   SET_2DA_ENTRIES_NOW s2el num_col
-  PATCH_IF !"%cell%" STRING_EQUAL_CASE "*" BEGIN //Quite regardless of the fact only so many HLAs fit in the GUI
+  PATCH_IF !"%cell%" STRING_EQUAL_CASE "*" AND !"%cell%" STRING_EQUAL_CASE "%f_Replace%" BEGIN //Quite regardless of the fact only so many HLAs fit in the GUI
     newrow = r2en + 1
     SPRINT newrow "fl#row%newrow% %f_Ability% %f_Icon% %f_Strref% %f_MinLevel% %f_MaxLevel% %f_NumAllowed% %f_Prereq% %f_ExcludedBy% %f_Alignment%"
     INSERT_2DA_ROW r2en num_col "%newrow%"

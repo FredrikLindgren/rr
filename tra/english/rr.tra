@@ -1617,10 +1617,8 @@ Usable By:
 @781 = ~Nothing there. Must have been rats.~
 @782 = ~Bah! I must be hearing things.~
 
-@900 = ~ToBEx (required for the Revised Thievery component)~
-@901 = ~ToBEx is already installed~
-@902 = ~ToBEx is not available for Mac/OS X~
-@903 = ~This component requires ToBEx~
+@900 = ~This component is only available for the Windows version of the game~
+
 @911 = ~(No need to install. G3 fixpack version already present.)~
 
 

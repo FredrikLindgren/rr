@@ -1446,10 +1446,7 @@ Utilizzabile da:
 @781 = ~Non c'è niente. Saranno stati i topi.~
 @782 = ~Bah! Devo essermelo immaginato.~
 
-@900 = ~ToBEx (richiesto per il componente Revisione delle abilita' di classe dei ladri)~
-@901 = ~ToBEx é già installato~
-@902 = ~ToBEx non é disponibile per Mac/OS X~
-@903 = ~Questo componente richiede ToBEx~
+@900 = ~Questo componente é disponibile solo per la versione Windows del gioco~
 @911 = ~(L'installazione non è necessaria in quanto la versione del G3 fixpack è già installata.)~
 
 // Marina's dialogue and Arledrian's Quest (1000-1499)
@@ -2419,7 +2416,7 @@ Questa abilità consente al ladro di piazzare una potente trappola che spruzza su
 @8013 = ~Colpo Intuitivo
 
 Un navigato spadaccino può sfruttare la propria conoscenza dei punti deboli dell'avversario per trarne vantaggio in battaglia. Durante il round nel quale questa abilità viene attivata, lo spadaccino riceve un bonus di +5 ai tiri per colpire critici ed ogni suo attacco infligge il massimo danno.~
-@@8014 = ~Sfuggire alla Morte
+@8014 = ~Sfuggire alla Morte
 
 Grazie ad uno sforzo sovrumano, un ladro di alto livello può sfuggire alla morte anche quando sembra certa. L'effetto dura 5 round e in questo periodo i tiri salvezza contro morte del ladro godono di un bonus di +5, i suoi punti ferita sono aumentati di 20 e diventa immune alla magie che uccidono istantaneamente.
 

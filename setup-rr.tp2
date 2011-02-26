@@ -7,7 +7,7 @@
 
 BACKUP ~RR/BACKUP~                                                  // Backup directory
 AUTHOR "Wisp, shsforums.net"                                        // Author and e-mail address
-VERSION ~v4.40~                                                     // Mod version
+VERSION ~v4.41~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~RR/LIB/RR#AFIX.TPH~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~RR/LIB/RR#BG1V.TPA~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)

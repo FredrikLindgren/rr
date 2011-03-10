@@ -1,5 +1,4 @@
-@1 = ~Mise a jour du Combat a deux armes pour les voleurs et
-les bardes~
+@1 = ~Mise a jour du Combat a deux armes pour les voleurs et les bardes~
 @2 = ~Revisions des kits des voleurs~
 @3 = ~Revisions des kits des bardes~
 @4 = ~Revisions des capacites de haut niveau des bardes~
@@ -13,8 +12,7 @@ les bardes~
 @12 = ~* * *  Ce composant ne peut etre installe que sur TuTu  * * *~
 @13 = ~* * * Un composant similaire est deja present dans l'un des mods que vous utilisez actuellement. L'installation de ce composant est passee. * * *~
 @14 = ~* * *  Ce composant ne peut etre installe sur Classic Adventures.  * * *~
-@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs
-effets de se cumuler.~
+@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs effets de se cumuler.~
 @16 = ~Garder les potions par defaut et empecher leurs effets de se cumuler.~
 @17 = ~Ajustements raciaux propres pour les capacites de voleur~
 @18 = ~Equipement ameliorable~
@@ -2804,13 +2802,12 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
 au niveau general plutot que de repondre aux questions pour chacun.
 "
-@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE
-installes ?
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
 Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
 @-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
 Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 
-@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1004= "S'IL VOUS PLAIT, signalez le message d'erreur dans le fichier"
 @-1005= "a"
 
 @-1006= "Installer le composant ["

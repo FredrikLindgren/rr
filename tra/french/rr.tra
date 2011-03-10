@@ -1,4 +1,5 @@
-@1 = ~Mise a jour du Combat a deux armes pour les voleurs et les bardes~
+@1 = ~Mise a jour du Combat a deux armes pour les voleurs et
+les bardes~
 @2 = ~Revisions des kits des voleurs~
 @3 = ~Revisions des kits des bardes~
 @4 = ~Revisions des capacites de haut niveau des bardes~
@@ -12,7 +13,8 @@
 @12 = ~* * *  Ce composant ne peut etre installe que sur TuTu  * * *~
 @13 = ~* * * Un composant similaire est deja present dans l'un des mods que vous utilisez actuellement. L'installation de ce composant est passee. * * *~
 @14 = ~* * *  Ce composant ne peut etre installe sur Classic Adventures.  * * *~
-@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs effets de se cumuler.~
+@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs
+effets de se cumuler.~
 @16 = ~Garder les potions par defaut et empecher leurs effets de se cumuler.~
 @17 = ~Ajustements raciaux propres pour les capacites de voleur~
 @18 = ~Equipement ameliorable~
@@ -273,7 +275,6 @@ Type de compétence : dague
 Type : arme à 1 main
 Non utilisable par :
  Clerc~
-
 
 @54 = ~CHASSEUR DE PRIMES :
 C'est un chasseur d'hommes, spécialisé dans la traque et la capture de proies, que ce soit pour le compte d' une autorité ou pour des maîtres du crime. À cause de la fréquente nécessité de ramener sa proie vivante, un Chasseur de Primes s'en remet souvent aux substances alchimiques qui peuvent neutraliser ou affaiblir ses victimes. Sa capacité à poser des pièges est également meilleure que celle du commun des voleurs.
@@ -1346,7 +1347,6 @@ Utilisable par :
 @302 = ~Kerith le Lugubre~
 @303 = ~Selina Tempête-ombre~
 @304 = ~Venduris~
-
 @305 = ~Zaeron T'ane~
 
 @355 = ~Bodak ! Aide-moi !~
@@ -1589,6 +1589,8 @@ Utilisable par :
 @780 = ~Étrange. J'aurais juré avoir entendu quelque chose.~
 @781 = ~Rien ici. Ce devait être des rats.~
 @782 = ~Bah ! Je dois avoir des hallucinations.~
+
+@900 = ~Ce composant est uniquement disponible pour la version Windows du jeu~
 
 @911 = ~(Inutile de l'installer. La version du fixpack de G3 est deja presente.)~
 
@@ -2626,6 +2628,15 @@ Cette capacité permet au voleur de poser un puissant piège qui éclabousse les ad
 
 Un bretteur expérimenté peut utiliser ses connaissances envers les points faibles de ses adversaires pour bénéficier d'un avantage au combat. Durant le round pendant lequel la capacité est activée, le bretteur reçoit un bonus de +5 à ses coups critiques et inflige le maximum de dégâts à chaque attaque.~
 
+@8014 = ~Éviter la mort
+
+Grâce à un effort surhumain, un voleur de haut niveau peut éviter une mort quasi-certaine. L'effet dure 5 rounds, et pendant ce temps, le voleur reçoit un bonus de +5 à ses jets de sauvegarde contre la mort, tandis que ses points de vie sont augmentés de 20, et il devient immunisé à la mort d'origine magique.
+
+Requiert : Sens du danger~
+@8015 = ~Éviter la mort
+
+Grâce à un effort surhumain, un voleur de haut niveau peut éviter une mort quasi-certaine. L'effet dure 5 rounds, et pendant ce temps, le voleur reçoit un bonus de +5 à ses jets de sauvegarde contre la mort, tandis que ses points de vie sont augmentés de 20, et il devient immunisé à la mort d'origine magique.~
+
 
 
 // Revised Alchemy HLA and assorted dialogue (8100 - 8199)
@@ -2793,12 +2804,13 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
 au niveau general plutot que de repondre aux questions pour chacun.
 "
-@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE
+installes ?
 Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
 @-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
 Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 
-@-1004="S'IL VOUS PLAIT, signalez le message d'erreur dans le fichier"
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
 @-1005= "a"
 
 @-1006= "Installer le composant ["
@@ -2826,3 +2838,31 @@ Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 @-1022= "] (composant #"
 @-1023= ")"
 @-1024= "SUPPRESSION REUSSIE DE ["
+@-1025= "] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
+@-1026= "] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :"
+@-1027= " (installe actuellement)"
+
+@-1028= "Souhaitez-vous afficher les composants de ["
+@-1029= "] ?
+[Y]Oui, [N]on? "
+
+@-1030= "] ?
+choisir un parmi :"
+@-1031= "] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
+@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
+@-1033= "INSTALLATION AVEC DES ALERTES "
+@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
+@-1035= "Dans la langue"
+
+@-1036 = "Saute le GROUPE ["
+@-1037 = "] pour cause d'absence des pre-requis."
+
+@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une
+selection pre-definie :"
+@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration
+courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection
+pre-definie :"
+

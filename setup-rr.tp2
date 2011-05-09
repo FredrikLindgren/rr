@@ -401,6 +401,9 @@ COPY    ~RR/RR_CORE/SPELLS/RR#THL03.SPL~   ~override~                // Evasion 
       END
     END
   END
+  PATCH_FOR_EACH spell IN rr#wi103 rr#wi304 rr#wi308 rr#pr302 BEGIN
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (RESOLVE_STR_REF @8002) duration = 30 STR_VAR resource = EVAL "%spell%" END
+  END
 
 
 COPY    ~RR/RR_CORE/BAM/RR#THL1B.BAM~       ~override~               // Crippling Strike icon
@@ -793,29 +796,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10                // ToB inst
 FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid installation on Tutu
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
 
-// G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
-
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
- COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
- PRINT ~Initializing Detectable Spells installation ...~                     // let the user know that DS are being installed
- INCLUDE ~RR/LIB/DS/DS.tph~
- INCLUDE ~RR/LIB/DS/ds_oldscript.tph~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/cddetect.2da~
- OUTER_SPRINT ~statsfile~ ~RR/LIB/DS/stats.2da~
- OUTER_SPRINT ~khelbenfile~ ~RR/LIB/DS/spwi705.spl~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/dw#detect.2da~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~marker~ ~dw#fixasc.mrk~                                       // DavidW's fix for Ascension's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_asc.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
- OUTER_SPRINT ~marker~ ~dw#fixkelsey.mrk~                                    // DavidW's fix for Kelsey's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
-END
+INCLUDE "rr/lib/ds.tpa"                                              // Detectable Spells   
 
 
 // Update the Bard 2DAs with RR's revised HLA versions
@@ -1394,28 +1375,7 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mel01.cre~ @10               // ToB insta
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch the RR Assorted Fixes macro
 
-// G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
- COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
- PRINT ~Initializing Detectable Spells installation ...~                     // let the user know that DS are being installed
- INCLUDE ~RR/LIB/DS/DS.tph~
- INCLUDE ~RR/LIB/DS/ds_oldscript.tph~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/cddetect.2da~
- OUTER_SPRINT ~statsfile~ ~RR/LIB/DS/stats.2da~
- OUTER_SPRINT ~khelbenfile~ ~RR/LIB/DS/spwi705.spl~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/dw#detect.2da~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~marker~ ~dw#fixasc.mrk~                                       // DavidW's fix for Ascension's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_asc.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
- OUTER_SPRINT ~marker~ ~dw#fixkelsey.mrk~                                    // DavidW's fix for Kelsey's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
-END
+INCLUDE "rr/lib/ds.tpa"                                             // Detectable Spells
 
 COPY    ~RR/RR_CORE/BAM/RR#CKIEL.BAM~      ~override~                              // Kiel's Buckler description icon (CSHLD20.BAM is missing in BG2)
 
@@ -2957,28 +2917,7 @@ FORBID_FILE ~override/_sw1h01.itm~ @11                                       // 
 FORBID_FILE ~data/CA-AREA1.bif~ @14                                          // Forbid installation on Classic Adventures
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                                // Launch the RR Assorted Fixes macro
 
-// G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
- COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
- PRINT ~Initializing Detectable Spells installation ...~                     // let the user know that DS are being installed
- INCLUDE ~RR/LIB/DS/DS.tph~
- INCLUDE ~RR/LIB/DS/ds_oldscript.tph~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/cddetect.2da~
- OUTER_SPRINT ~statsfile~ ~RR/LIB/DS/stats.2da~
- OUTER_SPRINT ~khelbenfile~ ~RR/LIB/DS/spwi705.spl~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/dw#detect.2da~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~marker~ ~dw#fixasc.mrk~                                       // DavidW's fix for Ascension's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_asc.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
- OUTER_SPRINT ~marker~ ~dw#fixkelsey.mrk~                                    // DavidW's fix for Kelsey's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
-END
+INCLUDE "rr/lib/ds.tpa"                                                      // Detectable Spells 
 
 // CoC area files
 
@@ -3606,28 +3545,7 @@ FORBID_FILE ~override/_sw1h01.itm~ @11                                        //
 FORBID_FILE ~data/CA-AREA1.bif~ @14                                           // Forbid installation on Classic Adventures
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                                 // Launch the RR Assorted Fixes macro
 
-// G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
- COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
- PRINT ~Initializing Detectable Spells installation ...~                     // let the user know that DS are being installed
- INCLUDE ~RR/LIB/DS/DS.tph~
- INCLUDE ~RR/LIB/DS/ds_oldscript.tph~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/cddetect.2da~
- OUTER_SPRINT ~statsfile~ ~RR/LIB/DS/stats.2da~
- OUTER_SPRINT ~khelbenfile~ ~RR/LIB/DS/spwi705.spl~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/dw#detect.2da~
- LAUNCH_ACTION_MACRO ~detectable_spells~
- OUTER_SPRINT ~marker~ ~dw#fixasc.mrk~                                       // DavidW's fix for Ascension's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_asc.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
- OUTER_SPRINT ~marker~ ~dw#fixkelsey.mrk~                                    // DavidW's fix for Kelsey's DS scripts
- OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
- OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
- LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
-END
+INCLUDE "rr/lib/ds.tpa"                                                       // Detectable Spells
 
 // Create scroll and potion distribution markers
 

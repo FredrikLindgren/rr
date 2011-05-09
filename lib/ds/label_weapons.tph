@@ -1,0 +1,65 @@
+DEFINE_ACTION_MACRO ~label_weapons~ BEGIN
+
+	COPY_EXISTING_REGEXP GLOB ~.+\.itm$~ ~override~
+		PATCH_IF (SOURCE_SIZE>0x1) THEN BEGIN 
+			READ_LONG 0x60 ~enchantment~
+			READ_LONG 0x64 ~aboffset~
+			READ_SHORT 0x68 ~abnum~
+			SET ~isweapon~=0
+			SET ~numsofar~=0
+			SET ~isbroken~=0
+			WHILE (~numsofar~<~%abnum%~) BEGIN
+				READ_BYTE (~aboffset~+0x38*~numsofar~) ~type~ ELSE 999999999
+				PATCH_IF (~type~=999999999) THEN BEGIN
+					SET ~isbroken~=1
+				END
+				PATCH_IF (~type~=1) THEN BEGIN
+					SET ~numsofar~=~%abnum%~
+					SET ~isweapon~=1
+				END
+				SET ~numsofar~=~numsofar~+1
+			END
+			PATCH_IF (~isweapon~=1 AND ~%isbroken%~=0) THEN BEGIN
+				FOR (i=0;i<~%abnum%~;i=i+1) BEGIN
+					READ_SHORT 0x20+~%i%~*0x38+~%aboffset%~ ~ind_here~
+					WRITE_SHORT 0x20+~%i%~*0x38+~%aboffset%~ ~%ind_here%~+1
+				END
+				READ_LONG 0x6a ~effectsoffset~
+				READ_SHORT 0x70 ~numeffects~
+				WRITE_SHORT 0x70 ~%numeffects%~+1
+				SET ~editloc~=~%effectsoffset%~+~%numeffects%~*0x30
+				PATCH_IF ~%editloc%~<=~%SOURCE_SIZE%~ THEN BEGIN
+					INSERT_BYTES ~editloc~ 0x30
+					WRITE_SHORT ~editloc~ ~%weapon_enchantment_type%~ //modify scripting state
+					WRITE_BYTE (~editloc~+0x2) ~1~ //TargetSelf
+					WRITE_BYTE (~editloc~+0x3) ~0~ //Power=0
+					WRITE_LONG (~editloc~+0x4) ~%enchantment%~ //Change state to the value of the enchantment
+					WRITE_LONG (~editloc~+0x8) ~%weapon_enchantment_stat%~ 
+					WRITE_BYTE (~editloc~+0xc) ~2~ //Instant/While Equipped
+					WRITE_BYTE (~editloc~+0xd) ~0~ //No Dispel/Bypass resistance
+					WRITE_LONG (~editloc~+0x12) ~100~ //Probability
+				END ELSE BEGIN
+					SET ~isbroken~=1
+				END
+			END
+			PATCH_IF ~%isbroken%~=1 THEN BEGIN
+				PATCH_PRINT ~SCS warning: %SOURCE_RES%.ITM is corrupt (probably corrupted by another mod). I'm skipping over it.~
+			END
+		END
+	BUT_ONLY_IF_IT_CHANGES
+
+END
+
+DEFINE_PATCH_MACRO ~relabel_weapons~ BEGIN
+	READ_LONG 0x60 ~enchantment~
+	READ_LONG 0x6a ~eff_off~
+	READ_SHORT 0x70 ~num_eff~
+	FOR (kk=0;kk<~%num_eff%~;kk=kk+1) BEGIN
+		READ_SHORT ~%eff_off%~+~%kk%~*0x30 ~type~
+		READ_LONG ~%eff_off%~+~%kk%~*0x30+0x8 ~stat~
+		PATCH_IF (~%type%~ STRING_EQUAL_CASE ~%weapon_enchantment_type%~ AND ~%stat%~ STRING_EQUAL_CASE ~%weapon_enchantment_stat%~) THEN BEGIN
+			WRITE_BYTE ~%eff_off%~+~%kk%~*0x30+0x4 ~%enchantment%~
+		END
+	END	
+
+END

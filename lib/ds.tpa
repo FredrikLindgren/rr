@@ -1,0 +1,24 @@
+// G3 Detectable Spells (special thanks to CamDawg, DavidW and all the other DS contributors)
+
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // only install Detectable Spells once from within RR
+ COPY_EXISTING ~sw1h01.itm~ ~override/RR#DS.RR~                              // dummy file, prevents other RR components from re-installing DS
+ PRINT ~Initializing Detectable Spells installation ...~                     // let the user know that DS are being installed
+ INCLUDE ~RR/LIB/DS/DS.tph~
+ INCLUDE ~RR/LIB/DS/ds_oldscript.tph~
+ OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/cddetect.2da~
+ OUTER_SPRINT ~statsfile~ ~RR/LIB/DS/stats.2da~
+ OUTER_SPRINT ~khelbenfile~ ~RR/LIB/DS/spwi705.spl~
+ LAUNCH_ACTION_MACRO ~detectable_spells~
+ OUTER_SPRINT ~detectfile~ ~RR/LIB/DS/dw#detect.2da~
+ LAUNCH_ACTION_MACRO ~detectable_spells~
+ OUTER_SPRINT ~marker~ ~dw#fixasc.mrk~                                       // DavidW's fix for Ascension's DS scripts
+ OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_asc.2da~
+ OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
+ LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~ 
+ OUTER_SPRINT ~marker~ ~dw#fixkelsey.mrk~                                    // DavidW's fix for Kelsey's DS scripts
+ OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
+ OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
+ LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~
+ APPEND stats.ids "109 CLERIC_HALLOW" UNLESS CLERIC_HALLOW                   // Make sure there is a CLERIC_HALLOW (it should be installed by DS proper) 
+END

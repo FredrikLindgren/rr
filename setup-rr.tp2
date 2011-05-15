@@ -7,7 +7,7 @@
 
 BACKUP ~RR/BACKUP~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.42~                                                     // Mod version
+VERSION ~v4.43~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~RR/LIB/RR#AFIX.TPH~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~RR/LIB/RR#BG1V.TPA~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -401,8 +401,8 @@ COPY    ~RR/RR_CORE/SPELLS/RR#THL03.SPL~   ~override~                // Evasion 
       END
     END
   END
-  PATCH_FOR_EACH spell IN rr#wi103 rr#wi304 rr#wi308 rr#pr302 BEGIN
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (RESOLVE_STR_REF @8002) duration = 30 STR_VAR resource = EVAL "%spell%" END
+  PATCH_FOR_EACH spell IN rr#wi103 rr#wi304 rr#wi308 rr#pr302 rr#pflam BEGIN
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = RESOLVE_STR_REF (@8002) duration = 30 STR_VAR resource = EVAL "%spell%" END
   END
 
 
@@ -803,7 +803,7 @@ INCLUDE "rr/lib/ds.tpa"                                              // Detectab
 // Note: the default 2DA block won't execute if Refinements is installed
 // In that case, the compatibility 2DA block will trigger instead
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~tg#mass.spl~ THEN BEGIN           // Begin default (non-Refinements) 2DA block 
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~tg#mass.spl~ THEN BEGIN           // Begin default (non-Refinements) 2DA block
 COPY_EXISTING ~LUBA0.2DA~ ~override~
   REPLACE_TEXTUALLY ~SPCL913~ ~RR#BHL05~                             // Replace Evasion with Resonating Weapon for all Bards
   REPLACE_TEXTUALLY ~SPCL914~ ~RR#BHL06~                             // Replace Greater Evasion with Sound Barrier for all Bards
@@ -1288,6 +1288,49 @@ OUTER_SPRINT SpellPackL6 ~~
 OUTER_SPRINT SpellPackL7 ~~
 OUTER_SPRINT SpellPackL8 ~~
 OUTER_SPRINT SpellPackL9 ~~
+
+ACTION_IF FILE_EXISTS_IN_GAME lclist_scrolls.2da BEGIN //Galactycon's Spell Pack
+
+  ACTION_DEFINE_ARRAY SPGold BEGIN 0 50 100 150 250 500 1000 1500 2500 5000 END
+
+  COPY_EXISTING lclist_scrolls.2da override
+    READ_2DA_ENTRIES_NOW r2en_lclist_scrolls 6
+    FOR (i = 0; i < r2en_lclist_scrolls; ++i) BEGIN
+      READ_2DA_ENTRY_FORMER r2en_lclist_scrolls i 0 symbol
+      READ_2DA_ENTRY_FORMER r2en_lclist_scrolls i 1 scroll
+      ids = IDS_OF_SYMBOL (spell "%symbol%")
+      INNER_PATCH "%ids%" BEGIN
+        READ_ASCII 0 type (1)
+        READ_ASCII 1 res (3)
+      END
+      SPRINT spell ""
+      PATCH_MATCH type WITH
+        1 BEGIN SPRINT spell "sppr%res%" END
+        2 BEGIN SPRINT spell "spwi%res%" END
+        DEFAULT END
+      PATCH_IF FILE_EXISTS_IN_GAME "%spell%.spl" AND FILE_EXISTS_IN_GAME "%scroll%.itm" BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%spell%.spl" override
+            READ_LONG 0x8 name
+            READ_LONG 0x34 level
+          BUT_ONLY
+        END
+        SPRINT gold $SPGold("%level%")
+        PATCH_MATCH level WITH
+          1 BEGIN SPRINT SpellPackL1 ~~~~~%SpellPackL1% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          2 BEGIN SPRINT SpellPackL2 ~~~~~%SpellPackL2% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          3 BEGIN SPRINT SpellPackL3 ~~~~~%SpellPackL3% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          4 BEGIN SPRINT SpellPackL4 ~~~~~%SpellPackL4% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          5 BEGIN SPRINT SpellPackL5 ~~~~~%SpellPackL5% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          6 BEGIN SPRINT SpellPackL6 ~~~~~%SpellPackL6% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          7 BEGIN SPRINT SpellPackL7 ~~~~~%SpellPackL7% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          8 BEGIN SPRINT SpellPackL8 ~~~~~%SpellPackL8% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          9 BEGIN SPRINT SpellPackL9 ~~~~~%SpellPackL9% + ~HaveSpell(%symbol%)~ + #%name% DO ~TakePartyGold(%gold%) DestroyGold(%gold%) RemoveSpell(%symbol%) GiveItemCreate("%scroll%",Myself,1,1,1)~ EXIT~~~~~ END
+          DEFAULT END
+      END
+    END
+  BUT_ONLY
+END
 
 COPY    ~RR/RR_CORE/ACTORS/RR#SCRL.CRE~    ~override~                // Scribe Scrolls invisible creature (used for initiating the dialogue)
 COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.EFF~    ~override~                // Scribe Scrolls invisible creature summoning EFF

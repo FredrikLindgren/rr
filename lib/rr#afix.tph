@@ -169,11 +169,13 @@ COPY_EXISTING ~WEAPPROF.2DA~                 ~override~             // correct t
 
 
 
-// Set the spell level of the Bounty Hunters' special snares and Thieves' regular snares to 1 (mirrors G3 BG2 Fixpack code)
+// Set the spell level of the Bounty Hunters' special snares and other snares and traps to 1 (mirrors G3 BG2 Fixpack code)
 
 COPY_EXISTING ~SPCL412.spl~ ~override~                              // Set snare
               ~SPCL414.spl~ ~override~                              // Set special snare
-   WRITE_LONG 0x34 1                                                // Set the spell level to 1
+              ~SPCL910.spl~ ~override~                              // Set Spike Trap
+	      ~SPCL911.SPL~ ~override~                              // Set Exploding Trap
+  WRITE_LONG 0x34 1                                                 // Set the spell level to 1
 BUT_ONLY_IF_IT_CHANGES
 
 

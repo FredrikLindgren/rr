@@ -14,6 +14,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -55,12 +56,12 @@ END
 
 IF
 	Global("RR#Active","LOCALS",0)
-	OR(2)
-	  TookDamage()
+        Allegiance(Myself,EVILCUTOFF)
 	  See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -193,13 +194,23 @@ THEN
 END
 
 IF
-	OR(3)
+	OR(4)
 	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -209,6 +220,14 @@ IF
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
+THEN
+	RESPONSE #100
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -1433,7 +1452,6 @@ IF
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
 	!StateCheck(Myself,STATE_BLIND)
-	ActionListEmpty()
 	OR(2)
 	  RandomNum(5,1)
 	  CombatCounter(0)
@@ -1446,7 +1464,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	Global("RR#Active","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -1475,6 +1492,7 @@ END
 IF
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1489,6 +1507,7 @@ END
 IF
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1503,6 +1522,7 @@ END
 IF
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1517,6 +1537,7 @@ END
 IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1531,6 +1552,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1545,6 +1567,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
@@ -1559,6 +1582,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
@@ -1575,6 +1599,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
@@ -1591,6 +1616,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
@@ -1607,6 +1633,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,175)  // no Backstab immunity
@@ -1623,6 +1650,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
@@ -1639,6 +1667,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
@@ -1655,6 +1684,7 @@ END
 IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -1671,6 +1701,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -1687,6 +1718,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
@@ -1704,6 +1736,7 @@ IF
 	HitBy([ANYONE],CRUSHING) // hit by any damage type
 	!CheckStatGT(LastHitter(Myself),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(LastHitter(Myself),1,STONESKINS)
+	CheckStatLT(LastHitter(Myself),100,RESISTSLASHING)
 	!StateCheck(LastHitter(Myself),STATE_MIRRORIMAGE)
 	!StateCheck(LastHitter(Myself),STATE_PANIC)
 	!CheckStatGT(LastHitter(Myself),0,175)  // no Backstab immunity
@@ -1719,8 +1752,75 @@ THEN
 END
 
 IF
+	!CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player6,STATE_IMMOBILE)
+        CheckStatLT(Player6,100,RESISTSLASHING)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player5,STATE_IMMOBILE)
+        CheckStatLT(Player5,100,RESISTSLASHING)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player4,STATE_IMMOBILE)
+        CheckStatLT(Player4,100,RESISTSLASHING)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player3,STATE_IMMOBILE)
+        CheckStatLT(Player3,100,RESISTSLASHING)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player2,STATE_IMMOBILE)
+        CheckStatLT(Player2,100,RESISTSLASHING)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	StateCheck(Player1,STATE_IMMOBILE)
+        CheckStatLT(Player1,100,RESISTSLASHING)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1735,6 +1835,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -1749,6 +1850,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
@@ -1763,6 +1865,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
@@ -1776,6 +1879,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
@@ -1789,6 +1893,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
@@ -1802,6 +1907,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
@@ -1815,6 +1921,7 @@ END
 IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -1828,6 +1935,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -1841,6 +1949,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity

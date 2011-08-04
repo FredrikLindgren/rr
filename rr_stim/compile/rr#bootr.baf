@@ -14,6 +14,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -84,25 +85,47 @@ THEN
 END
 
 IF
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+		Shout(89)
+		Shout(124)
+		StartDialogueNoSet([PC])
+END
+
+IF
 	Global("RR#Active","LOCALS",0)
-	OR(2)
-	  TookDamage()
+        Allegiance(Myself,EVILCUTOFF)
 	  See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
 
 IF
-	OR(3)
+	OR(4)
 	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -115,14 +138,11 @@ THEN
 END
 
 IF
-	NumTimesTalkedTo(0)
-	See([PC])
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
 THEN
 	RESPONSE #100
-		SetGlobal("RR#Active","LOCALS",1)
-		Shout(89)
-		Shout(124)
-		StartDialogueNoSet([PC])
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -570,7 +590,6 @@ IF
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
 	!StateCheck(Myself,STATE_BLIND)
-	ActionListEmpty()
 	OR(2)
 	  RandomNum(5,1)
 	  CombatCounter(0)
@@ -583,7 +602,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	Global("RR#Active","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -602,6 +620,7 @@ IF
 	!CheckStat(SixthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SixthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -617,6 +636,7 @@ IF
 	!CheckStat(FifthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(FifthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -632,6 +652,7 @@ IF
 	!CheckStat(FourthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(FourthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -647,6 +668,7 @@ IF
 	!CheckStat(ThirdNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(ThirdNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -662,6 +684,7 @@ IF
 	!CheckStat(SecondNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SecondNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -677,6 +700,7 @@ IF
 	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat([GOODCUTOFF],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
@@ -692,6 +716,7 @@ IF
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTPIERCING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
@@ -709,6 +734,7 @@ IF
 	!CheckStat([GOODCUTOFF.0.0.BARD_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat([GOODCUTOFF.0.0.BARD_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTPIERCING)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,175)  // no Backstab immunity
@@ -726,6 +752,7 @@ IF
 	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -743,6 +770,7 @@ IF
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -760,6 +788,7 @@ IF
 	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTPIERCING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
@@ -778,6 +807,7 @@ IF
 	!CheckStat(LastHitter(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(LastHitter(Myself),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(LastHitter(Myself),1,STONESKINS)
+	CheckStatLT(LastHitter(Myself),100,RESISTPIERCING)
 	!StateCheck(LastHitter(Myself),STATE_MIRRORIMAGE)
 	!StateCheck(LastHitter(Myself),STATE_PANIC)
 	!CheckStatGT(LastHitter(Myself),0,175)  // no Backstab immunity
@@ -796,6 +826,7 @@ IF
 	!CheckStat(SixthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SixthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -811,6 +842,7 @@ IF
 	!CheckStat(FifthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(FifthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -826,6 +858,7 @@ IF
 	!CheckStat(FourthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(FourthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -841,6 +874,7 @@ IF
 	!CheckStat(ThirdNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(ThirdNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -856,6 +890,7 @@ IF
 	!CheckStat(SecondNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SecondNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
@@ -871,6 +906,7 @@ IF
 	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat([GOODCUTOFF],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
@@ -886,6 +922,7 @@ IF
 	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -900,6 +937,7 @@ IF
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
@@ -914,6 +952,7 @@ IF
 	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
 	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTPIERCING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity

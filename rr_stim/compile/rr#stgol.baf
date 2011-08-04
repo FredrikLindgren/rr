@@ -132,7 +132,6 @@ END
 
 IF
 	!Detect([GOODCUTOFF])
-	ActionListEmpty()
 THEN
 	RESPONSE #100
 		RandomWalkContinuous()

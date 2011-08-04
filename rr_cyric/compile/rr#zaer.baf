@@ -1,20 +1,18 @@
 IF
-	OR(3)
-	  GlobalLT("RR#CSAVE","GLOBAL",2)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
 	!Allegiance(Myself,EVILCUTOFF)
 	GlobalGT("RR#CSAVE","GLOBAL",1)
+        !StateCheck(Myself,STATE_CHARMED)
 THEN
 	RESPONSE #100
 		Enemy()
 		Continue()
+END
+
+IF
+	GlobalLT("RR#CSAVE","GLOBAL",2)  // allowing for contingencies to kick in while immobile but not during the cutscene      
+THEN
+	RESPONSE #100
+		NoAction()
 END
 
 IF
@@ -37,6 +35,25 @@ THEN
 		DisplayString(Myself,25942) // Contingency
 		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
 		Continue()
+END
+
+IF
+	OR(4)
+	  GlobalLT("RR#CSAVE","GLOBAL",2)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
+THEN
+	RESPONSE #100
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -91,7 +108,7 @@ THEN
 END
 
 IF
-        Global("RR#ZProt","GLOBAL",0)
+        Global("RR#ZProt","LOCALS",0)
 	OR(4)
 	  StateCheck(Myself,STATE_MIRRORIMAGE)
 	  CheckStat(Myself,1,PUPPETTYPE) // Mislead
@@ -99,28 +116,28 @@ IF
 	  CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
 THEN
 	RESPONSE #100
-        	SetGlobal("RR#ZProt","GLOBAL",1)
+        	SetGlobal("RR#ZProt","LOCALS",1)
 END
 
 IF
-        Global("RR#ZProt","GLOBAL",1)
+        Global("RR#ZProt","LOCALS",1)
 	!StateCheck(Myself,STATE_MIRRORIMAGE)
 	!CheckStat(Myself,1,PUPPETTYPE) // Mislead
         !CheckStatGT(Myself,0,STONESKINS)
 	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
 THEN
 	RESPONSE #100
-        	SetGlobal("RR#ZProt","GLOBAL",0)
+        	SetGlobal("RR#ZProt","LOCALS",0)
 END
 
 IF
-        !Global("RR#ZProt","GLOBAL",2)
+        !Global("RR#ZProt","LOCALS",2)
 	!HaveSpell(WIZARD_MIRROR_IMAGE)
 	!HaveSpell(WIZARD_STONE_SKIN)
 	!HasItem("SCRL7O",Myself) // Protection From Magic Weapons
 THEN
 	RESPONSE #100
-        	SetGlobal("RR#ZProt","GLOBAL",2)
+        	SetGlobal("RR#ZProt","LOCALS",2)
 END
 
 IF
@@ -247,7 +264,7 @@ END
 IF
 	!StateCheck(Myself,STATE_INVISIBLE)
 	!Global("dvgldust","LOCALS",1)
-        Global("RR#ZProt","GLOBAL",0)
+        Global("RR#ZProt","LOCALS",0)
 	HasItem("POTN10",Myself) // Potion of Invisibility
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	!GlobalTimerNotExpired("RR#ZBuff","LOCALS")
@@ -2219,12 +2236,12 @@ THEN
 END
 
 IF
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
-	StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
-	See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	!CheckStat(ThirdNearest([PC.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(ThirdNearest([PC.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(ThirdNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	!CheckStatGT(ThirdNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	StateCheck(ThirdNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	See(ThirdNearest([PC.0.0.CLERIC_ALL]))
 	False()
 THEN
 	RESPONSE #100
@@ -2232,12 +2249,12 @@ THEN
 END
 
 IF
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
-	StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
-	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
-	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([PC.0.0.CLERIC_ALL]))
 	False()
 THEN
 	RESPONSE #100
@@ -2245,12 +2262,12 @@ THEN
 END
 
 IF
-	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
-	StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
-	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
-	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	!CheckStat([PC.0.0.CLERIC_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([PC.0.0.CLERIC_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	See([PC.0.0.CLERIC_ALL])
 	False()
 THEN
 	RESPONSE #100
@@ -2258,12 +2275,13 @@ THEN
 END
 
 IF
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
-	StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
-	See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	!CheckStat(Player6,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player6,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player6,1,STONESKINS)
+	StateCheck(Player6,STATE_IMMOBILE)
+	!CheckStatGT(Player6,0,175)  // no Backstab immunity
+	!Kit(Player6,BARBARIAN)
+	See(Player6)
 	False()
 THEN
 	RESPONSE #100
@@ -2271,12 +2289,13 @@ THEN
 END
 
 IF
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
-	StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
-	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
-	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	!CheckStat(Player5,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player5,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player5,1,STONESKINS)
+	StateCheck(Player5,STATE_IMMOBILE)
+	!CheckStatGT(Player5,0,175)  // no Backstab immunity
+	!Kit(Player5,BARBARIAN)
+	See(Player5)
 	False()
 THEN
 	RESPONSE #100
@@ -2284,12 +2303,13 @@ THEN
 END
 
 IF
-	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
-	StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
-	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
-	See([GOODCUTOFF.0.0.DRUID_ALL])
+	!CheckStat(Player4,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player4,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player4,1,STONESKINS)
+	StateCheck(Player4,STATE_IMMOBILE)
+	!CheckStatGT(Player4,0,175)  // no Backstab immunity
+	!Kit(Player4,BARBARIAN)
+	See(Player4)
 	False()
 THEN
 	RESPONSE #100
@@ -2297,12 +2317,13 @@ THEN
 END
 
 IF
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
-	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
-	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	!CheckStat(Player3,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player3,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player3,1,STONESKINS)
+	StateCheck(Player3,STATE_IMMOBILE)
+	!CheckStatGT(Player3,0,175)  // no Backstab immunity
+	!Kit(Player3,BARBARIAN)
+	See(Player3)
 	False()
 THEN
 	RESPONSE #100
@@ -2310,12 +2331,13 @@ THEN
 END
 
 IF
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
-	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
-	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
-	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	!CheckStat(Player2,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player2,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player2,1,STONESKINS)
+	StateCheck(Player2,STATE_IMMOBILE)
+	!CheckStatGT(Player2,0,175)  // no Backstab immunity
+	!Kit(Player2,BARBARIAN)
+	See(Player2)
 	False()
 THEN
 	RESPONSE #100
@@ -2323,12 +2345,138 @@ THEN
 END
 
 IF
-	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
-	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
-	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
-	See([GOODCUTOFF.0.0.MAGE_ALL])
+	!CheckStat(Player1,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player1,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player1,1,STONESKINS)
+	StateCheck(Player1,STATE_IMMOBILE)
+	!CheckStatGT(Player1,0,175)  // no Backstab immunity
+	!Kit(Player1,BARBARIAN)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([PC.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(ThirdNearest([PC.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(ThirdNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	!CheckStatGT(ThirdNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	StateCheck(ThirdNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	See(ThirdNearest([PC.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([PC.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([PC.0.0.CLERIC_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([PC.0.0.CLERIC_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	See([PC.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+
+
+
+
+
+
+
+
+IF
+	!CheckStat(ThirdNearest([PC.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(ThirdNearest([PC.0.0.DRUID_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(ThirdNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
+	StateCheck(ThirdNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([PC.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([PC.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([PC.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([PC.0.0.DRUID_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([PC.0.0.DRUID_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.DRUID_ALL],STATE_IMMOBILE)
+	!CheckStatGT([PC.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	See([PC.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([PC.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(ThirdNearest([PC.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(ThirdNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(ThirdNearest([PC.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	See(SecondNearest([PC.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([PC.0.0.MAGE_ALL],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([PC.0.0.MAGE_ALL],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
+	StateCheck([PC.0.0.MAGE_ALL],STATE_IMMOBILE)
+	!CheckStatGT([PC.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	See([PC.0.0.MAGE_ALL])
 	False()
 THEN
 	RESPONSE #100
@@ -2353,7 +2501,7 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-        GlobalGT("RR#ZProt","GLOBAL",0)
+        GlobalGT("RR#ZProt","LOCALS",0)
 	!GlobalTimerNotExpired("RR#ZBuff","LOCALS")
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
@@ -2367,7 +2515,6 @@ IF
 	Global("RR#Heal","LOCALS",0)
 	!See([GOODCUTOFF])
 	InMyArea(Player1)
-	ActionListEmpty()
 	RandomNum(5,1)
 THEN
 	RESPONSE #100
@@ -2377,7 +2524,6 @@ END
 IF
 	Global("RR#Heal","LOCALS",0)	
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -2397,7 +2543,7 @@ IF
 	Global("RR#Heal","LOCALS",0)
 	GlobalTimerNotExpired("RR#Cast","LOCALS")
 	OR(2)
-          Global("RR#ZProt","GLOBAL",0)
+          Global("RR#ZProt","LOCALS",0)
 	  GlobalTimerNotExpired("RR#ZBuff","LOCALS")
 THEN
 	RESPONSE #100

@@ -14,6 +14,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -37,12 +38,12 @@ END
 
 IF
 	Global("RR#Active","LOCALS",0)
-	OR(2)
-	  TookDamage()
+        Allegiance(Myself,EVILCUTOFF)
 	  See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -102,13 +103,23 @@ THEN
 END
 
 IF
-	OR(3)
+	OR(4)
 	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -118,6 +129,14 @@ IF
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
+THEN
+	RESPONSE #100
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -342,7 +361,6 @@ IF
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
 	!StateCheck(Myself,STATE_BLIND)
-	ActionListEmpty()
 	OR(2)
 	  RandomNum(5,1)
 	  CombatCounter(0)
@@ -356,7 +374,6 @@ IF
 	Global("RR#Active","LOCALS",1)
 	!HasItem("RING17",Myself) // Flamedance Ring
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -377,6 +394,7 @@ IF
 	!HasItemEquiped("shld24",SixthNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(SixthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SixthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
 	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTMISSILE)
@@ -391,6 +409,7 @@ IF
 	!HasItemEquiped("shld24",FifthNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(FifthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(FifthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
 	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTMISSILE)
@@ -405,6 +424,7 @@ IF
 	!HasItemEquiped("shld24",FourthNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(FourthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(FourthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
 	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTMISSILE)
@@ -419,6 +439,7 @@ IF
 	!HasItemEquiped("shld24",ThirdNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
@@ -433,6 +454,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
 	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
@@ -447,6 +469,7 @@ IF
 	!HasItemEquiped("shld24",[GOODCUTOFF]) // Reflection Shield +1
 	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
 	CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
@@ -461,6 +484,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.DRUID_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
 	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),100,RESISTMISSILE)
@@ -475,6 +499,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.DRUID_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.DRUID_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
 	CheckStatLT([PC.0.0.DRUID_ALL],100,RESISTMISSILE)
@@ -489,6 +514,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.CLERIC_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
 	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),100,RESISTMISSILE)
@@ -503,6 +529,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.CLERIC_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
 	CheckStatLT([PC.0.0.CLERIC_ALL],100,RESISTMISSILE)
@@ -517,6 +544,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.BARD_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),1,STONESKINS)
 	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),100,RESISTMISSILE)
@@ -531,6 +559,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.BARD_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.BARD_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.BARD_ALL],1,STONESKINS)
 	CheckStatLT([PC.0.0.BARD_ALL],100,RESISTMISSILE)
@@ -545,6 +574,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
 	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),100,RESISTMISSILE)
@@ -559,6 +589,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.MAGE_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.MAGE_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
 	CheckStatLT([PC.0.0.MAGE_ALL],100,RESISTMISSILE)
@@ -573,6 +604,7 @@ IF
 	!HasItemEquiped("shld24",[GOODCUTOFF]) // Reflection Shield +1
 	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
@@ -588,6 +620,7 @@ IF
 	!HasItemEquiped("shld24",ThirdNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
 	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
@@ -603,6 +636,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
 	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
@@ -618,6 +652,7 @@ IF
 	!HasItemEquiped("shld24",Nearest([GOODCUTOFF])) // Reflection Shield +1
 	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
@@ -630,9 +665,95 @@ THEN
 END
 
 IF
+	!HasItemEquiped("shld24",Player6) // Reflection Shield +1
+	!CheckStat(Player6,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player6,STATE_IMMOBILE)
+	CheckStatLT(Player6,100,RESISTMISSILE)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",Player5) // Reflection Shield +1
+	!CheckStat(Player5,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player5,STATE_IMMOBILE)
+	CheckStatLT(Player5,100,RESISTMISSILE)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",Player4) // Reflection Shield +1
+	!CheckStat(Player4,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player4,STATE_IMMOBILE)
+	CheckStatLT(Player4,100,RESISTMISSILE)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",Player3) // Reflection Shield +1
+	!CheckStat(Player3,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player3,STATE_IMMOBILE)
+	CheckStatLT(Player3,100,RESISTMISSILE)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!HasItemEquiped("shld24",Player2) // Reflection Shield +1
+	!CheckStat(Player2,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player2,STATE_IMMOBILE)
+	CheckStatLT(Player2,100,RESISTMISSILE)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+
+IF
+	!HasItemEquiped("shld24",Player1) // Reflection Shield +1
+	!CheckStat(Player1,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+        !CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
+	StateCheck(Player1,STATE_IMMOBILE)
+	CheckStatLT(Player1,100,RESISTMISSILE)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.DRUID_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
 	StateCheck(SecondNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
@@ -648,6 +769,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.DRUID_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.DRUID_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
 	StateCheck([PC.0.0.DRUID_ALL],STATE_IMMOBILE)
@@ -663,6 +785,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.CLERIC_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
 	StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
@@ -678,6 +801,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.CLERIC_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
 	StateCheck([PC.0.0.CLERIC_ALL],STATE_IMMOBILE)
@@ -693,6 +817,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.BARD_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.BARD_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.BARD_ALL]),1,STONESKINS)
 	StateCheck(SecondNearest([PC.0.0.BARD_ALL]),STATE_IMMOBILE)
@@ -708,6 +833,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.BARD_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.BARD_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.BARD_ALL],1,STONESKINS)
 	StateCheck([PC.0.0.BARD_ALL],STATE_IMMOBILE)
@@ -723,6 +849,7 @@ IF
 	!HasItemEquiped("shld24",ThirdNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
 	!CheckStat(ThirdNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
 	StateCheck(ThirdNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
@@ -738,6 +865,7 @@ IF
 	!HasItemEquiped("shld24",SecondNearest([PC.0.0.MAGE_ALL])) // Reflection Shield +1
 	!CheckStat(SecondNearest([PC.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
 	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
 	StateCheck(SecondNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
@@ -753,6 +881,7 @@ IF
 	!HasItemEquiped("shld24",[PC.0.0.MAGE_ALL]) // Reflection Shield +1
 	!CheckStat([PC.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
 	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)  // not protected from mundane weapons
+	!CheckStatGT([PC.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // not protected from normal missiles
 	CheckStatGT([PC.0.0.MAGE_ALL],-5,ACMISSILEMOD)
 	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
 	StateCheck([PC.0.0.MAGE_ALL],STATE_IMMOBILE)

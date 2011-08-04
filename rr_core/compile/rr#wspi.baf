@@ -49,6 +49,7 @@ IF
 	Global("RR#WSSK","LOCALS",0)
 	InParty(LastSummonerOf(Myself))
         Kit(LastSummonerOf(Myself),SKALD)
+        CheckStatLT(Myself,18,DEX) // safety check
 THEN
 	RESPONSE #100
 		SetGlobal("RR#WSSK","LOCALS",1)
@@ -58,12 +59,13 @@ END
 
 IF
 	HaveSpell(BERSERKER_RAGE)
+        CheckStat(Myself,0,SCRIPTINGSTATE4) // not Enraged
 	See([EVILCUTOFF])
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ForceSpell(Myself,BERSERKER_RAGE)
-		RemoveSpell(BERSERKER_RAGE)
+		ForceSpell(Myself,BERSERKER_RAGE) // deliberately force cast, enrage is an innate ability and cannot be disrupted
+		RemoveSpell(BERSERKER_RAGE) // remove one instance of the spell upon casting
 		DisplayString(Myself,33783) // RRRAAAUUGH!!
 		SetInterrupt(TRUE)
 END

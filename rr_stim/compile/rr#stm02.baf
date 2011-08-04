@@ -28,6 +28,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -119,35 +120,50 @@ END
 
 IF
 	Global("RR#Active","LOCALS",0)
-	OR(2)
-	  TookDamage()
+        Allegiance(Myself,EVILCUTOFF)
 	  See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
 
 IF
-	OR(3)
-	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
+	Global("RR#Active","LOCALS",1)
 	Global("RR#Cntg","LOCALS",0)
 	HPPercentLT(Myself,51)
+        !StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Cntg","LOCALS",1)
 		DisplayStringHead(Myself,25942) // Contingency
 		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
 		Continue()
+END
+
+IF
+	OR(4)
+	  Global("RR#Active","LOCALS",0)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+		SetGlobal("RR#Cntg","LOCALS",0) // reset Contingency variable
+		SetGlobal("RR#Seq","LOCALS",0) // reset Spell Sequencer variable
+		SetGlobal("RR#MSeq","LOCALS",0) // reset Minor Sequencer variable
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -2249,7 +2265,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	!GlobalTimerExpired("RR#Cast","LOCALS")
 	CheckStatLT(Myself,1,SANCTUARY)
-	ActionListEmpty()
 	!HaveAnySpells()
 	!StateCheck(Myself,STATE_INVISIBLE)
 	See([GOODCUTOFF])
@@ -2263,7 +2278,6 @@ IF
 	Global("RR#Active","LOCALS",1)
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
-	ActionListEmpty()
 	!StateCheck(Myself,STATE_BLIND)
 	OR(2)
 	  RandomNum(5,1)
@@ -2277,7 +2291,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	Global("RR#Active","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100

@@ -2678,20 +2678,29 @@ Requires: Danger Sense~
 
 With a superhuman effort, a high-level rogue can avoid almost certain death. The effect lasts for 5 rounds and during this time the rogue's save vs. death receives a bonus of 5, hit points are increased by 20 and the rogue becomes immune to death magic for the duration of the ability.~
 
+@8016 = ~Set Exploding Trap
+
+By mixing unstable alchemical compounds together, a rogue can set a trap which unleashes a powerful explosion when triggered. The force of the blast causes 15d6 points of fire damage and may knock nearby opponents off their feet. Enemies may attempt to save vs. breath in order to reduce the damage by half and avoid being knocked down. Exceptionally large or heavy creatures (Dragons, Giants, Stone and Iron Golems) cannot be knocked down.~
+
+@8017 = ~Set Spike Trap
+
+This ability allows the rogue to set a powerful spring-loaded spike trap that deals 20D6 points of piercing damage to the unsuspecting creature that sets it off.~
+
+
 // Revised Alchemy HLA and assorted dialogue (8100 - 8199)
 
 @8100 = ~Alchemy
 
 With cleverness innate to the class, an experienced thief has seen enough potions in his or her adventuring career to simulate the creation of one. However, the costs for any raw materials that are used in the process must be paid. This ability allows a thief to brew one of the potions from the following list:
 
-1) Potion of Mind Focusing
-2) Potion of Clarity
-3) Potion of Regeneration
+1) Potion of Master Thievery
+2) Potion of Perception
+3) Potion of Invisibility
 4) Potion of Defense
 5) Potion of Superior Healing
 6) Elixir of Health
 7) Oil of Speed
-8) Potion of Freedom
+8) Oil of Fiery Burning
 9) Potion of Frost Giant Strength, only usable by thieves or bards
 
 Note: brewing potions is a delicate task which can only be undertaken in safe (non-hostile) areas.~

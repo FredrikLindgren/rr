@@ -1,20 +1,30 @@
 IF
-	OR(3)
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+        !StateCheck(Myself,STATE_CHARMED)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	OR(4)
 	  GlobalLT("RR#CSAVE","GLOBAL",2)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
 END
 
 IF
-	!Allegiance(Myself,EVILCUTOFF)
-	GlobalGT("RR#CSAVE","GLOBAL",1)
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
 THEN
 	RESPONSE #100
-		Enemy()
-		Continue()
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -1251,9 +1261,27 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // protected from +1 weapons and above
+	!CheckStatLT(LastSeenBy(Myself),-10,ACMISSILEMOD)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	!HasItemEquiped("SHLD24",LastSeenBy(Myself)) // Reflection Shield +1
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
 	!See([GOODCUTOFF])
 	InMyArea(Player1)
-	ActionListEmpty()
 	RandomNum(5,1)
 THEN
 	RESPONSE #100
@@ -1263,7 +1291,6 @@ END
 IF
 	Global("RR#Heal","LOCALS",0)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100

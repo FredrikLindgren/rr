@@ -1,20 +1,30 @@
 IF
-	OR(3)
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+        !StateCheck(Myself,STATE_CHARMED)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	OR(4)
 	  GlobalLT("RR#CSAVE","GLOBAL",2)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
 END
 
 IF
-	!Allegiance(Myself,EVILCUTOFF)
-	GlobalGT("RR#CSAVE","GLOBAL",1)
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
 THEN
 	RESPONSE #100
-		Enemy()
-		Continue()
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -299,6 +309,68 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("RR#Cast","LOCALS",6)
 		Spell(Myself,CLERIC_CURE_DISEASE)
+END
+
+IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	OR(8)
+	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_INCENDIARY_CLOUD)
+	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_STINKING_CLOUD)
+	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_CLOUDKILL)
+	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_DEATH_FOG)
+	  SpellCast([GOODCUTOFF.0.0.BARD_ALL],WIZARD_INCENDIARY_CLOUD)
+	  SpellCast([GOODCUTOFF.0.0.BARD_ALL],WIZARD_STINKING_CLOUD)
+	  SpellCast([GOODCUTOFF.0.0.BARD_ALL],WIZARD_CLOUDKILL)
+	  SpellCast([GOODCUTOFF.0.0.BARD_ALL],WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	OR(8)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	OR(8)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	Global("RR#Cloud","LOCALS",1) // variable indicating that a clod spell has been seen
+	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetGlobal("RR#Cloud","LOCALS",0) // reset cloud variable
+		Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)
 END
 
 IF
@@ -717,23 +789,6 @@ THEN
 		SetGlobalTimer("RR#Cast","LOCALS",6)
 		Spell("RR#BODK",CLERIC_REMOVE_FEAR)
 		SetInterrupt(TRUE)
-END
-
-IF
-	!GlobalTimerNotExpired("RR#Cast","LOCALS")
-	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)
-	OR(4)
-		SpellCast([ANYONE],WIZARD_INCENDIARY_CLOUD)
-		SpellCast([ANYONE],WIZARD_STINKING_CLOUD)
-		SpellCast([ANYONE],WIZARD_CLOUDKILL)
-		SpellCast([ANYONE],WIZARD_DEATH_FOG)
-	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("RR#Cast","LOCALS",6)
-		Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)
 END
 
 IF
@@ -1468,7 +1523,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	!See([GOODCUTOFF])
 	InMyArea(Player1)
-	ActionListEmpty()
 	RandomNum(5,1)
 THEN
 	RESPONSE #100
@@ -1478,7 +1532,6 @@ END
 IF
 	!Global("RR#Heal","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100

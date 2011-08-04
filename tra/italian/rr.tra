@@ -2425,10 +2425,19 @@ Richiede: Scopri Pericoli~
 
 Grazie ad uno sforzo sovrumano, un ladro di alto livello può sfuggire alla morte anche quando sembra certa. L'effetto dura 5 round e in questo periodo i tiri salvezza contro morte del ladro godono di un bonus di +5, i suoi punti ferita sono aumentati di 20 e diventa immune alla magie che uccidono istantaneamente.~
 
+@8016 = ~Piazzare Trappola Esplosiva
+
+Da una miscela instabile di composti alchemici, un ladro può creare e piazzare una trappola che scatena una potente esplosione quando viene attivata. La forza dell’esplosione causa 15d6 punti di danno da fuoco agli avversari nelle vicinanze. Le vittime possono provare a ridurre di metà il danno con un tiro salvezza contro il soffio ed evitare di cadere a terra. Le creature eccezionalmente grandi o pesanti (Draghi, Giganti, Golem di Pietra e Golem di ferro) non possono essere atterrate.~
+
+@8017 = ~Piazzare Trappola con Spuntoni
+
+Questa capacità consente al ladro di piazzare una potente trappola con spuntoni a molla, che infligge 20d6 danni all'ignara creatura che la fa scattare.~
+
+
 // Revised Alchemy HLA and assorted dialogue (8100 - 8199)
 @8100 = ~Alchimia
 
-Grazie all'intelligenza inerente alla sua professione, un ladro esperto ha visto abbastanza pozioni, nel corso della sua vita da avventuriero, da poterne imitare la mescita. Tuttavia, i costi delle materie prime necessarie all'operazione devono essere coperti. Questa abilità consente al ladro di mescere una pozione dalla lista seguente:
+Grazie all'abilità innata della classe, un ladro esperto ha visto abbastanza pozioni, nel corso della sua vita da avventuriero, da poterne imitare la mescita. Tuttavia, i costi delle materie prime necessarie all'operazione devono essere coperti. Questa abilità consente al ladro di mescere una pozione dalla lista seguente:
 1) Pozione della Focalizzazione dei Pensieri
 2) Pozione di Chiarezza
 3) Pozione di Rigenerazione
@@ -2581,3 +2590,4 @@ Nota: scrivere pergamene è un'operazione delicata che può essere svolta solo in 
 
 @-1004="PER FAVORE riporta il messaggio d'errore nel file"
 @-1005= "a"
+

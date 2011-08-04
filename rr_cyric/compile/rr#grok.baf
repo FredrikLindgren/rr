@@ -1,20 +1,30 @@
 IF
-	OR(3)
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+        !StateCheck(Myself,STATE_CHARMED)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	OR(4)
 	  GlobalLT("RR#CSAVE","GLOBAL",2)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
 END
 
 IF
-	!Allegiance(Myself,EVILCUTOFF)
-	GlobalGT("RR#CSAVE","GLOBAL",1)
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
 THEN
 	RESPONSE #100
-		Enemy()
-		Continue()
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -529,11 +539,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat(SixthNearest([PC]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(SixthNearest([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(SixthNearest([PC]),100,RESISTSLASHING)
-	StateCheck(SixthNearest([PC]),STATE_IMMOBILE)
-	See(SixthNearest([PC]))
+	!CheckStat(SixthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SixthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTSLASHING)
+	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(SixthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
@@ -542,11 +552,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat(FifthNearest([PC]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(FifthNearest([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(FifthNearest([PC]),100,RESISTSLASHING)
-	StateCheck(FifthNearest([PC]),STATE_IMMOBILE)
-	See(FifthNearest([PC]))
+	!CheckStat(FifthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(FifthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTSLASHING)
+	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(FifthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
@@ -555,11 +565,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat(FourthNearest([PC]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(FourthNearest([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(FourthNearest([PC]),100,RESISTSLASHING)
-	StateCheck(FourthNearest([PC]),STATE_IMMOBILE)
-	See(FourthNearest([PC]))
+	!CheckStat(FourthNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(FourthNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTSLASHING)
+	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(FourthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
@@ -568,11 +578,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat(ThirdNearest([PC]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(ThirdNearest([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(ThirdNearest([PC]),100,RESISTSLASHING)
-	StateCheck(ThirdNearest([PC]),STATE_IMMOBILE)
-	See(ThirdNearest([PC]))
+	!CheckStat(ThirdNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(ThirdNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTSLASHING)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(ThirdNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
@@ -581,11 +591,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat(SecondNearest([PC]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat(SecondNearest([PC]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT(SecondNearest([PC]),100,RESISTSLASHING)
-	StateCheck(SecondNearest([PC]),STATE_IMMOBILE)
-	See(SecondNearest([PC]))
+	!CheckStat(SecondNearest([GOODCUTOFF]),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(SecondNearest([GOODCUTOFF]),2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTSLASHING)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	See(SecondNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
@@ -594,11 +604,11 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat([PC],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat([PC],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT([PC],100,RESISTSLASHING)
-	StateCheck([PC],STATE_IMMOBILE)
-	See([PC])
+	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([GOODCUTOFF],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	See([GOODCUTOFF])
 	False()
 THEN
 	RESPONSE #100
@@ -607,12 +617,90 @@ END
 
 IF
 	Global("RR#Heal","LOCALS",0)
-	!CheckStat([PC],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
-	!CheckStat([PC],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
-	CheckStatLT([PC],100,RESISTSLASHING)
-	CheckStatLT([PC],1,STONESKINS)
-	StateCheck([PC],STATE_IMMOBILE)
-	See([PC])
+	!CheckStat([GOODCUTOFF],3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat([GOODCUTOFF],2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player6,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player6,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player6,100,RESISTSLASHING)
+	StateCheck(Player6,STATE_IMMOBILE)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player5,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player5,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player5,100,RESISTSLASHING)
+	StateCheck(Player5,STATE_IMMOBILE)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player4,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player4,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player4,100,RESISTSLASHING)
+	StateCheck(Player4,STATE_IMMOBILE)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player3,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player3,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player3,100,RESISTSLASHING)
+	StateCheck(Player3,STATE_IMMOBILE)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player2,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player2,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player2,100,RESISTSLASHING)
+	StateCheck(Player2,STATE_IMMOBILE)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	Global("RR#Heal","LOCALS",0)
+	!CheckStat(Player1,3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+	!CheckStat(Player1,2,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Improved Mantle
+	CheckStatLT(Player1,100,RESISTSLASHING)
+	StateCheck(Player1,STATE_IMMOBILE)
+	See(Player1)
 	False()
 THEN
 	RESPONSE #100
@@ -781,7 +869,6 @@ IF
 	Global("RR#Heal","LOCALS",0)
 	!See([GOODCUTOFF])
 	InMyArea(Player1)
-	ActionListEmpty()
 	RandomNum(5,1)
 THEN
 	RESPONSE #100
@@ -791,7 +878,6 @@ END
 IF
 	Global("RR#Heal","LOCALS",0)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100

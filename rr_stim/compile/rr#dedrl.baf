@@ -22,6 +22,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -69,25 +70,45 @@ THEN
 END
 
 IF
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+		Shout(124)
+		StartDialogueNoSet([PC])
+END
+
+IF
 	Global("RR#Active","LOCALS",0)
-	OR(2)
-	  TookDamage()
+        Allegiance(Myself,EVILCUTOFF)
 	  See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
 
 IF
-	OR(3)
+	OR(4)
 	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -100,12 +121,11 @@ THEN
 END
 
 IF
-	NumTimesTalkedTo(0)
-	See([PC])
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
 THEN
 	RESPONSE #100
-		Shout(124)
-		StartDialogueNoSet([PC])
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -200,7 +220,6 @@ IF
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
 	!StateCheck(Myself,STATE_BLIND)
-	ActionListEmpty()
 	OR(2)
 	  RandomNum(5,1)
 	  CombatCounter(0)
@@ -213,7 +232,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	Global("RR#Active","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -231,6 +249,7 @@ END
 IF
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(SixthNearest([GOODCUTOFF]))
@@ -243,6 +262,7 @@ END
 IF
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(FifthNearest([GOODCUTOFF]))
@@ -255,6 +275,7 @@ END
 IF
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(FourthNearest([GOODCUTOFF]))
@@ -267,6 +288,7 @@ END
 IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
 	See(ThirdNearest([GOODCUTOFF]))
@@ -279,6 +301,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
 	See(SecondNearest([GOODCUTOFF]))
@@ -291,6 +314,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF],STATE_PANIC)
 	See([GOODCUTOFF])
@@ -303,6 +327,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
 	InWeaponRange([GOODCUTOFF.0.0.BARD_ALL])
@@ -316,6 +341,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
 	InWeaponRange([GOODCUTOFF.0.0.DRUID_ALL])
@@ -329,6 +355,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
 	InWeaponRange([GOODCUTOFF.0.0.CLERIC_ALL])
@@ -342,6 +369,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
 	InWeaponRange([GOODCUTOFF.0.0.MAGE_ALL])
@@ -356,6 +384,7 @@ IF
 	HitBy([ANYONE],CRUSHING) // hit by any damage type
 	!CheckStatGT(LastHitter(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(LastHitter(Myself),1,STONESKINS)
+	CheckStatLT(LastHitter(Myself),100,RESISTSLASHING)
 	!StateCheck(LastHitter(Myself),STATE_MIRRORIMAGE)
 	!StateCheck(LastHitter(Myself),STATE_PANIC)
 	OR(2)
@@ -371,6 +400,7 @@ END
 IF
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	See(SixthNearest([GOODCUTOFF]))
@@ -383,6 +413,7 @@ END
 IF
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	See(FifthNearest([GOODCUTOFF]))
@@ -395,6 +426,7 @@ END
 IF
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	See(FourthNearest([GOODCUTOFF]))
@@ -407,6 +439,7 @@ END
 IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	See(ThirdNearest([GOODCUTOFF]))
@@ -419,6 +452,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	See(SecondNearest([GOODCUTOFF]))
@@ -431,6 +465,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
 	See([GOODCUTOFF])
@@ -441,8 +476,75 @@ THEN
 END
 
 IF
+	!CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player6,STATE_IMMOBILE)
+	CheckStatLT(Player6,100,RESISTSLASHING)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player5,STATE_IMMOBILE)
+	CheckStatLT(Player5,100,RESISTSLASHING)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player4,STATE_IMMOBILE)
+	CheckStatLT(Player4,100,RESISTSLASHING)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player3,STATE_IMMOBILE)
+	CheckStatLT(Player3,100,RESISTSLASHING)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player2,STATE_IMMOBILE)
+	CheckStatLT(Player2,100,RESISTSLASHING)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
+	StateCheck(Player1,STATE_IMMOBILE)
+	CheckStatLT(Player1,100,RESISTSLASHING)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
@@ -455,6 +557,7 @@ END
 IF
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTSLASHING)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
 	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
@@ -467,6 +570,7 @@ END
 IF
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Mantle or above
 	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTSLASHING)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
 	See([GOODCUTOFF.0.0.MAGE_ALL])

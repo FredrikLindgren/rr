@@ -11,6 +11,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
@@ -24,18 +25,44 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
 		Shout(124)
 		Continue()
 END
 
 IF
-	OR(3)
+	Global("RR#Active","LOCALS",1)
+	Global("RR#Cntg","LOCALS",0)
+        !StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cntg","LOCALS",1)
+		DisplayStringHead(Myself,25942) // Contingency
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+		Continue()
+END
+
+IF
+	OR(4)
 	  Global("RR#Active","LOCALS",0)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
 	RESPONSE #100
 		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("RR#Rest","LOCALS") // re-initialize the rest timer
+THEN
+	RESPONSE #100
+		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+		SetGlobal("RR#Cntg","LOCALS",0) // reset Contingency variable
+		SetGlobal("RR#Seq","LOCALS",0) // reset Spell Sequencer variable
+		SetGlobal("RR#MSeq","LOCALS",0) // reset Minor Sequencer variable
+                ApplySpell(Myself,RESTORE_FULL_HEALTH) // heal up
+                Rest()
 END
 
 IF
@@ -48,13 +75,18 @@ THEN
 END
 
 IF
-	Global("RR#Cntg","LOCALS",0)
+	Global("RR#Seq","LOCALS",0)
+	!GlobalTimerNotExpired("RR#Cast","LOCALS")
+	!StateCheck(Myself,STATE_SILENCED)
 THEN
 	RESPONSE #100
-		SetGlobal("RR#Cntg","LOCALS",1)
-		DisplayStringHead(Myself,25942) // Contingency
-		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
-		Continue()
+		SetGlobal("RR#Seq","LOCALS",1)
+		SetGlobalTimer("RR#Cast","LOCALS",6)
+		SetSequence(SEQ_CAST) // Displays the proper casting animation (for cosmetic purposes)
+		DisplayStringHead(Myself,25951) // Spell Sequencer
+		ReallyForceSpell(Myself,WIZARD_HASTE)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
 END
 
 IF
@@ -119,21 +151,6 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("RR#Cast","LOCALS",6)
 		Spell(Myself,WIZARD_VOCALIZE)
-END
-
-IF
-	Global("RR#Seq","LOCALS",0)
-	!GlobalTimerNotExpired("RR#Cast","LOCALS")
-	!StateCheck(Myself,STATE_SILENCED)
-THEN
-	RESPONSE #100
-		SetGlobal("RR#Seq","LOCALS",1)
-		SetGlobalTimer("RR#Cast","LOCALS",6)
-		SetSequence(SEQ_CAST) // Displays the proper casting animation (for cosmetic purposes)
-		DisplayStringHead(Myself,25951) // Spell Sequencer
-		ReallyForceSpell(Myself,WIZARD_HASTE)
-		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
-		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
 END
 
 IF
@@ -1513,7 +1530,6 @@ IF
 	!Detect([GOODCUTOFF])
 	InMyArea(Player1)
 	!StateCheck(Myself,STATE_BLIND)
-	ActionListEmpty()
 THEN
 	RESPONSE #100
 		MoveToObject(Player1)
@@ -1523,7 +1539,6 @@ IF
 	!Global("RR#Heal","LOCALS",1)
 	Global("RR#Active","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100

@@ -1,20 +1,60 @@
 IF
-	OR(3)
-	  GlobalLT("RR#CSAVE","GLOBAL",2)
-	  StateCheck(Myself,STATE_REALLY_DEAD)
-	  StateCheck(Myself,STATE_DISABLED)
+	!Allegiance(Myself,EVILCUTOFF)
+	GlobalGT("RR#CSAVE","GLOBAL",1)
+        !StateCheck(Myself,STATE_CHARMED)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	GlobalLT("RR#CSAVE","GLOBAL",2)  // allowing for contingencies to kick in while immobile but not during the cutscene      
 THEN
 	RESPONSE #100
 		NoAction()
 END
 
 IF
-	!Allegiance(Myself,EVILCUTOFF)
-	GlobalGT("RR#CSAVE","GLOBAL",1)
+	Global("RR#CHCntg","LOCALS",0)
 THEN
 	RESPONSE #100
-		Enemy()
+		SetGlobal("RR#CHCntg","LOCALS",1)
+		DisplayStringHead(Myself,26328)  // Chain Contingency
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+		ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
 		Continue()
+END
+
+IF
+	Global("RR#Cntg","LOCALS",0)
+	HPPercentLT(Myself,51)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cntg","LOCALS",1)
+		DisplayString(Myself,25942) // Contingency
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+		Continue()
+END
+
+IF
+	OR(4)
+	  GlobalLT("RR#CSAVE","GLOBAL",2)
+          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
+	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+
+	StateCheck(Myself,STATE_PANIC)  // needed because the AI can perform script actions (i.e. drink potions) while panicked, unlike the player
+THEN
+	RESPONSE #100
+		RandomWalkContinuous() // using this instead of NoAction() because otherwise panicked characters would stand in place
 END
 
 IF
@@ -55,29 +95,6 @@ THEN
 		SmallWait(6)
 		ReallyForceSpell(Player1,WIZARD_CONFUSION)
 		SetInterrupt(TRUE)
-END
-
-IF
-	Global("RR#CHCntg","LOCALS",0)
-THEN
-	RESPONSE #100
-		SetGlobal("RR#CHCntg","LOCALS",1)
-		DisplayStringHead(Myself,26328)  // Chain Contingency
-		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
-		ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
-		Continue()
-END
-
-IF
-	Global("RR#Cntg","LOCALS",0)
-	HPPercentLT(Myself,51)
-THEN
-	RESPONSE #100
-		SetGlobal("RR#Cntg","LOCALS",1)
-		DisplayString(Myself,25942) // Contingency
-		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
-		Continue()
 END
 
 IF
@@ -2580,7 +2597,6 @@ END
 IF
 	!Global("RR#Heal","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	InMyArea(Player1)
 	RandomNum(5,1)
 THEN
@@ -2591,7 +2607,6 @@ END
 IF
 	!Global("RR#Heal","LOCALS",1)
 	!See([GOODCUTOFF])
-	ActionListEmpty()
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
@@ -2603,7 +2618,7 @@ IF
 	!Range(NearestEnemyOf(Myself),4)
 	!StateCheck(Myself,STATE_INVISIBLE)
 	HasItem("DART05",Myself) // Asp's Nest
-	See(WorstAC(NearestEnemyOf(Myself)))
+        See(WorstAC([PC]))
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 THEN
@@ -2617,7 +2632,7 @@ IF
 	!StateCheck(Myself,STATE_INVISIBLE)
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
 	!HasItem("DART05",Myself) // Asp's Nest
-	See(WorstAC(NearestEnemyOf(Myself)))
+	See(WorstAC([PC]))
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 THEN
 	RESPONSE #100

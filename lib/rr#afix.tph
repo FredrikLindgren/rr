@@ -87,6 +87,22 @@ APPEND ~STATE.IDS~ ~0x00400010 STATE_NOT_TARGETABLE~ UNLESS ~0x00400010 STATE_NO
 APPEND ~STATE.IDS~ ~0x8010202D STATE_DISABLED~ UNLESS ~0x8010202D STATE_DISABLED~              // includes Helpless, Stunned, Panic, Sleeping, Charmed, Feebleminded, Confused
 
 
+// TRIGGER.IDS additions (mirrors G3 BG2 Fixpack code)
+
+APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
+              UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
+APPEND ~TRIGGER.IDS~ ~0x0091 SpellCastRES(S:Spell*,O:Object*)~
+              UNLESS ~0x0091 SpellCastRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x00A6 SpellCastPriestRES(S:Spell*,O:Object*)~
+              UNLESS ~0x00A6 SpellCastPriestRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
+              UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
+              UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
+APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
+              UNLESS ~0x40D5 ActuallyInCombat()~
+
+
 // Music lists which are used in RR and which need to be in NPC format in order to be used via PlaySong() action (matches unmodded game, undoes G3 BG2 Fixpack change)
 // Using MXAERIE.MUS as a base since Aerie's theme song is in NPC format
 ACTION_IF FILE_EXISTS_IN_GAME ~CDDETEVL.pro~ AND !FILE_EXISTS_IN_GAME ~_sw1h01.itm~ THEN BEGIN // only install this if the Core Component of the G3 BG2 Fixpack is detected, never install on Tutu
@@ -174,7 +190,7 @@ COPY_EXISTING ~WEAPPROF.2DA~                 ~override~             // correct t
 COPY_EXISTING ~SPCL412.spl~ ~override~                              // Set snare
               ~SPCL414.spl~ ~override~                              // Set special snare
               ~SPCL910.spl~ ~override~                              // Set Spike Trap
-	      ~SPCL911.SPL~ ~override~                              // Set Exploding Trap
+              ~SPCL911.spl~ ~override~                              // Set Exploding Trap
   WRITE_LONG 0x34 1                                                 // Set the spell level to 1
 BUT_ONLY_IF_IT_CHANGES
 
@@ -340,7 +356,6 @@ COPY_EXISTING ~spwi307.spl~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 END  // ends the ACTION_IF check for the G3 BG2 Fixpack BETA Core Fixes component
-
 
 
 // Clone several spells and make them innate in order to avoid Cowled Wizard magic license warning and item caster level issues

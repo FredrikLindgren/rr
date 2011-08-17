@@ -447,7 +447,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player1)
-	!StateCheck(Player1,STATE_NOT_TARGETABLE)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player1,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player1,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -467,7 +467,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player2)
-	!StateCheck(Player2,STATE_NOT_TARGETABLE)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player2,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player2,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -487,7 +487,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player3)
-	!StateCheck(Player3,STATE_NOT_TARGETABLE)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player3,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player3,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -507,7 +507,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player4)
-	!StateCheck(Player4,STATE_NOT_TARGETABLE)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player4,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player4,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -527,7 +527,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player5)
-	!StateCheck(Player5,STATE_NOT_TARGETABLE)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player5,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player5,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -547,7 +547,7 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#PierceW","LOCALS",6)
 	See(Player6)
-	!StateCheck(Player6,STATE_NOT_TARGETABLE)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
 	OR(3)
 	  CheckStat(Player6,2,WIZARD_SPELL_DEFLECTION)      // Spell Deflection
 	  CheckStat(Player6,2,WIZARD_SPELL_TURNING)         // Spell Turning
@@ -567,8 +567,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player1,STATE_NOT_TARGETABLE)
-	HPGT(Player1,1)
+	!StateCheck(Player1,STATE_INVISIBLE)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -584,8 +584,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player2,STATE_NOT_TARGETABLE)
-	HPGT(Player2,1)
+	!StateCheck(Player2,STATE_INVISIBLE)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -601,8 +601,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player3,STATE_NOT_TARGETABLE)
-	HPGT(Player3,1)
+	!StateCheck(Player3,STATE_INVISIBLE)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -618,8 +618,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player4,STATE_NOT_TARGETABLE)
-	HPGT(Player4,1)
+	!StateCheck(Player4,STATE_INVISIBLE)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -635,8 +635,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player5,STATE_NOT_TARGETABLE)
-	HPGT(Player5,1)
+	!StateCheck(Player5,STATE_INVISIBLE)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -652,8 +652,8 @@ IF
 	HasItem("WAND18",Myself) // Wand of Spell Striking
 	GlobalLT("RR#BreachW","LOCALS",6)
 	CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-	!StateCheck(Player6,STATE_NOT_TARGETABLE)
-	HPGT(Player6,1)
+	!StateCheck(Player6,STATE_INVISIBLE)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -1039,7 +1039,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See([PC.0.0.CLERIC])
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),4,SAVEVSWANDS)
@@ -1073,7 +1073,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See([PC.0.0.FIGHTER])
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),4,SAVEVSWANDS)
@@ -1107,7 +1107,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player1)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1141,7 +1141,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player2)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1175,7 +1175,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player3)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1209,7 +1209,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player4)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1243,7 +1243,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player5)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1277,7 +1277,7 @@ IF
 	HasItem("WAND04",Myself) // Wand of Paralyzation 
 	DifficultyGT(EASY)
 	See(Player6)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)
@@ -1314,7 +1314,7 @@ IF
 	!General(LastSeenBy(Myself),UNDEAD)
 	!Race(LastSeenBy(Myself),DEMONIC)
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
 	!CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSWANDS)

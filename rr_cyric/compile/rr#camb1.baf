@@ -46,9 +46,9 @@ THEN
         ActionOverride("RR#BODK",FaceObject("RR#VEND"))
 	Wait(3)
         DisplayStringWait("RR#SELI",@510)
-        CreateCreatureDoor("RR#ZAER",[471.569],0) // Zaeron
+        CreateCreatureDoor("RR#ZAER",[471.569],6) // Zaeron
         Wait(1)
-        CreateCreatureDoor("RR#KERT",[510.520],0) // Kerith
+        CreateCreatureDoor("RR#KERT",[510.520],2) // Kerith
         ActionOverride("RR#VEND",FaceObject("RR#ZAER"))
         Wait(3)
         ActionOverride("RR#ZAER",FaceObject("RR#VEND"))

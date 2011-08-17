@@ -150,6 +150,7 @@ END
 IF
 	HasItem("HARM",Myself) // Harm
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 THEN
 	RESPONSE #100
@@ -312,7 +313,7 @@ THEN
 END
 
 IF
-	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
 	OR(8)
 	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_INCENDIARY_CLOUD)
 	  SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_STINKING_CLOUD)
@@ -328,7 +329,7 @@ THEN
 END
 
 IF
-	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
 	OR(8)
 	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
 	  SpellCast(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
@@ -344,7 +345,7 @@ THEN
 END
 
 IF
-	Global("RR#Cloud","LOCALS",0) // variable indicating that a clod spell has been seen
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
 	OR(8)
 	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
 	  SpellCast(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
@@ -360,8 +361,56 @@ THEN
 END
 
 IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
+	OR(8)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(FourthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
+	OR(8)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(FifthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
+	Global("RR#Cloud","LOCALS",0) // variable indicating that a cloud spell has been seen
+	OR(8)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.MAGE_ALL]),WIZARD_DEATH_FOG)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_INCENDIARY_CLOUD)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_STINKING_CLOUD)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_CLOUDKILL)
+	  SpellCast(SixthNearest([GOODCUTOFF.0.0.BARD_ALL]),WIZARD_DEATH_FOG)
+THEN
+	RESPONSE #100
+		SetGlobal("RR#Cloud","LOCALS",1) // set cloud variable
+END
+
+IF
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
-	Global("RR#Cloud","LOCALS",1) // variable indicating that a clod spell has been seen
+	Global("RR#Cloud","LOCALS",1) // variable indicating that a cloud spell has been seen
 	HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)
 	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)

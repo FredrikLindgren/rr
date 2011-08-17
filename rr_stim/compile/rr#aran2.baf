@@ -481,7 +481,9 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	See([GOODCUTOFF.0.MIST.0.0.SUMMONED])
-	HasItem("NISHRUU",LastSeenBy(Myself)) // Nishruu or Hakeashar
+	OR(2)
+	  HasItem("NISHRUU",LastSeenBy(Myself)) // Nishruu or Hakeashar (unmodded game)
+	  HasItem("HAKSU",LastSeenBy(Myself)) // Spell Revisions' Hakeashar
 	!StateCheck(Player1,STATE_DISABLED)
 	!StateCheck(Player2,STATE_DISABLED)
 	!StateCheck(Player3,STATE_DISABLED)

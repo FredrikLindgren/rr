@@ -1,5 +1,5 @@
 /*************************************************************************
- *               Rogue Rebalancing mod version 4.44
+ *               Rogue Rebalancing mod version 4.45
  *                            -=by aVENGER=-
  *                http://www.spellholdstudios.net/ie/rr
  *************************************************************************/
@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.44~                                                     // Mod version
+VERSION ~v4.45~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -1163,6 +1163,8 @@ COPY    ~RR/RR_CORE/SPELLS/RR#WSIC.SPL~    ~override~                // Spirit W
 COPY    ~RR/RR_CORE/SPELLS/RR#WSSK.SPL~    ~override~                // Spirit Warrior's power up ability (used when summoned by a Skald)
 COPY    ~RR/RR_CORE/ITEMS/RR#WSAX1.ITM~    ~override~                // Spirit Warrior's primary axe (with on hit effects)
 COPY    ~RR/RR_CORE/ITEMS/RR#WSAX2.ITM~    ~override~                // Spirit Warrior's secondary axe (with proper spectral undead immunities)
+LAUNCH_PATCH_FUNCTION ~cure_spell_immunities~ END                    // add immunity to cure/cause wound spells
+
 COPY    ~RR/RR_CORE/BAM/RR#BF01.BAM~       ~override~                // Bard Flute's Break Enchantment spell icon
 COPY    ~RR/RR_CORE/BAM/RR#BF02.BAM~       ~override~                // Bard Flute's Mimic Enchantment spell icon
 COPY    ~RR/RR_CORE/BAM/RR#BF03.BAM~       ~override~                // Bard Flute's Summon Spirit Warrior icon
@@ -1581,8 +1583,10 @@ COPY    ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~    ~override~               // The Guard
   SAY NAME2 @5004 SAY DESC @5005
 
 COPY    ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~    ~override~               // Lesser Shambler's weapon
-COPY    ~RR/RR_CORE/ITEMS/RR#SHM02.ITM~    ~override~               // Shambling Mound's weapon
-COPY    ~RR/RR_CORE/ITEMS/RR#SHM03.ITM~    ~override~               // Greater Shambler's weapon
+        ~RR/RR_CORE/ITEMS/RR#SHM02.ITM~    ~override~               // Shambling Mound's weapon
+        ~RR/RR_CORE/ITEMS/RR#SHM03.ITM~    ~override~               // Greater Shambler's weapon
+LAUNCH_PATCH_FUNCTION ~cure_spell_immunities~ END                   // add immunity to cure/cause wound spells
+
 COPY    ~RR/RR_CORE/SPELLS/RR#SHM01.EFF~   ~override~               // Lesser Shambler's summoning EFF
 COPY    ~RR/RR_CORE/SPELLS/RR#SHM02.EFF~   ~override~               // Shambling Mound's summoning EFF
 COPY    ~RR/RR_CORE/SPELLS/RR#SHM03.EFF~   ~override~               // Greater Shambler's summoning EFF

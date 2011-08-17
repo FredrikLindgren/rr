@@ -367,7 +367,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player1,60)
-	HPGT(Player1,1)
+        !StateCheck(Player1,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player1) // Cloak of Mirroring
 	!StateCheck(Player1,STATE_NOT_TARGETABLE)
 	!CheckStatGT(Player1,0,SANCTUARY)
@@ -396,7 +396,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player2,60)
-	HPGT(Player2,1)
+        !StateCheck(Player2,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player2) // Cloak of Mirroring
 	!StateCheck(Player2,STATE_NOT_TARGETABLE)
         !CheckStatGT(Player2,0,SANCTUARY)
@@ -425,7 +425,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player3,60)
-	HPGT(Player3,1)
+        !StateCheck(Player3,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player3) // Cloak of Mirroring
 	!StateCheck(Player3,STATE_NOT_TARGETABLE)
         !CheckStatGT(Player3,0,SANCTUARY)
@@ -454,7 +454,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player4,60)
-	HPGT(Player4,1)
+        !StateCheck(Player1,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player4) // Cloak of Mirroring
 	!StateCheck(Player4,STATE_NOT_TARGETABLE)
         !CheckStatGT(Player4,0,SANCTUARY)
@@ -483,7 +483,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player5,60)
-	HPGT(Player5,1)
+        !StateCheck(Player5,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player5) // Cloak of Mirroring
 	!StateCheck(Player5,STATE_NOT_TARGETABLE)
         !CheckStatGT(Player5,0,SANCTUARY)
@@ -512,7 +512,7 @@ IF
 	DifficultyGT(EASY)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	HPLT(Player6,60)
-	HPGT(Player6,1)
+        !StateCheck(Player6,STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",Player6) // Cloak of Mirroring
 	!StateCheck(Player6,STATE_NOT_TARGETABLE)
         !CheckStatGT(Player6,0,SANCTUARY)
@@ -547,7 +547,7 @@ IF
 		See(MostDamagedOf([GOODCUTOFF]))
 	CheckStatGT(LastSeenBy(Myself),9,LEVEL)
 	HPLT(LastSeenBy(Myself),60)
-	HPGT(LastSeenBy(Myself),1)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!HasItemEquiped("CLCK26",LastSeenBy(Myself)) // Cloak of Mirroring
 	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
         !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
@@ -579,7 +579,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player1,90)
-	HPGT(Player1,1) // filters out dead targets
+        !StateCheck(Player1,STATE_REALLY_DEAD)
 	!StateCheck(Player1,STATE_NOT_TARGETABLE)
 	!StateCheck(Player1,STATE_HARMLESS)
 	!CheckStatGT(Player1,0,WIZARD_SPELL_DEFLECTION)
@@ -609,7 +609,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player2,90)
-	HPGT(Player2,1) // filters out dead targets
+        !StateCheck(Player2,STATE_REALLY_DEAD)
 	!StateCheck(Player2,STATE_NOT_TARGETABLE)
 	!StateCheck(Player2,STATE_HARMLESS)
 	!CheckStatGT(Player2,0,WIZARD_SPELL_DEFLECTION)
@@ -639,7 +639,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player3,90)
-	HPGT(Player3,1) // filters out dead targets
+        !StateCheck(Player3,STATE_REALLY_DEAD)
 	!StateCheck(Player3,STATE_NOT_TARGETABLE)
 	!StateCheck(Player3,STATE_HARMLESS)
 	!CheckStatGT(Player3,0,WIZARD_SPELL_DEFLECTION)
@@ -669,7 +669,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player4,90)
-	HPGT(Player4,1) // filters out dead targets
+        !StateCheck(Player4,STATE_REALLY_DEAD)
 	!StateCheck(Player4,STATE_NOT_TARGETABLE)
 	!StateCheck(Player4,STATE_HARMLESS)
 	!CheckStatGT(Player4,0,WIZARD_SPELL_DEFLECTION)
@@ -699,7 +699,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player5,90)
-	HPGT(Player5,1) // filters out dead targets
+        !StateCheck(Player5,STATE_REALLY_DEAD)
 	!StateCheck(Player5,STATE_NOT_TARGETABLE)
 	!StateCheck(Player5,STATE_HARMLESS)
 	!CheckStatGT(Player5,0,WIZARD_SPELL_DEFLECTION)
@@ -729,7 +729,7 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	HPLT(Player6,90)
-	HPGT(Player6,1) // filters out dead targets
+        !StateCheck(Player6,STATE_REALLY_DEAD)
 	!StateCheck(Player6,STATE_NOT_TARGETABLE)
 	!StateCheck(Player6,STATE_HARMLESS)
 	!CheckStatGT(Player6,0,WIZARD_SPELL_DEFLECTION)
@@ -760,6 +760,7 @@ IF
 	!StateCheck(Myself,STATE_SILENCED)
 	See([GOODCUTOFF])
 	HPLT(LastSeenBy(Myself),90)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!General(LastSeenBy(Myself),UNDEAD)
 	!Race(LastSeenBy(Myself),DEMONIC)
 	!Name("RR#SHM",LastSeenBy(Myself)) // RR's Shambling Mounds
@@ -807,7 +808,9 @@ IF
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)
 	See([GOODCUTOFF.0.MIST.0.0.SUMMONED])
-	HasItem("NISHRUU",LastSeenBy(Myself)) // Nishruu or Hakeashar
+	OR(2)
+	  HasItem("NISHRUU",LastSeenBy(Myself)) // Nishruu or Hakeashar (unmodded game)
+	  HasItem("HAKSU",LastSeenBy(Myself)) // Spell Revisions' Hakeashar
 	!StateCheck(Player1,STATE_DISABLED)
 	!StateCheck(Player2,STATE_DISABLED)
 	!StateCheck(Player3,STATE_DISABLED)

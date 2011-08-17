@@ -1,4 +1,5 @@
-@1 = ~Mise a jour du Combat a deux armes pour les voleurs et les bardes~
+@1 = ~Mise a jour du Combat a deux armes pour les voleurs et
+les bardes~
 @2 = ~Revisions des kits des voleurs~
 @3 = ~Revisions des kits des bardes~
 @4 = ~Revisions des capacites de haut niveau des bardes~
@@ -12,7 +13,8 @@
 @12 = ~* * *  Ce composant ne peut etre installe que sur TuTu  * * *~
 @13 = ~* * * Un composant similaire est deja present dans l'un des mods que vous utilisez actuellement. L'installation de ce composant est passee. * * *~
 @14 = ~* * *  Ce composant ne peut etre installe sur Classic Adventures.  * * *~
-@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs effets de se cumuler.~
+@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs
+effets de se cumuler.~
 @16 = ~Garder les potions par defaut et empecher leurs effets de se cumuler.~
 @17 = ~Ajustements raciaux propres pour les capacites de voleur~
 @18 = ~Equipement ameliorable~
@@ -2635,6 +2637,14 @@ Requiert : Sens du danger~
 
 Grâce à un effort surhumain, un voleur de haut niveau peut éviter une mort quasi-certaine. L'effet dure 5 rounds, et pendant ce temps, le voleur reçoit un bonus de +5 à ses jets de sauvegarde contre la mort, tandis que ses points de vie sont augmentés de 20, et il devient immunisé à la mort d'origine magique.~
 
+@8016 = ~Pose de pièges explosifs
+
+En mélangeant des composants alchimiques instables entre eux, un voleur peut poser un piège qui provoque une violente explosion lorsqu'il est déclenché. La puissance du souffle cause 15D6 points de dégâts de feu et peut renverser les adversaires. Les ennemis peuvent tenter un jet de sauvegarde contre les souffles pour réduire les dégâts de moitié et éviter d'être renversés. Les créatures exceptionnellement grandes (dragons, géants, golems de pierre et de fer) ne peuvent être renversées.~
+
+@8017 = ~Pose de pièges à pieux
+
+Cette capacité permet au voleur de poser un piège généreusement garni de pieux qui infligent 20D6 points de dégâts perforants à la créature insouciante qui le déclenche.~
+
 
 
 // Revised Alchemy HLA and assorted dialogue (8100 - 8199)
@@ -2643,14 +2653,14 @@ Grâce à un effort surhumain, un voleur de haut niveau peut éviter une mort quasi
 
 Avec l'intelligence inhérente à sa classe, un voleur expérimenté a vu suffisamment de potions durant ses pérégrinations pour que cela lui inspire la création de nouvelles. Cependant, le coût de tout matériau brut utilisé dans le processus doit être payé. Cette capacité permet à un voleur de préparer une des potions de la liste qui suit :
 
-1) Potion de focalisation mentale
-2) Potion de clarté
-3) Potion de régénération
+1) Potion de maître voleur
+2) Potion de perception
+3) Potion d'invisibilité
 4) Potion de défense
 5) Potion de soins majeurs
 6) Elixir de santé
 7) Huile de rapidité
-8) Potion de liberté
+8) Huile de feux ardents
 9) Potion de force de géant du froid, utilisable uniquement par les voleurs et les bardes
 
 Note : préparer des potions est une tâche délicate qui peut être uniquement effectuée dans une zone sûre (sans ennemi en vue).~
@@ -2802,12 +2812,13 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
 au niveau general plutot que de repondre aux questions pour chacun.
 "
-@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE
+installes ?
 Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
 @-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
 Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 
-@-1004= "S'IL VOUS PLAIT, signalez le message d'erreur dans le fichier"
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
 @-1005= "a"
 
 @-1006= "Installer le composant ["
@@ -2843,7 +2854,7 @@ Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
 
 @-1028= "Souhaitez-vous afficher les composants de ["
 @-1029= "] ?
-[Y]Oui, [N]on? "
+[Y]Oui, [N]on ? "
 
 @-1030= "] ?
 choisir un parmi :"
@@ -2862,4 +2873,3 @@ selection pre-definie :"
 @-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration
 courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection
 pre-definie :"
-

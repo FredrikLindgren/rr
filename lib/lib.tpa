@@ -62,3 +62,58 @@ END
     
     
           
+// Cure & cause wound spell immunities
+DEFINE_PATCH_FUNCTION cure_spell_immunities BEGIN
+    PATCH_FOR_EACH ~spell~ IN                                                          // grant immunity to each of the following spells
+                ~SPPR103~                                                              // Cure Light Wounds
+                ~SPPR215~                                                              // Cure Medium Wounds  (Spell Revisions)
+                ~SPPR315~                                                              // Cure Medium Wounds
+                ~SPPR401~                                                              // Cure Serious Wounds
+                ~SPPR404~                                                              // Neutralize Poison
+                ~SPPR502~                                                              // Cure Critical Wounds
+                ~SPPR514~                                                              // Mass Cure
+                ~SPPR607~                                                              // Heal
+                ~SPIN101~                                                              // Cure Light Wounds (Bhaalpower)
+                ~SPIN551~                                                              // Cause Serious Wounds (Hive Mother)
+                ~SPIN986~                                                              // Cause Serious Wounds (Beholder)
+                ~RR#DCSW~                                                              // RR/aTweaks Cause Serious Wounds (Marilith)
+                ~SPCL211~                                                              // Paladin Lay On Hands
+BEGIN                                                                                  // execute the following
+READ_ASCII 0 sig (3)
+  PATCH_MATCH "%sig%" WITH 
+      ~CRE~ BEGIN                                                                      // CRE file parsed
+      LAUNCH_PATCH_FUNCTION ~ADD_CRE_EFFECT~                                           // Starts FUNCTION call
+      INT_VAR                                                                          // initialize variables
+        "opcode" = "206"                                                               // effect: #206 (Protection from Spell)
+        "target" = "1"                                                                 // target: 1 (self)
+        "timing" = "9"                                                                 // timing mode: 9 (permanent after death)
+        "duration" = "0"                                                               // duration: 0
+        "parameter1" = "4742"                                                          // param1: string (Spell Ineffective)
+        "sectype" = "0"                                                                // secondary type: none
+        "probability1" = "100"                                                         // probability1: 100%
+      STR_VAR                                                                          // initialize strings
+        "resource"  = EVALUATE_BUFFER "%spell%"                                        // resref: the current spell
+        "effsource" = ""                                                               // effsource: none
+      END                                                                              // ends LAUNCH_PATCH_FUNCTION
+    END                                                                                // ends WITH CRE block
+    ~ITM~ BEGIN                                                                        // ITM file parsed
+      LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EQEFFECT~                                        // Starts FUNCTION call
+      INT_VAR                                                                          // initialize variables
+        "opcode" = "206"                                                               // effect: #206 (Protection from Spell)
+        "target" = "1"                                                                 // target: 1 (self)
+        "timing" = "2"                                                                 // timing mode: 2 (while equipped)
+        "duration" = "0"                                                               // duration: 0
+        "parameter1" = "4742"                                                          // param1: string (Spell Ineffective)
+        "sectype" = "0"                                                                // secondary type: none
+        "probability1" = "100"                                                         // probability1: 100%
+      STR_VAR                                                                          // initialize strings
+        "resource"  = EVALUATE_BUFFER "%spell%"                                        // resref: the current spell
+        "effsource" = ""                                                               // effsource: none
+      END                                                                              // ends LAUNCH_PATCH_FUNCTION
+    END                                                                                // ends WITH ITM block
+    DEFAULT                                                                            // do nothing
+END                                                                                    // ends PATCH_MATCH
+END                                                                                    // ends PATCH_FOR_EACH
+END                                                                                    // ends DEFINE_PATCH_FUNCTION
+
+

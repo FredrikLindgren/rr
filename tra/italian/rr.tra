@@ -2256,7 +2256,7 @@ Tipo: a una mano
 Non utilizzabile da:
  Chierico~
 @5014 = ~Spaccapietre +4~
-@5015 = ~Oscure rune orchesche sono state incise su questa clava. Si tratta di un resto dell'ultima guerra combattuta fra gli orchi e i maghi di Turm. Quando le tribù degli orchi iniziarono a razziare la loro città, i maghi costruirono golem di grande potere affinché li proteggessero. Resosi conto che la forza bruta dei suoi predoni non sarebbe stata sufficiente, il grande capo orchesco Gull-Nar ordinò agli sciamani di forgiare un'arma che gli consentisse di ridurre in polvere le "statue viventi". Sfruttando i tomi che avevano sottratto da una torre di maghi durante una sortita precedente, gli sciamani incantarono l'arma d'elezione del loro capo, un grossa clava. Gull-Nar ne fu compiaciuto al punto che decise di condurre personalmente la razzia successiva, facendo i golem a pezzi a mano a mano che si faceva strada verso il centro della città. L'avanzata sembrava ormai inarrestabile quando un mago solitario di nero vestito apparve dal nulla e lanciò un potente incantesimo che rivoltò gli orchi contro i propri simili. Nel giro di pochi minuti, il loro esercito fu decimato e lo stesso Gull-Nar fu ucciso da coloro che un tempo erano i suoi guerrieri più fidati. Ulteriormente incantata grazie al sapere ricavato dal Tomo dei Golem, la clava è ora uno strumento ancor più temibile contro golem e costrutti.
+@5015 = ~Oscure rune orchesche sono state incise su questa clava. Si tratta di un resto dell'ultima guerra combattuta fra gli orchi e i maghi di Turm. Quando le tribù degli orchi iniziarono a razziare la loro città, i maghi costruirono golem di grande potere affinché li proteggessero. Resosi conto che la forza bruta dei suoi predoni non sarebbe stata sufficiente, il grande capo orchesco Gull-Nar ordinò agli sciamani di forgiare un'arma che gli consentisse di ridurre in polvere le "statue viventi". Sfruttando i tomi che avevano sottratto da una torre di maghi durante una sortita precedente, gli sciamani incantarono l'arma d'elezione del loro capo, un grossa clava. Gull-Nar ne fu compiaciuto al punto che decise di condurre personalmente la razzia successiva, facendo i golem a pezzi a mano a mano che si faceva strada verso il centro della città. L'avanzata sembrava ormai inarrestabile quando un mago solitario di nero vestito apparve dal nulla e lanciò un potente incantesimo che rivoltò gli orchi contro i propri simili. Nel giro di pochi minuti, il loro esercito fu decimato e lo stesso Gull-Nar fu ucciso da coloro che un tempo erano i suoi guerrieri più fidati. Ulteriormente incantata grazie al sapere ricavato dal Libro di Costruzione dei Golem, la clava è ora uno strumento ancor più temibile contro golem e costrutti.
 
 STATISTICHE:
 
@@ -2345,6 +2345,29 @@ Utilizzabile da:
  Bardo 
  Ladro~
 
+
+@5025 = ~Spaccapietre +3~
+@5026 = ~Oscure rune orchesche sono state incise su questa clava. Si tratta di un resto dell'ultima guerra combattuta fra gli orchi e i maghi di Turm. Quando le tribù degli orchi iniziarono a razziare la loro città, i maghi costruirono golem di grande potere affinché li proteggessero. Resosi conto che la forza bruta dei suoi predoni non sarebbe stata sufficiente, il grande capo orchesco Gull-Nar ordinò agli sciamani di forgiare un'arma che gli consentisse di ridurre in polvere le "statue viventi". Sfruttando i tomi che avevano sottratto da una torre di maghi durante una sortita precedente, gli sciamani incantarono l'arma d'elezione del loro capo, un grossa clava. Gull-Nar ne fu compiaciuto al punto che decise di condurre personalmente la razzia successiva, facendo i golem a pezzi a mano a mano che si faceva strada verso il centro della città. L'avanzata sembrava ormai inarrestabile quando un mago solitario di nero vestito apparve dal nulla e lanciò un potente incantesimo che rivoltò gli orchi contro i propri simili. Nel giro di pochi minuti, il loro esercito fu decimato e lo stesso Gull-Nar fu ucciso da coloro che un tempo erano i suoi guerrieri più fidati..
+
+Ulteriormente incantata grazie al sapere ricavato dal Libro di Costruzione dei Golem, la clava è ora uno strumento ancor più temibile contro golem e costrutti.
+
+STATISTICHE:
+
+Combat Abilities:
+    15% di possibilità che ogni colpo frantumi all'istante golem di pietra, di argilla o di sabbia 
+
+THAC0: +3, (+5 contro i Golem)
+Danno:  1D6 + 3, (+5 contro i Golem)
+Tipo di danno:  schiacciamento
+Peso: 3
+Fattore velocità: 1
+Tipo di competenza: Clava
+Tipo: ad una mano
+Richiede: 5 alla Forza
+Non utilizzabile da:
+  Mago~
+
+
 // Cromwell's new dailogue (6000-6999)
 @6000 = ~Mmmh... ora, questo sì che è interessante...~
 @6001 = ~Quel vecchio buckler ammaccato che ti porti al braccio fu un tempo una preziosa reliquia appartenuta a un alto sacerdote di Amaunator, se la vista non m'inganna. Se dovessi incappare in un simbolo sacro del dimenticato dio del sole, potrei infonderne l'essenza nello scudo e ripristinare parte del suo antico potere.~
@@ -2362,6 +2385,11 @@ Utilizzabile da:
 @6040 = ~E' un buckler piuttosto robusto, quello che hai qui. Forgiato in acciaio brunito, eh? Fammelo osservare da vicino...~
 @6041 = ~Oh, se mi porti una pietra del ladro e della polvere di adamantio, potrei indurire la lega di acciaio brunito ulteriormente.~
 @6042 = ~Hai una pietra del ladro e della polvere di adamantio! Per 5000 monete d'oro, potrei usarle per rafforzare il tuo buckler. Immagino tu sia interessato?~
+
+@6050 = ~Che cos’hai là <GIRLBOY>? Hmm, quella non é una clava comune. Mi ci fai dare un’occhiata?~
+@6051 = ~Di fabbricazione orchesca, eh? Si, sembra essere resistente, ma le rune che ci sono incise potrebbero essere lavorate meglio. Se riesci a trovarmi un Libro di costruzione dei Golem, penso che potrei rinforzare un po’ quest’arma.~
+@6052 = ~Hai trovato un Libro di costruzione dei Golem, eh? Per 5,000 monete d’oro potrei rinforzare e migliorare le rune di questa clava. Sempre se tu ne sia interessato, ovviamente.~
+
 
 // Cespenar's new dailogue (7000-7999)
 @7000 = ~Mmh... mmmn.... aspetta, ecco una cintura. Per impedire ai pantaloni di cascare in battaglia, no?~

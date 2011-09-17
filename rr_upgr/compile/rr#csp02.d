@@ -2,14 +2,20 @@
 // argument : BOTSMITH.DLG
 
 EXTEND_BOTTOM BOTSMITH 4
-  IF ~PartyHasItem("RR#STON")~ THEN GOTO RR#UPGD00
+  IF ~OR(2)
+        PartyHasItem("RR#STON")
+        PartyHasItem("RR#STON2")~ THEN GOTO RR#UPGD00
 END
   
 APPEND BOTSMITH
   IF ~~ THEN BEGIN RR#UPGD00 SAY @7020
-    IF ~PartyHasItem("RR#STON")
+    IF ~OR(2)
+        PartyHasItem("RR#STON")
+        PartyHasItem("RR#STON2")
         !PartyHasItem("TOME03")~ THEN GOTO RR#UPGD01
-    IF ~PartyHasItem("RR#STON")
+    IF ~OR(2)
+        PartyHasItem("RR#STON")
+        PartyHasItem("RR#STON2")
         PartyHasItem("TOME03")~ THEN GOTO RR#UPGD02
   END
   
@@ -26,6 +32,8 @@ APPEND BOTSMITH
                                                  DestroyGold(5000)
                                                  TakePartyItemNum("RR#STON",1)
                                                  DestroyItem("RR#STON")
+                                                 TakePartyItemNum("RR#STON2",1)
+                                                 DestroyItem("RR#STON2")
                                                  TakePartyItemNum("TOME03",1)
                                                  DestroyItem("TOME03")~ GOTO 11
     IF ~~ THEN REPLY #66770 GOTO RR#NOTNX

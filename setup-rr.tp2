@@ -1,5 +1,5 @@
 /*************************************************************************
- *               Rogue Rebalancing mod version 4.45
+ *               Rogue Rebalancing mod version 4.46
  *                            -=by aVENGER=-
  *                http://www.spellholdstudios.net/ie/rr
  *************************************************************************/
@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.45~                                                     // Mod version
+VERSION ~v4.46~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -1653,6 +1653,11 @@ COPY    ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~    ~override~
 COPY_EXISTING ~ARAN.CRE~ ~override~                                 // Aran Linvail, non-STI (for the Dagger of Acumen)
   ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                    // Give Aran the Dagger of Acumen (for pickpocketing)
 
+COPY_EXISTING ~ARAN02.CRE~ ~override~                               // Aran Linvail, non-STI (original game and Quest Pack
+  ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                    // Give Aran the Dagger of Acumen
+  ADD_CRE_ITEM ~SW1H10~ #0 #0 #0 ~NONE~ ~INV8~                      // Give Aran the Short Sword of Backstabbing
+
+
 COPY_EXISTING ~BOOTER.CRE~ ~override~                               // Booter, non-STI (for Plaguebearer and Longtooth)
   WRITE_SHORT 0x28 25348                                            // Change Booter's avatar to THIEF_MALE_GNOME
   ADD_CRE_ITEM ~RR#PLAG~ #0 #0 #0 ~NONE~ ~INV7~                     // Give Booter the Plaguebearer dagger
@@ -1729,8 +1734,10 @@ BUT_ONLY_IF_IT_CHANGES
 LAUNCH_ACTION_MACRO ~RR#SSOB~                                       // Launch the Short Sword of Backstabbing patch
 COPY    ~RR/RR_CORE/ITEMS/RR#SSOBA.EFF~    ~override~               // SSoB to hit bonus (main hand only)
 COPY    ~RR/RR_CORE/ITEMS/RR#SSOBB.EFF~    ~override~               // SSoB backstab bonus
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~rr#stf01.bcs~ THEN BEGIN         // Check for RR's STI component
 COMPILE ~RR/RR_CORE/COMPILE/ARAN.D~                                 // Aran Linvail's Chapter 6 SSoB dialogue line
 COMPILE ~RR/RR_CORE/COMPILE/RENAL.D~                                // Renal awards the party with a regular +3 Shortsword instead of the SSoB
+END                                                                 // Ends check for RR's STI component
 
 
 // AR0306 script fix to prevent the player from acquiring multiple SSoB items
@@ -2765,7 +2772,10 @@ COPY    ~RR/RR_UPGR/ITEMS/RR#BEL11.ITM~    ~override~               // Masterbel
 COPY    ~RR/RR_UPGR/ITEMS/RR#FDAR2.ITM~    ~override~               // Returning Frost Dart +3
   SAY NAME2 @5012 SAY DESC @5013
 
-COPY    ~RR/RR_UPGR/ITEMS/RR#STON2.ITM~    ~override~               // Stonesmasher +4
+COPY    ~RR/RR_UPGR/ITEMS/RR#STON2.ITM~    ~override~               // Stonesmasher +3
+  SAY NAME2 @5025 SAY DESC @5026
+
+COPY    ~RR/RR_UPGR/ITEMS/RR#STON3.ITM~    ~override~               // Stonesmasher +4
   SAY NAME2 @5014 SAY DESC @5015
 
 COPY    ~RR/RR_UPGR/ITEMS/RR#KEEP2.ITM~    ~override~               // Keeper of the Law +3
@@ -2786,6 +2796,7 @@ COMPILE ~RR/RR_UPGR/COMPILE/RR#CRM02.D~                             // Returning
 COMPILE ~RR/RR_UPGR/COMPILE/RR#CRM03.D~                             // Keeper of the Law upgrade
 COMPILE ~RR/RR_UPGR/COMPILE/RR#CRM04.D~                             // The Weary Cudgel upgrade
 COMPILE ~RR/RR_UPGR/COMPILE/RR#CRM05.D~                             // Rogue's Ward upgrade
+COMPILE ~RR/RR_UPGR/COMPILE/RR#CRM06.D~                             // Stonesmasher upgrade (to +3 version)
 EXTEND_BOTTOM ~AR0334.BCS~ ~RR/RR_UPGR/COMPILE/AR0334.BAF~          // additions for Cromwell's item forging script
 
 
@@ -2861,25 +2872,17 @@ COPY_EXISTING ~%file%.itm~ ~override~
 PATCH_IF (%SOURCE_SIZE% > 0x71) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
 // =============================================================================== // the actual work starts from here
 SAY DESC @74                                                                       // PnP Potion of Master Thievery description
-SET opcode_to_delete = "-1"                                                        // mark all item opcodes for deletion
-SET header = "1"                                                                   // mark the first extended item header for deletion
-LAUNCH_PATCH_MACRO ~DELETE_ITEM_EFFECT~                                            // delete all opcodes in the item's extended header
-SET opcode = "146"                                                                 // effect: #146 (cast spell at creature)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "1"                                                                   // timing mode: 1 (instant/permanent)
-SET parameter1 = "0"                                                               // param1: 0
-SET parameter2 = "1"                                                               // param2: 1 (cast instantly)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "3"                                                            // dispel/resistance: 3 (dispellable and bypasses magic resistance)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#PNP36~                                                       // resref (RR#PNP36.SPL)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EFFECT~                                               // add a new effect
+LAUNCH_PATCH_FUNCTION ~DELETE_ITEM_EFFECT~ INT_VAR opcode_to_delete = "-1" header = 1 END   // delete all opcodes in the item's extended header
+  LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EFFECT~
+  INT_VAR 
+    opcode = 146                                                                   // effect: #146 (cast spell at creature)
+    target = 1                                                                     // target: self
+    timing = 1                                                                     // timing: permanent
+    parameter1 = 0                                                                 // param1: casting level
+    parameter2 = 1                                                                 // param2: cast instantly
+    probability1 = 100                                                             // probability1: 100
+  STR_VAR resource = ~RR#PNP36~                                                    // resref: (RR#PNP36.SPL)
+  END                                                                                         
 // =============================================================================== // the actual work ends here
 END                                                                                // ends file size check
 BUT_ONLY_IF_IT_CHANGES
@@ -2898,25 +2901,17 @@ COPY_EXISTING ~%file%.itm~ ~override~
 PATCH_IF (%SOURCE_SIZE% > 0x71) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
 // =============================================================================== // the actual work starts from here
 SAY DESC @73                                                                       // PnP Potion of Perception description
-SET opcode_to_delete = "-1"                                                        // mark all item opcodes for deletion
-SET header = "1"                                                                   // mark the first extended item header for deletion
-LAUNCH_PATCH_MACRO ~DELETE_ITEM_EFFECT~                                            // delete all opcodes in the item's extended header
-SET opcode = "146"                                                                 // effect: #146 (cast spell at creature)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "1"                                                                   // timing mode: 1 (instant/permanent)
-SET parameter1 = "0"                                                               // param1: 0
-SET parameter2 = "1"                                                               // param2: 1 (cast instantly)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "3"                                                            // dispel/resistance: 3 (dispellable and bypasses magic resistance)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#PNP39~                                                       // resref (RR#PNP39.SPL)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EFFECT~                                               // add a new effect
+LAUNCH_PATCH_FUNCTION ~DELETE_ITEM_EFFECT~ INT_VAR opcode_to_delete = "-1" header = 1 END   // delete all opcodes in the item's extended header
+  LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EFFECT~
+  INT_VAR 
+    opcode = 146                                                                   // effect: #146 (cast spell at creature)
+    target = 1                                                                     // target: self
+    timing = 1                                                                     // timing: permanent
+    parameter1 = 0                                                                 // param1: casting level
+    parameter2 = 1                                                                 // param2: cast instantly
+    probability1 = 100                                                             // probability1: 100
+  STR_VAR resource = ~RR#PNP39~                                                    // resref: (RR#PNP39.SPL)
+  END                                                                                         
 // =============================================================================== // the actual work ends here
 END                                                                                // ends file size check
 BUT_ONLY_IF_IT_CHANGES
@@ -2964,6 +2959,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#PTN36.SPL~    ~override~                          
 
 
 // Make Potions of Master Thievery non-stackable
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~potn36.spl~ THEN BEGIN                          // check for Item Revisions' potion component
 
 ACTION_FOR_EACH ~file~ IN                 // for each of the following files
                  ~POTN36~                 // Potion of Master Thievery
@@ -2973,25 +2969,17 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%file%.itm~ BEGIN                                
 COPY_EXISTING ~%file%.itm~ ~override~
 PATCH_IF (%SOURCE_SIZE% > 0x71) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
 // =============================================================================== // the actual work starts from here
-SET opcode_to_delete = "-1"                                                        // mark all item opcodes for deletion
-SET header = "1"                                                                   // mark the first extended item header for deletion
-LAUNCH_PATCH_MACRO ~DELETE_ITEM_EFFECT~                                            // delete all opcodes in the item's extended header
-SET opcode = "146"                                                                 // effect: #146 (cast spell at creature)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "1"                                                                   // timing mode: 1 (instant/permanent)
-SET parameter1 = "0"                                                               // param1: 0
-SET parameter2 = "1"                                                               // param2: 1 (cast instantly)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "3"                                                            // dispel/resistance: 3 (dispellable and bypasses magic resistance)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#PTN36~                                                       // resref: RR#PTN36.SPL (newly created Potion of Master Thievery spell)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EFFECT~                                               // add a new effect
+LAUNCH_PATCH_FUNCTION ~DELETE_ITEM_EFFECT~ INT_VAR opcode_to_delete = "-1" header = 1 END   // delete all opcodes in the item's extended header
+  LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EFFECT~
+  INT_VAR 
+    opcode = 146                                                                   // effect: #146 (cast spell at creature)
+    target = 1                                                                     // target: self
+    timing = 1                                                                     // timing: permanent
+    parameter1 = 0                                                                 // param1: casting level
+    parameter2 = 1                                                                 // param2: cast instantly
+    probability1 = 100                                                             // probability1: 100
+  STR_VAR resource = ~RR#PTN36~                                                    // resref: (RR#PTN36.SPL)
+  END                                                                              
 // =============================================================================== // the actual work ends here
 END                                                                                // ends file size check
 BUT_ONLY_IF_IT_CHANGES
@@ -3009,31 +2997,24 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%file%.itm~ BEGIN                                
 COPY_EXISTING ~%file%.itm~ ~override~
 PATCH_IF (%SOURCE_SIZE% > 0x71) THEN BEGIN                                         // file size sanity check (filters out 0 byte files i.e. ALLOW_MISSING)
 // =============================================================================== // the actual work starts from here
-SET opcode_to_delete = "-1"                                                        // mark all item opcodes for deletion
-SET header = "1"                                                                   // mark the first extended item header for deletion
-LAUNCH_PATCH_MACRO ~DELETE_ITEM_EFFECT~                                            // delete all opcodes in the item's extended header
-SET opcode = "146"                                                                 // effect: #146 (cast spell at creature)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "1"                                                                   // timing mode: 1 (instant/permanent)
-SET parameter1 = "0"                                                               // param1: 0
-SET parameter2 = "1"                                                               // param2: 1 (cast instantly)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "3"                                                            // dispel/resistance: 3 (dispellable and bypasses magic resistance)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#PTN39~                                                       // resref: RR#PTN39.SPL (newly created Potion of Perception spell)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EFFECT~                                               // add a new effect
+LAUNCH_PATCH_FUNCTION ~DELETE_ITEM_EFFECT~ INT_VAR opcode_to_delete = "-1" header = 1 END   // delete all opcodes in the item's extended header
+  LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EFFECT~
+  INT_VAR 
+    opcode = 146                                                                   // effect: #146 (cast spell at creature)
+    target = 1                                                                     // target: self
+    timing = 1                                                                     // timing: permanent
+    parameter1 = 0                                                                 // param1: casting level
+    parameter2 = 1                                                                 // param2: cast instantly
+    probability1 = 100                                                             // probability1: 100
+  STR_VAR resource = ~RR#PTN39~                                                    // resref: (RR#PTN39.SPL)
+  END                                                                              
 // =============================================================================== // the actual work ends here
 END                                                                                // ends file size check
 BUT_ONLY_IF_IT_CHANGES
 END                                                                                // ends ACTION_IF FILE_EXISTS_IN_GAME block
 END                                                                                // ends ACTION_FOR_EACH block
 
+END                                                                                // end check for Item Revisions' potion component
 
 
 
@@ -4927,6 +4908,7 @@ COPY    ~RR/RR_STIM/ITEMS/RR#WND01.ITM~     ~override~              // Wand of F
 
 COPY    ~RR/RR_STIM/BAM~                            ~override~      // New portraits for the Shadow Thief characters
 COPY_EXISTING ~ARAN.CRE~ ~override~                                 // Aran Linvail (non-STI)
+            ~ARAN02.CRE~ ~override~                                 // Aran Linvail (Quest Pack & original game)
   WRITE_ASCII 0x34 ~RR#ARANS~ #8                                    // Sets Aran's small portrait
 COPY_EXISTING ~GAELAN.CRE~ ~override~                               // Gaelan Bayle (non-STI)
   WRITE_ASCII 0x34 ~RR#GAELS~ #8                                    // Sets Gaelan's small portrait
@@ -5006,6 +4988,11 @@ COMPILE ~RR/RR_STIM/COMPILE/STGUARD1.D~                             // STI Guild
 COMPILE ~RR/RR_STIM/COMPILE/PALERN.D~                               // Palern's updated dialogue (stealth path related)
 COMPILE ~RR/RR_STIM/COMPILE/RR#DEDRL.D~                             // Daedral's new dialogue (due to new area)
 COMPILE ~RR/RR_STIM/COMPILE/ARNWAR08.D~                             // Tizzak's updated dialogue (attempt to hide in shadows before escaping)
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~rr#guara.itm~ THEN BEGIN         // Check for RR's Additional Equipment component
+COMPILE ~RR/RR_CORE/COMPILE/ARAN.D~                                 // Aran Linvail's Chapter 6 SSoB dialogue line
+COMPILE ~RR/RR_CORE/COMPILE/RENAL.D~                                // Renal awards the party with a regular +3 Shortsword instead of the SSoB
+END                                                                 // Ends check for RR's Additional Equipment component
 
 // Make Tizzak's dialogue pause the game
 

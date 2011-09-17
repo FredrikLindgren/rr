@@ -46,7 +46,7 @@ Unusable By:
 
 
 @24 = ~The Guardian~
-@25 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
+@25 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size appear to be directly linked to the power of the shieldbearer.
 
 STATISTICS:
 
@@ -64,7 +64,7 @@ Only Usable By:
  Druids~
 
 @26 = ~Rogue's Ward~
-@27 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithril and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw in the light, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
+@27 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithril and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw light in, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
 
 STATISTICS:
 
@@ -322,7 +322,7 @@ Only Usable By:
 
 
 @58 = ~Returning Frost Dart~
-@59 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
+@59 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, several merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
 
 STATISTICS:
 
@@ -533,7 +533,7 @@ Usable By:
 
 
 @120 = ~Trollmelter~
-@121 = ~The winter of 1228. was particularly hard on the halfling settlements near Shalebrook forest. The last few years were harsh, and food was very scarce.  The situation was worsened further by the troll raids which had become more frequent due to the famine which was spreading throught the whole region. Although inferior in numbers, their great strength and resilience allowed the trolls to mercilessly seize the halflings' very last supplies. However, the fair food of the small folk could not settle their immense hunger and the trolls soon started feeding on the healthier halflings. Outraged, The head of the halfling settlement tried to call for help, but as the main roads were snowed in and the outer paths lead through the troll-infested forest, no immediate support could arrive. One morning, after the trolls took his own sister, a young rogue named Lars the Lightfooted grew desperate. The following night, he gathered all his courage and somehow snuck through the forest full of trolls. With the last ounce of his strength, he managed to reach a nearby dwarven settlement. He begged the dwarves to help him, but due to their own problems with the ongoing orc invasion, they could only offer him some of their spare weapons and supplies. Devastated, Lars grabbed the only weapon he knew how to wield, a dagger, and left. Lady Tymora smiled on him that day, for he had unintentionally picked a weapon which would soon save his life. As he rushed back through the forest the loud snoring of the trolls hinted him to the cave where they were sleeping. The sight of gnawed halfling bones scattered around the entrance was the final straw. Blindly rushing inside, Lars viciously stabbed at the nearest sleeping troll with the dwarven dagger, oblivious to the risk to his life, his thoughts going to his beloved sister. To his amazement, the troll he had struck screamed in agony as his horrid body started melting and dissolving into a puddle of goo. The rest of the trolls woke up, but the sight of their melting comrade and the strong smell of acid brought such immense fear to them that they immediately ran away, never to return again to Shalebrook forest again. Still in shock, Lars slowly recomposed himself and freed his sister and the other captured halflings. Eventually, Lars the Lightfooted was proclaimed the Savior of Shalebrook, and his weapon was given the name Trollmelter. 
+@121 = ~The winter of 1228. was particularly hard on the halfling settlements near Shalebrook forest. The last few years were harsh, and food was very scarce.  The situation was worsened further by the troll raids which had become more frequent due to the famine which was spreading throught the whole region. Although inferior in numbers, their great strength and resilience allowed the trolls to mercilessly seize the halflings' very last supplies. However, the fair food of the small folk could not settle their immense hunger and the trolls soon started feeding on the healthier halflings. Outraged, The head of the halfling settlement tried to call for help, but as the main roads were snowed in and the outer paths lead through the troll-infested forest, no immediate support could arrive. One morning, after the trolls took his own sister, a young rogue named Lars the Lightfooted grew desperate. The following night, he gathered all his courage and somehow snuck through the forest full of trolls. With the last ounce of his strength, he managed to reach a nearby dwarven settlement. He begged the dwarves to help him, but due to their own problems with the ongoing orc invasion, they could only offer him some of their spare weapons and supplies. Devastated, Lars grabbed the only weapon he knew how to wield, a dagger, and left. Lady Tymora smiled on him that day, for he had unintentionally picked a weapon which would soon save his life. As he rushed back through the forest the loud snoring of the trolls hinted him to the cave where they were sleeping. The sight of gnawed halfling bones scattered around the entrance was the final straw. Blindly rushing inside, Lars viciously stabbed at the nearest sleeping troll with the dwarven dagger, oblivious to the risk to his life, his thoughts going to his beloved sister. To his amazement, the troll he had struck screamed in agony as his horrid body started melting and dissolving into a puddle of goo. The rest of the trolls woke up, but the sight of their melting comrade and the strong smell of acid brought such immense fear to them that they immediately ran away, never to return to Shalebrook forest again. Still in shock, Lars slowly recomposed himself and freed his sister and the other captured halflings. Eventually, Lars the Lightfooted was proclaimed the Savior of Shalebrook, and his weapon was given the name Trollmelter.
 
 STATISTICS:
 
@@ -1137,7 +1137,7 @@ Usable By:
  Bard~
 
 @216 = ~Silent Death~
-@217 = ~This sword once belonged to Venduris, a cunning assassin in service of Cyric - the reigning God of Murder. When the rogue was initially accepted into the order of Cyric's Chosen he received a small, plain-looking blade as a welcoming gift. Though the sword held only minor enchantments back then, its power and sharpness seemed to grow with each kill Venduris made in the name of his new master. The assassin preferred to fulfill these tasks swiftly and silently, so his victims were almost never aware of their nearing demise. However, on certain occasions when a foe had particularly angered the Prince of Lies, Venduris would apply a deadly venom to his blade before striking. The victim would then start choking, rendered unable to speak or cry for help, while Cyric laughed in glee as the mute face of his adversary twisted from the pain and agony caused by the subsequent poison effects, which eventually led to a slow, tormented death.
+@217 = ~This sword once belonged to Venduris, a cunning assassin in service of Cyric - the reigning God of Murder. When the rogue was initially accepted into the Order of Cyric's Chosen he received a small, plain-looking blade as a welcoming gift. Though the sword held only minor enchantments back then, its power and sharpness seemed to grow with each kill Venduris made in the name of his new master. The assassin preferred to fulfill these tasks swiftly and silently, so his victims were almost never aware of their nearing demise. However, on certain occasions when a foe had particularly angered the Prince of Lies, Venduris would apply a deadly venom to his blade before striking. The victim would then start choking, rendered unable to speak or cry for help, while Cyric laughed in glee as the mute face of his adversary twisted from the pain and agony caused by the subsequent poison effects, which eventually led to a slow, tormented death.
 
 This sword pulsates with a dim, greenish glow and emanates a powerful evil aura. The tip and edges of the blade are extremely sharp and constantly coated with a layer of magical poison which makes it very difficult to use the sword without harming oneself. Only rogues of exceptional skill and cunning may attempt to wield this weapon.
 
@@ -1580,7 +1580,7 @@ Thief~
 STATISTICS:
 
 Equipped Abilities:
-  Any golem crafted by Haz will automatically deactivate in the presence of the rod's wielder. In order for this ability to take effect, the rod must be prominently equipped and its wielder must approach the golem alone. Once deactivated, a golem will remain dormant forevermore, unless it is attacked. This rod will have no effect on golems which were not crafted by Haz.
+  Any golem crafted by Haz will automatically deactivate in the presence of the rod's wielder. In order for this ability to take effect, the rod must be prominently equipped and its wielder must approach the golem alone. Once deactivated, a golem will remain dormant forevermore, unless it is attacked. This rod will have no effect on golems that were not crafted by Haz.
 
 Usable By:
  Everyone~
@@ -2088,14 +2088,14 @@ Usable By:
 @2523 = ~I shall do the realms a favor and relieve you of your misery. Prepare to die half-wit!  \[He Attacks\]~
 @2524 = ~Hmm, so you are indeed clueless... I should have expected that much.   (A faint half-sneer forms on his face)   Let me enlighten you then, by whose orders you die today.~
 @2525 = ~The will of the Prince of Lies guides our path, but rest assured Bhaalspawn, we are no mere followers of Cyric.~
-@2526 = ~(The rogue's voice drops to a more menacing tone) Know, that we belong to the order of his Chosen.~
+@2526 = ~(The rogue's voice drops to a more menacing tone) Know, that we belong to the Order of his Chosen.~
 @2527 = ~What exactly do you want from me ?~
 @2528 = ~Get to the point rogue.~
 @2529 = ~You poor, deluded fool...  (he looks at you contemptuously)  then you will know only this!~
 @2530 = ~I am an assassin and *you* are my mark. One of us shall not outlive this day!  \[He attacks\]~
 @2531 = ~Hmm, so the reports were true, you indeed have some wit about you.  (A faint half-sneer forms on his face)~
 @2532 = ~Though the will of the Prince of Lies truly guides our path, rest assured, Bhaalspawn, we are no mere followers of Cyric.~
-@2533 = ~(The rogue's voice drops to a more menacing tone)   Know, that we belong to the order of his Chosen.~
+@2533 = ~(The rogue's voice drops to a more menacing tone)   Know, that we belong to the Order of his Chosen.~
 @2534 = ~\[Religious Knowledge\] - You belong to Cyric's Chosen? Then I suppose your fanatical order has somehow found out about my divine heritage, and you still hope to bring Cyric closer to his ascension by ritually sacrificing all of Bhaal's children. Am I right?~
 @2535 = ~(The man slowly raises his head and his eyes flickers over you. His gaze falls on you with the force of a sledgehammer.)~
 @2536 = ~Know, that there is a growing conflict of interests between us, Bhaalspawn.~
@@ -2125,28 +2125,28 @@ Usable By:
 @2560 = ~\[Arcane Lore\] - Those Warding Glyphs which prevent me from leaving, are they your work, Venduris?~
 @2561 = ~Are those magics surrounding this area your work rogue?~
 @2562 = ~I am curious... how come you know so much about me ?~
-@2563 = ~You said that I was becoming a problem for Cyric. Could you elaborate this further?~
+@2563 = ~You said that I was becoming a problem for Cyric. Could you elaborate on this further?~
 @2564 = ~I have changed my mind, I think I want to fight you after all!  \[Attack him\].~
-@2565 = ~\[Insight\] - So Venduris, you are evidently aware of my divine descent, but you do not seem to realize that direct, as well as indirect, intervention of the gods in the Bhaalspawn lineage was prohibited by Lord Ao himself. Therefore, any and all of your actions against me, taken in the name of Cyric, would mean that you and your patron deity are purposely defying the will of the Overfather. Even Cyric himself could be displeased by your interference.~
+@2565 = ~\[Insight\] - So Venduris, you are evidently aware of my divine descent, but you do not seem to realize that direct, as well as indirect, intervention of the gods into the affairs of the Bhaalspawn was prohibited by Lord Ao himself. Therefore, any actions taken against me in the name of Cyric would mean that both you and your patron deity are purposely defying the will of the Overfather. For all you know, Cyric himself could be displeased by your interference.~
 @2566 = ~\[Persuade\] - Since you were observing my actions so closely, Venduris, you should know by now that I have always stood on the side of Good. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
 @2567 = ~\[Persuade\] -  If you have been studying me as closely as you claim, then by now you should be aware that I, as a Paladin, have always stood as a power of light and righteousness. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
 @2568 = ~\[Intimidate\] - Enough of this charade, Venduris! I faced off with Irenicus himself at Spellhold and forced him into a retreat. I escaped the gloom of the Underdark unscathed, and I have just eradicated the most powerful vampire of Amn, together with a host of her strongest minions. Do you really think that you and your feeble-minded band of zealots can stop me?~
-@2569 = ~It has always been common practice of our order to observe an enemy over a lengthy time period before acting, <CHARNAME>. Information, not brute strength, is the key to true power.~
-@2570 = ~So now, we know how you act, how you fight and how you judge. We are aware of your every detail, no matter how insignificant it may seem.~
+@2569 = ~It has always been common practice of our order to observe an enemy over a lengthy time period before acting, <CHARNAME>. We firmly believe that information is the key to true power.~
+@2570 = ~We know how you act, how you fight and how you judge. We are aware of your every detail, no matter how insignificant it may seem.~
 @2571 = ~Your alignment, your goals, your strengths and your weaknesses are all known to us, while you remain completely oblivious to our own plans.~
 @2572 = ~As you can see, we are at a clear advantage here.~
-@2573 = ~\[Insight\] - Hmm, if you and your order have been spying on me for so long, then how come I have never noticed any of you?~
+@2573 = ~\[Insight\] - Hmm, if you and your order have been spying on me for so long, then how come I've never noticed any of you?~
 @2574 = ~So when did you first start following me?~
-@2575 = ~But why do you attack me now, and not before? You surely had plenty of opportunities to do so in the past.~
+@2575 = ~But why do you attack me now, and not before? Surely you had plenty of opportunities to do so in the past.~
 @2576 = ~I see, let me ask you something else then.~
 @2577 = ~Do you take my party for some amateurish band of pickpockets?  (Venduris pierces you with a reproachful gaze)~
-@2578 = ~In truth, what you are facing now are some of the most capable adherents that our order has to offer.~
-@2579 = ~Furthermore, a number of our agents, placed within most major cities of the Sword Coast, are constantly obtaining vital information and insight about all who would oppose us, including yourself. They are highly adept at the art of subterfuge and have many ways of acting unseen should the need arise.~
+@2578 = ~In truth, the people you are facing now rank among the most capable members of our order.~
+@2579 = ~Furthermore, a number of our agents, placed within most major cities of the Sword Coast, are constantly obtaining vital information and insight about all who would oppose us, including yourself. They are highly adept at the art of subterfuge and have many ways of acting unseen.~
 @2580 = ~So you see, it is truly no wonder that you, as most of our other victims, have never discovered our presence, let alone our plans.~
 @2581 = ~Our order first took notice of you some time ago when you had slain two of our valuable members who were operating near the city of Baldur's Gate.~
 @2582 = ~The two priests of Cyric that you killed back then, Mulahey and Bassilus, were our agents, and their murders served as a triggering point for our current actions against you.~
-@2583 = ~We then followed your path until the final standoff with your half-brother Sarevok, who was also being carefully monitored at that time.~
-@2584 = ~The order wisely decided to let you slaughter each other so that we could easily take care of the weakened survivor.~
+@2583 = ~We followed your path until the final standoff with your half-brother Sarevok, who was also being carefully monitored at that time.~
+@2584 = ~The Order wisely decided to let you slaughter each other so that we could easily take care of the weakened survivor.~
 @2585 = ~But then why do you attack me now, and not before? You surely had plenty of opportunities to do so in the past.~
 @2586 = ~Unlike Sarevok's, your own motives were still unclear to us at the time you left Baldur's Gate. So we decided to lay low, gather the necessary information and wait until a suitable chance for action abounded.~
 @2587 = ~But when that half-crazed sorcerer interfered, we almost lost track of you. Luckily, a few of our informants within this city noticed when you embarked on a voyage to the Spellhold asylum.~
@@ -2154,27 +2154,27 @@ Usable By:
 @2589 = ~Hmm, so when did you first start following me?~
 @2590 = ~That should be quite obvious.  (He gives you a long, contemplating look)~
 @2591 = ~Perhaps you still fail to realize this, but you <CHARNAME>, are the most powerful Bhaalspawn that has ever walked the Sword Coast. By this mere fact, you present a significant threat to our Lord's position.~
-@2592 = ~You carry a touch of the divine inside you, and chances are that you will desire more in the future. Our Lord may be prevented from directly interfering in this matter, but as long as we are here of our own free will, nothing can deny us the pleasure of killing you.~
+@2592 = ~You carry a touch of the divine inside you, and chances are that you will desire more in the future. Our Lord may be prevented from interfering directly in this matter, but as long as we are here of our own free will, nothing can deny us the pleasure of killing you.~
 @2593 = ~\[Insight\] - Wait, you mean that you are acting here *without* direct orders from Cyric? You are doing this on your own?~
 @2594 = ~(Venduris' eyes narrow for a moment and he gives you a resentful glare, but his face soon resumes its usual, emotionless expression)~
-@2595 = ~We are indeed acting of our own accord but... that is of no consequence.~
+@2595 = ~We are indeed acting of our own accord, but that is of no consequence.~
 @2596 = ~Once we dispose of you, our Lord will certainly acknowledge the deed and reward us accordingly.~
 @2597 = ~(you make a mental note of what was just said)   Hmm... let me ask you something else then.~
 @2598 = ~(Venduris pauses for a moment and then starts gazing at you suspiciously)~
 @2599 = ~Hmm, that is indeed a possibility, <CHARNAME>, though merely one of many.~
-@2600 = ~With equal right, I could clam that disposing of you was the Overfather's will all along, and that we were actually predestined to be its executors.~
+@2600 = ~With equal right, I could clam that disposing of you was the Overfather's plan all along, and that we were actually predestined to be carry out his will.~
 @2601 = ~Either way, while I can not be fully certain in this matter, I would prefer to eliminate you. Unhindered, you could possibly rise even further and try to take the place of our Lord. This can not be allowed to happen.~
-@2602 = ~\[Lore\] - Then hear me out, Venduris. As soon as I found out about my true descent, I began actively studying the prophecies concerning Bhaalspawn. Nonetheless, in all this time, I've found nothing that openly suggests that one of us *must* doubtlessly rise up and take our father's place. Quite contrary, my inquiries have shown that our future is not set in stone and that we are free to shape it as we see fit.~
-@2603 = ~\[Insight\] - Then think about it this way, you say that you want to murder me in order to please Cyric, but are you aware that after my death, the part of Bhaal's essence which lies inside me will return to its source? So in truth, killing me shall only speed up my father's recovery.~
-@2604 = ~\[Reason\] - Yet you can not be sure, for you said yourself that you are acting without approval of Cyric. Perhaps it would be wiser to reconsider your course, Venduris... while you still can.~
+@2602 = ~\[Lore\] - Then hear me out, Venduris. As soon as I found out about my true descent, I began actively studying the prophecies concerning Bhaalspawn. Nonetheless, in all this time, I've found nothing that openly suggests that one of us *must* doubtlessly rise up and take our father's place. If anything, my research indicates that the future of the Bhaalspawn is not set in stone and that each of us is free to shape his own destiny.~
+@2603 = ~\[Insight\] - Then think about it this way, you say that you want to murder me in order to please Cyric, but are you aware that after my death, the part of Bhaal's essence which lies inside me will return to its source? In consequence, killing me would actually quicken my father's restoration.~
+@2604 = ~\[Reason\] - Yet you can not be sure, for you said yourself that you are acting without the approval of Cyric. Perhaps it would be wiser to reconsider your course, Venduris... while you still can.~
 @2605 = ~(Venduris ponders over your words for an instant, but his face remains an undecipherable riddle to you)~
 @2606 = ~What you say... holds some merit, <CHARNAME>, but I can not be certain of the truth from merely hearing those words from your mouth.~
 @2607 = ~\[Insight\] - Nonetheless, you can no longer risk killing me, until you have confirmed this information. The risk of accidentally contributing to Bhaal's resurrection by freeing the essence held inside me would be too high to take, even for someone in your position.~
 @2608 = ~(Venduris looks like he is about to reply but instead, he pauses again, reflecting.)~
-@2609 = ~(After a moment of thought, he looks up to you again, but his gaze is different now. The malice has disappeared from his eyes, and you even think that you can trace a bit of respect in his current demeanor.)~
+@2609 = ~(After a moment of thought, he looks up to you again, but his gaze is different now. The malice has disappeared from his eyes, and you even think that you can trace a bit of respect in his new demeanor.)~
 @2610 = ~You... speak convincing words <CHARNAME>, and I can no longer dispute your arguments.~
 @2611 = ~Then, there is only one solution left.  (Venduris reaches for the ring on his left hand)~
-@2612 = ~We must depart now and observe from afar how the events unfold... as we always have. When another opportunity shows itself, and we are fully aware of all the consequences, we can always strike anew if need be.~
+@2612 = ~We must depart for now and observe how the events unfold from afar... as we always have. When another opportunity presents itself, and once we are fully aware of all the consequences, we can always strike anew if need be.~
 @2613 = ~Pray that we never meet again, Bhaalspawn. Your wits may not save you once more, as they have this day!  (He finishes the sentence with a wicked smile)~
 @2614 = ~I admit, your knowledge on the subject is quite impressive. But then again, why should I believe anything you say? You could just as easily be lying to save your life.~
 @2615 = ~\[Lore\] - Then consider this. If the prophecies of ascension are truly referring to me, and you are indeed supposed to kill me today, don't you think *that* would have also been foreseen? Yet, there is no mention of such an event in any of the texts. On the other hand, the warning to those who would interfere in the destiny of the Bhaalspawn is quite clear. As you well know, even Cyric himself could not risk to defy the will of the Overfather. So tell me, Venduris, do you really think that you can take such a chance?~
@@ -2183,28 +2183,28 @@ Usable By:
 @2618 = ~\[Persuade\] -  All my life I have lived and served by the principles and beliefs of my faith and ethos. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me, Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
 @2619 = ~\[Reputation\] - My deeds speak for me, Venduris. If you are so familiar with my life then you are surely aware of my accomplishments. I have never betrayed trust, and have always strived to help the ones in need. Think about it, are those the traits of a <PRO_MANWOMAN> who desires the power of Cyric and Bhaal?~
 @2620 = ~(After a moment of thought, he looks up to you again, but his gaze is different now. The malice has disappeared from his eyes, and you even think that you can trace a bit of respect in his new demeanor.)~
-@2621 = ~You... are right <CHARNAME>. The arguments you displayed are solid, I should have not doubted your ways.~
+@2621 = ~You... are right <CHARNAME>. The arguments you displayed are solid, I should have not doubted your path.~
 @2622 = ~In fact, now that I am certain that you have no plans to usurp my Lord's rulership, I am willing to let you live.~
 @2623 = ~Do not mistake this for charity though, I assure you, it is purely an act of self interest.~
 @2624 = ~What do you mean?~
-@2625 = ~I've never doubted that, but what do you imply?~
+@2625 = ~I thought as much, but what exactly are you implying?~
 @2626 = ~You will soon find out on your own, <CHARNAME>. For now, I shall say only this much, you were by far not the only contender for your father's throne. And now that I have assured myself of your allegiance, I can shift my efforts toward others of your kind.~
-@2627 = ~Most of them are not as good-natured as you appear to be, therefore they require my immediate attention. However, if I let you live, you will probably dispose of a few of your brethren and save me some effort.   (Venduris finishes the sentence with a wicked smile)~
-@2628 = ~But enough... we shall depart now and leave you to your destiny. Farewell, <CHARNAME>. Hope that we never meet again! (He reaches for the ring on his left hand)~
+@2627 = ~Most of them are not as good-natured as you appear to be, and therefore require my immediate attention. However, if I let you live, you will probably dispose of a few of your brethren and save me some effort.   (Venduris finishes the sentence with a wicked smile)~
+@2628 = ~But enough... we shall depart for now and leave you to your destiny. Farewell, <CHARNAME>. Hope that we never meet again! (He reaches for the ring on his left hand)~
 @2629 = ~\[Persuade\] -  All my life I have lived by the same principles and beliefs - the ones of the Greater Good. I fought only when it was necessary to protect my friends or when my own life was threatened. I have never killed a person for treasure or personal gain. Now answer me, Venduris, how can such a <PRO_MANWOMAN> possibly aspire to become the next <PRO_LADYLORD> of Murder?~
 @2630 = ~I agree, those are most impressive accomplishments, <CHARNAME>. However, we are much more resourceful than one would think, and your actions have been observed long enough for us to discover several ways of dealing with you swiftly and effectively.~
 @2631 = ~Ignorant fool! I hold the power of a GOD at my disposal. You WILL learn to fear me!  \[Transform into the Slayer\]~
-@2632 = ~\[Truth\] - Venduris, if you have studied me as closely as you claim, then you must be aware of the power that I wield. Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
-@2633 = ~\[Bluff\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
-@2634 = ~\[Bluff\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me?~
-@2635 = ~\[Lie\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me?~
-@2636 = ~\[Truth\] - Venduris, if you have studied me as closely as you claim, then you must be aware of the power that I wield. Even without my divine heritage I would still rank among the most powerful mortals that ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me ?~
+@2632 = ~\[Truth\] - Venduris, if you have studied me as closely as you claim, then you must be aware of the power that I wield. Even without my divine heritage I still rank among the most powerful mortals that have ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
+@2633 = ~\[Bluff\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that have ever roamed the Realms. The same can be said for my fellow party members as well. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting us ?~
+@2634 = ~\[Bluff\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that have ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me?~
+@2635 = ~\[Lie\] - No matter what you may think Venduris, you are not aware of the full potential of my abilities! Even without my divine heritage I would still rank among the most powerful mortals that have ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me?~
+@2636 = ~\[Truth\] - Venduris, if you have studied me as closely as you claim, then you must be aware of the power that I wield. Even without my divine heritage I would still rank among the most powerful mortals that have ever roamed the Realms. Now tell me, do you truly want to risk your own life and the lives of your comrades by fighting me ?~
 @2637 = ~\[Persuade\] - My words were hasty and ill-considered. Let us talk about something else then.~
 @2638 = ~Ha! Let us do battle then, and find out who is truly superior here!  \[Attack Him\]~
 @2639 = ~I guess you are right. Let us talk about something else then.~
 @2640 = ~(Venduris gazes at you intently for a moment)~
-@2641 = ~Indeed... your competence and skills have increased significantly since your departure from Baldur's Gate. They are much greater now than even my last reports from Athkatla had described.~
-@2642 = ~Hmm, your little escapade at Spellhold seems to have actually strengthened you. I must reconsider my approach.~
+@2641 = ~Indeed... your competence and skills have increased significantly since your departure from Baldur's Gate. They are much greater now than even my last reports from Athkatla had indicated.~
+@2642 = ~Hmm, that little escapade at Spellhold seems to have actually strengthened you. I must reconsider my approach.~
 @2643 = ~(He glances at you malevolently while reaching for the ring on his left hand)~
 @2644 = ~We are departing... for now, but rest assured <CHARNAME>, this will not be the last time we meet!~
 @2645 = ~I am not impressed by your empty boasts, <CHARNAME>. As I have already said, you have been studied with great detail and care. I am positive that our skill and competence can easily match your own.~
@@ -2251,15 +2251,15 @@ Usable By:
 @2686 = ~A simple, yet extremely effective precaution was made to prevent anyone from interfering. The warding glyphs which surround this area can not be undone without a unique command phrase which is known only by me.~
 @2687 = ~Furthermore, your own blood, <CHARNAME>, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
 @2688 = ~\[Arcane Lore\] - Ahh, but you didn't actually cast the original spell yourself, did you, Venduris? You are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
-@2689 = ~\[Insight]\ - *Your* permission? You mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type, Venduris.~
+@2689 = ~\[Insight]\ - *Your* permission? You mean that you have cast this warding spell all by yourself? You don't really strike me as the mage type, Venduris.~
 @2690 = ~And how did you manage to dispell my protections and enchantments so easily? Even the most skilled members of the Cowled Wizards would have had difficulties with that, considering the degree of my power.~
 @2691 = ~My blood...? And just how did you get ahold of that?~
-@2692 = ~Furthermore, your own blood, <CHARNAME>, as well as that of your fellow party members, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
+@2692 = ~Furthermore, your own blood, <CHARNAME>, as well as that of your fellow party members, was used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
 @2693 = ~Our blood...? And just how did you get ahold of that?~
 @2694 = ~(Venduris lightly traces the edge of his blade)   I can assure you, that was easier than one would imagine.~
 @2695 = ~You have fought countless battles, leaving a trail of chaos and destruction in your wake. But at the same time, you, Bhaalspawn, have suffered many wounds as well.~
 @2696 = ~(A devious half-sneer briefly forms on his face)  Gathering the few precious drops, which my spellcasters required, from a blood-soaked battlefield was a trivial matter.~
-@2697 = ~\[Arcane Lore\] - You said earlier that I need *your* permission to leave this place. Hmm, somehow I don't think that you've actually cast the original spell by yourself, Venduris. In fact, I believe that you are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
+@2697 = ~\[Arcane Lore\] - You said earlier that I need *your* permission to leave this place. Somehow, I don't think that you were the one who has cast the original spell, Venduris. In fact, I believe that you are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
 @2698 = ~\[Insight]\ - You said earlier that I need *your* permission to leave this place. Do you mean that you have cast this warding spell all by yourself? Hmm, you don't really strike me as the mage type, Venduris.~
 @2699 = ~(Venduris' eyes flicker fiercely and he scowls at you for a second, as if suddenly realizing that he has just said something that he shouldn't have, but he quickly manages to recompose himself.)~
 @2700 = ~*That* is of no consequence. Suffice to say that I now have full control over the wards, and that it is not possible to get by them without my approval. You, <CHARNAME>, will remain trapped here as long as I require it.~
@@ -2281,31 +2281,31 @@ Usable By:
 
 //  Chosen of Cyric partymember interjectons (3000-3999)
 
-@3000 = ~Oh, come on, <CHARNAME>, they are Cyric's goons! Don't you recognize those huge jawless skulls sprawled all over their clothes? We've dealt with their ilk many times before.~
+@3000 = ~Oh, come on, <CHARNAME>, they are Cyric's goons! Don't you recognize those huge jawless skulls sprawled all over their clothes? We've dealt with their kind many times before.~
 @3001 = ~By Torm's blade! Judging by the symbols on their clothes these villains are surely followers of Cyric, and likely high-ranking ones at that. Be on your guard, <CHARNAME>!~
 @3002 = ~These fanatics are most certainly worshipers of the Prince of Lies. Helm, grant us strength!~
-@3003 = ~The Harpers have had plenty of dealings with their kind, <CHARNAME>. There is little doubt that these rogues are servants of Cyric.~
+@3003 = ~The Harpers have had plenty of dealings with their ilk, <CHARNAME>. There is little doubt that these rogues are servants of Cyric.~
 @3004 = ~I've never seen this cloaked man before, but Boo can smell his evil from here, and Boo's nose is never wrong!~
 @3005 = ~What are you doing, <CHARNAME>? This isn't like you at all! Don't give in... don't become like them. Resist little <PRO_BROTHERSISTER>, I beg you!~
-@3006 = ~Restrain yourself, <CHARNAME>! Do not let the taint take your mind. Stay your anger, and let it pass, <PRO_GIRLBOY>!~
-@3007 = ~Gorion would be ashamed if he could see you now <CHARNAME>. Don't forfeit everything he taught you so easily! Recompose yourself, and defy the taint.~
-@3008 = ~N-No! <CHARNAME>, you must resist! If you let yourself go like that, you'll never be the same person again. Please, don't... don't give in!~
-@3009 = ~The power of your heritage is manifesting itself, <CHARNAME>. Embrace it, and show them your true strength!~
+@3006 = ~Restrain yourself, <CHARNAME>! Do not let the taint take your mind. Restrain your anger and let the urge pass, <PRO_GIRLBOY>!~
+@3007 = ~Gorion would be ashamed if he could see you now <CHARNAME>. Do not forfeit everything he has taught you so easily! Recompose yourself and defy the taint!~
+@3008 = ~N-No! <CHARNAME>, you must resist! If you let yourself go like that, you will never be the same person again. Please... don't give in!~
+@3009 = ~The power of your divine heritage is manifesting itself, <CHARNAME>. Embrace it, and show them your true strength!~
 @3010 = ~Ach, 'tis been a while since I've seen a proper bloodbath. Ye be sure to give 'em what they're askin' fer, <CHARNAME>!~
 @3011 = ~Hmm, magical wards attuned to our very blood? A most impressive technique. (I better take some notes).~
 @3012 = ~They really used our... blood? Eww, that's just gross! You'd never get me to cast such a spell, <CHARNAME>, not in a million years.~
-@3013 = ~So that's when this all started then? Hmm, I admit that I've always wondered why we kept facing so many Cyric's agents during our travels. It seems that you have really piqued their interest <CHARNAME>.~
+@3013 = ~So that's when this all started then? Hmm, I admit that I've always wondered why we kept facing so many followers of Cyric during our travels. It seems that you've really piqued their interest <CHARNAME>.~
 @3014 = ~They've been stalking us all this time, huh? Hmm, now that I think about it, that strange halfling does look kind of familiar. I think I've seen him sneaking around Gullykin before.~
 @3015 = ~A-hah! I kept telling you simians that we were being followed but, of course, nobody paid attention. (They even called me paranoid. Such ignorant fools!)~
 @3016 = ~Boo thinks these strange people smell funny, and he remembers that smell way back from Nashkel mines. Be wary <CHARNAME>, evil is afoot!~
 @3017 = ~My raven, may I take one last look at that scroll before it makes acquaintance with entropy?~
-@3018 = ~Ah, though the fair sorceress was as cunning as she was beautiful, I do believe I've found a way to undo her work. A simple Command Phrase, but it should do the trick.~
+@3018 = ~Ah, though the fair sorceress was as cunning as she was beautiful, I do believe that I've found a way to undo her work. A simple Command Phrase, but it should do the trick.~
 @3019 = ~Observe my raven, I've marked a few lines which you need to read in order to restore our freedom. And try to make it sound dramatic, for should you fail, we are most assuredly doomed to spend an eternity inside this devious magical entrapment.~
 @3020 = ~Just a minute there <CHARNAME>! You don't want to end up like my uncle Cinders after he fell into a wagon full of fireworks and accidentally blew it up with a single spark from his pipe. Well, at least it was his own birthday party that he ruined. Anyway, you better let me take a look at that thing.~
-@3021 = ~Hmm.. I think I've solved it! By the looks of it, that poor lass had attuned the wards to a simple Command Phrase. Not very ingenious, but it can be effective at times.~
-@3022 = ~<CHARNAME>, my dear friend, I've marked here a few lines you should read. And make it loud too, so that we can finally escape this invisible cage.~
+@3021 = ~Hmm.. I think I've solved it! By the looks of it, that poor lass had attuned the wards to a simple Command Phrase. Hardly ingenious, but I suppose it can be effective at times.~
+@3022 = ~<CHARNAME>, I've marked here a few lines that you should read. And make it loud too, so that we can finally escape this dreadfull magical cage.~
 @3023 = ~W-Wait, <CHARNAME>! Can I take a look at that first, please?~
-@3024 = ~Oh! I-I believe I can understand this, and if I'm it right, the wards can be lowered with a simple Command Phrase! Do you... do you think it could actually be that easy?~
+@3024 = ~Oh! I-I believe I can understand this, and if I'm reading it right, the wards can be lowered with a simple Command Phrase! Do you... do you think it could actually be that easy?~
 @3025 = ~Um, <CHARNAME>, I've marked the lines you need to read. Just say that out loud and we should be free again, I h-hope.~
 @3026 = ~Hold on there, <CHARNAME>! Can I take a look at that scroll before you needlessly endanger the whole city with your recklessness?~
 @3027 = ~Hmm... if I'm reading this correctly, the wards can be lowered with a special Command Phrase. Simple, but also very effective.~
@@ -2316,7 +2316,7 @@ Usable By:
 @3032 = ~Look here, <CHARNAME>, it's really simple. I've marked the lines which you need to read. Just make sure you're loud enough and we should be out of here in no time.~
 @3033 = ~Wait, you incompetent oaf! Give *me* that thing before you blow us all up. (Such insolence! Ignoring my genius and needlessly endangering us all.)~
 @3034 = ~Hmm, now let's see...~
-@3035 = ~A-hah! This petty sorcery is no match for my sagacity - a simple Command Phrase! Bah, how pathetic.~
+@3035 = ~A-hah! This petty sorcery is no match for my genius - a simple Command Phrase! Bah, how pathetic.~
 @3036 = ~Now, look closely, <CHARNAME>, I'll mark a few lines here, you just need to read them out loud. (Even *<PRO_HESHE>* should be able to accomplish that.)~
 @3037 = ~There, now hurry it up so we can finally get going.~
 @3038 = ~Yes, I have felt this rivvil's chilling stare on my back before. I always presumed that he was after me, though it appears that your heritage outweighs even my own infamy, <CHARNAME>.~
@@ -2576,6 +2576,28 @@ Only Usable By:
  Bard~
 
 
+@5025 = ~Stonesmasher +3~
+@5026 = ~Dark orcish runes are etched into this club. It is a remnant of the last war between the orcs and the Turmish wizards. When the orcish tribes started raiding their city the wizards created golems of terrible power to protect them. Sensing that the brute strength of his warriors was not enough, the great orc chieftain Gull-Nar ordered his shamans to craft a weapon that would allow him to smash the "living statues" into rubble. His shamans used the books from a raided wizard tower to enchant the favorite weapon of their chieftain, a great war club. Gull-Nar was so pleased that he decided to personally lead the next raid, smashing the golems into bits as he proceeded toward the city core. Victory was near, but then a lone mage dressed in black appeared out of nowhere and cast a powerful spell which caused the raging orcs to turn upon each other. In mere minutes, their numbers were decimated and Gull-Nar himself was killed by his most trusted warriors.
+
+Further enchanted using knowledge obtained from the Golem Building Book, the club becomes an even more potent weapon against constructs.
+
+STATISTICS:
+
+Combat Abilities:
+    15% chance to instantly shatter Stone, Clay and Sand Golems on each hit
+
+THAC0: +3, (+5 vs. Golems)
+Damage:  1D6 + 3, (+5 vs. Golems)
+Damage type:  crushing
+Weight: 3
+Speed Factor: 1
+Proficiency Type: Club
+Type:  1-handed
+Requires: 5 Strength
+Not Usable By:
+  Mage~
+
+
 
 // Cromwell's new dailogue (6000-6999)
 
@@ -2590,7 +2612,7 @@ Only Usable By:
 
 @6020 = ~Ye've a fancy sword there, <GIRLBOY>. Kara-Tur craftmanship, aye? Let me take a look...~
 @6021 = ~Hmm... the craft be truly flawless, I cannae do much 'bout that. Still, I could strengthen the anti-chaos enchantments on the blade if ye ever get ahold of some Illithid brine water.~
-@6022 = ~Ay, now... ye found some Illithid brine water, didn't ye? Well, for 5,000 gold I could use it to strengthen the anti-chaos enchantments on that fancy Kara-Tur blade of yers. Are ye interested?~
+@6022 = ~Ay, now... ye found some Illithid brine water, didn't ye? Well, fer 5,000 gold I could use that to bolster the axiomatic enchantments on that fancy Kara-Tur blade of yers. Are ye interested?~
 
 @6030 = ~Eh, what have ye got there? A club of some sort? Let's see...~
 @6031 = ~Uthgardt craftsmanship? Aye, though it looks unfinished. Hmm... if ye can get me a Beljuril gem, I might be able to do something about that.~
@@ -2599,6 +2621,10 @@ Only Usable By:
 @6040 = ~That's a fairly sturdy buckler ye got there. Made of darksteel eh? Let me see that up close...~
 @6041 = ~Oy, if ye can get me a Rogue Stone and some adamantine dust, I could strengthen the darksteel alloy a bit.~
 @6042 = ~Ye have a Rogue Stone and some adamantine dust! For 5,000 gold I could use that to strengthen yer darksteel buckler. I reckon ye're interested?~
+
+@6050 = ~What's that yer holding <GIRLBOY>? Hmm, that be no ordinary club. Pass it to me, will ye?~
+@6051 = ~Orc made, eh? Aye, looks sturdy, but them scrawly runes could use some work. If ye can get me a Golem Building Book, I reckon I could strengthen 'em a wee bit.~
+@6052 = ~Ye found a Golem Building Book, eh? For 5,000 gold I could use it to strengthen the runes on that club of yers. Provided ye're interested, of course.~
 
 
 

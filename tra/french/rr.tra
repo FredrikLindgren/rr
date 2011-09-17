@@ -98,11 +98,11 @@ Désavantages :
 - Ne peut obtenir la capacité d'assassinat
 - Ne peut obtenir la capacité de Coup neutralisant~
 
-@29 = ~BARDE : Le barde est aussi un roublard, mais très différent du voleur. Sa force réside dans sa personnalité plaisante et charmeuse. Grâce à cela et à son ingéniosité, il peut voyager à travers le monde. Le barde est un musicien talentueux et une mine inépuisable de rumeurs, d'histoires et de contes. Tout ce qu'il croise est pour lui source d'apprentissage ; c'est un touche-à-tout, mais il ne maîtrise rien parfaitement. Bien que la plupart des bardes soient des fripouilles, leurs histoires et leurs chants sont bienvenus presque partout et inspirent souvent la confiance à ceux qui les écoutent. Un barde peut rassembler ses alliés en chantant des chansons héroïques ou en élaborant des histoires sur comment ses compagnons prendront le dessus sur leurs adversaires et remporter la journée. Les effets du chant du barde varient en fonction de son niveau :
+@29 = ~BARDE : Le barde est aussi un roublard, mais très différent du voleur. Sa force réside dans sa personnalité plaisante et charmeuse. Grâce à cela et à son ingéniosité, il peut voyager à travers le monde. Le barde est un musicien talentueux et une mine inépuisable de rumeurs, d'histoires et de contes. Tout ce qu'il croise est pour lui source d'apprentissage ; c'est un touche-à-tout, mais il ne maîtrise rien parfaitement. Bien que la plupart des bardes soient des fripouilles, leurs histoires et leurs chants sont bienvenus presque partout et inspirent souvent la confiance à ceux qui les écoutent. Un barde peut rassembler ses alliés en chantant des chansons héroïques ou en élaborant des histoires sur comment ses compagnons prendront le dessus sur leurs adversaires et gagneront la bataille. Les effets du chant du barde varient en fonction de son niveau :
 
-niveau 1 :   +1 au toucher et à tous les jets de sauvegarde, le chant augmente le moral
-niveau 9 :   +1 au toucher et à tous les jets de sauvegarde, le chant guérit de la Peur
-niveau 18 :   +2 au toucher et à tous les jets de sauvegarde, le chant immunise contre la Peur~
+Niveau 1 : +1 au toucher et à tous les jets de sauvegarde, le chant augmente le moral
+Niveau 9 : +2 au toucher et à tous les jets de sauvegarde, le chant guérit de la Peur
+Niveau 18 : +3 au toucher et à tous les jets de sauvegarde, le chant immunise contre la Peur~
 
 @30 = ~MAÎTRE-LAME : Le Maître-Lame est un combattant expérimenté et un aventurier que ses capacités de barde rendent plus redoutable encore. S'il existe un moyen spectaculaire de porter ou de se servir d'une arme, un maître-lame le sait mieux que n'importe qui. Les maîtres-lames réalisent souvent des spectacles impressionnants de maîtrise et de technique, faisant tourbillonner diverses armes autour d'eux avec une précision mortelle. Les armes du maître-lame sont toujours gardées en parfaite condition et hautement polies pour obtenir des effets maximaux pendant une bataille ou un spectacle. Les maîtres-lames s'entraînent et s'exécutent régulièrement avec des armes dans les deux mains, pour finalement développer une ambidextrie totale.
 
@@ -2434,7 +2434,7 @@ Inutilisable par :
  Clerc~
 
 @5014 = ~Fracasseur de Pierre +4~
-@5015 = ~De sombres runes orques sont gravées sur ce gourdin. C'est un vestige de la dernière guerre entre les orques et les mages de Turm. Lorsque les tribus orques commencèrent à assaillir leur cité, les mages créèrent des golems d'un pouvoir terrifiant afin de les protéger. Sentant que la force brute de ses guerriers ne suffirait pas, le grand chef orque Gull-Nar ordonna à ses shamans de fabriquer une arme qui puisse lui permettre de fracasser les «*statues vivantes*» et de les résuire en miettes. Ses shamans utilisèrent le livre d'une tour de mage assaillie afin d'enchanter l'arme préférée de leur chef, un grand gourdin de guerre. Gull-Nar fut tellement heureux qu'il décida de mener personnellement l'assaut suivant, fracassant les golems en morceaux alors qu'il progressait vers le centre de la cité. La victoire était proche, mais soudain, un mage solitaire tout de noir vêtu apparut de nulle part, et lança un sortilège puissant, qui eut pour conséquence de retourner les orques enragés contre eux-mêmes. En quelques minutes, leur nombre fut décimé et Gull-Nar lui-même fut tué par ses guerriers les plus fidèles.
+@5015 = ~De sombres runes orques sont gravées sur ce gourdin. C'est un vestige de la dernière guerre entre les orques et les mages de Turm. Lorsque les tribus orques commencèrent à assaillir leur cité, les mages créèrent des golems d'un pouvoir terrifiant afin de les protéger. Sentant que la force brute de ses guerriers ne suffirait pas, le grand chef orque Gull-Nar ordonna à ses shamans de fabriquer une arme qui puisse lui permettre de fracasser les "statues vivantes" et de les réduire en miettes. Ses shamans utilisèrent le livre d'une tour de mage assaillie afin d'enchanter l'arme préférée de leur chef, un grand gourdin de guerre. Gull-Nar fut tellement heureux qu'il décida de mener personnellement l'assaut suivant, fracassant les golems en morceaux alors qu'il progressait vers le centre de la cité. La victoire était proche, mais soudain, un mage solitaire tout de noir vêtu apparut de nulle part, et lança un sortilège puissant, qui eut pour conséquence de retourner les orques enragés contre eux-mêmes. En quelques minutes, leur nombre fut décimé et Gull-Nar lui-même fut tué par ses guerriers les plus fidèles.
 
 Davantage enchanté, utilisant la connaissance acquise du manuel des golems, le gourdin devient une meilleure arme contre les créations dénuées de peur.
 
@@ -2450,7 +2450,7 @@ Poids : 3
 Facteur de vitesse : 0
 Type de compétence : gourdin
 Type: arme à 1 main
-Foce nécessaire : 5
+Force nécessaire : 5
 Inutilisable par :
  Mage~
 
@@ -2531,6 +2531,28 @@ Utilisable par :
  Voleur
  Barde~
 
+@5025 = ~Fracasseur de Pierre +3~
+@5026 = ~De sombres runes orques sont gravées sur ce gourdin. C'est un vestige de la dernière guerre entre les orques et les mages de Turm. Lorsque les tribus orques commencèrent à assaillir leur cité, les mages créèrent des golems d'un pouvoir terrifiant afin de les protéger. Sentant que la force brute de ses guerriers ne suffirait pas, le grand chef orque Gull-Nar ordonna à ses shamans de fabriquer une arme qui puisse lui permettre de fracasser les "statues vivantes" et de les réduire en miettes. Ses shamans utilisèrent le livre d'une tour de mage assaillie afin d'enchanter l'arme préférée de leur chef, un grand gourdin de guerre. Gull-Nar fut tellement heureux qu'il décida de mener personnellement l'assaut suivant, fracassant les golems en morceaux alors qu'il progressait vers le centre de la cité. La victoire était proche, mais soudain, un mage solitaire tout de noir vêtu apparut de nulle part, et lança un sortilège puissant, qui eut pour conséquence de retourner les orques enragés contre eux-mêmes. En quelques minutes, leur nombre fut décimé et Gull-Nar lui-même fut tué par ses guerriers les plus fidèles.
+
+Davantage enchanté, utilisant la connaissance acquise du manuel des golems, le gourdin devient une meilleure arme contre les créations dénuées de peur.
+
+PARAMETRES :
+
+Capacités de combat :
+15% de chances de détruire instantanément les golems de pierre, d'argile et de sable à chaque coup
+
+
+TAC0 : +3 (+5 contre les golems)
+Dégâts : 1D6 +3 (+5 contre les golems)
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 1
+Type de compétence : gourdin
+Type : arme à 1 main
+Force nécessaire : 5
+Inutilisable par :
+ Mage~
+
 
 
 // Cromwell's new dialogue (6000-6999)
@@ -2556,6 +2578,9 @@ Utilisable par :
 @6041 = ~Ouais, si vous pouvez me trouver une esseulite et de la poussière d'adamantine, je pourrais renforcer un peu l'alliage d'adamantite.~
 @6042 = ~Vous avez une esseulite et de la poussière d'adamantine ! Pour 5000 pièces d'or, je pourrais les utiliser pour renforcer votre bouclier en adamantite. Je suppose que vous êtes intéressé ?~ ~Vous avez une esseulite et de la poussière d'adamantine ! Pour 5000 pièces d'or, je pourrais les utiliser pour renforcer votre bouclier en adamantite. Je suppose que vous êtes intéressée ?~
 
+@6050 = ~Qu'est-ce que vous avez là, <GIRLBOY> ? Hmm, ce n'est pas un gourdin ordinaire. Montrez-le-moi, voulez-vous ?~
+@6051 = ~Fabrication orque, hein ? Oui, il a l'air robuste, mais ces runes gravées dessus pourraient être améliorées. Si vous pouviez me trouver un Manuel de fabrication de golems, je pense que je pourrais les renforcer un peu.~
+@6052 = ~Vous avez trouvé un Manuel de fabrication de golems, hein ? Pour 5000 pièces d'or, je pourrais l'utiliser pour renforcer les runes sur votre gourdin. Si ça vous intéresse, bien sûr.~
 
 
 // Cespenar's new dialogue (7000-7999)

@@ -57,3 +57,15 @@ THEN
     GiveItemCreate("RR#RWAR2",Player1,3,0,0)
     ActionOverride("wsmith01",StartDialogueNoSet([PC]))
 END
+
+IF
+  Global("RR#Items","ar0334",6)
+  Global("ForgeStuff","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ForgeStuff","GLOBAL",0)
+    SetGlobal("RR#Items","ar0334",0)
+    SetGlobal("RR#Craft","ar0334",1)
+    GiveItemCreate("RR#STON2",Player1,0,0,0)
+    ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END

@@ -3,11 +3,12 @@
 // Hopefully, this issue will be corrected in some future version of TobEx and this file will become obsolete
 
 
-ACTION_IF FILE_EXISTS_IN_GAME ~tobex_ini/tobexcore.ini~ BEGIN                                                        // if TobEx is installed
+ACTION_IF FILE_EXISTS_IN_GAME ~tobex_ini/tobexcore.ini~ BEGIN                                                     // if TobEx is installed
   COPY ~tobex_ini/tobexcore.ini~ ~tobex_ini~
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Magic Resistance Mod Fix=1~ ~Magic Resistance Mod Fix=0~         // disable the MR fix option
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Damage Fix=1~ ~Damage Fix=0~                                     // disable the Damage Fix option
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Strength Mod=1~ ~Strength Mod=0~                                 // disable the Strength Mod option
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Correct Experience Reporting=1~ ~Correct Experience Reporting=0~ // disable the XP bonus reporting
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Magic Resistance Mod Fix=1~ ~Magic Resistance Mod Fix=0~
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Damage Fix=1~ ~Damage Fix=0~      
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Disintegrate Fix=1~ ~Disintegrate Fix=0~
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Strength Mod=1~ ~Strength Mod=0~
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Correct Experience Reporting=1~ ~Correct Experience Reporting=0~
   BUT_ONLY_IF_IT_CHANGES
 END

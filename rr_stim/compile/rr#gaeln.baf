@@ -62,7 +62,7 @@ END
 IF
 	Global("RR#Active","LOCALS",0)
         Allegiance(Myself,EVILCUTOFF)
-	  See([GOODCUTOFF])
+	See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)

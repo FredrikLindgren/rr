@@ -1,4 +1,4 @@
-//1000 This file contains descriptions for all the hack options found in TobEx .ini files
+//1180, 1230 This file contains descriptions for all the hack options found in TobEx .ini files
 
 Description format:
 -------------------
@@ -18,6 +18,7 @@ Hack flags:
 [D] - Extra debugging information
 [F] - Engine bug fix
 [M] - Adds extra functionality for modder/player use
+[O] - Code optimisation
 [T] - Tweak to engine behaviour (configured in TobEx_ini/TobExTweak.ini)
 [X] - This hack makes use of alterations to game resources outside the executable that are implemented by TobEx
 
@@ -32,8 +33,65 @@ Options:
 -1: enabled
 
 -----770 EquipRanged Action Fix [F]
-Corrects an error in the EquipRanged() action where an equipped shield would prevent one-handed
-ranged weapons in the weapon slot to be equipped
+Corrects an error in the EquipRanged() action where an equipped shield would prevent one-handed ranged weapons in the weapon slot to be equipped
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1230 Expanded Actions [M]
+Enables the use of new actions
+
+Descriptions
+352 LoseGame()
+Plays the ending cutscene as if the protagonist died. If the action is used in a pausing dialogue, the ending cutscene will play after the dialogue ends. This action does nothing in the arenas game type.
+
+353 DialogueSetGlobal(S:Name*,S:Area*,I:Value*)
+Sets the variable 'Name' in the scope 'Area' to 'Value' immediately instead of being added through the dialogue owner's action queue. This allows variables to be set instantaneously and checked immediately afterwards in the same dialogue. ActionOverride() is supported. If used outside dialogue, this action behaves exactly as SetGlobal().
+Limitations: Variables become set asynchronously to the order in which the action is present on the script block. This can cause issues when an action is purposely sandwiched between two modifications of the same variable.
+
+354 DialogueIncrementGlobal(S:Name*,S:Area*,I:Value*)
+Increments the variable 'Name' in the scope 'Area' by 'Value' immediately instead of being added through the dialogue owner's action queue. This allows variables to be set instantaneously and checked immediately afterwards in the same dialogue. ActionOverride() is supported. If used outside dialogue, this action behaves exactly as IncrementGlobal().
+Limitations: Variables become set asynchronously to the order in which the action is present on the script block. This can cause issues when an action is purposely sandwiched between two modifications of the same variable.
+
+355 DialogueSG(S:Name*,I:Num*)
+Sets the global variable 'Name' to 'Num' immediately instead of being added through the dialogue owner's action queue. This allows variables to be set instantaneously and checked immediately afterwards in the same dialogue. ActionOverride() is supported. If used outside dialogue, this action behaves exactly as SG().
+Limitations: Variables become set asynchronously to the order in which the action is present on the script block. This can cause issues when an action is purposely sandwiched between two modifications of the same variable.
+
+Options:
+-0: disabled
+-1: enabled
+
+/////////////////////////////////////// ARENAS
+
+-----1100 Enable Arenas Game Type [M]
+Enables the arena multiplayer game type accessible from the multiplayer menu
+In the arena game type:
+-Games are called scenarios and are loaded as saved games from the ./arenas directory
+-Pausing the game is not allowed
+-The game does not end when Player1 dies
+-LOCALSKickedOut is not set on death
+-Only inventory slot items are dropped on death
+-The DeathmatchPosition() actions set the DEATHMATCH_RESURRECT<PLAYERNUM> variable
+-When the action DeathmatchPosition() is used, a player who dies will immediately Raise Dead and LeaveAreaLua() to the position set by DeathmatchPosition(), with a random orientation
+-Gold is not shared by the party but is kept by the player
+-Opposing players' health is not shown overhead and tooltips reveal approximate health
+-No locator feedback is displayed when opposing players are damaged
+-Opposing players' visibility maps are not displayed
+-Party effects do not affected opposing players, hostile non-party effects affect opposing players
+-Chunk death is disabled
+-The default action when clicking on the portrait of an opposing player is to attack when in visibility range, and to move to opposing player when outside visibility range
+-Record screen information on opposing players is not accessible
+
+Limitations:
+-Multiplayer permissions cannot be set correctly when setting up the game
+-The host can reform party, kicking out other players
+-The party can rest, all party members will heal, and the party cannot rest when the party is scattered (including opposing players)
+-Any player can modify the party position of all party members
+-Dialogue can be made to pause the game
+-One can see the opposing player's kit description
+-When outside visibility range, clicking on an opposing player's portrait allows the player to locate their opponents
+-Summoned creatures turn enemy when hit by opposing players
 
 Options:
 -0: disabled
@@ -108,6 +166,13 @@ Options:
 Logs some messages suppressed by hard code into baldur.log
 If 'Extenal Logging' is enabled, text is also printed to console and TobEx.log (with timestamp)
 Requires 'Logging On=1' under baldur.ini [Program Options]
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1080 Log Network Errors [D]
+Prints some network errors to the console and logs into TobEx.log (with timestamp)
 
 Options:
 -0: disabled
@@ -241,7 +306,48 @@ If 970 Blindness As Spell Description is enabled, this hack is overridden
 
 Options:
 -0: disabled
--1: removes the cumulative -10 to hit penalty
+-1: enabled
+
+-----1210 Button Effects Mod [M]
+REQUIRES: Expanded Stats
+Expands the disable and enable button opcodes to allow disabling/enabling the Bard Song (10) and Find Traps (14) buttons, respectively. The button disabled states are tied to new hard-coded stats 308-322, inclusive.
+
+Descriptions
+#144 (0x090)  Button: Disable Button [144]
+Parameter #1: Irrelevant
+Parameter #2: Button
+Description:
+Disabled the button specified by the 'Button' field.
+
+Known values for 'Button' are:
+0   Stealth Button
+1   Thieving Skill Button
+2   Spell Select Button
+3   First Quick Spell Button
+4   Second Quick Spell Button
+5   Third Quick Spell Button
+6   Turn Undead Button
+7   Talk Button
+8   Use Item Button
+9   First Quick Item Button
+10  Bard Song Button
+11  Second Quick Item Button
+12  Third Quick Item Button
+13  Innate Ability Button
+14  Find Traps Button
+
+#279 (0x117)  Button: Enable Button [279]
+Parameter #1: Irrelevant
+Parameter #2: Button
+Description:
+Enables the button specified by the 'Button Type' field.
+
+Known values for 'Button' are:
+As above
+
+Options:
+-0: disabled
+-1: enabled
 
 -----210 Cast Spell On Condition Mod [M]
 Modifies the cast spell on condition effect to allow customisation of how often the condition is checked
@@ -317,7 +423,7 @@ Options:
 
 -----160 Configurable Damage Effect Bypasses Mirror Images [C, M]
 (Identical to tob_hacks, SCS, SCSII, Spell Revisions)
-Adds new bit 24 to effect feature block save type 'Bypass Mirror Images'
+Adds new bit 24 to item ability flag 'Bypass Mirror Images'
 Only for the damage effect opcode, if this bit is set, the mirror image check is skipped when checking saving throw
 
 Options:
@@ -334,8 +440,8 @@ Alows configuration of the dispelling of items in the magical weapon slot (SLOT_
 Description
 #58 (0x03A)  Cure: Dispellable Effects (Dispel Magic) [58]
 Parameter #1: Level
-Parameter #2 (low WORD): Type
-Parameter #2 (high WORD): Magical weapon dispel behaviour
+Parameter #2 Low: Type
+Parameter #2 High: Magical weapon dispel behaviour
 Description:
 Dispels magic from the targeted creature(s). Depending on the value of the 'Type' field, the 'Level' field can be used to set the level of the effect.
 
@@ -358,9 +464,40 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1020 Container Use EFF File Fix [F]
+Fixes memory deallocation bug for use EFF file opcode on containers and doors
+
+Options:
+-0: disabled
+-1: enabled
+
 -----200 Cure Drunk Fix [C, F]
 (Identical to tob_hacks)
 Fixes cure drunkenness opcode to remove Drunk opcode rather than itself
+
+Options:
+-0: disabled
+-1: enabled
+
+-----350 Cut Scene 2 Mod [C, M]
+(Different implementation to, and overrides tob_hacks)
+Expands the pocketplane opcode to allow for use of custom cutscene scripts and options for storing current party locations
+
+Description
+#298 (0x12A) Cutscene 2 [298]
+Parameter #1: Store party location behaviour
+Parameter #2: Script
+Description:
+Starts a cutscene.
+
+Values for 'Store party location behaviour':
+0   Use list specifically for pocket plane
+1   Use list normally used by StorePartyLocations() action - restore with RestorePartyLocations() action
+2   Do not store party locations
+
+Values for 'Use custom script':
+0   Use cut250a.bcs
+1   Use cutscene script specified by the Resource field
 
 Options:
 -0: disabled
@@ -370,6 +507,29 @@ Options:
 Fixes the following bugs with the damage opcode:
 1. Killing someone with magic fire damage would cause a WEIRD damage assertion failure
 2. Hitting someone with magic cold damage would not play a hit sound
+
+Options:
+-0: disabled
+-1: enabled
+
+-----450 Dexterity Mod [M, X]
+Adds the Icewind Dale Type 3 Cat's Grace Spell to the dexterity modifier effect opcode
+
+#15 (0x00F)  Stat: Dexterity Modifier [15]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Dexterity = Dexterity + 'Statistic Modifier' value
+1   Flat Value Modifier -> Dexterity = 'Statistic Modifier' value
+2   Percentage Modifier -> Dexterity = (Dexterity * 'Statistic Modifier' value) / 100
+3   Cats Grace Spell
+
+For a Type of 3 (Cat's Grace Spell), dexterity is modified as per Icewind Dale Cat's Grace spell behaviour,
+externalised to CLSSPLAB.2DA, in which 1Dx dexterity is gained up to a maximum of 20 depending on the player's
+class (defaults to 1D6 if class is not present), where x is specified by the DEX column.
 
 Options:
 -0: disabled
@@ -408,23 +568,9 @@ Options:
 -0: disabled
 -1: enabled
 
------350 Extend Cut Scene 2 [C, M]
-(Different implementation to, and overrides tob_hacks)
-Expands the pocketplane opcode to allow for use of custom cutscene scripts and options for storing current party locations
-
-Description
-#298 (0x12A) Cutscene 2 [298]
-Parameter #1: Store party location behaviour
-Parameter #2: Use custom cutscene script
-Description:
-Starts a cutscene, whereby the default settings (0, 0) executes cut250a.bcs and stores current party locations in the list used specifically for pocket plane.
-Values for 'Store party location behaviour':
-0   Use list specifically for pocket plane (default)
-1   Use list normally used by StorePartyLocations() action - restore with RestorePartyLocations() action
-2   Do not store party locations
-Values for 'Use custom script':
-0   Use cut250a.bcs (default)
-1   Use cutscene script specified by the Resource field
+-----1050/1060/1070 Drop Inventory On Disintegrate/Frozen Death/Stone Death [C, T]
+(May clash with components of P5Tweaks, which tries to replicate this behaviour)
+Alters the instant death opcode to make the creature drop all non-critical items on disintegrate, frozen death, and/or stone death
 
 Options:
 -0: disabled
@@ -445,75 +591,8 @@ Options:
 -0: disabled
 -1: enabled
 
------450 IWD Style Cat's Grace Dexterity Mod [M, X]
-Adds the Icewind Dale Type 3 Cat's Grace Spell to the dexterity modifier effect opcode
-
-#15 (0x00F)  Stat: Dexterity Modifier [15]
-Parameter #1: Statistic Modifier
-Parameter #2: Type
-Description:
-Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
-
-Known values for 'Type' are:
-0   Cumulative Modifier -> Dexterity = Dexterity + 'Statistic Modifier' value
-1   Flat Value Modifier -> Dexterity = 'Statistic Modifier' value
-2   Percentage Modifier -> Dexterity = (Dexterity * 'Statistic Modifier' value) / 100
-3   Cats Grace Spell
-
-For a Type of 3 (Cat's Grace Spell), dexterity is modified as per Icewind Dale Cat's Grace spell behaviour,
-externalised to CLSSPLAB.2DA, in which 1Dx dexterity is gained up to a maximum of 20 depending on the player's
-class (defaults to 1D6 if class is not present), where x is specified by the DEX column.
-
-Options:
--0: disabled
--1: enabled
-
------460 IWD Style Mage Spell Slots Mod [M]
-Adds the Icewind Dale Type 512 Double Spells to the mage spell slots modifier effect opcode
-See the IWD:TotL description for this opcode in the IESDP for more information.
-
-Options:
--0: disabled
--1: enabled
-
------470 IWD Style Priest Spell Slots Mod [M]
-Adds the Icewind Dale Type 512 Double Spells to the priest spell slots modifier effect opcode
-See the IWD:TotL description for this opcode in the IESDP for more information.
-
-Options:
--0: disabled
--1: enabled
-
------480 IWD Style Strength Mod [M, X]
-Alters the strength modifier effect opcode to work similar to Icewind Dale behaviour
-
-Description
-#44 (0x02C)  Stat: Strength Modifier [44]
-Parameter #1: Statistic Modifier
-Parameter #2: Type
-Description:
-Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
-
-Known values for 'Type' are:
-0 Cumulative Modifier -> Strength = Strength + 'Statistic Modifier' value
-1 Flat Value Modifier -> Strength = 'Statistic Modifier' value
-2 Percentage Modifier -> Strength = (Strength * 'Statistic Modifier' value) / 100
-3 Strength Spell
-
-For a Type of 0 (Cumulative Modifier), unit increments from 17 upwards occurs as 17 -> 18 -> 18/01 -> 18/51 -> 18/76 -> 18/91 -> 18/00 -> 19 -> ...
-For a Type of 3 (Strength Spell), strength is modified as per Icewind Dale Strength spell behaviour, externalised to CLSSPLAB.2DA, in which 1Dx strength is gained up to a maximum of 18/<STREX value> depending on the player's class (defaults to 1D6 if class is not present), where x is specified by the STR column. Unit increments from 17 upwards occurs as 17 -> 18 -> 18/10 -> 18/20 -> 18/30 -> 18/40 -> 18/50 -> 18/60 -> 18/70 -> 18/80 -> 18/90 -> 18/00. The 'Statistic Modifier' value overrides the CLSSPLAB.2DA entry, specifying the die size and allowing a maximum strength of 18/00.
-
-FlameWing's description of Strength Spell:
-"IWD1/P&P Strength Spell With a slight change, in that param1 != 0 means dice size to roll for all classes and allows exceptional strength bonuses for non-warrior classes. For example, param1 = 4 rolls a d4 for strength increase,
-similar to P&P Strength of Stone spell. In all cases, strength cannot become 19 or more."
-
-Options:
--0: disabled
--1: enabled
-
 -----920 Learn Spell Mod [M]
-[NOTE: This hack is WIP and currently cannot be enabled via TobEx.ini]
-Adds a number of flags to parameter 2 of the learn spell opcode as described below
+Adds a number of flags to parameter 1 high of the learn spell opcode as described below
 
 Description
 #147 (0x093)  Spell: Learn Spell [147]
@@ -533,6 +612,33 @@ Bit 3: No effect (reserved for GemRB)
 Bit 4: If the spell is already learnt, no experience is given (excludes inventory screen)
 Bit 5: Learning the spell obeys mage school exclusions (excludes inventory screen)
 Bit 6: The spell cannot be learnt by sorcerer class (excludes inventory screen)
+Bit 7: Learning fails if the target has already learnt the maximum number of spells as per INTMOD.2DA for the spell's level (excludes inventory screen)
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1120 Luck Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#22 (0x016)  Stat: Cumulative Luck Bonus [22]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field. 
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Luck = Luck + 'Statistic Modifier' value
+1   Flat Value Modifier -> Luck = 'Statistic Modifier' value
+2   Percentage Modifier -> Luck = (Luck * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Luck = Luck + 'Statistic Modifier' value
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----460 Mage Spell Slots Mod [M]
+Adds the Icewind Dale Type 512 Double Spells to the mage spell slots modifier effect opcode
+See the IWD:TotL description for this opcode in the IESDP for more information.
 
 Options:
 -0: disabled
@@ -548,10 +654,14 @@ Parameter #1: Statistic Modifier
 Parameter #2: Type
 Description:
 Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
 Known values for 'Type' are:
-0   Cumulative Modifier -> Value = Value + 'Statistic Modifier' value
+0   Instantaneous Cumulative Modifier -> Value = Value + 'Statistic Modifier' value
 1   Flat Value Modifier -> Value = 'Statistic Modifier' value
 2   Percentage Modifier -> Value = (Value * 'Statistic Modifier' value) / 100
+3   Cumulative Modifier -> Value = Value + 'Statistic Modifier' value
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
 Options:
 -0: disabled
@@ -568,6 +678,38 @@ Options:
 (Different implementation to, and clashes with tob_hacks)
 Fixes a bug with the poison opcode where a creature with multiple instances of disease, poison, wing buffet, 
 regeneration and/or repeating effect opcodes would only have the highest frequency instance applied 
+
+Options:
+-0: disabled
+-1: enabled
+
+-----470 Priest Spell Slots Mod [M]
+Adds the Icewind Dale Type 512 Double Spells to the priest spell slots modifier effect opcode
+See the IWD:TotL description for this opcode in the IESDP for more information.
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1030 Proficiency Modifier Mod [M]
+Extends the proficiency modifier opcode to allow incrementation/decrementation of proficiencies
+Standard Throne of Bhaal proficiencies are limited to a maximum of 5 stars
+
+Description
+#233 (0x0E9) Stat: Proficiency Modifier [233]
+Parameter #1: Amount
+Parameter #2 Low: Type
+Parameter #2 High: Behaviour
+Description:
+
+Applies 'Behaviour' to the weapon proficiency points for the weapon type specified in the 'Type' field with the value specified by the 'Amount' field, for the targeted creature(s).
+
+Values for 'Behaviour' are:
+0 Set proficiency 'Type' to 'Amount' only if 'Amount' is higher than the current proficiency points
+1 Proficiency points of 'Type' = Proficiency points of 'Type' + 'Amount' (applied after all of Behaviour 0)
+
+Values for 'Type' are:
+See STATS.IDS for proficiency values
 
 Options:
 -0: disabled
@@ -599,7 +741,8 @@ The recommended format of the custom 2da resources are as follows:
 *
 		Projectile Number		Smoke Animation
 <PROJECTILE_NAME>	94			*			//for projectile only
-<PROJECTILE_NAME>	*			0X0500			//for smoke animation only<PROJECTILE_NAME>	186			0X0600			//for projectile and smoke animation
+<PROJECTILE_NAME>	*			0X0500			//for smoke animation only
+<PROJECTILE_NAME>	186			0X0600			//for projectile and smoke animation
 
 Note that the smoke animation ID must be specified in hexadecimal, with capital X and must be 4 hexadecimal digits.
 The third digit of the target smoke animation ID is ignored, e.g. 0X0500 will remove smoke animation IDs 0x05*0.
@@ -612,6 +755,132 @@ Options:
 (Different implementation to, and clashes with tob_hacks)
 Fixes a bug with the repeating effect opcode where a creature with multiple instances of disease, poison, wing buffet, 
 regeneration and/or repeating effect opcodes would only have the highest frequency instance applied 
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1130 Save Vs Breath Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#36 (0x024)  Stat: Save vs. Breath Weapons Modifier [36]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+1   Flat Value Modifier -> Save = 'Statistic Modifier' value
+2   Percentage Modifier -> Save = (Save * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+
+'Statistic Modifier' can be positive or negative.
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----1140 Save Vs Death Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#33 (0x021)  Stat: Save vs. Death Modifier [33]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+1   Flat Value Modifier -> Save = 'Statistic Modifier' value
+2   Percentage Modifier -> Save = (Save * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+
+'Statistic Modifier' can be positive or negative.
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----1150 Save Vs Poly Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#35 (0x023)  Stat: Save vs. Petrification/Polymorph Modifier [35]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+1   Flat Value Modifier -> Save = 'Statistic Modifier' value
+2   Percentage Modifier -> Save = (Save * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+
+'Statistic Modifier' can be positive or negative.
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----1160 Save Vs Spells Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#37 (0x025)  Stat: Save vs. Spells Modifier [37]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+1   Flat Value Modifier -> Save = 'Statistic Modifier' value
+2   Percentage Modifier -> Save = (Save * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+
+'Statistic Modifier' can be positive or negative.
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----1170 Save Vs Wands Mod [M]
+Adds instantaneous sum type (3)
+
+Description
+#34 (0x022)  Stat: Save vs. Wands Modifier [34]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0   Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+1   Flat Value Modifier -> Save = 'Statistic Modifier' value
+2   Percentage Modifier -> Save = (Save * 'Statistic Modifier' value) / 100
+3   Instantaneous Cumulative Modifier -> Save = Save + 'Statistic Modifier' value
+
+'Statistic Modifier' can be positive or negative.
+
+For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
+
+-----480 Strength Mod [M, X]
+Alters the strength modifier effect opcode to work similar to Icewind Dale behaviour
+
+Description
+#44 (0x02C)  Stat: Strength Modifier [44]
+Parameter #1: Statistic Modifier
+Parameter #2: Type
+Description:
+Applies the modifier value specified by the 'Statistic Modifier' field in the style specified by the 'Type' field.
+
+Known values for 'Type' are:
+0 Cumulative Modifier -> Strength = Strength + 'Statistic Modifier' value
+1 Flat Value Modifier -> Strength = 'Statistic Modifier' value
+2 Percentage Modifier -> Strength = (Strength * 'Statistic Modifier' value) / 100
+3 Strength Spell
+
+For a Type of 3 (Strength Spell), strength is modified as per Icewind Dale Strength spell behaviour, externalised to CLSSPLAB.2DA, in which 1Dx strength is gained up to a maximum of 18/<STREX value> depending on the player's class (defaults to 1D6 if class is not present), where x is specified by the STR column. Unit increments between 18 and 19 depend on differences detected in the STRMODEX.2DA table. The 'Statistic Modifier' value overrides the CLSSPLAB.2DA entry, specifying the die size and allowing a maximum strength of 18/00.
+
+FlameWing's description of Strength Spell:
+"IWD1/P&P Strength Spell With a slight change, in that param1 != 0 means dice size to roll for all classes and allows exceptional strength bonuses for non-warrior classes. For example, param1 = 4 rolls a d4 for strength increase,
+similar to P&P Strength of Stone spell. In all cases, strength cannot become 19 or more."
 
 Options:
 -0: disabled
@@ -639,6 +908,13 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1220 Allow All Races to Dual Class [T]
+Allows all races to dual class, rather than just humans
+
+Options:
+-0: disabled
+-1: enabled
+
 -----560 Allow Equipping Armor in Combat [T]
 Allows the equipment in the armor slot to be changed during combat.
 
@@ -655,7 +931,7 @@ Options:
 
 -----810 Assassin and Bounty Hunter Penalty to Similar Kits [C, M]
 (No compatibility issues currently described, but may cause undesirable effects to kit modifications that add kits that combine the 0x40000 and/or 0x80000 unusability flags with other unusability flags)
-Applies the 15% (Assassin) or 20% (Bounty Hunter) only thieving skill points disadvantage to thief kits that combine the use of the 0x40000 and/or 0x80000 unusability flags, respectively, with other unusability flags
+Applies the 15% (Assassin) or 20% (Bounty Hunter) thieving skill points disadvantage to thief kits that combine the use of the 0x40000 and/or 0x80000 unusability flags, respectively, with other unusability flags
 
 Options:
 -0: disabled
@@ -688,14 +964,6 @@ Options:
 -0: disabled
 -1: enabled
 
------180 Correct Experience Reporting [F]
-Fixes a bug where the game incorrectly reports the amount of experience gained by the party
-While the party normally gains 110% experience of that coded in creatures, the game reports the 100% amount instead
-
-Options:
--0: disabled
--1: enabled
-
 -----950 Custom Shadows of Amn Starting Experience [C, T]
 (overrides any mods that directly modify the starting experience in the executable, including Baldur's Gate Trilogy-WeiDU)
 Allows setting a custom amount of starting experience for Shadows of Amn
@@ -719,6 +987,13 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1110 Disable End On Player1 Dead [T]
+Disables the ending cutscene when the protagonist dies
+
+Options:
+-0: disabled
+-1: enabled
+
 -----760 Disable Force Inventory Pause [T]
 In single player, entering the inventory screen with the game unpaused does not pause the game
 If the game is first paused and the user enters the inventory screen, the game will still pause
@@ -731,6 +1006,7 @@ Options:
 
 -----930 Disable Experience Boost [T]
 Disables the hard-coded feature where the party gains 110% of the experience actually coded in creatures
+Also, fixes a bug where the game incorrectly reports the amount of experience gained by the party
 
 Options:
 -0: disabled
@@ -748,7 +1024,7 @@ Options:
 Allows modders to extend STATS.IDS to use opcodes 202-SHRT_MAX (32767)
 Features of new stats:
 -New stats can be set using effect opcode 318 (0x13E) with description below
--New stats 202-300 are reserved for hard-coded stats
+-New stats 202-400 are reserved for hard-coded stats
 -New stats can be checked correctly using CheckStat(), CheckStatLT(), and CheckStatGT() script triggers
 -New stats are not permanent, they require an ongoing effect opcode 318 in order to keep their values
 -In order to make a new stat semi-permanent, you can set an extremely long duration for the effect, or use timing mode 10 and set duration to INT_MAX (2147483647)
@@ -777,7 +1053,7 @@ Known values for 'Type' are:
 9   Bitwise OR Modifier -> Value = Value | 'Statistic Modifier' value
 10  Inverse Modifier -> Value = !Value
 
-Note: You cannot set any stats with opcode < 400 with this effect. New stats 202-400 are reserved for new hard-coded stats.
+Note: You cannot set any stats with opcode < 387 with this effect. New stats 202-400 are reserved for new hard-coded stats.
 
 New hard-coded stats
 301 FIGHTERLEVEL - true fighter level (does not include monk)
@@ -787,6 +1063,44 @@ New hard-coded stats
 305 DRUIDLEVEL - true druid level
 306 RANGERLEVEL - true ranger level
 307 EFFECTCLERICLEVEL - equivalent cleric casting level (Cleric 1 = Ranger 8 = Paladin 9; Cleric-Rangers use cleric level)
+308 BUTTONDISABLESTEALTH - set to 1 on Disable Button effect (requires Button Effects Mod)
+309 BUTTONDISABLETHIEVING - set to 1 on Disable Button effect (requires Button Effects Mod)
+310 BUTTONDISABLECASTSPELL - set to 1 on Disable Button effect (requires Button Effects Mod)
+311 BUTTONDISABLEQUICKSPELL1 - set to 1 on Disable Button effect (requires Button Effects Mod)
+312 BUTTONDISABLEQUICKSPELL2 - set to 1 on Disable Button effect (requires Button Effects Mod)
+313 BUTTONDISABLEQUICKSPELL3 - set to 1 on Disable Button effect (requires Button Effects Mod)
+314 BUTTONDISABLETURNUNDEAD - set to 1 on Disable Button effect (requires Button Effects Mod)
+315 BUTTONDISABLETALK - set to 1 on Disable Button effect (requires Button Effects Mod)
+316 BUTTONDISABLEUSEITEM - set to 1 on Disable Button effect (requires Button Effects Mod)
+317 BUTTONDISABLEQUICKITEM1 - set to 1 on Disable Button effect (requires Button Effects Mod)
+318 BUTTONDISABLEBARDSONG - set to 1 on Disable Button effect (requires Button Effects Mod)
+319 BUTTONDISABLEQUICKITEM2 - set to 1 on Disable Button effect (requires Button Effects Mod)
+320 BUTTONDISABLEQUICKITEM3 - set to 1 on Disable Button effect (requires Button Effects Mod)
+321 BUTTONDISABLEABILITY - set to 1 on Disable Button effect (requires Button Effects Mod)
+322 BUTTONDISABLEFINDTRAPS - disables Find Traps button when set to 1 (requires Button Effects Mod)
+323 AID - set to param1 of Aid effect
+324 BLESS - set to param1 of Bless effect
+325 CHANT - set to param1 of Chant effect
+326 DRAWUPONHOLYMIGHT - set to param1 of Draw Upon Holy Might effect
+327 CHANTBAD - set to param1 of Chant Bad effect
+328 DISABLESPELLTYPEWIZARD - set to 1 on Disable Spelltype effect
+329 DISABLESPELLTYPEPRIEST - set to 1 on Disable Spelltype effect
+330 DISABLESPELLTYPEINNATE - set to 1 on Disable Spelltype effect
+331 WINGBUFFET - set to param2 of Wing Buffet effect
+
+387 ACIDDAMAGEBONUS - percentage modifier to acid damage from item/spell ability effects
+388 COLDDAMAGEBONUS - percentage modifier to cold damage from item/spell ability effects
+389 CRUSHINGDAMAGEBONUS - percentage modifier to crushing damage from normal damage and item/spell ability effects
+390 ELECTRICITYDAMAGEBONUS - percentage modifier to electricity damage from item/spell ability effects
+391 FIREDAMAGEBONUS - percentage modifier to fire damage from item/spell ability effects
+392 PIERCINGDAMAGEBONUS - percentage modifier to piercing damage from normal damage and item/spell ability effects
+393 POISONDAMAGEBONUS - percentage modifier to poison damage from item/spell ability effects
+394 MAGICDAMAGEBONUS - percentage modifier to magic damage from item/spell ability effects
+395 MISSILEDAMAGEBONUS - percentage modifier to missile damage from normal damage and item/spell ability effects
+396 SLASHINGDAMAGEBONUS - percentage modifier to slashing damage from normal damage and item/spell ability effects
+397 MAGICFIREDAMAGEBONUS - percentage modifier to magic fire damage from item/spell ability effects
+398 MAGICCOLDDAMAGEBONUS - percentage modifier to magic colddamage from item/spell ability effects
+399 STUNNINGDAMAGEBONUS - percentage modifier to stunning damage from normal damage and item/spell ability effects
 400 WEIGHTALLOWANCEMOD - custom stat that modiifies by sum the amount a character is allowed to carry (total weight allowance = StrMod value + StrModEx value + WeightAllowanceMod)
 
 Options:
@@ -830,6 +1144,7 @@ Options:
 -----490 Level One Proficiency Restrictions [C, M, T]
 (Different implentation to, and clashes with tob_hacks)
 Enables proficiency restrictions at level one as described by the FIRST_LEVEL column of PROFSMAX.2DA
+This applies to both character generation and dual classing
 
 Options:
 -0: disabled
@@ -883,6 +1198,32 @@ Options:
 
 /////////////////////////////////////// ITEMS
 
+-----1200 Ability-specific Use Item Animations [M]
+Allows the use of different custom animation sequences for different abilities of the same item
+This is reflected by the support of extra columns in ITEMANIM.2DA
+
+ITEMANIM.2DA
+Description
+This file lists the character animation sequence to be played when an item ability is used. This only applies to items that are used in UseItem() and UseItemPoint() actions, or equivalent thereof (i.e. used as quick item).
+
+[ROWNAME]: Item ResRef
+SEQUENCE: The animation sequence to play for the first ability of the specified item (from seq.ids). If there are no other columns, this is the animation sequence to play for all abilities.
+<subsequent columns>: The animation sequence to play for the (n+1)th ability of the specified item (from seq.ids), where n is the name of the column.
+
+Example
+WAND05.ITM has two abilities
+
+2DA V1.0
+-1
+	SEQUENCE	1               
+WAND05	-1	12
+
+Using the first ability plays no animation sequence (-1). Using the second ability plays animation sequence 12 (SEQ_ATTACK_BACKSLASH).
+
+Options:
+-0: disabled
+-1: enabled
+
 -----140 Configurable Backstab Restrictions [C, M]
 (Different implementation to, and clashes with tob_hacks)
 Adds new item ability flag bit 25 'Toggle backstab restrictions'
@@ -913,6 +1254,21 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1040 Configurable Items Cannot Target Invisible [M]
+Adds new item ability flag bit 26 'Cannot target invisible'
+This includes all creatures with invisibility and/or sanctuary
+
+Modding Note
+If this hack is enabled and a player attempts to use an item ability on an invisible/sanctuary creature with bit 26 set, string reference 46529 will display.
+It reads 'Spell Cancelled: Can not target spells on invisible or sanctuaried creatures.'
+This is not consistent with this hack.
+Mods using this hack should change the string reference to read 'Action Cancelled: Can not target action on invisible or sanctuaried creatures.'
+This substitutes the words 'Spell[s]' with 'Action' and allows compatibility with the 'Configurable Spells Can Target Invisible' hack.
+
+Options:
+-0: disabled
+-1: enabled
+
 -----300 Enable 99 Random Treasure Rows [M]
 Enables the use of 99 rows for all RND*.2DA files for modders
 
@@ -929,14 +1285,14 @@ Description
 ITEM: the resource name of the item that the item-creature restrictions apply to
 NO_PICKUP_E: if set to non-zero, the ITEM cannot be removed from any equipment slot of the creature with associated death variable
 STRREF_PE: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable
-ONLY_EQUIP: if set to non-zero, the ITEM can only be equipped by the creature with associated death variable (this is 'stackable', in that multiple ITEM entries under different death variables mean that multiple creature with associated death variables can equip the ITEM
+ONLY_EQUIP: if set to non-zero, the ITEM can only be equipped by the creature with associated death variable (this is 'stackable', in that multiple ITEM entries under different death variables mean that multiple creatures with associated death variables can equip the ITEM)
 STRREF_E: the string reference to display in when a creature other than that with the associated death variables tries to equip the ITEM
 NO_PICKUP_I: if set to non-zero, the ITEM cannot be removed from any inventory slot of the creature with associated death variable
 STRREF_I: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable
 NO_DROP_I: if set to non-zero, the ITEM cannot be placed in any inventory slot of the creature with associated death variable
 STRREF_DI: the string reference to display in the inventory screen when the ITEM is attempted to be placed in any inventory slot of the creature with associated death variable
 NO_DROP_E: if set to non-zero, the ITEM cannot be placed in any equipment slot of the creature with associated death variable
-STRREF_DE: the string reference to display in the inventory screen then the ITEM is attmpted to be placed in any equipment slot of the creature with associated death variable
+STRREF_DE: the string reference to display in the inventory screen when the ITEM is attmpted to be placed in any equipment slot of the creature with associated death variable
 
 For example,
 	ITEM	NO_PICKUP_E	STRREF_PE	ONLY_EQUIP	STRREF_E	NO_PICKUP_I	STRREF_I	NO_DROP_I	STRREF_DI	NO_DROP_E	STRREF_DE
@@ -1082,13 +1438,38 @@ Options:
 
 /////////////////////////////////////// SPELLS
 
+-----180 Casting Fixes [F]
+Fixes a number of issues with casting sounds and graphics:
+1. Modifies the way that the gender of casting sound selection is handled
+Normally, female gender uses female sound, other and niether gender uses unvoiced sound, and all other genders uses male sound
+This caused problems with spells like Project Image where illusory female creatures used male casting sounds
+This hack modifies so that female gender uses female sound, other and niether gender uses unvoiced sound, male gender uses male sound, and all other genders check the Sex field (0x237) in the CRE file format. If the Sex field is male, male sound is used. If female, female sound is used. For any other Sex field, an unvoiced sound is used
+
+2. Takes into account the MENTALSPEED stat when determining whether to play a casting sound at all, whether to play a gendered or unvoiced casting sound, and whether to play the casting animation
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1010 Configurable Spells Can Be Unvoiced [M]
+Adds new bit 25 to spell flags 'Can Be Cast When Silenced'
+When a spell is being cast while silenced using this flag, the silenced casting sound "CHA_S*" is used
+This does not change the behaviour of Vocalize (SPWI219), Set Snare (SPCL412), Set Special Snare (SPCL414), and Pocket Plane (SPIN649), which are castable when silenced without the hack
+
+Options:
+-0: disabled
+-1: enabled
+
 -----880 Configurable Spells Can Target Invisible [M]
 Adds new bit 24 to spell flags 'Can Target Invisible'
 This includes all creatures with invisibility and/or sanctuary
-The spell cancelled string reference is modified to reflect one spell instead of all spells
 
 Modding Note
-If this hack is enabled and a player attempts to cast a spell on an invisible/sanctuary creature without bit 24 set in spell flags, string reference 46529 will display, reading 'Spell Cancelled: Can not target spells on invisible or sanctuaried creatures.' The word 'spells' is not consistent with his hack. Mods using this hack should change the string reference to read ''Spell Cancelled: Can not target spell on invisible or sanctuaried creatures.', which substitutes the word 'spells' with 'spell'
+If this hack is enabled and a player attempts to use an item ability on an invisible/sanctuary creature with bit 26 set, string reference 46529 will display.
+It reads 'Spell Cancelled: Can not target spells on invisible or sanctuaried creatures.'
+This is not consistent with this hack.
+Mods using this hack should change the string reference to read 'Action Cancelled: Can not target action on invisible or sanctuaried creatures.'
+This substitutes the words 'Spell[s]' with 'Action' and allows compatibility with the 'Configurable Items Cannot Target Invisible' hack.
 
 Options:
 -0: disabled
@@ -1113,6 +1494,57 @@ Defines the object that the next trigger will be evaluated in reference to
 The trigger itself does not evaluate and does not count as a trigger in an OR() block
 If the object cannot be found, the next trigger will evaluate to false
 
+0x4101 MovementRate(O:Object*,I:Value*)
+0x4102 MovementRateGT(O:Object*,I:Value*)
+0x4103 MovementRateLT(O:Object*,I:Value*)
+Compares the animation movement rate of the target creature specified by Object to Value. This is not affected by slow or haste, but is affected if the Object is entangled, webbed, etc.
+
+0x4104 NumMirrorImages(O:Object*,I:Value*)
+0x4105 NumMirrorImagesGT(O:Object*,I:Value*)
+0x4106 NumMirrorImagesLT(O:Object*,I:Value*)
+Compares the number of mirror images present on the target creature specified by Object to Value.
+
+0x4107 BouncingSpellLevel(O:Object*,I:Level*)
+Returns true if the target creature specified by Object is bouncing spells of power Level.
+This returns true for both Bounce Spell Level (199) and Decrementing Bounce Spells (200) effects.
+
+0x4108 NumBouncingSpellLevel(O:Object*,I:Level*,I:Amount*)
+0x4109 NumBouncingSpellLevelGT(O:Object*,I:Level*,I:Amount*)
+0x410A NumBouncingSpellLevelLT(O:Object*,I:Level*,I:Amount*)
+Compares the number of spell bounces remaining on the target creature specified by Object at the power Level to Amount.
+If Object has the Bounce Spell Level (199) opcode, then the number of spell bounces is unsigned 0xFFFFFFFF.
+
+0x410B ImmuneToSpellLevel(O:Object*,I:Level*)
+Returns true if the target creature specified by Object is protected from spells of power Level.
+This returns true for both Protection from Spell Levels (102) and Decrementing Spell Immunity (201) effects.
+
+0x410C NumImmuneToSpellLevel(O:Object*,I:Level*,I:Amount*)
+0x410D NumImmuneToSpellLevelGT(O:Object*,I:Level*,I:Amount*)
+0x410E NumImmuneToSpellLevelLT(O:Object*,I:Level*,I:Amount*)
+Compares the number of spell protections remaining on the target creature specified by Object at the power Level to Amount.
+If Object has the Protection from Spell Levels (102) opcode, then the number of spell protections is unsigned 0xFFFFFFFF.
+
+0x410F TimeStopCounter(I:Number*)
+0x4110 TimeStopCounterGT(I:Number*)
+0x4111 TimeStopCounterLT(I:Number*)
+Compares the number of ticks left of time stop to Number.
+
+0x4112 TimeStopObject(O:Object*)
+Returns true if the the target sprite specified by Object is the caster of time stop (and is exempt from the effect).
+
+0x4113 NumTrappingSpellLevel(O:Object*,I:Level*,I:Amount*)
+0x4114 NumTrappingSpellLevelGT(O:Object*,I:Level*,I:Amount*)
+0x4115 NumTrappingSpellLevelLT(O:Object*,I:Level*,I:Amount*)
+Compares the number of spell traps remaining on the target creature specified by Object at the power Level to Amount.
+
+0x4116 OriginalClass(O:Object*,I:Class*Class)
+Returns true if the target creature specified by Object is dual-classed and the original class matches Class.
+
+0x4117 HPLost(O:Object*,I:Hit Points*)
+0x4118 HPLostGT(O:Object*,I:Hit Points*)
+0x4119 HPLostLT(O:Object*,I:Hit Points*)
+Compares the absolute number of hit points short of maximum hit points on the target creature specified by Object to Amount.
+
 Options:
 -0: disabled
 -1: enabled
@@ -1120,6 +1552,14 @@ Options:
 -----750 Kit Trigger Fix [F, M]
 Fixes the Kit() trigger to check the entire kit DWORD instead of just the low WORD
 This allows checking for the BARBARIAN (0x40000000) and WILDMAGE (0x80000000) kits specifically
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1090 Optimise Bag Search Code [F, O]
+Greatly reduces the amount of overhead with triggers that check bags for the presence of items (i.e. HasItem() and variants)
+Also fixes the PartyHasItemIdentified() trigger, which had identical behaviour to the PartyHasItem() trigger in single player
 
 Options:
 -0: disabled
@@ -1135,6 +1575,18 @@ Options:
 -0: disabled
 -1: enabled
 
+-----120 Contingency Detects Select Spell [F, M]
+Allows the contingency panel to support spells containing the Select Spell opcode
+Instead of showing the parent spell, the child spells contained in the 2DA file specified by the 'Resource' field of the Select Spell opcode that would be used if the spell is cast at the creature's level are shown
+Child spells are displayed separately, and are thus not stacked upon, normal spells or child spells from a different parent spell (for example, A.SPL with a Select Spell opcode of A.2DA containing SPWI112 would display separately from SPWI112.SPL and separately from B.SPL with a Select Spell opcode of B.2DA containing SPWI112)
+Select Spell opcodes embedded within Use EFF File opcodes are supported
+
+This also fixes a bug with scrolling of the spell choices when there are greater than 11 choices in a level
+
+Options:
+-0: disabled
+-1: enabled
+
 -----220 Custom Dialogue Bar Buffer Size [M]
 Allows you to customise the number of lines the dialogue/log bar displays before text is lost from the top
 256 is the default value and is also the recommended minimum value
@@ -1144,8 +1596,6 @@ Warning: very large values may slow the game down over time
 Options:
 -0: disabled
 -32-32767: sets the number of lines equivalent to this value
-
-1: enabled
 
 -----330 Enlarge Tooltip Scroll [C, X]
 (Identical to tob_hacks)
@@ -1230,17 +1680,10 @@ Options:
 
 /////////////////////////////////////// VIDEO
 
------120 Brighten On Disable Brightest No3d Fix [F]
-Fixes the behaviour of 'Disable Brighten' in baldur.ini when 3d acceleration is disabled
-
-Options:
--0: disabled
--1: enabled
-
 -----980 Enable More Paperdolls [C, M]
 (identical to, but also extends from Fishing For Trouble)
 Allows paperdolls to show in inventory and character customisation for animations 0x12XX, 0x2XXX, 0x3XXX, and non-vanilla 0x7XXX (except 0x73XX, which is already shown in vanilla)
-Note that paperdolls for the 0x7XXX group of animation must have a be named <prefix>0INV.BAM
+Note that paperdolls for the 0x7XXX group of animation must have to be named <prefix>0INV.BAM
 
 Options:
 -0: disabled
@@ -1257,6 +1700,13 @@ Options:
 -----720 VVC Alpha Rendering Crash Fix [F]
 Enables the use of the alpha mask animation RLE-encoded BAM of VVC files by removing an erroneously placed assertion error
 This alpha mask animation is used only when 3d acceleration is enabled
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1190 VVC Shadow Animation Fix [F]
+Fixes a bug in VVC files where the use of the 'Translucent shadow' display flag would use the normal animation Resref (0x8) for the shadow animation rather than the 'Shadow Animation ResRef' field (0x10)
 
 Options:
 -0: disabled

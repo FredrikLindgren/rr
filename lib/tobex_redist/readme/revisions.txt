@@ -1,3 +1,82 @@
+Beta 0021
+---------
+-Included French translation (by Isaya)
+-Included Italian translation (by ilot)
+-Included Simplified and Traditional Chinese translations (by Hindo's Doom)
+-Added: Casting Fixes
+-Fixed: Crash-to-desktop on startup if installed after Fishing for Trouble (due to clash in externalise race strref component)
+-Fixed: Damage hit sounds not playing
+-Fixed: EasyTutu displayed no journal entries
+-Fixed: Damage opcode set value not working properly (such as in the Harm spell item)
+-Fixed: Machine of Lum the Mad dialogue would not work properly
+-Fixed: Magic damage resistance was broken
+-Removed: Correct Experience Reporting
+-Removed: Instantly Set Dialogue Variables
+-Disable Experience Boost: Merged with hack that corrects experience reporting in dialogue bar
+-Disintegrate Fix: Fixed a bug where IDS targetting was ignored
+-Expanded Actions: Added DialogueSetGlobal(), DialogueIncrementGlobal(), DialogueSG()
+-Expanded Stats: Fixed loss of character animations on network players on saving multiplayer game
+-Expanded Stats: Fixed network communication of new stats
+-Externalise Mage Spell Hiding: Fixed a bug where Lightning (SPWI938) was selectable in Sorceror level-up mage spell selection (added SPWI927-949 to HIDESPL.2DA to preserve vanilla behaviour)
+-Magic Resistance Mod Fix: Swapped implementation of parameter 2 values 0 and 3 to preserve vanilla behaviour
+-Optimise Bag Search Code: (?) Fixed occasional client-side crash  when accessing bags or stores
+-Poison Fix: Fixed a typo that caused crashes with effect opcode #41 (Sparkle) and prevented this hack from working
+-Scrollable Chargen Mage Spell Selection: Fixed intermittent bugs with scroll bars not scrolling when there were spells that could fit onto one page
+-Scrollable Level Up Mage Spell Selection: Fixed intermittent bugs with scroll bars not scrolling when there were spells that could fit onto one page
+-Strength Mod: Removed all changes to Cumulative Modifier (param1 = 0), correcting issues with equipped items not keeping strength bonus on loading a game, and issues with strength incrementation with items such as the Manual of Gainful Exercise, Evil Tear of Bhaal, and Blackrazor
+-Strength Mod: Strength Spell (param1 = 3) now increments Strength through 18/XX based on differences detected in STRMODEX.2DA
+-Subtitles For Standard Soundsets: Fixed a typo in the FEMALE3 soundset subtitles
+-Use Caster Level On Mirror Image: Fixed a typo that prevented this hack from working
+
+Beta 0020
+---------
+-Assertion updates
+-Class/structure updates
+-Included modder reference
+-Included Russian translation (by Silent)
+-Revised readmes
+-Added: Ability-specific Use Item Animations
+-Added: Button Effects Mod
+-Added: Configurable Items Cannot Target Invisible
+-Added: Configurable Spells Can Be Unvoiced
+-Added: Container Use EFF File Fix
+-Added: Contingency Detects Select Spell
+-Added: Disable End On Player1 Dead
+-Added: Drop Inventory on Disintegrate
+-Added: Drop Inventory on Frozen Death
+-Added: Drop Inventory on Stone Death
+-Added: Enable Arenas Game Type
+-Added: Expanded Actions
+-Added: Instantly Set Dialogue Variables
+-Added: Log Network Errors
+-Added: Luck Mod
+-Added: Optimise Bag Search Code
+-Added: Proficiency Modifier Mod
+-Added: Save Vs Breath Mod
+-Added: Save Vs Death Mod
+-Added: Save Vs Poly Mod
+-Added: Save Vs Spell Mod
+-Added: Save Vs Wands Mod
+-Added: VVC Shadow Animation Fix
+-Removed: Brighten On Disable Brightest No3d Fix
+-Renamed: Extend Cut Scene 2 -> Cut Scene 2 Mod
+-Renamed: IWD Style Cat's Grace Dexterity Mod -> Dexterity Mod
+-Renamed: IWD Style Mage Spell Slots Mod -> Mage Spell Slots Mod
+-Renamed: IWD Style Priest Spell Slots Mod -> Priest Spell Slots Mod
+-Renamed: IWD Style Strength Mod -> Strength Mod
+-Attacks Per Round Mod Fix: Corrected the use of incorrect base value for percentage type
+-Configurable Backstab Restrictions: Fixed a bug where non-barbarians with immunity to backstab could still get backstabbed
+-Expanded Stats: Added a number of effect-associated hard-coded non-modifiable stats (opcodes 308-331)
+-Expanded Stats: Added damage-type specific percentage modifier stats (opcodes 387-399)
+-Expanded Triggers: Added triggers 0x4101-0x4119
+-Externalise Mage Spell Hiding: Modified the column label in HIDESPL.2DA to prevent confusion
+-Level One Proficiency Restrictions: Fixed some consistency issues
+-IWD Style Strength Mod: Corrected the use of incorrect base value for percentage type
+-IWD Style Strength Mod: Fixed a bug where this hack was never enabled
+-IWD Style Cats Grace Dexterity Mod: Corrected the use of incorrect base value for percentage type
+-Magic Resistance Mod Fix: Added instantaneous sum type
+-Repeating Effect Fix: Fixed a bug where the effect would not work properly on permanent timings
+
 Beta 0019
 ---------
 -Assertion updates

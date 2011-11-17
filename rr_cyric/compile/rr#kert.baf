@@ -906,7 +906,7 @@ IF
 	HaveSpell(CLERIC_UNHOLY_WORD)
 	DifficultyGT(EASY)
 	See([GOODCUTOFF.0.0.MAGE_ALL.0.0.MASK_GOOD])
-	!StateCheck(LastSeenBy(Myself), STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
 	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
@@ -924,7 +924,7 @@ IF
 	HaveSpell(CLERIC_UNHOLY_WORD)
 	DifficultyGT(EASY)
 	See([GOODCUTOFF.0.0.CLERIC_ALL.0.0.MASK_GOOD])
-	!StateCheck(LastSeenBy(Myself), STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
 	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
@@ -942,7 +942,7 @@ IF
 	HaveSpell(CLERIC_UNHOLY_WORD)
 	DifficultyGT(EASY)
 	See([GOODCUTOFF.0.0.DRUID_ALL.0.0.MASK_GOOD])
-	!StateCheck(LastSeenBy(Myself), STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
 	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
@@ -960,7 +960,7 @@ IF
 	HaveSpell(CLERIC_UNHOLY_WORD)
 	DifficultyGT(EASY)
 	See([GOODCUTOFF.0.0.BARD_ALL.0.0.MASK_GOOD])
-	!StateCheck(LastSeenBy(Myself), STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_IMMUNITY) // Spell Immunity: Conjuration
 	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)

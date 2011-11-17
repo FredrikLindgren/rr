@@ -57,7 +57,7 @@ END
 IF
 	Global("RR#Active","LOCALS",0)
         Allegiance(Myself,EVILCUTOFF)
-	  See([GOODCUTOFF])
+	See([GOODCUTOFF])
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
@@ -910,6 +910,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
 	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
@@ -949,6 +950,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
 	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
@@ -988,6 +990,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
 	CheckStatGT(LastSeenBy(Myself),1,MORALEBREAK)
+	CheckStat(LastSeenBy(Myself),0,WIZARD_RESIST_FEAR)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)

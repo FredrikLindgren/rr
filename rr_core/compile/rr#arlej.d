@@ -186,6 +186,6 @@ END
 // Player 6 translates Arledrian's journal (this is for non-Bioware elven and half-elven NPCs)
 
 IF ~~ THEN BEGIN iPlayer6
-SAY @1283
+SAY @1284
 IF ~~ THEN GOTO a4
 END

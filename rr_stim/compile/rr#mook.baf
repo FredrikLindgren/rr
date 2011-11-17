@@ -15,6 +15,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("RR#Active","LOCALS",1)
 		SetGlobalTimer("RR#Rest","LOCALS",2400) // 8 hours
+                Enemy()
 		Shout(124)
 		Continue()
 END

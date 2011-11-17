@@ -1,5 +1,5 @@
 /*************************************************************************
- *               Rogue Rebalancing mod version 4.46
+ *                          Rogue Rebalancing mod
  *                            -=by aVENGER=-
  *                http://www.spellholdstudios.net/ie/rr
  *************************************************************************/
@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.46~                                                     // Mod version
+VERSION ~v4.47~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -15,7 +15,7 @@ INCLUDE ~rr/lib/regexp.tph~                                         // allows re
 INCLUDE ~rr/lib/rr#aglef.tph~                                       // Include my custom "Add Global Effect" function
 INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
 INCLUDE "rr/lib/lib.tpa"
-INCLUDE ~rr/lib/tobexfix.tph~                                       // if TobEx is installed, this disables some of its currently buggy options
+// INCLUDE ~rr/lib/tobexfix.tph~                                       // if TobEx is installed, this disables some of its currently buggy options
 END                                                                 // End the ALWAYS block
 
 README ~rr/readme_rr.html~                                          // Offer to display the main readme
@@ -570,8 +570,8 @@ LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch t
   STRING_SET ~9562~ @29                                              // Updated True Bard kit description
 
 COPY_EXISTING ~CLABBA01.2DA~               ~override~                // True Bard ability table
-  SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                                    // Assign the new song to the True Bard
-  PRETTY_PRINT_2DA
+SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                                    // Assign the new song to the True Bard
+PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 COPY    ~RR/RR_CORE/SPELLS/RR#BDF01.SPL~   ~override~                // True Bard new song part 1
 COPY    ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~   ~override~                // True Bard new song part 2
@@ -1915,7 +1915,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 COPY    ~RR/RR_CORE/BAM/RR#HRP01.BAM~      ~override~
 COPY    ~RR/RR_CORE/ITEMS/RR#HRP01.ITM~    ~override~
-  SAY NAME2 @144 SAY DESC @145
+SAY NAME2 @144 SAY DESC @145
 READ_LONG 0x64 abil_off
 READ_SHORT 0x68 abil_num
 READ_LONG 0x6a fx_off

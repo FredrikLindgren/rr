@@ -191,7 +191,7 @@ COPY_EXISTING ~SPCL412.spl~ ~override~                              // Set snare
               ~SPCL414.spl~ ~override~                              // Set special snare
               ~SPCL910.spl~ ~override~                              // Set Spike Trap
               ~SPCL911.spl~ ~override~                              // Set Exploding Trap
-  WRITE_LONG 0x34 1                                                 // Set the spell level to 1
+   WRITE_LONG 0x34 1                                                // Set the spell level to 1
 BUT_ONLY_IF_IT_CHANGES
 
 

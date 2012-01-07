@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.47~                                                     // Mod version
+VERSION ~v4.48~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -15,7 +15,7 @@ INCLUDE ~rr/lib/regexp.tph~                                         // allows re
 INCLUDE ~rr/lib/rr#aglef.tph~                                       // Include my custom "Add Global Effect" function
 INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
 INCLUDE "rr/lib/lib.tpa"
-// INCLUDE ~rr/lib/tobexfix.tph~                                       // if TobEx is installed, this disables some of its currently buggy options
+INCLUDE ~rr/lib/tobexfix.tph~                                       // if TobEx is installed, this disables some of its currently buggy options
 END                                                                 // End the ALWAYS block
 
 README ~rr/readme_rr.html~                                          // Offer to display the main readme

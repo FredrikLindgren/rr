@@ -1,4 +1,4 @@
-OUTER_SET tobex_redist_version = 21
+OUTER_SET tobex_redist_version = 22
 
 ACTION_IF NOT (FILE_EXISTS "TobEx_ini/TobExVer.txt") BEGIN
 
@@ -8,7 +8,6 @@ ACTION_IF NOT (FILE_EXISTS "TobEx_ini/TobExVer.txt") BEGIN
 
   MKDIR "TobEx_ini"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobExLoader.exe" "TobExLoader.exe"
-  COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/detoured.dll" "detoured.dll"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.dll" "TobEx.dll"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/default_core.ini" "TobEx_ini/TobExCore.ini"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/default_tweak.ini" "TobEx_ini/TobExTweak.ini"
@@ -171,4 +170,8 @@ END
 
 ACTION_IF (%tobex_installed_version% < 21) BEGIN
   INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0021.tpa"
+END
+
+ACTION_IF (%tobex_installed_version% < 22) BEGIN
+  INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0022.tpa"
 END

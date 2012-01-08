@@ -1026,11 +1026,9 @@ STATISTICS:
 
 Equipped Abilities:
     +1 bonus to AC
-    Increases movement rate
+    Increased movement rate
 
-Weight:  4
-Not Usable By:
-  Wizard Slayer~
+Weight:  4~
 
 @206 = ~Stormcharged Axe~
 @207 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and was soon afterward struck by a bolt of lightning. Because of the pre-placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high-ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
@@ -1408,7 +1406,7 @@ Only Usable By:
 @531 = ~...CONFINIS!~
 @532 = ~(Apparently, Venduris and his party have indeed left the area.)~
 @533 = ~(You feel a surge of arcane energies around you.)~
-@534 = ~(It appears that the whole area has just been sealed off by a magical barrier.)~
+@534 = ~(It appears that the entire area has just been sealed off by a magical barrier.)~
 @535 = ~(A cloaked man is gesturing toward you while reading from a scroll.)~
 @540 = ~DEFLAGRATE MURI TEMPI ET INTERVALIA!~
 @541 = ~(The warding glyphs have dissipated, the way seems to be free now.)~
@@ -1432,7 +1430,7 @@ Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed 
 
 @601 = ~Ambushed by Cyric's Chosen
 
-Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. They identified themselves as the highest ranking among Cyric's Chosen in the entire Sword Coast area. Their fanatical order firmly believes in Cyric's superiority and work to sow discord and bring about his ascension to power over the other faiths. Apparently, they wanted to end my life in order to please their patron deity and prevent me from fulfilling the prophecies of Alaundo. Their leader, the assassin Venduris, managed to trap me within some sort of magical barrier, hoping that it would help him defeat me.~
+Shortly after defeating Bodhi and retrieving the Rhynn Lanthorn, I was ambushed by a mysterious party of rogues while trying to exit the city. They claimed to belong to the Chosen of Cyric, a fanatical order whose members firmly believes in Cyric's superiority and work to sow discord and bring about his ascension to power over the other faiths. Apparently, they wanted to end my life in order to please their patron deity and prevent me from fulfilling the prophecies of Alaundo. Their leader, the assassin Venduris, managed to trap me within some sort of magical barrier, hoping that it would help him defeat me.~
 
 @602 = ~Ambushed by Cyric's Chosen: The Warding Glyphs
 
@@ -1440,11 +1438,11 @@ Venduris carelessly told me that he is in direct control of the wards which are 
 
 @610 = ~Ambushed by Cyric's Chosen: Victory...?
 
-I have bested Venduris and his group in combat, but the way out still seems to be blocked by strange wards which defy normal dispelling methods. I must find some other way of nullifying them if I am to ever leave this place. Perhaps investigating the belongings of the rogue leader will provide some clues.~
+I have bested Venduris and his group in combat, but the way out still seems to be blocked by strange wards which defy normal dispelling methods. I must find some other way of nullifying them if I am to ever leave this place. Perhaps investigating Venduris' belongings will provide some clues.~
 
 @611 = ~Ambushed by Cyric's Chosen: The Slayer's fury
 
-As I expected, the cowardly rogue and his petty band tried to flee after I displayed the true power of the Slayer, but I was too infuriated to let them get away so easily! I lunged towards the leader and tore his head off in delight before he could react, as the rest of his company helplessly watched and screamed in terror. Unfortunately, I was unable to hold the avatar form much longer as the released energies began to toil heavily at my body. No matter, I can take the remaining fools even without the aid of my infernal heritage!~
+As I expected, the cowardly rogue and his petty band tried to flee after I showed them the true extent of the Slayer's power. However, I was too infuriated to let them get away so easily. I lunged towards the leader and tore his head off in delight before he could even react, as the rest of his company helplessly watched and screamed in terror. Unfortunately, I was unable to hold the avatar form much longer as the released energies began to toil heavily at my body. No matter, I can take the remaining fools even without the aid of my infernal heritage!~
 
 @620 = ~Ambushed by Cyric's Chosen: The scroll backfired!
 
@@ -1460,15 +1458,15 @@ I was able to convince Venduris and his followers that engaging in battle would 
 
 @623 = ~Ambushed by Cyric's Chosen: Mind over matter
 
-I was able to convince Venduris and his followers that engaging in battle with me would be counterproductive to their cause. As he realized that he lacked the necessary information to dispute my claims, the rogue and his companions left, threatening to return and attack me anew should my arguments prove false.~
+I was able to convince Venduris and his followers that engaging in battle with me would be counterproductive to their cause. As he realized that he lacked the necessary information to dispute my claims, the rogue and his companions left, threatening to return and attack me anew should my arguments prove lacking.~
 
 @624 = ~Ambushed by Cyric's Chosen: The power of persuasion
 
-I was able to convince Venduris and his followers that engaging in battle with me was completely unnecessary. As he realized that I am a force of Good and have no reason or desire to betray my beliefs, the rogue and his companions left, warning me that there are others of my kin might who might not be so kindhearted.~
+I was able to convince Venduris and his followers that engaging in battle with me was completely unnecessary. As he realized that I am a force of Good and have no reason or desire to betray my beliefs, the rogue and his companions left, warning me that there are others of my kin might who are not as kindhearted.~
 
 @630 = ~Ambushed by Cyric's Chosen: The Slayer unleashed!
 
-As I expected, the cowardly rogue and his petty band have fled after I demonstrated the power of the Slayer. Ha! Those foolish half-wits thought they knew everything about me, but they quickly realized the true degree of their ignorance after facing a display of my infernal fury. Should those pathetic weaklings dare to harass me once more, I may not be so forgiving to let them leave unscathed again!~
+As I expected, the cowardly rogue and his petty band have fled after I demonstrated the power of the Slayer. Ha! Those foolish half-wits thought they knew everything about me, but they quickly realized the true degree of their ignorance after witnessing a display of my infernal fury. Should those pathetic weaklings dare to harass me once more, I may not be so forgiving to let them leave unscathed again!~
 
 @650 = ~A missing fence?
 
@@ -1986,19 +1984,19 @@ Usable By:
 
 @2000 = ~(Upon closer inspection, this tiny cowled figure turns out to be a middle-aged halfling with a slight stubble on his chin and dark circles beneath his eyes.)~
 @2001 = ~(He is tightly griping a short bow and impatiently shuffling through his arrow case. Every few seconds he looks towards Venduris as if waiting for a sign.)~
-@2002 = ~(Furthermore, you notice that the shaft of his bow actually resembles two snakes, each trying to swallow an eyeball carved at the grip. You also manage to catch a faint glint coming from his quiver. Apparently, it holds three different types of arrows, two of which seem to be dipped in different hues of a greenish liquid while the third one is clearly pulsating with magic.)~
+@2002 = ~(The shaft of his bow resembles two snakes, each trying to swallow an eyeball carved at the grip. You also manage to catch a faint glint coming from his quiver. Apparently, it holds three different types of arrows, two of which seem to be dipped in different hues of a greenish liquid while the third one is clearly pulsating with magic.)~
 @2003 = ~(You feel pinpricks over the entire surface of your hands... a strong aura of evil surrounds this man.)~
 @2004 = ~(He seems to thoroughly enjoy committing evil acts, and is directly responsible for many innocent deaths.)~
 
 @2020 = ~(You see a huge leather-skinned man with a hint of green color to his face. His teeth seem sharper than normal and his face looks menacing.)~
 @2021 = ~(He is holding a radiant blue axe in his right hand and a faintly glittering longsword in his left. Peering beneath a great horned helm, his sharp charcoal-gray eyes betray a cunning mind hiding behind this rough facade.)~
-@2022 = ~(You see a huge leather-skinned man with a hint of green color to his face. His teeth seem sharper than normal and his face looks menacing. A sleek golden girdle sparkles around his burly waist and many large potion bottles are strapped to it.)~
+@2022 = ~(You see a huge leather-skinned man with a hint of green color to his face. His teeth seem sharper than normal and his face looks menacing. A sleek golden girdle sparkles around his burly waist and many large potion bottles are strapped onto it.)~
 @2023 = ~(He is holding a radiant blue axe in his right hand and a faintly glittering longsword in his left. Whenever thunder rips across the sky the axe reacts with a crackle of energy. Peering beneath a great horned helm, his sharp charcoal-gray eyes betray a cunning mind hiding behind this rough facade.)~
 @2024 = ~(You feel an intense, almost painful, pounding behind your eyes... a strong aura of evil surrounds this man.)~
 @2025 = ~(He seems to truly relish in committing evil acts and is to be blamed for the deaths of countless innocents across the realms.)~
 
 @2040 = ~(You see an older man with long, silvery-black hair and weathered yellow skin. Beneath the sleaves of his worn robe several silver bracelets are faintly glinting.)~
-@2041 = ~(In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a large, plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half-crazed expression.)~
+@2041 = ~(In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a large, plainly adorned shield. His odd, crooked smile and the strange gleam in his eyes give him a half-crazed expression.)~
 @2042 = ~(You see an older man with long, silvery-black hair and weathered yellow skin covered with many tattoos. Beneath the sleeves of his worn, purple robe several silver bracelets are faintly glinting.)~
 @2043 = ~(Despite his venerable age he seems to bear the weight of the platemail armor which he hides beneath the robe with relative ease. In his right hand he is clutching a mace and a divine symbol, while his left hand is holding a plainly adorned shield. His odd, crooked smile and a strange gleam in his eyes give him a half-crazed expression.)~
 @2044 = ~(You feel a sharp pain in your hands accompanied by an agonizing headache... an overwhelming aura of evil surrounds this man.)~
@@ -2093,14 +2091,14 @@ Usable By:
 @2528 = ~Get to the point rogue.~
 @2529 = ~You poor, deluded fool...  (he looks at you contemptuously)  then you will know only this!~
 @2530 = ~I am an assassin and *you* are my mark. One of us shall not outlive this day!  \[He attacks\]~
-@2531 = ~Hmm, so the reports were true, you indeed have some wit about you.  (A faint half-sneer forms on his face)~
+@2531 = ~Hmm, so the reports were true, you do indeed have some wit about you.  (A faint half-sneer forms on his face)~
 @2532 = ~Though the will of the Prince of Lies truly guides our path, rest assured, Bhaalspawn, we are no mere followers of Cyric.~
 @2533 = ~(The rogue's voice drops to a more menacing tone)   Know, that we belong to the Order of his Chosen.~
 @2534 = ~\[Religious Knowledge\] - You belong to Cyric's Chosen? Then I suppose your fanatical order has somehow found out about my divine heritage, and you still hope to bring Cyric closer to his ascension by ritually sacrificing all of Bhaal's children. Am I right?~
 @2535 = ~(The man slowly raises his head and his eyes flickers over you. His gaze falls on you with the force of a sledgehammer.)~
 @2536 = ~Know, that there is a growing conflict of interests between us, Bhaalspawn.~
 @2537 = ~By observing and carefully studying your actions over a lengthy time period, we have come to the only possible conclusion.~
-@2538 = ~It is now more than evident to us that you are developing into a significant problem for our Lord and Master.~
+@2538 = ~It is now more than evident to us that you are developing into a significant threat for our Lord and Master.~
 @2539 = ~(With a faint swishing sound the rogue's cloak splits, and an ominous-looking blade springs into his hand.)~
 @2540 = ~I, am Venduris, and as the highest-ranking assassin within our order, it is my sacred duty to make sure that this does not occur... by any means necessary!   \[He prepares to attack\]~
 @2541 = ~\[Persuade\] - Hold your weapons Venduris, I would like to ask some questions first. Perhaps a battle between us is unnecessary.~
@@ -2130,7 +2128,7 @@ Usable By:
 @2565 = ~\[Insight\] - So Venduris, you are evidently aware of my divine descent, but you do not seem to realize that direct, as well as indirect, intervention of the gods into the affairs of the Bhaalspawn was prohibited by Lord Ao himself. Therefore, any actions taken against me in the name of Cyric would mean that both you and your patron deity are purposely defying the will of the Overfather. For all you know, Cyric himself could be displeased by your interference.~
 @2566 = ~\[Persuade\] - Since you were observing my actions so closely, Venduris, you should know by now that I have always stood on the side of Good. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
 @2567 = ~\[Persuade\] -  If you have been studying me as closely as you claim, then by now you should be aware that I, as a Paladin, have always stood as a power of light and righteousness. I have no reason or desire to succumb to the evil taint of my blood, I only wish to retrieve my stolen soul.~
-@2568 = ~\[Intimidate\] - Enough of this charade, Venduris! I faced off with Irenicus himself at Spellhold and forced him into a retreat. I escaped the gloom of the Underdark unscathed, and I have just eradicated the most powerful vampire of Amn, together with a host of her strongest minions. Do you really think that you and your feeble-minded band of zealots can stop me?~
+@2568 = ~\[Intimidate\] - Enough of this charade, Venduris! I faced Irenicus himself at Spellhold and forced him into a retreat. I escaped the gloom of the Underdark unscathed, and I have just eradicated the most powerful vampire in Amn, together with a host of her strongest minions. Do you really think that you and your feeble-minded band of zealots can stop me?~
 @2569 = ~It has always been common practice of our order to observe an enemy over a lengthy time period before acting, <CHARNAME>. We firmly believe that information is the key to true power.~
 @2570 = ~We know how you act, how you fight and how you judge. We are aware of your every detail, no matter how insignificant it may seem.~
 @2571 = ~Your alignment, your goals, your strengths and your weaknesses are all known to us, while you remain completely oblivious to our own plans.~
@@ -2143,9 +2141,9 @@ Usable By:
 @2578 = ~In truth, the people you are facing now rank among the most capable members of our order.~
 @2579 = ~Furthermore, a number of our agents, placed within most major cities of the Sword Coast, are constantly obtaining vital information and insight about all who would oppose us, including yourself. They are highly adept at the art of subterfuge and have many ways of acting unseen.~
 @2580 = ~So you see, it is truly no wonder that you, as most of our other victims, have never discovered our presence, let alone our plans.~
-@2581 = ~Our order first took notice of you some time ago when you had slain two of our valuable members who were operating near the city of Baldur's Gate.~
+@2581 = ~Our order first took notice of you some time after you had slain two of our valuable members who were operating near the city of Baldur's Gate.~
 @2582 = ~The two priests of Cyric that you killed back then, Mulahey and Bassilus, were our agents, and their murders served as a triggering point for our current actions against you.~
-@2583 = ~We followed your path until the final standoff with your half-brother Sarevok, who was also being carefully monitored at that time.~
+@2583 = ~We followed your activities until the final standoff with your half-brother Sarevok, who was also being carefully monitored at that time.~
 @2584 = ~The Order wisely decided to let you slaughter each other so that we could easily take care of the weakened survivor.~
 @2585 = ~But then why do you attack me now, and not before? You surely had plenty of opportunities to do so in the past.~
 @2586 = ~Unlike Sarevok's, your own motives were still unclear to us at the time you left Baldur's Gate. So we decided to lay low, gather the necessary information and wait until a suitable chance for action abounded.~
@@ -2238,7 +2236,7 @@ Usable By:
 @2673 = ~(You notice several freshly dug holes near the gates. They are fairly shallow and almost perfectly covered up by the muddy ground.)~
 @2674 = ~(Judging by the dig marks, you suspect that a bulky mechanical device has been recently buried there, most likely a proximity-triggered snare. It would be wise to keep a safe distance from the gateway.)~
 @2675 = ~(You manage to notice several freshly dug holes near the gates. They are fairly shallow and almost perfectly covered up by the muddy ground.)~
-@2676 = ~(Judging by the dig marks, you suspect that something bulky has been recently buried there, possibly a snare of some sort. It would be wise to keep a safe distance from the gateway.)~
+@2676 = ~(Judging by the dig marks, you suspect that something bulky was recently buried there, possibly a snare of some sort. It would be wise to keep a safe distance from the gateway.)~
 @2677 = ~(You throw a quick glance at the tracks in the mud, hoping that Venduris won't notice your intent. Although most footprints were wiped out by the rain, you manage to make a quick overview of the area.)~
 @2678 = ~(The clearing below the archway shows traces of heavy activity, and many tracks lead toward as well as away from the gates. Long, furrow imprints on the ground indicate that several heavy and bulky objects were hastily dragged up to the gateway.)~
 @2679 = ~(The soil in that area looks freshly dug up, something has recently been burrowed there.)~
@@ -2248,7 +2246,7 @@ Usable By:
 @2683 = ~Hmm, I see that you are indeed familiar with the Arcane arts, just as my reports had described. No matter, the wards are a fitting trap, even for a <PRO_MANWOMAN> of your power.~
 @2684 = ~Don't even bother trying, you will quickly find yourself unable to do anything against their influence.  (You catch a spark of superiority in his eyes)~
 @2685 = ~What makes you so sure of that?~
-@2686 = ~A simple, yet extremely effective precaution was made to prevent anyone from interfering. The warding glyphs which surround this area cannot be undone without a unique command phrase which is known only by me.~
+@2686 = ~A simple, yet extremely effective precaution was taken to prevent anyone from interfering. The warding glyphs that surround this area cannot be undone without a unique command phrase known only by me.~
 @2687 = ~Furthermore, your own blood, <CHARNAME>, has been used as a spell component so the wards are attuned to you personally. This conveniently prevents you from directly affecting the barrier in any way or leaving this area without my permission.~
 @2688 = ~\[Arcane Lore\] - Ahh, but you didn't actually cast the original spell yourself, did you, Venduris? You are merely using a command phrase and that scroll of yours to control it. It is quite obvious from your clumsy somatic gestures that you lack any *real* arcane training.~
 @2689 = ~\[Insight]\ - *Your* permission? You mean that you have cast this warding spell all by yourself? You don't really strike me as the mage type, Venduris.~
@@ -2270,13 +2268,13 @@ Usable By:
 @2705 = ~Apparently, it affected only you since the main spell was so closely attuned to your blood.~
 @2706 = ~Bah! Let me ask you something else then.~
 @2707 = ~(Venduris slightly twists the ring, and he and his entire party suddenly disappear before your very eyes.)~
-@2708 = ~(Venduris appears to be slightly surprised at your display of power but still manages to keep his cool.)~
+@2708 = ~(Venduris appears slightly surprised by your display of power but still manages to keep his cool.)~
 @2709 = ~Hmm... I had been assured that your assuming of Bhaal's avatar form was sporadic and uncontrollable.~
 @2710 = ~As this doesn't seem to be the case anymore, I shall have to reconsider my approach.  (Venduris reaches for the ring on his left hand)~
 @2711 = ~We are departing... for now, but rest assured <CHARNAME>, this will not be the last time we meet!  (He twists the ring slightly)~
-@2712 = ~\[Give in to your anger\] - lunge forward and rip Venduris' head off before he can manage to escape.~
+@2712 = ~\[Give in to your anger\] - Lunge forward and rip Venduris' head off before he can manage to escape.~
 @2713 = ~\[Transform back\] - calm your fury and let Venduris escape.~
-@2714 = ~(At the moment, Venduris is unaware of your murderous intentions and he is merely attempting to flee. Should you decide to kill him now, it will be done in cold blood.)~
+@2714 = ~(At the moment, Venduris is unaware of your murderous intent. He is merely attempting to flee. Should you decide to kill him now, it will be done in cold blood.)~
 
 
 //  Chosen of Cyric partymember interjectons (3000-3999)

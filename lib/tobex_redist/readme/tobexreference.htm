@@ -495,6 +495,7 @@
             <li><a href="#ruleset-hla">High Level Abilities (HLAs)</a></li>
             <li><a href="#ruleset-hp-tables">Hit Point Tables</a></li>
             <li><a href="#ruleset-item-restrictions">Item Restrictions</a></li>
+            <li><a href="#ruleset-mage-spells">Mage Spells</a></li>
             <li><a href="#ruleset-magical-weapons">Magical Weapons</a></li>
             <li><a href="#ruleset-mirror-images">Mirror Images</a></li>
             <li><a href="#ruleset-priest-spells">Priest Spells</a></li>
@@ -630,6 +631,11 @@
             <p>Item MISC84 cannot be removed from "Minsc"'s equipment slots or inventory slots, and can only be equipped by "Minsc".</p>
           </div>
           <hr />
+          <a name="ruleset-mage-spells" id="ruleset-mage-spells"></a><h3>Mage Spells</h3>
+          <p>TobEx allows the extension of the limit of possible mage spells selectable for mages and sorcerers by externalising the number of spells selectable to SPELLS.2DA. The cap for level 1-8 spells can be set to 99, while the cap for level 9 spells can be set to 199, for which spells 100-199 refer to SPWI0**.SPL.</p>
+          <p>If this hack is used, it is recommended you use this hack with Externalize Mage Spell Hiding. Otherwise, unwanted spells will show up on spell selection screens. Also, assuming you provide maximum values for the number of spells in SPELLS.2DA, you should add to HIDESPL.2DA the following vanilla Throne of Bhaal spells:</p>
+          <p class="important">SPWI298-299<br />SPWI399<br />SPWI483-491, 493-499<br />SPWI590-97<br />SPWI853, 888, 897-899<br />SPWI926-965, 979-999<br />SPWI001-027, 050-056</p>
+          <hr />
           <a name="ruleset-magical-weapons" id="ruleset-magical-weapons"></a><h3>Magical Weapons</h3>
           <p>TobEx allows modmakers to create magical weapons that do not get dispelled in the magical weapon slot. Also refer to the <a href="#effects-58">Dispel Magic effect</a> section.</p>
           <hr />
@@ -733,7 +739,7 @@
           <i>TobEx optimises this trigger by greatly reducing the amount of overhead associated with checking bags. TobEx fixes a bug in single player where this trigger opcode behaved exactly the same as the PartyHasItem() trigger opcode.</i></p>
           <hr />
           <a name="triggers-40bb" id="triggers-40bb"></a><p><strong>0x40BB Kit(O:Object*,I:Kit*KIT)</strong><br />
-          <i>TobEx fixes this trigger opcode so that the full dword of I:Kit is checked against the creature rather than just the low word</i></p>
+          <i>TobEx fixes this trigger opcode so that the full dword of I:Kit is checked against the creature rather than just the low word. To preserve original behaviour, if an I:Kit value of 0 is used, only the low word is checked against.</i></p>
           <hr />
            <a name="triggers-4100" id="triggers-4100"></a><p><strong>0x4100 NextTriggerObject(O:Object*)</strong><br />
           <i>New</i><br />
@@ -1340,7 +1346,7 @@
           128 Level 8<br />
           256 Level 9<br />
           512 Double spells</p>
-          <p>For a 'Spell Level' of 0, the amount of spell slots is doubled for the level specified by the 'Slot Amount Modifier' value and all levels below. For a 'Spell Level' of 512, the amount of spell slots is doubled for the level(s) specified by the 'Slot Amount Modifier' field. The target creature(s) must have at least 1 slot at the selected level to have their slot count changed. If the resultant slot count is negative, the creature is given 12 slots.<br />
+          <p>For a 'Spell Level' of 0, the amount of spell slots is doubled for the level specified by the 'Slot Amount Modifier' value and all levels below. For a 'Spell Level' of 512, the amount of spell slots is doubled for the level(s) specified by the 'Slot Amount Modifier' field, where a value of 0 is level 1 and a value of 8 is level 9. The target creature(s) must have at least 1 slot at the selected level to have their slot count changed. If the resultant slot count is negative, the creature is given 12 slots.<br />
           <br />
           'Statistic Modifier' can be positive or negative.</p>
           <hr />

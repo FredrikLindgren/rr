@@ -1603,35 +1603,41 @@ COPY    ~RR/RR_CORE/ACTORS/RR#SHM03.CRE~   ~override~               // Greater S
   SAY NAME1 @64 SAY NAME2 @64 SAY INITIAL_MEETING @421 SAY BATTLE_CRY1 @421 SAY BATTLE_CRY2 @422 SAY ATTACK1 @423 SAY ATTACK2 @424 SAY ATTACK3 @425 SAY DAMAGE @426 SAY DYING @427 SAY SELECT_COMMON1 @421 SAY SELECT_COMMON2 @422
 COMPILE ~RR/RR_CORE/COMPILE/RR#SHM.BAF~                             // Shambler's AI script
 
-COPY_EXISTING ~MISC75.ITM~ ~override~                               // fix the Dagger of Venom
-  SAY DESC @53                                                      // new description reflecting the save vs. death
-  WRITE_BYTE  0x31 96                                               // change proficiency to Dagger (was Large Sword)
-  WRITE_LONG 0x60 2                                                 // sets Enchantment Level to +2 (was 0)
-  READ_LONG  0x64 "abil_off"                                        // add the Poisoned status icon (code based on G3 BG2 Tweaks)
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
+
+// Fix the wrong proficiency type, enchantment level and missing poison icon on the Dagger of Venom
+
+ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 THEN BEGIN            // skip this if Item Revisions is detected
+COPY_EXISTING ~%tutu_var%misc75.itm~ ~override~                     // Dagger of Venom
+WRITE_BYTE  0x31 96 // set proficiency to dagger
+WRITE_LONG 0x60 2   // set enchantment level to 2
+  READ_LONG  0x64 "abil_off" ELSE 0
+  READ_SHORT 0x68 "abil_num" ELSE 0
+  READ_LONG  0x6a "fx_off"   ELSE 0
   SET "abil_length" = 0x38
   SET "fx_delta" = 0
-  FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN                   // start iterating through abilities
+  FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN // start iterating through abilities
     READ_SHORT  ("%abil_off%" + 0x1e + ("%abil_length%" * "%index%")) "abil_fx_num"
     READ_SHORT  ("%abil_off%" + 0x20 + ("%abil_length%" * "%index%")) "abil_fx_idx"
     SET "abil_fx_idx" = ("%abil_fx_idx%" + "%fx_delta%")
     WRITE_SHORT ("%abil_off%" + 0x20 + ("%abil_length%" * "%index%")) ("%abil_fx_idx%")
-      INSERT_BYTES            ("%fx_off%"        + (0x30 * "%abil_fx_idx%")) 0x30
-        WRITE_SHORT           ("%fx_off%"        + (0x30 * "%abil_fx_idx%")) 142 // opcode: display portrait icon
-        WRITE_BYTE            ("%fx_off%" + 0x02 + (0x30 * "%abil_fx_idx%")) 2   // target: preset target
-        WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 6   // poisoned icon
-        WRITE_BYTE            ("%fx_off%" + 0x0c + (0x30 * "%abil_fx_idx%")) 0   // timing: instant limited
-        WRITE_BYTE            ("%fx_off%" + 0x0e + (0x30 * "%abil_fx_idx%")) 15  // duration: 15 seconds
-        WRITE_BYTE            ("%fx_off%" + 0x24 + (0x30 * "%abil_fx_idx%")) 4   // save type = vs. poison
-        WRITE_BYTE            ("%fx_off%" + 0x28 + (0x30 * "%abil_fx_idx%")) 0   // save bonus
-        WRITE_BYTE            ("%fx_off%" + 0x12 + (0x30 * "%abil_fx_idx%")) 100 // probability: 100%
-      SET "abil_fx_num" = "%abil_fx_num%" + 1
-      SET "fx_delta" = "%fx_delta%" + 1
-    WRITE_SHORT  ("%abil_off%" + 0x1e + ("%abil_length%" * "%index%")) "%abil_fx_num%"
+    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
+      READ_SHORT ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "opcode"
+      PATCH_IF ("%opcode%" = 25) BEGIN // poison
+        READ_ASCII ("%fx_off%" +        (0x30 * ("%abil_fx_idx%" + "%index2%"))) "clone" (48) // clone poison opcode
+        INSERT_BYTES            ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 0x30      // insert new effect
+          WRITE_EVALUATED_ASCII ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) "%clone%" // cloned opcode
+          WRITE_SHORT           ("%fx_off%" +        (0x30 * "%abil_fx_idx%")) 142       // opcode: 142 (Display Special Effect Icon)
+          WRITE_LONG            ("%fx_off%" + 0x04 + (0x30 * "%abil_fx_idx%")) 0         // param1: 0
+          WRITE_LONG            ("%fx_off%" + 0x08 + (0x30 * "%abil_fx_idx%")) 6         // param2: 6 (Poisoned icon)
+        SET "fx_delta" = "%fx_delta%" + 1
+        SET "abil_fx_num" = "%abil_fx_num%" + 1
+        WRITE_SHORT  ("%abil_off%" + 0x1e + ("%abil_length%" * "%index%")) "%abil_fx_num%"
+        SET "index2" = "%abil_fx_num%" // kills loop
+      END
+    END
   END
-  BUT_ONLY_IF_IT_CHANGES
-
+BUT_ONLY_IF_IT_CHANGES
+END                                                                 // end Item Revisions check
 
 COPY_EXISTING ~%tutu_var%DAGG04.ITM~ ~override~                     // Alter the Longtooth Dagger
  WRITE_LONG 0x80 "01"                                               // Increase range to 1 (was 0)

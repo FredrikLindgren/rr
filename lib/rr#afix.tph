@@ -106,13 +106,14 @@ APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
 // Music lists which are used in RR and which need to be in NPC format in order to be used via PlaySong() action (matches unmodded game, undoes G3 BG2 Fixpack change)
 // Using MXAERIE.MUS as a base since Aerie's theme song is in NPC format
 ACTION_IF FILE_EXISTS_IN_GAME ~CDDETEVL.pro~ AND !FILE_EXISTS_IN_GAME ~_sw1h01.itm~ THEN BEGIN // only install this if the Core Component of the G3 BG2 Fixpack is detected, never install on Tutu
-
+ACTION_IF NOT GAME_IS ~iwd_in_bg2~ THEN BEGIN                                                  // this can't be done on IWD-in-BG2
 COPY ~music/mxaerie.mus~ ~music/mxkalah.mus~                                                   // Kalah's theme (used in Arledrian's quest)
   REPLACE_TEXTUALLY ~AERIE~ ~KALAH~
 COPY ~music/mxaerie.mus~ ~music/mxkhali.mus~                                                   // Khalid's theme (used in the CoC encounter)
   REPLACE_TEXTUALLY ~AERIE~ ~KHALI~
 COPY ~music/mxaerie.mus~ ~music/mxthief.mus~                                                   // Shadow Thief theme (used in the STI component)
   REPLACE_TEXTUALLY ~AERIE~ ~THIEF~
+END                                                                                            // ends music IWD-in-BG2 check
 END                                                                                            // ends music list fix block
 
 

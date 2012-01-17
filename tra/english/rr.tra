@@ -1616,7 +1616,7 @@ Usable By:
 @782 = ~Bah! I must be hearing things.~
 
 @900 = ~This component is only available for the Windows version of the game~
-
+@902 = ~* * * This component cannot be installed on this game * * *~
 @911 = ~(No need to install. G3 fixpack version already present.)~
 
 

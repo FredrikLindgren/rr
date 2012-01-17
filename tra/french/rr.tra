@@ -1591,7 +1591,7 @@ Utilisable par :
 @782 = ~Bah ! Je dois avoir des hallucinations.~
 
 @900 = ~Ce composant est uniquement disponible pour la version Windows du jeu~
-
+@902 = ~* * * Ce composant ne peut pas etre installe sur ce jeu * * *~
 @911 = ~(Inutile de l'installer. La version du fixpack de G3 est deja presente.)~
 
 

@@ -15,7 +15,7 @@ INCLUDE ~rr/lib/regexp.tph~                                         // allows re
 INCLUDE ~rr/lib/rr#aglef.tph~                                       // Include my custom "Add Global Effect" function
 INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
 INCLUDE "rr/lib/lib.tpa"
-INCLUDE ~rr/lib/tobexfix.tph~                                       // if TobEx is installed, this disables some of its currently buggy options
+// INCLUDE ~rr/lib/tobexfix.tph~                                    // obsolete as of TobEx 0022 which RR now ships with
 END                                                                 // End the ALWAYS block
 
 README ~rr/readme_rr.html~                                          // Offer to display the main readme
@@ -37,7 +37,7 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~rr/tra/english/rr.tra~ ~rr/tra/japanes
 //////////////////////
 
 //BEGIN @900 DESIGNATED 100 //ToBEx (required for the component "Revised Thievery")
-//REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                               // ToB engine required
+//REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                              // ToB engine required
 //REQUIRE_PREDICATE !"%WEIDU_OS%" STRING_EQUAL_CASE osx @902 //ToBEx is not available for Mac/OS X <-This breaks under Wine4Mac
 //REQUIRE_PREDICATE !FILE_EXISTS ~tobex_ini/tobextweak.ini~ @901 //ToBEx is already installed
 //DEPRECATED ~Now done the way it should have been done in the first place~
@@ -56,7 +56,7 @@ LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~rr/tra/english/rr.tra~ ~rr/tra/japanes
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#DWF.RR
 
 BEGIN @1 DESIGNATED 0
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ @10                           // SoA or ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ @902                          // SoA or ToB engine required
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#DWF.RR~                     // allow other mods to detect this component
 
@@ -86,7 +86,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN @2 DESIGNATED 1
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                               // ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                              // ToB engine required
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch the RR Assorted Fixes macro
 
 // Assassin kit revision
@@ -303,8 +303,8 @@ STRING_SET ~71467~ @34                                              // Tracking 
 
 BEGIN @19 DESIGNATED 2
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                // ToB engine required
-FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid installation on Tutu
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                               // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11                     // Forbid installation on Tutu
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
 
 
@@ -531,7 +531,7 @@ BUT_ONLY_IF_IT_CHANGES
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#PPTSK.RR
 
 BEGIN @17 DESIGNATED 3
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ @10                             // SoA or ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ @902                            // SoA or ToB engine required
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPTSK.RR~                     // allow other mods to detect this component
 
@@ -562,7 +562,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN @3 DESIGNATED 4
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                // ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                               // ToB engine required
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
 
 // True Bard
@@ -861,8 +861,8 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN @4 DESIGNATED 5
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                // ToB engine required
-FORBID_FILE ~override/_sw1h01.itm~ @11                               // Forbid installation on Tutu
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                               // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11                     // Forbid installation on Tutu
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                        // Launch the RR Assorted Fixes macro
 
 INCLUDE "rr/lib/ds.tpa"                                              // Detectable Spells   
@@ -1420,7 +1420,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.SPL~    ~override~                // Scribe S
 
 
 BEGIN @9 DESIGNATED 6
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                         // ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                                        // ToB engine required
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPBRD.RR~                             // allow other mods to detect this component
 
 // PnP spell progression table based on AD&D "Dungen Master's Option: High-Level Campaigns" supplement and Blucher's work in BG2 Tweaks for levels past 30
@@ -1485,7 +1485,8 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN @5 DESIGNATED 7                                               // Additional equipment for Thieves and Bards
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                               // ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                              // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ @902                        // Do not install this component on IWD-in-BG2
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch the RR Assorted Fixes macro
 
@@ -2661,7 +2662,7 @@ END                                                                             
 
 // Classic Adventures compatibility block
 
-ACTION_IF FILE_EXISTS_IN_GAME ~TC0001.ARE~ THEN BEGIN                          // checks for Classic Adventures
+ACTION_IF GAME_IS ~ca~ THEN BEGIN                                              // checks for Classic Adventures
 
 COPY_EXISTING ~TCMER02.STO~ ~override~                                         // Add items to Rurik's Oakhurst store
  ADD_STORE_ITEM ~RR#BOW02~ AFTER             ~BOW05~ #0 #0 #0 ~IDENTIFIED~ #1  // Adds 1x Composite Short Bow
@@ -2741,9 +2742,10 @@ END                                                                            /
 
 BEGIN @18 DESIGNATED 8
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                               // ToB engine required
-FORBID_FILE ~override/_sw1h01.itm~ @11                              // Forbid installation on Tutu
-FORBID_FILE ~data/CA-AREA1.bif~ @14                                 // Forbid installation on Classic Adventures
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                              // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ @902                        // Do not install this component on IWD-in-BG2
+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11                    // Forbid installation on Tutu
+REQUIRE_PREDICATE !GAME_IS ~ca~ @14                                 // Do not install this component on Classic Adventures
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch the RR Assorted Fixes macro
 
 
@@ -2833,7 +2835,7 @@ END
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                               // ToB engine required
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                              // ToB engine required
 REQUIRE_PREDICATE FILE_EXISTS bgmain.exe @900                       // This component is only available for the Windows version of the game
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)
@@ -3033,9 +3035,10 @@ END                                                                             
 
 BEGIN @6 DESIGNATED 11
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                        // ToB engine required
-FORBID_FILE ~override/_sw1h01.itm~ @11                                       // Forbid installation on Tutu
-FORBID_FILE ~data/CA-AREA1.bif~ @14                                          // Forbid installation on Classic Adventures
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                                       // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ @902                                 // Do not install this component on IWD-in-BG2
+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11                             // Forbid installation on Tutu
+REQUIRE_PREDICATE !GAME_IS ~ca~ @14                                          // Do not install this component on Classic Adventures
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                                // Launch the RR Assorted Fixes macro
 
 INCLUDE "rr/lib/ds.tpa"                                                      // Detectable Spells 
@@ -3661,9 +3664,10 @@ END                                                                             
 
 BEGIN @7 DESIGNATED 12
 
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @10                                         // ToB engine required
-FORBID_FILE ~override/_sw1h01.itm~ @11                                        // Forbid installation on Tutu
-FORBID_FILE ~data/CA-AREA1.bif~ @14                                           // Forbid installation on Classic Adventures
+REQUIRE_PREDICATE ENGINE_IS ~tob~ @902                                        // ToB engine required
+REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ @902                                  // Do not install this component on IWD-in-BG2
+REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11                              // Forbid installation on Tutu
+REQUIRE_PREDICATE !GAME_IS ~ca~ @14                                           // Do not install this component on Classic Adventures
 LAUNCH_ACTION_MACRO ~RR#AFIX~                                                 // Launch the RR Assorted Fixes macro
 
 INCLUDE "rr/lib/ds.tpa"                                                       // Detectable Spells

@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~                                                  // Backup directory
 AUTHOR "Wisp, www.shsforums.net"                                    // Author and e-mail address
-VERSION ~v4.48~                                                     // Mod version
+VERSION ~v4.50~                                                     // Mod version
 ALWAYS                                                              // Always do this block
 INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
 INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
@@ -170,9 +170,11 @@ COPY_EXISTING ~CLABTH02.2DA~               ~override~               // Assassin 
   READ_2DA_ENTRY 5 1 1 entry
   PATCH_IF "%entry%" STRING_EQUAL_CASE GA_SPCL423 BEGIN
     SET_2DA_ENTRY 5 1 1 ~****~                                      // Empty the first column of the row (contains leftover Poison Weapon use)
+    SET_2DA_ENTRY 6 1 40 ~AP_SPCL332~                               // Grant a +1 bonus to backstab multiplier at level 1
+    SET_2DA_ENTRY 1 21 40 ~****~                                    // Remove the +1 bonus to backstab multiplier at level 21
   END
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 8  f_Increment = 8 STR_VAR f_Entry = AP_RR#TAS00 END //Give the Assassin the save vs. poison bonus
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability  
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 

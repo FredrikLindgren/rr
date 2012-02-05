@@ -180,10 +180,11 @@ With an intimate knowledge of his surroundings and the creatures that live withi
 @35 = ~ASSASSIN: This is a killer specialized in discreet and efficient murder, relying on anonymity and surprise to perform his task. Training in anatomy, stealth and poison use allows an Assassin to carry out missions of death with terrifying precision. A clever Assassin might never be seen by his victim.
 
 Advantages:
+-  Starts with a x3 backstab multiplier
+-  Backstab multiplier reaches x7 instead of x5
 -  May use Poison Weapon once per day at 1st level and every 4 levels thereafter
 -  Acquires Poison Expertise at 8th level. This ability further improves every 8 levels thereafter
 -  May use Death Attack once per day at 16th level and every 8 levels thereafter
--  Backstab reaches x7 instead of x5
 
 Disadvantages:
 -  Only 15% per level to distribute on abilities

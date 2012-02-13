@@ -120,7 +120,7 @@ Tiempo de lanzamiento: 1 asalto
 Area de efecto: radio de 10,5 metros
 Tirada de salvación: Especial
 
-Con sus armas cuerpo a cuerpo, un espadachín puede afectar la moral y coraje de otros. Tal habilidad, precisión y gracia intimida enemigos más débiles (salvación contra conjuros) causando una bajada de moral que los fuerza a correr o entrar en estado de locura y atacar a la criatura más próxima, ya sea amigo o enemigo. Este acto también inspira a los aliados, dando  como resultado un +1 al THACO. La habilidad debe ejecutarse durante un asalto completo sin interrupción. Durante este tiempo, recibir un golpe o fallar una salvación desbarata el efecto.
+Con sus armas cuerpo a cuerpo, un espadachín puede afectar la moral y coraje de otros. Tal habilidad, precisión y gracia intimida enemigos más débiles (salvación contra conjuros) causando una bajada de moral que los fuerza a correr o entrar en estado de locura y atacar a la criatura más próxima, ya sea amigo o enemigo. Este acto también inspira a los aliados, dando  como resultado un +1 al THAC0. La habilidad debe ejecutarse durante un asalto completo sin interrupción. Durante este tiempo, recibir un golpe o fallar una salvación desbarata el efecto.
 
 Nota: Esta es una habilidad extraordinaria, y por lo tanto ignora la resistencia mágica de la critura objetivo. Criaturas no muertas, demoníacas, cienos, animales o constructos no son afectadas por Desplegar Armas. Además, no afecta a las criaturas cuya tirada de golpe sea mayor que el nivel actual del bardo. Las criaturas con nivel mayor a 20 no son afectadas. Alguien que ha visto tal despliegue no volverá a ser impresionado por el mismo durante un tiempo. La efectividad y la duración de de esta habilidad mejora según el bardo gana niveles. La bonificación al ataque de los aliados aumenta un punto por cada diez niveles de experiencia del espadachín. La tirada de salvación de los enemigos se dificulta en un punto también por cada diez niveles.~
 @31 = ~Desplegar Armas~
@@ -294,7 +294,7 @@ CARACTERÍSTICAS:
 
 Aptitudes equipado: (sólo ladrones)
  Inmcrementa el multiplicador de daño del apuñalamiento en 1
- Añade un bono +2 extra al THACO 
+ Añade un bono +2 extra al THAC0 
 THAC0:  +3 bonificación
 Daño:  1D6 +3
 Tipo de daño: perforante
@@ -709,7 +709,7 @@ Habilidades equipada:
   Los lanzadores de hechizos arcanos son capaces de memorizar un hechizo adicional de nivel 1 y 2.
 
 Daño:  1D4 + 3
-THACO:  +3 bonificación
+THAC0:  +3 bonificación
 Tipo de daño:  Punzante
 Peso: 1
 Factor de velocidad: 0

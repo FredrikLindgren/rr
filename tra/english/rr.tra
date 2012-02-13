@@ -781,7 +781,7 @@ Equipped Abilities:
     +1 Intelligence
     Arcane spellcasters can memorize an additional 1st- and 2nd-level spell
 
-THACO:  +3 bonus
+THAC0:  +3 bonus
 Damage:  1D4 + 3
 Damage type:  Piercing
 Weight: 1

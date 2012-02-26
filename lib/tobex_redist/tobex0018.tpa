@@ -603,7 +603,7 @@ COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/override/aniwksnd.2da" "override/aniwks
 COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/override/clssplab.2da" "override/clssplab.2da"
 
 //Externalise Item-Creature Exclusions
-COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/override/itcrexcl.2da" "override/itcrexcl.2da"
+COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/override/item_use.2da" "override/item_use.2da"
 
 //Externalise Encumbrance Restrictions
 COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/override/encumber.2da" "override/encumber.2da"

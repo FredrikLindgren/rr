@@ -1,4 +1,4 @@
-//1230 This file contains descriptions for all the hack options found in TobEx .ini files
+//1480 This file contains descriptions for all the hack options found in TobEx .ini files
 
 Description format:
 -------------------
@@ -57,6 +57,22 @@ Limitations: Variables become set asynchronously to the order in which the actio
 355 DialogueSG(S:Name*,I:Num*)
 Sets the global variable 'Name' to 'Num' immediately instead of being added through the dialogue owner's action queue. This allows variables to be set instantaneously and checked immediately afterwards in the same dialogue. ActionOverride() is supported. If used outside dialogue, this action behaves exactly as SG().
 Limitations: Variables become set asynchronously to the order in which the action is present on the script block. This can cause issues when an action is purposely sandwiched between two modifications of the same variable.
+
+Options:
+-0: disabled
+-1: enabled
+
+----1300 JoinParty Action Class Ability Refresh Fix [F]
+Fixes an exploit whereby the JoinParty() action restores all class abilities, allowing players to re-use class abilities over and over again
+
+Options:
+-0: disabled
+-1: enabled
+
+-----590 Remain Hidden On Pickpocket Success [C, T]
+(Different implementation to, and overrides tob_hacks)
+If pickpocketing is successful, the character does not become visible
+Limitation: Hide In Shadows will still terminate at the end of the round
 
 Options:
 -0: disabled
@@ -401,6 +417,14 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1310 Charisma Mod Fix [F]
+Fixes a bug so that a net negative charisma value will limit to 0 rather than wrap to 25
+This removes an exploit involving the Rod of Terror and the Ring of Human Influence
+
+Options:
+-0: disabled
+-1: enabled
+
 -----130 Configurable Backstab Every Hit [C, M]
 (Incompatible with tob_hacks)
 Modifies the backstab every hit opcode parameter 2 to configure whether STATE_INVISIBLE and position matters in a backstab
@@ -466,6 +490,13 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1320 Constitution Mod Fix [F]
+Fixes a bug so that a net negative constitution value will limit to 0 rather than wrap to 25
+
+Options:
+-0: disabled
+-1: enabled
+
 -----1020 Container Use EFF File Fix [F]
 Fixes memory deallocation bug for use EFF file opcode on containers and doors
 
@@ -509,12 +540,14 @@ Options:
 Fixes the following bugs with the damage opcode:
 1. Killing someone with magic fire damage would cause a WEIRD damage assertion failure
 2. Hitting someone with magic cold damage would not play a hit sound
+3. Memory leak when fist damage would make the target unconscious
 
 Options:
 -0: disabled
 -1: enabled
 
------450 Dexterity Mod [M, X]
+-----450 Dexterity Mod [F, M, X]
+Fixes a bug so that a net negative dexterity value will limit to 0 rather than wrap to 25
 Adds the Icewind Dale Type 3 Cat's Grace Spell to the dexterity modifier effect opcode
 
 #15 (0x00F)  Stat: Dexterity Modifier [15]
@@ -563,7 +596,7 @@ Options:
 -1: enabled
 
 -----290 Dispel Formula Fix [C, F]
-(Different implementation to, and clashes with tob_hacks, SCS, SCSII, Spell Revisions)
+(Different implementation to, and overrides tob_hacks, SCS, SCSII, Spell Revisions)
 Corrects the formula used for the dispel opcode
 
 Options:
@@ -578,9 +611,37 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1360 Fatigue Mod Fix [F]
+Fixes a bug so that a net negative fatigue limit value will limit to 0 rather than wrap to 100
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1440 Find Traps Mod Fix [F]
+Fixes a bug so that an out of bounds find traps skill will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
 -----420 Forbid Item Type Fix [C, F]
 (Identical to tob_hacks)
 Fixes an engine bug that caused the forbidden item type information to be placed in an unused list whenever parameter 2 was non-zero
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1330 Intelligence Mod Fix [F]
+Fixes a bug so that a net negative intelligence value will limit to 0 rather than wrap to 25
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1370 Intoxication Mod Fix [F]
+Fixes a bug so that a net negative intoxication value will limit to 0 rather than wrap to 100
 
 Options:
 -0: disabled
@@ -615,6 +676,20 @@ Bit 4: If the spell is already learnt, no experience is given (excludes inventor
 Bit 5: Learning the spell obeys mage school exclusions (excludes inventory screen)
 Bit 6: The spell cannot be learnt by sorcerer class (excludes inventory screen)
 Bit 7: Learning fails if the target has already learnt the maximum number of spells as per INTMOD.2DA for the spell's level (excludes inventory screen)
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1380 Level Mod Fix [F]
+Fixes a bug so that a net negative level will limit to 0 rather than wrap to 100
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1340 Lore Mod Fix [F]
+Fixes a bug so that a net negative lore value will limit to 0 rather than wrap to 100
 
 Options:
 -0: disabled
@@ -669,8 +744,29 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1410 Morale Break Mod Fix [F]
+Fixes a bug so that an out of bounds morale break value will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
 -----870 No Spell Interruption On Zero Damage [T]
 Modifies the damage opcode such that if damage is reduced to zero (with normal damage behaviour; wParam2Low = 0), spellcasting and casting animations are not interrupted
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1450 Open Locks Mod Fix [F]
+Fixes a bug so that an out of bounds open locks skill will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1430 Pick Pockets Mod Fix [F]
+Fixes a bug so that an out of bounds pick pockets skill will limit to 0 or 255 rather than wrap around
 
 Options:
 -0: disabled
@@ -762,7 +858,15 @@ Options:
 -0: disabled
 -1: enabled
 
------1130 Save Vs Breath Mod [M]
+-----1400 Reputation Mod Fix [F]
+Fixes a bug so that an out of bounds reputation value will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1130 Save Vs Breath Mod [F, M]
+Fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20
 Adds instantaneous sum type (3)
 
 Description
@@ -782,7 +886,8 @@ Known values for 'Type' are:
 
 For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
------1140 Save Vs Death Mod [M]
+-----1140 Save Vs Death Mod [F, M]
+Fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20
 Adds instantaneous sum type (3)
 
 Description
@@ -802,7 +907,8 @@ Known values for 'Type' are:
 
 For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
------1150 Save Vs Poly Mod [M]
+-----1150 Save Vs Poly Mod [F, M]
+Fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20
 Adds instantaneous sum type (3)
 
 Description
@@ -822,7 +928,8 @@ Known values for 'Type' are:
 
 For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
------1160 Save Vs Spells Mod [M]
+-----1160 Save Vs Spells Mod [F, M]
+Fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20
 Adds instantaneous sum type (3)
 
 Description
@@ -842,7 +949,8 @@ Known values for 'Type' are:
 
 For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
------1170 Save Vs Wands Mod [M]
+-----1170 Save Vs Wands Mod [F, M]
+Fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20
 Adds instantaneous sum type (3)
 
 Description
@@ -862,7 +970,22 @@ Known values for 'Type' are:
 
 For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.
 
------480 Strength Mod [M, X]
+-----1460 Stealth Mod Fix [F]
+Fixes a bug so that an out of bounds move silently skill will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1390 Strength Extra Mod Fix [F]
+Fixes a bug so that a net negative strength extra value will limit to 0 rather than wrap to 100
+
+Options:
+-0: disabled
+-1: enabled
+
+-----480 Strength Mod [F, M, X]
+Fixes a bug so that a net negative strength value will limit to 0 rather than wrap to 25
 Alters the strength modifier effect opcode to work similar to Icewind Dale behaviour
 
 Description
@@ -891,6 +1014,21 @@ Options:
 -----700 Use Caster Level On Mirror Image [C, M, T]
 (Identical to tob_hacks, SCS, SCSII, Spell Revisions)
 Modifies the mirror image opcode to keeps caster level so dispel formulae will work on it
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1420 Tracking Mod Fix [F]
+Fixes a bug so that an out of bounds tracking skill will limit to 0 or 255 rather than wrap around
+
+Options:
+-0: disabled
+-1: enabled
+
+
+-----1350 Wisdom Mod Fix [F]
+Fixes a bug so that a net negative wisdom value will limit to 0 rather than wrap to 25
 
 Options:
 -0: disabled
@@ -1017,6 +1155,17 @@ Options:
 -----250 Disable Silence On Charm [T]
 Allows dialogue with charmed/dominated creatures
 Charmed/dominated creatures also keep their soundsets
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1480 Enable Auto-Pause On All Screens [T]
+In single player, auto-pause will work on any screen, not just the game screen
+Used by itself, this tweak will generally have effect on the map screen, because all other screens pause the game automatically
+Changing to a different screen from the map screen with the game unpaused keeps the game unpaused, so auto-pause will also work in these situations
+
+When combined with the Disable Force Inventory Pause hack, this tweak will also have effect in the inventory screen
 
 Options:
 -0: disabled
@@ -1165,6 +1314,25 @@ Options:
 -0: disabled
 -1: enabled
 
+-----1290 Externalise Stealable Item Slots [M]
+Externalises and expands the configuration of which item slots are amenable to pickpocketing to SLTSTEAL.2DA
+
+SLTSTEAL.2DA
+Description
+SKILL: The minimum pickpocketing skill with which the item in the item slot can be stolen. If the skill is set to 0, the item slot can never be stolen from. Note that the SLOT_FIST value is ignored.
+[ROWNAME]: The name of the item slot. The row numbers are mapped to the item slot, not the name, except for SLOT_EQUIPPED. SLOT_EQUIPPED refers to the currently equipped weapon slot, or the currently equipped ammo slot and its launcher slot.
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1280 Fake Talk Exploit Fix [F]
+Fixes an exploit where players could intend to initiate dialogue with a neutral creature, cancel their action, and then perform a hostile action instead, resulting in the creature wasting up to 10 seconds doing nothing before becoming hostile
+
+Options:
+-0: disabled
+-1: enabled
+
 -----490 Level One Proficiency Restrictions [C, M, T]
 (Different implentation to, and clashes with tob_hacks)
 Enables proficiency restrictions at level one as described by the FIRST_LEVEL column of PROFSMAX.2DA
@@ -1174,10 +1342,9 @@ Options:
 -0: disabled
 -1: enabled
 
------590 Remain Hidden On Pickpocket Success [C, T]
-(Different implementation to, and clashes with tob_hacks)
-If pickpocketing is successful, the character does not become visible
-Limitation: Hide In Shadows will still terminate at the end of the round
+-----1250 Move Areas Fix [F]
+This hack tries to fix a bug where a creature that is moving between areas may have multiple requests to do so and thus creates multiple copies of the creature in the area and thus the saved game
+Courtesy of the Throne of Bhaal 26499 beta patch
 
 Options:
 -0: disabled
@@ -1186,6 +1353,21 @@ Options:
 -----780 Rest Spawns Advance Time [T]
 If resting is interrupted by rest spawns, a random amount of time up to eight hours (minus one tick) will pass
 This feature already existed in the code, but was never utilised
+
+Options:
+-0: disabled
+-1: enabled
+
+----1260 Spell Turning Fix [F]
+Fixes a bug where some memory that is not zeroed causes spells to be absorbed instead of bounced
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1240 Summon Limit Fix [F]
+This hack fixes a bug where the summon count can increment permanently, preventing any further summoning
+Courtesy of the Throne of Bhaal 26499 beta patch
 
 Options:
 -0: disabled
@@ -1301,28 +1483,29 @@ Options:
 -1: enabled
 
 -----740 Externalise Item-Creature Exclusions [M, X]
-Externalises creature-specific item restrictions to ITCREXCL.2DA.
+Externalises creature-specific item restrictions to ITEM_USE.2DA.
 
-ITCREXCL.2DA
+ITEM_USE.2DA
 Description
-[ROWNAME]: Death variable/Script name of creature (not case-sensitive)
-ITEM: the resource name of the item that the item-creature restrictions apply to
-NO_PICKUP_E: if set to non-zero, the ITEM cannot be removed from any equipment slot of the creature with associated death variable
-STRREF_PE: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable
-ONLY_EQUIP: if set to non-zero, the ITEM can only be equipped by the creature with associated death variable (this is 'stackable', in that multiple ITEM entries under different death variables mean that multiple creatures with associated death variables can equip the ITEM)
-STRREF_E: the string reference to display in when a creature other than that with the associated death variables tries to equip the ITEM
-NO_PICKUP_I: if set to non-zero, the ITEM cannot be removed from any inventory slot of the creature with associated death variable
-STRREF_I: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable
-NO_DROP_I: if set to non-zero, the ITEM cannot be placed in any inventory slot of the creature with associated death variable
-STRREF_DI: the string reference to display in the inventory screen when the ITEM is attempted to be placed in any inventory slot of the creature with associated death variable
-NO_DROP_E: if set to non-zero, the ITEM cannot be placed in any equipment slot of the creature with associated death variable
-STRREF_DE: the string reference to display in the inventory screen when the ITEM is attmpted to be placed in any equipment slot of the creature with associated death variable
+[ROWNAME]: the resource name of the item that the item-creature restrictions apply to
+USER: death variable/script name of creature (not case-sensitive)
+STRREF#: the string reference to display in the inventory screen when the restriction indicated by the flag value of # applies
+FLAG: bitfield indicating the type/s of restriction to apply
+
+FLAG bits
+bit 0 [1]: the item cannot be picked up from any slot of the creature (this overrides bits 3 and 4)
+bit 1 [2]: the item can only be equipped by the creature (this is 'stackable', so multiple item entries with different creatures mean that each of the listed creatures can equip the item)
+bit 2 [4]: no restrictions (this bit is reserved for GemRB)
+bit 3 [8]: the item cannot be picked up from any equipped slot of the creature
+bit 4 [16]: the item cannot be picked up from any inventory slot of the creature
+bit 5 [32]: the item cannot be dropped into any equipped slot of the creature
+bit 6 [64]: the item cannot be dropped into any inventory slot of the creature
 
 For example,
-	ITEM	NO_PICKUP_E	STRREF_PE	ONLY_EQUIP	STRREF_E	NO_PICKUP_I	STRREF_I	NO_DROP_I	STRREF_DI	NO_DROP_E	STRREF_DE
-MINSC	MISC84	1	10218	1	10218	1	10218	0	-1	0	-1
+	USER	STRREF	FLAG	STRREF2	STRREF4	STRREF8	STRREF16	STRREF32	STRREF64
+MISC84	MINSC	10218	3	10218	-1	-1	-1	-1	-1
 
-Item MISC84 cannot be removed from "Minsc"'s equipment slots or inventory slots, and can only be equipped by "Minsc".
+Item MISC84 cannot be picked up from any slot of "Minsc", and can only be equipped by "Minsc".
 
 Options:
 -0: disabled
@@ -1499,11 +1682,21 @@ Options:
 -0: disabled
 -1: enabled
 
+/////////////////////////////////////// STORE
+
+-----1470 Item Recharge in Bag Fix [F]
+Fixes an exploit where depleted items can be recharged by putting them in a bag and taking it out again
+
+Options:
+-0: disabled
+-1: enabled
+
 /////////////////////////////////////// TRIGGER
 
------320 Enable PickpocketFailed Trigger [C, M, T]
-(Identical to tob_hacks)
-When pickpocketing fails, a PickPocketFailed() trigger is sent instead of Attacked()
+-----320 Enable PickpocketFailed Trigger [C, M]
+(Different implementation to, and overrides tob_hacks)
+When pickpocketing fails, a PickPocketFailed() trigger is sent in addition to AttackedBy()
+Compare this behaviour with PickpocketFailed Trigger Only, where only PickPocketFailed() is sent
 
 Options:
 -0: disabled
@@ -1584,6 +1777,15 @@ Options:
 -----1090 Optimise Bag Search Code [F, O]
 Greatly reduces the amount of overhead with triggers that check bags for the presence of items (i.e. HasItem() and variants)
 Also fixes the PartyHasItemIdentified() trigger, which had identical behaviour to the PartyHasItem() trigger in single player
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1480 PickpocketFailed Trigger Only [C, M, T]
+(Different implementation to, and overrides tob_hacks)
+When pickpocketing fails, a PickPocketFailed() trigger is sent instead of AttackedBy()
+Compare this behaviour with Enable PickpocketFailed Trigger, where both triggers are sent 
 
 Options:
 -0: disabled
@@ -1716,6 +1918,13 @@ Options:
 -----440 IWD Animation Attack 3 Fix [F]
 Fixed IWD animations (0xE***) using the 3rd attack animation (A3) that would display the
 2nd attack animation in northeast and east orientations when 'Sprite Mirror' is disabled in 'baldur.ini'
+
+Options:
+-0: disabled
+-1: enabled
+
+-----1270 Spell Turning Animation Fix [F]
+Fixes a bug introduced somewhere between builds 22941 and 23037 of Shadows of Amn where the specific spell bouncing animation (SPSTURNI.VVC) was not being played correctly
 
 Options:
 -0: disabled

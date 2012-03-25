@@ -5047,5 +5047,15 @@ COPY_EXISTING ~BOOTER02.DLG~ ~override~
 
 
 
+//////////////////////////////////////////////////////
+// Rogue Rebalancing - BG2-style icons for RR content
+//////////////////////////////////////////////////////
+
+
+BEGIN @999 DESIGNATED 999
+
+COPY    ~rr/rr_core/bam/bg2s~   ~override~
+
+
 
 // *********************************** END OF FILE ***********************************************

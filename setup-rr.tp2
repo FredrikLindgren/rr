@@ -1422,6 +1422,14 @@ ACTION_IF FILE_EXISTS_IN_GAME lclist_scrolls.2da BEGIN //Galactycon's Spell Pack
   BUT_ONLY
 END
 
+ACTION_IF !VARIABLE_IS_SET RR#DimensionDoor BEGIN
+  OUTER_SPRINT RR#DimensionDoor ~~
+END
+
+ACTION_IF !VARIABLE_IS_SET RR#DDoor450 BEGIN
+  OUTER_SPRINT RR#DDoor450 ~~
+END
+
 COPY    ~RR/RR_CORE/ACTORS/RR#SCRL.CRE~    ~override~                // Scribe Scrolls invisible creature (used for initiating the dialogue)
 COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.EFF~    ~override~                // Scribe Scrolls invisible creature summoning EFF
 COMPILE ~RR/RR_CORE/COMPILE/RR#SCRL.D~ EVAL                              // Scribe Scrolls invisible creature dialogue file (used for choosing which spell to scribe)

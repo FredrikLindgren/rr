@@ -1012,9 +1012,7 @@ Capacités d'équipement :
  +1 à la CA
  Augmente la vitesse de déplacement du porteur
 
-Poids : 4
-Inutilisable par :
- Tueur de magiciens~
+Poids : 4~
 
 @206 = ~Hache des Tempêtes~
 @207 = ~Cette hache superbement ouvragée détient un enchantement d'origine inhabituelle. Immédiatement après avoir été forgée, elle fut amenée au sommet d'une haute montagne où des prêtres nains attendaient qu'une grande tempête se prépare. L'arme fut placée sur un piédestal de fer et fut peu après frappée par la foudre. Grâce aux enchantements déjà tissés dans la lame, elle absorba une partie des propriétés de l'éclair. La hache fut plus tard donnée à un capitaine nain de haut rang pour l'aider dans la bataille entre les hordes d'orques et les nains du Gouffre de Dorn. L'attaque fut une surprise complète pour les nains, puisqu'un matin un éclaireur arriva et annonça que la plus grande armée orque qu'il ait jamais vue se trouvait à quelques heures de là seulement. Avec aussi peu de temps pour se préparer, les défenses naines furent submergées, et les orques commencèrent à entrer dans le Gouffre de Dorn. Les nains furent forcés de battre en retraite dans les profondeurs de la citadelle, mais les passages clés furent démolis pour couvrir leur repli et leur permettre de gagner du temps. Malgré cette situation désespérée, ceci permit aux nains de garder le contrôle du lieu et du moment où se déroulaient les combats. Chaque bataille coûta très cher aux orques, car les nains combattaient jusqu'à la mort, mais ces derniers étaient sans cesse repoussés vers le Glacier de la Dent de Wyrm. Finalement, grâce à leur supériorité numérique, les orques parvinrent à briser les défenses des nains et à piller leurs habitations.
@@ -1591,7 +1589,7 @@ Utilisable par :
 @782 = ~Bah ! Je dois avoir des hallucinations.~
 
 @900 = ~Ce composant est uniquement disponible pour la version Windows du jeu~
-
+@902 = ~* * * Ce composant ne peut pas etre installe sur ce jeu * * *~
 @911 = ~(Inutile de l'installer. La version du fixpack de G3 est deja presente.)~
 
 

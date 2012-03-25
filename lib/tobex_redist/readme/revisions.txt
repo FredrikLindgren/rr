@@ -1,3 +1,68 @@
+Beta 0023
+---------
+-Class/structure updates
+-Added feature to apply custom user patches in the ./TobEx_ini/patch directory, see template.patch in that directory
+-Improved installation text compatibility with Linux systems
+-Improved stability of hex patching code
+-Added: Castilian translation (by Lisandro)
+-Added: Charisma Mod Fix
+-Added: Constitution Mod Fix
+-Added: Enable Auto-Pause On All Screens
+-Added: Fake Talk Exploit Fix
+-Added: Fatigue Mod Fix
+-Added: Find Traps Mod Fix
+-Added: Intelligence Mod Fix
+-Added: Intoxication Mod Fix
+-Added: Item Recharge in Bag Fix
+-Added: JoinParty Action Class Ability Refresh Fix
+-Added: Level Mod Fix
+-Added: Lore Mod Fix
+-Added: Morale Break Mod Fix
+-Added: Move Areas Fix
+-Added: Open Locks Mod Fix
+-Added: Pick Pockets Mod Fix
+-Added: Reputation Mod Fix
+-Added: Spell Turning Fix
+-Added: Spell Turning Animation Fix
+-Added: Stealth Mod Fix
+-Added: Strength Extra Mod Fix
+-Added: Summon Limit Fix
+-Added: Tracking Mod Fix
+-Added: Wisdom Mod Fix
+-Updated: French translation
+-Updated: Russian translation
+-Damage Fix: Additionally fixes a memory leak bug when fist damage would make the target unconscious
+-Dexterity Mod: Added information to reference that this hack also fixes incorrect wrapping of attribute values
+-Dispel Formula Fix: Re-implemented the hack, now overrides tob_hacks and other mods
+-Save Vs <> Mod: Added information to reference that these hacks also fix incorrect wrapping of save values
+-Enable PickpocketFailed Trigger: Re-implemented the hack, old hack has been renamed (see below), now sends PickPocketFailed() in addition to the original AttackedBy() trigger, moved to core hacks, now overrides tob_hacks
+-Externalise Item-Creature Exclusions: Re-implemented the hack to closer reflect the GemRB implementation
+-PickpocketFailed Trigger Only: Renamed from the previous tweak hack Enabled PickpocketFailed Trigger
+-Enlarge Tooltip Scroll: Fixed the DDERR_INVALIDRECT issue in software renderer causing the tooltip to get stuck on the screen, re-enabled by default
+-Remain Hidden On Pickpocket Success: Re-implemented the hack, re-classified the hack as of type Action, now overrides tob_hacks
+-Scrollable Mage Spellbook: Fixed a bug in calculating the maximum scroll bar position
+-Scrollable Priest Spellbook: Fixed a bug in calculating the maximum scroll bar position
+-Strength Mod: Added information to reference that this hack also fixes incorrect wrapping of attribute values
+-Subtitles For Standard Soundsets: Fixed a typo in the FEMALE3 soundset subtitles
+
+Beta 0022
+---------
+-Assertion updates
+-Class/structure updates
+-Upgraded to use the Detours Express 3.0 library, removing need for detoured.dll
+-Added: Externalise Mage Spells Cap
+-Updated: Italian translation (by Salk)
+-Updated: Simplified and Traditional Chinese translations (by Hindo's Doom)
+-Blindness As Spell Description: Fixed a typo that prevented this hack from working
+-Blindness As Spell Description: Should now overwrite the Blindness Fix hack as intended
+-Contingency Detects Select Spell: Fixed memorised spells in lowercase not displaying correctly
+-Disease Fix: Fixed a bug where a creature slowed on death remained alive and untargettable
+-Kit Trigger Fix: Fixed breaking of vanilla behaviour when Kit(*, 0) was specifically used to detect Barbarian and Wild Mage kits
+-Log Assertion Failures: Missing spell icons for spells in the spell selection screen correctly display an assertion failure
+-Log Missing Resources: Fixed an issue that prevented this hack from working
+-Optimise Bag Search Code: (?) Hopefully now fixed occasional client-side crash when accessing bags or stores
+-Poison Fix: Fixed a bug where a creature poisoned on death remained alive and untargettable
+
 Beta 0021
 ---------
 -Included French translation (by Isaya)
@@ -19,7 +84,7 @@ Beta 0021
 -Expanded Stats: Fixed network communication of new stats
 -Externalise Mage Spell Hiding: Fixed a bug where Lightning (SPWI938) was selectable in Sorceror level-up mage spell selection (added SPWI927-949 to HIDESPL.2DA to preserve vanilla behaviour)
 -Magic Resistance Mod Fix: Swapped implementation of parameter 2 values 0 and 3 to preserve vanilla behaviour
--Optimise Bag Search Code: (?) Fixed occasional client-side crash  when accessing bags or stores
+-Optimise Bag Search Code: (?) Fixed occasional client-side crash when accessing bags or stores
 -Poison Fix: Fixed a typo that caused crashes with effect opcode #41 (Sparkle) and prevented this hack from working
 -Scrollable Chargen Mage Spell Selection: Fixed intermittent bugs with scroll bars not scrolling when there were spells that could fit onto one page
 -Scrollable Level Up Mage Spell Selection: Fixed intermittent bugs with scroll bars not scrolling when there were spells that could fit onto one page
@@ -260,7 +325,7 @@ NOTE: this version cannot be compared to the previous version due to a major cha
 Beta 0008
 ---------
 -Class/structure updates
--Commcned major revision of code
+-Commenced major revision of code
 -Added components: Allow 99 Priest Known Spells Per Level
 -Removed TobEx.def
 -Renamed all components

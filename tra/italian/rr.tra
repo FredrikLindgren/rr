@@ -935,9 +935,7 @@ Abilità durante l'uso:
 +1 alla Classe Armatura    
 Aumenta la velocità di movimento
 
-Peso: 4
-Non utilizzabile da:  
- Ammazzastregoni~
+Peso: 4~
 @206 = ~Ascia delle Tempeste~
 @207 = ~Questa ascia di superba fattura è portatrice di un incantesimo di inusuale origine. Subito dopo essere stata forgiata, l'ascia fu portata sulla cima di un monte presso cui sacerdoti nanici attesero l'arrivo di una grossa tempesta. L'arma fu piazzata su un piedistallo di ferro e fu presto colpita da un fulmine. Grazie a un incantesimo per mezzo del quale era stata precedentemente incantata, assorbì parte delle proprietà del fulmine che l'aveva colpita. L'arma fu poi consegnata a un ufficiale nanico di alto rango affinché lo aiutasse nella conduzione di una battaglia che stava avendo luogo tra le orde degli orchi e i nani delle Profondità di Dorn. L'attacco colse i nani di sorpresa, quando una mattina una sentinella portò la notizia che la più grande armata orchesca che avesse mai visto si trovava a poche ore di distanza. Con poco tempo a disposizione per organizzare le difese, i guerrieri nanici furono travolti e gli orchi si riversarono nelle Profondità di Dorn. I nani furono costretti a barricarsi nelle profondità della cittadella, facendo franare le principali vie d'accesso per coprirsi la ritirata e guadagnare tempo. Anche in tali estreme condizioni, ciò diede ai nani pieno controllo su tempi e luoghi in cui le battaglie avrebbero avuto luogo. Di conseguenza, ogni battaglia costò cara agli orchi, sebbene i nani fossero ugualmente costretti ad un'inesorabile e progressiva ritirata verso il Ghiacciaio del Dente di Drago. Infine, grazie alla propria superiorità numerica, gli orchi fecero breccia tra le linee difensive dei nani e ne razziarono le abitazioni.
 
@@ -1447,6 +1445,7 @@ Utilizzabile da:
 @782 = ~Bah! Devo essermelo immaginato.~
 
 @900 = ~Questo componente é disponibile solo per la versione Windows del gioco~
+@902 = ~* * * Questo componente non può essere utilizzato su questo gioco * * *~
 @911 = ~(L'installazione non è necessaria in quanto la versione del G3 fixpack è già installata.)~
 
 // Marina's dialogue and Arledrian's Quest (1000-1499)

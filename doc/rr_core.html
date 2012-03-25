@@ -8,6 +8,7 @@
 Rebalancing Mod<br>
 -core components-</span></font><span style="font-weight: bold;"></span><br>
 </div>
+
 <div style="text-align: center;"><font style="font-weight: bold;">by
 aVENGER</font><br>
 </div>
@@ -37,11 +38,9 @@ Strike</a></li>
 <li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Insightful_Strike">Insightful
 Strike</a></span></li>
 <li><span style="font-weight: normal;"></span><a href="rr_core.html#Danger_Sense">Danger Sense</a></li>
-<li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Evasion">Evasion</a></span></li>
-<li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Spike_Trap">Spike Trap</a><br></span></li>
+<li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Evasion">Evasion</a></span></li><li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Spike_Trap">Spike Trap</a><br></span></li>
 <li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Acid_Trap">Acid
-Trap</a></span></li>
-<li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Exploding_Trap">Exploding Trap</a><br></span></li>
+Trap</a></span></li><li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Exploding_Trap">Exploding Trap</a><br></span></li>
 <li style="font-weight: bold;"><span style="font-weight: normal;"><a href="#Alchemy_THF">Alchemy</a><br>
 </span></li>
 </ul>
@@ -477,9 +476,7 @@ Lightning, Flame Strike, Cone of Cold, Sunfire, Chain Lightning,
 Delayed Blast Fireball and all forms of Dragon's Breath. The Evasion
 ability expires after five rounds.<br>
 <br>
-Requires: Danger Sense<br>
-<br>
-<span style="font-weight: bold;"><a name="Spike_Trap"></a>Spike Trap</span> <span style="font-style: italic;">(revised ability)</span><br>
+Requires: Danger Sense<br><br><span style="font-weight: bold;"><a name="Spike_Trap"></a>Spike Trap</span> <span style="font-style: italic;">(revised ability)</span><br>
 <br>This ability allows the rogue to set a powerful spring-loaded spike
 trap that deals 20D6 points of piercing damage to the unsuspecting
 creature that sets it off.<br><br><span style="font-style: italic;">
@@ -497,8 +494,7 @@ nearby opponents with a highly vitriolic alchemical mixture which deals
 difficult to remove. Afflicted opponents must make a saving throw vs.
 breath or take an additional 2d6 points of acid damage during each of
 the following three rounds. Creatures who are particularly vulnerable
-to acid damage (such as Trolls) do not get a saving throw.<br>
-<br><span style="font-style: italic;">
+to acid damage (such as Trolls) do not get a saving throw.<br><br><span style="font-style: italic;">
 Note: the Acid Trap is alchemical </span><span style="font-style: italic;">(rather than magical) </span><span style="font-style: italic;">in nature and is therefore not subject to the target's magic resistance.</span><br><span style="font-style: italic;"></span><br><span style="font-weight: bold;"><a name="Exploding_Trap"></a>Exploding Trap</span> <span style="font-style: italic;">(revised ability)</span><br>
 <br>By mixing unstable alchemical compounds together, a rogue can set a
 powerful trap which unleashes a violent explosion when triggered. The
@@ -2261,7 +2257,7 @@ Equipped Abilities:<br>
 &nbsp;&nbsp;&nbsp; Arcane spellcasters can memorize an
 additional 1st and 2nd level spell<br>
 <br>
-THACO:&nbsp; +3 bonus<br>
+THAC0:&nbsp; +3 bonus<br>
 Damage:&nbsp; 1D4 + 3<br>
 Damage type:&nbsp; Piercing<br>
 Weight: 1<br>
@@ -2996,56 +2992,61 @@ and installing Erephine's <a href="http://www.spellholdstudios.net/ie/1pp">1PP m
 <br>
 <big><span style="font-weight: bold;"><a name="Version_changes"></a><span style="text-decoration: underline;">Version
 changes</span></span></big>
-<br /><br />
+<br><br>
 
-<b>4.47 - November 6, 2011</b><br />
+<b>4.48 - February 18, 2012</b><br>
 <ul>
-  <li>Fixed a small error in a dialogue line which allows elven partymembers to translate Arledrian's journal</li>
-  <li>Updated the Russian translation</li>
-  <li>Upgraded to TobEx Beta 0021</li>
+<li>The "Proper dual-wielding implementation for Thieves and Bards" and "Proper racial adjustments for thieving skills" components can now be installed on SoA-only games</li>
+<li>Most components should now install properly on IWD-in-BG2</li>
+<li>Rogue Rebalancing now uses ENGINE_IS to determine the type of your installation (i.e. BG2-SoA, ToB, BGT... etc.)</li>
+<li>Upgraded to TobEx Beta 0022</li>
 </ul>
 
-<b>4.46 - September 18, 20111</b><br />
+<b>4.47 - November 6, 2011</b><br>
 <ul>
-  <li>Fixed an issue which prevented the "Use PnP thievery potions and prevent their effects from stacking" subcomponent of "Revised Thievery" from working
-properly. Furthermore, this component now takes into account Item Revisions v3</li>
-  <li>If Quest Pack is installed, Aran Linvail will now have the Short Sword of Backstabbing in his inventory in case the party sides against him in Chapter 6. Furthermore, the SsoB will now be moved to Aran Linvail when either the "Shadow Thief Improvements" component or the "Additional Equipment for Thieves and Bards component is installed"</li>
+<li>Fixed a small error in a dialogue line which allows elven partymembers to translate Arledrian's journal</li>
+<li>Updated the Russian translation</li>
+<li>Upgraded to TobEx Beta 0021</li>
 </ul>
 
-<b>4.45 - August 14, 2011</b><br />
+<b>4.46 - September 18, 2011</b><br>
 <ul>
-  <li>Shambling Mounds were erroneously not immune to the Mariliths' Cause Serious Wounds ability</li>
-  <li>Updated the French translation</li>
+<li>Fixed an issue which prevented the "Use PnP thievery potions and prevent their effects from stacking" subcomponent of "Revised Thievery" from working properly. Furthermore, this component now takes into account Item Revisions v3</li>
+<li>If Quest Pack is installed, Aran Linvail will now have the Short Sword of Backstabbing in his inventory in case the party sides against him in Chapter 6. Furthermore, the SsoB will now be moved to Aran Linvail when either the "Shadow Thief Improvements" component or the "Additional Equipment for Thieves and Bards component is installed"</li>
+</ul>
+
+<b>4.45 - August 14, 2011</b><br>
+<ul>
+<li>Shambling Mounds were erroneously not immune to the Mariliths' Cause Serious Wounds ability</li>
+<li>Updated the French translation</li>
 </ul>
 
 <b>4.44 - July 24, 2011</b><br>
 <ul>
-  <li>The Thief version of the Alchemy HLA was erroneously using the description of the Bard version</li>
-  <li>Blades can no longer assign any proficiency points in Two Weapon Fighting Style at the character creation screen since they receive the full bonus automatically upon starting the game</li>
-  <li>The Exploding Trap HLA has been slightly revised. It now deals 15d6 points of fire damage and is no longer subject to magic resistance. However, its secondary effects can now be avoided with a successful save vs. breath</li>
-  <li>The Spike Trap HLA now deals piercing damage. For reference, in the original game the damage dealt by this trap was classified as magical (i.e. akin to
-the Magic Missile spell) which didn't make much sense for a non-magical
-ability<br></li>
+<li>The Thief version of the Alchemy HLA was erroneously using the description of the Bard version</li>
+<li>Blades can no longer assign any proficiency points in Two Weapon Fighting Style at the character creation screen since they receive the full bonus automatically upon starting the game</li>
+<li>The Exploding Trap HLA has been slightly revised. It now deals 15d6 points of fire damage and is no longer subject to magic resistance. However, its secondary effects can now be avoided with&nbsp;a successful save vs. breath</li>
+<li>The Spike Trap HLA now deals piercing damage. For reference, in the original game the damage dealt by this trap was classified as magical (i.e. akin to the Magic Missile spell) which didn't make much sense for a non-magical ability</li>
 </ul>
 
-<b>4.43 - May 15, 2011</b><br />
+<b>4.43 - May 15, 2011</b><br>
 <ul>
   <li>Synchronised DS with SCSII v19.</li>
   <li>The Evasion ability now properly protects against the appropriate spells from aTweaks' PnP Fiends.</li>
   <li>Scribe Scrolls now accounts for Galactygon's Spell Pack mod.</li>
 </ul>
 
-<b>4.42 - March 10, 2011</b><br />
+<b>4.42 - March 10, 2011</b><br>
 <ul>
   <li>Updated the French translation.</li>
 </ul>
 
-<b>4.41 - February 26, 2011</b><br />
+<b>4.41 - February 26, 2011</b><br>
 <ul>
   <li>Fixed a regression that prevented the mod from installing when Italian language was used.</li>
 </ul>
 
-<b>4.40 - February 19, 2011</b><br />
+<b>4.40 - February 19, 2011</b><br>
 <ul>
   <li>Fixed a regression that broke Scribe Scrolls.</li>
   <li>Fixed a few compatibility problems with regards to the description of the Avoid Death HLA if Refinements was also installed.</li>
@@ -3058,13 +3059,13 @@ ability<br></li>
   <li>Crippling Strike now correctly requires Assassination, even when Refinements is installed.</li>
 </ul>
 
-<span style="font-weight: bold;">4.38 - October 25, 2010</span><br />
+<span style="font-weight: bold;">4.38 - October 25, 2010</span><br>
 <ul>
   <li>Scribe Scrolls has been synchronised with aTweaks v3.22.</li>
   <li>Gold spent on creating potions can now not be recouped by removing the thief from the party.</li>
 </ul>
 
-<span style="font-weight: bold;">4.37 - May 25, 2010</span><br />
+<span style="font-weight: bold;">4.37 - May 25, 2010</span><br>
 <ul>
   <li>Updated German and Russian translations</li>
 </ul>
@@ -3759,6 +3760,7 @@ of Cyric encounter</li>
 some minor issues with dual-class characters and the Rogue's Ward
 buckler</li>
 <li>New installer icon
+
 for aPack.exe added</li>
 </ul>
 <div style="text-align: justify;"><span style="font-weight: bold;">3.10 - November 13, 2003</span><br>

@@ -35,7 +35,7 @@ LOAD_TRA "rr/tra/english/tobex.tra" "rr/tra/%LANGUAGE%/tobex.tra"
 ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"
 
 COPY "tobex_ini/tobextweak.ini" "tobex_ini/tobextweak.ini"
-  REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Enable PickpocketFailed Trigger=0~ ~Enable PickpocketFailed Trigger=1~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~PickpocketFailed Trigger Only=0~ ~PickpocketFailed Trigger Only=1~
   REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Remain Hidden On Pickpocket Success=0~ ~Remain Hidden On Pickpocket Success=1~
 BUT_ONLY
 
@@ -341,7 +341,7 @@ END                                                                             
 
 // BGT specific compatibility for anti-stealing container script changes (Note: this block *deliberately* affects *only* BGT due to its own thievery fixes)
 
-ACTION_IF FILE_EXISTS_IN_GAME ~bg1start.2da~ THEN BEGIN               // BGT check
+ACTION_IF GAME_IS ~bgt~ THEN BEGIN    // BGT check
 COMPILE ~RR/RR_CORE/COMPILE/HALFEN.D~ // Halfling Enforcer theft dialogue revision
 COPY_EXISTING ~ACT01.BCS~  ~override~ // container alarm script
               ~ACT02.BCS~  ~override~ 

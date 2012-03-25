@@ -196,8 +196,7 @@ SAY @1150
 @1151
 =
 @1152
-IF ~Class(LastTalkedToBy(Myself),PALADIN_ALL) !Kit(LastTalkedToBy(Myself),INQUISITOR) !Kit(LastTalkedToBy(Myself),UNDEADHUNTER) HaveSpellParty(PALADIN_LAY_ON_HANDS)~ THEN REPLY @1153 DO ~IncrementGlobal("RR#HELPED_ARLED","GLOBAL",1)
-ReputationInc(1)~ GOTO 32d
+IF ~Class(LastTalkedToBy(Myself),PALADIN_ALL) !Kit(LastTalkedToBy(Myself),INQUISITOR) !Kit(LastTalkedToBy(Myself),UNDEADHUNTER) HaveSpellParty(PALADIN_LAY_ON_HANDS)~ THEN REPLY @1153 GOTO 32d
 IF ~OR(4)
 Class(LastTalkedToBy(Myself),CLERIC_ALL)
 Class(LastTalkedToBy(Myself),DRUID_ALL)
@@ -210,14 +209,12 @@ HaveSpellParty(CLERIC_CURE_MEDIUM_WOUNDS)
 HaveSpellParty(CLERIC_CURE_SERIOUS_WOUNDS)
 HaveSpellParty(CLERIC_CURE_CRITICAL_WOUNDS)
 HaveSpellParty(CLERIC_MASS_CURE)
-HaveSpellParty(CLERIC_HEAL)~ THEN REPLY @1154 DO ~IncrementGlobal("RR#HELPED_ARLED","GLOBAL",1)
-ReputationInc(1)~ GOTO 32d
+HaveSpellParty(CLERIC_HEAL)~ THEN REPLY @1154 DO ~IncrementGlobal("RR#HELPED_ARLED","GLOBAL",1)~ GOTO 32d
 IF ~!Class(LastTalkedToBy(Myself),CLERIC_ALL)
 !Class(LastTalkedToBy(Myself),DRUID_ALL)
 !Class(LastTalkedToBy(Myself),PALADIN_ALL)
 !Class(LastTalkedToBy(Myself),RANGER_ALL)
-HaveSpellParty(3101)~ THEN REPLY @1154 DO ~IncrementGlobal("RR#HELPED_ARLED","GLOBAL",1)
-ReputationInc(1)~ GOTO 32d
+HaveSpellParty(3101)~ THEN REPLY @1154 GOTO 32d
 IF ~PartyHasItem("POTN08")
 !PartyHasItem("POTN52")~ THEN REPLY @1155 DO ~TakePartyItemNum("POTN08",1)
 IncrementGlobal("RR#HEPED_ARLED","GLOBAL",1)

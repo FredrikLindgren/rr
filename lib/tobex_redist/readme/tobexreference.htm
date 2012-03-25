@@ -336,7 +336,7 @@
             <li>directly changing hex code (patch), and</li>
             <li>replacing and/or extending existing game functions (hook).</li>
           </ul>
-          <p>Hacks may be exclusively patch, exclusively hook, or a combination of both. To enable easier troubleshooting, all hacks can be enabled/disabled by .ini files.</p>
+          <p>Hacks may be exclusively patch, exclusively hook, or a combination of both. To enable easier troubleshooting, all hacks can be enabled/disabled by .ini files. Additionally, TobEx allows users to specify their own custom patches in the TobEx_ini/patch directory. Usage of this feature can be learnt from the template.patch file found in that directory.</p>
           <p>Overall, TobEx divides hacks into core hacks and tweak hacks. Core hacks are enabled/disabled in TobEx_ini/TobExCore.ini, while tweak hacks are enabled/disabled in TobEx_ini/TobExTweak.ini. In general, modders should not allow players to configure core hacks. Modders and players can configure core debugging hacks manually for their own debugging purposes. In contrast, modders can include components in their modifications that allow players to configure tweak hacks. The standalone package of TobEx allows some, but not all, of these tweak hacks to be configured. In this document, any behaviours that are not enabled by a default installation of the TobEx redistributable package or the core component of the TobEx standalone package are described using the keyword <strong>option</strong>.</p>
           <p>In the .ini files, TobEx hacks are grouped by type. To browse each hack by type, refer to ./TobEx_redist/TobEx_ini.txt. This document groups the features of TobEx differently to allow easier navigation. If any more information is sought beyond these resources, modders can discuss their questions at the <a href="http://www.shsforums.net/forum/606-tobex/">TobEx forum</a>.</p>
 
@@ -352,21 +352,26 @@
           <p>The following core engine changes are discussed:</p>
           <ul>
             <li><a href="#engine-arenas">Arenas Game Type</a></li>
+            <li><a href="#engine-auto-pause">Auto-pause</a></li>
             <li><a href="#engine-casting">Casting Graphics and Sounds</a></li>
+            <li><a href="#engine-creatures-moving-areas">Creatures Moving Between Areas</a></li>
             <li><a href="#engine-dead-statics">Dead Static Animations</a></li>
             <li><a href="#engine-dialogue-bar">Dialogue Bar</a></li>
             <li><a href="#engine-effect-stacking">Effect Stacking Behaviour</a></li>
+            <li><a href="#engine-fake-talk-exploit">Fake Talk Exploit</a></li>
             <li><a href="#engine-gaining-xp">Gaining Experience</a></li>
             <li><a href="#engine-inventory-pause">Inventory Screen Pausing</a></li>
+            <li><a href="#engine-item_recharge-exploit">Item Recharge Exploit</a></li>
             <li><a href="#engine-kit-support">Kit Support</a></li>
             <li><a href="#engine-launchers">Launchers with No Ammo</a></li>
             <li><a href="#engine-music">Music Song List</a></li>
-            <li><a href="#engine-pickpocketing">Pickpocketing</a></li>
             <li><a href="#engine-player1-death">Player 1 Death</a></li>
             <li><a href="#engine-race-selection">Race Selection Strings</a></li>
             <li><a href="#engine-random-treasure">Random Treasure</a></li>
             <li><a href="#engine-rest-spawns">Rest Spawns</a></li>
+            <li><a href="#engine-spell-turning">Spell Turning</a></li>
             <li><a href="#engine-starting-xp">Starting Experience</a></li>
+            <li><a href="#engine-summon-limit-bug">Summon Limit Bug</a></li>
             <li><a href="#engine-talking-to-charmed">Talking to Charmed Creatures</a></li>
           </ul>
           <hr />
@@ -401,10 +406,16 @@
             <li>Summoned creatures turn enemy when hit by opposing players</li>
           </ul>
           <hr />
+          <a name="engine-auto-pause" id="engine-auto-pause"></a><h3>Auto-pause</h3>
+          <p><strong>Option:</strong> TobEx gives the option of allowing auto-pause to work on any screen in single player. The behavior mimics that of multiplayer. The original behaviour is that auto-pause only works in the main game screen when in single player.</p>
+          <hr />
           <a name="engine-casting" id="engine-casting"></a><h3>Casting Graphics and Sounds</h3>
           <p>Normally, female gender uses a female casting sound, other and niether gender use an unvoiced casting sound, and all other genders use a male casting sound. This caused problems with spells like Project Image where illusory female creatures used male casting sounds.</p>
           <p>TobEx fixes this bug by modifying the way that the gender of casting sound selection is handled. Specifically, male gender uses a male casting sound, while all other genders check the Sex field (0x237) in the CRE file format. If the Sex field is male (1), a male casting sound is used. If the Sex field is female (2), a female casting sound is used. For any other value in the Sex field, an unvoiced casting sound is used. In order to do this, TobEx also ensures that the Sex field is correctly set during character generation, and patches some characters and creatures (a la BG2 Fixpack) so that their Sex field is correct.</p>
           <p>TobEx also fixes a bug where the Mental Speed stat is not considered when determining whether to play a casting sound at all, whether to play a gendered or unvoiced casting sound, and whether to play a casting animation.</p>
+          <hr />
+          <a name="engine-creatures-moving-areas" id="engine-creatures-moving-areas"></a><h3>Creatures Moving Between Areas</h3>
+          <p>TobEx fixes a bug whereby creatures moving between areas can get multiple copies saved in the area file in a saved game. This bug was fixed in the Throne of Bhaal 26499 BETA patch, and the fix is re-created by TobEx.</p>
           <hr />
           <a name="engine-dead-statics" id="engine-dead-statics"></a><h3>Dead Static Animations</h3>
           <p>TobEx fixes a bug where dead static animations are still valid scripting targets. Normally, this causes bugs where a creature in berserk amongst dead static animations will permanently remain in berserk, breaking game transitions.</p>
@@ -415,24 +426,26 @@
           <a name="engine-effect-stacking" id="engine-effect-stacking"></a><h3>Effect Stacking Behaviour</h3>
           <p>TobEx allows modmakers to modify the way that effect opcodes stack. This hack is currently in beta and has a number of problems. Please do not use it.</p>
           <hr />
+          <a name="engine-fake-talk-exploit" id="engine-fake-talk-exploit"></a><h3>Fake Talk Exploit</h3>
+          <p>TobEx fixes an exploit where players could intend to initiate dialogue with a neutral creature, cancel their action, and then perform a hostile action instead, resulting in the creature wasting up to 10 seconds doing nothing before becoming hostile.</p>
+          <hr />
           <a name="engine-gaining-xp" id="engine-gaining-xp"></a><h3>Gaining Experience</h3>
           <p><strong>Option:</strong> Normally, Throne of Bhaal gives the party 110% of the experience actually coded into creatures and given by the AddExperienceParty() action opcode. However, the amount coded into creatures (100%) is reported in the dialogue bar. TobEx gives the option of fixing this issue and giving the party the coded amount of experience (100%) in these situations.</p>
           <hr />
-          <a name="engine-inventory-pause" id="ruleset-inventory-pause"></a><h3>Inventory Screen Pausing</h3>
+          <a name="engine-inventory-pause" id="engine-inventory-pause"></a><h3>Inventory Screen Pausing</h3>
           <p><strong>Option:</strong> TobEx gives the option of disabling a forced game pause when the inventory screen is opened in single player. The behavior mimics that of multiplayer.</p>
           <hr />
           <a name="engine-kit-support" id="engine-kit-support"></a><h3>Kit Support</h3>
           <p>Normally, Throne of Bhaal limits the total number of kits available to 256 before overflow occurs. TobEx expands this limit to 1280. Additionally, TobEx enables scrolling of the kit selection menu, such that each class is no longer limited to 10 kits.</p>
+          <hr />
+          <a name="engine-item_recharge-exploit" id="engine-item_recharge-exploit"></a><h3>Item Recharge Exploit</h3>
+          <p>TobEx fixes an exploit where players could instantly restore the charges of rechargeable items by putting them in a bag and then taking them out again.</p>
           <hr />
           <a name="engine-launchers" id="engine-launchers"></a><h3>Launchers with No Ammo</h3>
           <p>TobEx fixes an exploit where launcher weapons grant the damage and strength bonuses of non-launcher (4)-type abilities. This corrects the issue with non-ammo-requiring launcher weapons (using ranged (2) ability) granting extra damage when ammo is equipped. If this is enabled, damage bonuses of launcher abilities are only given for the first launcher (4)-type ability of the launcher weapon.</p>
           <hr />
           <a name="engine-music" id="engine-music"></a><h3>Music Song List</h3>
           <p>TobEx removes the 100-row limit on SONGLIST.2DA. The script action PlaySong() supports this change, and extended song numbers are recognised in ARE files.</p>
-          <hr />
-          <a name="engine-pickpocketing" id="ngine-pickpocketing"></a><h3>Pickpocketing</h3>
-          <p><strong>Option:</strong> TobEx gives the option of delaying the end of Stealth mode until the next round, and not terminating invisibility caused by a spell or item, if a successful pickpocket is made.</p>
-          <p><strong>Option:</strong> TobEx gives the option of sending a PickPocketFailed() trigger instead of an Attacked() trigger when a pickpocket attempt fails. Also refer to the <a href="#triggers-005d">PickPocketFailed() trigger</a> section.</p>
           <hr />
           <a name="engine-player1-death" id="engine-player1-death"></a><h3>Player 1 Death</h3>
           <p><strong>Option:</strong> TobEx enables modmakers to disable the game over cutscene when the protagonist dies. In order for the game to be over, modmakers must specify a condition where the new action opcode LoseGame() applies without fail. Also refer to the <a href="#actions-352">LoseGame() action opcode</a> section.</p>
@@ -446,9 +459,15 @@
           <a name="engine-rest-spawns" id="engine-rest-spawns"></a><h3>Rest Spawns</h3>
           <p><strong>Option:</strong> TobEx gives the option of advancing a random time up to, but not including, eight hours if resting is interrupted by spawns. All resting times of one hour or greater will display in the dialogue bar. Resting times less than one hour will not display in the dialogue bar.</p>
           <hr />
+          <a name="engine-spell-turning" id="engine-spell-turning"></a><h3>Spell Turning</h3>
+          <p>TobEx fixes a bug where on occasions, certain creatures with spell turning absorb spells rather than bouncing them back to the original caster.</p>
+          <hr />
           <a name="engine-starting-xp" id="engine-starting-xp"></a><h3>Starting Experience</h3>
           <p><strong>Option:</strong> TobEx gives the option for modmakers to modify the starting experience of Shadows of Amn and Throne of Bhaal.</p>
           <p>TobEx allows setting the starting experience to zero without causing problems with character generation. This can be useful for partial and total conversions.</p>
+          <hr />
+          <a name="engine-summon-limit-bug" id="engine-summon-limit-bug"></a><h3>Summon Limit Bug</h3>
+          <p>TobEx fixes a bug where the number of summons may increment permanently because those not existing in an area remain in the saved game. This bug was fixed in the Throne of Bhaal 26499 BETA patch, and the fix is re-created by TobEx.</p>
           <hr />
           <a name="engine-talking-to-charmed" id="engine-talking-to-charmed"></a><h3>Talking to Charmed Creatures</h3>
           <p><strong>Option:</strong> TobEx gives the option of allowing the player to talk to charmed or dominated creatures and preventing charmed and dominated creatures from losing their soundset.</p>
@@ -495,8 +514,10 @@
             <li><a href="#ruleset-hla">High Level Abilities (HLAs)</a></li>
             <li><a href="#ruleset-hp-tables">Hit Point Tables</a></li>
             <li><a href="#ruleset-item-restrictions">Item Restrictions</a></li>
+            <li><a href="#ruleset-mage-spells">Mage Spells</a></li>
             <li><a href="#ruleset-magical-weapons">Magical Weapons</a></li>
             <li><a href="#ruleset-mirror-images">Mirror Images</a></li>
+            <li><a href="#ruleset-pickpocketing">Pickpocketing</a></li>
             <li><a href="#ruleset-priest-spells">Priest Spells</a></li>
             <li><a href="#ruleset-proficiencies">Proficiencies</a></li>
             <li><a href="#ruleset-spell-selection">Spell Selection</a></li>
@@ -579,62 +600,73 @@
           <p>Additionally, TobEx externalises Barbarian from Fighter class hit point tables to HPBARB.2DA.</p>
           <hr />
           <a name="ruleset-item-restrictions" id="ruleset-item-restrictions"></a><h3>Item Restrictions</h3>
-          <p>TobEx externalises creature-specific item restrictions to ITCREXCL.2DA. This allows modmakers to customise specific item restrictions for creatures in the style of Minsc's Boo and Xan's Moonblade.</p>
+          <p>TobEx externalises creature-specific item restrictions to ITEM_USE.2DA. This allows modmakers to customise specific item restrictions for creatures in the style of Minsc's Boo and Xan's Moonblade.</p>
           <div class="important">
-            <p>ITCREXCL.2DA<br />
+            <p>ITEM_USE.2DA<br />
             <br />
-            [ROWNAME]: Death variable/Script name of creature (not case-sensitive)<br />
-            ITEM: the resource name of the item that the item-creature restrictions apply to<br />
-            NO_PICKUP_E: if set to non-zero, the ITEM cannot be removed from any equipment slot of the creature with associated death variable<br />
-            STRREF_PE: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable<br />
-            ONLY_EQUIP: if set to non-zero, the ITEM can only be equipped by the creature with associated death variable (this is 'stackable', in that multiple ITEM entries under different death variables mean that multiple creatures with associated death variables can equip the ITEM)<br />
-            STRREF_E: the string reference to display in when a creature other than that with the associated death variables tries to equip the ITEM<br />
-            NO_PICKUP_I: if set to non-zero, the ITEM cannot be removed from any inventory slot of the creature with associated death variable<br />
-            STRREF_I: the string reference to display in the inventory screen when the ITEM is attempted to be removed from an equipment slot of the creature with associated death variable<br />
-            NO_DROP_I: if set to non-zero, the ITEM cannot be placed in any inventory slot of the creature with associated death variable<br />
-            STRREF_DI: the string reference to display in the inventory screen when the ITEM is attempted to be placed in any inventory slot of the creature with associated death variable<br />
-            NO_DROP_E: if set to non-zero, the ITEM cannot be placed in any equipment slot of the creature with associated death variable<br />
-            STRREF_DE: the string reference to display in the inventory screen then the ITEM is attmpted to be placed in any equipment slot of the creature with associated death variable<br />
+            [ROWNAME]: the resource name of the item that the item-creature restrictions apply to<br />
+            USER: death variable/script name of creature (not case-sensitive)<br />
+            STRREF#: the string reference to display in the inventory screen when the restriction indicated by the flag value of # applies<br />
+            FLAG: bitfield indicating the type/s of restriction to apply<br />
+            <br />
+            FLAG bits<br />
+            <ul>
+              <li>bit 0 [1]: the item cannot be picked up from any slot of the creature (this overrides bits 3 and 4)</li>
+              <li>bit 1 [2]: the item can only be equipped by the creature (this is 'stackable', so multiple item entries with different creatures mean that each of the listed creatures can equip the item)</li>
+              <li>bit 2 [4]: no restrictions (this bit is reserved for GemRB)</li>
+              <li>bit 3 [8]: the item cannot be picked up from any equipped slot of the creature</li>
+              <li>bit 4 [16]: the item cannot be picked up from any inventory slot of the creature</li>
+              <li>bit 5 [32]: the item cannot be dropped into any equipped slot of the creature</li>
+              <li>bit 6 [64]: the item cannot be dropped into any inventory slot of the creature</li>
+            </ul>
             <br />
             Example</p>
             <table class="important">
               <tr>
                 <td></td>
-                <td>ITEM</td>
-                <td>NO_PICKUP_E</td>
-                <td>STRREF_PE</td>
-                <td>ONLY_EQUIP</td>
-                <td>STRREF_E</td>
-                <td>NO_PICKUP_I</td>
-                <td>STRREF_I</td>
-                <td>NO_DROP_I</td>
-                <td>STRREF_DI</td>
-                <td>NO_DROP_E</td>
-                <td>STRREF_DE</td>
+                <td>USER</td>
+                <td>STRREF</td>
+                <td>FLAG</td>
+                <td>STRREF2</td>
+                <td>STRREF4</td>
+                <td>STRREF8</td>
+                <td>STRREF16</td>
+                <td>STRREF32</td>
+                <td>STRREF64</td>
               </tr>
               <tr>
-                <td>MINSC</td>
                 <td>MISC84</td>
-                <td>1</td>
+                <td>MINSC</td>
                 <td>10218</td>
-                <td>1</td>
+                <td>3</td>
                 <td>10218</td>
-                <td>1</td>
-                <td>10218</td>
-                <td>0</td>
                 <td>-1</td>
-                <td>0</td>
+                <td>-1</td>
+                <td>-1</td>
+                <td>-1</td>
                 <td>-1</td>
               </tr>
             </table>
-            <p>Item MISC84 cannot be removed from "Minsc"'s equipment slots or inventory slots, and can only be equipped by "Minsc".</p>
+            <p>Item MISC84 cannot be picked up from any slot of "Minsc", and can only be equipped by "Minsc".</p>
           </div>
+          <hr />
+          <a name="ruleset-mage-spells" id="ruleset-mage-spells"></a><h3>Mage Spells</h3>
+          <p>TobEx allows the extension of the limit of possible mage spells selectable for mages and sorcerers by externalising the number of spells selectable to SPELLS.2DA. The cap for level 1-8 spells can be set to 99, while the cap for level 9 spells can be set to 199, for which spells 100-199 refer to SPWI0**.SPL.</p>
+          <p>If this hack is used, it is recommended you use this hack with Externalize Mage Spell Hiding. Otherwise, unwanted spells will show up on spell selection screens. Also, assuming you provide maximum values for the number of spells in SPELLS.2DA, you should add to HIDESPL.2DA the following vanilla Throne of Bhaal spells:</p>
+          <p class="important">SPWI298-299<br />SPWI399<br />SPWI483-491, 493-499<br />SPWI590-97<br />SPWI853, 888, 897-899<br />SPWI926-965, 979-999<br />SPWI001-027, 050-056</p>
           <hr />
           <a name="ruleset-magical-weapons" id="ruleset-magical-weapons"></a><h3>Magical Weapons</h3>
           <p>TobEx allows modmakers to create magical weapons that do not get dispelled in the magical weapon slot. Also refer to the <a href="#effects-58">Dispel Magic effect</a> section.</p>
           <hr />
           <a name="ruleset-mirror-images" id="ruleset-mirror-images"></a><h3>Mirror Images</h3>
           <p>TobEx allows modmakers to create effects that bypass mirror images. Also refer to the <a href="#effects-119">Mirror Image effect</a> section.</p>
+          <hr />
+          <a name="ruleset-pickpocketing" id="ruleset-pickpocketing"></a><h3>Pickpocketing</h3>
+          <p>TobEx allows modmakers to customise which item slots are amenable to pickpocketing, and the minimum skill level required to steal an item from each slot. This behaviour is governed by SLTSTEAL.2DA.</p>
+          <p class="important">SLTSTEAL.2DA<br />
+          <br />
+          SKILL: The minimum pickpocketing skill with which the item in the item slot can be stolen. If the skill is set to 0, the item slot can never be stolen from. Note that the SLOT_FIST value is ignored.<br />
+          [ROWNAME]: The name of the item slot. The row numbers are mapped to the item slot, not the name, except for SLOT_EQUIPPED. SLOT_EQUIPPED refers to the currently equipped weapon slot, or the currently equipped ammo slot and its launcher slot.</p>
           <hr />
           <a name="ruleset-priest-spells" id="ruleset-priest-spells"></a><h3>Priest Spells</h3>
           <p>TobEx allow extension of priest spells allowed at each level from 50 to 99 (SPPR*00-SPPR*99). This is still limited by SPELLS.2DA. If this hack is used, the following change should be made to SPELLS.2DA to avoid existing Throne of Bhaal priest spells that should not be included:</p>
@@ -724,7 +756,8 @@
           <i>TobEx makes no direct changes to these opcodes. However, TobEx expands STATS.IDS to support a variety of new scripting stats. Also refer to the <a href="#stats">Scripting Stats</a> section.</i><br />
           <hr />
           <a name="triggers-005d" id="triggers-005d"></a><p><strong>0x005D PickPocketFailed(O:Object*)</strong><br />
-          <i><strong>Option:</strong> TobEx allows the option of fixing this trigger such that it is sent instead of Attacked() when a pickpocket attempt fails</i></p>
+          <i>TobEx restores the function of this trigger such that it is sent when a pickpocket attempt fails. The standard AttackedBy() trigger is also sent as per vanilla behaviour. Also refer to the <a href="#actions-25">PickPockets(O:Target*)</a> action.</i></p>
+          <p><strong>Option:</strong> TobEx gives the option of modifying the <a href="#actions-25">PickPockets(O:Target*)</a> action so that upon failure, it sends only the PickPocketFailed() trigger, and not sending the standard AttackedBy() trigger.</p>
           <hr />
           <a name="triggers-4061" id="triggers-4061"></a><p><strong>0x4061 HasItem(S:ResRef*,O:Object*)</strong><br />
           <i>TobEx optimises this trigger by greatly reducing the amount of overhead associated with checking bags</i></p>
@@ -733,7 +766,7 @@
           <i>TobEx optimises this trigger by greatly reducing the amount of overhead associated with checking bags. TobEx fixes a bug in single player where this trigger opcode behaved exactly the same as the PartyHasItem() trigger opcode.</i></p>
           <hr />
           <a name="triggers-40bb" id="triggers-40bb"></a><p><strong>0x40BB Kit(O:Object*,I:Kit*KIT)</strong><br />
-          <i>TobEx fixes this trigger opcode so that the full dword of I:Kit is checked against the creature rather than just the low word</i></p>
+          <i>TobEx fixes this trigger opcode so that the full dword of I:Kit is checked against the creature rather than just the low word. To preserve original behaviour, if an I:Kit value of 0 is used, only the low word is checked against.</i></p>
           <hr />
            <a name="triggers-4100" id="triggers-4100"></a><p><strong>0x4100 NextTriggerObject(O:Object*)</strong><br />
           <i>New</i><br />
@@ -808,6 +841,8 @@
           <h2>Actions</h2>
           <p>TobEx makes changes to the following script action opcodes:</p>
           <ul>
+            <li><a href="#actions-19">19 JoinParty()</a></li>
+            <li><a href="#actions-25">25 PickPockets(O:Target*)</a></li>
             <li><a href="#actions-34">34 UseItem(S:Object*,O:Target*)</a></li>
             <li><a href="#actions-97">97 UseItemPoint(S:Item,P:Target*,I:Ability*)</a></li>
             <li><a href="#actions-174">174 EquipRanged()</a></li>
@@ -822,6 +857,14 @@
             <li><a href="#actions-354">354 DialogueIncrementGlobal(S:Name*,S:Area*,I:Value*)</a></li>
             <li><a href="#actions-355">355 DialogueSG(S:Name*,I:Num*)</a></li>
           </ul>
+          <hr />
+          <a name="actions-19" id="actions-19"></a><p><strong>19 JoinParty()</strong><br />
+          <i>TobEx fixes this action opcode to prevent the action restoring all class abilities, which would allow players to re-use class abilities over and over again.</i></p>
+          <hr />
+          <a name="actions-25" id="actions-25"></a><p><strong>25 PickPockets(O:Target*)</strong><br />
+          <p>TobEx extends this action opcode by sending the PickPocketFailed() trigger in addition to the standard AttackedBy() trigger when a pickpocket attempt fails. Also refer to the <a href="#triggers-005d">PickPocketFailed() trigger</a> section.</p>
+          <p><strong>Option:</strong> TobEx gives the option of modifying this action so that upon failure, it sends only the PickPocketFailed() trigger, and not sending the standard AttackedBy() trigger.</p>
+          <p><strong>Option:</strong> TobEx gives the option of modifying this action by delaying the end of Stealth mode until the next round, and not terminating invisibility caused by a spell or item, if a successful pickpocket is made.</p>
           <hr />
           <a name="actions-34" id="actions-34"></a><p><strong>34 UseItem(S:Object*,O:Target*)</strong><br />
           <i>TobEx modifies this action opcode indirectly by allowing custom animation sequences to be played on the creature using the item. This is controlled by ITEMANIM.2DA and is item ability-specific. Also refer to the <a href="#animations-using-items">Animation Sequences when Using Items</a> section.</i></p>
@@ -877,7 +920,6 @@
             <li>New stats 202-400 are reserved for hard-coded stats</li>
             <li>New stats can be checked correctly using CheckStat(), CheckStatLT(), and CheckStatGT() script triggers</li>
             <li>New stats are not permanent, they require an ongoing effect opcode 318 in order to keep their values</li>
-            <li>In order to make a new stat semi-permanent, you can set an extremely long duration for the effect, or use timing mode 10 and set duration to INT_MAX (2147483647)</li>
             <li>New stats will only be saved in saved games if stored as an effect opcode 318</li>
             <li>Actions cannot directly set the value of new stats (they will not keep); use an action to trigger effect opcode 318 if actions are required</li>
             <li>New stats have no effect on the game unless you specifically script in; for example, use scripts to CheckStat() and apply appropriate actions</li>
@@ -1084,10 +1126,14 @@
           <ul>
             <li><a href="#effects-1">#1 (0x001)  Stat: Attacks Per Round Modifier [1]</a></li>
             <li><a href="#effects-2">#2 (0x002)  Cure: Sleep [2]</a></li>
+            <li><a href="#effects-6">#6 (0x006) Stat: Charisma Modifier [6]</a></li>
+            <li><a href="#effects-10">#10 (0x00A) Stat: Constitution Modifier [10]</a></li>
             <li><a href="#effects-12">#12 (0x00C)  HP: Damage [12]</a></li>
             <li><a href="#effects-13">#13 (0x00D)  Death: Instant Death [13]</a></li>
             <li><a href="#effects-15">#15 (0x00F)  Stat: Dexterity Modifier [15]</a></li>
+            <li><a href="#effects-19">#19 (0x013) Stat: Intelligence Modifier [19]</a></li>
             <li><a href="#effects-20">#20 (0x014)  State: Invisibility [20]</a></li>
+            <li><a href="#effects-21">#21 (0x015) Stat: Lore Modifier [21]</a></li>
             <li><a href="#effects-22">#22 (0x016)  Stat: Cumulative Luck Bonus [22]</a></li>
             <li><a href="#effects-25">#25 (0x019)  State: Poison [25]</a></li>
             <li><a href="#effects-33">#33 (0x021)  Stat: Save vs. Death Modifier [33]</a></li>
@@ -1097,11 +1143,23 @@
             <li><a href="#effects-37">#37 (0x025)  Stat: Save vs. Spells Modifier [37]</a></li>
             <li><a href="#effects-42">#42 (0x02A)  Spell: Wizard Spell Slots Modifier [42]</a></li>
             <li><a href="#effects-44">#44 (0x02C)  Stat: Strength Modifier [44]</a></li>
+            <li><a href="#effects-49">#49 (0x031) Stat: Wisdom Modifier [49]</a></li>
             <li><a href="#effects-58">#58 (0x03A)  Cure: Dispellable Effects (Dispel Magic) [58]</a></li>
+            <li><a href="#effects-59">#59 (0x03B) Stat: Stealth Modifier [59]</a></li>
             <li><a href="#effects-62">#62 (0x03E)  Spell: Priest Spell Slots Modifier [62]</a></li>
             <li><a href="#effects-74">#74 (0x04A)  State: Blindness [74]</a></li>
             <li><a href="#effects-78">#78 (0x04E)  State: Disease [78]</a></li>
+            <li><a href="#effects-90">#90 (0x05A) Stat: Open Locks Modifier [90]</a></li>
+            <li><a href="#effects-91">#91 (0x05B) Stat: Find Traps Modifier [91]</a></li>
+            <li><a href="#effects-92">#92 (0x05C) Stat: Pick Pockets Modifier [92]</a></li>
+            <li><a href="#effects-93">#93 (0x05D) Stat: Fatigue Modifier [93]</a></li>
+            <li><a href="#effects-94">#94 (0x05E) Stat: Drunkenness Modifier [94]</a></li>
+            <li><a href="#effects-95">#95 (0x05F) Stat: Tracking Skill Modifier [95]</a></li>
+            <li><a href="#effects-96">#96 (0x060) Stat: Level Change [96]</a></li>
+            <li><a href="#effects-97">#97 (0x061) Stat: Strength-Bonus Modifier [97]</a></li>
             <li><a href="#effects-98">#98 (0x062)  HP: Regeneration [98]</a></li>
+            <li><a href="#effects-106">#106 (0x06A) Stat: Morale Break Modifier [106]</a></li>
+            <li><a href="#effects-108">#108 (0x06C) Stat: Reputation [108]</a></li>
             <li><a href="#effects-119">#119 (0x077)  Spell Effect: Mirror Image [119]</a></li>
             <li><a href="#effects-144">#144 (0x090)  Button: Disable Button [144]</a></li>
             <li><a href="#effects-147">#147 (0x093)  Spell: Learn Spell [147]</a></li>
@@ -1191,11 +1249,18 @@
           <a name="effects-2" id="effects-2"></a><p><strong>#2 (0x002)  Cure: Sleep [2]</strong><br />
           <i>TobEx fixes this effect opcode so that it correctly removes the Sleep effect opcode</i></p>
           <hr />
+          <a name="effects-6" id="effects-6"></a><p><strong>#6 (0x006) Stat: Charisma Modifier [6]</strong><br />
+          <i>TobEx fixes a bug so that a net negative charisma value will limit to 0 rather than wrap to 25. This removes an exploit involving the Rod of Terror and the Ring of Human Influence</i></p>
+          <hr />
+          <a name="effects-10" id="effects-10"></a><p><strong>#10 (0x00A) Stat: Constitution Modifier [10]</strong><br />
+          <i>TobEx fixes a bug so that a net negative constitution value will limit to 0 rather than wrap to 25</i></p>
+          <hr />
           <a name="effects-12" id="effects-12"></a><p><strong>#12 (0x00C)  HP: Damage [12]</strong><br />
-          <i>TobEx fixes two bugs with this effect opcode:</p>
+          <i>TobEx fixes three bugs with this effect opcode:</p>
           <ul>
             <li>killing someone with magic fire damage would cause a WEIRD damage assertion failure, and</li>
             <li>hitting someone with magic cold damage would not play a hit sound</li>
+            <li>memory leak when fist damage would make the target unconscious</li>
           </ul>
           <p>TobEx allows the scaling of damage type by percentage by using custom scripting stats #387 to #399. Also refer to the <a href="#stats">Scripting Stats</a> section.</p>
           <p>TobEx implements bit 24 (Bypass Mirror Images) of the EFF V2.0 Header offset 0x0040 (Save Type), ITM V1.0 Feature Block offset 0x0024 (Save Type), and SPL V1.0 Feature Block offset 0x0024 (Save Type). When set the mirror image check is skipped on the target creature when checking saving throw.</p>
@@ -1208,7 +1273,7 @@
           <i><strong>Option:</strong> TobEx gives the option of making a creature dying of disintegrate, frozen death, and/or stone death drop all non-critical items</i></p>
           <hr />
           <a name="effects-15" id="effects-15"></a><p><strong>#15 (0x00F)  Stat: Dexterity Modifier [15]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that a net negative dexterity value will limit to 0 rather than wrap to 25. TobEx also adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1221,8 +1286,14 @@
           3   Cats Grace Spell</p>
           <p>For a Type of 3 (Cat's Grace Spell), dexterity is modified as per Icewind Dale Cat's Grace spell behaviour, externalised to CLSSPLAB.2DA, in which 1Dx dexterity is gained up to a maximum of 20 depending on the player's class (defaults to 1D6 if class is not present), where x is specified by the DEX column.</p>
           <hr />
+          <a name="effects-19" id="effects-19"></a><p><strong>#19 (0x013) Stat: Intelligence Modifier [19]</strong><br />
+          <i>TobEx fixes a bug so that a net negative intelligence value will limit to 0 rather than wrap to 25</i></p>
+          <hr />
           <a name="effects-20" id="effects-20"></a><p><strong>#20 (0x014)  State: Invisibility [20]</strong><br />
           <i>TobEx fixes the application of improved invisibility under permanent until death timing</i></p>
+          <hr />
+          <a name="effects-21" id="effects-21"></a><p><strong>#21 (0x015) Stat: Lore Modifier [21]</strong><br />
+          <i>TobEx fixes a bug so that a net negative lore value will limit to 0 rather than wrap to 100</i></p>
           <hr />
           <a name="effects-22" id="effects-22"></a><p><strong>#22 (0x016)  Stat: Cumulative Luck Bonus [22]</strong><br />
           <i>TobEx adds parameter 2 value 3</i><br />
@@ -1242,7 +1313,7 @@
           <i>TobEx fixes a bug with the poison effect opcode where a creature with multiple instances of disease, poison, wing buffet, regeneration and/or repeating effect opcodes would only have the highest frequency instance applied</i></p>
           <hr />
           <a name="effects-33" id="effects-33"></a><p><strong>#33 (0x021)  Stat: Save vs. Death Modifier [33]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20. TobEx adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1258,7 +1329,7 @@
           For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.</p>
           <hr />
           <a name="effects-34" id="effects-34"></a><p><strong>#34 (0x022)  Stat: Save vs. Wands Modifier [34]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20. TobEx adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1274,7 +1345,7 @@
           For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.</p>
           <hr />
           <a name="effects-35" id="effects-35"></a><p><strong>#35 (0x023)  Stat: Save vs. Petrification/Polymorph Modifier [35]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20. TobEx adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1289,8 +1360,8 @@
           <br />
           For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.</p>
           <hr />
-          <a name="effects-36" id="effects-37"></a><p><strong>#36 (0x024)  Stat: Save vs. Breath Weapons Modifier [36]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <a name="effects-36" id="effects-36"></a><p><strong>#36 (0x024)  Stat: Save vs. Breath Weapons Modifier [36]</strong><br />
+          <i>TobEx fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20. TobEx adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1306,7 +1377,7 @@
           For a non-permanent timing, the instantaneous cumulative modifier immediately adds the 'Statistic Modifier' value, unlike the cumulative modifier which adds the 'Statistic Modifier' after all effects are applied. The former has the disadvantage that it will be overriden by any subsequent flat value modifiers. Percentage modifiers override all other modifiers.</p>
           <hr />
           <a name="effects-37" id="effects-37"></a><p><strong>#37 (0x025)  Stat: Save vs. Spells Modifier [37]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that the save value correctly limits to -20 or 20, rather than a net negative save value wrapping to 20. TobEx adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1340,12 +1411,12 @@
           128 Level 8<br />
           256 Level 9<br />
           512 Double spells</p>
-          <p>For a 'Spell Level' of 0, the amount of spell slots is doubled for the level specified by the 'Slot Amount Modifier' value and all levels below. For a 'Spell Level' of 512, the amount of spell slots is doubled for the level(s) specified by the 'Slot Amount Modifier' field. The target creature(s) must have at least 1 slot at the selected level to have their slot count changed. If the resultant slot count is negative, the creature is given 12 slots.<br />
+          <p>For a 'Spell Level' of 0, the amount of spell slots is doubled for the level specified by the 'Slot Amount Modifier' value and all levels below. For a 'Spell Level' of 512, the amount of spell slots is doubled for the level(s) specified by the 'Slot Amount Modifier' field, where a value of 0 is level 1 and a value of 8 is level 9. The target creature(s) must have at least 1 slot at the selected level to have their slot count changed. If the resultant slot count is negative, the creature is given 12 slots.<br />
           <br />
           'Statistic Modifier' can be positive or negative.</p>
           <hr />
           <a name="effects-44" id="effects-44"></a><p><strong>#44 (0x02C)  Stat: Strength Modifier [44]</strong><br />
-          <i>TobEx adds parameter 2 value 3</i><br />
+          <i>TobEx fixes a bug so that a net negative strength value will limit to 0 rather than wrap to 25. TobEx also adds parameter 2 value 3</i><br />
           Parameter #1: Statistic Modifier<br />
           Parameter #2: Type<br />
           Description:<br />
@@ -1359,6 +1430,9 @@
           <p>For a Type of 3 (Strength Spell), strength is modified as per Icewind Dale Strength spell behaviour, externalised to CLSSPLAB.2DA, in which 1Dx strength is gained up to a maximum of 18/&lt;STREX value&gt; depending on the player's class (defaults to 1D6 if class is not present), where x is specified by the STR column. Unit increments between 18 and 19 depend on differences detected in the STRMODEX.2DA table. The 'Statistic Modifier' value overrides the CLSSPLAB.2DA entry, specifying the die size and allowing a maximum strength of 18/00.<br />
           <br />
           FlameWing's description of Strength Spell: "IWD1/P&P Strength Spell With a slight change, in that param1 != 0 means dice size to roll for all classes and allows exceptional strength bonuses for non-warrior classes. For example, param1 = 4 rolls a d4 for strength increase, similar to P&P Strength of Stone spell. In all cases, strength cannot become 19 or more."</p>
+          <hr />
+          <a name="effects-49" id="effects-49"></a><p><strong>#49 (0x031) Stat: Wisdom Modifier [49]</strong><br />
+          <i>TobEx fixes a bug so that a net negative wisdom value will limit to 0 rather than wrap to 25</i></p>
           <hr />
           <a name="effects-58" id="effects-58"></a><p><strong>#58 (0x03A)  Cure: Dispellable Effects (Dispel Magic) [58]</strong><br />
           <i>TobEx adds parameter 2 high and corrects the formula used to determine whether dispel is successful</i><br />
@@ -1379,6 +1453,9 @@
           2 Chance of dispel (target level is the higher of the effective mage or cleric level, whichever is higher)</p>
           <p>With 'Type' of 1 or 2, the base chance of successfully dispelling is 50%. This chance is modified by the relative levels of the dispeller to the target.<br />
           Each level below target gives a -10% chance, each level above target gives a +5% chance. There is always a 1% chance of success or failure.</p>
+          <hr />
+          <a name="effects-59" id="effects-59"></a><p><strong>#59 (0x03B) Stat: Stealth Modifier [59]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds move silently skill will limit to 0 or 255 rather than wrap around</i></p>
           <hr />
           <a name="effects-62" id="effects-62"></a><p><strong>#62 (0x03E)  Spell: Priest Spell Slots Modifier [62]</strong><br />
           <i>Added parameter 2 value 3</i><br />
@@ -1408,8 +1485,38 @@
           <a name="effects-78" id="effects-78"></a><p><strong>#78 (0x04E)  State: Disease [78]</strong><br />
           <i>TobEx fixes a bug with the disease effect opcode for parameter 2 values 0-3 where a creature with multiple instances of disease, poison, wing buffet, regeneration and/or repeating effect opcodes would only have the highest frequency instance applied</i></p>
           <hr />
+          <a name="effects-90" id="effects-90"></a><p><strong>#90 (0x05A) Stat: Open Locks Modifier [90]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds open locks skill will limit to 0 or 255 rather than wrap around</i></p>
+          <hr />
+          <a name="effects-91" id="effects-91"></a><p><strong>#91 (0x05B) Stat: Find Traps Modifier [91]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds find traps skill will limit to 0 or 255 rather than wrap around</i></p>
+          <hr />
+          <a name="effects-92" id="effects-92"></a><p><strong>#92 (0x05C) Stat: Pick Pockets Modifier [92]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds pick pockets skill will limit to 0 or 255 rather than wrap around</i></p>
+          <hr />
+          <a name="effects-93" id="effects-93"></a><p><strong>#93 (0x05D) Stat: Fatigue Modifier [93]</strong><br />
+          <i>TobEx fixes a bug so that a net negative fatigue limit value will limit to 0 rather than wrap to 100</i></p>
+          <hr />
+          <a name="effects-94" id="effects-94"></a><p><strong>#94 (0x05E) Stat: Drunkenness Modifier [94]</strong><br />
+          <i>TobEx fixes a bug so that a net negative intoxication value will limit to 0 rather than wrap to 100</i></p>
+          <hr />
+          <a name="effects-95" id="effects-95"></a><p><strong>#95 (0x05F) Stat: Tracking Skill Modifier [95]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds tracking skill will limit to 0 or 255 rather than wrap around</i></p>
+          <hr />
+          <a name="effects-96" id="effects-96"></a><p><strong>#96 (0x060) Stat: Level Change [96]</strong><br />
+          <i>TobEx fixes a bug so that a net negative level will limit to 0 rather than wrap to 100</i></p>
+          <hr />
+          <a name="effects-97" id="effects-97"></a><p><strong>#97 (0x061) Stat: Strength-Bonus Modifier [97]</strong><br />
+          <i>TobEx fixes a bug so that a net negative strength extra value will limit to 0 rather than wrap to 100</i></p>
+          <hr />
           <a name="effects-98" id="effects-98"></a><p><strong>#98 (0x062) HP: Regeneration [98]</strong><br />
           <i>TobEx fixes a bug with the regeneration opcode where a creature with multiple instances of disease, poison, wing buffet, regeneration and/or repeating effect opcodes would only have the highest frequency instance applied</i></p>
+          <hr />
+          <a name="effects-106" id="effects-106"></a><p><strong>#106 (0x06A) Stat: Morale Break Modifier [106]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds morale break value will limit to 0 or 255 rather than wrap around</i></p>
+          <hr />
+          <a name="effects-108" id="effects-108"></a><p><strong>#108 (0x06C) Stat: Reputation [108]</strong><br />
+          <i>TobEx fixes a bug so that an out of bounds reputation value will limit to 0 or 255 rather than wrap around</i></p>
           <hr />
           <a name="effects-119" id="effects-119"></a><p><strong>#119 (0x077) Spell Effect: Mirror Image [119]</strong><br />
           <i><strong>Option:</strong> TobEx gives the option of modifying the mirror image effect opcode to keep caster level, so that dispel magic will work on it</i></p>
@@ -1942,6 +2049,7 @@
             <li><a href="#animations-using-items">Animation Sequences when Using Items</a></li>
             <li><a href="#animations-iwd">Icewind Dale-style Animations</a></li>
             <li><a href="#animations-paper-dolls">Paper Dolls</a></li>
+            <li><a href="#animations-spell-turning">Spell Turning Animations</a></li>
             <li><a href="#animations-throwing-weapons">Throwing Weapon Animations</a></li>
             <li><a href="#animations-tooltip">Tooltip Scroll</a></li>
             <li><a href="#animations-vvc">Visual Effect Video Cells (VVCs)</a></li>
@@ -1985,11 +2093,14 @@
           <a name="animations-paper-dolls" id="animations-paper-dolls"></a><h3>Paper Dolls</h3>
           <p>TobEx enables paperdolls to be shown in the inventory and character customisation screens for animation IDs 0x12XX, 0x2XXX, 0x3XXX, and modification-added 0x7XXX (except 0x73XX, which is already shown in vanilla), which would otherwise not show at all. Note that paperdolls for the 0x7XXX group of animation must have to be named &lt;prefix&gt;INV.BAM.</p>
           <hr />
+          <a name="animations-spell-turning" id="animations-spell-turning"></a><h3>Spell Turning Animation</h3>
+          <p>TobEx fixes a bug introduced somewhere between builds 22941 and 23037 of Shadows of Amn, whereby SPSTURNI.VVC was no longer played each time a spell is bounced off a creature who had spell turning.</p>
+          <hr />
           <a name="animations-throwing-weapons" id="animations-throwing-weapons"></a><h3>Throwing Weapon Animations</h3>
           <p><strong>Option:</strong> TobEx gives the option of enabling the use of item ability slash %, backslash %, and jab % fields for ranged weapons equipped in a weapon slot that do not require a launcher. Because this hack makes the creature use of the SEQ_ATTACK_[] animations instead of SEQ_SHOOT, attacks play the SEQ_ATTACK and SEQ_ATTACK_[] animation sounds instead of the SEQ_SHOOT animation sound. These percentages will only affect creatures with animation IDs in the 0x5000-0x53FF group with animation prefix starting with C, and 0x6*** groups to maintain vanilla behaviour and Infinity Animations compatibility.</p>
           <hr />
           <a name="animations-tooltip" id="animations-tooltip"></a><h3>Tooltip Scroll</h3>
-          <p>TobEx enlarges the tooltip scroll so that it can fit more text. At the moment, this hack is disabled by default because of an issue with the scroll being too large.</p>
+          <p>TobEx enlarges the tooltip scroll so that it can fit more text.</p>
           <hr />
           <a name="animations-vvc" id="animations-vvc"></a><h3>Visual Effect Video Cells (VVCs)</h3>
           <p>TobEx fixes a few issues with the VVC file format.</p>

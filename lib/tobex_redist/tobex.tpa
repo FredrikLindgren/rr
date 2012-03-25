@@ -1,4 +1,4 @@
-OUTER_SET tobex_redist_version = 21
+OUTER_SET tobex_redist_version = 23
 
 ACTION_IF NOT (FILE_EXISTS "TobEx_ini/TobExVer.txt") BEGIN
 
@@ -8,12 +8,14 @@ ACTION_IF NOT (FILE_EXISTS "TobEx_ini/TobExVer.txt") BEGIN
 
   MKDIR "TobEx_ini"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobExLoader.exe" "TobExLoader.exe"
-  COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/detoured.dll" "detoured.dll"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.dll" "TobEx.dll"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/default_core.ini" "TobEx_ini/TobExCore.ini"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/default_tweak.ini" "TobEx_ini/TobExTweak.ini"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx_ini.txt" "TobEx_ini/TobEx_ini.txt"
   COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobExVer.txt" "TobEx_ini/TobExVer.txt"
+  
+  MKDIR "TobEx_ini/patch"
+  COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/patch" "TobEx_ini/patch"
 
   //ASCII 'TobEx.dll'
   OUTER_PATCH_SAVE orig_bytes_1 ~~ BEGIN
@@ -137,6 +139,9 @@ ELSE BEGIN
     COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx_ini.txt" "TobEx_ini/TobEx_ini.txt"
     COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobExVer.txt" "TobEx_ini/TobExVer.txt"
 
+    MKDIR "TobEx_ini/patch"
+    COPY "%TOBEX_MOD_DIRECTORY%/TobEx_redist/patch" "TobEx_ini/patch"
+
   END
   ELSE BEGIN
 
@@ -171,4 +176,18 @@ END
 
 ACTION_IF (%tobex_installed_version% < 21) BEGIN
   INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0021.tpa"
+END
+
+ACTION_IF (%tobex_installed_version% < 22) BEGIN
+  INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0022.tpa"
+END
+
+ACTION_IF (%tobex_installed_version% < 23) BEGIN
+  INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0023.tpa"
+
+  COPY "TobEx_ini/TobExTweak.ini" "TobEx_ini/TobExTweak.ini"
+    REPLACE_TEXTUALLY "Trigger:Enable PickpocketFailed Trigger" "Trigger:PickpocketFailed Trigger Only"
+    REPLACE_TEXTUALLY "Engine:Remain Hidden On Pickpocket Success" "Action:Remain Hidden On Pickpocket Success"
+    APPEND_FILE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx0023t.txt"
+  BUT_ONLY_IF_IT_CHANGES
 END

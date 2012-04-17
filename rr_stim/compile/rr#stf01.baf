@@ -682,7 +682,7 @@ IF
         CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
@@ -725,7 +725,7 @@ IF
         CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
@@ -768,7 +768,7 @@ IF
         CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
@@ -1256,7 +1256,7 @@ IF
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
 	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 THEN
 	RESPONSE #75
 		SetInterrupt(FALSE)

@@ -1834,7 +1834,7 @@ IF
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
 	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
 	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
 THEN
 	RESPONSE #100
@@ -1970,7 +1970,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -1998,7 +1998,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2026,7 +2026,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2054,7 +2054,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2082,7 +2082,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2110,7 +2110,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2138,7 +2138,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2166,7 +2166,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
@@ -2194,7 +2194,7 @@ IF
 	CheckStatGT(LastSeenBy(Myself),-4,SAVEVSSPELL)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!HasItemEquiped("LEAT20",LastSeenBy(Myself)) // Aeger's Hide +3
 	!HasItemEquiped("SHLD25",LastSeenBy(Myself)) // Shield of Harmony +2
 	!HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor

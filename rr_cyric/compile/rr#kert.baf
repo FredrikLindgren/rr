@@ -1496,7 +1496,7 @@ IF
 	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
 	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
@@ -1525,7 +1525,7 @@ IF
 	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
 	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
@@ -1554,7 +1554,7 @@ IF
 	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
 	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
-	!CheckStat(LastSeenBy(Myself),8,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)  // Spell Immunity: Enchantment
 	!CheckStat(LastSeenBy(Myself),1,SCRIPTINGSTATE4) // Barbarian Rage, Berserker Enrage
 	!HasItem("MORSWORD",LastSeenBy(Myself)) // Mordenkainen's Sword
 	!HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action

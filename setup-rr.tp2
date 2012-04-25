@@ -1521,6 +1521,8 @@ LAUNCH_ACTION_MACRO ~RR#AFIX~                                       // Launch th
 
 INCLUDE "rr/lib/ds.tpa"                                             // Detectable Spells
 
+
+ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 THEN BEGIN                           // skip this if Item Revisions is detected
 COPY    ~RR/RR_CORE/BAM/RR#CKIEL.BAM~      ~override~                              // Kiel's Buckler description icon (CSHLD20.BAM is missing in BG2)
 
 // Patch the changes into Kiel's buckler
@@ -1576,6 +1578,7 @@ PATCH_IF (%SOURCE_SIZE% > 0x71) THEN BEGIN                                      
     WRITE_SHORT 0x70 "%fx_num%"                                                    // update the number of global effects 
 END                                                                                // end file size sanity check
 BUT_ONLY_IF_IT_CHANGES
+END                                                                                // end Item Revisions check
 
 
 COPY    ~RR/RR_CORE/BAM/RR#BUC01.BAM~      ~override~               // Fading Glory icon

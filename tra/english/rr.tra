@@ -64,7 +64,7 @@ Only Usable By:
  Druids~
 
 @26 = ~Rogue's Ward~
-@27 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithril and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw light in, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
+@27 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithral and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw light in, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
 
 STATISTICS:
 
@@ -534,7 +534,7 @@ Usable By:
 
 
 @120 = ~Trollmelter~
-@121 = ~The winter of 1228. was particularly hard on the halfling settlements near Shalebrook forest. The last few years were harsh, and food was very scarce.  The situation was worsened further by the troll raids which had become more frequent due to the famine which was spreading throught the whole region. Although inferior in numbers, their great strength and resilience allowed the trolls to mercilessly seize the halflings' very last supplies. However, the fair food of the small folk could not settle their immense hunger and the trolls soon started feeding on the healthier halflings. Outraged, The head of the halfling settlement tried to call for help, but as the main roads were snowed in and the outer paths lead through the troll-infested forest, no immediate support could arrive. One morning, after the trolls took his own sister, a young rogue named Lars the Lightfooted grew desperate. The following night, he gathered all his courage and somehow snuck through the forest full of trolls. With the last ounce of his strength, he managed to reach a nearby dwarven settlement. He begged the dwarves to help him, but due to their own problems with the ongoing orc invasion, they could only offer him some of their spare weapons and supplies. Devastated, Lars grabbed the only weapon he knew how to wield, a dagger, and left. Lady Tymora smiled on him that day, for he had unintentionally picked a weapon which would soon save his life. As he rushed back through the forest the loud snoring of the trolls hinted him to the cave where they were sleeping. The sight of gnawed halfling bones scattered around the entrance was the final straw. Blindly rushing inside, Lars viciously stabbed at the nearest sleeping troll with the dwarven dagger, oblivious to the risk to his life, his thoughts going to his beloved sister. To his amazement, the troll he had struck screamed in agony as his horrid body started melting and dissolving into a puddle of goo. The rest of the trolls woke up, but the sight of their melting comrade and the strong smell of acid brought such immense fear to them that they immediately ran away, never to return to Shalebrook forest again. Still in shock, Lars slowly recomposed himself and freed his sister and the other captured halflings. Eventually, Lars the Lightfooted was proclaimed the Savior of Shalebrook, and his weapon was given the name Trollmelter.
+@121 = ~The winter of 1228 was particularly hard on the halfling settlements near Shalebrook forest. The last few years were harsh, and food was very scarce.  The situation was worsened further by the troll raids which had become more frequent due to the famine which was spreading through the whole region. Although inferior in numbers, their great strength and resilience allowed the trolls to mercilessly seize the halflings' very last supplies. However, the fair food of the small folk could not settle their immense hunger and the trolls soon started feeding on the healthier halflings. Outraged, the head of the halfling settlement tried to call for help, but as the main roads were snowed in and the outer paths lead through the troll-infested forest, no immediate support could arrive. One morning, after the trolls took his own sister, a young rogue named Lars the Lightfooted grew desperate. The following night, he gathered all his courage and somehow snuck through the forest full of trolls. With the last ounce of his strength, he managed to reach a nearby dwarven settlement. He begged the dwarves to help him, but due to their own problems with the ongoing orc invasion, they could only offer him some of their spare weapons and supplies. Devastated, Lars grabbed the only weapon he knew how to wield, a dagger, and left. Lady Tymora smiled on him that day, for he had unintentionally picked a weapon which would soon save his life. As he rushed back through the forest the loud snoring of the trolls hinted him to the cave where they were sleeping. The sight of gnawed halfling bones scattered around the entrance was the final straw. Blindly rushing inside, Lars viciously stabbed at the nearest sleeping troll with the dwarven dagger, oblivious to the risk to his life, his thoughts going to his beloved sister. To his amazement, the troll he had struck screamed in agony as his horrid body started melting and dissolving into a puddle of goo. The rest of the trolls woke up, but the sight of their melting comrade and the strong smell of acid brought such immense fear to them that they immediately ran away, never to return to Shalebrook forest again. Still in shock, Lars slowly recomposed himself and freed his sister and the other captured halflings. Eventually, Lars the Lightfooted was proclaimed the Savior of Shalebrook, and his weapon was given the name Trollmelter.
 
 STATISTICS:
 
@@ -597,7 +597,7 @@ Not Usable By:
   Cleric~
 
 @126 = ~Keeper of the Law~
-@127 = ~This blade once belonged Lao-Tzu, a samurai from one of the southern provinces of Kara-Tur. Upon finishing his training the warrior had sworn an oath to finally free his lands from the bandits and brigands which had plagued his people for the last ten years. However, that task proved fairly difficult as his opponents were cunning, and only struck late at night, always wearing hoods and masks. Lao-Tzu understood that these bandits had no honor and that may well be hiding among the very people which he sought to protect, but he dared not act merely on impulse for his code of conduct would not permit him to falsely accuse an innocent. To aid him in this task, Lao-Tzu sought a great Wu Jen master and asked him to enchant his wakizashi with the ability to sense the true intentions of a person and to strike vigorously against those without honor. The samurai organized a feast for the people in order to lift the spirits of the robbed ones and to drive out the bandits into the open. The people answered his call and Lao-Tzu was pleased. Using the power of his new weapon he managed to separate the cunning bandits from the simple peasants and to seat them inside a separate dining hall. Once they were all rounded up, the samurai barred the only exit and fought alone against a dozen rogues. After a short battle Lao-Tzu emerged victorious, but his honor did not allow him to kill even such unworthy foes. Instead, the samurai exiled the bandits from the province and his people finally knew peace.
+@127 = ~This blade once belonged Lao-Tzu, a samurai from one of the southern provinces of Kara-Tur. Upon finishing his training the warrior had sworn an oath to finally free his lands from the bandits and brigands which had plagued his people for the last ten years. However, that task proved fairly difficult as his opponents were cunning, and only struck late at night, always wearing hoods and masks. Lao-Tzu understood that these bandits had no honor and that they may well be hiding among the very people which he sought to protect, but he dared not act merely on impulse for his code of conduct would not permit him to falsely accuse an innocent. To aid him in this task, Lao-Tzu sought a great Wu Jen master and asked him to enchant his wakizashi with the ability to sense the true intentions of a person and to strike vigorously against those without honor. The samurai organized a feast for the people in order to lift the spirits of the robbed ones and to drive out the bandits into the open. The people answered his call and Lao-Tzu was pleased. Using the power of his new weapon he managed to separate the cunning bandits from the simple peasants and to seat them inside a separate dining hall. Once they were all rounded up, the samurai barred the only exit and fought alone against a dozen rogues. After a short battle Lao-Tzu emerged victorious, but his honor did not allow him to kill even such unworthy foes. Instead, the samurai exiled the bandits from the province and his people finally knew peace.
 
 STATISTICS:
 
@@ -698,7 +698,7 @@ Unusable By:
  Mage~
 
 @136 = ~Masterbelt~
-@137 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
+@137 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
 
 STATISTICS:
 
@@ -729,7 +729,7 @@ Usable By:
   Everyone~
 
 @140 = ~Cowl of Acuity~
-@141 = ~Once a valued property of the Xanathar Thieves Guild, this seemingly plain-looking cowl has been treated with magic in order to enhance the acumen and perception of anyone who wears it. The cowl was temporarily lost during a raid on one of the Xanathar slave-trading houses in Skullport, but recently, it re-surfaced in Calimport and made its way to Atkhatla on one of the many trading caravans belonging to the Sybarr mercantile company.
+@141 = ~Once a valued property of the Xanathar Thieves Guild, this seemingly plain-looking cowl has been treated with magic in order to enhance the acumen and perception of anyone who wears it. The cowl was temporarily lost during a raid on one of the Xanathar slave-trading houses in Skullport, but recently, it re-surfaced in Calimport and made its way to Athkatla on one of the many trading caravans belonging to the Sybarr mercantile company.
 
 STATISTICS:
 
@@ -907,7 +907,7 @@ It seems that the evil we once exiled from our homeland has come back to haunt u
 ...
 
 Alturiak 21st, 1369
-Tonight, the General has appointed a secret meeting with a few of his most trusted Scouts, myself included. We share his suspicions and have unanimously agreed that action must be taken. However, since we will be acting beyond the will of the Council, our actions will have to be carried out with extreme subtlety. For the safety of our people, as early as next week we shall break off to Atkhatla, in secret. It will be hard saying farewell to my beloved L'saria, not knowing when, or even if I shall return. But I am a soldier, and my duty is clear. I know she will understand.
+Tonight, the General has appointed a secret meeting with a few of his most trusted Scouts, myself included. We share his suspicions and have unanimously agreed that action must be taken. However, since we will be acting beyond the will of the Council, our actions will have to be carried out with extreme subtlety. For the safety of our people, as early as next week we shall break off to Athkatla, in secret. It will be hard saying farewell to my beloved L'saria, not knowing when, or even if I shall return. But I am a soldier, and my duty is clear. I know she will understand.
 
 ...
 
@@ -944,7 +944,7 @@ It seems that the evil we once exiled from our homeland has come back to haunt u
 ...
 
 Alturiak 21st, 1369
-Tonight, the General has appointed a secret meeting with a few of his most trusted Scouts, myself included. We share his suspicions and have unanimously agreed that action must be taken. However, since we will be acting beyond the will of the Council, our actions will have to be carried out with extreme subtlety. For the safety of our people, as early as next week we shall break off to Atkhatla, in secret. It will be hard saying farewell to my beloved L'saria, not knowing when, or even if I shall return. But I am a soldier, and my duty is clear. I know she will understand.
+Tonight, the General has appointed a secret meeting with a few of his most trusted Scouts, myself included. We share his suspicions and have unanimously agreed that action must be taken. However, since we will be acting beyond the will of the Council, our actions will have to be carried out with extreme subtlety. For the safety of our people, as early as next week we shall break off to Athkatla, in secret. It will be hard saying farewell to my beloved L'saria, not knowing when, or even if I shall return. But I am a soldier, and my duty is clear. I know she will understand.
 
 ...
 
@@ -1463,7 +1463,7 @@ I was able to convince Venduris and his followers that engaging in battle with m
 
 @624 = ~Ambushed by Cyric's Chosen: The power of persuasion
 
-I was able to convince Venduris and his followers that engaging in battle with me was completely unnecessary. As he realized that I am a force of Good and have no reason or desire to betray my beliefs, the rogue and his companions left, warning me that there are others of my kin might who are not as kindhearted.~
+I was able to convince Venduris and his followers that engaging in battle with me was completely unnecessary. As he realized that I am a force of Good and have no reason or desire to betray my beliefs, the rogue and his companions left, warning me that there are others of my kin who are not as kindhearted.~
 
 @630 = ~Ambushed by Cyric's Chosen: The Slayer unleashed!
 
@@ -1939,7 +1939,7 @@ Usable By:
 @1505 = ~(Haer'Dalis quickly pages through the recent entries, scribbling some notes on the side)~
 @1506 = ~Hmm... what an unexpected turn of events! As it seems, this tale has only just begun to truly unfold.~
 @1507 = ~I have fashioned you a fairly accurate translation of the last few pages <CHARNAME>. An interesting read, to say the least.~
-@1508 = ~May I be of assistance, <CHARNAME>? As a druid I am somewhat familiar with the sylvian alphabet and the elven tongue.~
+@1508 = ~May I be of assistance, <CHARNAME>? As a druid I am somewhat familiar with the sylvan alphabet and the elven tongue.~
 @1509 = ~(Cernd quickly pages through the recent entries, scribbling some notes on the side)~
 @1510 = ~Interesting, there seems to be more to that rogue than meets the eye.~
 @1511 = ~See for yourself <CHARNAME>, I have translated the last couple of pages.~
@@ -1986,7 +1986,7 @@ Usable By:
 // Chosen of Cyric main dialogue (2000-2999)
 
 @2000 = ~(Upon closer inspection, this tiny cowled figure turns out to be a middle-aged halfling with a slight stubble on his chin and dark circles beneath his eyes.)~
-@2001 = ~(He is tightly griping a short bow and impatiently shuffling through his arrow case. Every few seconds he looks towards Venduris as if waiting for a sign.)~
+@2001 = ~(He is tightly gripping a short bow and impatiently shuffling through his arrow case. Every few seconds he looks towards Venduris as if waiting for a sign.)~
 @2002 = ~(The shaft of his bow resembles two snakes, each trying to swallow an eyeball carved at the grip. You also manage to catch a faint glint coming from his quiver. Apparently, it holds three different types of arrows, two of which seem to be dipped in different hues of a greenish liquid while the third one is clearly pulsating with magic.)~
 @2003 = ~(You feel pinpricks over the entire surface of your hands... a strong aura of evil surrounds this man.)~
 @2004 = ~(He seems to thoroughly enjoy committing evil acts, and is directly responsible for many innocent deaths.)~
@@ -2163,7 +2163,7 @@ Usable By:
 @2597 = ~(you make a mental note of what was just said)   Hmm... let me ask you something else then.~
 @2598 = ~(Venduris pauses for a moment and then starts gazing at you suspiciously)~
 @2599 = ~Hmm, that is indeed a possibility, <CHARNAME>, though merely one of many.~
-@2600 = ~With equal right, I could clam that disposing of you was the Overfather's plan all along, and that we were actually predestined to be carry out his will.~
+@2600 = ~With equal right, I could clam that disposing of you was the Overfather's plan all along, and that we were actually predestined to carry out his will.~
 @2601 = ~Either way, while I can not be fully certain in this matter, I would prefer to eliminate you. Unhindered, you could possibly rise even further and try to take the place of our Lord. This can not be allowed to happen.~
 @2602 = ~\[Lore\] - Then hear me out, Venduris. As soon as I found out about my true descent, I began actively studying the prophecies concerning Bhaalspawn. Nonetheless, in all this time, I've found nothing that openly suggests that one of us *must* doubtlessly rise up and take our father's place. If anything, my research indicates that the future of the Bhaalspawn is not set in stone and that each of us is free to shape his own destiny.~
 @2603 = ~\[Insight\] - Then think about it this way, you say that you want to murder me in order to please Cyric, but are you aware that after my death, the part of Bhaal's essence which lies inside me will return to its source? In consequence, killing me would actually quicken my father's restoration.~
@@ -2304,7 +2304,7 @@ Usable By:
 @3019 = ~Observe my raven, I've marked a few lines which you need to read in order to restore our freedom. And try to make it sound dramatic, for should you fail, we are most assuredly doomed to spend an eternity inside this devious magical entrapment.~
 @3020 = ~Just a minute there <CHARNAME>! You don't want to end up like my uncle Cinders after he fell into a wagon full of fireworks and accidentally blew it up with a single spark from his pipe. Well, at least it was his own birthday party that he ruined. Anyway, you better let me take a look at that thing.~
 @3021 = ~Hmm.. I think I've solved it! By the looks of it, that poor lass had attuned the wards to a simple Command Phrase. Hardly ingenious, but I suppose it can be effective at times.~
-@3022 = ~<CHARNAME>, I've marked here a few lines that you should read. And make it loud too, so that we can finally escape this dreadfull magical cage.~
+@3022 = ~<CHARNAME>, I've marked here a few lines that you should read. And make it loud too, so that we can finally escape this dreadful magical cage.~
 @3023 = ~W-Wait, <CHARNAME>! Can I take a look at that first, please?~
 @3024 = ~Oh! I-I believe I can understand this, and if I'm reading it right, the wards can be lowered with a simple Command Phrase! Do you... do you think it could actually be that easy?~
 @3025 = ~Um, <CHARNAME>, I've marked the lines you need to read. Just say that out loud and we should be free again, I h-hope.~
@@ -2387,7 +2387,7 @@ Only Usable By:
 @5006 = ~Stormcharged Axe +5~
 @5007 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and soon afterward struck by a bolt of lightning. Because of the pre-placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high-ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
 
-Coated with the other worldly Starfall Ore and infused with the essence of a Lapis Lazuli, the powers of this already formidable weapon are greatly enhanced.
+Coated with the otherworldly Starfall Ore and infused with the essence of a Lapis Lazuli, the powers of this already formidable weapon are greatly enhanced.
 
 STATISTICS:
 
@@ -2438,7 +2438,7 @@ Not Usable By:
   Mage~
 
 @5010 = ~Masterbelt of Fortune~
-@5011 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused by for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
+@5011 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
 
 The masterwork tools have been infused with the essence of luck and enchanted with magic. They now confer additional benefits.
 
@@ -2457,7 +2457,7 @@ Usable by:
 @5012 = ~Returning Frost Dart +3~
 @5013 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
 
-The mithril coating appears to have enhanced the dart's magical capabilities a bit further.
+The mithral coating appears to have enhanced the dart's magical capabilities a bit further.
 
 STATISTICS:
 
@@ -2555,7 +2555,7 @@ Not Usable By:
 
 
 @5023 = ~Rogue's Ward +3~
-@5024 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithril and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw in the light, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
+@5024 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithral and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw in the light, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
 
 Infused with the magical essence of a Rogue Stone and coated with a thin layer of Adamantine, the buckler now provides even more protection.
 
@@ -2600,7 +2600,7 @@ Not Usable By:
 
 
 
-// Cromwell's new dailogue (6000-6999)
+// Cromwell's new dialogue (6000-6999)
 
 @6000 = ~Hmmm... aye, now, this looks interesting...~
 @6001 = ~That ol' battered buckler ye're holdin' was once a mighty relic that belonged to a high priest of Amaunator, if me eyes don't be deceiving me. In case ye somehow stumble upon a holy symbol of the lost sun god, I could infuse the shield with its essence and restore some of the relic's old power.~
@@ -2608,8 +2608,8 @@ Not Usable By:
 @6003 = ~Well, let's see what else ye got.~
 
 @6010 = ~Hmph, I reckon something could be done with that puny dart of yers. Let me see...~
-@6011 = ~If ye ever get yer hands on some mithril, I could use it to coat the dart's tip and make it a wee bit stronger. Even a small piece will do.~
-@6012 = ~Ach, ye have a mithril piece! For 5,000 gold I could use it to coat the tip of that dart ye're holdin' and make it a wee bit stronger. Well, what say ye?~
+@6011 = ~If ye ever get yer hands on some mithral, I could use it to coat the dart's tip and make it a wee bit stronger. Even a small piece will do.~
+@6012 = ~Ach, ye have a mithral piece! For 5,000 gold I could use it to coat the tip of that dart ye're holdin' and make it a wee bit stronger. Well, what say ye?~
 
 @6020 = ~Ye've a fancy sword there, <GIRLBOY>. Kara-Tur craftmanship, aye? Let me take a look...~
 @6021 = ~Hmm... the craft be truly flawless, I cannae do much 'bout that. Still, I could strengthen the anti-chaos enchantments on the blade if ye ever get ahold of some Illithid brine water.~
@@ -2629,7 +2629,7 @@ Not Usable By:
 
 
 
-// Cespenar's new dailogue (7000-7999)
+// Cespenar's new dialogue (7000-7999)
 
 @7000 = ~Hmm...mmmn....wait, here a belt. For keeping pants from sagging, no?~
 @7001 = ~Oh, is Masterbelt.  I sees now.  I haves good recipe for this... uses Scroll of Luck and Potion of Master Thievery, if I remembers right.  But you not have all that, so what point in checking?~

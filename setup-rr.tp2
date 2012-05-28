@@ -3478,7 +3478,7 @@ COPY    ~RR/RR_CYRIC/SPELLS/RR#VDET.SPL~             ~override~              // 
 COPY    ~RR/RR_CYRIC/SPELLS/RR#GONE!.SPL~            ~override~              // Cutscene animation removal spell
 COPY    ~RR/RR_CYRIC/SPELLS/RR#BACK!.SPL~            ~override~              // Cutscene animation restore spell
 COPY    ~RR/RR_CYRIC/SPELLS/RR#VSBL.SPL~             ~override~              // Spell which renders the caster visible but doesn't remove Improved Invisibility (used after opponents' Spell Triggers and such to ensure fair play)
-
+COPY    ~rr/rr_cyric/spells/rr#ahit.spl~             ~override~              // Automatic critical hits for 6 seconds (used in cutscenes)
 
 // CoC creatures and characters
 

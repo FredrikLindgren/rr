@@ -12,7 +12,7 @@ THEN
 		ActionOverride("RR#BODK",Face(10))
 		Face(10)
 		SmallWait(5)
-		ActionOverride(Player1,ApplySpell(Myself,WARRIOR_CRITICAL_STRIKE))
+		ActionOverride(Player1,ApplySpellRES("RR#AHIT",Myself))
 		ActionOverride(Player1,Attack("RR#VEND"))
 		SmallWait(14)
 		ActionOverride("RR#VEND",ForceSpell(Myself,DO_NOTHING))

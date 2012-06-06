@@ -11,7 +11,7 @@ END
 IF
 	OR(4)
 	  GlobalLT("RR#CSAVE","GLOBAL",2)
-          !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
+      !Allegiance(Myself,EVILCUTOFF) // better way to check for charm because STATE_CHARMED persists when the creature is attacked and becomes red circled again
 	  StateCheck(Myself,STATE_IMMOBILE) // using this instead of STATE_DISABLED because the latter includes STATE_CHARMED
 	  StateCheck(Myself,STATE_REALLY_DEAD) // prevents contingencies and other ReallyForceSpell() stuff from popping up on dead creatures
 THEN
@@ -181,7 +181,7 @@ IF
 	DifficultyGT(EASY)
 	StateCheck(Myself,STATE_INVISIBLE)
 	!StateCheck(Myself,STATE_SILENCED)
-        HaveSpellRES("RR#TAS01") // Death Attack
+    HaveSpellRES("RR#TAS01") // Death Attack
 	Detect([GOODCUTOFF])
 THEN
 	RESPONSE #100
@@ -214,6 +214,7 @@ IF
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+    CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
 	See(SixthNearest([GOODCUTOFF]))
 	False()
@@ -228,6 +229,7 @@ IF
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+    CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
 	See(FifthNearest([GOODCUTOFF]))
 	False()
@@ -242,6 +244,7 @@ IF
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+    CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
 	See(FourthNearest([GOODCUTOFF]))
 	False()
@@ -256,6 +259,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+    CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
 	See(ThirdNearest([GOODCUTOFF]))
 	False()
@@ -270,6 +274,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+    CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
 	See(SecondNearest([GOODCUTOFF]))
 	False()
@@ -284,6 +289,7 @@ IF
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+    CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
 	!Kit([GOODCUTOFF],BARBARIAN)
 	See([GOODCUTOFF])
 	False()
@@ -298,6 +304,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+    CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTPIERCING)
 	See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
 	False()
 THEN
@@ -311,6 +318,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTPIERCING)
 	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
 	False()
 THEN
@@ -324,6 +332,7 @@ IF
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTPIERCING)
 	See([GOODCUTOFF.0.0.CLERIC_ALL])
 	False()
 THEN
@@ -337,6 +346,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTPIERCING)
 	See(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]))
 	False()
 THEN
@@ -350,6 +360,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTPIERCING)
 	See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
 	False()
 THEN
@@ -363,6 +374,7 @@ IF
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,175)  // no Backstab immunity
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTPIERCING)
 	See([GOODCUTOFF.0.0.BARD_ALL])
 	False()
 THEN
@@ -376,6 +388,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+    CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTPIERCING)
 	See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
 	False()
 THEN
@@ -389,6 +402,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTPIERCING)
 	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
 	False()
 THEN
@@ -402,6 +416,7 @@ IF
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,175)  // no Backstab immunity
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTPIERCING)
 	See([GOODCUTOFF.0.0.DRUID_ALL])
 	False()
 THEN
@@ -415,6 +430,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
 	False()
 THEN
@@ -428,6 +444,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	!StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_PANIC)
 	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
 	False()
 THEN
@@ -441,6 +458,7 @@ IF
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	!StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_PANIC)
 	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,175)  // no Backstab immunity
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTPIERCING)
 	See([GOODCUTOFF.0.0.MAGE_ALL])
 	False()
 THEN
@@ -455,6 +473,7 @@ IF
 	StateCheck(SixthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
 	!Kit(SixthNearest([GOODCUTOFF]),BARBARIAN)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	See(SixthNearest([GOODCUTOFF]))
 	False()
 THEN
@@ -468,6 +487,7 @@ IF
 	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FifthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(FifthNearest([GOODCUTOFF]),BARBARIAN)
 	See(FifthNearest([GOODCUTOFF]))
 	False()
@@ -482,6 +502,7 @@ IF
 	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(FourthNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(FourthNearest([GOODCUTOFF]),BARBARIAN)
 	See(FourthNearest([GOODCUTOFF]))
 	False()
@@ -496,6 +517,7 @@ IF
 	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(ThirdNearest([GOODCUTOFF]),BARBARIAN)
 	See(ThirdNearest([GOODCUTOFF]))
 	False()
@@ -510,6 +532,7 @@ IF
 	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
 	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,175)  // no Backstab immunity
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTPIERCING)
 	!Kit(SecondNearest([GOODCUTOFF]),BARBARIAN)
 	See(SecondNearest([GOODCUTOFF]))
 	False()
@@ -524,6 +547,7 @@ IF
 	!StateCheck([GOODCUTOFF],STATE_MIRRORIMAGE)
 	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
 	!CheckStatGT([GOODCUTOFF],0,175)  // no Backstab immunity
+	CheckStatLT([GOODCUTOFF],100,RESISTPIERCING)
 	!Kit([GOODCUTOFF],BARBARIAN)
 	See([GOODCUTOFF])
 	False()
@@ -538,6 +562,7 @@ IF
 	!StateCheck(Player6,STATE_MIRRORIMAGE)
 	StateCheck(Player6,STATE_IMMOBILE)
 	!CheckStatGT(Player6,0,175)  // no Backstab immunity
+	CheckStatLT(Player6,100,RESISTPIERCING)
 	!Kit(Player6,BARBARIAN)
 	See(Player6)
 	False()
@@ -552,6 +577,7 @@ IF
 	!StateCheck(Player5,STATE_MIRRORIMAGE)
 	StateCheck(Player5,STATE_IMMOBILE)
 	!CheckStatGT(Player5,0,175)  // no Backstab immunity
+	CheckStatLT(Player5,100,RESISTPIERCING)
 	!Kit(Player5,BARBARIAN)
 	See(Player5)
 	False()
@@ -566,6 +592,7 @@ IF
 	!StateCheck(Player4,STATE_MIRRORIMAGE)
 	StateCheck(Player4,STATE_IMMOBILE)
 	!CheckStatGT(Player4,0,175)  // no Backstab immunity
+	CheckStatLT(Player4,100,RESISTPIERCING)
 	!Kit(Player4,BARBARIAN)
 	See(Player4)
 	False()
@@ -579,6 +606,7 @@ IF
 	CheckStatLT(Player3,1,STONESKINS)
 	!StateCheck(Player3,STATE_MIRRORIMAGE)
 	StateCheck(Player3,STATE_IMMOBILE)
+	CheckStatLT(Player3,100,RESISTPIERCING)
 	!CheckStatGT(Player3,0,175)  // no Backstab immunity
 	!Kit(Player3,BARBARIAN)
 	See(Player3)
@@ -593,6 +621,7 @@ IF
 	CheckStatLT(Player2,1,STONESKINS)
 	!StateCheck(Player2,STATE_MIRRORIMAGE)
 	StateCheck(Player2,STATE_IMMOBILE)
+	CheckStatLT(Player2,100,RESISTPIERCING)
 	!CheckStatGT(Player2,0,175)  // no Backstab immunity
 	!Kit(Player2,BARBARIAN)
 	See(Player2)
@@ -607,6 +636,7 @@ IF
 	CheckStatLT(Player1,1,STONESKINS)
 	!StateCheck(Player1,STATE_MIRRORIMAGE)
 	StateCheck(Player1,STATE_IMMOBILE)
+	CheckStatLT(Player1,100,RESISTPIERCING)
 	!CheckStatGT(Player1,0,175)  // no Backstab immunity
 	!Kit(Player1,BARBARIAN)
 	See(Player1)
@@ -621,6 +651,7 @@ IF
 	CheckStatLT(ThirdNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
 	!StateCheck(ThirdNearest([PC.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([PC.0.0.CLERIC_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(ThirdNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
 	See(ThirdNearest([PC.0.0.CLERIC_ALL]))
 	False()
@@ -634,6 +665,7 @@ IF
 	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),1,STONESKINS)
 	!StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([PC.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.CLERIC_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(SecondNearest([PC.0.0.CLERIC_ALL]),0,175)  // no Backstab immunity
 	See(SecondNearest([PC.0.0.CLERIC_ALL]))
 	False()
@@ -647,6 +679,7 @@ IF
 	CheckStatLT([PC.0.0.CLERIC_ALL],1,STONESKINS)
 	!StateCheck([PC.0.0.CLERIC_ALL],STATE_MIRRORIMAGE)
 	StateCheck([PC.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.CLERIC_ALL],100,RESISTPIERCING)
 	!CheckStatGT([PC.0.0.CLERIC_ALL],0,175)  // no Backstab immunity
 	See([PC.0.0.CLERIC_ALL])
 	False()
@@ -660,6 +693,7 @@ IF
 	CheckStatLT(ThirdNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
 	!StateCheck(ThirdNearest([PC.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([PC.0.0.DRUID_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(ThirdNearest([PC.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
 	See(ThirdNearest([PC.0.0.DRUID_ALL]))
 	False()
@@ -673,6 +707,7 @@ IF
 	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),1,STONESKINS)
 	!StateCheck(SecondNearest([PC.0.0.DRUID_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([PC.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.DRUID_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(SecondNearest([PC.0.0.DRUID_ALL]),0,175)  // no Backstab immunity
 	See(SecondNearest([PC.0.0.DRUID_ALL]))
 	False()
@@ -686,6 +721,7 @@ IF
 	CheckStatLT([PC.0.0.DRUID_ALL],1,STONESKINS)
 	!StateCheck([PC.0.0.DRUID_ALL],STATE_MIRRORIMAGE)
 	StateCheck([PC.0.0.DRUID_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.DRUID_ALL],100,RESISTPIERCING)
 	!CheckStatGT([PC.0.0.DRUID_ALL],0,175)  // no Backstab immunity
 	See([PC.0.0.DRUID_ALL])
 	False()
@@ -699,6 +735,7 @@ IF
 	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
 	!StateCheck(ThirdNearest([PC.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(ThirdNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([PC.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(ThirdNearest([PC.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
 	See(ThirdNearest([PC.0.0.MAGE_ALL]))
 	False()
@@ -712,6 +749,7 @@ IF
 	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),1,STONESKINS)
 	!StateCheck(SecondNearest([PC.0.0.MAGE_ALL]),STATE_MIRRORIMAGE)
 	StateCheck(SecondNearest([PC.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([PC.0.0.MAGE_ALL]),100,RESISTPIERCING)
 	!CheckStatGT(SecondNearest([PC.0.0.MAGE_ALL]),0,175)  // no Backstab immunity
 	See(SecondNearest([PC.0.0.MAGE_ALL]))
 	False()
@@ -725,6 +763,7 @@ IF
 	CheckStatLT([PC.0.0.MAGE_ALL],1,STONESKINS)
 	!StateCheck([PC.0.0.MAGE_ALL],STATE_MIRRORIMAGE)
 	StateCheck([PC.0.0.MAGE_ALL],STATE_IMMOBILE)
+	CheckStatLT([PC.0.0.MAGE_ALL],100,RESISTPIERCING)
 	!CheckStatGT([PC.0.0.MAGE_ALL],0,175)  // no Backstab immunity
 	See([PC.0.0.MAGE_ALL])
 	False()
@@ -753,9 +792,11 @@ IF
 	DifficultyGT(EASY)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!Global("RR#Heal","LOCALS",1)
 	StateCheck(Myself,STATE_INVISIBLE)
 	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+    CheckStatLT(LastSeenBy(Myself),100,RESISTPIERCING)
 THEN
 	RESPONSE #100
 		AttackReevaluate(LastSeenBy(Myself),15)
@@ -765,10 +806,12 @@ IF
 	Difficulty(EASY)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!Global("RR#Heal","LOCALS",1)
 	!GlobalTimerNotExpired("RR#VEND_BS","LOCALS")
 	StateCheck(Myself,STATE_INVISIBLE)
 	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+    CheckStatLT(LastSeenBy(Myself),100,RESISTPIERCING)
 THEN
 	RESPONSE #100
 		SetGlobalTimer("RR#VEND_BS","LOCALS",18)
@@ -779,10 +822,12 @@ IF
 	Difficulty(EASIEST)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	!Global("RR#Heal","LOCALS",1)
 	!GlobalTimerNotExpired("RR#VEND_BS","LOCALS")
 	StateCheck(Myself,STATE_INVISIBLE)
 	!CheckStat(LastSeenBy(Myself),3,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // no Absolute Immunity
+    CheckStatLT(LastSeenBy(Myself),100,RESISTPIERCING)
 THEN
 	RESPONSE #100
 		SetGlobalTimer("RR#VEND_BS","LOCALS",24)

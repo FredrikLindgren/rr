@@ -860,6 +860,9 @@ END
 IF
 	Global("RR#Heal","LOCALS",0)
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+    !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatLT(LastSeenBy(Myself),100,RESISTSLASHING)
 THEN
 	RESPONSE #100
 		AttackReevaluate(LastSeenBy(Myself),15)

@@ -136,6 +136,7 @@ IF
 	Global("RR#Trig","LOCALS",0)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	DifficultyGT(EASY)
+	Global("fl#RRNoMislead","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Trig","LOCALS",1)
@@ -151,7 +152,9 @@ END
 IF
 	Global("RR#Trig","LOCALS",0)
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
-	DifficultyLT(NORMAL)
+	OR(2)
+		DifficultyLT(NORMAL)
+		!Global("fl#RRNoMislead","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("RR#Trig","LOCALS",1)
@@ -179,6 +182,7 @@ END
 IF
 	!GlobalTimerNotExpired("RR#Cast","LOCALS")
 	DifficultyGT(EASY)
+	Global("fl#RRNoMislead","GLOBAL",0)
 	!CheckStat(Myself,1,PUPPETTYPE) // Mislead
 	!Global("dvgldust","LOCALS",1)
 	HasItem("SCRL7K",Myself) // Mislead
@@ -385,7 +389,9 @@ IF
 	!CheckStat(Myself,1,PUPPETTYPE) // Mislead
 	!Global("dvgldust","LOCALS",1)
 	HasItem("SCRL7K",Myself) // Mislead
-	DifficultyLT(NORMAL) // on lower difficulty settings use Shadow Door scrolls instead of Mislead scrolls
+  	OR(2)
+  		DifficultyLT(NORMAL) // on lower difficulty settings use Shadow Door scrolls instead of Mislead scrolls
+        	!Global("fl#RRNoMislead","GLOBAL",0)
 	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
 	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
 	!StateCheck(Myself,STATE_SILENCED)

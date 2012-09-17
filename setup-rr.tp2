@@ -24,7 +24,7 @@ ASK_EVERY_COMPONENT                                                 // Disallow 
 
 LANGUAGE ~English~ ~ENGLISH~ ~rr/tra/english/rr.tra~
 LANGUAGE ~Francais (by the d'Oghmatiques)~ ~FRENCH~ ~rr/tra/english/rr.tra~ ~rr/tra/french/rr.tra~
-LANGUAGE ~Espanol (by Immortality, SirLancelot, Nieve and Clan DLAN)~ ~SPANISH~ ~rr/tra/english/rr.tra~ ~rr/tra/spanish/rr.tra~
+LANGUAGE ~Espanol (por Immortality, SirLancelot, Nieve, Clan DLAN y Lisandro)~ ~SPANISH~ ~rr/tra/english/rr.tra~ ~rr/tra/spanish/rr.tra~
 LANGUAGE ~Deutsch (by Cronox and Leomar)~ ~GERMAN~ ~rr/tra/english/rr.tra~ ~rr/tra/german/rr.tra~
 LANGUAGE ~Russian (by the Aerie.ru and arcanecoast.ru teams)~ ~RUSSIAN~ ~rr/tra/english/rr.tra~ ~rr/tra/russian/rr.tra~
 LANGUAGE ~Italian (by Andrea C. and ilot)~ ~ITALIAN~ ~rr/tra/english/rr.tra~ ~rr/tra/italian/rr.tra~

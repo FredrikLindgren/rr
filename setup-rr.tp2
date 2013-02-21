@@ -987,6 +987,11 @@ END
   PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
 
+//Give Blades the Whirlwind Attack HLA
+COPY_EXISTING luba2.2da override
+  LPF set_lu_2da_entries STR_VAR f_Ability = GA_SPCL900 END
+BUT_ONLY
+
 //Remove mention of a dependency on Evasion from Avoid Death. Thieves still need to pick Evasion if RR's thief HLAs are also installed
 COPY_EXISTING spcl917.spl "override/fl#cl917.spl"
   SAY 0x50 @8015

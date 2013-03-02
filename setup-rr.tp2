@@ -565,7 +565,7 @@ BUT_ONLY
 COPY ~RR/RR_CORE/SPELLS/RR#BDF01.SPL~ override                // True Bard new song part 1
      ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~ override                // True Bard new song part 2
 
-FAIL ~Update this for BGEE:~ //fl#todo
+//String remains #9562 in BGEE
 STRING_SET ~9562~ @29                                         // Updated True Bard kit description
 
 
@@ -1684,84 +1684,253 @@ COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~   override                     // Dagger of A
 COPY ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~ override
   SAY NAME2 @146 SAY DESC @147
 
-COPY_EXISTING ~ARAN.CRE~ override                                 // Aran Linvail, non-STI (for the Dagger of Acumen)
-  ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen (for pickpocketing)
+ACTION_IF GAME_IS ~soa tob bgt~ BEGIN
+  COPY_EXISTING ~ARAN.CRE~ override                                 // Aran Linvail, non-STI (for the Dagger of Acumen)
+    ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen (for pickpocketing)
 
-COPY_EXISTING ~ARAN02.CRE~ override                               // Aran Linvail, non-STI (original game and Quest Pack
-  ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen
-  ADD_CRE_ITEM ~SW1H10~ #0 #0 #0 ~NONE~ ~INV8~                    // Give Aran the Short Sword of Backstabbing
-
-
-COPY_EXISTING ~BOOTER.CRE~ override                               // Booter, non-STI (for Plaguebearer and Longtooth)
-  WRITE_SHORT 0x28 25348                                          // Change Booter's avatar to THIEF_MALE_GNOME
-  ADD_CRE_ITEM ~RR#PLAG~ #0 #0 #0 ~NONE~ ~INV7~                   // Give Booter the Plaguebearer dagger
-  ADD_CRE_ITEM ~DAGG04~ #0 #0 #0 ~NONE~ ~INV8~                    // Give Booter the Longtooth dagger
-
-COPY_EXISTING ~BMTHIEF.CRE~ override                              // Marina (formerly Black Market Thief)
-  SAY NAME1 @62 SAY NAME2 @62                                     // Sets Marina's name
-  WRITE_ASCII 0x34 ~RR#MARIN~ #8                                  // Sets Marina's small portrait
-  REMOVE_CRE_ITEM ~rndtre03~                                      // removes the random treasure 03 item
-  REMOVE_CRE_ITEM ~rndtre04~                                      // removes the random treasure 04 item
-  REPLACE_CRE_ITEM ~LEAT08~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~        // Gives Marina the Shadow Armor (for cosmetic purposes)
-  REPLACE_CRE_ITEM ~BOW04~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON2~ EQUIP TWOHANDED // Gives Marina a Long Bow +1 (non-composite)
-  ADD_CRE_ITEM ~POTN10~ #0 #0 #0 ~UNSTEALABLE~ ~QITEM1~           // Gives Marina a Potion of Invisibility
-  WRITE_LONG 0x18 161000                                          // current XP
-  WRITE_SHORT 0x24 75                                             // current hit points
-  WRITE_SHORT 0x26 75                                             // maximum hit points
-  WRITE_SHORT 0x28 25360                                          // Sets avatar to THIEF_FEMALE_HUMAN
-  WRITE_BYTE 0x2C 30                                              // metal color
-  WRITE_BYTE 0x2D 72                                              // minor color
-  WRITE_BYTE 0x2E 21                                              // major color
-  WRITE_BYTE 0x2F 108                                             // skin color
-  WRITE_BYTE 0x30 30                                              // leather color
-  WRITE_BYTE 0x31 29                                              // armor color
-  WRITE_BYTE 0x32 0                                               // hair color
-  WRITE_BYTE 0x45 15                                              // Hide in Shadows skill
-  WRITE_BYTE 0x52 14                                              // THAC0
-  WRITE_BYTE 0x54 10                                              // save vs. death
-  WRITE_BYTE 0x55 12                                              // save vs. wands
-  WRITE_BYTE 0x56 11                                              // save vs. polymorph
-  WRITE_BYTE 0x57 12                                              // save vs. breath
-  WRITE_BYTE 0x58 13                                              // save vs. spells
-  WRITE_BYTE 0x64 0                                               // Detect Illusions skill
-  WRITE_BYTE 0x65 0                                               // Set Traps skill
-  WRITE_BYTE 0x66 18                                              // Lore
-  WRITE_BYTE 0x67 70                                              // Open Locks skill
-  WRITE_BYTE 0x68 10                                              // Move Silently skill
-  WRITE_BYTE 0x69 85                                              // Find Traps skill
-  WRITE_BYTE 0x6a 35                                              // Pick Pockets skill
-  WRITE_BYTE 0x6f 0                                               // BG1 Proficiency slot (small sword)
-  WRITE_BYTE 0x75 0                                               // BG1 Proficiency slot (missile)
-  WRITE_BYTE 0x234 7                                              // level (first class)
-  WRITE_BYTE 0x235 8                                              // level (second class)
-  WRITE_BYTE 0x236 0                                              // level (third class)
-  WRITE_BYTE 0x238 12                                             // Strength
-  WRITE_BYTE 0x23a 14                                             // Inteligence
-  WRITE_BYTE 0x23b 11                                             // Wisdom
-  WRITE_BYTE 0x23c 18                                             // Dexterity
-  WRITE_BYTE 0x23d 13                                             // Constitution
-  WRITE_BYTE 0x23e 15                                             // Charisma
-  WRITE_BYTE 0x23f 18                                             // morale
-  WRITE_BYTE 0x240 5                                              // morale break
-  WRITE_BYTE 0x242 30                                             // morale recovery
-  WRITE_BYTE 0x272 3                                              // race
-  WRITE_BYTE 0x273 9                                              // class
-  WRITE_BYTE 0x27b 34                                             // alignment
-  WRITE_ASCII 0x248 ~RR#MARIN~ #8                                 // override AI script
-  WRITE_ASCII 0x268 ~~ #8                                         // disable default AI script (WTARSGT.BCS)
-  SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 2                      // Give Marina 2 stars in the BG2 Longbow proficiency
-  SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 2                    // Give Marina 2 stars in the BG2 Longsword proficiency
-  SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 2                   // Give Marina 2 stars in the BG2 Shortsword proficiency
-BUT_ONLY
+  COPY_EXISTING ~ARAN02.CRE~ override                               // Aran Linvail, non-STI (original game and Quest Pack
+    ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen
+    ADD_CRE_ITEM ~SW1H10~ #0 #0 #0 ~NONE~ ~INV8~                    // Give Aran the Short Sword of Backstabbing
 
 
-// Make Marina's and Arledrian's dialogue files pause the game
+  COPY_EXISTING ~BOOTER.CRE~ override                               // Booter, non-STI (for Plaguebearer and Longtooth)
+    WRITE_SHORT 0x28 25348                                          // Change Booter's avatar to THIEF_MALE_GNOME
+    ADD_CRE_ITEM ~RR#PLAG~ #0 #0 #0 ~NONE~ ~INV7~                   // Give Booter the Plaguebearer dagger
+    ADD_CRE_ITEM ~DAGG04~ #0 #0 #0 ~NONE~ ~INV8~                    // Give Booter the Longtooth dagger
 
-COPY_EXISTING ~BMTHIEF.DLG~ override
-              ~ARLED.DLG~ override
-  WRITE_LONG 0x30 0
-BUT_ONLY
+  COPY_EXISTING ~BMTHIEF.CRE~ override                              // Marina (formerly Black Market Thief)
+    SAY NAME1 @62 SAY NAME2 @62                                     // Sets Marina's name
+    WRITE_ASCII 0x34 ~RR#MARIN~ #8                                  // Sets Marina's small portrait
+    REMOVE_CRE_ITEM ~rndtre03~                                      // removes the random treasure 03 item
+    REMOVE_CRE_ITEM ~rndtre04~                                      // removes the random treasure 04 item
+    REPLACE_CRE_ITEM ~LEAT08~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~        // Gives Marina the Shadow Armor (for cosmetic purposes)
+    REPLACE_CRE_ITEM ~BOW04~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON2~ EQUIP TWOHANDED // Gives Marina a Long Bow +1 (non-composite)
+    ADD_CRE_ITEM ~POTN10~ #0 #0 #0 ~UNSTEALABLE~ ~QITEM1~           // Gives Marina a Potion of Invisibility
+    WRITE_LONG 0x18 161000                                          // current XP
+    WRITE_SHORT 0x24 75                                             // current hit points
+    WRITE_SHORT 0x26 75                                             // maximum hit points
+    WRITE_SHORT 0x28 25360                                          // Sets avatar to THIEF_FEMALE_HUMAN
+    WRITE_BYTE 0x2C 30                                              // metal color
+    WRITE_BYTE 0x2D 72                                              // minor color
+    WRITE_BYTE 0x2E 21                                              // major color
+    WRITE_BYTE 0x2F 108                                             // skin color
+    WRITE_BYTE 0x30 30                                              // leather color
+    WRITE_BYTE 0x31 29                                              // armor color
+    WRITE_BYTE 0x32 0                                               // hair color
+    WRITE_BYTE 0x45 15                                              // Hide in Shadows skill
+    WRITE_BYTE 0x52 14                                              // THAC0
+    WRITE_BYTE 0x54 10                                              // save vs. death
+    WRITE_BYTE 0x55 12                                              // save vs. wands
+    WRITE_BYTE 0x56 11                                              // save vs. polymorph
+    WRITE_BYTE 0x57 12                                              // save vs. breath
+    WRITE_BYTE 0x58 13                                              // save vs. spells
+    WRITE_BYTE 0x64 0                                               // Detect Illusions skill
+    WRITE_BYTE 0x65 0                                               // Set Traps skill
+    WRITE_BYTE 0x66 18                                              // Lore
+    WRITE_BYTE 0x67 70                                              // Open Locks skill
+    WRITE_BYTE 0x68 10                                              // Move Silently skill
+    WRITE_BYTE 0x69 85                                              // Find Traps skill
+    WRITE_BYTE 0x6a 35                                              // Pick Pockets skill
+    WRITE_BYTE 0x6f 0                                               // BG1 Proficiency slot (small sword)
+    WRITE_BYTE 0x75 0                                               // BG1 Proficiency slot (missile)
+    WRITE_BYTE 0x234 7                                              // level (first class)
+    WRITE_BYTE 0x235 8                                              // level (second class)
+    WRITE_BYTE 0x236 0                                              // level (third class)
+    WRITE_BYTE 0x238 12                                             // Strength
+    WRITE_BYTE 0x23a 14                                             // Inteligence
+    WRITE_BYTE 0x23b 11                                             // Wisdom
+    WRITE_BYTE 0x23c 18                                             // Dexterity
+    WRITE_BYTE 0x23d 13                                             // Constitution
+    WRITE_BYTE 0x23e 15                                             // Charisma
+    WRITE_BYTE 0x23f 18                                             // morale
+    WRITE_BYTE 0x240 5                                              // morale break
+    WRITE_BYTE 0x242 30                                             // morale recovery
+    WRITE_BYTE 0x272 3                                              // race
+    WRITE_BYTE 0x273 9                                              // class
+    WRITE_BYTE 0x27b 34                                             // alignment
+    WRITE_ASCII 0x248 ~RR#MARIN~ #8                                 // override AI script
+    WRITE_ASCII 0x268 ~~ #8                                         // disable default AI script (WTARSGT.BCS)
+    SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 2                      // Give Marina 2 stars in the BG2 Longbow proficiency
+    SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 2                    // Give Marina 2 stars in the BG2 Longsword proficiency
+    SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 2                   // Give Marina 2 stars in the BG2 Shortsword proficiency
+  BUT_ONLY
 
+
+  // Make Marina's and Arledrian's dialogue files pause the game
+
+  COPY_EXISTING ~BMTHIEF.DLG~ override
+                ~ARLED.DLG~ override
+    WRITE_LONG 0x30 0
+  BUT_ONLY
+
+  // AR0306 script fix to prevent the player from acquiring multiple SSoB items
+
+  COPY_EXISTING ~AR0306.ARE~ override                                                                 // AR0306 (Renal's room) is missing its area script in the unmodded game
+    READ_ASCII 0x94 ~areascript~
+    PATCH_IF ~%areascript%~ STRING_EQUAL_CASE ~~ OR ~%areascript%~ STRING_EQUAL_CASE ~None~ BEGIN
+      WRITE_EVALUATED_ASCII 0x94 ~AR0306~ #8
+      SPRINT ~areascript~ ~AR0306~
+    END
+  BUT_ONLY
+
+  ACTION_IF !FILE_EXISTS_IN_GAME ~%areascript%.bcs~ BEGIN
+    COMPILE ~RR/RR_CORE/COMPILE/AR0306.BAF~
+  END ELSE BEGIN
+    EXTEND_BOTTOM ~%areascript%.bcs~ ~RR/RR_CORE/COMPILE/AR0306.BAF~
+  END
+
+  // Replace Mae'Var's SSoB with a generic Short Sword +3 (only in case he's wielding the SSoB)
+
+  EXTEND_BOTTOM ~AR0301.BCS~  ~RR/RR_CORE/COMPILE/AR0301.BAF~         // Update AR0301.BCS to replace SW1H10 with SW1H74 for Mae'Var
+
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~rr#stf01.bcs~ BEGIN
+    COMPILE ~RR/RR_CORE/COMPILE/ARAN.D~                             // Aran Linvail's Chapter 6 SSoB dialogue line
+            ~RR/RR_CORE/COMPILE/RENAL.D~                            // Renal awards the party with a regular +3 Shortsword instead of the SSoB
+  END
+
+  // Marina's stores, dialogue and AI script
+
+  COPY ~RR/RR_CORE/BAM/RR#MARIN.BMP~   override                          // Marina's portrait
+       ~RR/RR_CORE/ITEMS/RR#MARIN.STO~ override                          // Marina's premium store
+
+  COMPILE ~RR/RR_CORE/COMPILE/RR#MARIN.BAF~                              // Marina's AI script
+          ~RR/RR_CORE/COMPILE/BMTHIEF.D~                                 // Marina's new dialogue
+
+  COPY_EXISTING ~BMTHIEF.STO~ override                                   // Some minor additions to Marina's default store
+    ADD_STORE_ITEM + ~DAGG16~ #40 #0 #0 ~IDENTIFIED~ #3                  // Sets Poisoned Dagger stack to 40
+    ADD_STORE_ITEM + ~DART01~ #40 #0 #0 ~IDENTIFIED~ #3                  // Sets Dart stack to 40
+    ADD_STORE_ITEM ~STAF01~   AFTER  ~BLUN06~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Quarterstaff
+    ADD_STORE_ITEM ~STAF02~   AFTER  ~STAF01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Quarterstaff +1
+    ADD_STORE_ITEM ~BLUN01~   AFTER  ~STAF02~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Club
+    ADD_STORE_ITEM ~RR#SAP01~ AFTER  ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Sap
+    ADD_STORE_ITEM ~BOW04~    AFTER  ~BOW03~ #0 #0 #0 ~IDENTIFIED~ #2    // Adds 2x Long Bow +1
+    ADD_STORE_ITEM ~BOW06~    AFTER  ~BOW05~ #0 #0 #0 ~IDENTIFIED~ #2    // Adds 2x Short Bow +1
+    ADD_STORE_ITEM ~RR#BOW02~ AFTER  ~BOW06~ #0 #0 #0 ~IDENTIFIED~ #6    // Adds 6x Composite Short Bow
+    ADD_STORE_ITEM ~DAGG02~   AFTER  ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Dagger +1
+    ADD_STORE_ITEM ~DAGG05~   AFTER  ~DAGG16~ #40 #0 #0 ~IDENTIFIED~ #3  // Adds 3x40 Throwing Daggers
+    ADD_STORE_ITEM ~DART02~   AFTER  ~DART01~ #40 #0 #0 ~IDENTIFIED~ #3  // Adds 3x40 Darts +1
+    ADD_STORE_ITEM ~SLNG02~   AFTER  ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Sling +1
+    ADD_STORE_ITEM ~SW1H05~   AFTER  ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Long Sword +1
+    ADD_STORE_ITEM ~SW1H08~   AFTER  ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Short Sword +1
+    ADD_STORE_ITEM ~SW1H20~   AFTER  ~SW1H08~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Scimitar
+    ADD_STORE_ITEM ~SW1H22~   AFTER  ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Scimitar +1
+    ADD_STORE_ITEM ~SW1H47~   AFTER  ~SW1H46~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Wakizashi +1
+    ADD_STORE_ITEM ~SW1H48~   AFTER  ~SW1H47~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Ninja To
+    ADD_STORE_ITEM ~SW1H49~   AFTER  ~SW1H48~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Ninja To +1
+    ADD_STORE_ITEM ~SW1H43~   AFTER  ~SW1H49~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Katana
+    ADD_STORE_ITEM ~SW1H44~   AFTER  ~SW1H43~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Katana +1
+    ADD_STORE_ITEM ~XBOW02~   AFTER  ~XBOW01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Heavy Crossbow +1
+    ADD_STORE_ITEM ~XBOW04~   AFTER  ~XBOW02~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 2x Light Crossbow
+    ADD_STORE_ITEM ~XBOW05~   AFTER  ~XBOW04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Light Crossbow +1
+    ADD_STORE_ITEM ~LEAT02~   AFTER  ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Leather Armor +1
+    ADD_STORE_ITEM ~LEAT05~   AFTER  ~LEAT04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Studded Leather Armor +1
+    ADD_STORE_ITEM ~LEAT10~   AFTER  ~LEAT05~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Hide Armor
+    ADD_STORE_ITEM ~SCRL1J~   AFTER  ~SCRL90~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Invisibility 10' Radius scroll
+    ADD_STORE_ITEM ~SCRLA6~   AFTER  ~SCRL71~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Spook scroll
+    ADD_STORE_ITEM ~SCRLA7~   AFTER  ~SCRL1E~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Remove Magic scroll
+
+
+  // Arledrian's Silverblaze Quest
+  COPY_EXISTING ~ARLED.CRE~ override                                  // Arledrian
+    WRITE_ASCII 0x34 ~RR#ARLDS~ #8                                    // Sets Arledrian's small portrait
+    REMOVE_CRE_ITEM ~rndtre04~                                        // removes the random treasure 04 item
+    REMOVE_CRE_ITEM ~bow05~                                           // removes the Short Bow (which messes up his DW)
+    REMOVE_CRE_ITEM ~sw1h08~                                          // removes the Short Sword +1
+    REMOVE_CRE_ITEM ~arow02~                                          // removes the Arrows +1
+    REPLACE_CRE_ITEM ~CHAN02~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~          // replaces Arledrian's armor with Chain Mail +1
+    ADD_CRE_ITEM ~DAGG02~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP      // Replaces Arledrian Short Sword +1 with a Dagger +1
+    ADD_CRE_ITEM ~DAGG15~ #0 #0 #0 ~UNSTEALABLE~ ~SHIELD~             // Gives Arledrian a Dagger +2
+    ADD_CRE_ITEM ~RR#SILV~ #0 #3 #0 ~NONE~ ~INV1~                     // Gives Arledrian the Silverblaze dagger
+    ADD_CRE_ITEM ~POTN10~ #1 #0 #0 ~UNSTEALABLE~ ~QITEM1~             // Gives Arledrian 1x Potion of Invisibility
+    ADD_CRE_ITEM ~POTN52~ #1 #0 #0 ~NONE~ ~QITEM2~                    // Gives Arledrian 1x Potion of Extra Healing
+    WRITE_LONG 0x14 3000                                              // XP value (when killed)
+    WRITE_LONG 0x18 161000                                            // current XP
+    WRITE_SHORT 0x24 67                                               // current hit points
+    WRITE_SHORT 0x26 67                                               // maximum hit points
+    WRITE_SHORT 0x28 24833                                            // Sets avatar to FIGHTER_MALE_ELF
+    WRITE_BYTE 0x2C 35                                                // metal color
+    WRITE_BYTE 0x2D 32                                                // minor color
+    WRITE_BYTE 0x2E 32                                                // major color
+    WRITE_BYTE 0x2F 108                                               // skin color
+    WRITE_BYTE 0x30 60                                                // leather color
+    WRITE_BYTE 0x31 60                                                // armor color
+    WRITE_BYTE 0x32 2                                                 // hair color
+    WRITE_BYTE 0x45 5                                                 // Hide in Shadows skill
+    WRITE_BYTE 0x52 14                                                // THAC0
+    WRITE_BYTE 0x54 10                                                // save vs. death
+    WRITE_BYTE 0x55 12                                                // save vs. wands
+    WRITE_BYTE 0x56 11                                                // save vs. polymorph
+
+    WRITE_BYTE 0x57 12                                                // save vs. breath
+    WRITE_BYTE 0x58 13                                                // save vs. spells
+    WRITE_BYTE 0x64 0                                                 // Detect Illusions skill
+    WRITE_BYTE 0x65 50                                                // Set Traps skill
+    WRITE_BYTE 0x66 24                                                // Lore
+    WRITE_BYTE 0x67 55                                                // Open Locks skill
+    WRITE_BYTE 0x68 0                                                 // Move Silently skill
+    WRITE_BYTE 0x69 55                                                // Find Traps skill
+    WRITE_BYTE 0x6a 50                                                // Pick Pockets skill
+    WRITE_LONG 0xa4 4942                                              // initial meeting string
+    WRITE_LONG 0xec 12586                                             // damage string
+    WRITE_LONG 0xf0 12587                                             // death string
+    WRITE_LONG 0x10c 4942                                             // select common 1
+    WRITE_LONG 0x110 4941                                             // select common 2
+    WRITE_BYTE 0x234 7                                                // level (first class)
+    WRITE_BYTE 0x235 8                                                // level (second class)
+    WRITE_BYTE 0x236 0                                                // level (third class)
+    WRITE_BYTE 0x238 12                                               // Strength
+    WRITE_BYTE 0x23a 16                                               // Inteligence
+    WRITE_BYTE 0x23b 11                                               // Wisdom
+    WRITE_BYTE 0x23c 19                                               // Dexterity
+    WRITE_BYTE 0x23d 10                                               // Constitution
+    WRITE_BYTE 0x23e 13                                               // Charisma
+    WRITE_BYTE 0x23f 18                                               // morale
+    WRITE_BYTE 0x240 5                                                // morale break
+    WRITE_BYTE 0x242 30                                               // morale recovery
+    WRITE_BYTE 0x272 2                                                // race
+    WRITE_BYTE 0x273 9                                                // class
+    WRITE_BYTE 0x27b 34                                               // alignment
+    WRITE_ASCII 0x248 ~RR#ARLED~ #8                                   // assign override AI script
+    WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (STEALAMN.BCS)
+    WRITE_ASCII 0x258 ~None~ #8                                       // disable race AI script (GPUSE.BCS)
+    WRITE_ASCII 0x260 ~None~ #8                                       // disable general AI script (NONE)
+    WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTARSGT.BCS)
+    SET_BG2_PROFICIENCY ~PROFICIENCYDAGGER~ 2                         // Give Arledrian 2 stars in the BG2 Dagger proficiency
+    SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Arledrian 3 stars in the BG2 Two Weapon Style proficiency
+  BUT_ONLY
+
+  COPY ~RR/RR_CORE/BAM/RR#ARLDS.BMP~    override               // Arledrian's portrait
+
+  COPY ~RR/RR_CORE/ITEMS/RR#BK01.ITM~   override               // Arledrian's Journal (translated)
+    SAY NAME1 @160 SAY NAME2 @160 SAY DESC @161
+
+  COPY ~RR/RR_CORE/ITEMS/RR#BK02.ITM~   override               // Arledrian's Journal (if Silverblaze was stolen)
+    SAY NAME1 @160 SAY NAME2 @160 SAY DESC @162
+
+  COPY ~RR/RR_CORE/ITEMS/RR#BK03.ITM~   override               // Arledrian's Journal (in Elvish)
+    SAY NAME1 @160 SAY NAME2 @160 SAY DESC @163
+
+  COPY ~RR/RR_CORE/ITEMS/RR#BK04.ITM~   override               // Arledrian's Poster
+    SAY NAME1 @164 SAY NAME2 @164 SAY DESC @165
+
+  COPY ~RR/RR_CORE/ACTORS/RR#ARLEJ.CRE~ override               // Arledrian's Journal (invisible creature)
+    SAY NAME1 @160  SAY NAME2 @160
+
+  COPY ~RR/RR_CORE/ACTORS/RR#VAM01.CRE~ override               // Arledrian's vampiric opponents
+       ~RR/RR_STIM/ITEMS/RR#INV.ITM~    override               // Invulnerability item for cutscene creatures
+
+  COMPILE ~RR/RR_CORE/COMPILE/RR#VAM01.BAF~                           // Modified vampire AI for Arledrian's vampires
+  COMPILE ~RR/RR_CORE/COMPILE/RR#ARLED.BAF~                           // Arledrian's AI script
+
+  EXTEND_BOTTOM ~AR0511.BCS~  ~RR/RR_CORE/COMPILE/AR0511.BAF~         // Arledrian's journal triggers
+  EXTEND_BOTTOM ~AR0312.BCS~  ~RR/RR_CORE/COMPILE/AR0312.BAF~         // Arledrian's poster trigger
+
+  COMPILE ~RR/RR_CORE/COMPILE/RR#ARLEJ.D~                             // Arledrian's journal dialogue
+  COMPILE ~RR/RR_CORE/COMPILE/ARLED.D~                                // Arledrian's new dialogue
+  COMPILE ~RR/RR_CORE/COMPILE/GAELAN.D~                               // Gaelan's dialogue additions
+  COMPILE ~RR/RR_CORE/COMPILE/FFBART.D~                               // Samuel's dialogue additions (Five Flaggons innkeeper)
+  COMPILE ~RR/RR_CORE/COMPILE/RR#INT02.D~                             // Arledrian's journal party interjections
+END
 
 // PnP Short Sword of Backstabbing
 
@@ -1769,32 +1938,6 @@ LAUNCH_ACTION_MACRO ~RR#SSOB~                                     // Launch the 
 
 COPY ~RR/RR_CORE/ITEMS/RR#SSOBA.EFF~ override                     // SSoB to hit bonus (main hand only)
      ~RR/RR_CORE/ITEMS/RR#SSOBB.EFF~ override                     // SSoB backstab bonus
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~rr#stf01.bcs~ BEGIN
-  COMPILE ~RR/RR_CORE/COMPILE/ARAN.D~                             // Aran Linvail's Chapter 6 SSoB dialogue line
-          ~RR/RR_CORE/COMPILE/RENAL.D~                            // Renal awards the party with a regular +3 Shortsword instead of the SSoB
-END
-
-
-// AR0306 script fix to prevent the player from acquiring multiple SSoB items
-
-COPY_EXISTING ~AR0306.ARE~ override                                                                 // AR0306 (Renal's room) is missing its area script in the unmodded game
-  READ_ASCII 0x94 ~areascript~
-  PATCH_IF ~%areascript%~ STRING_EQUAL_CASE ~~ OR ~%areascript%~ STRING_EQUAL_CASE ~None~ BEGIN
-    WRITE_EVALUATED_ASCII 0x94 ~AR0306~ #8
-    SPRINT ~areascript~ ~AR0306~
-  END
-BUT_ONLY
-
-ACTION_IF !FILE_EXISTS_IN_GAME ~%areascript%.bcs~ BEGIN
-  COMPILE ~RR/RR_CORE/COMPILE/AR0306.BAF~
-END ELSE BEGIN
-  EXTEND_BOTTOM ~%areascript%.bcs~ ~RR/RR_CORE/COMPILE/AR0306.BAF~
-END
-
-// Replace Mae'Var's SSoB with a generic Short Sword +3 (only in case he's wielding the SSoB)
-
-EXTEND_BOTTOM ~AR0301.BCS~  ~RR/RR_CORE/COMPILE/AR0301.BAF~         // Update AR0301.BCS to replace SW1H10 with SW1H74 for Mae'Var
 
 // Trollmelter (Dagger +2)
 
@@ -2089,149 +2232,6 @@ COPY ~RR/RR_CORE/BAM/RR#SAP01.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#SAP01.ITM~ override
   SAY NAME1 @114 SAY NAME2 @114 SAY UNIDENTIFIED_DESC @115 SAY DESC @115
-
-// Marina's stores, dialogue and AI script
-
-COPY ~RR/RR_CORE/BAM/RR#MARIN.BMP~   override                          // Marina's portrait
-     ~RR/RR_CORE/ITEMS/RR#MARIN.STO~ override                          // Marina's premium store
-
-COMPILE ~RR/RR_CORE/COMPILE/RR#MARIN.BAF~                              // Marina's AI script
-        ~RR/RR_CORE/COMPILE/BMTHIEF.D~                                 // Marina's new dialogue
-
-COPY_EXISTING ~BMTHIEF.STO~ override                                   // Some minor additions to Marina's default store
-  ADD_STORE_ITEM + ~DAGG16~ #40 #0 #0 ~IDENTIFIED~ #3                  // Sets Poisoned Dagger stack to 40
-  ADD_STORE_ITEM + ~DART01~ #40 #0 #0 ~IDENTIFIED~ #3                  // Sets Dart stack to 40
-  ADD_STORE_ITEM ~STAF01~   AFTER  ~BLUN06~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Quarterstaff
-  ADD_STORE_ITEM ~STAF02~   AFTER  ~STAF01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Quarterstaff +1
-  ADD_STORE_ITEM ~BLUN01~   AFTER  ~STAF02~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Club
-  ADD_STORE_ITEM ~RR#SAP01~ AFTER  ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Sap
-  ADD_STORE_ITEM ~BOW04~    AFTER  ~BOW03~ #0 #0 #0 ~IDENTIFIED~ #2    // Adds 2x Long Bow +1
-  ADD_STORE_ITEM ~BOW06~    AFTER  ~BOW05~ #0 #0 #0 ~IDENTIFIED~ #2    // Adds 2x Short Bow +1
-  ADD_STORE_ITEM ~RR#BOW02~ AFTER  ~BOW06~ #0 #0 #0 ~IDENTIFIED~ #6    // Adds 6x Composite Short Bow
-  ADD_STORE_ITEM ~DAGG02~   AFTER  ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Dagger +1
-  ADD_STORE_ITEM ~DAGG05~   AFTER  ~DAGG16~ #40 #0 #0 ~IDENTIFIED~ #3  // Adds 3x40 Throwing Daggers
-  ADD_STORE_ITEM ~DART02~   AFTER  ~DART01~ #40 #0 #0 ~IDENTIFIED~ #3  // Adds 3x40 Darts +1
-  ADD_STORE_ITEM ~SLNG02~   AFTER  ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Sling +1
-  ADD_STORE_ITEM ~SW1H05~   AFTER  ~SW1H04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Long Sword +1
-  ADD_STORE_ITEM ~SW1H08~   AFTER  ~SW1H07~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Short Sword +1
-  ADD_STORE_ITEM ~SW1H20~   AFTER  ~SW1H08~ #0 #0 #0 ~IDENTIFIED~ #6   // Adds 6x Scimitar
-  ADD_STORE_ITEM ~SW1H22~   AFTER  ~SW1H20~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Scimitar +1
-  ADD_STORE_ITEM ~SW1H47~   AFTER  ~SW1H46~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Wakizashi +1
-  ADD_STORE_ITEM ~SW1H48~   AFTER  ~SW1H47~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Ninja To
-  ADD_STORE_ITEM ~SW1H49~   AFTER  ~SW1H48~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Ninja To +1
-  ADD_STORE_ITEM ~SW1H43~   AFTER  ~SW1H49~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Katana
-  ADD_STORE_ITEM ~SW1H44~   AFTER  ~SW1H43~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Katana +1
-  ADD_STORE_ITEM ~XBOW02~   AFTER  ~XBOW01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Heavy Crossbow +1
-  ADD_STORE_ITEM ~XBOW04~   AFTER  ~XBOW02~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 2x Light Crossbow
-  ADD_STORE_ITEM ~XBOW05~   AFTER  ~XBOW04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Light Crossbow +1
-  ADD_STORE_ITEM ~LEAT02~   AFTER  ~LEAT01~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Leather Armor +1
-  ADD_STORE_ITEM ~LEAT05~   AFTER  ~LEAT04~ #0 #0 #0 ~IDENTIFIED~ #2   // Adds 2x Studded Leather Armor +1
-  ADD_STORE_ITEM ~LEAT10~   AFTER  ~LEAT05~ #0 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Hide Armor
-  ADD_STORE_ITEM ~SCRL1J~   AFTER  ~SCRL90~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Invisibility 10' Radius scroll
-  ADD_STORE_ITEM ~SCRLA6~   AFTER  ~SCRL71~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Spook scroll
-  ADD_STORE_ITEM ~SCRLA7~   AFTER  ~SCRL1E~ #1 #0 #0 ~IDENTIFIED~ #3   // Adds 3x Remove Magic scroll
-
-
-// Arledrian's Silverblaze Quest
-COPY_EXISTING ~ARLED.CRE~ override                                  // Arledrian
-  WRITE_ASCII 0x34 ~RR#ARLDS~ #8                                    // Sets Arledrian's small portrait
-  REMOVE_CRE_ITEM ~rndtre04~                                        // removes the random treasure 04 item
-  REMOVE_CRE_ITEM ~bow05~                                           // removes the Short Bow (which messes up his DW)
-  REMOVE_CRE_ITEM ~sw1h08~                                          // removes the Short Sword +1
-  REMOVE_CRE_ITEM ~arow02~                                          // removes the Arrows +1
-  REPLACE_CRE_ITEM ~CHAN02~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~          // replaces Arledrian's armor with Chain Mail +1
-  ADD_CRE_ITEM ~DAGG02~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP      // Replaces Arledrian Short Sword +1 with a Dagger +1
-  ADD_CRE_ITEM ~DAGG15~ #0 #0 #0 ~UNSTEALABLE~ ~SHIELD~             // Gives Arledrian a Dagger +2
-  ADD_CRE_ITEM ~RR#SILV~ #0 #3 #0 ~NONE~ ~INV1~                     // Gives Arledrian the Silverblaze dagger
-  ADD_CRE_ITEM ~POTN10~ #1 #0 #0 ~UNSTEALABLE~ ~QITEM1~             // Gives Arledrian 1x Potion of Invisibility
-  ADD_CRE_ITEM ~POTN52~ #1 #0 #0 ~NONE~ ~QITEM2~                    // Gives Arledrian 1x Potion of Extra Healing
-  WRITE_LONG 0x14 3000                                              // XP value (when killed)
-  WRITE_LONG 0x18 161000                                            // current XP
-  WRITE_SHORT 0x24 67                                               // current hit points
-  WRITE_SHORT 0x26 67                                               // maximum hit points
-  WRITE_SHORT 0x28 24833                                            // Sets avatar to FIGHTER_MALE_ELF
-  WRITE_BYTE 0x2C 35                                                // metal color
-  WRITE_BYTE 0x2D 32                                                // minor color
-  WRITE_BYTE 0x2E 32                                                // major color
-  WRITE_BYTE 0x2F 108                                               // skin color
-  WRITE_BYTE 0x30 60                                                // leather color
-  WRITE_BYTE 0x31 60                                                // armor color
-  WRITE_BYTE 0x32 2                                                 // hair color
-  WRITE_BYTE 0x45 5                                                 // Hide in Shadows skill
-  WRITE_BYTE 0x52 14                                                // THAC0
-  WRITE_BYTE 0x54 10                                                // save vs. death
-  WRITE_BYTE 0x55 12                                                // save vs. wands
-  WRITE_BYTE 0x56 11                                                // save vs. polymorph
-
-  WRITE_BYTE 0x57 12                                                // save vs. breath
-  WRITE_BYTE 0x58 13                                                // save vs. spells
-  WRITE_BYTE 0x64 0                                                 // Detect Illusions skill
-  WRITE_BYTE 0x65 50                                                // Set Traps skill
-  WRITE_BYTE 0x66 24                                                // Lore
-  WRITE_BYTE 0x67 55                                                // Open Locks skill
-  WRITE_BYTE 0x68 0                                                 // Move Silently skill
-  WRITE_BYTE 0x69 55                                                // Find Traps skill
-  WRITE_BYTE 0x6a 50                                                // Pick Pockets skill
-  WRITE_LONG 0xa4 4942                                              // initial meeting string
-  WRITE_LONG 0xec 12586                                             // damage string
-  WRITE_LONG 0xf0 12587                                             // death string
-  WRITE_LONG 0x10c 4942                                             // select common 1
-  WRITE_LONG 0x110 4941                                             // select common 2
-  WRITE_BYTE 0x234 7                                                // level (first class)
-  WRITE_BYTE 0x235 8                                                // level (second class)
-  WRITE_BYTE 0x236 0                                                // level (third class)
-  WRITE_BYTE 0x238 12                                               // Strength
-  WRITE_BYTE 0x23a 16                                               // Inteligence
-  WRITE_BYTE 0x23b 11                                               // Wisdom
-  WRITE_BYTE 0x23c 19                                               // Dexterity
-  WRITE_BYTE 0x23d 10                                               // Constitution
-  WRITE_BYTE 0x23e 13                                               // Charisma
-  WRITE_BYTE 0x23f 18                                               // morale
-  WRITE_BYTE 0x240 5                                                // morale break
-  WRITE_BYTE 0x242 30                                               // morale recovery
-  WRITE_BYTE 0x272 2                                                // race
-  WRITE_BYTE 0x273 9                                                // class
-  WRITE_BYTE 0x27b 34                                               // alignment
-  WRITE_ASCII 0x248 ~RR#ARLED~ #8                                   // assign override AI script
-  WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (STEALAMN.BCS)
-  WRITE_ASCII 0x258 ~None~ #8                                       // disable race AI script (GPUSE.BCS)
-  WRITE_ASCII 0x260 ~None~ #8                                       // disable general AI script (NONE)
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTARSGT.BCS)
-  SET_BG2_PROFICIENCY ~PROFICIENCYDAGGER~ 2                         // Give Arledrian 2 stars in the BG2 Dagger proficiency
-  SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Arledrian 3 stars in the BG2 Two Weapon Style proficiency
-BUT_ONLY
-
-COPY ~RR/RR_CORE/BAM/RR#ARLDS.BMP~    override               // Arledrian's portrait
-
-COPY ~RR/RR_CORE/ITEMS/RR#BK01.ITM~   override               // Arledrian's Journal (translated)
-  SAY NAME1 @160 SAY NAME2 @160 SAY DESC @161
-
-COPY ~RR/RR_CORE/ITEMS/RR#BK02.ITM~   override               // Arledrian's Journal (if Silverblaze was stolen)
-  SAY NAME1 @160 SAY NAME2 @160 SAY DESC @162
-
-COPY ~RR/RR_CORE/ITEMS/RR#BK03.ITM~   override               // Arledrian's Journal (in Elvish)
-  SAY NAME1 @160 SAY NAME2 @160 SAY DESC @163
-
-COPY ~RR/RR_CORE/ITEMS/RR#BK04.ITM~   override               // Arledrian's Poster
-  SAY NAME1 @164 SAY NAME2 @164 SAY DESC @165
-
-COPY ~RR/RR_CORE/ACTORS/RR#ARLEJ.CRE~ override               // Arledrian's Journal (invisible creature)
-  SAY NAME1 @160  SAY NAME2 @160
-
-COPY ~RR/RR_CORE/ACTORS/RR#VAM01.CRE~ override               // Arledrian's vampiric opponents
-     ~RR/RR_STIM/ITEMS/RR#INV.ITM~    override               // Invulnerability item for cutscene creatures
-
-COMPILE ~RR/RR_CORE/COMPILE/RR#VAM01.BAF~                           // Modified vampire AI for Arledrian's vampires
-COMPILE ~RR/RR_CORE/COMPILE/RR#ARLED.BAF~                           // Arledrian's AI script
-
-EXTEND_BOTTOM ~AR0511.BCS~  ~RR/RR_CORE/COMPILE/AR0511.BAF~         // Arledrian's journal triggers
-EXTEND_BOTTOM ~AR0312.BCS~  ~RR/RR_CORE/COMPILE/AR0312.BAF~         // Arledrian's poster trigger
-
-COMPILE ~RR/RR_CORE/COMPILE/RR#ARLEJ.D~                             // Arledrian's journal dialogue
-COMPILE ~RR/RR_CORE/COMPILE/ARLED.D~                                // Arledrian's new dialogue
-COMPILE ~RR/RR_CORE/COMPILE/GAELAN.D~                               // Gaelan's dialogue additions
-COMPILE ~RR/RR_CORE/COMPILE/FFBART.D~                               // Samuel's dialogue additions (Five Flaggons innkeeper)
-COMPILE ~RR/RR_CORE/COMPILE/RR#INT02.D~                             // Arledrian's journal party interjections
 
 
 // Erephine's round buckler animations check
@@ -2837,8 +2837,7 @@ END
 
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
-REQUIRE_PREDICATE ENGINE_IS ~tob~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE FILE_EXISTS bgmain.exe @900
+REQUIRE_PREDICATE ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
 
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)

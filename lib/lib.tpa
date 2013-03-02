@@ -1,4 +1,3 @@
-//
 
 DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment = 100 BEGIN
   COUNT_2DA_COLS num_col
@@ -11,7 +10,7 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
     FOR (j = 0;!"%cell%" STRING_EQUAL_CASE "****" AND j < r2en;++j) BEGIN
       READ_2DA_ENTRY_FORMER r2en j i cell
       PATCH_IF "%cell%" STRING_EQUAL_CASE "****" BEGIN
-        SET_2DA_ENTRY_LATER s2el j i "%f_Entry%" 
+        SET_2DA_ENTRY_LATER s2el j i "%f_Entry%"
       END
     END
     PATCH_IF !"%cell%" STRING_EQUAL_CASE "****" BEGIN
@@ -57,63 +56,104 @@ DEFINE_PATCH_FUNCTION set_lu_2da_entries STR_VAR f_Replace = "*" f_Icon = "*" f_
     INSERT_2DA_ROW r2en num_col "%newrow%"
   END
 END
-      
-      
-    
-    
-          
+
 // Cure & cause wound spell immunities
 DEFINE_PATCH_FUNCTION cure_spell_immunities BEGIN
-    PATCH_FOR_EACH ~spell~ IN                                                          // grant immunity to each of the following spells
-                ~SPPR103~                                                              // Cure Light Wounds
-                ~SPPR215~                                                              // Cure Medium Wounds  (Spell Revisions)
-                ~SPPR315~                                                              // Cure Medium Wounds
-                ~SPPR401~                                                              // Cure Serious Wounds
-                ~SPPR404~                                                              // Neutralize Poison
-                ~SPPR502~                                                              // Cure Critical Wounds
-                ~SPPR514~                                                              // Mass Cure
-                ~SPPR607~                                                              // Heal
-                ~SPIN101~                                                              // Cure Light Wounds (Bhaalpower)
-                ~SPIN551~                                                              // Cause Serious Wounds (Hive Mother)
-                ~SPIN986~                                                              // Cause Serious Wounds (Beholder)
-                ~RR#DCSW~                                                              // RR/aTweaks Cause Serious Wounds (Marilith)
-                ~SPCL211~                                                              // Paladin Lay On Hands
-BEGIN                                                                                  // execute the following
-READ_ASCII 0 sig (3)
-  PATCH_MATCH "%sig%" WITH 
-      ~CRE~ BEGIN                                                                      // CRE file parsed
-      LAUNCH_PATCH_FUNCTION ~ADD_CRE_EFFECT~                                           // Starts FUNCTION call
-      INT_VAR                                                                          // initialize variables
-        "opcode" = "206"                                                               // effect: #206 (Protection from Spell)
-        "target" = "1"                                                                 // target: 1 (self)
-        "timing" = "9"                                                                 // timing mode: 9 (permanent after death)
-        "duration" = "0"                                                               // duration: 0
-        "parameter1" = "4742"                                                          // param1: string (Spell Ineffective)
-        "sectype" = "0"                                                                // secondary type: none
-        "probability1" = "100"                                                         // probability1: 100%
-      STR_VAR                                                                          // initialize strings
-        "resource"  = EVALUATE_BUFFER "%spell%"                                        // resref: the current spell
-        "effsource" = ""                                                               // effsource: none
-      END                                                                              // ends LAUNCH_PATCH_FUNCTION
-    END                                                                                // ends WITH CRE block
-    ~ITM~ BEGIN                                                                        // ITM file parsed
-      LAUNCH_PATCH_FUNCTION ~ADD_ITEM_EQEFFECT~                                        // Starts FUNCTION call
-      INT_VAR                                                                          // initialize variables
-        "opcode" = "206"                                                               // effect: #206 (Protection from Spell)
-        "target" = "1"                                                                 // target: 1 (self)
-        "timing" = "2"                                                                 // timing mode: 2 (while equipped)
-        "duration" = "0"                                                               // duration: 0
-        "parameter1" = "4742"                                                          // param1: string (Spell Ineffective)
-        "sectype" = "0"                                                                // secondary type: none
-        "probability1" = "100"                                                         // probability1: 100%
-      STR_VAR                                                                          // initialize strings
-        "resource"  = EVALUATE_BUFFER "%spell%"                                        // resref: the current spell
-        "effsource" = ""                                                               // effsource: none
-      END                                                                              // ends LAUNCH_PATCH_FUNCTION
-    END                                                                                // ends WITH ITM block
-    DEFAULT                                                                            // do nothing
-END                                                                                    // ends PATCH_MATCH
-END                                                                                    // ends PATCH_FOR_EACH
-END                                                                                    // ends DEFINE_PATCH_FUNCTION
+  PATCH_FOR_EACH resource IN
+                 SPPR103                          // Cure Light Wounds
+                 SPPR215                          // Cure Medium Wounds  (Spell Revisions)
+                 SPPR315                          // Cure Medium Wounds
+                 SPPR401                          // Cure Serious Wounds
+                 SPPR404                          // Neutralize Poison
+                 SPPR502                          // Cure Critical Wounds
+                 SPPR514                          // Mass Cure
+                 SPPR607                          // Heal
+                 SPIN101                          // Cure Light Wounds (Bhaalpower)
+                 SPIN551                          // Cause Serious Wounds (Hive Mother)
+                 SPIN986                          // Cause Serious Wounds (Beholder)
+                 RR#DCSW                          // RR/aTweaks Cause Serious Wounds (Marilith)
+                 SPCL211                          // Paladin Lay On Hands
+  BEGIN
+    READ_ASCII 0 sig (3)
+    PATCH_MATCH "%sig%" WITH
+      CRE BEGIN
+        LPF ADD_CRE_EFFECT
+          INT_VAR
+            opcode     = 206                      // effect: #206 (Protection from Spell)
+            target     = 1                        // target: 1 (self)
+            timing     = 9                        // timing mode: 9 (permanent after death)
+            parameter1 = 4742                     // param1: string (Spell Ineffective)
+          STR_VAR
+            resource
+        END
+      END
+      ITM BEGIN
+        LPF ADD_ITEM_EQEFFECT
+          INT_VAR
+            opcode     = 206                      // effect: #206 (Protection from Spell)
+            target     = 1                        // target: 1 (self)
+            timing     = 2                        // timing mode: 2 (while equipped)
+            parameter1 = 4742                     // param1: string (Spell Ineffective)
+          STR_VAR
+            resource
+        END
+      END
+      DEFAULT
+    END
+  END
+END
 
+DEFINE_PATCH_FUNCTION add_item_onequip_animation STR_VAR resource = "" BEGIN
+  PATCH_IF resource STR_CMP "" BEGIN
+    LPF ADD_ITEM_EQEFFECT
+      INT_VAR
+        opcode = 215
+        target = 1
+        timing = 2
+        parameter2 = 1
+      STR_VAR
+        resource
+    END
+  END
+END
 
+//Retrieves the value associated with the STR_VAR f_Entry from RR#EVAL.2DA and assigns it to the variable f_Value, which is returned to the calling environment
+DEFINE_ACTION_FUNCTION ret_from_eval STR_VAR f_Entry = "" RET f_Value BEGIN
+  ACTION_IF "%f_Entry%" STR_CMP "" BEGIN
+    COPY_EXISTING rr#eval.2da override
+      READ_2DA_ENTRIES_NOW rr#eval 2
+      FOR (i = 0; i < rr#eval; ++i) BEGIN
+        READ_2DA_ENTRY_FORMER rr#eval i 0 entry
+        PATCH_IF "%entry%" STRING_EQUAL_CASE "%f_Entry%" BEGIN
+          READ_2DA_ENTRY_FORMER rr#eval i 1 f_Value
+        END
+      END
+    BUT_ONLY
+  END
+END
+
+//Load UTF8-encoded tra files if the game is BGEE
+DEFINE_ACTION_MACRO bgee_language BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME oh1000.are BEGIN
+    LOAD_TRA ~rr/tra/bgee/english/game.tra~
+    LOAD_TRA ~rr/tra/bgee/%LANGUAGE%/game.tra~
+  END
+END
+
+DEFINE_ACTION_FUNCTION set_kit_description STR_VAR f_Kit = "" f_Desc = "" BEGIN
+  OUTER_SET strref = "-1"
+  COPY_EXISTING kitlist.2da override
+    READ_2DA_ENTRIES_NOW kitlist 9
+    FOR (i = 0; i < kitlist; ++i) BEGIN
+      READ_2DA_ENTRY_FORMER kitlist i 1 kit
+      PATCH_IF "%kit%" STRING_EQUAL_CASE "%f_Kit%" BEGIN
+        READ_2DA_ENTRY_FORMER kitlist i 4 strref
+        i = kitlist
+      END
+    END
+  BUT_ONLY
+
+  ACTION_IF strref > 0 BEGIN
+    STRING_SET_EVALUATE strref "%f_Desc%"
+  END ELSE PRINT "Kit description for %f_Kit% not set because the kit is unlisted"
+END

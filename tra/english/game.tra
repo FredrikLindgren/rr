@@ -1,27 +1,8 @@
-
-@1 = ~Proper dual-wielding implementation for Thieves and Bards~
-@2 = ~Thief kit revisions~
-@3 = ~Bard kit revisions~
-@4 = ~Bard High Level Ability revisions~
-@5 = ~Additional equipment for Thieves and Bards~
-@6 = ~Chosen of Cyric encounter~
-@7 = ~Shadow Thief Improvements~
-@8 = ~Revised Thievery~
-@9 = ~Proper spell progression for Bards~
-@10 = ~* * *  The Throne of Bhaal expansion is required for this component  * * *~
-@11 = ~* * *  This component cannot be installed on Tutu  * * *~
-@12 = ~* * *  This component can only be installed on Tutu  * * *~
-@13 = ~* * *  A similar component is already present in one of the mods that you are currently using. Skipping installation.  * * *~
-@14 = ~* * *  This component cannot be installed on Classic Adventures  * * *~
-@15 = ~Use PnP thievery potions and prevent their effects from stacking~
-@16 = ~Retain default thievery potions and prevent their effects from stacking~
-@17 = ~Proper racial adjustments for thieving skills~
-@18 = ~Upgradeable Equipment~
-@19 = ~Thief High Level Ability revisions~
-
+//-*- coding: cp1252 -*-
+//These strings are displayed in-game and are encoded in CP1252
 
 @20 = ~Buckler +2~
-@21 = ~Despite the effectiveness of the enchantments on this buckler, it is otherwise nondescript and defies precise identification.  Such standardization makes it likely that it is from the militia of some forgotten barony, though it is hard to be certain. 
+@21 = ~Despite the effectiveness of the enchantments on this buckler, it is otherwise nondescript and defies precise identification.  Such standardization makes it likely that it is from the militia of some forgotten barony, though it is hard to be certain.
 
 STATISTICS:
 
@@ -33,7 +14,7 @@ Unusable By:
  Mage~
 
 @22 = ~Buckler +3~
-@23 = ~Despite the effectiveness of the enchantments on this buckler, it is otherwise nondescript and defies precise identification.  Such standardization makes it likely that it is from the militia of some forgotten barony, though it is hard to be certain. 
+@23 = ~Despite the effectiveness of the enchantments on this buckler, it is otherwise nondescript and defies precise identification.  Such standardization makes it likely that it is from the militia of some forgotten barony, though it is hard to be certain.
 
 STATISTICS:
 
@@ -60,7 +41,7 @@ Special Abilities:
 Armor Class Bonus: 2
 Weight: 1
 Requires: 12 Wisdom and 15 Charisma
-Only Usable By: 
+Only Usable By:
  Druids~
 
 @26 = ~Rogue's Ward~
@@ -119,10 +100,10 @@ Disadvantages:
 -  Cannot acquire the Enhanced Battlesong ability
 -  Cannot acquire the Lingering Song ability
 
-Offensive Spin: 
+Offensive Spin:
 This ability lasts for 24 seconds and grants the Blade +2 bonus to hit and damage and an extra attack. All of the Blade's attacks do maximum damage for the duration.
 
-Defensive Spin: 
+Defensive Spin:
 This ability lasts for 24 seconds and grants the Blade a +1 bonus to Armor Class per each level of experience, up to a maximum of 10. The Blade cannot move away from the initial spot while performing a Defensive Spin.
 
 Weapons Display:
@@ -177,7 +158,7 @@ By chanting a war song, a Skald can inspire allies as they go forward into comba
 @34 = ~Tracking
 With an intimate knowledge of his surroundings and the creatures that live within them, a Ranger or a Bounty Hunter can use the Tracking ability to give himself a general idea of what creatures are in an area and which direction they are. Red arrows at the edge of the screen will point in the general direction of the creatures in the area.~
 
-@35 = ~ASSASSIN: This is a killer specialized in discreet and efficient murder, relying on anonymity and surprise to perform his task. Training in anatomy, stealth and poison use allows an Assassin to carry out missions of death with terrifying precision. A clever Assassin might never be seen by his victim.
+@35 = ~ASSASSIN: This is a killer specialized in discreet and efficient murder, relying on anonymity and surprise to perform his task. Training in anatomy, stealth and poison-use allows an Assassin to carry out missions of death with terrifying precision. A clever Assassin might never be seen by his victim.
 
 Advantages:
 -  Starts with a x3 backstab multiplier
@@ -194,7 +175,7 @@ Poison Weapon:
 Due to the requirements of his profession, an Assassin becomes adapt at coating his weapons in poison early during his career. Any weapon prepared in this manner will deal an extra 1d3 points of poison damage upon contact. Furthermore, unless a saving throw vs. poison is made, the poison will be injected into the bloodstream of the victim, dealing one additional point of damage per each level of the Assassin (up to a maximum of 20). The poison coating evaporates after 5 rounds. Constructs, Elementals, Slimes and Undead creatures cannot be poisoned.
 
 Poison Expertise
-Through training and experience, an Assassin gradually learns to utilize poison more effectively. Furthermore, due to the constant exposure to poison an Assassin slowly becomes desensitized towards it. Each time this ability is acquired, the Assassin gains a permanent +1 bonus to his saving throws vs. poison. At the same time, the saving throw difficulty class of his Poison Weapon ability improves by 1.
+Through training and experience, an Assassin gradually learns to utilize poison more effectively. Furthermore, due to the constant exposure to poison, an Assassin slowly becomes desensitized towards it. Each time this ability is acquired, the Assassin gains a permanent +1 bonus to his saving throws vs. poison. At the same time, the saving throw difficulty class of his Poison Weapon ability improves by 1.
 
 Death Attack:
 By thoroughly studying the weak spots of his victim, an Assassin can focus all of his cunning and prowess into a single, deadly strike. The next attack he makes automatically becomes a critical hit and his victim must make a saving throw vs. death or die instantly. As the Assassin gains more experience, the lethality of the Death Attack increases. The victim saves with a -1 penalty at level 24, a -2 penalty at level 32 and a -3 penalty at level 40. Constructs, Elementals, Slimes and Undead creatures cannot be slain by a Death Attack.~
@@ -353,14 +334,14 @@ Equipped Abilities (Thieves only):
 THAC0:  +3 bonus
 Damage:  1D6 +3
 Damage type piercing
-Weight: 3 
+Weight: 3
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type:  1-handed
 Requires: 5 Strength
 Not Usable By:
   Druid
-  Cleric 
+  Cleric
   Mage~
 
 @62 = ~Marina~
@@ -389,7 +370,7 @@ Find Traps:  +20% bonus
 Detect Illusions:  +25% bonus
 
 Duration:  8 turns
-Only Usable By: 
+Only Usable By:
   Thieves~
 
 @74 = ~This potion grants a temporary increase in thieving skills and maximum hit points to a rogue if he has fewer than 13 levels of experience. The bonus diminishes as the rogue advances in levels and completely disappears once he masters the art of thievery on his own.
@@ -407,7 +388,7 @@ Levels 10-12: +8% to all thieving skills, 2d6+3 temporary hit points gained
 Levels 13+:  the potion has no effect
 
 Duration:  3 turns
-Only Usable By: 
+Only Usable By:
   Thief
   Bard~
 
@@ -458,7 +439,7 @@ Only usable by:
 
 STATISTICS:
 
-Equipped Abilities: 
+Equipped Abilities:
     +1 Dexterity
 
 Armor Class Bonus:  2
@@ -511,7 +492,7 @@ Not Usable By:
 
 STATISTICS:
 
-Equipped Abilities: 
+Equipped Abilities:
     +1 Dexterity
 
 Armor Class Bonus: None
@@ -524,7 +505,7 @@ Usable By:
 
 STATISTICS:
 
-Equipped Abilities: 
+Equipped Abilities:
     +20 to Lore
 
 Armor Class Bonus: None
@@ -538,7 +519,7 @@ Usable By:
 
 STATISTICS:
 
-Combat Abilities: 
+Combat Abilities:
     15% chance that any Troll struck by the blade receives an additional 15 points of Acid Damage
 
 THAC0:  +2 (+4 vs. Trolls)
@@ -560,7 +541,7 @@ STATISTICS:
 Combat Abilities:
     15% chance that any Vampire struck by the blade will be stunned for 2 rounds
 
-Special Abilities: 
+Special Abilities:
     Casts Negative Plane Protection 3x/day
 
 THAC0:  +3 (+5 vs. Vampires)
@@ -604,7 +585,7 @@ STATISTICS:
 Equipped Abilities:
     +1 bonus to AC
 
-Special Abilities: 
+Special Abilities:
     Casts Detect Alignment 2x/day
 
 THAC0: +2 bonus, +4 vs. Chaotically aligned creatures
@@ -764,7 +745,7 @@ Only Usable by:
 
 STATISTICS:
 
-Special Abilities:  
+Special Abilities:
     Dispels Confusion 3x/day
 
 Area of Effect: 1 target
@@ -812,7 +793,7 @@ Not Usable By:
   Mage~
 
 @150 = ~Composite Short Bow~
-@151 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This bow can only be wielded by characters with a strength score of 16 or higher.  
+@151 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This bow can only be wielded by characters with a strength score of 16 or higher.
 
 STATISTICS:
 
@@ -1052,7 +1033,7 @@ Type:  1-handed
 Not Usable By:
  Druid
  Cleric
- Mage 
+ Mage
  Thief~
 
 @208 = ~Hold Fast~
@@ -1115,7 +1096,7 @@ Proficiency Type: Short Sword
 Type:  1-handed
 Not Usable By:
  Druid
- Cleric 
+ Cleric
  Mage~
 
 @214 = ~Rogue's Cowl~
@@ -1174,7 +1155,7 @@ Only usable by:
  Thief~
 
 @220 = ~The Salamander's Tongue~
-@221 = ~A wicked-looking dagger with a dark history, the Salamander's Tongue is prized both for its use as a weapon and its hidden magical powers.  The blade appears to be an exotic-looking dagger with a kris-like wavy blade ending in two small points.  A small portion of a slimy, brightly red, living salamander's tongue is somehow embedded in the heart of the blade, near the grip.  It pulses and writhes randomly without intervention from the owner.  
+@221 = ~A wicked-looking dagger with a dark history, the Salamander's Tongue is prized both for its use as a weapon and its hidden magical powers.  The blade appears to be an exotic-looking dagger with a kris-like wavy blade ending in two small points.  A small portion of a slimy, brightly red, living salamander's tongue is somehow embedded in the heart of the blade, near the grip.  It pulses and writhes randomly without intervention from the owner.
 
 The exact origins of the blade are unknown, but it is believed that the first owner of the weapon was a respected and feared gnomish thief and assassin from Westgate named Turlam Shallowhill.  Turlam was killed in a fight with a rival, a halfling called Deder Seven Fingers.  Deder kept the weapon as a trophy, not knowing its powers until after it was stolen by an underling, a fellow halfling named Kreshinal Blackhound.  Kreshinal fled to Selgaunt with the dagger for five years, relying on its powers to hide him from divination.  Kreshinal lost the dagger in a botched gambling scam, and was killed by Deder's agents within the month.  Deder attempted to reclaim the dagger from the Sembian criminals who had captured it.  He succeeded at routing the thieves and reclaiming his dagger, but he focused so much attention on the blade that he didn't notice that the Sembian criminals had employed a priest of Mask to infiltrate and break down his interests in Westgate.  The ensuing war between the Westgate and Selgaunt factions ended when the priest of Mask, Pieter the Feeble, made the two sides so paranoid that they ate themselves away from the inside.  Pieter grabbed the dagger when he had the opportunity and escaped to Hillsfar, confident that the unorganized demihuman supporters of the late Deder Seven Fingers wouldn't follow him to a place so hostile to their kind.
 
@@ -1261,7 +1242,7 @@ STATISTICS:
 Equipped Abilities:
     Wearer is unaffected by Detect Invisibility, Invisibility Purge, True Seeing and similar divination spells which remove invisibility
 
-Special Abilities:    
+Special Abilities:
     Casts Mass Invisibility 1x/day
 
 Only Usable By:
@@ -1297,7 +1278,7 @@ Usable by:
 
 STATISTICS:
 
-Combat Abilities: 
+Combat Abilities:
     20% of all hits blind the target for 3 rounds (save vs. spells negates, Beholders save with a -5 penalty)
 
 THAC0: +3 bonus (+5 vs. Beholders)
@@ -1327,7 +1308,7 @@ Armor Class: 4
 Weight: 7
 Requires: 5 Strength
 Not Usable By:
- Druid 
+ Druid
  Mage~
 
 @238 = ~Geminus~
@@ -1615,11 +1596,6 @@ Usable By:
 @780 = ~Strange. I could have sworn I heard something.~
 @781 = ~Nothing there. Must have been rats.~
 @782 = ~Bah! I must be hearing things.~
-
-@900 = ~This component is only available for the Windows version of the game~
-@902 = ~* * * This component cannot be installed on this game * * *~
-@911 = ~(No need to install. G3 fixpack version already present.)~
-@999 = ~BG2-style icons for RR content~
 
 
 
@@ -2338,7 +2314,7 @@ Equipped Abilities:
     +2 extra bonus to AC vs. undead creatures
     Any undead creature who strikes the shieldbearer in melee takes 2d4 points of fire damage and must save vs. spells or become blinded for 4 rounds
 
-Special Abilities: 
+Special Abilities:
     Casts Sunfire 1x/day
 
 Armor Class Bonus:  4
@@ -2363,7 +2339,7 @@ Special Abilities:
 Armor Class Bonus: 3
 Weight: 1
 Requires: 12 Wisdom and 15 Charisma
-Only Usable By: 
+Only Usable By:
  Druids~
 
 @5004 = ~The Guardian +3~
@@ -2381,7 +2357,7 @@ Special Abilities:
 Armor Class Bonus: 4
 Weight: 1
 Requires: 12 Wisdom and 15 Charisma
-Only Usable By: 
+Only Usable By:
  Druids~
 
 @5006 = ~Stormcharged Axe +5~
@@ -2410,7 +2386,7 @@ Type:  1-handed
 Not Usable By:
  Druid
  Cleric
- Mage 
+ Mage
  Thief~
 
 @5008 = ~Short Sword of Backstabbing +5~
@@ -2427,14 +2403,14 @@ Equipped Abilities (Thieves only):
 THAC0:  +5 bonus
 Damage:  1D6 +5
 Damage type piercing
-Weight: 3 
+Weight: 3
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type:  1-handed
 Requires: 5 Strength
 Not Usable By:
   Druid
-  Cleric 
+  Cleric
   Mage~
 
 @5010 = ~Masterbelt of Fortune~
@@ -2510,7 +2486,7 @@ STATISTICS:
 Equipped Abilities:
     +1 bonus to AC, +3 vs. Chaotic aligned creatures
 
-Special Abilities: 
+Special Abilities:
     Casts Detect Alignment 3x/day
     Casts Chaotic Commands 1x/day
 
@@ -2873,8 +2849,3 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 @9850 = ~Thank you for your cooperation.~
 @9851 = ~In that case, I must confiscate all of your belongings instead.~
 @9852 = ~Resisting arrest? To arms then!~
-
-//WeiDU prompts
-
-@-1004="PLEASE report the error message in the file"
-@-1005= "to" 

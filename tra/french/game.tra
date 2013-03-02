@@ -1,24 +1,6 @@
-@1 = ~Mise a jour du Combat a deux armes pour les voleurs et
-les bardes~
-@2 = ~Revisions des kits des voleurs~
-@3 = ~Revisions des kits des bardes~
-@4 = ~Revisions des capacites de haut niveau des bardes~
-@5 = ~Equipement supplementaire pour les voleurs et les bardes~
-@6 = ~Rencontre avec les Elus de Cyric~
-@7 = ~Amelioration des Voleurs de l'Ombre~
-@8 = ~Revisions des roublards~
-@9 = ~Progression des sorts propre aux bardes~
-@10 = ~* * *  Throne of Bhaal est necessaire pour utiliser ce composant * * *~
-@11 = ~* * *  Ce composant ne peut etre installe sur TuTu  * * *~
-@12 = ~* * *  Ce composant ne peut etre installe que sur TuTu  * * *~
-@13 = ~* * * Un composant similaire est deja present dans l'un des mods que vous utilisez actuellement. L'installation de ce composant est passee. * * *~
-@14 = ~* * *  Ce composant ne peut etre installe sur Classic Adventures.  * * *~
-@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs
-effets de se cumuler.~
-@16 = ~Garder les potions par defaut et empecher leurs effets de se cumuler.~
-@17 = ~Ajustements raciaux propres pour les capacites de voleur~
-@18 = ~Equipement ameliorable~
-@19 = ~Revisions des capacites de haut niveau du voleur~
+//-*- coding: cp1252 -*-
+//These strings are displayed in-game and are encoded in CP1252
+
 @20 = ~Rondache +2~
 @21 = ~Malgré la présence d'enchantements sur cette rondache, elle est d'apparence quelconque et défie toute identification précise. Une telle standardisation indique probablement qu'elle provient de la milice d'une baronnie oubliée, bien qu'il soit difficile d'en être certain.
 
@@ -52,7 +34,7 @@ PARAMETRES :
 Capacité d'équipement :
  +5 au maximum des points de vie
  Le porteur régénère 1 point de vie par round
- 
+
 Capacité spéciale :
  Invocation d'un Tertre Rampant une fois par jour
 
@@ -78,7 +60,7 @@ Bonus à la classe d'armure : 3
 Spécial : pas de protection contre les attaques perforantes et les projectiles
 Poids : 1
 Force nécessaire : 4
-Utilisable par : 
+Utilisable par :
  Voleur
  Barde~
 
@@ -119,10 +101,10 @@ Désavantages :
 -  Les Maîtres-Lames ne peuvent obtenir la capacité spéciale 'Chant de barde amélioré'
 -  Les Maîtres-Lames ne peuvent obtenir la capacité spéciale 'Chant Persistant'
 
-Tornade Offensive : 
+Tornade Offensive :
 Cette capacité dure 24 secondes, offrant au Maître-Lame +2 au toucher, +2 aux dégâts, et une attaque supplémentaire. Par ailleurs, toutes les attaques font le maximum de dégâts pendant ce laps de temps.
 
-Tornade Défensive : 
+Tornade Défensive :
 Cette capacité dure 24 secondes, le cloue au sol mais lui donne -1 à la CA par niveau. Ce bonus de classe d'armure ne peut descendre en dessous de -10.
 
 Démonstration Martiale :
@@ -141,7 +123,7 @@ Désavantages :
 - Doivent être d'alignement chaotique
 - Le chant de bataille n'aide pas les alliés.
 
-Chant du bouffon : 
+Chant du bouffon :
 Un chant de bouffon n'aide pas les alliés. Au lieu de cela, il distrait les ennemis à portée d'oreille. Les effets du chant du bouffon s'améliorent à mesure que le niveau du bouffon augmente.
 
 Niveau 1 : les ennemis doivent réussir un jet de sauvegarde contre les sorts ou devenir distraits (bonus de +4 au jet de sauvegarde)
@@ -159,7 +141,7 @@ Grâce à leur perception unique des choses, les bouffons sont naturellement immun
 @33 = ~SCALDE : Ce barde nordique est aussi un guerrier fort, compétent et vertueux. Ses chants sont des sagas racontant des batailles et des hauts faits  auxquels le scalde dévoue sa vie. Les scaldes sont honorés et respectés en tant que grands guerriers-poètes qui mémorisent chaque raid et chaque  bataille, les écrivant sous forme de poésie. Les sortilèges sont presque inconnus dans la société des scaldes et sont considérés avec méfiance en toute circonstance. Utiliser la magie est légèrement plus difficile pour un scalde et lui demande davantage de temps et d'efforts.
 
 Avantages :
--  Gagne le chant du scalde au niveau 1. Cette capacité s'améliore aux niveaux 9 et 18. 
+-  Gagne le chant du scalde au niveau 1. Cette capacité s'améliore aux niveaux 9 et 18.
 -  +1 au toucher et aux dégâts avec toutes les armes au niveau 1.
 
 Désavantages :
@@ -178,14 +160,14 @@ Grâce à son intime connaissance des milieux naturels et des créatures qui y vive
 
 @35 = ~ASSASSIN : il s'agit d'un tueur spécialisé dans le meurtre discret et efficace, et qui sait exploiter au mieux la prudence et la surprise. Son entraînement en anatomie, en furtivité et dans les poisons permet à un assassin de réaliser des missions mortelles avec une précision terrifiante. Un assassin rusé peut ne jamais être vu par sa victime.
 
-Avantages : 
+Avantages :
 - Débute avec un multiplicateur d'attaque sournoise de x3.
 - Le multiplicateur d'attaque sournoise peut atteindre x7 au lieu de x5.
 - Peut utiliser l'Arme empoisonnée une fois par jour au niveau 1, et une fois de plus tous les 4 niveaux supplémentaires.
 - Acquiert la capacité d'Expertise en poisons au niveau 8.  Cette capacité s'améliore tous les 8 niveaux supplémentaires.
 - Peut utiliser Attaque mortelle une fois par jour au niveau 16 et une fois de plus tous les 8 niveaux supplémentaires.
 
-Désavantages : 
+Désavantages :
 - Seulement 15 % de compétences de voleur à distribuer à chaque niveau.
 - Doit être d'alignement neutre ou mauvais.
 
@@ -224,7 +206,7 @@ Temps d'Incantation : 7
 Zone d'effet : 10 mètres de rayon
 Jet de Sauvegarde : spécial
 
-En fredonnant un air entraînant, un barde expérimenté peut captiver n'importe quel public, y compris les créatures qui ne comprennent pas son  langage. Les ennemis dans la zone d'effet doivent réussir un jet de sauvegarde contre la paralysie ou donner au barde leur entière attention, ignorant complètement ce qui se passe autour, devenant fascinés pendant les 5 rounds suivants. Les créatures fascinées ne peuvent effectuer d'actions pendant la durée du sort, cependant, elles peuvent toujours percevoir le danger à un niveau subconscient, et toute action hostile contre elles brise automatiquement cet état.  En sus, même si les ennemis réussissent leur jet de sauvegarde et évitent l'effet de fascination, il y a toujours 25% de chance qu'ils deviennent confus pour un round (pas de jet de sauvegarde) pour être restés trop profondément immergés dans le motif hypnotisant du chant. 
+En fredonnant un air entraînant, un barde expérimenté peut captiver n'importe quel public, y compris les créatures qui ne comprennent pas son  langage. Les ennemis dans la zone d'effet doivent réussir un jet de sauvegarde contre la paralysie ou donner au barde leur entière attention, ignorant complètement ce qui se passe autour, devenant fascinés pendant les 5 rounds suivants. Les créatures fascinées ne peuvent effectuer d'actions pendant la durée du sort, cependant, elles peuvent toujours percevoir le danger à un niveau subconscient, et toute action hostile contre elles brise automatiquement cet état.  En sus, même si les ennemis réussissent leur jet de sauvegarde et évitent l'effet de fascination, il y a toujours 25% de chance qu'ils deviennent confus pour un round (pas de jet de sauvegarde) pour être restés trop profondément immergés dans le motif hypnotisant du chant.
 
 Étant par nature non magique, cette capacité ignore complètement la résistance magique de la cible. Cependant, elle n'affecte pas les créatures sans esprit telles que les golems, les squelettes, les zombies et les limons.~
 
@@ -280,7 +262,7 @@ Non utilisable par :
 @54 = ~CHASSEUR DE PRIMES :
 C'est un chasseur d'hommes, spécialisé dans la traque et la capture de proies, que ce soit pour le compte d' une autorité ou pour des maîtres du crime. À cause de la fréquente nécessité de ramener sa proie vivante, un Chasseur de Primes s'en remet souvent aux substances alchimiques qui peuvent neutraliser ou affaiblir ses victimes. Sa capacité à poser des pièges est également meilleure que celle du commun des voleurs.
 
-Avantages : 
+Avantages :
 - Gagne un bonus de +15 % à la capacité de pose de pièges au premier niveau.
 - Peut utiliser Toxine Paralysante une fois par jour au premier niveau et une de plus tous les 10 niveaux.
 - Peut disposer des Pièges Alchimiques en sus des pièges classiques.
@@ -291,7 +273,7 @@ Désavantages :
 - Ne peut distribuer que 20% par niveau dans ses talents de voleur
 
 Toxine Paralysante :
-Le Chasseur de Primes a une connaissance étroite de l'alchimie et de l'herboristerie, ce qui lui permet de créer une substance qui provoque de graves pertes des fonctions musculaires lorsqu'elle est injectée dans la circulation sanguine. Cette toxine paralysante est un liquide transparent et inodore qui peut facilement être appliqué sur les armes sans craindre de détection. Un coup porté par toute arme couverte de cette substance oblige la cible à réussir un jet de sauvegarde contre la paralysie, sans quoi, elle se retrouve paralysée pendant un round tous les 10 niveaux du Chasseur de Primes. Cependant, la toxine s'évapore rapidement lorsqu'elle est exposée à l'air, rendant l'enduit inefficace au bout d'un seul round. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés à la Toxine Paralysante. 
+Le Chasseur de Primes a une connaissance étroite de l'alchimie et de l'herboristerie, ce qui lui permet de créer une substance qui provoque de graves pertes des fonctions musculaires lorsqu'elle est injectée dans la circulation sanguine. Cette toxine paralysante est un liquide transparent et inodore qui peut facilement être appliqué sur les armes sans craindre de détection. Un coup porté par toute arme couverte de cette substance oblige la cible à réussir un jet de sauvegarde contre la paralysie, sans quoi, elle se retrouve paralysée pendant un round tous les 10 niveaux du Chasseur de Primes. Cependant, la toxine s'évapore rapidement lorsqu'elle est exposée à l'air, rendant l'enduit inefficace au bout d'un seul round. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés à la Toxine Paralysante.
 
 Pièges Alchimiques :
 Combinant sa capacité supérieure de pose de pièges à ses connaissances alchimiques, un Chasseur de Primes peut créer des pièges principalement destinés à neutraliser ses adversaires plutôt qu'à les tuer directement. Les effets du piège varient en fonction du niveau du Chasseur de Primes, mais durent toujours 5 rounds et peuvent être annulés par un jet de sauvegarde contre les souffles réussi :
@@ -349,7 +331,7 @@ Capacités d'équipement (voleurs uniquement) :
 TAC0 : +3
 Dégâts : 1D6 +3
 Type de dégâts : perforant
-Poids : 3 
+Poids : 3
 Facteur de vitesse : 0
 Type de compétence : épée courte
 Type : arme à 1 main
@@ -385,10 +367,10 @@ Détecter les pièges : bonus de 20%
 Détecter les illusions : bonus de 25%
 
 Durée : 8 tours
-Utilisable uniquement par : 
+Utilisable uniquement par :
  Voleurs~
 
-@74 = ~Cette potion octroie un bonus temporaire aux compétences de voleur ainsi qu’aux points de vie maximum si le personnage qui la boit est d’un niveau inférieur à 13. Le bonus diminue avec les niveaux et disparaît totalement une fois que le voleur en question maîtrise de lui-même l’art de la roublardise. 
+@74 = ~Cette potion octroie un bonus temporaire aux compétences de voleur ainsi qu’aux points de vie maximum si le personnage qui la boit est d’un niveau inférieur à 13. Le bonus diminue avec les niveaux et disparaît totalement une fois que le voleur en question maîtrise de lui-même l’art de la roublardise.
 
 PARAMETRES :
 
@@ -403,7 +385,7 @@ Niveau 10-12 : +8% aux compétences de voleur, 2D6+3 points de vie temporaires ga
 Niveau 13 et plus : la potion reste sans effet
 
 Durée : 3 tours
-Utilisable par : 
+Utilisable par :
   Voleur
   Barde~
 
@@ -455,7 +437,7 @@ Utilisable uniquement par :
 
 PARAMETRES :
 
-Capacité d’équipement : 
+Capacité d’équipement :
     Dextérité : bonus de +1
 
 Bonus de Classe d’Armure : 2
@@ -485,7 +467,7 @@ Non utilisable par :
  Mage~
 
 @114 = ~Matraque~
-@115 = ~Parfois appelée assomoir, une matraque est un sac en cuir rempli de sable, de billes de plomb, de piécettes ou de tout autre matériau lourd. Elle peut être utilisée pour rendre discrètement inconsciente une victime en lui administrant un coup sur la tête ou sur la nuque. La matraque convient davantage à un environnement urbain qu'aux grands extérieurs ou à l’exploration de donjons. Elle est principalement utilisée dans les situations où il est nécessaire de capturer quelqu'un sans lui infliger de blessure permanente, bien que les voleurs aiment s’en servir à des fins douteuses qui leur sont propres. 
+@115 = ~Parfois appelée assomoir, une matraque est un sac en cuir rempli de sable, de billes de plomb, de piécettes ou de tout autre matériau lourd. Elle peut être utilisée pour rendre discrètement inconsciente une victime en lui administrant un coup sur la tête ou sur la nuque. La matraque convient davantage à un environnement urbain qu'aux grands extérieurs ou à l’exploration de donjons. Elle est principalement utilisée dans les situations où il est nécessaire de capturer quelqu'un sans lui infliger de blessure permanente, bien que les voleurs aiment s’en servir à des fins douteuses qui leur sont propres.
 
 PARAMETRES :
 
@@ -507,7 +489,7 @@ Non utilisable par :
 
 PARAMETRES :
 
-Capacité d’équipement : 
+Capacité d’équipement :
  Dextérité : bonus de +1
 
 Bonus de Classe d'Armure : aucun
@@ -520,7 +502,7 @@ Utilisable par :
 
 PARAMETRES :
 
-Capacité d’équipement : 
+Capacité d’équipement :
   Connaissances : bonus de +20
 
 Bonus de Classe d’Armure : Aucun
@@ -533,7 +515,7 @@ Utilisable par :
 
 PARAMETRES :
 
-Capacité de combat : 
+Capacité de combat :
  15% de chance d'infliger 15 points de dégâts supplémentaires à tout troll frappé par la lame
 
 TAC0 : +2 (+4 contre les trolls)
@@ -548,13 +530,13 @@ Non utilisable par :
 
 @122 = ~Flamme d’argent~
 @123 = ~Cette dague fut forgée à partir d’argent pur et bénie par Séhanine Archelune, la déesse elfe de la lune. Sa lame est particulièrement efficace contre les vampires, comme si elle avait été enchantée pour canaliser de petites parcelles de pouvoir issues du Plan Positif. Chaque jour, l’arme amasse une petite quantité d'énergie positive pour protéger son porteur pendant quelques temps des griffes draineuses d’âme des vampires. En outre, les vampires frappés par la dague sont parfois étourdis par contact avec son énergie résiduelle.
- 
+
 PARAMETRES :
 
 Capacité de combat :
  15% de chance d'étourdir pour 2 rounds tout vampire frappé de la lame
 
-Capacité spéciale : 
+Capacité spéciale :
  Lance 'Protection contre le Plan Négatif' 3 fois par jour
 
 TAC0 : +3 (+5 contre les vampires)
@@ -568,11 +550,11 @@ Non utilisable par :
  Clerc~
 
 @124 = ~Portepeste~
-@125 = ~A première vue, cette dague grossièrement travaillée et couverte de rouille semble un choix d’armement très bizarre. Seules les vieilles runes gobelines gravées le long de la lame révèlent une partie de son pouvoir et de son histoire. Apparemment, cette arme était à l’origine l’instrument de torture d’un puissant chaman appelé Shamuk, qui aspirait par-dessus tout à la connaissance de la sorcellerie la plus poussée. La tribu de Shamuk tendait souvent des  embuscades à des mages isolés, profitant de leur sommeil, et les amenait à son chef pour lui permettre de leur dérober leurs secrets. Au cours des interrogatoires, Shamuk frappait méticuleusement ses victimes jusqu’à ce qu’elles soient affaiblies à cause des lésions magiques infligées par la lame ou qu’elles commencent à délirer à cause du sang perdu. Il devenait alors facile pour  Shamuk de soutirer les connaissances qu’il recherchait en s’immisçant dans l’esprit du mage épuisé. Quand il crut avoir amassé suffisamment de pouvoir, Shamuk mena sa tribu dans un raid contre un campement gnome des environs. Cependant, la chance ne fut pas de son côté ce jour-là et lui et l’ensemble de sa cohorte furent brûlés vifs lorsqu’il tenta de lancer sa première boule de feu. 
+@125 = ~A première vue, cette dague grossièrement travaillée et couverte de rouille semble un choix d’armement très bizarre. Seules les vieilles runes gobelines gravées le long de la lame révèlent une partie de son pouvoir et de son histoire. Apparemment, cette arme était à l’origine l’instrument de torture d’un puissant chaman appelé Shamuk, qui aspirait par-dessus tout à la connaissance de la sorcellerie la plus poussée. La tribu de Shamuk tendait souvent des  embuscades à des mages isolés, profitant de leur sommeil, et les amenait à son chef pour lui permettre de leur dérober leurs secrets. Au cours des interrogatoires, Shamuk frappait méticuleusement ses victimes jusqu’à ce qu’elles soient affaiblies à cause des lésions magiques infligées par la lame ou qu’elles commencent à délirer à cause du sang perdu. Il devenait alors facile pour  Shamuk de soutirer les connaissances qu’il recherchait en s’immisçant dans l’esprit du mage épuisé. Quand il crut avoir amassé suffisamment de pouvoir, Shamuk mena sa tribu dans un raid contre un campement gnome des environs. Cependant, la chance ne fut pas de son côté ce jour-là et lui et l’ensemble de sa cohorte furent brûlés vifs lorsqu’il tenta de lancer sa première boule de feu.
 
 PARAMETRES :
 
-Capacités de combat : 
+Capacités de combat :
  33% de chance que la cible doive réussir un jet de sauvegarde contre la mort ou subir un des effets suivants :
    - fièvre crasseuse : la cible perd deux points de constitution et un point de dextérité pour un tour
    - froid du diable : la cible perd deux points de force et est ralentie pendant un tour
@@ -590,14 +572,14 @@ Non utilisable par :
  Clerc~
 
 @126 = ~Gardien de la Loi~
-@127 = ~Cette lame appartenait autrefois à  Lao-Tzu, un samouraï des provinces méridionales de Kara-Tur. En finissant son entraînement, ce guerrier avait fait le serment de parvenir à libérer ses terres des bandits et brigands, plaie de son peuple durant les dix années précédentes. Cependant, cette tâche se révéla très difficile, car ses ennemis étaient rusés et n’agissaient que tard dans la nuit, en portant toujours des capuchons et des masques. Lao-Tzu comprit que ces bandits n’avaient pas d’honneur et pouvaient bien se cacher parmi le petit peuple qu’il aspirait à protéger, mais il n’osait pas agir sous le coup de l’impulsion car son code de conduite ne lui permettait pas d’accuser à tort un innocent. Pour l’aider dans sa tâche, Lao-Tzu alla trouver un Grand Maître Wu Jen et lui demanda d’enchanter son wakizashi pour lui donner la capacité de déceler les véritables intentions des gens et de frapper avec force les personnes dénuées d’honneur. Le samouraï organisa une fête pour le peuple afin de remonter le moral des personnes dévalisées et de faire sortir les bandits au grand jour. Le peuple répondit à son appel et Lao-tzu s’en réjouit. En utilisant le pouvoir de sa nouvelle arme, il parvint à distinguer les bandits fourbes des simples paysans et à les faire asseoir dans une salle à manger séparée. Une fois qu’ils furent tous rassemblés, le samouraï barra la seule sortie et se battit seul contre une douzaine de voleurs. Après une brève bataille, Lao-Tzu se révéla victorieux, mais son honneur ne l’autorisait pas à tuer, même des ennemis de si peu de valeur. Au lieu de cela, le samouraï exila les bandits hors de la province et son peuple connut enfin la paix. 
+@127 = ~Cette lame appartenait autrefois à  Lao-Tzu, un samouraï des provinces méridionales de Kara-Tur. En finissant son entraînement, ce guerrier avait fait le serment de parvenir à libérer ses terres des bandits et brigands, plaie de son peuple durant les dix années précédentes. Cependant, cette tâche se révéla très difficile, car ses ennemis étaient rusés et n’agissaient que tard dans la nuit, en portant toujours des capuchons et des masques. Lao-Tzu comprit que ces bandits n’avaient pas d’honneur et pouvaient bien se cacher parmi le petit peuple qu’il aspirait à protéger, mais il n’osait pas agir sous le coup de l’impulsion car son code de conduite ne lui permettait pas d’accuser à tort un innocent. Pour l’aider dans sa tâche, Lao-Tzu alla trouver un Grand Maître Wu Jen et lui demanda d’enchanter son wakizashi pour lui donner la capacité de déceler les véritables intentions des gens et de frapper avec force les personnes dénuées d’honneur. Le samouraï organisa une fête pour le peuple afin de remonter le moral des personnes dévalisées et de faire sortir les bandits au grand jour. Le peuple répondit à son appel et Lao-tzu s’en réjouit. En utilisant le pouvoir de sa nouvelle arme, il parvint à distinguer les bandits fourbes des simples paysans et à les faire asseoir dans une salle à manger séparée. Une fois qu’ils furent tous rassemblés, le samouraï barra la seule sortie et se battit seul contre une douzaine de voleurs. Après une brève bataille, Lao-Tzu se révéla victorieux, mais son honneur ne l’autorisait pas à tuer, même des ennemis de si peu de valeur. Au lieu de cela, le samouraï exila les bandits hors de la province et son peuple connut enfin la paix.
 
 PARAMETRES :
 
 Capacité d'équipement :
  +1 à la CA
 
-Capacité spéciale : 
+Capacité spéciale :
  Lance 'Détection de l'Alignement' 2 fois par jour
 
 TAC0 : bonus de +2, +4 contre les créatures d'alignement Chaotique
@@ -637,7 +619,7 @@ Non utilisable par :
  Mage~
 
 @130 = ~Brisepierre~
-@131 = ~De sombres runes orques sont incrustées dans ce gourdin. C’est un vestige de la dernière guerre opposant les orques et les mages du Turmish. Quand les tribus orques commencèrent à faire des raids sur leur cité, les mages créèrent des golems terriblement puissants afin de les protéger. Sentant que la force brute de ses guerriers ne suffisait pas, le grand chef orque Gull-Nar ordonna à ses chamans de forger une arme qui lui permettrait de réduire les “ statues vivantes ” en tas de gravats. Ses chamans eurent recours aux grimoires d’une tour de mage qu’ils avaient pillée afin d’enchanter l’arme favorite de leur chef, un énorme gourdin de guerre. Gull-Nar en fut si satisfait qu’il décida de conduire en personne le raid suivant, réduisant en morceaux les golems au fur et à mesure qu’il progressait en direction du coeur de la ville. Alors que la victoire était proche, un mage isolé habillé de noir surgit soudain de nulle part et lança un puissant sort qui poussa les orques enragés à se tourner les uns contre les autres. Ils furent décimés en quelques minutes et Gull-Nar lui-même fut tué par ses plus fidèles guerriers. 
+@131 = ~De sombres runes orques sont incrustées dans ce gourdin. C’est un vestige de la dernière guerre opposant les orques et les mages du Turmish. Quand les tribus orques commencèrent à faire des raids sur leur cité, les mages créèrent des golems terriblement puissants afin de les protéger. Sentant que la force brute de ses guerriers ne suffisait pas, le grand chef orque Gull-Nar ordonna à ses chamans de forger une arme qui lui permettrait de réduire les “ statues vivantes ” en tas de gravats. Ses chamans eurent recours aux grimoires d’une tour de mage qu’ils avaient pillée afin d’enchanter l’arme favorite de leur chef, un énorme gourdin de guerre. Gull-Nar en fut si satisfait qu’il décida de conduire en personne le raid suivant, réduisant en morceaux les golems au fur et à mesure qu’il progressait en direction du coeur de la ville. Alors que la victoire était proche, un mage isolé habillé de noir surgit soudain de nulle part et lança un puissant sort qui poussa les orques enragés à se tourner les uns contre les autres. Ils furent décimés en quelques minutes et Gull-Nar lui-même fut tué par ses plus fidèles guerriers.
 
 PARAMETRES :
 
@@ -667,7 +649,7 @@ Bonus à la classe d'armure : 2
 Spécial : pas de protection contre les attaques perforantes ou les projectiles
 Poids :  2
 Force nécessaire : 4
-Inutilisable par : 
+Inutilisable par :
  Mage~
 
 @134 = ~Sauvegarde~
@@ -678,7 +660,7 @@ PARAMETRES :
 Capacité d'équipement :
  Bénédiction
 
-Capacité spéciale : 
+Capacité spéciale :
  Lance Sanctuaire 1 fois par jour
 
 Classe d'armure : bonus de +3
@@ -765,7 +747,7 @@ PARAMETRES :
 
 Capacités d’équipement :
  Intelligence : bonus de +1
- Permet aux lanceurs de sorts profanes de mémoriser un sort supplémentaire de niveaux 1 et 2 
+ Permet aux lanceurs de sorts profanes de mémoriser un sort supplémentaire de niveaux 1 et 2
 
 TAC0 : +3
 Dégâts : 1D4 +3
@@ -1330,7 +1312,7 @@ Utilisable uniquement par :
 
 PARAMETRES :
 
-Capacités d’équipement : 
+Capacités d’équipement :
   Bénédiction
   Immunité au poison et à la maladie
 
@@ -1588,11 +1570,6 @@ Utilisable par :
 @780 = ~Étrange. J'aurais juré avoir entendu quelque chose.~
 @781 = ~Rien ici. Ce devait être des rats.~
 @782 = ~Bah ! Je dois avoir des hallucinations.~
-
-@900 = ~Ce composant est uniquement disponible pour la version Windows du jeu~
-@902 = ~* * * Ce composant ne peut pas etre installe sur ce jeu * * *~
-@911 = ~(Inutile de l'installer. La version du fixpack de G3 est deja presente.)~
-@999 = ~Icones du style de BG2 pour le contenu de RR~
 
 
 
@@ -1901,7 +1878,7 @@ Utilisable par :
 @1502 = ~Modérez vos manières, brigand !~
 @1503 = ~Je t’en prie, dis-moi, mon Corbeau… Est-ce que cette devinette te pose un grave problème ?~
 @1504 = ~Peut-être puis-je t'être d'une quelconque utilité. Durant mes voyages, j'ai acquis la connaissance de nombreux langages, l'elfique étant l'un de mes préférés.~
-@1505 = ~(Haer'Dalis tourne rapidement les dernières pages manuscrites, griffonnant quelques notes sur le côté.)~ 
+@1505 = ~(Haer'Dalis tourne rapidement les dernières pages manuscrites, griffonnant quelques notes sur le côté.)~
 @1506 = ~Hmm... quel tour inattendu prennent les événements ! Il semblerait que cette aventure ne fasse que commencer vraiment.~
 @1507 = ~Je t'ai esquissé une traduction assez précise des dernières pages, <CHARNAME>.  Une lecture intéressante, à tout le moins.~
 @1508 = ~Puis-je t'aider, <CHARNAME> ? En tant que druide, je suis quelque peu familier avec l'alphabet sylvain et la langue elfique.~
@@ -2294,7 +2271,7 @@ Capacités d'équipement :
  Bonus de +2 à la CA contre les morts-vivants
  Toute créature morte-vivante qui frappe le porteur du bouclier au corps-à-corps reçoit 2D4 points de dégâts de feu et doit réussir un jet de sauvegarde contre les sorts ou être aveuglé pour 4 rounds
 
-Capacité spéciale : 
+Capacité spéciale :
  Lance Feu Solaire 1x/jour
 
 CA : bonus de +4
@@ -2320,7 +2297,7 @@ CA : bonus de +3
 Poids : 1
 Sagesse nécessaire : 12
 Charisme nécessaire : 15
-Utilisable uniquement par :  
+Utilisable uniquement par :
  Druide~
 
 @5004 = ~Le Gardien +3~
@@ -2339,7 +2316,7 @@ CA : bonus de +4
 Poids : 1
 Sagesse nécessaire : 12
 Charisme nécessaire : 15
-Utilisable uniquement par : 
+Utilisable uniquement par :
  Druide~
 
 @5006 = ~Hache de Tonnerre +5~
@@ -2368,7 +2345,7 @@ Type : arme à 1 main
 Inutilisable par :
  Druide
  Clerc
- Mage 
+ Mage
  Voleur~
 
 @5008 = ~Épée Courte d'Attaque Sournoise +5~
@@ -2385,7 +2362,7 @@ Capacités d'équipement (voleurs uniquement) :
 TAC0 : bonus de +5
 Dégâts : 1D6 +5
 Type de dégâts : perforant
-Poids : 3 
+Poids : 3
 Facteur de vitesse : 0
 Type de compétence : épée courte
 Type : arme à 1 main
@@ -2467,7 +2444,7 @@ PARAMETRES :
 Capacités d'équipement :
     bonus de +1 à la CA, +3 contre les créatures d'alignement chaotique
 
-Capacités spéciales : 
+Capacités spéciales :
     Lancer le sort Détection des alignements 3 fois/jour
     Lancer le sort Ordres Chaotiques 1 fois/jour
 
@@ -2479,7 +2456,7 @@ Facteur de vitesse : 0
 Type de compétence : cimeterre/wakizashi/ninja-to
 Type : arme à 1 main
 Force nécessaire : 5
-Inutilisable par : 
+Inutilisable par :
  Personnages d'alignement chaotique
  Druide
  Clerc
@@ -2627,7 +2604,7 @@ Requiert : Sens du danger.~
 
 Un voleur expérimenté peut utiliser ses connaissances envers les points faibles de ses adversaires pour bénéficier d'un avantage au combat. Durant le round pendant lequel la capacité est activée, chaque attaque du voleur inflige des dégâts maximaux et peuvent affaiblir la cible. Pour chaque attaque réussie, la victime doit réussir un jet de sauvegarde contre la mort (avec une pénalité de 4) ou voir sa force réduite à 10 pour les cinq prochains rounds.
 
-Note : les golems, les élémentaux, les gelées et les morts-vivants sont complètement immunisés à cette capacité. 
+Note : les golems, les élémentaux, les gelées et les morts-vivants sont complètement immunisés à cette capacité.
 
 Requiert : Assassinat~
 
@@ -2761,7 +2738,7 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 @8275 = ~Immunité aux sorts : Illusion~
 @8276 = ~Immunité aux sorts : Évocation~
 @8277 = ~Immunité aux sorts : Nécromancie~
-@8278 = ~Immunité aux sorts : Altération~ 
+@8278 = ~Immunité aux sorts : Altération~
 
 
 
@@ -2805,7 +2782,7 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 
 @9700 = ~Huh ? Vous, là ! Essayez-vous de me voler ?~
 @9702 = ~Pour la dernière fois, je ne me laisserai pas voler par des gens comme vous !~
-@9703 = ~Hors de ma vue, répugnante créature !~ 
+@9703 = ~Hors de ma vue, répugnante créature !~
 
 
 // Dialogues revus lors d'un vol pris sur le fait
@@ -2830,71 +2807,3 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 @9850 = ~Merci pour votre coopération.~
 @9851 = ~Dans ce cas, je dois confisquer toutes vos possessions.~
 @9852 = ~Vous résistez à une arrestation ? Aux armes !~
-
-// WeiDU prompts
-@-1000= "Le mod %TP2_FILE_NAME% contient"
-@-1001= "composants optionnels distincts.
-Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
-au niveau general plutot que de repondre aux questions pour chacun.
-"
-@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE
-installes ?
-Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
-@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
-Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
-
-@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
-@-1005= "a"
-
-@-1006= "Installer le composant ["
-@-1007= "] ?
-[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
-@-1008= "] ?
-[I]nstaller, [N]e pas installer ou [Q]uitter ? "
-
-@-1009= "Entrez une partie du nom du module : "
-
-@-1010= "Reinstallation du composant ["
-@-1011= "] "
-@-1012= "Reinstallation dans la langue"
-
-@-1013= "Suppression de l'ancienne installation de ["
-@-1014= "] au prealable..."
-@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
-
-@-1016= "Installation en cours"
-@-1017= "ERREUR pendant l'installation de ["
-@-1018= "], retour a l'etat anterieur"
-@-1019= "INSTALLATION REUSSIE"
-@-1020= "Saute"
-@-1021= "Suppression de ["
-@-1022= "] (composant #"
-@-1023= ")"
-@-1024= "SUPPRESSION REUSSIE DE ["
-@-1025= "] ?
-[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
-@-1026= "] ?
-[N]e pas installer, [Q]uitter ou choisir un parmi :"
-@-1027= " (installe actuellement)"
-
-@-1028= "Souhaitez-vous afficher les composants de ["
-@-1029= "] ?
-[Y]Oui, [N]on ? "
-
-@-1030= "] ?
-choisir un parmi :"
-@-1031= "] ?
-[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
-@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
-@-1033= "INSTALLATION AVEC DES ALERTES "
-@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
-@-1035= "Dans la langue"
-
-@-1036 = "Saute le GROUPE ["
-@-1037 = "] pour cause d'absence des pre-requis."
-
-@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une
-selection pre-definie :"
-@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration
-courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection
-pre-definie :"

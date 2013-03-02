@@ -1,0 +1,31 @@
+// -*- coding: cp1252 -*-
+//These strings are displayed during installation on Windows and are encoded in CP1252
+
+@1 = ~Corretta implementazione dello stile di combattimento con due armi per bardi e ladri~
+@2 = ~Revisione dei kit del ladro~
+@3 = ~Revisione dei kit del bardo~
+@4 = ~Revisione delle abilita' di alto livello dei bardi~
+@5 = ~Equipaggiamenti addizionali per bardi e ladri~
+@6 = ~Incontro con i Prescelti di Cyric~
+@7 = ~Miglioramenti ai Ladri Tenebrosi~
+@8 = ~Revisione delle abilita' di classe dei ladri~
+@9 = ~Corretta tabella di progressione degli incantesimi del bardo~
+@10 = ~* * *  Questa componente richiede Throne of Bhaal  * * *~
+@11 = ~* * *  Questa componente non puo' essere installata su Tutu  * * *~
+@12 = ~* * *  Questa componente puo' essere installata solo su Tutu  * * *~
+@13 = ~* * *  Questa componente o una similare e' gia' presente in uno dei mod attualmente in uso e non sara' pertanto reinstallata  * * *~
+@14 = ~* * *  Questa componente non puo' essere installata su Classic Adventures  * * *~
+@15 = ~Applica le regole di AD&D alle pozioni che conferiscono bonus alle abilita' da ladro e rendine gli effetti non cumulativi~
+@16 = ~Mantieni inalterate le pozioni che conferiscono bonus alle abilita' da ladro ma rendine gli effetti non cumulativi~
+@17 = ~Applica i corretti modificatori razziali alle abilita' da ladro secondo le regole di AD&D~
+@18 = ~Equipaggiamenti migliorabili~
+@19 = ~Revisione delle abilita' di alto livello dei ladri~
+
+@900 = ~Questo componente é disponibile solo per la versione Windows del gioco~
+@902 = ~* * * Questo componente non può essere utilizzato su questo gioco * * *~
+@911 = ~(L'installazione non è necessaria in quanto la versione del G3 fixpack è già installata.)~
+
+//WeiDU prompts
+
+@-1004="PER FAVORE riporta il messaggio d'errore nel file"
+@-1005= "a"

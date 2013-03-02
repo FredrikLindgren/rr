@@ -1,0 +1,97 @@
+//-*- coding: utf-8 -*-
+//These strings are displayed during installation on Linux and are encoded in UTF8
+
+@1 = ~Mise a jour du Combat a deux armes pour les voleurs et
+les bardes~
+@2 = ~Revisions des kits des voleurs~
+@3 = ~Revisions des kits des bardes~
+@4 = ~Revisions des capacites de haut niveau des bardes~
+@5 = ~Equipement supplementaire pour les voleurs et les bardes~
+@6 = ~Rencontre avec les Elus de Cyric~
+@7 = ~Amelioration des Voleurs de l'Ombre~
+@8 = ~Revisions des roublards~
+@9 = ~Progression des sorts propre aux bardes~
+@10 = ~* * *  Throne of Bhaal est necessaire pour utiliser ce composant * * *~
+@11 = ~* * *  Ce composant ne peut etre installe sur TuTu  * * *~
+@12 = ~* * *  Ce composant ne peut etre installe que sur TuTu  * * *~
+@13 = ~* * * Un composant similaire est deja present dans l'un des mods que vous utilisez actuellement. L'installation de ce composant est passee. * * *~
+@14 = ~* * *  Ce composant ne peut etre installe sur Classic Adventures.  * * *~
+@15 = ~Utiliser les potions de voleur de la version papier et empecher leurs
+effets de se cumuler.~
+@16 = ~Garder les potions par defaut et empecher leurs effets de se cumuler.~
+@17 = ~Ajustements raciaux propres pour les capacites de voleur~
+@18 = ~Equipement ameliorable~
+@19 = ~Revisions des capacites de haut niveau du voleur~
+
+@900 = ~Ce composant est uniquement disponible pour la version Windows du jeu~
+@902 = ~* * * Ce composant ne peut pas etre installe sur ce jeu * * *~
+@911 = ~(Inutile de l'installer. La version du fixpack de G3 est deja presente.)~
+@999 = ~Icones du style de BG2 pour le contenu de RR~
+
+// WeiDU prompts
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE
+installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
+
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
+
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
+
+@-1009= "Entrez une partie du nom du module : "
+
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
+
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["
+@-1025= "] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
+@-1026= "] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :"
+@-1027= " (installe actuellement)"
+
+@-1028= "Souhaitez-vous afficher les composants de ["
+@-1029= "] ?
+[Y]Oui, [N]on ? "
+
+@-1030= "] ?
+choisir un parmi :"
+@-1031= "] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
+@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
+@-1033= "INSTALLATION AVEC DES ALERTES "
+@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
+@-1035= "Dans la langue"
+
+@-1036 = "Saute le GROUPE ["
+@-1037 = "] pour cause d'absence des pre-requis."
+
+@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une
+selection pre-definie :"
+@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration
+courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection
+pre-definie :"

@@ -1,0 +1,2 @@
+The game.tra files in these subdirectories are UTF8 encoded, for BGEE.
+This is a temporary solution until something better can be devised and incorporated.

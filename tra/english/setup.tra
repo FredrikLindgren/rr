@@ -1,0 +1,31 @@
+//These strings are displayed during installation
+
+@1 = ~Proper dual-wielding implementation for Thieves and Bards~
+@2 = ~Thief kit revisions~
+@3 = ~Bard kit revisions~
+@4 = ~Bard High Level Ability revisions~
+@5 = ~Additional equipment for Thieves and Bards~
+@6 = ~Chosen of Cyric encounter~
+@7 = ~Shadow Thief Improvements~
+@8 = ~Revised Thievery~
+@9 = ~Proper spell progression for Bards~
+@10 = ~* * *  The Throne of Bhaal expansion is required for this component  * * *~
+@11 = ~* * *  This component cannot be installed on Tutu  * * *~
+@12 = ~* * *  This component can only be installed on Tutu  * * *~
+@13 = ~* * *  A similar component is already present in one of the mods that you are currently using. Skipping installation.  * * *~
+@14 = ~* * *  This component cannot be installed on Classic Adventures  * * *~
+@15 = ~Use PnP thievery potions and prevent their effects from stacking~
+@16 = ~Retain default thievery potions and prevent their effects from stacking~
+@17 = ~Proper racial adjustments for thieving skills~
+@18 = ~Upgradeable Equipment~
+@19 = ~Thief High Level Ability revisions~
+
+@900 = ~This component is only available for the Windows version of the game~
+@902 = ~* * * This component cannot be installed on this game * * *~
+@911 = ~(No need to install. G3 fixpack version already present.)~
+@999 = ~BG2-style icons for RR content~
+
+//WeiDU prompts
+
+@-1004="PLEASE report the error message in the file"
+@-1005= "to"

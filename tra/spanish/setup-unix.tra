@@ -1,0 +1,30 @@
+// -*- coding: utf-8 -*-
+//These strings are displayed during installation on Linux and are encoded in utf-8
+
+@1     = ~Implementación correcta del estilo con dos armas para ladrones y bardos~
+@2     = ~Revisiones de kits de ladrones~
+@3     = ~Revisiones de kits de bardos~
+@4     = ~Revisiones de habilidades de alto nivel de bardos~
+@5     = ~Equipo adicional para ladrones y bardos~
+@6     = ~Encuentro del Elegido de Cyric~
+@7     = ~Mejoras de IA para los Ladrones de las Sombras de Aran~
+@8     = ~Robo revisado~
+@9     = ~Progresión de hechizos correcta para Bardos~
+@10    = ~* * * Se requiere la expansión Throne of Bhaal para este componente * * *~
+@11    = ~* * * Este componente no puede ser instalado en BG1 Tutu * * *~
+@12    = ~* * * Este componente sólo puede ser instalado en BG1 Tutu * * *~
+@13    = ~* * * Un componente similar ya esta presente en uno de los mods que estas usando. Salteando instalación. * * *~
+@14    = ~* * * Este componente no puede ser instalado junto a la conversión total Classic Adventures * * *~
+@15    = ~Usar las pociones de robo de Rol de lápiz y papel y hacer que sus efectos no sean acumulativos~
+@16    = ~Usar las pociones de robo originales del juego y hacer que sus efectos no sean acumulativos~
+@17    = ~Ajustes raciales correctos para las habilidades de ladrón~
+@18    = ~Equipo mejorable~
+@19    = ~Revisiones de las Habilidades de Alto nivel de ladrón~
+
+@900   = ~Este componente está únicamente disponible para la versión de Windows~
+@902   = ~* * * Este component no puede ser instalado en este juego * * *~
+@911   = ~ (No hay necesidad de instalar. G3 fixpack ya existe.)~
+@999   = ~Estilo de Iconos de BG2 para el contenido de RR~
+
+@-1004 = ~POR FAVOR, reportar los mensajes de error en un archivo ~
+@-1005 = "a"

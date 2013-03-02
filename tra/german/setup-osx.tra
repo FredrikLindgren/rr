@@ -1,0 +1,32 @@
+//-*- coding: utf-8 -*-
+//These strings are displayed during installation on OS X and are encoded in UTF8
+
+@1 = ~Korrigierter Kampf mit zwei Waffen fuer Diebe und Barden~
+@2 = ~Ueberarbeitung der Diebesklassen~
+@3 = ~Ueberarbeitung der Bardenklassen~
+@4 = ~Ueberarbeitung der Hochstufigen Fertigkeiten fuer Barden~
+@5 = ~Zusaetzliche Ausruestung fuer Diebe und Barden~
+@6 = ~Begegnung mit den Auserwaehlten des Cyric~
+@7 = ~Verbesserungen bei den Schattendieben~
+@8 = ~Ueberarbeitete Diebeskuenste~
+@9 = ~Korrekter Zauberfortschritt fuer Barden~
+@10 = ~* * *  Thron des Bhaal ist notwendig fuer diese Komponente  * * *~
+@11 = ~* * *  Diese Komponente kann nicht unter Tutu installiert werden  * * *~
+@12 = ~* * *  Diese Komponente kann nur unter Tutu installiert werden  * * *~
+@13 = ~* * *  Eine aehnliche Komponente ist bereits durch eine andere Modifikationen vorhanden. Die Installation wird uebersprungen.  * * * ~
+@14 = ~* * *  Diese Komponente kann nicht fuer die "Classic Adventures" Modifikation installiert werden  * * *~
+@15 = ~PnP Traenke der Diebeskunst benutzen und ihre Effekte nicht-kommulativ machen~
+@16 = ~Standard Traenke der Diebeskunst behalten und ihre Effekte nicht-kommulativ machen~
+@17 = ~Korrekte Rassenanpassungen der Diebesfertigkeiten~
+@18 = ~Aufruestbare Ausruestung~
+@19 = ~Ueberarbeitung der Hochstufigen Fertigkeiten fuer Diebe~
+
+@900 = ~This component is only available for the Windows version of the game~
+@902 = ~* * * This component cannot be installed on this game * * *~
+@911 = ~(No need to install. G3 fixpack version already present.)~
+@999 = ~BG2-style icons for RR content~
+
+//WeiDU prompts
+
+@-1004="PLEASE report the error message in the file"
+@-1005= "to"

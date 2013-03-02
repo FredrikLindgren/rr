@@ -1,24 +1,8 @@
-@1     = ~Implementaci¢n correcta del estilo con dos armas para ladrones y bardos~ 
-@2     = ~Revisiones de kits de ladrones~
-@3     = ~Revisiones de kits de bardos~ 
-@4     = ~Revisiones de habilidades de alto nivel de bardos~
-@5     = ~Equipo adicional para ladrones y bardos~ 
-@6     = ~Encuentro del Elegido de Cyric~
-@7     = ~Mejoras de IA para los Ladrones de las Sombras de Aran~
-@8     = ~Robo revisado~ 
-@9     = ~Progresi¢n de hechizos correcta para Bardos~
-@10    = ~* * * Se requiere la expansión Throne of Bhaal para este componente * * *~ 
-@11    = ~* * * Este componente no puede ser instalado en BG1 Tutu * * *~
-@12    = ~* * * Este componente sólo puede ser instalado en BG1 Tutu * * *~
-@13    = ~* * * Un componente similar ya esta presente en uno de los mods que estas usando. Salteando instalación. * * *~ 
-@14    = ~* * * Este componente no puede ser instalado junto a la conversión total Classic Adventures * * *~
-@15    = ~Usar las pociones de robo de Rol de l piz y papel y hacer que sus efectos no sean acumulativos~ 
-@16    = ~Usar las pociones de robo originales del juego y hacer que sus efectos no sean acumulativos~
-@17    = ~Ajustes raciales correctos para las habilidades de ladr¢n~
-@18    = ~Equipo mejorable~
-@19    = ~Revisiones de las Habilidades de Alto nivel de ladr¢n~ 
+// -*- coding: cp1252 -*-
+//These strings are displayed in-game and are encoded in CP1252
+
 @20    = ~Rodela +2~
-@21    = ~A pesar de la efectividad de los encantamientos de este escudo, éste no llama la atención y desafía los intentos de identificación. Por tanto, es probable que perteneciera en su día a la milicia de alguna baronía olvidada, aunque es difícil asegurarlo. 
+@21    = ~A pesar de la efectividad de los encantamientos de este escudo, éste no llama la atención y desafía los intentos de identificación. Por tanto, es probable que perteneciera en su día a la milicia de alguna baronía olvidada, aunque es difícil asegurarlo.
 
 CARACTERÍSTICAS:
 
@@ -28,9 +12,9 @@ Peso: 2
 Requiere: 4 Fuerza
 
 No usable por:
- Mago~ 
-@22    = ~Broquel +3~ 
-@23    = ~A pesar de la efectividad de los encantamientos de este escudo, éste no llama la atención y desafía los intentos de identificación. Por tanto, es probable que perteneciera en su día a la milicia de alguna baronía olvidada, aunque es difícil asegurarlo. 
+ Mago~
+@22    = ~Broquel +3~
+@23    = ~A pesar de la efectividad de los encantamientos de este escudo, éste no llama la atención y desafía los intentos de identificación. Por tanto, es probable que perteneciera en su día a la milicia de alguna baronía olvidada, aunque es difícil asegurarlo.
 
 CARACTERÍSTICAS:
 
@@ -41,7 +25,7 @@ Requiere: 4 Fuerza
 
 No usable por:
  Mago~
-@24    = ~El Guardián~ 
+@24    = ~El Guardián~
 @25    = ~El Guardián
 
 Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida.
@@ -56,10 +40,10 @@ Bonificación a la clase de armadura: 2
 Peso: 1
 Requiere: Sabiduría 12, Carisma 15
 
-Sólo usable por: 
+Sólo usable por:
  Druidas~
 @26    = ~Protección del Ladrón~
-@27    = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de la Máscara. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones. 
+@27    = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de la Máscara. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones.
 
 CARACTERÍSTICAS:
 
@@ -73,7 +57,7 @@ Especial: sin protección contra ataques perforantes o de proyectil
 Peso: 1
 Requiere: Fuerza 4
 
-Sólo usable por: 
+Sólo usable por:
 Ladrón
 Bardo~
 @28    = ~GALÁN: este pícaro es parte acróbata, parte espadachín y parte bromista; la personificación del encanto y la elegancia.
@@ -160,7 +144,7 @@ Gracias a su profundo conocimiento de su entorno y las criaturas que viven en él
 @35    = ~ASESINO: esta persona ha sido entrenada para matar de manera discreta y eficaz, y confía en el anonimato y la sorpresa para llevar a cabo su labor. Un Asesino listo nunca será visto por su víctima. La mayoría de los asesinos son de alineamiento maligno, sin embargo, es concebible que puedan tener alineamiento neutral, aunque nunca bueno.
 
 Ventajas:
-- Puede impregnar su arma con veneno una vez al día por cada 4 niveles de experiencia que posea. El siguiente golpe que propine con esa arma inyectará el veneno en la víctima, infligiéndole 1 punto de daño por segundo durante un total de 24 segundos (3 de daño durante los primeros 6 segundos). Una tirada exitosa de salvación contra veneno reducirá el daño a 12 en total. 
+- Puede impregnar su arma con veneno una vez al día por cada 4 niveles de experiencia que posea. El siguiente golpe que propine con esa arma inyectará el veneno en la víctima, infligiéndole 1 punto de daño por segundo durante un total de 24 segundos (3 de daño durante los primeros 6 segundos). Una tirada exitosa de salvación contra veneno reducirá el daño a 12 en total.
 
 - Bonificador +1 al ataque y +1 al daño
 - El apuñalamiento por la espalda llega hasta x7 y no sólo hasta x5
@@ -295,11 +279,11 @@ CARACTERÍSTICAS:
 
 Aptitudes equipado: (sólo ladrones)
  Incrementa el multiplicador de daño del apuñalamiento en 1
- Añade un bono +2 extra al THACO 
+ Añade un bono +2 extra al THACO
 THAC0: +3 bonificación
 Daño: 1D6 +3
 Tipo de daño: perforante
-Peso: 3 
+Peso: 3
 Factor de velocidad: 0
 Tipo de Talento: Espada corta
 Tipo: una mano
@@ -307,7 +291,7 @@ Requiere: 5 Fuerza
 
 No usable por:
  Druida
- Clérigo 
+ Clérigo
  Mago~
 @62    = ~Marina~
 @63    = ~Arrastrador menor~
@@ -403,7 +387,7 @@ Bardo~
 
 CARACTERÍSTICAS:
 
-Aptitudes Portador: 
+Aptitudes Portador:
  Destreza +1
 Bonificador a la Clase de Armadura: 2
 Especial: sin protección contra ataques perforantes/de proyectil
@@ -476,14 +460,14 @@ Usable por:
 @120   = ~Derritetrolls~
 @121   = ~Derritetrolls
 
-Invierno de 1228. Duro para los medianos de los asentamientos cercanos al bosque Shalebrook. Casi no había comida. La situación empeoró por las bandas de trolls que se hicieron más frecuentes en la región debido a la hambruna. Aunque inferiores en número, su gran resistencia permitió a los trolls hacerse con los últimos suministros de los medianos. Sin embargo, la escasa comida hizo que además, comenzaran a alimentarse de los mismos medianos. Enfadado, el jefe mediano intentó pedir ayuda, pero como las principales rutas estaban nevadas, no podía llegar ninguna ayuda inmediata. Una mañana, después de que los trolls se llevaran a su propia hermana, un ladrón joven, Lars Piesligeros se desesperó. La noche siguiente juntó coraje y se metió en el bosque infestado de trolls. Con sus últimas fuerzas, pudo llegar a un asentamiento enano. Le rogó a los enanos para que le ayudaran, pero debido a sus problemas con una invasión orca, sólo pudieron darle algunos pobres suministros. Devastado, Lars cogió la única arma que sabía utilizar: una daga, y se fue. La dama Tymora le sonrió ese día, porque sin darse cuenta, era un arma que salvaría su vida. Mientras regresaba por el bosque escuchó ronquidos y se dio cuenta de que era la cueva donde dormían los trolls. Los huesos de los medianos en la entrada fue la gota que derramó el vaso. Loco de rabia, Lars entró en la cueva y apuñaló a uno de los trolls, sin darse cuenta del peligro que corría su vida, pensando en su hermana. Para su sorpresa, el troll gritó en agonía y comenzó a desintegrarse y disolverse. El resto se despertó, pero al ver a su camarada disuelto y el hedor a ácido, corrieron por miedo a perder sus vidas. Aún sorprendido, Lars se recompuso y liberó a su hermana y al resto de medianos cautivos. Eventualmente, Lars Piesligeros fue proclamado salvador de Shalebrook, y su arma fue bautizada como Derritetrolls. 
+Invierno de 1228. Duro para los medianos de los asentamientos cercanos al bosque Shalebrook. Casi no había comida. La situación empeoró por las bandas de trolls que se hicieron más frecuentes en la región debido a la hambruna. Aunque inferiores en número, su gran resistencia permitió a los trolls hacerse con los últimos suministros de los medianos. Sin embargo, la escasa comida hizo que además, comenzaran a alimentarse de los mismos medianos. Enfadado, el jefe mediano intentó pedir ayuda, pero como las principales rutas estaban nevadas, no podía llegar ninguna ayuda inmediata. Una mañana, después de que los trolls se llevaran a su propia hermana, un ladrón joven, Lars Piesligeros se desesperó. La noche siguiente juntó coraje y se metió en el bosque infestado de trolls. Con sus últimas fuerzas, pudo llegar a un asentamiento enano. Le rogó a los enanos para que le ayudaran, pero debido a sus problemas con una invasión orca, sólo pudieron darle algunos pobres suministros. Devastado, Lars cogió la única arma que sabía utilizar: una daga, y se fue. La dama Tymora le sonrió ese día, porque sin darse cuenta, era un arma que salvaría su vida. Mientras regresaba por el bosque escuchó ronquidos y se dio cuenta de que era la cueva donde dormían los trolls. Los huesos de los medianos en la entrada fue la gota que derramó el vaso. Loco de rabia, Lars entró en la cueva y apuñaló a uno de los trolls, sin darse cuenta del peligro que corría su vida, pensando en su hermana. Para su sorpresa, el troll gritó en agonía y comenzó a desintegrarse y disolverse. El resto se despertó, pero al ver a su camarada disuelto y el hedor a ácido, corrieron por miedo a perder sus vidas. Aún sorprendido, Lars se recompuso y liberó a su hermana y al resto de medianos cautivos. Eventualmente, Lars Piesligeros fue proclamado salvador de Shalebrook, y su arma fue bautizada como Derritetrolls.
 
 
 CARACTERÍSTICAS:
 
 THAC0: +2 (+4 contra Trolls)
 Daño: 1D4, +2 Ácido Daño (+4 Ácido Daño contra Trolls)
-Habilidades de combate: 
+Habilidades de combate:
  15% posibilidad que cualquier Troll golpeado reciba 15 puntos de Daño ácido adicional
 Peso: 1
 Factor de velocidad: 0
@@ -503,7 +487,7 @@ CARACTERÍSTICAS:
 
 THAC0: +3 (+5 contra vampiros)
 Daño: 1D4 + 3 (+5 contra vampiros)
-Habilidades especiales: 
+Habilidades especiales:
  15% posibilidad que cualquier vampiro golpeado sea atontado durante 2 asaltos
  Protección contra el plano negativo tres veces al día
 Peso: 1
@@ -541,14 +525,14 @@ Clérigo~
 @126   = ~Guardián de la Ley~
 @127   = ~Guardián de la Ley
 
-Esta espada perteneció a Lao-Tzu, un samurái de Kara-Tur. Tras finalizar su entrenamiento como guerrero, juró liberar a sus tierras de los bandidos que las azotaban desde hacía más de 10 años. Sin embargo, era difícil, ya que sus oponentes eran tramposos, y sólo atacaban por la noche, siempre enmascarados. Lao-Tzu comprendió que no tenían honor y que podrían esconderse entre la gente que intentaba defender, pero no quería actuar hasta estar seguro, ya que no quería acusar a alguien inocente. Para ayudarle, Lao-Tzu buscó a Wu Jen y le pidió encantar su wakizashi con la habilidad de conocer las intenciones de la gente y golpear a aquellos sin honor. El samurái organizó entonces una fiesta para atraer a los bandidos. Usando el poder de su espada los separó de la gente normal y los hizo sentar en una habitación aparte. Una vez separados, cerró la puerta y luchó solo contra ellos. Lao-Tzu emergió victorioso, pero su honor no le permitía siquiera matarlos. En su lugar, los echó de la provincia y reinó la paz. 
+Esta espada perteneció a Lao-Tzu, un samurái de Kara-Tur. Tras finalizar su entrenamiento como guerrero, juró liberar a sus tierras de los bandidos que las azotaban desde hacía más de 10 años. Sin embargo, era difícil, ya que sus oponentes eran tramposos, y sólo atacaban por la noche, siempre enmascarados. Lao-Tzu comprendió que no tenían honor y que podrían esconderse entre la gente que intentaba defender, pero no quería actuar hasta estar seguro, ya que no quería acusar a alguien inocente. Para ayudarle, Lao-Tzu buscó a Wu Jen y le pidió encantar su wakizashi con la habilidad de conocer las intenciones de la gente y golpear a aquellos sin honor. El samurái organizó entonces una fiesta para atraer a los bandidos. Usando el poder de su espada los separó de la gente normal y los hizo sentar en una habitación aparte. Una vez separados, cerró la puerta y luchó solo contra ellos. Lao-Tzu emergió victorioso, pero su honor no le permitía siquiera matarlos. En su lugar, los echó de la provincia y reinó la paz.
 
 CARACTERÍSTICAS
 
 THAC0: +2 bonificación, +4 contra criaturas de alineamiento caótico
 Daño: 1D8 +2, +4 contra criaturas de alineamiento caótico
-Habilidades especiales: 
- +1 a la clase de armadura 
+Habilidades especiales:
+ +1 a la clase de armadura
  Lanza Detectar Alineamiento 2x/día
 Tipo de daño: punzante
 Peso: 2
@@ -570,7 +554,7 @@ La profesión del ninja es versátil. Algunos son asesinos mientras que otros son 
 
 CARACTERÍSTICAS
 
-Aptitudes equipado: 
+Aptitudes equipado:
  Destreza: +1
  Suerte: +1
 THAC0: +2 bonificación
@@ -596,7 +580,7 @@ CARACTERÍSTICAS:
 THAC0: +2, (+4 contra Gólems)
 Daño: 1D6 + 2, (+4 contra Gólems)
 Tipo de daño: aplastante
-Habilidades especiales: 
+Habilidades especiales:
  10% posibilidad de romper piedra, arcilla y arena
 Peso: 3
 Factor de velocidad: 2
@@ -627,7 +611,7 @@ No lo puede usar:
 
 CARACTERÍSTICAS:
 
-Habilidades especiales: 
+Habilidades especiales:
  Bendición
  Santuario 1/día
 Bonificación a la clase de armadura: 3
@@ -706,7 +690,7 @@ Sólo usable por:
 
 CARACTERÍSTICAS:
 
-Habilidades especiales: 
+Habilidades especiales:
 Anula Confusión 3x/día
 Área de Efecto: 1 objetivo
 
@@ -1006,7 +990,7 @@ Druida
 Clérigo
 Mago~
 @210   = ~Piel de Abishai ~
-@211   = ~Piel de Abishai 
+@211   = ~Piel de Abishai
 
 Se rumorea que esta peculiar armadura viene de Sigil. No se sabe mucho de sus antiguos dueños pero parece haber sido hecha de piel de un Baatezu menor, y aquellos que la equipan provocan daño y resistencias elementales. No se sabe si estos poderes se dan por la misma piel o si es un encantamiento puesto en ella.
 
@@ -1041,7 +1025,7 @@ Tipo: una mano
 
 No usable por:
  Druida
- Clérigo 
+ Clérigo
  Mago~
 @214   = ~Capucha del ladrón~
 @215   = ~Esta capucha marrón oscura está hecha para ser usada sobre la cabeza y hombros. Fue creada por el ladrón e ilusionista gnomo Brein Chestnut. Brein utilizó esta capucha en sus aventuras durante varios años antes de que su novia le convenciera abandonarlas. Le dio la capucha a su sobrino, Chirchet, quién a su vez la vendió por varios acres de tierra.
@@ -1093,7 +1077,7 @@ Sólo usable por:
  Ladrón~
 @220   = ~La lengua de la salamandra~
 @221   = ~La lengua de la salamandra
-Una daga con un pasado oscuro, La lengua de la salamandra es preciada como arma y por sus poderes mágicos. La hoja parece ser una daga exótica que termina en dos puntas. Una pequeña lengua de salamandra roja está tallada en el corazón de la hoja, cerca del mango. Pulsa al azar sin intervención del usuario. 
+Una daga con un pasado oscuro, La lengua de la salamandra es preciada como arma y por sus poderes mágicos. La hoja parece ser una daga exótica que termina en dos puntas. Una pequeña lengua de salamandra roja está tallada en el corazón de la hoja, cerca del mango. Pulsa al azar sin intervención del usuario.
 
 No se conocen exactamente los orígenes de la hoja, pero se cree que su primer dueño fue un gnomo asesino llamado Turlam Shallowhill. Turlam fue asesinado por un rival, un mediano llamado Deder Seven Fingers. Deder guardó el arma como trofeo, sin conocer su poder hasta que le fue robada por un compañero llamado Kreshinal Blackhound. Kreshinal se escapó a Selgaunt durante 5 años. Kreshinal perdió la daga en una apuesta, y fue asesinado por los agentes de Deder. Deder intentó recuperar la daga de los criminales de Sembia que la tenían. Tuvo éxito, pero estaba tan centrado en el arma que no se dio cuenta de que los criminales de Sembia habían contratado un sacerdote de la Máscara para infiltrarse. La guerra entre facciones terminó cuando el sacerdote de la máscara, Pieter el Tonto, hizo a las dos facciones tan paranoicas que se destruyeron desde dentro. Pieter tomó la daga y escapó a Colinas Lejanas, confiado en que no le seguirían.
 
@@ -1153,7 +1137,7 @@ No usable por:
 CARACTERÍSTICAS:
 
 Aptitudes equipado:
- Suerte +3 
+ Suerte +3
 Bonificación a la clase de armadura: ninguna
 Especial: protege contra golpes críticos
 Peso: 0
@@ -1253,7 +1237,7 @@ El mago~
 
 CARACTERÍSTICAS:
 
-Aptitudes portador: 
+Aptitudes portador:
  Bendición
  Inmunidad a la enfermedad y al veneno
 Bonificación a la clase de armadura: 1
@@ -1461,7 +1445,7 @@ No lo puede usar:
 Luchador
 Ladrón~
 @721   = ~Cetro de control~
-@722   = ~Cuando Haz comenzó a construir el primer lote de gólems de defensa que fueron confiscados por los Maestros Encubiertos locales, varios de sus camaradas Ladrones de las Sombras insistieron en la necesidad de que el mago fabricase un mecanismo de desactivación de los gólems a prueba de tontos, por si acaso. Haz se negó a terciar en principio, argumentando que aquellos temores eran infundados, pero la participación de varios miembros de alto nivel de la cofradía, que no se fiaban de su palabra y comenzaron a dudar de sus motivos, le hizo dar su brazo a torcer e improvisó unos cuantos cetros de control que entregó a los que más le criticaban. 
+@722   = ~Cuando Haz comenzó a construir el primer lote de gólems de defensa que fueron confiscados por los Maestros Encubiertos locales, varios de sus camaradas Ladrones de las Sombras insistieron en la necesidad de que el mago fabricase un mecanismo de desactivación de los gólems a prueba de tontos, por si acaso. Haz se negó a terciar en principio, argumentando que aquellos temores eran infundados, pero la participación de varios miembros de alto nivel de la cofradía, que no se fiaban de su palabra y comenzaron a dudar de sus motivos, le hizo dar su brazo a torcer e improvisó unos cuantos cetros de control que entregó a los que más le criticaban.
 
 Aquél que porta el cetro y lo sostiene delante de uno de los gólems de Haz, lo desactiva. No obstante, es imposible desactivar a un gólem que está al lado de su dueño, y además, una inscripción en el asta del objeto alerta de que atacar a un gólem fuera de funcionamiento, lo reinicia.
 
@@ -1496,10 +1480,7 @@ Lo puede usar:
 @780   = ~Qué extraño. Juraría que oí algo. ~
 @781   = ~No hay nada allí. Seguro que fueron las ratas. ~
 @782   = ~ ¡Bah! Me lo estaré imaginando. ~
-@900   = ~Este componente está únicamente disponible para la versión de Windows~
-@902   = ~* * * Este component no puede ser instalado en este juego * * *~
-@911   = ~ (No hay necesidad de instalar. G3 fixpack ya existe.)~
-@999   = ~Estilo de Iconos de BG2 para el contenido de RR~
+
 @1000  = ~Vuestra selección parece algo mediocre. ¿No tenéis un equipo más potente?~
 @1001  = ~\[Canto de los ladrones\] - ¿No tenéis un equipo mejor para un camarada amigo?~ ~\[Canto de los ladrones\] - ¿No tenéis un equipo mejor para una camarada amiga?~
 @1002  = ~Gaelan me ha enviado, necesito vuestra ayuda con este diario. Está escrito en élfico y no puedo descifrarlo. ~
@@ -1660,7 +1641,7 @@ Lo puede usar:
 @1189  = ~Yo... ~
 @1190  = ~Lo siento, pero no puedo decir nada más. Mis superiores quieren mantener este asunto secreto hasta que llegue el momento adecuado. ~
 @1191  = ~Pero decidme, ¿intentaréis detener esta amenaza?, ¿os enfrentaréis a esos monstruos solo?~ ~Pero decidme, ¿intentaréis detener esta amenaza?, ¿os enfrentaréis a esos monstruos sola?~
-@1192  = ~Sí. Aran me ha enviado para vaciar su guarida. ~ 
+@1192  = ~Sí. Aran me ha enviado para vaciar su guarida. ~
 @1193  = ~Tal vez, pero por el momento. ~
 @1194  = ~(Una mirada de desesperación recorre la cara del elfo)~
 @1195  = ~Por favor <CHARNAME>... ¡mi misión es de vital importancia! No puedo comprometerme bajo ninguna circunstancia. ~
@@ -2178,7 +2159,7 @@ CARACTERÍSTICAS:
 Habilidades de equipado:
  +2 extra bonificación a la clase de armadura contra no-muertos
  Cualquier criatura no-muerta que golpee (en cuerpo a cuerpo) al portador sufre 2d4 puntos de daño por fuego y debe salvar contra hechizos o ser cegado durante 4 asaltos
-Habilidades Especiales: 
+Habilidades Especiales:
  Lanza Fuego solar una vez al día
 Bonificación a la clase de armadura: 4
 Especial: No da protección para ataques de misil o punzantes
@@ -2203,7 +2184,7 @@ Bonificación a la clase de armadura: 3
 Peso: 1
 Requiere: 12 Sabiduría y 15 Carisma
 
-Solo usable por: 
+Solo usable por:
 Druidas~
 @5004  = ~El guardián +3~
 @5005  = ~Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida. Debido a su origen inusual, el poder de este escudo sólo puede ser utilizado por el más devoto de los seguidores de la naturaleza.
@@ -2221,7 +2202,7 @@ Bonificación a la clase de armadura: 4
 Peso: 1
 Requiere: 12 Sabiduría y 15 Carisma
 
-Solo usable por: 
+Solo usable por:
 Druidas~
 @5006  = ~Hacha de Tormenta +5~
 @5007  = ~Esta hacha contiene un encantamiento de interesante origen. Inmediatamente después de ser forjada, el hacha fue llevada a la cima de una montaña donde sacerdotes enanos la esperaban para convocar una gran tormenta. El arma fue puesta en un pedestal y la tormenta lanzó un rayo. Gracias a un encantamiento, pudo absorber parte de tal rayo.
@@ -2249,7 +2230,7 @@ Tipo: una mano
 No usable por:
 Druida
 Clérigo
-Mago 
+Mago
 Ladrón~
 @5008  = ~Espada corta para apuñalar por la espalda +5~
 @5009  = ~La Hoja de la Sombra fue creada para ser el arma perfecta para el asesino. Es muy codiciada por todos aquéllos dispuestos a resolver cualquier asunto por medio de una espada y muchos de los que llegan a poseerla no la conservan por mucho tiempo. En las manos de cualquier personaje esta espada se comporta como una espada mágica +5, pero en manos de un Ladrón es más poderosa, entregando bonificación al daño e incrementando el multiplicador de apuñalamiento por la espalda
@@ -2265,7 +2246,7 @@ Habilidades de equipado (solo ladrones):
 THAC0: +5 bonificación
 Daño: 1D6 +5
 Tipo de Daño: punzante
-Peso: 3 
+Peso: 3
 Factor de velocidad: 0
 Tipo de talento: Espada corta
 Tipo: una mano
@@ -2273,7 +2254,7 @@ Requiere: 5 Fuerza
 
 No usable por:
  Druida
- Clérigo 
+ Clérigo
  Mago~
 @5010  = ~Cinturón maestro de la fortuna~
 @5011  = ~Los bolsillos de este cinturón contienen muchas herramientas utilizadas por cerrajeros y relojeros. Sin embargo, tales objetos pueden ser abusados para motivos oscuros y son muy populares entre los ladrones. Este cinturón en particular tiene la letra "G" grabada en la hebilla.
@@ -2347,7 +2328,7 @@ CARACTERÍSTICAS:
 Habilidades equipado:
  +1 bonificación a la CA, +3 contra criaturas caóticas
 
-Habilidades especiales: 
+Habilidades especiales:
  Lanza detectar alineamiento 3 veces al día
  Lanza Órdenes Caóticas 1 vez al día
 
@@ -2639,5 +2620,3 @@ Nota: Escribir pergaminos es una tarea muy delicada la cual sólo puede ser abord
 @9850  = ~Gracias por vuestra cooperación. ~
 @9851  = ~En ese caso, deberé confiscar todos vuestros apreciados bienes. ~
 @9852  = ~¿Resistiéndose al arresto? ¡A las armas entonces! ~
-@-1004 = ~POR FAVOR, reportar los mensajes de error en un archivo ~
-@-1005 = "a"

@@ -1,7 +1,0 @@
-//-*- coding: cp1252 -*-
-
-@-10000 = ~Installe TobEx...~
-@-10001 = ~Patch de l'executable par ToBEx : deja applique, saute...~
-@-10002 = ~Patch de l'executable par ToBEx : les octets cibles ne correspondent pas, abandon...~
-@-10003 = ~Mise a jour de TobEx...~
-@-10004 = ~TobEx est deja a jour.~

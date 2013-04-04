@@ -30,6 +30,9 @@ LANGUAGE ~Deutsch (by Cronox and Leomar)~ ~GERMAN~ ~rr/tra/english/game.tra~ ~rr
 LANGUAGE ~Russian (by the Aerie.ru and arcanecoast.ru teams)~ ~RUSSIAN~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/russian/game.tra~
 LANGUAGE ~Italian (by Andrea C. and ilot)~ ~ITALIAN~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/italian/game.tra~ ~rr/tra/italian/setup-%WEIDU_OS%.tra~
 LANGUAGE ~Japanese (by Taro)~ ~JAPANESE~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/japanese/game.tra~ ~rr/tra/japanese/setup-%WEIDU_OS%.tra~
+LANGUAGE ~Polski (Clan Children of Bhaal - BoRo & Kinski)~ ~polish~
+~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~
+~rr/tra/polish/game.tra~ ~rr/tra/polish/setup-%WEIDU_OS%.tra~
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,31 @@
+//These strings are displayed during installation
+
+@1 = ~Poprawki dla stylu walki dwiema broniami dla zlodziei i bardow~
+@2 = ~Poprawki podklas zlodziei~
+@3 = ~Poprawki podklas bardow~
+@4 = ~Poprawki zdolnosci wysokiego poziomu (HLA) bardow~
+@5 = ~Dodatkowe przedmioty dla zlodziei i bardow~
+@6 = ~Spotkanie z Wybrancami Cyrika~
+@7 = ~Usprawnienie Zlodziei Cienia~
+@8 = ~Poprawki zlodziejstwa~
+@9 = ~Poprawki tabeli czarow bardow~
+@10 = ~* * * Dodatek Tron Bhaala jest wymagany dla tego komponentu * * *~
+@11 = ~* * * Komponent nie moze byc instalowany z BG1TuTu * * *~
+@12 = ~* * * Komponent moze byc instalowany tylko z BG1TuTu * * *~
+@13 = ~* * * Podobny komponent jest juz zainstalowany. Instalacja zostaje pominieta. * * *~
+@14 = ~* * * Komponent nie moze byc instalowany z konwersja Classic Adventures * * *~
+@15 = ~Uzywanie mikstur zlodziejskich zgodnie z zasadami podrecznikowymi (PnP) i zapobieganie kumulowania sie ich efektow~
+@16 = ~Zachowaj domyslne zasady umiejetnosci zlodziejskich i zapobiegaj kumulowaniu sie ich efektow~
+@17 = ~Poprawki rasowe umiejetnosci zlodziejskich~
+@18 = ~Ulepszenia przedmiotow~
+@19 = ~Poprawki zdolnosci wysokiego poziomu (HLA) zlodziei~
+
+@900 = ~Ten komponent jest dostepny wylaczne dla gry w systemie Windows~
+@902 = ~* * * Tego komponentu nie mozna zainstalowac w tej wersji gry * * *~
+@911 = ~(Nie ma potrzeby instalacji. Wersja G3 fixpack jest juz zainstalowana)~
+@999 = ~Styl ikon BG2 dla zawartosci RR~
+
+//WeiDU prompts
+
+@-1004="PLEASE report the error message in the file"
+@-1005= "to"

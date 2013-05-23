@@ -90,11 +90,11 @@ COPY ~RR/RR_CORE/SPELLS/RR#TAS1B.EFF~ override               // Death Attack pro
   SAY 0x1C @86 // Unaffected by Death Attack
 BUT_ONLY
 
-LAF ret_from_eval STR_VAR f_Entry = RR#DEATA RET RR#2DAID = f_Value END
+LAM load_RR#DEATA_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS01.SPL~ override               // Assassin Death Attack innate ability (coat weapons shell)
   SAY NAME1 @36 SAY NAME2 @36 // Death Attack
-  WRITE_BYTE 0x27 ("%RR#2DAID%" + 1)                         // assign new secondary type
+  WRITE_BYTE 0x27 RR#DEATA                                   // assign new secondary type
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS1B.SPL~ override               // Death Attack second part (the actual ability)
   READ_LONG  0x64 "abil_off"
@@ -106,7 +106,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#TAS1B.SPL~ override               // Death Attack sec
     FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
       READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
       PATCH_IF ("%opcode%" = 221) BEGIN                            // effect #221: remove secondary type
-        WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) ("%RR#2DAID%" + 1)  // set the designated secondary type
+        WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) RR#DEATA  // set the designated secondary type
       END
     END
   END
@@ -712,10 +712,10 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS00.SPL~ override                // Revised Jester 
     END
   END
 
-LAF ret_from_eval STR_VAR f_Entry = RR#FSCNT RET RR#2DAID = f_Value END
+LAM load_RR#FSCNT_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS10.SPL~ override                // Revised Jester song part 2 (a Feeblemind spell used for the Mesmerize effect)
-  WRITE_BYTE 0x27 ("%RR#2DAID%" + 1)                          // assign new secondary type for Mesmerize effects
+  WRITE_BYTE 0x27 RR#FSCNT                                    // assign new secondary type for Mesmerize effects
   READ_LONG  0x64 "abil_off"
   READ_SHORT 0x68 "abil_num"
   READ_LONG  0x6a "fx_off"
@@ -773,7 +773,7 @@ LAF set_kit_description STR_VAR f_Kit = jester f_Desc END
 
 // Assign the new party-only projectile (RR#VRPO.PRO) to various Bard songs
 
-LAF ret_from_eval STR_VAR f_Entry = RR#VRPO RET RR#2DAID = f_Value END
+LAM load_RR#VRPO_var
 
 COPY_EXISTING ~RR#BSK00.SPL~ override // Skald's regular song
               ~RR#BDF02.SPL~ override // True Bard's regular song
@@ -781,20 +781,20 @@ COPY_EXISTING ~RR#BSK00.SPL~ override // Skald's regular song
   READ_LONG  0x64 ab_off
   READ_SHORT 0x68 ab_num
   FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#2DAID%"
+    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRPO
   END
 BUT_ONLY
 
 // Assign the new no-party projectile (RR#VRNP.PRO) to the regular Jester song and the Weapons Display ability
 
-LAF ret_from_eval STR_VAR f_Entry = RR#VRNP RET RR#2DAID = f_Value END
+LAM load_RR#VRNP_var
 
 COPY_EXISTING ~RR#BJS00.SPL~ override // Jester's regular song
               ~RR#WDIS.SPL~  override // Blade's Weapon's display ability
   READ_LONG  0x64 ab_off
   READ_SHORT 0x68 ab_num
   FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#2DAID%"
+    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRNP
   END
 BUT_ONLY
 
@@ -1044,10 +1044,10 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS04.SPL~ override                      // Jester's 
     END
   END
 
-LAF ret_from_eval STR_VAR f_Entry = RR#FSCNT RET RR#2DAID = f_Value END
+LAM load_RR#FSCNT_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS11.SPL~ override                      // Jester's Lingering song part 3 (a Feeblemind spell used for the Mesmerize effect)
-  WRITE_BYTE 0x27 (%RR#2DAID% + 1)                                  // assign new secondary type for Mesmerize effects
+  WRITE_BYTE 0x27 RR#FSCNT                                          // assign new secondary type for Mesmerize effects
   READ_LONG  0x64 "abil_off"
   READ_SHORT 0x68 "abil_num"
   READ_LONG  0x6a "fx_off"
@@ -1085,14 +1085,14 @@ COPY ~RR/RR_CORE/SPELLS/RR#BHL01.SPL~ override                      // Mass Char
 
 // Enthralling Melody
 
-LAF ret_from_eval STR_VAR f_Entry = RR#FSCNT RET RR#2DAID = f_Value END
+LAM load_RR#FSCNT_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#BHL02.EFF~ override                      // Prevents Demons, Dragons, Constructs and Undead from being affected by Enthralling Melody
      ~RR/RR_CORE/BAM/RR#BHL2B.BAM~    override                      // Enthralling Melody icon
 
 COPY ~RR/RR_CORE/SPELLS/RR#BHL02.SPL~ override                      // Enthralling Melody spell file
   SAY NAME1 @42 SAY NAME2 @42 SAY UNIDENTIFIED_DESC @43 SAY DESC @43
-  WRITE_BYTE 0x27 ("%RR#2DAID%" + 1)                                // assign new secondary type for Fascinate effects
+  WRITE_BYTE 0x27 RR#FSCNT                                          // assign new secondary type for Fascinate effects
   READ_LONG  0x64 "abil_off"
   READ_SHORT 0x68 "abil_num"
   READ_LONG  0x6a "fx_off"
@@ -1174,7 +1174,7 @@ BUT_ONLY
 
 // Assign the new party-only projectile (RR#VRPO.PRO) to various Bard HLAs
 
-LAF ret_from_eval STR_VAR f_Entry = RR#VRPO RET RR#2DAID = f_Value END
+LAM load_RR#VRPO_var
 
 COPY_EXISTING ~RR#BDF04.SPL~ override                               // True Bard's Enhanced Song
               ~RR#BDF06.SPL~ override                               // True Bard's Lingering Song
@@ -1185,14 +1185,14 @@ COPY_EXISTING ~RR#BDF04.SPL~ override                               // True Bard
   READ_LONG  0x64 ab_off
   READ_SHORT 0x68 ab_num
   FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#2DAID%"
+    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRPO
   END
 BUT_ONLY
 
 
 // Assign the new no-party projectile (RR#VRNP.PRO) to various Bard HLAs
 
-LAF ret_from_eval STR_VAR f_Entry = RR#VRNP RET RR#2DAID = f_Value END
+LAM load_RR#VRNP_var
 
 COPY_EXISTING ~RR#BHL01.SPL~ override                               // Mass Charm
               ~RR#BHL02.SPL~ override                               // Enthralling Melody
@@ -1202,7 +1202,7 @@ COPY_EXISTING ~RR#BHL01.SPL~ override                               // Mass Char
   READ_LONG  0x64 ab_off
   READ_SHORT 0x68 ab_num
   FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#2DAID%"
+    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRNP
   END
 BUT_ONLY
 

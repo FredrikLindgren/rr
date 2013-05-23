@@ -18,49 +18,14 @@ PRINT ~Initializing Assorted Fixes installation ...~
 ADD_PROJECTILE ~RR/RR_CORE/PRO/RR#VRNP.PRO~                                                    // New projectile, slightly below visual range, doesn't affect party, used by the Blade's Weapons Display, the Jester's song and the new Bardic HLAs
 ADD_PROJECTILE ~RR/RR_CORE/PRO/RR#VRPO.PRO~                                                    // New projectile, slightly above visual range, only affects party, used by the Bard, Blade and Skald songs
 
-// Write the numeric projectile IDs to the 2DA so that they can be accessed at any time, for example, if a component which requires these numbers is installed at a later point when they are no longer inside the buffer
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#EVAL.2DA~ THEN BEGIN
-  COPY ~RR/LIB/RR#EVAL.2DA~ ~override~
-END
-APPEND ~RR#EVAL.2DA~ ~RR#VRNP %RR#VRNP%~ UNLESS ~RR#VRNP~
-APPEND ~RR#EVAL.2DA~ ~RR#VRPO %RR#VRPO%~ UNLESS ~RR#VRPO~
-
-
 // Add new secondary types
 
-COPY_EXISTING ~msectype.2da~ ~override~                             // add a new secondary type to remove Death Attack after the first successful hit
-  COUNT_2DA_ROWS 2 "rows"
-  INSERT_2DA_ROW "%rows%" 2 ~RR#DEATA RR#DEATH_ATTACK~              // assign secondary type and accompanying string
-  REPLACE ~RR#DEATH_ATTACK~ @37                                     // Death Attack removal feedback string
-  SET "RR#SECTYPE" = ("%rows%" - 2)
-BUT_ONLY_IF_IT_CHANGES
-APPEND ~RR#EVAL.2DA~ ~RR#DEATA %RR#SECTYPE%~ UNLESS ~RR#DEATA~      // Write the numeric secondary type ID to the 2DA so that it can be accessed at any
-                                                                    // time, for example, if a component which requires this number is installed at a later
-                                                                    // point when it is no longer inside the buffer
+ADD_SECTYPE RR#DEATA @37                                            // add a new secondary type to remove Death Attack after the first successful hit
 
-COPY_EXISTING ~msectype.2da~ ~override~                             // add a new secondary type to remove Fascinate/Mesmerize effects
-  COUNT_2DA_ROWS 2 "rows"
-  INSERT_2DA_ROW "%rows%" 2 ~RR#FSCNT RR#FASCINATE~                 // assign secondary type and accompanying string
-  REPLACE ~RR#FASCINATE~ @92                                        // Fascinate/Mesmerize effect removal feedback string
-  SET "RR#SECTYPE" = ("%rows%" - 2)
-BUT_ONLY_IF_IT_CHANGES
-APPEND ~RR#EVAL.2DA~ ~RR#FSCNT %RR#SECTYPE%~ UNLESS ~RR#FSCNT~      // Write the numeric secondary type ID to the 2DA so that it can be accessed at any
-                                                                    // time, for example, if a component which requires this number is installed at a later
-                                                                    // point when it is no longer inside the buffer
+ADD_SECTYPE RR#FSCNT @92                                            // add a new secondary type to remove Fascinate/Mesmerize effects
 
 
 // New secondary type removal spells
-
-COPY_EXISTING ~RR#EVAL.2DA~ ~override~
-COUNT_2DA_ROWS ~2~ "rows"
-FOR ( index = 0 ; index < rows ; index = index + 1 ) BEGIN
-  READ_2DA_ENTRY "index" 0 2 "2datmp"
-   PATCH_IF ("%2datmp%" STRING_EQUAL_CASE ~RR#FSCNT~) BEGIN
-     READ_2DA_ENTRY "index" 1 2 "RR#2DAID"
-   END
-END
-BUT_ONLY_IF_IT_CHANGES
 
 COPY    ~RR/RR_CORE/SPELLS/RR#UNFSC.SPL~   ~override~                // Fascinate effect removal spell
   READ_LONG  0x64 "abil_off"
@@ -72,7 +37,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#UNFSC.SPL~   ~override~                // Fascinat
     FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
       READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
        PATCH_IF ("%opcode%" = 221) BEGIN                             // effect #221: remove secondary type
-        WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) (%RR#2DAID% + 1)
+        WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) RR#FSCNT
        END
     END
   END

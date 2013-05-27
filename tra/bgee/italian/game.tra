@@ -389,7 +389,9 @@ Utilizzabile da:
 @89 = ~Colpo Vitale~
 
 @90 = ~Immune ai danni non letali~
-
+@91 = ~Ipnotizzato~
+@92 = ~Effetto invalidante interrotto~
+@93 = ~Affascinato~
 
 @111 = ~Questo è lo scudo di Kiel, il Sicario delle Legioni, primogenito di Durlag l'Assassino dei Troll e principe del clan della tanto sventurata torre paterna. La sua leggerezza ed eccellente fattura incrementano di un punto la destrezza di chiunque lo imbracci.
 
@@ -2474,6 +2476,7 @@ Nota: mescere pozioni è un'operazione delicata che può essere svolta solo in l
 @8120 = ~Questa abilità non può essere usata in ambienti ostili~
 @8121 = ~(Grazie all'intelligenza inerente sua professione, un vagabondo esperto ha visto abbastanza pozioni, nel corso della sua vita da avventuriero, da poterne imitare la mescita. Tuttavia, i costi delle materie prima necessarie all'operazione devono essere coperti)~
 @8122 = ~(Questa abilità consente a un vagabondo di mescere una pozione dalla lista seguente:)~
+@8123 = ~(A causa della sua elevata conoscenza dell'alchimia, un Cacciatore di Taglie può creare tre volte molte pozioni come un normale vagabondo in un unico ambiente.)~
 @8130 = ~Pozione del Furto Supremo (200 mo)~
 @8131 = ~Pozione di Percezione (175 mo)~
 @8132 = ~Pozione di Invisibilità (125 mo)~

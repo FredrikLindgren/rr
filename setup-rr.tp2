@@ -131,6 +131,7 @@ COPY_EXISTING SPCL423.SPL override                           // Poison Weapon As
         opcode
         target = 1
         duration = 30
+        insert_point = 0
       STR_VAR
         resource = RR#TAS02
     END
@@ -383,7 +384,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#THL03.SPL~ override                 // Evasion (repla
     END
   END
   PATCH_FOR_EACH spell IN rr#wi103 rr#wi304 rr#wi308 rr#pr302 rr#pflam rr#mligt BEGIN
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = RESOLVE_STR_REF (@8002) duration = 30 STR_VAR resource = EVAL "%spell%" END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = RESOLVE_STR_REF (@8002) insert_point = "-1" duration = 30 STR_VAR resource = EVAL "%spell%" END
   END
 
 
@@ -1226,7 +1227,7 @@ COPY ~RR/RR_CORE/BAM/RR#BHL6A.BAM~    override                      // Sound Bar
 COPY ~RR/RR_CORE/SPELLS/RR#BHL06.SPL~ override                      // Sound Barrier (immunities + trigger secondary spell on hit)
   SAY NAME1 @8008 SAY NAME2 @8008
   SAY UNIDENTIFIED_DESC @8009 SAY DESC @8009
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = 4742 duration = 30 STR_VAR resource = fl#shout END //Immunity to shout spell, used by Ultroloths (message=Spell Ineffective)
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = 4742 duration = 30 insert_point = "-1" STR_VAR resource = fl#shout END //Immunity to shout spell, used by Ultroloths (message=Spell Ineffective)
 
 COPY ~RR/RR_CORE/SPELLS/RR#BHL6A.SPL~ override                      // Sound Barrier (secondary spell, damage + stun + deafness)
 
@@ -2894,6 +2895,7 @@ BEGIN
             parameter1 = 0                                                                 // param1: casting level
             parameter2 = 1                                                                 // param2: cast instantly
             probability1 = 100                                                             // probability1: 100
+            insert_point = 0
           STR_VAR resource = ~RR#PNP36~                                                    // resref: (RR#PNP36.SPL)
         END
       // ===============================================================================
@@ -2923,6 +2925,7 @@ BEGIN
             parameter1 = 0                                                                 // param1: casting level
             parameter2 = 1                                                                 // param2: cast instantly
             probability1 = 100                                                             // probability1: 100
+            insert_point = 0
           STR_VAR resource = ~RR#PNP39~                                                    // resref: (RR#PNP39.SPL)
         END
       // ===============================================================================
@@ -2992,6 +2995,7 @@ BEGIN
             parameter1 = 0                                                                 // param1: casting level
             parameter2 = 1                                                                 // param2: cast instantly
             probability1 = 100                                                             // probability1: 100
+            insert_point = 0
           STR_VAR resource = ~RR#PTN36~                                                    // resref: (RR#PTN36.SPL)
         END
       // ===============================================================================
@@ -3020,6 +3024,7 @@ BEGIN
             parameter1 = 0                                                                 // param1: casting level
             parameter2 = 1                                                                 // param2: cast instantly
             probability1 = 100                                                             // probability1: 100
+            insert_point = 0
           STR_VAR resource = ~RR#PTN39~                                                    // resref: (RR#PTN39.SPL)
         END
       // ===============================================================================

@@ -20,5 +20,6 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ THEN BEGIN                      // 
  OUTER_SPRINT ~oldfiles~ ~RR/LIB/DS/oldfiles_kelsey.2da~
  OUTER_SPRINT ~oldswapfile~ ~RR/LIB/DS/oldds_swap.2da~
  LAUNCH_ACTION_MACRO ~fix_old_DS_scripts~
- APPEND stats.ids "109 CLERIC_HALLOW" UNLESS CLERIC_HALLOW                   // Make sure there is a CLERIC_HALLOW (it should be installed by DS proper) 
 END
+
+APPEND stats.ids "109 CLERIC_HALLOW" UNLESS CLERIC_HALLOW                   // Make sure there is a CLERIC_HALLOW (it should be installed by DS proper)

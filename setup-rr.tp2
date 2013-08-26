@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~
 AUTHOR "Wisp, www.shsforums.net"
-VERSION ~v4.62~
+VERSION ~v4.63~
 
 ALWAYS
   INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro

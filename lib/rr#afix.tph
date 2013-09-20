@@ -123,18 +123,13 @@ COPY_EXISTING ~kit.ids~ ~override~
   REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
   REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
   REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
-  //REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~ //Avoid changing the values, what with ToBEx and all (Wisp)
-  //REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
-  BUT_ONLY_IF_IT_CHANGES
+  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
+  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+  BUT_ONLY
 
-APPEND ~kit.ids~ ~0x4000 TRUECLASS~
-  UNLESS ~\bTRUECLASS\b~
-APPEND ~kit.ids~ ~0x0000 BARBARIAN~
-  UNLESS ~\bBARBARIAN\b~
-APPEND ~kit.ids~ ~0x0000 WILDMAGE~
-  UNLESS ~\bWILDMAGE\b~
-
-
+APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~\bTRUECLASS\b~
+APPEND ~kit.ids~ ~0x40000000 BARBARIAN~ UNLESS ~\bBARBARIAN\b~
+APPEND ~kit.ids~ ~0x80000000 WILDMAGE~ UNLESS ~\bWILDMAGE\b~
 
 // Fix Garrick's misplaced trigger in AR0800.BCS which can prevent the STI and CoC encounters from starting (mirrors G3 BG2 Fixpack code)
 

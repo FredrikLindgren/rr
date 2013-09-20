@@ -19,7 +19,7 @@ ALWAYS
   // INCLUDE ~rr/lib/tobexfix.tph~                                    // obsolete as of TobEx 0022 which RR now ships with
 END
 
-README ~rr/readme_rr.html~
+README ~rr/doc/readme_rr.html~
 ASK_EVERY_COMPONENT
 
 

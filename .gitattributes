@@ -1,2 +1,24 @@
-*.ini -crlf
-*.txt -crlf
+*.ini text -crlf
+*.txt text -crlf
+*.tp2 text
+*.html text
+*.tpa text
+*.tpp text
+*.tph text
+*.2da text
+*.htm text
+*.d text
+*.baf text
+*.tra text
+
+*.spl binary
+*.dll binary
+*.exe binary
+*.bam binary
+*.cre binary
+*.bmp binary
+*.itm binary
+*.eff binary
+*.pro binary
+*.vvc binary
+*.are binary

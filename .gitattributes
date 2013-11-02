@@ -1,5 +1,6 @@
-*.ini text -crlf
-*.txt text -crlf
+*.ini text=crlf
+*.txt text
+rr/lib/tobex_redist/*.txt text=crlf
 *.tp2 text
 *.html text
 *.tpa text

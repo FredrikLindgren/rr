@@ -9,10 +9,7 @@ CARACTERÍSTICAS:
 Bonificación a la clase de armadura: 3
 Especial: protección contra ataques perforantes (no procedentes de proyectiles)
 Peso: 2
-Requiere: 4 Fuerza
-
-No usable por:
- Mago~
+Requiere: 4 Fuerza~
 @22    = ~Broquel +3~
 @23    = ~A pesar de la efectividad de los encantamientos de este escudo, éste no llama la atención y desafía los intentos de identificación. Por tanto, es probable que perteneciera en su día a la milicia de alguna baronía olvidada, aunque es difícil asegurarlo.
 
@@ -21,10 +18,7 @@ CARACTERÍSTICAS:
 Bonificación a la clase de armadura: 4
 Especial: protección contra ataques perforantes (no procedentes de proyectiles)
 Peso: 2
-Requiere: 4 Fuerza
-
-No usable por:
- Mago~
+Requiere: 4 Fuerza~
 @24    = ~El Guardián~
 @25    = ~El Guardián
 
@@ -38,10 +32,7 @@ Aptitudes portador:
 Especial: Convoca Masa Bamboleante Menor una vez al día
 Bonificación a la clase de armadura: 2
 Peso: 1
-Requiere: Sabiduría 12, Carisma 15
-
-Sólo usable por:
- Druidas~
+Requiere: Sabiduría 12, Carisma 15~
 @26    = ~Protección del Ladrón~
 @27    = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de la Máscara. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones.
 
@@ -55,11 +46,7 @@ Habilidades especiales:
 Bonificación a la clase de armadura: 3
 Especial: sin protección contra ataques perforantes o de proyectil
 Peso: 1
-Requiere: Fuerza 4
-
-Sólo usable por:
-Ladrón
-Bardo~
+Requiere: Fuerza 4~
 @28    = ~GALÁN: este pícaro es parte acróbata, parte espadachín y parte bromista; la personificación del encanto y la elegancia.
 
 Ventajas:
@@ -217,10 +204,7 @@ THAC0: +2 bonificación
 Peso: 2
 Factor de velocidad: 0
 Tipo de Talento: Daga
-Tipo: una mano
-
-No usable por:
- Clérigo~
+Tipo: una mano~
 @54    = ~CAZARRECOMPENSAS:
 Este personaje es un cazador de hombres, y posee la habilidad de rastrear a sus presas y traerlas con vida ante quien las ande buscando (ya sean las autoridades legales o los amos de los bajos fondos). Los cazarrecompensas están especialmente entrenados en su tarea, y son oponentes terribles. Su aptitud para poner trampas ha sido perfeccionada más allá de la de un ladrón corriente:
 
@@ -244,10 +228,7 @@ Desventajas:
 
 CARACTERÍSTICAS:
 
-Sostenida bajo el brazo izquierdo, el instrumento permite al bardo memorizar dos hechizos extra de nivel 2 y un hechizo extra de nivel 3.
-
-Sólo usable por:
- Bardos~
+Sostenida bajo el brazo izquierdo, el instrumento permite al bardo memorizar dos hechizos extra de nivel 2 y un hechizo extra de nivel 3.~
 @58    = ~Dardo helado que regresa~
 @59    = ~Dardo helado que regresa
 
@@ -264,10 +245,7 @@ Tipo de daño: misil (perforante)
 Peso: 0
 Factor de velocidad: 1
 Tipo de Talento: Dardo
-Tipo: una mano
-
-No usable por:
- Clérigo~
+Tipo: una mano~
 @60    = ~Espada corta para apuñalar por la espalda~
 @61    = ~Espada corta para apuñalar por la espalda: 'La Hoja de la Sombra'
 
@@ -287,12 +265,7 @@ Peso: 3
 Factor de velocidad: 0
 Tipo de Talento: Espada corta
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Druida
- Clérigo
- Mago~
+Requiere: 5 Fuerza~
 @62    = ~Marina~
 @63    = ~Arrastrador menor~
 @64    = ~Arrastrador mayor~
@@ -315,10 +288,7 @@ CARACTERÍSTICAS:
 Encontrar/desactivar trampas: bonificación +20%
 Abrir cerraduras: bonificación +10%
 
-Duración: 8 turnos
-
-Sólo usable por:
-Ladrones~
+Duración: 8 turnos~
 @74    = ~Esta poción otorga un incremento temporal de las habilidades de robo y de los puntos de golpe máximos a los ladrones con menos de 13 niveles de experiencia. La bonificación disminuye a medida que el ladrón avanza de nivel y desaparece cuando ya es un maestro del robo.
 
 CARACTERÍSTICAS:
@@ -333,11 +303,7 @@ Niveles 10-12: +8% a todas las habilidades de robo, 2d6+3 puntos de daño tempor
 
 Niveles 13+: la poción no surte efecto
 
-Duración: 3 turnos
-
-Sólo usable por:
- Ladrón
- Bardo~
+Duración: 3 turnos~
 @75    = ~La poción no tuvo efecto. ~
 @76    = ~Romper Encantamiento~
 @77    = ~Producir Encantamiento~
@@ -409,12 +375,7 @@ Peso: 2
 Factor de velocidad: 4
 Tipo de talento: Arco corto
 Tipo: a dos manos
-Requiere: 16 Fuerza
-
-No usable por:
-Druida
-Clérigo
-Mago~
+Requiere: 16 Fuerza~
 @114   = ~Zapa~
 @115   = ~La zapa es una pequeña bolsa de cuero llena de arena, plomo, monedas, u otro material de peso. Se utiliza para dejar a la víctima inconsciente administrando un golpe en la cabeza. La zapa es buena para las ciudades, pero no tanto en los exteriores o mazmorras. Se utiliza en situaciones donde se necesita capturar a alguien sin causar daños permanentes, aunque los ladrones muchas veces utilizan esta arma con motivos nefarios.
 
@@ -429,10 +390,7 @@ Peso: 1
 Factor de velocidad: 2
 Tipo de talento: Palo
 Tipo: una mano
-Requiere: 3 Fuerza
-
-No usable por:
- Mago~
+Requiere: 3 Fuerza~
 @116   = ~Piedra Ioun rojo oscuro~
 @117   = ~Esta piedra Ioun es redonda y de un color rojo oscuro. Una vez activada, mejora la coordinación ojo-mano de quien la usa, además de mejorar el balance y los reflejos, lo cual le hace un objeto valioso entre los ladrones.
 
@@ -441,10 +399,7 @@ CARACTERÍSTICAS:
 Habilidades equipada:
  +1 a la Destreza
 Bonificación a la CA: Ninguna
-Peso: 0
-
-Usable por:
- Todos~
+Peso: 0~
 @118   = ~Fragmento de Iluminación~
 @119   = ~Esta piedra Ioun parece haber sido cuidadosamente pulida hasta alcanzar su forma actual. Los rumores dicen que es un trozo de la piedra sensorial utilizada por Mirdival el Astuto, un mago de la corte Calimshita, que pasó su vida entera creando artefactos mágicos para su Pasha. Durante sus muchos viajes el mago estudió y se familiarizó con muchos objetos encantados y místicos. Por temor a olvidarse de detalles importantes y sin confiar en la naturaleza frágil del papel, Mirdival regularmente guardaba sus conocimientos en una piedra sensorial que había adquirido de un mercader Genasi de Fuego, caminante planar. Desgraciadamente, uno de sus experimentos salió mal y toda su torre explotó. Durante la caída de la torre, su piedra sensorial se rompió en muchos pedazos, cada uno reteniendo una parte de las memorias del mago.
 
@@ -453,10 +408,7 @@ CARACTERÍSTICAS:
 Habilidades equipado:
  +20 al Conocimiento
 Bonificación a la CA: Ninguna
-Peso: 0
-
-Usable por:
- Todos~
+Peso: 0~
 @120   = ~Derritetrolls~
 @121   = ~Derritetrolls
 
@@ -473,10 +425,7 @@ Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Daga
 Tipo: una mano
-Requiere: 3 Fuerza
-
-No usable por:
- Clérigo~
+Requiere: 3 Fuerza~
 @122   = ~Llama argéntea~
 @123   = ~Llama argéntea
 
@@ -494,10 +443,7 @@ Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Daga
 Tipo: una mano
-Requiere: 3 Fuerza
-
-No usable por:
- Clérigo~
+Requiere: 3 Fuerza~
 @124   = ~Portaplaga~
 @125   = ~Portaplaga
 
@@ -518,10 +464,7 @@ Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Daga
 Tipo: una mano
-Requiere: Fuerza 3
-
-No usable por:
-Clérigo~
+Requiere: Fuerza 3~
 @126   = ~Guardián de la Ley~
 @127   = ~Guardián de la Ley
 
@@ -539,13 +482,7 @@ Peso: 2
 Factor de velocidad: 1
 Tipo de Talento: Cimitarra/Wakizashi/Ninja-To
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Personajes caóticos
- Druida
- Clérigo
- Mago~
+Requiere: 5 Fuerza~
 @128   = ~Garra de gato negro~
 @129   = ~Garra de gato negro
 
@@ -564,12 +501,7 @@ Peso: 4
 Factor de velocidad: 2
 Tipo de Talento: Cimitarra/Wakishashi/Ninja-To
 Tipo: una mano
-Requiere: 6 Fuerza
-
-No usable por:
- Druida
- Clérigo
- Mago~
+Requiere: 6 Fuerza~
 @130   = ~Aplastapiedras~
 @131   = ~Aplastapiedras
 
@@ -586,10 +518,7 @@ Peso: 3
 Factor de velocidad: 2
 Tipo de Talento: Palo
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
-Mago~
+Requiere: 5 Fuerza~
 @132   = ~El Defensor Acérrimo~
 @133   = ~Esta rodela ceremonial lleva grabadas en su superficie unas runas mágicas que normalmente se asocian con Gaerdal Ironhand, el dios gnomo de la vigilancia y la disciplina marcial. Su seria naturaleza le hace ganarse una sobria y grave admiración entre sus adeptos. Gaerdal enseña a los gnomos a defenderse por si mismos de criaturas más grandes y fuertes que ellos instándoles a usar sus aptitudes naturales y transformando sus propias características físicas, que podrían considerarse desventajas, en ventajas. El dios gnomo tiene un reducido pero devoto número de seguidores entre los de su raza, muchos de los cuales son guerreros o protectores de la comunidad. Por estos y otros motivos, es una deidad que goza del respeto del Pueblo Olvidado.
 
@@ -617,10 +546,7 @@ Habilidades especiales:
 Bonificación a la clase de armadura: 3
 Especial: sin protección contra ataques perforantes ó de proyectil
 Peso: 2
-Requiere: Fuerza 4
-
-No usable por:
- Mago~
+Requiere: Fuerza 4~
 @136   = ~Cinturón maestro~
 @137   = ~Cinturón maestro
 
@@ -632,10 +558,7 @@ Habilidades equipadas:
  +10% a abrir cerraduras
  +10% a desarmar trampas
  +10% a colocar trampas
-Peso: 2
-
-Usable por:
-Ladrones~
+Peso: 2~
 @138   = ~Zafiro tri-alma~
 @139   = ~Zafiro tri-alma
 
@@ -652,10 +575,7 @@ Especial: Protege contra golpes críticos
  Usa abrir cerraduras 3x/día
  Usa disipar invisibilidad 3x/día
 Nota: El uso de estas habilidades causa fatiga
-Peso: 0
-
-Usable por:
- Todos~
+Peso: 0~
 @140   = ~Capucha de Agudeza~
 @141   = ~Una vez fue un objeto preciado de la Cofradía de ladrones de Xanathar, esta capucha fue tratada con magia para mejorar el conocimiento y la percepción de cualquiera que la use. La capucha fue perdida temporalmente en una escaramuza a una de las casas de esclavos que Xanathar poseía, pero hace poco resurgió en Calimport y viajó hacia Atkhatla en una de las muchas caravanas pertenecientes a la compañía mercantil de Sybarr.
 
@@ -669,10 +589,7 @@ Habilidades equipadas:
  Infravisión
  Inmunidad contra ceguera
 
-Peso: 0
-Usable por:
- Ladrón
- Monje~
+Peso: 0~
 @142   = ~Arpa de Greagan~
 @143   = ~Arpa de Greagan
 'La Audiencia cautivada'
@@ -681,10 +598,7 @@ Esta arpa es bien conocida por los nómadas del este, aunque más por su infame 
 CARACTERÍSTICAS:
 
 Especial: Lanza dominación 3 veces al día
-Peso: 3
-
-Sólo usable por:
- Bardo~
+Peso: 3~
 @144   = ~Arpa de Descant~
 @145   = ~Lady Laxaella Bronshield, la Baronesa de Tanistan, hizo crear esta arpa para su bufón de la corte antes de enviarlo junto con una compañía de sus mejores soldados a un encuentro con unas Moles Sombrías del bosque de las espinas. Al principio los soldados se burlaban del bufón, por su físico, pero al encontrarse con las Moles Sombrías se dieron cuenta de su rol. Para sorpresa de los soldados, el bufón era completamente inmune a la mirada de las moles, que simultáneamente convirtió a uno de los mejores soldados en un idiota. Además, la melodía del arpa creaba un contra-efecto a la mirada de las Moles, regresando al soldado a estado normal. Al final, el sitio fue libreado sin ninguna baja y sólo rasguños menores. Durante la mayor parte del regreso a casa, los soldados viajaron con el bufón a hombros, dando cánticos en su honor.
 
@@ -694,9 +608,7 @@ Habilidades especiales:
 Anula Confusión 3x/día
 Área de Efecto: 1 objetivo
 
-Peso: 3
-Usable por:
- Bardos~
+Peso: 3~
 @146   = ~Daga del ingenio~
 @147   = ~Las preciosas runas en la empuñadura de la daga indican que ha sido creada en Thay, presumiblemente para un miembro de alto rango de la facción de Estudiosos. Aunque la daga puede ser usada por cualquiera, sólo aquellos que sepan de artes arcanas pueden conocer su potencial total. El arma parece tener un encantamiento que mejora la mente de su dueño, proveyéndolo de agudeza y mejorando la memorización de los hechizos.
 
@@ -713,10 +625,7 @@ Peso: 1
 Factor de velocidad: 0
 Tipo de talento: Daga
 Tipo: una mano
-Requiere: 3 Fuerza
-
-No usable por:
-Clérigo~
+Requiere: 3 Fuerza~
 @148   = ~El Extenuador~
 @149   = ~Forjada por un poderoso chamán Úzhgardt, ésta clava ha sido específicamente diseñada para disminuir la efectividad del oponente. Fue empuñada por Aukthar el Cuervo Negro en numerosas disputas entre su gente y las hordas orcas que periódicamente intentaban invadir Ravenrock, el túmulo ancestral. El arma se perdió durante una particularmente encarnizada contienda, cuando el estruendo de la batalla provocó una avalancha que barrió todo a su paso.
 
@@ -733,10 +642,7 @@ Peso: 3
 Factor de velocidad: 3
 Talento marcial: clava
 Tipo: una mano
-Requiere: Fuerza 5
-
-No lo puede usar:
- Mago~
+Requiere: Fuerza 5~
 @150   = ~Arco Corto Compuesto~
 @151   = ~Los arcos compuestos son arcos cortos o largos cuyas varas están hechas de más de un tipo de material. Esto proporciona mayor flexibilidad y hace que las flechas lanzadas por ellos hagan más daño. El ejemplar que tenéis en vuestras manos sólo puede ser llevado por personajes de Fuerza 16 o más.
 
@@ -919,21 +825,14 @@ Aptitudes de combate:
 Bonificación a la clase de armadura: 2
 Especial: No da protección para ataques de misil o punzantes
 Peso: 2
-Requiere: 4 Fuerza
-
-No usable por:
-Mago~
+Requiere: 4 Fuerza~
 @202   = ~Amuleto de Barrera~
 @203   = ~Amuleto de Barrera
 Este poderoso amuleto fue creado por el encantador Celemon de Calimport en 727 DR. Creó diez como comisión antes de que sus celosos rivales lo asesinaran e intentaran copiar el procedimiento. Sus colegas no eran tan habilidosos como Celemon, y destruyeron su laboratorio y a ellos mismos. La fórmula también fue destruida. Este amuleto en particular fue usar por Pelan Rainwind. Se perdió cuando fue muerto por gigantes en la Espina del Mundo, por el año 840 DR.
 
 CARACTERÍSTICAS:
 
-Lanza piel pétrea y globo menor de invulnerabilidad 3x al día.
-
-Usable por:
- Mago
- Hechicero~
+Lanza piel pétrea y globo menor de invulnerabilidad 3x al día.~
 @204   = ~Botas del Zorro~
 @205   = ~Estas botas rojas y verdes fueron usadas por Elpham de Perrywine. Elpham era un ladrón de gran talento. Tras ser capturado dos veces, Elpham invirtió dinero para comisionar estas botas. Claro, Elpham llegó a un mal final cuando robó a un Mago Rojo de Thay, Xain Morobdel. Elpham robó un saco lleno de gemas del cinturón de Xain y danzó frente a la muchedumbre gritando, "¿Por qué no intentáis perseguirme ahora? ¡Ja ja!" Xain, silenciosamente convocó cuatro acechadores invisibles y los comandó, "Matad al idiota con botas rojas y verdes."
 
@@ -959,13 +858,7 @@ Tipo de daño: Cortante
 Peso: 5
 Factor de velocidad: 4
 Tipo de Talento: Hacha
-Tipo: una mano
-
-No usable por:
-Druida
-Clérigo
-Mago
-Ladrón~
+Tipo: una mano~
 @208   = ~Inmovilización rápida~
 @209   = ~Inmovilización rápida
 
@@ -983,12 +876,7 @@ Tipo de daño: cortante
 Peso: 2
 Factor de velocidad: 2
 Tipo de talento: espada larga
-Tipo: una mano
-
-No usable por:
-Druida
-Clérigo
-Mago~
+Tipo: una mano~
 @210   = ~Piel de Abishai ~
 @211   = ~Piel de Abishai
 
@@ -1000,11 +888,7 @@ Aptitudes equipado:
  +15% resistencia al daño cortante, perforante, contundente y de proyectil
  Regeneración 1 PG/6 seg
 Clase de Armadura: 4
-Peso: 15
-
-No usable por:
-Paladín
-Mago~
+Peso: 15~
 @212   = ~Saltador de hechizos~
 @213   = ~Naradon de Thesk era conocido por su habilidad de rápida y eficientemente vencer a los magos enemigos. Logró tal reputación con la ayuda de tres objetos: Pociones de velocidad, Botas de velocidad, y su querida espada, Saltador de hechizos. Al contrario de muchos objetos mágicos, Saltador de hechizos no tiene un pasado oscuro. Naradon se retiró de su vida de aventuras cuando tenía treinta y dos. Su amor por las pociones de velocidad le llevó a la muerte por vejez tan sólo cuatro años después. Su único heredero no tenía ganas de ser un aventurero. Vendió la espada a un ladrón unos años después de la muerte de su padre. La espada puede ser reconocida por el Martín pescador grabado en su lado.
 
@@ -1021,12 +905,7 @@ Tipo de daño: perforante
 Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Espada corta
-Tipo: una mano
-
-No usable por:
- Druida
- Clérigo
- Mago~
+Tipo: una mano~
 @214   = ~Capucha del ladrón~
 @215   = ~Esta capucha marrón oscura está hecha para ser usada sobre la cabeza y hombros. Fue creada por el ladrón e ilusionista gnomo Brein Chestnut. Brein utilizó esta capucha en sus aventuras durante varios años antes de que su novia le convenciera abandonarlas. Le dio la capucha a su sobrino, Chirchet, quién a su vez la vendió por varios acres de tierra.
 
@@ -1034,11 +913,7 @@ CARACTERÍSTICAS:
 
 Especial: +15% a esconderse en las sombras, Borrosidad e Imagen Espejada 3x/día
 Bonificación a la clase de armadura: +1
-Peso: 1
-
-Sólo usable por:
- Ladrón
- Bardo~
+Peso: 1~
 @216   = ~Muerte silenciosa~
 @217   = ~Esta espada perteneció a Venduris, un asesino al servicio del Príncipe de las Mentiras. Cuando el ladrón fue aceptado en la orden de los Elegidos de Cyric, recibió una pequeña espada como regalo de bienvenida. Aunque la espada no disponía de muchos encantamientos, su poder parecía crecer con cada muerte que Venduris hacía en nombre de su maestro. El asesino prefería ser silencioso, y muchas veces sus víctimas no se daban cuenta hasta que era demasiado tarde. Sin embargo, a veces, cuando la víctima lo merecía, Venduris aplicaba veneno a la hoja antes de golpear. La víctima sufría mientras Cyric reía.
 
@@ -1071,10 +946,7 @@ Bonificación a la clase de armadura: 1
 Especial:
  +10% Movimiento silencioso
  +15% Esconderse en las sombras
-Peso: 5
-
-Sólo usable por:
- Ladrón~
+Peso: 5~
 @220   = ~La lengua de la salamandra~
 @221   = ~La lengua de la salamandra
 Una daga con un pasado oscuro, La lengua de la salamandra es preciada como arma y por sus poderes mágicos. La hoja parece ser una daga exótica que termina en dos puntas. Una pequeña lengua de salamandra roja está tallada en el corazón de la hoja, cerca del mango. Pulsa al azar sin intervención del usuario.
@@ -1098,10 +970,7 @@ Tipo de daño: perforante
 Peso: 1
 Factor de velocidad: 0
 Talento marcial: daga
-Tipo: una mano
-
-No usable por:
- Clérigo~
+Tipo: una mano~
 @222   = ~Cara del muerto~
 @223   = ~Cara del muerto
 Estos yelmos eran comunes entre los bárbaros Reghedmen que llegaron al Valle del Viento Helado. El diseño es simple: un yelmo de hierro con una máscara. Una vez que la construcción fuera finalizada, el herrero daba forma de cara de muerto a la máscara. El nombre del guerrero y una descripción de su muerte eran grabados en la frente. El yelmo se ponía en la pira funeraria. Los sacerdotes creían que la máscara escondería el miedo del guerrero cuando se enfrentara a Tempos. Un mes después, los yelmos de los mejores guerreros eran recuperados. Durante los años siguientes los sacerdotes les rezaban diariamente. Según la leyenda, si Tempos veía que un guerrero era valiente, el yelmo podría hacer a su usuario inmune al miedo. Este yelmo tiene el nombre "Siglef" y la palabra "Hacha".
@@ -1113,12 +982,7 @@ Especial:
  Protege contra golpes críticos
  Inmunidad al Miedo y Falta de moral
  -2 al carisma
-Peso: 3
-
-No usable por:
- Mago
- Bardo
- Ladrón~
+Peso: 3~
 @224   = ~Laurel del Favor de Sune~
 @225   = ~Laurel del Favor de Sune
 Esta corona de laureles y rosas era un regalo de la iglesia de Sune a las sacerdotisas de Hanali Celanil en la Mano del Seldarine. Los representantes de la diosa del amor y la belleza fueron bien recibidos por las sacerdotisas de Hanali Celanil, que usaron las coronas cuando los humanos visitaban la Mano. Los orcos descartaron los laureles como basura cuando tomaron la torre de las sacerdotisas.
@@ -1127,10 +991,7 @@ CARACTERÍSTICAS:
 
 Bonificación a la clase de armadura: 1
 Especial: +1 al carisma
-Peso: 1
-
-No usable por:
- Personajes malvados~
+Peso: 1~
 @226   = ~Piedra de la suerte de Venduris~
 @227   = ~Robado en la batalla de los agentes de Cyric contra las dríadas de Stormshire, esta piedra Ioun ha servido al asesino Venduris desde entonces. La esencia de la suerte dentro de la gema fue abusada por este ladrón garantizando ataques letales. Una vez hermosa, parecida a un arcoíris, la gema eventualmente fue corrompida bajo la influencia de su amo. La oscuridad que tiene ahora es recordatorio de la maldad de Venduris.
 
@@ -1141,13 +1002,7 @@ Aptitudes equipado:
 Bonificación a la clase de armadura: ninguna
 Especial: protege contra golpes críticos
 Peso: 0
-Requiere: Sabiduría 10
-
-Sólo usable por:
- Personajes malvados o neutrales
- Ladrón
- Mago
- Bardo~
+Requiere: Sabiduría 10~
 @228   = ~Anillo del escondite de Venduris~
 @229   = ~Este objeto fue obtenido de un ilusionista Thayviano que por algún motivo se cruzó en los planes de Cyric. Cuando Venduris fue enviado a deshacerse del mago, cogió este anillo de invisibilidad para sí. El asesino no tenía necesidad de usarlo pero en alguna ocasión, cuando debía tomar a sus víctimas vivas, el objeto le era de mucha ayuda.
 
@@ -1156,12 +1011,7 @@ CARACTERÍSTICAS:
 Aptitudes equipado:
  El usuario no es afectado por Detectar invisibilidad, Anular invisibilidad, Visión verdadera y hechizos divinatorios de eliminación de invisibilidad parecidos
 Habilidades:
- Invisibilidad en Masa 1/día
-
-Sólo usable por:
- Ladrón
- Mago
- Bardo~
+ Invisibilidad en Masa 1/día~
 @230   = ~Pergamino de Venduris~
 @231   = ~Este pergamino fue encontrado en el cuerpo de Venduris. La inscripción parece ser una nota del mago que lo creó, el otro lado está escrito con runas arcanas. La nota pone:
 
@@ -1180,10 +1030,7 @@ Habilidades especiales:
 Bonificación a Esconderse en las sombras: +50%
 Inmunidad al apuñalamiento por la espalda
 Alineamiento del usuario no es detectable.
-Peso: 1
-
-Usable por:
-Ladrones~
+Peso: 1~
 @234   = ~Arco de ceguera~
 @235   = ~Este arco compuesto irradia fuertes encantamientos nigrománticos que son comúnmente usados por los sacerdotes Yuan-Ti. El arco representa dos serpientes, cada una intentando devorar un ojo tallado en el mango. A los lados se puede leer "¡Que la grandeza de Sseth ciegue al indigno!". El arco fue primordialmente usado por los centinelas Yuan-Ti en su objetivo de prevenir que los intrusos descubrieran la localización de un templo secreto escondido en el bosque Ashendale. Por alguna razón, los Contempladores y las criaturas de su clase parecen ser muy vulnerables a las flechas lanzadas con este arco.
 
@@ -1198,12 +1045,7 @@ Peso: 1
 Factor de velocidad: 3
 Tipo de Talento: Arco corto
 Tipo: 2-puños
-Requiere: 16 Fuerza
-
-No usable por:
-Druida
-Clérigo
-Mago~
+Requiere: 16 Fuerza~
 @236   = ~Cota de Malla Drow~
 @237   = ~La Cota de malla Drow es una malla de metal de color negro satinado finamente creada que no pesa sobre el usuario. Es similar, pero no idéntica a la cota de mallas élfica. Típicamente sólo se crean túnicas, ya que los drow comparten la preferencia de sus primos de los bosques en el gusto por la protección que no restringe movimientos. La ligereza excepcional de esta armadura permite que pueda ser utilizada por ladrones y magos-luchadores con pocas restricciones. Además, da una pequeña protección contra la magia y reduce el tiempo de lanzamiento de todos los hechizos.
 
@@ -1216,11 +1058,7 @@ Habilidades especiales:
  Reduce el tiempo de lanzamiento en 1
 Clase de Armadura: 4
 Peso: 7
-Requiere: 5 Fuerza
-
-No usable por:
-Druida
-Mago~
+Requiere: 5 Fuerza~
 @238   = ~Memoria sin fin~
 @239   = ~Anillo de brujería: 'Geminus'
 
@@ -2164,10 +2002,7 @@ Habilidades Especiales:
 Bonificación a la clase de armadura: 4
 Especial: No da protección para ataques de misil o punzantes
 Peso: 2
-Requiere: 4 Fuerza
-
-No usable por:
-Mago~
+Requiere: 4 Fuerza~
 @5002  = ~El guardián +2~
 @5003  = ~Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida. Debido a su origen inusual, el poder de este escudo sólo puede ser utilizado por el más devoto de los seguidores de la naturaleza.
 
@@ -2182,10 +2017,7 @@ Habilidades Especiales:
 
 Bonificación a la clase de armadura: 3
 Peso: 1
-Requiere: 12 Sabiduría y 15 Carisma
-
-Solo usable por:
-Druidas~
+Requiere: 12 Sabiduría y 15 Carisma~
 @5004  = ~El guardián +3~
 @5005  = ~Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida. Debido a su origen inusual, el poder de este escudo sólo puede ser utilizado por el más devoto de los seguidores de la naturaleza.
 
@@ -2200,10 +2032,7 @@ Habilidades Especiales:
 
 Bonificación a la clase de armadura: 4
 Peso: 1
-Requiere: 12 Sabiduría y 15 Carisma
-
-Solo usable por:
-Druidas~
+Requiere: 12 Sabiduría y 15 Carisma~
 @5006  = ~Hacha de Tormenta +5~
 @5007  = ~Esta hacha contiene un encantamiento de interesante origen. Inmediatamente después de ser forjada, el hacha fue llevada a la cima de una montaña donde sacerdotes enanos la esperaban para convocar una gran tormenta. El arma fue puesta en un pedestal y la tormenta lanzó un rayo. Gracias a un encantamiento, pudo absorber parte de tal rayo.
 
@@ -2225,13 +2054,7 @@ Tipo de Daño: cortante
 Peso: 5
 Factor de velocidad: 2
 Tipo de talento: hacha
-Tipo: una mano
-
-No usable por:
-Druida
-Clérigo
-Mago
-Ladrón~
+Tipo: una mano~
 @5008  = ~Espada corta para apuñalar por la espalda +5~
 @5009  = ~La Hoja de la Sombra fue creada para ser el arma perfecta para el asesino. Es muy codiciada por todos aquéllos dispuestos a resolver cualquier asunto por medio de una espada y muchos de los que llegan a poseerla no la conservan por mucho tiempo. En las manos de cualquier personaje esta espada se comporta como una espada mágica +5, pero en manos de un Ladrón es más poderosa, entregando bonificación al daño e incrementando el multiplicador de apuñalamiento por la espalda
 
@@ -2250,12 +2073,7 @@ Peso: 3
 Factor de velocidad: 0
 Tipo de talento: Espada corta
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Druida
- Clérigo
- Mago~
+Requiere: 5 Fuerza~
 @5010  = ~Cinturón maestro de la fortuna~
 @5011  = ~Los bolsillos de este cinturón contienen muchas herramientas utilizadas por cerrajeros y relojeros. Sin embargo, tales objetos pueden ser abusados para motivos oscuros y son muy populares entre los ladrones. Este cinturón en particular tiene la letra "G" grabada en la hebilla.
 
@@ -2269,10 +2087,7 @@ Habilidades de equipado:
  +20% a desarmar trampas
  +20% a colocar trampas
 
-Peso: 2
-
-Usable por:
- Ladrones~
+Peso: 2~
 @5012  = ~Dardo helado que regresa +3~
 @5013  = ~Se rumorea que una sacerdotisa de Auril creó docenas de estos dardos para distribuir entre los guardias de su templo, como arma de último recurso. Un dardo era perfecto para tal tarea por su facilidad para esconderlo. Encantamientos que causan quemaduras por frío y hacen regresar al dardo a la mano de su lanzador también fueron agregados. En general, tales armas son raramente vistas fuera de los templos de Auril, que se encuentran en los picos helados del Valle del Viento Helado. Sin embargo, en años recientes, algunos mercaderes de los Diez Pueblos han estado haciéndose con cantidades sospechosamente grandes gracias a partidas de aventureros.
 
@@ -2290,10 +2105,7 @@ Tipo de Daño: misil (punzante)
 Peso: 0
 Factor de velocidad: 1
 Tipo de talento: Dardo
-Tipo: una mano
-
-No usable por:
-Clérigo~
+Tipo: una mano~
 @5014  = ~Aplastapiedras +4~
 @5015  = ~Este palo está tallado con oscuras runas orcas. Son los restos de la última guerra entre orcos y magos de Turm. Cuando las tribus orcas comenzaron a incursionar en la ciudad de los magos, éstos crearon gólems con grandes poderes para protegerlos. Sabiendo que la fuerza bruta de sus guerreros no era suficiente, el gran jefe orco, Gull-Nar, ordenó a sus chamanes la creación de un arma que aplastara a las "estatuas vivientes". Los chamanes utilizaron los libros robados de una torre de magos conquistada anteriormente para encantar el arma favorita de su jefe, un enorme palo. Gull-Nar estaba tan feliz que personalmente decidió comandar la siguiente incursión, destrozando a los gólems mientras avanzaba hacia el centro de la ciudad. La victoria estaba cerca, pero un mago vestido de negro apareció de la nada y lanzó un hechizo que provocó que los orcos comenzaran a luchar entre sí. En minutos, sus números cayeron y Gull-Nar fue asesinado por sus propios guerreros.
 
@@ -2311,10 +2123,7 @@ Peso: 3
 Factor de velocidad: 0
 Tipo de talento: Palo
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Mago~
+Requiere: 5 Fuerza~
 @5016  = ~Lapislázuli~
 @5017  = ~El Lapislázuli es una piedra preciosa de azul intenso con trozos de pirita dorada incrustada que brillan como pequeñas estrellas. Su color peculiar es a veces comparado con el de la ultramarina. Algunos eruditos especulan que estas gemas pueden ser usadas como vía para mejorar objetos mágicos que emplean el poder del relámpago. ~
 @5018  = ~Descarga Estática~
@@ -2339,13 +2148,7 @@ Peso: 2
 Factor de velocidad: 0
 Tipo de talento: Cimitarra/Wakizashi/Ninja-To
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Personajes caóticos
- Druida
- Clérigo
- Mago~
+Requiere: 5 Fuerza~
 @5021  = ~Porra del cansancio +3~
 @5022  = ~Creada por un chamán Uthgardt, esta porra ha sido encantada para disminuir la capacidad de lucha del enemigo. Fue utilizada por Aukthar de la tribu Blackraven contra las hordas orcas que periódicamente intentaban invadir Ravenrock, su hogar ancestral. El arma fue perdida en una fiera batalla, cuando los gritos de guerra crearon una avalancha que arrasó todo a su paso.
 
@@ -2367,10 +2170,7 @@ Peso: 3
 Factor de velocidad: 1
 Tipo de talento: Palo
 Tipo: una mano
-Requiere: 5 Fuerza
-
-No usable por:
- Mago~
+Requiere: 5 Fuerza~
 @5023  = ~Protección del ladrón +3~
 @5024  = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de la Máscara. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones.
 

@@ -9,9 +9,7 @@ STATISTICS:
 Armor Class Bonus: 3
 Special:  No Missile/Piercing Attack Protection
 Weight: 2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 @22 = ~Buckler +3~
 @23 = ~Despite the effectiveness of the enchantments on this buckler, it is otherwise nondescript and defies precise identification.  Such standardization makes it likely that it is from the militia of some forgotten barony, though it is hard to be certain.
@@ -21,9 +19,7 @@ STATISTICS:
 Armor Class Bonus: 4
 Special:  No Missile/Piercing Attack Protection
 Weight: 2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 
 @24 = ~The Guardian~
@@ -40,9 +36,7 @@ Special Abilities:
 
 Armor Class Bonus: 2
 Weight: 1
-Requires: 12 Wisdom and 15 Charisma
-Only Usable By:
- Druids~
+Requires: 12 Wisdom and 15 Charisma~
 
 @26 = ~Rogue's Ward~
 @27 = ~This buckler is made from a darksteel alloy which was tinged with trace amounts of mithral and silver. Although its surface appears to be extremely polished, the shield somehow seems to draw light in, rather than reflecting it. Upon closer examination, several enchantments which are commonly attributed to Mask's priesthood can be detected. It is likely that the Shadowlord himself blessed this item with his touch, granting it the power to hide and guard his followers from any dangers which they may encounter in their risky professions.
@@ -59,10 +53,7 @@ Special Abilities:
 Armor Class Bonus: 3
 Special:  No Missile/Piercing Attack Protection
 Weight: 1
-Requires: 4 Strength
-Only Usable By:
- Thief
- Bard~
+Requires: 4 Strength~
 
 @28 = ~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN> and part wit: the epitome of charm and grace.
 
@@ -249,9 +240,7 @@ THAC0:  +2 bonus
 Weight: 2
 Speed Factor: 0
 Proficiency Type: Dagger
-Type:  1-handed
-Not Usable By:
- Cleric~
+Type:  1-handed~
 
 @54 = ~BOUNTY HUNTER:
 This is a hunter of men, skilled in tracking and capturing quarry, whether for lawful authorities or underworld masters. Due to the frequent need to bring <PRO_HISHER> prey back alive, a Bounty Hunter often relies on alchemical substances that can incapacitate or weaken <PRO_HISHER> victims. A Bounty Hunter's trap-making abilities are also well beyond those of the average thief.
@@ -290,10 +279,7 @@ Through training and experience, a Bounty Hunter gradually learns to utilize alc
 
 STATISTICS:
 
-Held under the left arm, this instrument allows a bard to memorize two extra second-level spells and an extra third-level spell.
-
-Only Usable By:
-  Bards~
+Held under the left arm, this instrument allows a bard to memorize two extra second-level spells and an extra third-level spell.~
 
 
 @58 = ~Returning Frost Dart~
@@ -311,9 +297,7 @@ Damage type:  missile (piercing)
 Weight: 0
 Speed Factor: 1
 Proficiency Type: Dart
-Type:  1-handed
-Not Usable By:
- Cleric~
+Type:  1-handed~
 
 @60 = ~Short Sword of Backstabbing~
 @61 = ~The Shadow's Blade was created to be the perfect assassin's tool.  It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.  In the hands of any character this sword acts as a standard +3 magical weapon, but in the hands of a Thief it becomes especially potent, granting him an additional bonus to hit and increasing his backstab multiplier.
@@ -331,11 +315,7 @@ Weight: 3
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Druid
-  Cleric
-  Mage~
+Requires: 5 Strength~
 
 @62 = ~Marina~
 @63 = ~Lesser Shambler~
@@ -362,9 +342,7 @@ Open Locks:  +10% bonus
 Find Traps:  +20% bonus
 Detect Illusions:  +25% bonus
 
-Duration:  8 turns
-Only Usable By:
-  Thieves~
+Duration:  8 turns~
 
 @74 = ~This potion grants a temporary increase in thieving skills and maximum hit points to a rogue if he has fewer than 13 levels of experience. The bonus diminishes as the rogue advances in levels and completely disappears once he masters the art of thievery on his own.
 
@@ -380,10 +358,7 @@ Levels 10-12: +8% to all thieving skills, 2d6+3 temporary hit points gained
 
 Levels 13+:  the potion has no effect
 
-Duration:  3 turns
-Only Usable By:
-  Thief
-  Bard~
+Duration:  3 turns~
 
 @75 = ~The potion had no effect on you.~
 @76 = ~Break Enchantment~
@@ -409,10 +384,7 @@ Ability  3:
 Effect:  Summon Spirit Warrior
 Range:  Special
 Duration:  10 rounds
-Area:  Caster
-
-Only usable by:
-  Bards~
+Area:  Caster~
 @80 = ~Confusion Effect Dispelled~
 @81 = ~Distracted~
 @82 = ~Unaffected by the Jester's song~
@@ -438,9 +410,7 @@ Equipped Abilities:
 Armor Class Bonus:  2
 Special:  No Missile/Piercing Attack Protection
 Weight:  2
-Requires: 4 Strength
-Unusable By:
-Mage~
+Requires: 4 Strength~
 
 @112 = ~Sparkburst~
 @113 = ~Crafted by an eccentric gnomish inventor, this composite short bow was designed to charge any arrow fired from it with a tiny electrical spark. Whenever such an arrow hits, there is a small chance that it will create an electrically charged field around its target. Until it dissipates, this field will attract any subsequent missile attacks by pulling the projectiles toward the target.
@@ -456,11 +426,7 @@ Weight: 2
 Speed Factor: 4
 Proficiency Type: Short Bow
 Type:  2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @114 = ~Sap~
 @115 = ~Alternatively called a blackjack, the sap is a small leather bag filled with sand, lead shots, coins, or other weighted materials. It can be used to quietly render a victim unconscious by administering a blow to the head or back of the neck. A sap is more suited to an urban environment than to the great outdoors or a dungeon crawl. It's mainly used in situations which make it necessary to capture someone without causing him permanent harm, though thieves often favor this weapon for their own nefarious purposes.
@@ -476,9 +442,7 @@ Weight: 1
 Speed Factor: 2
 Proficiency Type: Club
 Type:  1-handed
-Requires: 3 Strength
-Not Usable By:
-  Mage~
+Requires: 3 Strength~
 
 @116 = ~Deep Red Ioun Stone~
 @117 = ~This Ioun Stone is spherical in shape and deep red in color. Once activated, it can enhance the wearer's hand-eye coordination, reflexes and balance, which makes it a highly prized accessory among rogues.
@@ -489,9 +453,7 @@ Equipped Abilities:
     +1 Dexterity
 
 Armor Class Bonus: None
-Weight: 0
-Usable By:
-  Everyone~
+Weight: 0~
 
 @118 = ~Fragment of Enlightenment~
 @119 = ~This dim blue Ioun Stone appears to have been carefully polished into its current shape from a much rougher form. Rumors say that it was originally a piece of the sensory stone used by Mirdival the Astute, a Calimshite court wizard, who had spent his entire life researching and crafting magical artifacts for his Pasha. During his many travels, the wizard studied and familiarized himself with a large number of enchanted items and mystical objects. Fearful of forgetting important details, and not trusting the fragile nature of paper, Mirdival regularly stored his memories into a sensory stone which he had acquired from a planewalking Fire Genasi merchant. Unfortunately, one of his experiments went awry, and his whole tower was leveled by the ensuing explosion. During the towers's collapse, the sensory stone was shattered into a number of fragments, some of which still retain a small part of the wizard's memories.
@@ -502,9 +464,7 @@ Equipped Abilities:
     +20 to Lore
 
 Armor Class Bonus: None
-Weight: 0
-Usable By:
-  Everyone~
+Weight: 0~
 
 
 @120 = ~Trollmelter~
@@ -521,9 +481,7 @@ Weight: 1
 Speed Factor: 0
 Proficiency Type: Dagger
 Type:  1-handed
-Requires: 3 Strength
-Not Usable By:
-  Cleric~
+Requires: 3 Strength~
 
 @122 = ~Silverblaze~
 @123 = ~This dagger was forged from purest silver and blessed by Sehanine Moonbow, the elven goddess of the moon. Its blade is especially potent against vampires as it was enchanted to channel any stray bits of power from the Positive Energy plane. Each day the weapon amasses a small amount of positive energy which the wielder can use as a shield against the soul-draining claws of a vampire. Furthermore, any vampire struck by the dagger may become stunned from contact with the stored energy.
@@ -543,9 +501,7 @@ Weight: 1
 Speed Factor: 0
 Proficiency Type: Dagger
 Type:  1-handed
-Requires: 3 Strength
-Not Usable By:
- Cleric~
+Requires: 3 Strength~
 
 @124 = ~Plaguebearer~
 @125 = ~At first glance this roughly crafted, rust-covered dagger seems like a very odd choice for a weapon. Only the old goblin runes notched along the blade reveal some of its power and history. Apparently, this weapon was originally a torture device of a powerful goblin shaman called Sharnuk, who above all else sought the knowledge of higher wizardry. Sharnuk's tribe often ambushed lone mages in their sleep and brought them to their leader so that he could rob them of their secrets. During the interrogations, Sharnuk would meticulously stab at his victims until they either became weakened by magical afflictions induced by the blade or simply delirious from the loss of blood. In such a state, it was easy for him to pry the knowledge that he sought from a mage's mind. When he believed that he had acquired enough power, Sharnuk led his tribe to a raid on a nearby gnomish settlement. However, luck was not on his side that day, as he and his entire cohort were scorched to death when he attempted to cast his first fireball.
@@ -566,9 +522,7 @@ Weight: 1
 Speed Factor: 0
 Proficiency Type: Dagger
 Type:  1-handed
-Requires: 3 Strength
-Not Usable By:
-  Cleric~
+Requires: 3 Strength~
 
 @126 = ~Keeper of the Law~
 @127 = ~This blade once belonged Lao-Tzu, a samurai from one of the southern provinces of Kara-Tur. Upon finishing his training the warrior had sworn an oath to finally free his lands from the bandits and brigands which had plagued his people for the last ten years. However, that task proved fairly difficult as his opponents were cunning, and only struck late at night, always wearing hoods and masks. Lao-Tzu understood that these bandits had no honor and that they may well be hiding among the very people which he sought to protect, but he dared not act merely on impulse for his code of conduct would not permit him to falsely accuse an innocent. To aid him in this task, Lao-Tzu sought a great Wu Jen master and asked him to enchant his wakizashi with the ability to sense the true intentions of a person and to strike vigorously against those without honor. The samurai organized a feast for the people in order to lift the spirits of the robbed ones and to drive out the bandits into the open. The people answered his call and Lao-Tzu was pleased. Using the power of his new weapon he managed to separate the cunning bandits from the simple peasants and to seat them inside a separate dining hall. Once they were all rounded up, the samurai barred the only exit and fought alone against a dozen rogues. After a short battle Lao-Tzu emerged victorious, but his honor did not allow him to kill even such unworthy foes. Instead, the samurai exiled the bandits from the province and his people finally knew peace.
@@ -588,12 +542,7 @@ Weight:  2
 Speed Factor: 1
 Proficiency Type: Scimitar/Wakizashi/Ninja-To
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
- Chaotically aligned characters
- Druid
- Cleric
- Mage~
+Requires: 5 Strength~
 
 @128 = ~Black Cat's Claw~
 @129 = ~The profession of a ninja is very versatile, some are skilled assassins while others excel at the art of stealth and thievery. The owner of this blade undoubtedly belonged to the second group. Her true name remains a mystery, though she was known as The Black Cat, an infamous thief renowned for acquiring rare commodities for and from the upper-class circles of the Kara-Tur nobility. It was not unusual for her to steal a precious jewel from the collection of one noble, sell it to another wealthy aristocrat and then steal it back merely for the thrill of the deed. For her mischiefs, the Black Cat was hunted by many famous Kara-Tur warriors, but through a combination of luck and extraordinary acrobatic skill, she always managed to evade her pursuers. Eventually, as the story goes, she fell in love with a particularly persistent samurai and left her country and her former life together with him.
@@ -612,11 +561,7 @@ Weight:  4
 Speed Factor: 2
 Proficiency Type: Scimitar/Wakizashi/Ninja-To
 Type:  1-handed
-Requires: 6 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 6 Strength~
 
 @130 = ~Stonesmasher~
 @131 = ~Dark orcish runes are etched into this club. It is a remnant of the last war between the orcs and the Turmish wizards. When the orcish tribes started raiding their city the wizards created golems of terrible power to protect them. Sensing that the brute strength of his warriors was not enough, the great orc chieftain Gull-Nar ordered his shamans to craft a weapon that would allow him to smash the "living statues" into rubble. His shamans used the books from a raided wizard tower to enchant the favorite weapon of their chieftain, a great war club. Gull-Nar was so pleased that he decided to personally lead the next raid, smashing the golems into bits as he proceeded toward the city core. Victory was near, but then a lone mage dressed in black appeared out of nowhere and cast a powerful spell which caused the raging orcs to turn upon each other. In mere minutes, their numbers were decimated and Gull-Nar himself was killed by his most trusted warriors.
@@ -633,9 +578,7 @@ Weight: 3
 Speed Factor: 2
 Proficiency Type: Club
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Mage~
+Requires: 5 Strength~
 
 @132 = ~The Stalwart Defender~
 @133 = ~This ceremonial buckler bears magical runes which are commonly associated with Gaerdal Ironhand, the gnomish god of vigilance and the most martial deity of the gnome pantheon. His serious nature garners him sober respect, and he teaches gnomes to hold their own in combat with larger and more powerful creatures by using their size and natural abilities to their advantage. Gaerdal has a small but devout following among gnome warriors and those responsible for defending gnome communities against outside threats, and he has earned the respect of the Forgotten Folk in general.
@@ -649,9 +592,7 @@ Equipped Abilities:
 Armor Class Bonus:  2
 Special:  No Missile/Piercing Attack Protection
 Weight:  2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 @134 = ~Safeguard~
 @135 = ~These consecrated bucklers are often wielded by high clerics and temple guards of Moradin, the creator god of the dwarven race. The Soul Forger is strength and force of will embodied and his weapons, armor, and tools are virtual extensions of his own incarnate being. The enchantments within this shield bestow Moradin's blessing upon its wielder, guiding his weapon to strike surely and guarding him from harm in times of dire need. Many of these bucklers were lost in the battle of Dorn's Deep after the invading orcs razed and pillaged the mighty dwarven stronghold.
@@ -667,9 +608,7 @@ Special Abilities:
 Armor Class Bonus:  3
 Special:  No Missile/Piercing Attack Protection
 Weight:  2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 @136 = ~Masterbelt~
 @137 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
@@ -681,9 +620,7 @@ Equipped Abilities:
     +10% to Disarm Traps
     +10% to Set Snares
 
-Weight:  2
-Usable by:
-  Thieves~
+Weight:  2~
 
 @138 = ~Tri-souled Sapphire~
 @139 = ~Akram Maluzar was an infamous Zhentarim wizard obsessed with the secrets of the ancient Nethril. During his many travels through the Great Waste he scoured a system of caves which, as he had guessed, interconnected with a buried Nethrese city. His enthusiasm was somewhat dampened  when he found out that the ruins were heavily trapped and riddled with illusionary floors and sturdily locked doors. The ability to pass these obstacles was beyond Akram's skill, so he grew desperate. Not wanting to share the power of the Nethrese with anyone else, Akram chose to steal the very talents he lacked instead. Promising them a great share of the treasure, the wizard hired three exceptionally skilled Calimshite thieves - an expert locksmith, a shady trapmaster and a keen-eyed scout. Instead of sending them to the ancient city, Akram tricked the thieves and imprisoned their souls inside a Sapphire Ioun Stone, thus enchanting it with the traits which he sought. The procedure worked, and at first he was able to delve deep into the ruins without hindrance. Eventually however, the souls of the three thieves confined within the Ioun Stone began rebelling and started draining the wizard's health in an attempt to reclaim his body as their own. Driven by his lust for power Akram paid little heed to his condition until it was too late. Terribly fatigued, he collapsed in front of a ruined Nethrese library, and thereby accidentally activated a hidden trap which caused a cave in and claimed his life. Akram's prized Ioun Stone was later recovered by a wandering tribe of kobolds who mistook it for a simple jewel and traded it for supplies.
@@ -698,9 +635,7 @@ Special Abilities:
      Casts Knock 3x/day
      Casts Invisibility Purge 3x/day
 
-Weight: 0
-Usable By:
-  Everyone~
+Weight: 0~
 
 @140 = ~Cowl of Acuity~
 @141 = ~Once a valued property of the Xanathar Thieves Guild, this seemingly plain-looking cowl has been treated with magic in order to enhance the acumen and perception of anyone who wears it. The cowl was temporarily lost during a raid on one of the Xanathar slave-trading houses in Skullport, but recently, it re-surfaced in Calimport and made its way to Athkatla on one of the many trading caravans belonging to the Sybarr mercantile company.
@@ -714,10 +649,7 @@ Equipped Abilities:
 
 Armor Class Bonus:  None
 Special:  Protects Against Critical Hits
-Weight: 0
-Usable By:
-  Thief
-  Monk~
+Weight: 0~
 
 @142 = ~Greagan's Harp~
 @143 = ~Greagan's Harp 'The Captive Audience'
@@ -729,9 +661,7 @@ STATISTICS:
 Special Abilities:
     Casts Domination 3x/day
 
-Weight:  3
-Only Usable by:
-  Bards~
+Weight:  3~
 
 @144 = ~Harp of Descant~
 @145 = ~Lady Laxaella Bronshield, the Baroness of Tanistan, had this harp fashioned for her court jester before sending him, along with a company of her best soldiers, to deal with the recent Umber Hulk infestation of the Thornwood forest. At first, the soldiers were surprised that a jester was to accompany them on this task, merrily mocking his meager physique and his apparent fatuousness, but after they encountered the first Umber Hulk they soon realized the true importance of his role. To the soldiers' astonishment, the jester was completely unfazed by the Umber Hulk's terrible gaze, which simultaneously turned one of their most steadfast warriors into a stuporing idiot. Furthermore, the odd, quirky tune which the jester's harp produced somehow seemed to counter the effect of the monster's gaze, restoring the sanity to the afflicted soldier. In the end, the infestation was cleansed with no casualties and only minimal injuries. For the better part of their home trip, the soldiers carried the jester on their shoulders, all the time chanting praises in his honor.
@@ -742,9 +672,7 @@ Special Abilities:
     Dispels Confusion 3x/day
 
 Area of Effect: 1 target
-Weight:  3
-Usable by:
-  Bards~
+Weight:  3~
 
 @146 = ~Dagger of Acumen~
 @147 = ~The lavish, fiery runes etched into the hilt of this dagger indicate that it was crafted in Thay, presumably for a high-ranking member of the Researcher faction. Although the blade may be used by anyone skilled enough to wield it, only those who are versed in the arcane arts can unlock its true potential. The tiny weapon appears to have been imbued with an enchantment which sharpens the mind of its wielder, providing greater acuteness and thereby enhancing the spell-memorization capabilities of arcane spellcasters.
@@ -762,9 +690,7 @@ Weight: 1
 Speed Factor: 0
 Proficiency Type: Dagger
 Type:  1-handed
-Requires: 3 Strength
-Not Usable By:
- Cleric~
+Requires: 3 Strength~
 
 @148 = ~The Weary Cudgel~
 @149 = ~Crafted by a powerful Uthgardt shaman, this club has been specifically enchanted to diminish the fighting capability of an adversary. It was wielded by chieftain Aukthar of the Blackraven tribe in many clashes between his people and the orcish hordes which periodically attempted to invade Ravenrock, their ancestral mound. The weapon was lost during one particularly fierce battle when the war cries of the combatants triggered a huge avalanche which swept them down the mountainside.
@@ -781,9 +707,7 @@ Weight: 3
 Speed Factor: 3
 Proficiency Type: Club
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Mage~
+Requires: 5 Strength~
 
 @150 = ~Composite Short Bow~
 @151 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This bow can only be wielded by characters with a strength score of 16 or higher.
@@ -795,11 +719,7 @@ Weight: 2
 Speed Factor: 6
 Proficiency Type: Short Bow
 Type:  2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @152 = ~Composite Short Bow +1~
 @153 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This magical bow can only be wielded by characters with a strength score of 16 or higher.
@@ -812,11 +732,7 @@ Weight: 2
 Speed Factor: 5
 Proficiency Type: Short Bow
 Type:  2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @154 = ~Composite Short Bow +2~
 @155 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This magical bow can only be wielded by characters with a strength score of 16 or higher.
@@ -829,11 +745,7 @@ Weight: 2
 Speed Factor: 4
 Proficiency Type: Short Bow
 Type:  2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @156 = ~Composite Short Bow +3~
 @157 = ~Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility and makes arrows fired from this bow deliver more damage. This magical bow can only be wielded by characters with a strength score of 16 or higher.
@@ -846,11 +758,7 @@ Weight: 2
 Speed Factor: 3
 Proficiency Type: Short Bow
 Type:  2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @158 = ~Darkveil~
 @159 = ~At first glance this item looks like a plain, black hood which obscures the wearer's facial features, making him nondescript. However, when its wearer faces a creature that can employ gaze attacks (such as a Basilisk, a Vampire or an Umber Hulk) the hood will magically pull itself over his eyes whenever he is about to meet the creature's gaze, thus shielding him from the harmful effects. Unfortunately, the wearer can not direct this action consciously, and therefore has a harder time fighting against such creatures despite being protected from their gazes.
@@ -864,11 +772,7 @@ Equipped Abilities:
 
 Armor Class Bonus:  None
 Special:  Protects Against Critical Hits
-Weight: 0
-Usable By:
-  Thief
-  Ranger
-  Monk~
+Weight: 0~
 
 
 @160 = ~Arledrian's Journal~
@@ -978,9 +882,7 @@ Equipped Abilities:
 Armor Class Bonus:  2
 Special:  No Missile/Piercing Attack Protection
 Weight:  2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 
 @202 = ~Barrier Amulet~
@@ -989,10 +891,7 @@ Unusable By:
 STATISTICS:
 
 Special Abilities:
-    Simultaneously casts Stoneskin and Minor Globe of Invulnerability 3x/day
-
-Usable By:
-  Mage~
+    Simultaneously casts Stoneskin and Minor Globe of Invulnerability 3x/day~
 
 @204 = ~Boots of the Fox~
 @205 = ~These gaudy red and green boots were worn by the rogue Elpham of Perrywine.  Elpham was a pickpocket of exceptional talent who pressed his luck by taunting his victims shortly after taking their loot.  After being caught twice, Elpham invested his money in having these boots made.  Of course, Elpham came to an untimely end when he picked the pocket of the notoriously ill-tempered Red Wizard of Thay, Xain Morobdel.  Elpham stole a pouch full of gems off of Xain's waist and danced off into the crowd shouting, "Why don't you try to chase me back to the Priador, baldy?  Ha ha!"  Xain, quietly fuming, promptly summoned four invisible stalkers and commanded them to, "Kill the idiot in the red and green boots."
@@ -1022,12 +921,7 @@ Damage type:  Slashing
 Weight: 5
 Speed Factor: 4
 Proficiency Type: Axe
-Type:  1-handed
-Not Usable By:
- Druid
- Cleric
- Mage
- Thief~
+Type:  1-handed~
 
 @208 = ~Hold Fast~
 @209 = ~A Zhentarim battle mage crafted this blade, hoping it would help him prevail in melee combat when he was challenged to a duel. The powerful sword was supposed to deflect most incoming blows and incapacitate his enemy at the same time. Unfortunately, the mage lacked any real skill with the weapon and was easily defeated by his opponent.
@@ -1047,11 +941,7 @@ Damage type:  Slashing
 Weight: 2
 Speed Factor: 2
 Proficiency Type: Long Sword
-Type:  1-handed
-Not Usable By:
- Druid
- Cleric
- Mage~
+Type:  1-handed~
 
 @210 = ~Abishai Hide~
 @211 = ~There is great mystery surrounding this armor and no one is certain how or where it came into existence. What is known is that the leather was cut from the hide of an abishai, although it is impossible to tell what color the abishai had since the armor is tinted a deep black. In addition, it has an unusual, very light, vinegary smell. Those who wear this armor are bestowed with slight resistance to physical damage and the ability to regenerate wounds. It is unclear whether these properties come from the leather itself or an enchantment placed upon the armor.
@@ -1063,10 +953,7 @@ Equipped Abilities:
     Wearer regenerates 1 hit point every 6 seconds
 
 Armor Class: 4
-Weight: 15
-Not Usable By:
-  Mage
-  Paladin~
+Weight: 15~
 
 @212 = ~Spell Diver~
 @213 = ~The spellsword Naradon of Thesk was known for his ability to quickly and efficiently defeat enemy mages even when outnumbered.  He earned this reputation with the help of three items: Potions of Speed, Boots of Speed, and his trusted short sword, Spell Diver.  Unlike many other magical weapons, Spell Diver does not have a dark, murderous history.  Naradon retired from adventuring when he was thirty-two.  His fondness for Potions of Speed caught up with him when he died of old age four years later.  His only heir had no desires to be an adventurer.  He sold the weapon to a known cat burglar a few years after his father's death.  The sword can be recognized by the kingfisher stamped into the ricasso.
@@ -1086,11 +973,7 @@ Damage type:  Piercing
 Weight:  1
 Speed Factor:  0
 Proficiency Type: Short Sword
-Type:  1-handed
-Not Usable By:
- Druid
- Cleric
- Mage~
+Type:  1-handed~
 
 @214 = ~Rogue's Cowl~
 @215 = ~This dark brown cowl is meant to be worn on the head and over the shoulders as a broad hood.  It was crafted by the gnomish thief and illusionist Brein Chestnut.  Brein used the cowl on his own adventures for several years before his childhood sweetheart convinced him to settle down.  He gave the cowl to his nephew, Chirchet, who in turn sold the item for a large stretch of farmland.
@@ -1104,10 +987,7 @@ Equipped Abilities:
 Special Abilities:
     Simultaneously casts Blur and Mirror Image 3x/day
 
-Weight:  1
-Usable By:
- Thief
- Bard~
+Weight:  1~
 
 @216 = ~Silent Death~
 @217 = ~This sword once belonged to Venduris, a cunning assassin in service of Cyric - the reigning God of Murder. When the rogue was initially accepted into the Order of Cyric's Chosen he received a small, plain-looking blade as a welcoming gift. Though the sword held only minor enchantments back then, its power and sharpness seemed to grow with each kill Venduris made in the name of his new master. The assassin preferred to fulfill these tasks swiftly and silently, so his victims were almost never aware of their nearing demise. However, on certain occasions when a foe had particularly angered the Prince of Lies, Venduris would apply a deadly venom to his blade before striking. The victim would then start choking, rendered unable to speak or cry for help, while Cyric laughed in glee as the mute face of his adversary twisted from the pain and agony caused by the subsequent poison effects, which eventually led to a slow, tormented death.
@@ -1129,9 +1009,7 @@ Weight: 1
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type:  1-handed
-Requires: 15 Dexterity and 15 Intelligence
-Usable By:
- Evil and Neutral Thieves~
+Requires: 15 Dexterity and 15 Intelligence~
 
 @218 = ~Shadowed Boots~
 @219 = ~Upon closer inspection of these boots, the fabric seems to be made of some odd, incorporeal material.  Wearing these boots causes the user to take on an almost shadowed or ghostly appearance. Additionally, sound becomes eerily muffled, as if heard from a distance.
@@ -1143,9 +1021,7 @@ Equipped Abilities:
     +10% to Move Silently
     +15% to Hide In Shadows
 
-Weight: 5
-Only usable by:
- Thief~
+Weight: 5~
 
 @220 = ~The Salamander's Tongue~
 @221 = ~A wicked-looking dagger with a dark history, the Salamander's Tongue is prized both for its use as a weapon and its hidden magical powers.  The blade appears to be an exotic-looking dagger with a kris-like wavy blade ending in two small points.  A small portion of a slimy, brightly red, living salamander's tongue is somehow embedded in the heart of the blade, near the grip.  It pulses and writhes randomly without intervention from the owner.
@@ -1174,9 +1050,7 @@ Damage type:  Piercing
 Weight: 1
 Speed Factor: 0
 Proficiency Type: Daggers
-Type:  1-handed
-Not Usable By:
- Cleric~
+Type:  1-handed~
 
 @222 = ~Dead Man's Face~
 @223 = ~These ancient helms were once common among the Reghedmen barbarians who came to what is now known as Icewind Dale.  The design of the armor is relatively simple: a plain iron helm with a hinged faceplate.  Once the basic construction of the helm had been finished, craftsmen would tool the image of a dead warrior onto the faceplate.  The name of the warrior and a one-word description of his death were carved into the forehead of the mask.  The helm was then left in the dead warrior's funeral pyre.  The priests believed that the mask would hide the dead man's fear of the afterlife when he was judged by Tempos.  After a month had passed, the helms of particularly valiant warriors were recovered by the priests.  Over the next few years, the priests praised the valiant warriors by name in their daily rituals.  According to legend, if Tempos found the warrior to be truly valiant, the helm would gain the power to make the wearer immune to fear.  This particular helm bears the ancient name "Siglef" and the word "Axe".
@@ -1189,11 +1063,7 @@ Equipped Abilities:
 
 Armor Class Bonus:  1
 Special: Protects Against Critical Hits
-Weight:  3
-Not Usable By:
- Mage
- Bard
- Thief~
+Weight:  3~
 
 @224 = ~Sune's Laurel of Favor~
 @225 = ~This wreath of laurel leaves and roses was a gift from the church of Sune to the priestesses of Hanali Celanil at the Hand of the Seldarine.  The representatives of the human goddess of love and beauty were well received and the high priestess of Hanali Celanil wore the laurel whenever humans were visiting the Hand.  The orcs discarded the laurel as useless trash when they sacked the priests' tower.
@@ -1205,9 +1075,7 @@ Equipped Abilities:
 
 Armor Class Bonus:  1
 Special: Protects Against Critical Hits
-Weight:  1
-Not Usable By:
-  Evil characters~
+Weight:  1~
 
 @226 = ~Venduris' Luckstone~
 @227 = ~Originally stolen from the nymphs of Stormshire, this Ioun Stone has malcontently served Venduris for the past ten years. The essence of luck contained within it was abused by the evil assassin for guiding his hands towards the weak points of his foes and thus ensuring the maximum lethality of his attacks. Once beautiful to behold, resembling a radiant rainbow-patterned jewel, the Luckstone's magic eventually started to fade as it became corrupted under the influence of its new owner. The darkness that now resides within it stands as a reminder of Venduris' vile deeds.
@@ -1220,12 +1088,7 @@ Equipped Abilities:
 Armor Class Bonus: None
 Special: Protects Against Critical Hits
 Weight: 0
-Requires: 10 Wisdom
-Only Usable By:
- Evil or Neutral Characters
- Thief
- Mage
- Bard~
+Requires: 10 Wisdom~
 
 @228 = ~Venduris' Ring of Concealment~
 @229 = ~This item was originally taken from an over-ambitious Thayvian illusionist who somehow managed to cross Cyric's plans. When Venduris was sent to remove the mage he also picked up this invisibility ring from his personal treasury. The assassin rarely felt the need to employ it as he was highly skilled in the art of stealth, but the ring proved useful on a few rare occasions when he had to capture his victims alive and drag them back to his master's temple for interrogation or torture without being exposed to magical detection.
@@ -1236,12 +1099,7 @@ Equipped Abilities:
     Wearer is unaffected by Detect Invisibility, Invisibility Purge, True Seeing and similar divination spells which remove invisibility
 
 Special Abilities:
-    Casts Mass Invisibility 1x/day
-
-Only Usable By:
- Thief
- Mage
- Bard~
+    Casts Mass Invisibility 1x/day~
 
 @230 = ~Venduris' Scroll~
 @231 = ~This magic scroll was found on the corpse of the rogue Venduris. The inscription on this side appears to be a note from the spellcaster who had created it, the other side of the paper is covered with various arcane runes. The note reads:
@@ -1262,9 +1120,7 @@ Equipped Abilities:
     Immunity to backstab
     Wearer's alignment is undetectable
 
-Weight:  1
-Usable by:
-  Thieves~
+Weight:  1~
 
 @234 = ~Blindstrike Bow~
 @235 = ~This composite short bow radiates with strong, necromatic enchantments which are commonly used by Yuan-Ti priests. The shaft of the bow resembles two snakes, each trying to swallow an eyeball carved at the grip. Along both sides of the shaft the phrase "May the greatness of Sseth blind the unworthy!" is inscribed. The bow was primarily used by Yuan-Ti sentries to prevent unwary trespassers from discovering the location of a secret temple which was hidden deep inside the Ashendale forest. For some reason Beholders and their kin seem to be highly vulnerable to any arrows fired from this bow.
@@ -1280,11 +1136,7 @@ Weight: 1
 Speed Factor: 3
 Proficiency Type: Short Bow
 Type: 2-handed
-Requires: 16 Strength
-Not Usable By:
- Druid
- Cleric
- Mage~
+Requires: 16 Strength~
 
 @236 = ~Drow Chain Mail~
 @237 = ~Drow chain mail is a finely crafted, satiny black metal mesh that does not encumber its wearer in the least. It is similar to, but not identical to, the magical elven chain mail. It is typically fashioned only into tunics, as drow elves share their forest-bound cousins' preference for armor that adequately protects without being overly weighty or restrictive. The exceptional lightness of this armor allows it to be worn by thieves and fighter/mages with few restrictions. Furthermore, drow chain mail grants a small bonus to magic resistance and slightly reduces the casting time of all spells while worn.
@@ -1299,10 +1151,7 @@ Equipped Abilities:
 
 Armor Class: 4
 Weight: 7
-Requires: 5 Strength
-Not Usable By:
- Druid
- Mage~
+Requires: 5 Strength~
 
 @238 = ~Geminus~
 @239 = ~Ring of Wizardry: 'Geminus'
@@ -1312,10 +1161,7 @@ Long ago, a grand wizard from Amn was rumored to have defied Mystra's limitation
 STATISTICS:
 
 Equipped Abilities:
-    Doubles the amount of 1st- and 2nd-level spells a mage can memorize
-
-Only usable by:
-  Mage~
+    Doubles the amount of 1st- and 2nd-level spells a mage can memorize~
 
 @240 = ~Blessed Leafcrown~
 @241 = ~Rillifane Rallathil is the protector of the woodlands and guardian of the harmony of nature. The Leaflord is often likened by his priests to a giant ethereal oak tree, so huge that its roots mingle with the roots of every other plant in the Realms, that stands at the heart of Arvandor, the High Forest of Olympus. The great tree draws into itself all the ebb and flow of seasons and lives within the woodlands of the green elves. At the same time, it defends and sustains those lands against disease, predation, and assaults of all kinds. On special occasions, Rillifane's high priests show their respect to The Leaflord by weaving oaken leaves into the shape of laurel crowns which are subsequently blessed and treated with protective enchantments. These ceremonial crowns rarely leave the elven lands, mainly because their magic is closely attuned to the very souls of the Fair Folk. Only a renegade or an exile would dare to take such a sacred item out of the elven community.
@@ -1327,12 +1173,7 @@ Equipped Abilities:
     Immunity to Disease and Poison
 
 Armor Class Bonus: 1
-Weight: 0
-
-Only Usable By:
-  Elves
-  Half-Elves
-  Non-evil alignments~
+Weight: 0~
 
 
 @300 = ~Bodak Hangthorn~
@@ -1542,10 +1383,7 @@ STATISTICS:
 Special:  Causes enemies to run in fear unless they save vs. wands
 Range:  100 ft
 Area:  20 ft radius
-Duration:  6 rounds
-Not usable by:
-Fighter
-Thief~
+Duration:  6 rounds~
 
 @721 = ~Control Rod~
 @722 = ~When Haz began crafting the first batch of defense golems which were commissioned by the local Cloakmaster, several of his fellow Shadow Thieves insisted that the mage should provide a foolproof way to deactivate the powerful constructs, should the need arise. Haz initially dismissed these concerns as unfounded, but after several high-ranking guild members began to express their doubts and openly question Haz's motives, the mage finally gave in and fashioned several Control Rods which were then given to the most vocal disbelievers. In effect, anyone who wields one of these items is able to deactivate any golem of Haz's making by merely holding up the Control Rod and walking into the construct's field of view. Naturally, it is impossible to deactivate a golem while it is in the immediate vicinity of its maker. Furthermore, the inscription on the rod's shaft specifically warns against attacking deactivated golems as doing so will make them resume their standard combat routine.
@@ -1553,10 +1391,7 @@ Thief~
 STATISTICS:
 
 Equipped Abilities:
-  Any golem crafted by Haz will automatically deactivate in the presence of the rod's wielder. In order for this ability to take effect, the rod must be prominently equipped and its wielder must approach the golem alone. Once deactivated, a golem will remain dormant forevermore, unless it is attacked. This rod will have no effect on golems that were not crafted by Haz.
-
-Usable By:
- Everyone~
+  Any golem crafted by Haz will automatically deactivate in the presence of the rod's wielder. In order for this ability to take effect, the rod must be prominently equipped and its wielder must approach the golem alone. Once deactivated, a golem will remain dormant forevermore, unless it is attacked. This rod will have no effect on golems that were not crafted by Haz.~
 
 @723 = ~MASTER'S INSIGNIA RECOGNIZED... ENTERING RESTING STATE~
 @724 = ~HOSTILE BEHAVIOR DETECTED... RESUMING COMBAT ROUTINE~
@@ -2313,9 +2148,7 @@ Special Abilities:
 Armor Class Bonus:  4
 Special:  No Missile/Piercing Attack Protection
 Weight:  2
-Requires: 4 Strength
-Unusable By:
- Mage~
+Requires: 4 Strength~
 
 @5002 = ~The Guardian +2~
 @5003 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
@@ -2331,9 +2164,7 @@ Special Abilities:
 
 Armor Class Bonus: 3
 Weight: 1
-Requires: 12 Wisdom and 15 Charisma
-Only Usable By:
- Druids~
+Requires: 12 Wisdom and 15 Charisma~
 
 @5004 = ~The Guardian +3~
 @5005 = ~This odd-looking shield appears to be entirely made up of large, hardened leaves. The unusual shape and size of the leaves suggests they once belonged to the ancient oak trees which grow deep within the Forest of Mir. Upon closer examination, powerful druidic enchantments can be discovered on the shield's surface. It appears that they slightly increase the shieldbearer's health and make any sustained wounds heal faster. Every morning, at sunrise, one of the leaves glows faintly for a moment. It can then be picked and planted into the ground while another instantly grows back to take its place. After the proper incantation is spoken, the planted leaf quickly grows into a fearsome Shambling Mound whose strength and size seem to be directly linked to the power of the shieldbearer.
@@ -2349,9 +2180,7 @@ Special Abilities:
 
 Armor Class Bonus: 4
 Weight: 1
-Requires: 12 Wisdom and 15 Charisma
-Only Usable By:
- Druids~
+Requires: 12 Wisdom and 15 Charisma~
 
 @5006 = ~Stormcharged Axe +5~
 @5007 = ~This superbly crafted axe holds an enchantment of unusual origin. Immediately after it was forged the axe was brought on top of a high mountain peak where dwarven priests waited for a great storm to gather. The weapon was placed on an iron pedestal and soon afterward struck by a bolt of lightning. Because of the pre-placed enchantment it absorbed some of the bolt's properties. The axe was later given to a high-ranking dwarven officer to aid him in the ensuing battle between the orcish hordes and the dwarves of Dorn's Deep. The attack came as a complete surprise to the dwarves when one morning a scout arrived and told that the largest orcish army he had ever seen was only hours away. With little time to prepare, the dwarven warriors were overrun and the orcs began to pour into Dorn's Deep. The dwarves were forced to retreat into the depths of the citadel but key passages were collapsed to cover their movements and buy them time. Even in such dire conditions, this allowed the dwarves to control when and where they would fight. Every battle cost the orcs dearly as the dwarves fought on their terms, but they were still being driven farther and farther back into Wyrm's Tooth Glacier. Eventually, due to their superior numbers, the orcs managed to breach the dwarven defenses and plunder their homes.
@@ -2375,12 +2204,7 @@ Damage type:  Slashing
 Weight: 5
 Speed Factor: 2
 Proficiency Type: Axe
-Type:  1-handed
-Not Usable By:
- Druid
- Cleric
- Mage
- Thief~
+Type:  1-handed~
 
 @5008 = ~Short Sword of Backstabbing +5~
 @5009 = ~The Shadow's Blade was created to be the perfect assassin's tool.  It is highly sought after by any who settle differences with a blade, and many that possess it do not do so for long.  In the hands of any character this sword acts as a standard +5 magical weapon, but in the hands of a Thief it becomes especially potent by increasing his chances to score a critical hit and improving his backstab multiplier.
@@ -2400,11 +2224,7 @@ Weight: 3
 Speed Factor: 0
 Proficiency Type: Short Sword
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Druid
-  Cleric
-  Mage~
+Requires: 5 Strength~
 
 @5010 = ~Masterbelt of Fortune~
 @5011 = ~The pouches of this belt hold an array of masterfully crafted tools that are most commonly used by locksmiths and watchmakers. However, such items can easily be abused for nefarious purposes, making these items a very popular accessory among thieves. This particular belt has the letter "G" engraved upon its buckle.
@@ -2419,9 +2239,7 @@ Equipped Abilities:
     +20% to Disarm Traps
     +20% to Set Snares
 
-Weight:  2
-Usable by:
-  Thieves~
+Weight:  2~
 
 @5012 = ~Returning Frost Dart +3~
 @5013 = ~It is rumored that a cunning priestess of Auril created dozens of these darts in order to provide her temple guards with a weapon of last resort. A dart seemed perfect for the task since it was very easy to conceal. Minor enchantments which cause frost burns and return the dart to the wielder's hand after striking were added as well. In general, such weapons are rarely seen outside of Auril's temples, which are commonly located on the snow-covered peeks of Icewind Dale. However, in the recent years, a few merchants from the Ten Towns region have been acquiring suspiciously large quantities of these darts from local adventuring parties.
@@ -2440,9 +2258,7 @@ Damage type:  missile (piercing)
 Weight: 0
 Speed Factor: 1
 Proficiency Type: Dart
-Type:  1-handed
-Not Usable By:
- Cleric~
+Type:  1-handed~
 
 @5014 = ~Stonesmasher +4~
 @5015 = ~Dark orcish runes are etched into this club. It is a remnant of the last war between the orcs and the Turmish wizards. When the orcish tribes started raiding their city the wizards created golems of terrible power to protect them. Sensing that the brute strength of his warriors was not enough, the great orc chieftain Gull-Nar ordered his shamans to craft a weapon that would allow him to smash the "living statues" into rubble. His shamans used the books from a raided wizard tower to enchant the favorite weapon of their chieftain, a great war club. Gull-Nar was so pleased that he decided to personally lead the next raid, smashing the golems into bits as he proceeded toward the city core. Victory was near, but then a lone mage dressed in black appeared out of nowhere and cast a powerful spell which caused the raging orcs to turn upon each other. In mere minutes, their numbers were decimated and Gull-Nar himself was killed by his most trusted warriors.
@@ -2461,9 +2277,7 @@ Weight: 3
 Speed Factor: 0
 Proficiency Type: Club
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Mage~
+Requires: 5 Strength~
 
 @5016 = ~Lapis Lazuli~
 @5017 = ~Lapis Lazuli are deep blue gemstones with golden inclusions of pyrites which shimmer like little stars. Their peculiar color is sometimes referred to as ultramarine. Some sages speculate that these gems can be used to further enhance magical items which utilize the power of lightning.~
@@ -2490,12 +2304,7 @@ Weight:  2
 Speed Factor: 0
 Proficiency Type: Scimitar/Wakizashi/Ninja-To
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
- Chaotically aligned characters
- Druid
- Cleric
- Mage~
+Requires: 5 Strength~
 
 @5021 = ~The Weary Cudgel +3~
 @5022 = ~Crafted by a powerful Uthgardt shaman, this club has been specifically enchanted to diminish the fighting capability of an adversary. It was wielded by chieftain Aukthar of the Blackraven tribe in many clashes between his people and the orcish hordes which periodically attempted to invade Ravenrock, their ancestral mound. The weapon was lost during one particularly fierce battle when the war cries of the combatants triggered a huge avalanche which swept them down the mountainside.
@@ -2518,9 +2327,7 @@ Weight: 3
 Speed Factor: 1
 Proficiency Type: Club
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Mage~
+Requires: 5 Strength~
 
 
 @5023 = ~Rogue's Ward +3~
@@ -2540,10 +2347,7 @@ Special Abilities:
 Armor Class Bonus: 4
 Special:  No Missile/Piercing Attack Protection
 Weight: 1
-Requires: 4 Strength
-Only Usable By:
- Thief
- Bard~
+Requires: 4 Strength~
 
 
 @5025 = ~Stonesmasher +3~
@@ -2563,9 +2367,7 @@ Weight: 3
 Speed Factor: 1
 Proficiency Type: Club
 Type:  1-handed
-Requires: 5 Strength
-Not Usable By:
-  Mage~
+Requires: 5 Strength~
 
 
 

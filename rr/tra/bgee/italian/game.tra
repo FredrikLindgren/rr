@@ -10,9 +10,7 @@ Bonus alla Classe Armatura: 3
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @22 = ~Scudo +3~
 @23 = ~Nonostante la potente magia che lo incanta, questo scudo è altrimenti anonimo e privo di segni particolari. Una tale standardizzazione farebbe pensare alla milizia di qualche antica baronia dimenticata, sebbene anche questa rimanga solo un'ipotesi.
 
@@ -22,9 +20,7 @@ Bonus alla Classe Armatura: 4
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @24 = ~Il Guardiano~
 @25 = ~Questo scudo dall'aspetto curioso sembrerebbe interamente composto di foglie indurite. La taglia e la forma inusuali di queste foglie sembrano suggerire che appartenessero un tempo a una delle maestose querce che crescono nel cuore della foresta di Mir. Una più attenta ispezione rivela potenti incantamenti druidici sulla superficie dello scudo apparentemente in grado di migliorare la salute del portatore e di conferirgli la capacità di guarire più rapidamente dalle ferite. All'alba d'ogni mattina una delle foglie emana un tenue bagliore: a quel punto, può essere staccata dallo scudo e piantata e un'altra ne prenderà immediatamente il posto sulla superficie dello scudo. Pronunciando il giusto incantesimo, la foglia che è stata pianta si tramuta in un temibile shambling mound la cui forza e dimensioni sembrano essere direttamente proporzionali al potere di colui che porta lo scudo.
 
@@ -41,9 +37,7 @@ Bonus alla Classe Armatura: 2
 Peso: 1
 Richiede:
  Saggezza 12
- Carisma 15
-Utilizzabile da:
- Druidi~
+ Carisma 15~
 @26 = ~Protettore del Vagabondo~
 @27 = ~Questo scudo è stato forgiato da una lega di acciaio brunito con tracce di argento e mithril. Nonostante la superificie appaia estremamente lucida, lo scudo sembra assorbire la luce anziché rifletterla. Un più attento esame rivela una serie di incantamenti del tipo generalmente attribuito ai sacerdoti di Mask. E' probabile che sia stato il Signore delle Ombre stesso a benedire questo oggetto con il suo tocco, conferendogli il potere di celare e proteggere i suoi seguaci da qualunque nemico potessero incotrare nello svolgimento della loro rischiosa professione.
 
@@ -59,10 +53,7 @@ Invisibilità Potenziata una volta al giorno
 Bonus alla Classe Armatura: 3
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 1
-Richiede: Forza 4
-Utilizzabile da:
- Bardo
- Ladro~
+Richiede: Forza 4~
 @28 = ~SPADACCINO: Questo ladro è in parte acrobata, in parte abile con la spada e in parte abile con la mente: l'emblema del fascino e della grazia.
 
 Vantaggi:
@@ -213,9 +204,7 @@ THAC0: +2
 Peso: 2
 Fattore-velocità: 0
 Tipo di competenza: Pugnale
-Tipo: a una mano
-Non utilizzabile da:
- Chierico~
+Tipo: a una mano~
 @54 = ~CACCIATORE DI TAGLIE: Questo è un cacciatore di uomini, abile nel rintracciare un bersaglio e catturarlo tanto per l'autorità legittima, quanto per i signori della malavita. A causa della frequente necessità di mantenere in vita le proprie vittime, i cacciatori di taglie si avvalgono spesso di sostanze alchemiche che possano incapacitarle o indebolirle. Anche la loro dimistichezza con le trappole va ben oltre quella del tipico ladro e sono in grado di piazzare trabocchetti speciali oltre a quelli classici. I Cacciatori di taglie fanno uso di sostanze chimiche e tossine per incapacitare o indebolire il loro bersaglio.
 
 Vantaggi:
@@ -260,10 +249,7 @@ Attraverso l'allenamento e l'esperienza, un cacciatore di taglie apprende a mano
 
 STATISTICHE:
 
-Tenuto sotto il braccio sinistro, questo strumento consente al bardo di memorizzare due incantesimi extra di secondo livello e un incantesimo extra di terzo livello.
-
-Utilizzabile solo da:
- Bardi~
+Tenuto sotto il braccio sinistro, questo strumento consente al bardo di memorizzare due incantesimi extra di secondo livello e un incantesimo extra di terzo livello.~
 @58 = ~Dardo Gelido Ritornante~
 @59 = ~Si narra che una scaltra sacerdotessa di Auril creò dozzine di questi dardi per dotare le guardie del tempio di un'arma da usare come estrema risorsa. Il dardo sembrò lo strumento più adatto, essendo facile da nascondere. Grazie all'effetto di alcuni semplici incantesimi, il dardo è in grado di causare ustioni da freddo e di tornare nelle mani del proprietario dopo essere stato lanciato . In generale, armi come questa non si trovano facilmente al di fuori dei templi di Auril, più comunemente ubicati sulla cima dei picchi innevati di Icewind Dale. Tuttavia, in tempi recenti alcuni mercanti dell'area delle Dieci Città hanno accumulato quantità sospettosamente elevate di questi dardi dai gruppi avventurieri locali.
 
@@ -279,9 +265,7 @@ Tipo di danno: proiettile (perforante)
 Peso: 0
 Fattore-velocità: 1
 Tipo di competenza: Dardo
-Tipo: a una mano
-Non utilizzabile da:
- Chierico~
+Tipo: a una mano~
 @60 = ~Spada corta per pugnalare alle spalle~
 @61 = ~La Spada dell'Ombra fu creata per essere lo strumento più letale dell'assassino. E' molto ricercata dagli intenditori di spade e difficilmente rimane a lungo nelle stesse mani. In quelle di chiunque altro non è che una semplice arma +3 ma se la impugna un ladro, diventa estremamente potente, conferendogli un ulteriore bonus al tiro per colpire e incrementando il suo moltiplicatore di danno per il colpo alle spalle.
 
@@ -299,11 +283,7 @@ Fattore-velocità: 0
 Tipo di competenza: Spada corta
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 5~
 @62 = ~Marina~
 @63 = ~Shambler minore~
 @64 = ~Shambler maggiore~
@@ -324,10 +304,7 @@ Scassinare Serrature: +10%
 Individuare Trappole: +20%
 Scoprire Illusioni: +25%
 
-Durata: 8 turni.
-
-Utilizzabile da:
- Ladri~
+Durata: 8 turni.~
 @74 = ~Questa pozione migliora le abilità e aumenta i punti ferita di un ladro il cui livello di esperienza è inferiore al tredicesimo. Il bonus diminuisce gradualmente con l'avanzare dei livelli, fino a sparire completamente nel momento in cui il ladro è in grado di padroneggiare la sua arte da solo.
 
 STATISTICHE:
@@ -338,11 +315,7 @@ Livelli 7-9: +12% a tutte le abilità da ladro, 3d6+2 punti ferita temporanei ad
 Livelli 10-12: +8% a tutte le abilità da ladro, 2d6+3 punti ferita temporanei addizionali;
 Livelli 13+: la pozione non ha effetto.
 
-Durata: 3 turni.
-
-Utilizzabile da:
- Bardi
- Ladri~
+Durata: 3 turni.~
 @75 = ~La pozione non ha effetto su di te.~
 @76 = ~Rompi incantesimo~
 @77 = ~Imita incantesimo~
@@ -367,10 +340,7 @@ Terza abilità:
  Effetto: Evoca Spirito Guerriero
  Raggio d'azione: Speciale
  Durata: 10 round
- Area d'effetto: lanciatore
-
-Utilizzabile da:
- Bardi~
+ Area d'effetto: lanciatore~
 @80 = ~Effetto di Confusione dissolto~
 @81 = ~Distratto~
 @82 = ~Immune al canto del giullare~
@@ -405,9 +375,7 @@ Speciale: nessuna protezione contro attacchi a distanza/perforanti
 
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @112 = ~Sparkburst~
 
 @113 = ~Manufatto da un eccentrico inventore gnomico, questo arco corto composito applica una piccola scintilla ad ogni freccia che viene scagliata attraverso di esso. Ogni volta che una di queste frecce fa centro, c'è una piccola possibilità che si crei un campo di energia statica attorno al bersaglio. Finché non viene dissipato, questo campo attira i successivi proiettili scagliati verso il bersaglio indirizzandoli direttamente verso di lui.
@@ -423,12 +391,7 @@ Peso: 2
 Fattore-velocità: 4
 Tipo di competenza: Arco corto
 Tipo: a due mani
-Richiede: Forza 16
-
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+Richiede: Forza 16~
 
 
 @114 = ~Sap~
@@ -446,9 +409,7 @@ Fattore-velocità: 2
 Tipo di competenza: Clava
 Tipo: a una mano
 Richiede:
- Forza 3
-Non utilizzabile da:
- Mago~
+ Forza 3~
 @116 = ~Pietra Magica Scarlatta~
 @117 = ~Questa Pietra Magica è sferica nella forma e scarlatta nel colore. Una volta attivata, può migliorare la coordinazione, i riflessi e l'equilibrio di chi la indossa, rendendola un oggetto particolarmente apprezzato dai ladri.
 
@@ -458,9 +419,7 @@ Abilità durante l'uso:
 +1 alla Destrezza
 
 Bonus alla Classe Armatura: Nessuno
-Peso: 0
-Utilizzabile da:
- Chiunque~
+Peso: 0~
 @118 = ~Frammento dell'Illuminazione~
 @119 = ~Questa Pietra Magica blu opaco sembra aver raggiunto la sua forma attuale dopo essere stata accuratamente scolpita e levigata. Si narra che fosse originariamente una delle pietre sensoriali usate da Mirdival l'Astuto, un mago di corte calimshita che aveva dedicato la sua vita alla ricerca e alla creazione di artefatti magici per il suo Pasha. Nel corso dei suoi innumerevoli viaggi, il mago ebbe modo di studiare e familiarizzare con un gran numero di congegni magici e oggetti mistici. Per paura di dimenticare dettagli importanti e diffidando della fragile natura della carta, Mirdival archiviava regolarmente i propri ricordi all'interno di una pietra sensoriale che aveva acquistato da un mercante interplanare Genasi. Sfortunatamente, uno dei suoi esperimenti andò male e la sua torre fu completamente distrutta dall'esplosione. Nel crollo della torre, la pietra sensoriale deflagrò in una miriade di frammenti, alcuni dei quali contengono ancora una parte dei ricordi dell'incantatore.
 
@@ -470,9 +429,7 @@ Abilità durante l'uso:
 +20 alla Conoscenza
 
 Bonus alla Classe Armatura: Nessuno
-Peso: 0
-Utilizzabile da:
- Chiunque~
+Peso: 0~
 @120 = ~Squagliatroll~
 @121 = ~L'inverno del 1228 fu particolarmente duro per i villaggi halfling nei pressi della foresta Shalebrook. Gli anni immediatamente precedenti erano stati difficili e le provviste scarseggiavano. La situazione era resa ancora peggiore dalle sempre più frequenti incursioni dei troll, spinti dalla fame e dalla carestia che affliggeva l'intera regione. Sebbene inferiori nel numero, la loro forza straordinaria e la loro resistenza permise ai troll di accaparrarsi senza pietà le ultime scorte di cibo degli halfling. Tuttavia, il cibo leggero di questa piccola gente non potè lenire il loro insaziabile appetito e ben presto i troll iniziarono a nutrirsi degli halfling più in carne. Infuriato, il capo del villaggio cercò di invocare l'aiuto di qualcuno ma con le strade principali innevate ed ogni altra via comunicazione passante attraverso la foresta dei troll, nessun aiuto immediato potè giungere da fuori. Un mattino, dopo aver assistito al rapimento della sua stessa sorella, un giovane ladro di nome Lars dal Pie' Leggero disperò e la notte seguente, raccolto il suo coraggio, passò attraverso la foresta infestata dai troll. Col suo ultimo barlume di forza, raggiunse il vicino accampamento dei nani. Lars Implorò il loro aiuto ma a causa dei problemi con l'invasione degli orchi che stava avendo luogo, essi non poterono che offrirgli poche armi e provviste. Distrutto, Lars afferrò l'unica arma che sapeva impugnare, un pugnale, e partì. Lady Tymora, quel giorno, gli aveva sorriso poiché senza saperlo, il giovane halfling prese l'arma che gli avrebbe di lì a poco salvato la vita. Mentre ripercorreva a ritroso la foresta, il rumoroso russare dei troll gli indicò la caverna dove stavano dormendo. La vista di ossa di halfling masticate sparse ovunque ai loro piedi fu la goccia che fece traboccare il vaso. Guidato dalla cieca ira, Lars colpì a tradimento il più vicino troll dormiente con il pugnale dei nani, noncurante del rischio che correva e con la mente protesa al ricordo dell'amata sorella. Con sua somma sorpresa, urlò di dolore mentre il suo orrido corpo si dissolveva lentamente in una pozza melmosa. Il resto dei troll si svegliò ma, alla vista del loro compagno disciolto e al forte odore di acido, furono colti da un tale orrore che fuggirono a gambe levate per non tornare mai più. Ancora sotto shock, Lars si ricompose lentamente e liberò la sorella e gli altri halfling prigionieri. Infine, Lars dal Pie' Leggero fu proclamato il Salvatore di Shalebrook e il suo pugnale fu chiamato Squagliatroll.
 
@@ -488,9 +445,7 @@ Fattore-velocità: 0
 Tipo di competenza: Pugnale
 Tipo: a una mano
 Richiede:
- Forza 3
-Non utilizzabile da:
- Chierico~
+ Forza 3~
 @122 = ~Fiamma Argentea~
 @123 = ~Questo pugnale, forgiato nell'argento più puro, è stato benedetto da Sehanine Moonbow, la dea elfica della luna. La sua lama è particolarmente efficace contro i vampiri, essendo stata incantata per raccogliere e incanalare ogni più piccola scintilla di potere proveniente dal Piano dell'Energia Positiva. Ogni giorno la lama accumula una piccola quantità di energia positiva in grado di proteggere il portatore dall'attacco risucchia energia dei vampiri. Inoltre, l'energia accumulata dal pugnale può potenzialmente stordire qualunque vampiro vi venga a contatto.
 
@@ -509,9 +464,7 @@ Fattore-velocità: 0
 Tipo di competenza: Pugnale
 Tipo: a una mano
 Richiede:
- Forza 3
-Non utilizzabile da:
- Chierico~
+ Forza 3~
 @124 = ~Appestatore~
 @125 = ~A prima vista, questa brutta daga coperta di ruggine non sembrerebbe una scelta felice per il combattimento. Solo le antiche rune goblinoidi intagliate lungo la lama ne rivelano in parte il potere e la storia. Apparentemente, quest'arma fu in origine uno strumento di tortura del potente sciamano goblin Sharnuk, che più d'ogni altro cercava di afferrare i più nobili segreti della stregoneria. La tribù di Sharnuk tendeva spesso imboscate ai maghi solitari, rapendoli durante il sonno e consegnandoli al proprio leader così che potesse depredarli dei loro segreti. Durante gli interrogatori, Sharnuk pugnalava meticolosamente le proprie vittime finché non fossero completamente straziati dagli incantamenti della lama o resi deliranti dall'ingente perdita di sangue. A quel punto, anche la mente del migliore dei maghi poteva opporre ben poca resistenza alle penetrazioni dello sciamano. Quando raggiunse un livello di potere da lui ritenuto soddisfacente, Sharnuk guidò la tribù durante una razzia ai danni di un accampamento di gnomi nelle vicinanze. Tuttavia, la fortuna non fu dalla sua parte quel giorno e lo sciamano bruciò a morte con la sua scorta al suo primo tentativo di lanciare una palla di fuoco.
 
@@ -531,9 +484,7 @@ Fattore-velocità: 0
 Tipo di competenza: Pugnale
 Tipo: a una mano
 Richiede:
- Forza 3
-Non utilizzabile da:
- Chierico~
+ Forza 3~
 @126 = ~Custode della Legge~
 @127 = ~Qusta lama appartenne a Lao-Tzu, un samurai delle regioni meridionali di Kara-Tur. Al termine del proprio addestramento, il guerriero giurò solennemente di liberare la propria terra dai banditi e briganti che ne affliggevano i popoli ormai da un decennio. Tuttavia, l'impresa si rivelò difficoltosa e i suoi avversari molto scaltri, colpendo sempre a notte fonda con maschere e cappucci. Lao-Tzu comprese che questi banditi non avevno onore e che, con ogni probabilità, si nascondevano tra la stessa gente che aveva giurato di proteggere ma il suo codice morale gli impediva di lanciare false accuse a un innocente e, quindi, non potè agire d'impulso. Lao-Tzu cercò dunque l'aiuto del grande maestro Wu Jen, cui chiese di incantare il suo wakizashi affinché potesse riconoscere le vere intenzioni delle persone e sferzasse con veemenza i disonorevoli. Il samurai organizzò un banchetto per allietare coloro che erano stati derubati e spingere i banditi a uscire allo scoperto. Ci fu grande entusiasmo e risposta per questa iniziativa e Lao-Tzu se ne compiacque. Grazie ai poteri conferiti alla sua arma, potè discernere gli scaltri banditi dai semplici cittadini e li fece sedere in sale da pranzo separate. Una volta riuniti i briganti, il samurai sbarrò l'unica via d'uscita e da solo affrontò una dozzina di loro. In pochi minuti, Lao-Tzu ne uscì vincitore sebbene il suo onore gli impediva di uccidere queste persone nonostante gli orrendi crimini che avevano commesso. Perciò, il samurai li esiliò dalla provincia e il suo popolo conobbe finalmente la pace.
 
@@ -553,12 +504,7 @@ Fattore-velocità: 1
 Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Allineamenti caotici
- Chierico
- Druido
- Mago~
+ Forza 5~
 @128 = ~Artiglio della Gatta Nera~
 @129 = ~La professione di un ninja è poliedrica, alcuni sono abili assassini mentre altri eccellono nell'arte della segretezza e del furto. La proprietaria di questa lama apparteneva, senza alcun dubbio, alla seconda categoria. Sebbene il suo vero nome resti un mistero, ella era nota come La Gatta Nera, ladra famigerata che doveva la sua fama a furti di rari gingilli ora ai danni, ora su richiesta, dei nobili più in vista di Kara-Tur. Non di rado si trovava a rubare preziosi gioielli dalla collezione di un nobile per poi venderli ad un altro ricco aristocratico e rubarli nuovamente per il puro piacere di farlo. Le sua malefatte attirarono l'attenzione di molti famosi guerrieri di Kara-Tur ma, combinando una certa dose di fortuna alle sue straordinarie capacità acrobatiche, ella riusciva sembre a sfuggire ai suoi inseguitori. Alla fine, si narra, s'innamorò di un samurai particolarmente perserverante e si lasciò alle spalle vecchia vita e terra natia per stare con lui.
 
@@ -576,11 +522,7 @@ Fattore-velocità: 2
 Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
 Tipo: a una mano
 Richiede:
- Forza 6
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 6~
 @130 = ~Spaccapietre~
 @131 = ~Oscure rune orchesche sono state incise su questa clava. Si tratta di un resto dell'ultima guerra combattuta fra gli orchi e i maghi di Turm. Quando le tribù degli orchi iniziarono a razziare la loro città, i maghi costruirono golem di grande potere affinché li proteggessero. Resosi conto che la forza bruta dei suoi predoni non sarebbe stata sufficiente, il grande capo orchesco Gull-Nar ordinò agli sciamani di forgiare un'arma che gli consentisse di ridurre in polvere le "statue viventi". Sfruttando i tomi che avevano sottratto da una torre di maghi durante una sortita precedente, gli sciamani incantarono l'arma d'elezione del loro capo, un grossa clava. Gull-Nar ne fu compiaciuto al punto che decise di condurre personalmente la razzia successiva, facendo i golem a pezzi a mano a mano che si faceva strada verso il centro della città. L'avanzata sembrava ormai inarrestabile quando un mago solitario di nero vestito apparve dal nulla e lanciò un potente incantesimo che rivoltò gli orchi contro i propri simili. Nel giro di pochi minuti, il loro esercito fu decimato e lo stesso Gull-Nar fu ucciso da coloro che un tempo erano i suoi guerrieri più fidati.
 
@@ -599,9 +541,7 @@ Fattore-velocità: 2
 Tipo di competenza: Clava
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Mago~
+ Forza 5~
 @132 = ~Il Risoluto Protettore~
 @133 = ~Su questo buckler da cerimonia sono incise le rune mistiche comunemente associate a Gaerdal Ironhand, il dio gnomico della vigilanza nonché la più marziale divinità del pantheon gnomico. La sua austera natura gli è valsa sincero rispetto ed insegna agli gnomi come sfruttare le proprie innate abilità e ridotte dimensioni per tener testa a creature più grandi e più forti di loro in combattimento. Gaerdal vanta pochi ma devoti seguaci tra gli gnomi guerrieri e coloro che sono chiamati a difendere le comunità gnomiche da minacce esterne e si è guadagnato il rispetto della Gente Dimenticata in generale.
 
@@ -614,9 +554,7 @@ Bonus alla Classe Armatura: 2
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @134 = ~Salvaguardia~
 @135 = ~Questi buckler consacrati sono spesso imbracciati dagli alti sacerdoti e dalle guardie dei templi di Moradin, il dio creatore della razza nanica. La potenza e la forza di volontà del Forgiatore di Anime prendono forma nelle sue armi, armature e attrezzature e sono estensioni virtuali della sua incarnazione. Gli incantamenti di questo scudo richiamano la benedizione di Moradin su colui che lo imbraccia, guidando la sua arma verso colpi sicuri e proteggendolo dal male fisico nei casi di necessità. Molti di questi scudi furono perduti durante la battaglia di Dorn's Deep, dopo che gli orchi ebbero razziato e predato la famosa fortezza nanica.
 
@@ -632,9 +570,7 @@ Bonus alla Classe Armatura: 3
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @136 = ~Cintura maestra~
 @137 = ~Le tasche di questa cintura custodiscono una serie di arnesi ottimamente manufatti, generalmente in uso presso fabbri e orologiai. Tuttavia, simili oggetti possono facilmente essere abusati per gli scopi più nefasti, ciò che li ha resi un articolo molto apprezzato anche dai ladri. Questa cintura in particolare ha la lettera "G" incisa sulla fibbia.
 
@@ -645,9 +581,7 @@ Abilità durante l'uso:
 +10% Rimuovere Trappole
 +10% Piazzare Trappole
 
-Peso: 2
-Utilizzabile da:
- Ladri~
+Peso: 2~
 @138 = ~Zaffiro Tre Anime~
 @139 = ~Akram Maluzar fu un infamoso mago Zhentarim ossessionato dai segreti dell'antica Nethril. Nel corso dei suoi tanti viaggi attraverso il Grande Deserto perlustrò un sistema di caverne che, come aveva supposto, si collegava ad una città netherese sepolta. Il suo entusiasmo si smorzò ben presto quando scoprì che le rovine erano piene di trappole, pavimenti illusori e porte solidamente serrate. Superare questi ostacoli era al di là delle capacità di Akram, che pertanto disperò e, non volendo condividere il potere di Netheril con nessun altro, decise di rubare le abilità che gli servivano. Dietro la promessa di sontuose ricompense, lo stregone adescò tre abilissimi ladri calimshiti - un esperto scassinatore, un tenebroso maestro di trappole e una sentinella dall'occhio vigile. Ma anziché inviarli alla cittadella, Akram li ingannò ed imprigionò le loro anime dentro una Pietra Magica Zaffiro, incantandola con le abilità che gli occorrevano. L'esperimento andò a buon fine e il mago poté addentrarsi nelle profondità delle caverne senza intralci. Almeno finché le anime dei tre ladri confinate nella Pietra Magica non cominciarono a ribellarsi, risucchiando l'energia vitale dello stregone nel tentativo di appropriarsi del suo corpo per farne il loro. Accecato dalla sua sete di potere, Akram non prestò attenzione alle proprie condizioni finché non fu troppo tardi. Terribilmente affaticato, svenne di fronte a un'antica biblioteca netherese, attivando accidentalmente una trappola nascosta che provocò una frana e gli tolse la vita. La sua preziosa Pietra Magica fu poi ritrovata da una tribù errante di coboldi, che la prese per un semplice gioiello e la vendette in cambio di provviste. Nota: per ottenere la conoscenza necessaria ad attivare i poteri di questo oggetto, colui che lo indossa deve effettivamente tuffarsi nell'inconscio delle tre anime intrappolate. Questo processo può essere molto impegnativo e l'uso di queste abilità provoca uno stato di affaticamento progressivamente sempre più acuto. Più ne si fa uso, può fatica si accumula. L'unico modo per rimuovere la fatica è un'intera notte di riposo.
 
@@ -658,9 +592,7 @@ Lancia Individuare Trappole tre volte al giorno
 Lancia Scassinare tre volte al giorno
 Lancia Eliminare Invisibilità tre volte al giorno
 
-Peso: 0
-Utilizzabile da:
- Chiunque~
+Peso: 0~
 @140 = ~Cappuccio dell'Acutezza~
 @141 = ~Appartenuto un tempo alla Gilda dei Ladri Xanathar, questo cappuccio apparentemente privo di segni particolari è stato trattato magicamente al fine di potenziare acume e percezioni di chiunque lo indossi. Il cappuccio andò temporaneamente perduto durante una sortita presso uno dei centri di compravendita di manodopera schiavista degli Xanathar a Skullport ma, recentemente, è riapparso a Calimport ed è arrivato ad Atkhatla a bordo di uno dei tanti caravan della compagnia mercantile Sybarr.
 
@@ -673,10 +605,7 @@ Immunità a tutte le forme di cecità
 
 Bonus alla Classe Armatura: Nessuno
 Speciale: protegge dai colpi critici
-Peso: 0
-Utilizzabile da:
- Ladro
- Monaco~
+Peso: 0~
 @142 = ~Arpa di Greagan~
 @143 = ~Arpa di Greagan "La Platea Imprigionata" Questa arpa di fine fattura è molto nota tra le popolazioni nomadi dell'est, principalmente a causa dell'infamia del suo precedente proprietario, Greagan delle Colline Inferiori. Era un bardo, più o meno, anche se la sua scelta professionale fu dettata più dall'odio per il duro lavoro che non dall'amore per la gente. Pregò un mago di forgiare e incantare quest'arpa affinché potesse nascondere la sua totale assenza di talento e, quando il suo potere si rivelò maggiore delle aspettive di Gregan, il bardo si dedicò al furto utilizzando la "sua" musica per incantare le vittime prescelte. Greagan scomparve alcuni anni fa, fra pettegolezzi che narravano di un'accademia per bardi inusualmene istigata alla violenza. L'arpa funziona ancora, sebbene un menestrello che si rispetti se ne servirebbe solo nelle circostanze più ardue.
 
@@ -685,9 +614,7 @@ STATISTICHE:
 Speciale:
 Lancia Dominio tre volte al giorno
 
-Peso: 3
-Utilizzabile da:
- Bardo~
+Peso: 3~
 @144 = ~Arpa del Discanto~
 @145 = ~Lady Laxaella Bronshield, baronessa di Tanistan, commissionò quest'arpa per il suo giullare di corte prima di spedirlo, con un drappello dei suoi migliori soldati, ad occuparsi di una recente infestazione di umber hulk nella foresta di Thornwood. In un primo momento, i soldati si stupirono della scelta di farli accompagnare da un giullare, canzonandone allegramente la misera corporatura ed apparente fatuità; ma appena si scontrarono con il primo umber hulk, compresero immediatamente l'importanza del suo ruolo. Con loro grande sorpresa, il terribile sguardo della mostruosa creatura lasciava il giullare completamente indifferente, nonostante avesse appena trasformato il più robusto di loro in un'abulica pedina. Inoltre, l'eccentrico suono prodotto dall'arpa sembrava in qualche modo in grado di contrastare l'effetto dello sguardo dei mostri, restituendo la sanità mentale allo sventurato soldato. Alla fine, l'infestazione fu debellata senza subire perdite e riportando solo poche contusioni. Per la maggior parte del viaggio verso casa, i soldati trasportarono il giullare sulle spalle intonando canti in suo onore.
 
@@ -697,9 +624,7 @@ Speciale:
 Rimuove gli effetti di Confusione tre volte al giorno
 Area d'Effetto: 1 bersaglio
 
-Peso: 3
-Utilizzabile da:
- Bardo~
+Peso: 3~
 @146 = ~Daga dell'Acume~
 @147 = ~Le incandescenti rune color lava incise sull'impugnatura di questa daga indicano che fu forgiata a Thay, presumibilmente per un membro d'alto rango della fazione dei Ricercatori. Sebbene la lama possa essere utilizzata con successo da chiunque sia stato addestrato a maneggiarla, solo coloro che indulgono nell'arte arcana possono schiuderne il vero potenziale. La magia di cui la piccola arma è stata impregnata sembra destinata a rendere più acuta la mente del portatore, consentendo agli intantatori arcani di memorizzare un maggior numero di incantesimi.
 
@@ -717,9 +642,7 @@ Fattore-velocità: 0
 Tipo di competenza: Pugnale
 Tipo: a una mano
 Richiede:
- Forza 3
-Non utilizzabile da:
- Chierico~
+ Forza 3~
 @148 = ~Randello del Logoramento~
 @149 = ~Creato da un potente sciamano Uthgardt, questa clava è stata appositamente incantata per ridurre le risorse combattive dell'avversario. Fu impugnato da Aukthar, capo tribù del clan Blackraven, in numerose battaglie combattute tra il suo popolo e le orde degli orchi che tentavano periodicamente la conquista di Ravenrock, il loro monte ancestrale. L'arma andò perduta in una battaglia particolarmente sanguinosa, durante la quale le urla di guerra dei combattenti provocarono una gigantesca valanga che li travolse tutti lungo il fianco della montagna.
 
@@ -736,9 +659,7 @@ Fattore-velocità: 3
 Tipo di competenza: Clava
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Mago~
+ Forza 5~
 @150 = ~Arco corto composito~
 @151 = ~Gli archi compositi sono archi sia lunghi, sia corti, i cui listelli sono composti da più di un materiale. Ciò conferisce loro una maggiore flessibilità e fa sì che le frecce da essi scagliate colpiscano più forte. Questo arco può essere impugnato solo da personaggi il cui punteggio di forza sia pari o superiore a 16.
 
@@ -750,11 +671,7 @@ Fattore-velocità: 6
 Tipo di competenza: Arco corto
 Tipo: a due mani
 Richiede:
- Forza 16
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 16~
 @152 = ~Arco corto composito +1~
 @153 = ~Gli archi compositi sono archi sia lunghi, sia corti, i cui listelli sono composti da più di un materiale. Ciò conferisce loro una maggiore flessibilità e fa sì che le frecce da essi scagliate colpiscano più forte. Questo arco magico può essere impugnato solo da personaggi il cui punteggio di forza sia pari o superiore a 16.
 
@@ -767,11 +684,7 @@ Fattore-velocità: 5
 Tipo di competenza: Arco corto
 Tipo: a due mani
 Richiede:
- Forza 16
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 16~
 @154 = ~Arco corto composito +2~
 @155 = ~Gli archi compositi sono archi sia lunghi, sia corti, i cui listelli sono composti da più di un materiale. Ciò conferisce loro una maggiore flessibilità e fa sì che le frecce da essi scagliate colpiscano più forte. Questo arco magico può essere impugnato solo da personaggi il cui punteggio di forza sia pari o superiore a 16.
 
@@ -784,11 +697,7 @@ Fattore-velocità: 4
 Tipo di competenza: Arco corto
 Tipo: a due mani
 Richiede:
- Forza 16
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 16~
 @156 = ~Arco corto composito +3~
 @157 = ~Gli archi compositi sono archi sia lunghi, sia corti, i cui listelli sono composti da più di un materiale. Ciò conferisce loro una maggiore flessibilità e fa sì che le frecce da essi scagliate colpiscano più forte. Questo arco magico può essere impugnato solo da personaggi il cui punteggio di forza sia pari o superiore a 16.
 
@@ -801,11 +710,7 @@ Fattore-velocità: 3
 Tipo di competenza: Arco corto
 Tipo: a due mani
 Richiede:
- Forza 16
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 16~
 @158 = ~Velo Oscuro~
 @159 = ~Di primo acchito, questo sembrerebbe un semplice cappuccio nero che, nascondendo i lineamenti di chi lo indossa, lo rende assolutamente anonimo. Tuttavia, qualora l'indossatore si trovasse ad incontrare lo sguardo di una creatura come un basilisco, un vampiro o un umber hulk, il cappuccio si porterebbe magicamente davanti ai suoi occhi per proteggerlo, vanificando gli effetti dell'attacco. Sfortunatamente, l'indossatore non ha alcun controllo su questa proprietà del cappuccio e la protezione offerta contro queste creature viene al prezzo dell'usuale precisione nel contrattacco.
 
@@ -818,11 +723,7 @@ Penalità di -2 alla THAC0 contro creature che attaccano con lo sguardo
 
 Bonus alla Classe Armatura: Nessuno
 Speciale: protegge dai colpi critici
-Peso: 0
-Utilizzabile da:
- Ladro
- Monaco
- Ranger~
+Peso: 0~
 @160 = ~Diario di Arledrian~
 @161 = ~Scorri le annotazioni degli ultimi mesi, nella speranza di ricavarne qualche indizio sulla scomparsa di Arledrian.
 
@@ -900,19 +801,14 @@ Bonus alla Classe Armatura: 2
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @202 = ~Amuleto della Barriera~
 @203 = ~Questo potente amuleto fu forgiato dall'incantatore Celemon di Calimport nel 727 DR. Ne creò dieci su commissione prima che i suoi rivali lo uccidessero per invidia e tentassero poi di riprodurne il lavoro. I suoi colleghi non erano però altrettanto talentuosi e persero vita e laboratorio a causa di un incidente, nel corso del quale anche la formula fu distrutta. Questo amuleto in particolare era proprietà del mago guerriero Pelan Rainwind. Andò perduto quando il padrone fu ucciso dai giganti sulla Spina Dorsale del Mondo attorno all'840 DR.
 
 STATISTICHE:
 
 Speciale:
-Lancia simultaneamente Pelle di Pietra e Globo Minore di Invulnerabilità tre volte al giorno
-
-Utilizzabile da:
- Mago~
+Lancia simultaneamente Pelle di Pietra e Globo Minore di Invulnerabilità tre volte al giorno~
 @204 = ~Stivali della Volpe~
 @205 = ~Questi sgargianti stivali rossi e verdi erano indossati dal ladro Elpham di Perrywine. Elpham era un borseggiatore di eccezionale abilità, che amava sfidare la fortuna motteggiando brevemente le sue vittime subito dopo averle derubate. Dopo essere stato preso per due volte, Elpham investì i propri soldi nella commissione di questi stivali. Naturalmente, Elpham andò incontro a una prematura fine quando provò a derubare il notoriamente iracondo Mago Rosso di Thay, Xain Morobdel. Elpham rubò una borsa piena di gemme appesa alla vita di Xain e danzò in mezzo alla folla gridando: "Perché non provi a inseguirmi fino al Priador, testa pelata? Ha ha!" Xain, silenziosamente fumante di rabbia, evocò prontamente quattro cacciatori invisibili, dando loro l'ordine di "Uccidere l'idiota con gli stivali rossi e verdi."
 
@@ -939,12 +835,7 @@ Tipo di danno: da taglio
 Peso: 5
 Fattore-velocità: 4
 Tipo di competenza: Ascia
-Tipo: a una mano
-Non utilizzabile da:
- Chierico
- Druido
- Ladro
- Mago~
+Tipo: a una mano~
 @208 = ~Rapida Paralisi~
 @209 = ~Un mago da battaglia Zhentarim forgiò questa lama nella speranza che l'aiutasse a prevalere nel combattimento ravvicinato qualora fosse stato sfidato a duello. La potente spada avrebbe dovuto parare la maggior parte degli attacchi e impedire i movimenti dell'avversario allo stesso tempo. Sfortunatamente, il mago non era assolutamente in grado di destreggiarsi con la lama e fu sconfitto agilmente da un avversario.
 
@@ -962,11 +853,7 @@ Tipo di danno: da taglio
 Peso: 2
 Fattore-velocità: 2
 Tipo di competenza: Spada lunga
-Tipo: a una mano
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+Tipo: a una mano~
 @210 = ~Pelle di Abishai~
 @211 = ~Un grande mistero circonda questa armatura e nessuno sa dire con certezza come sia stata forgiata. Ciò che è certo, è che il cuoio fu ricavato dalla pelle di un Abishai, sebbene sia impossbile determinare di che colore fosse il diavolo poiché l'armatura è stata completamente tinta di nero. In aggiunta, emana un leggero ed inusuale odore di aceto. Coloro che indossano questa armatura ne ottengono una piccola resistenza al danno fisico e l'abilità di rimarginare le ferite. Non è chiaro se queste proprietà derivino dalla pelle in sé o da un incantamento posto sull'armatura.
 
@@ -977,10 +864,7 @@ Abilità durante l'uso:
 L'indossatore rigenera un punto-ferita ogni sei secondi
 
 Classe Armatura: 4
-Peso: 15
-Non utilizzabile da:
- Mago
- Paladino~
+Peso: 15~
 @212 = ~Spezzaincantesimi~
 @213 = ~L'incantaspade Naradon di Thesk era noto per la sua abilità nello sconfiggere maghi ostili in modo rapido e efficente anche quando questi lo superavano grandemente in numero. Si guadagnò questa reputazione con l'aiuto di tre oggetti: Pozioni di Velocità, Stivali della Velocità e la sua fidata spada corta, Spell Diver. A differenza di molte altre armi magiche, Spezzaincantesimi non ha alle spalle una storia oscura e ricca di omicidi. Naradon si ritirò dalla sua carriera di avventuriero all'età di trentadue anni. Il suo gradimento per le Pozioni di Velocità gli diede il ben servito quanto morì di vecchiaia quattro anni dopo. Il suo unico erede, che non aveva alcun desiderio di seguire le sue orme sul sentiero dell'avventura, vendette la spada a un noto scassinatore pochi anni dopo la morte del padre. La spada può essere riconosciuta dal re pescatore inciso sul ricasso.
 
@@ -999,11 +883,7 @@ Tipo di danno: da taglio
 Peso: 1
 Fattore-velocità:  0
 Tipo di competenza: Spada corta
-Tipo: a una mano
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+Tipo: a una mano~
 @214 = ~Cappuccio dei Ladri~
 @215 = ~Questo cappuccio marrone scuro è abbastanza largo da coprire sia la testa, sia le spalle. Fu intessuto dal ladro e illusionista gnomico Brein Chestnut. Brein se ne servì nel corso delle sue avventure per vari anni, prima che il suo amore d'infanzia lo convinse ad accasarsi. Diede il cappuccio a suo nipote, Chirchet, che a sua volta lo cedette in cambio di un largo appezzamento di terreno coltivabile.
 
@@ -1016,10 +896,7 @@ Abilità durante l'uso:
 Speciale:
 Lancia simultaneamente Sfocatura e Immagini Illusorie tre volte al giorno
 
-Peso: 1
-Utilizzabile da:
- Bardo
- Ladro~
+Peso: 1~
 @216 = ~Morte Silente~
 @217 = ~Questa spada apparteneva a Venduris, scaltro assassino al servizio di Cyric - il regnante Dio dell'Omicidio. Quando il vagabondo fu accettato nell'ordine dei Prescelti di Cyric ricevetta una piccola lama dall'aspetto assolutamente ordinario come regalo di benvenuto. Sebbene allora la spada recasse solo pochi incantamenti minori, il suo potere sembrava aumentare di pari passo con il filo della sua lama ad ogni uccisione che Venduris perpetrava in nome del suo nuovo padrone. L'assassino amava portare a termine questo genere di compiti alla svelta e silenziosamente, così che le sue vittime non sospettassero mai l'avvicinarsi della loro fine. Tuttavia, quando un certo bersaglio aveva particolarmente offeso il Principe della Menzogna, Venduris applicava un mortale veleno alla lama della sua spada. La vittima iniziava a soffocare, impossibilitata a gridare per chiamare aiuto, mentre Cyric rideva di gioia alla vista del dolore e dell'agonia dipinte sul volto del suo nemico a causa del veleno, che gli avrebbe infine causato una morte lenta e tormentata. Questa spada pulsa di una fioca luce verdastra ed emana una potente aura malvagia. La sua punta e i suoi bordi sono estremamente affilati e costantemente rivestiti di uno strato di veleno magico che rende quasi impossibile maneggiare la spada senza subire danno. Solamente ladri di eccezionale destrezza e intelligenza possono ardire a impugnare quest'arma.
 
@@ -1039,9 +916,7 @@ Tipo di competenza: Spada corta
 Tipo: a una mano
 Richiede:
  Destrezza 15
- Intelligenza 15
-Utilizzabile da:
- Ladri di allineamento neutrale o malvagio~
+ Intelligenza 15~
 @218 = ~Stivali d'Ombra~
 @219 = ~A un più attento esame, il tessuto di questi stivali sembra essere fatto di uno strano materiale incorporeo. Calzandoli, l'indossatore assume un aspetto spettrale, quasi fosse a sua volta composto di ombra, e percepisce tutti i suoni come inquietanti rumori sommessi provenienti da distante.
 
@@ -1052,9 +927,7 @@ Abilità in combattimento:
 +10% Muoversi Silenziosamente
 +15% Nascondersi nelle Ombre
 
-Peso: 5
-Utilizzabile solo da:
- Ladro~
+Peso: 5~
 @220 = ~Lingua di Salamandra~
 @221 = ~La Lingua di Salamandra è una daga dall'aspetto tanto inquietante quanto è oscura la sua storia ed è particolarmente apprezzata sia per la sua utilità come arma, sia per le sue proprietà magiche. La lama ondulata come quella di un kriss e la sua terminazione biforcuta conferiscono alla daga un aspetto particolarmente esotico. Un viscio frammento color rosso accesso della lingua di una salamandra è in qualche modo incastonato all'interno della lama, vicino all'impugnatura, e pulsa e si raggrizzisce casualmente senza alcun intervento da parte di chi la impugna. Le vere origini del pugnale sono ignote ma si ritiene che il suo primo proprietario fu un temuto e rispettato ladro ed assassino gnomico di Westgate di nome Turlam Shallowhill. Turlam fu ucciso in combattimento da un rivale, un halfling chiamato Deder Seven Fingers. Deder tenne l'arma come trofeo, ignorandone i poteri fino a dopo che gli fu sottratta da un sottoposto, un altro halfling di nome Kreshinal Blackhound. Kreshinal fuggì a Selgaunt con la daga per cinque anni, avvalendosi dei suoi poteri per rendersi invisibile alle divinazioni. Perse il pugnale in una bisca improvvisata e fu ucciso dai sicari di Deder prima della fine del mese. Deder cercò di reclamare la lama dai criminali che se ne erano impossessati e vi riuscì, ma la sua attenzione era talmente presa dal pugnale che non si accorse del fatto che i criminali in questione avevano assoldato un sacerdote di Mask affinché si infiltrasse e distruggesse i suoi interessi a Westgate. La guerra tra bande che ne scaturì fra Westgate e Selgaunt terminò quando il sacerdote di Mask, Pieter il Debole, alimentò la paranoia di entrambe le parti a tal punto che queste si distrussero dall'interno. Pieter afferrò la daga alla prima occasione e fuggì a Hillsfar, certo che i disorganizzati scherani semiumani di Deder Seven Fingers non l'avrebbero seguito in un posto tanto ostile alla loro razza. In un successivo imbroglio, Pieter vendette il pugnale a un Mulmaster Hawk, invitando al contempo altri potenziali acquirenti a un'asta a Hillsfar. Pieter e i suoi scagnozzi assassinarono gli acquirenti che si presentarono all'asta farsa e fuggirono con l'oro, nascondendosi sotto la protezione di un Amuleto Anti-Individuazione. Il Mulmaster Hawk che acquistò il pugnale fu presumibilmente ucciso da alcune sacerdotesse di Umberlee, irate dal suo rifiuto di offrire sacrifici alla loro dea. Si crede che anni di guerre intestine tra i seguaci di Umberlee abbiano trasportato la daga fino a tremila miglia di distanza dalla sua umile, natia Sembia. Di Pieter il Debole e i suoi scagnozzi si è persa ogni traccia.
 
@@ -1077,9 +950,7 @@ Tipo di danno: da taglio
 Peso: 1
 Fattore-velocità: 0
 Tipo di competenza: Pugnale
-Tipo: a una mano
-Non utilizzabile da:
- Chierico~
+Tipo: a una mano~
 @222 = ~Volto del Caduto~
 @223 = ~Questi antichi elmi furono un tempo comuni tra i barbari Reghedmen, provenienti dalla regione oggi nota come Icewind Dale. La forma dell'oggetto è piuttosto semplice: un normale elmo di ferro con una protezione facciale fissata su cardini. Una volta ultimata la forgiatura dell'elmo, il fabbro conferiva alla protezione facciale l'aspetto di un uomo defunto e vi incideva il nome del guerriero, accompagnato da una parola che ne descrivesse la morte, sulla fronte. L'elmo veniva poi lasciato sulla pira funeraria del guerriero. I sacerdoti credevano che la maschera avrebbe celato la paura del guerriero giunto al cospetto di Tempus per esserne giudicato. Dopo un mese, gli elmi forgiati per onorare guerrieri particolarmente valorosi venivano recuperati dai sacerdoti e negli anni immediatamente successivi, il nome dei guerrieri in questione era ricordato quotidianamente nei loro riti. Secondo una leggenda, se il guerriero fosse stato giudicato valoroso da Tempus, l'elmo forgiato in suo onore avrebbe acquisito il potere di rendere l'indossatore immune alla paura. Questo elmo in particolare reca l'incisione del nome "Siglef" seguito dalla parola "Ascia".
 
@@ -1091,11 +962,7 @@ Immunità al Panico e alla Paura
 
 Bonus alla Classe Armatura: 1
 Speciale: protegge dai colpi critici
-Peso: 3
-Non utilizzabile da:
- Bardo
- Ladro
- Mago~
+Peso: 3~
 @224 = ~Alloro del Favore di Sune~
 @225 = ~Questa corona di rose e foglie di alloro fu un regalo della chiesa di Sune alla sacerdotessa di Hanali Celanil presso la Mano dei Seldarine. I rappresentanti dell'umana dea dell'amore e della bellezza erano ben visti e l'alta sacerdotessa di Hanali Celanil indossò l'alloro ogni volta che gli umani si recavano in visita alla Mano. Gli orchi ignorarono l'alloro credendolo un'inutile cianfrusaglia quando razziarono la torre delle sacerdotesse.
 
@@ -1106,9 +973,7 @@ Abilità durante l'uso:
 
 Bonus alla Classe Armatura: 1
 Speciale: protegge dai colpi critici
-Peso: 1
-Non utilizzabile da:
- Personaggi malvagi~
+Peso: 1~
 @226 = ~Pietra Portafortuna di Venduris~
 @227 = ~Originariamente rubato alle ninfe di Stormshire, questa Pietra Magica ha servito suo malgrado Venduris lungo gli ultimi dieci anni. L'essenza di fortuna in essa contenuta è stata abusata dal malvagio assassino per guidare i suoi colpi verso i punti deboli dei suoi avversari, garantendo la massima letalità di ogni suo attacco. Nonostante fu un tempo bella a vedersi, simile a un luminoso gioiello color arcobaleno, gli incantamenti della Pietra Portafortuna hanno iniziato a svanire a mano a mano che l'influenza del suo nuovo padrone la corrompeva. L'oscurità che vi risiede è ora un incacellabile ricordo della malvagità di Venduris.
 
@@ -1121,12 +986,7 @@ Bonus alla Classe Armatura: nessuno
 Speciale: protegge dai colpi critici
 Peso: 0
 Richiede:
- Saggezza 10
-Utilizzabile da:
- Bardo
- Ladro
- Mago
- Personaggi malvagi o neutrali~
+ Saggezza 10~
 @228 = ~Anello dell'Occultamento di Venduris~
 @229 = ~Questo oggetto fu originariamente sottratto a un illusionista di Thay eccessivamente ambizioso, che riuscì in qualche modo a mettere il bastone tra le ruote a Cyric. Quando Venduris fu mandato ad eliminarlo, prese anche questo anello di invisibilità dai suoi effetti personali. Raramente sentì mai il bisogno di servirsene, essendo già abilissimo nell'arte di nascondersi alla vista, ma l'anello si rivelò utile in un paio d'occasioni in cui gli fu ordinato di catturare la sua vittima viva e trascinarla viva al tempio del padrone per interrogarla o torturarla senza essere individuato dalla magia.
 
@@ -1136,12 +996,7 @@ Abilità durante l'uso:
 L'indossatore è immune a Individuazione dell'Invisibilità, Eliminare Invisibilità, Visione del Vero ed altre divinazioni che annullano l'invisibilità
 
 Speciale:
-Lancia Invisibilità di Massa una volta al giorno
-
-Utilizzabile da:
- Bardo
- Ladro
- Mago~
+Lancia Invisibilità di Massa una volta al giorno~
 @230 = ~Pergamena di Venduris~
 @231 = ~Questa pergamena magica è stata recuperata dai resti di Venduris. Le scritte su questo lato sembrano un appunto del mago che l'ha creata, mentre l'altro lato è ricoperto di rune arcane. La nota recita: "Come da tua richiesta, Venduris, i glifi di guardia che intrappoleranno <CHARNAME> sono stati collegati alle rune su questa pergamena. Avendo manifestato il desiderio di essere l'unico a conoscere il Comando attraverso il quale sarebbero state attivate, ho lasciato una riga vuota in fondo al lato opposto affinché tu possa annotarvela. Sii avvisato, tuttavia: una volta che lo avrai fatto, assicurati che la pergamena rimanga nascosta in un luogo sicuro. A causa del peculiare metodo di lancio coinvolto, non posso fornire alcuna garanzia circa cosa accadrebbe alle rune se questa pergamena venisse danneggiata o distrutta." -S.~
 @232 = ~Mantello d'Ombra di Venduris~
@@ -1156,9 +1011,7 @@ Abilità durante l'uso:
 Immunità ai colpi alle spalle
 L'allineamento dell'indossatore non può essere individuato
 
-Peso: 1
-Utilizzabile da:
- Ladro~
+Peso: 1~
 @234 = ~Blindstrike~
 @235 = ~Questo arco corto composito si irradia di potenti incantamenti necromantici comunemente in uso presso i sacerdoti yuan-ti. L'asta è stata intagliata in forma di due serpenti che cercano di mordere un bulbo oculare, posto fra essi a mo' d'impugnatura. Lungo entrambi i lati sono incise le parole "Possa la grandezza di Sseth accecare gli indegni!". L'arco era prevalentemente in uso presso sentinelle yuan-ti il cui compito era impedire che ignari passanti scoprissero l'ubicazione di un tempio segreto, che era nascosto nella foresta di Ashendale. Per qualche ragione, i beholder e i loro simili sembrano estremamente vulnerabili a qualunque freccia scagliata da questo arco.
 
@@ -1174,11 +1027,7 @@ Fattore-velocità: 3
 Tipo di competenza: Arco corto
 Tipo: a due mani
 Richiede:
- Forza 16
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 16~
 @236 = ~Cotta di maglia drow~
 @237 = ~La cotta di maglia drow è un'armatura di maglie nere satinate finemente lavorata, che non arreca il benché minimo impedimento a chi la indossa. E' simile, seppur non identica, alle magiche cotte di maglia elfiche. Prende tipicamente la forma di una tunica, condividendo i drow la preferenza dei loro cugini di superficie per armature che forniscano un'adeguata protezione senza essere eccissivamente pesanti o limitanti nei movimenti. L'eccezionale leggerezza di questa armatura le consente di essere indossata da ladri e guerrieri/maghi con il minimo dell'impedimento. Inoltre, fintanto che è indossata, la cotta di maglia drow conferisce un piccolo bonus alla resistenza magica e riduce leggermente il tempo di lancio di tutti gli incantesimi. A differenza della maggior parte degli equipaggiamenti drow, questa particolare armatura non è stata forgiata nell'adamantio, in quanto originariamente destinata a sentinelle regolarmente in missione presso la superficie. Di conseguenza, l'esposizione alla luce solare non ne provoca il graduale deterioramento ma, al contempo, non fornisce la stessa protezione delle altre armature drow.
 
@@ -1191,20 +1040,14 @@ Riduce il tempo di lancio degli incantesimi di 1
 Classe Armatura: 4
 Peso: 7
 Richiede:
- Forza 5
-Non utilizzabile da:
- Druido
- Mago~
+ Forza 5~
 @238 = ~Geminus~
 @239 = ~Anello della Stregoneria: "Geminus" Si narra che, molto tempo fa, un grande mago di Amn riuscì ad eludere le limitazioni poste da Mystra alle arti magiche. Le leggende raccontano di un mago in grado di lanciare incantesimi senza bisogno di memorizzarli. Alla fine, si scoprì che i suoi poteri scaturivano dagli innumerevoli anelli magici che aveva forgiato per sé. La sua millantata "memoria infinita" era una bufala, sebbene i suoi anelli rimangano tra gli oggetti più ricercati di tutti i Reami.
 
 STATISTICHE:
 
 Abilità durante l'uso:
-Raddoppia il numero di incantesimi memorizzabili del 1° e 2° livello
-
-Utilizzabile solo da:
- Mago~
+Raddoppia il numero di incantesimi memorizzabili del 1° e 2° livello~
 @240 = ~Corona di foglie Benedetta~
 @241 = ~Rillifane Rallathil è il protettore delle terre boschive e custode dell'armonia della natura. Il Signore delle Foglie è spesso paragonato dai suoi sacerdoti a una quercia eterea talmente grande da unire le proprie radici si a quelle di ogni altra pianta dei Reami, e che si erge nel cuore di Arvandor, la Grande Foresta dell'Olimpo. Il grande albero richiama a sé il flusso e riflusso delle stagioni e il ciclo della vita nei boschi degli elfi verdi. Al contempo, nutre e difende i boschi dalle epidemie, dalle razzie e da invasioni di ogni genere. In talune occasioni speciali, gli alti sacerdoti di Rillifane manifestano il proprio timore nei confronti del Signore delle Foglie intrecciando foglie di quercia nella forma di corone di alloro, successivamente benedette e trattate con magie protettive. Queste corone cerimoniali lasciano raramente le terre degli elfi, prevalentemente a causa del fatto che la magia che le incanta ha una profonda e peculiare sintonia con i Luminosi. Solamente un rinnegato o un esiliato oserebbe privare una comunità elfica di un esemplare di questi preziosi oggetti sacri.
 
@@ -1216,11 +1059,7 @@ Benedizione
 Immunità a malattie e veleno
 
 Bonus alla Classe Armatura: 1
-Peso: 0
-Utilizzabile solo da:
- Elfi
- Mezzelfi
- Personaggi non malvagi~
+Peso: 0~
 @300 = ~Bodak Hangthorn~
 @301 = ~Grok~
 @302 = ~Kerith the Bleak~
@@ -1390,21 +1229,14 @@ Speciale:
 Costringe i nemici a scappare in preda alla paura, a meno che non superino un tiro-salvezza contro incantesimi
  Raggio d'azione: 30 metri
  Area: raggio di 6 metri
- Durata:  6 round
-
-Non utilizzabile da:
- Guerriero
- Ladro~
+ Durata:  6 round~
 @721 = ~Verga del Controllo~
 @722 = ~Quando Haz iniziò a forgiare la sua prima partita di golem difensivi su commissione del Cloakmaster locale, molti dei suoi compagni tra i Ladri Tenebrosi insistettero che il mago avrebbe dovuto fornire un modo sicuro di disattivare i costruitti in caso di bisogno. Inizialmente, Haz considerò queste preoccupazioni infondate ma di fronte al dubbio manifesto di diversi membri di alto rango della gilda e al loro malcelato sospetto circa le sue intenzioni, il mago cedette e costruì diverse Verghe del Controllo che consegnò ai suoi più lamentosi detrattori. In effetti, chiunque porti uno questi oggetti è in grado di disattivare qualunque golem sia stato forgiato da Haz semplicemente tenendo in mano la Verga del Controllo camminando entro l'angolo di visuale del costrutto. Naturalmente, è impossibile disattivare un golem quando questo si trova nelle immediate vicinanze del suo creatore. Inoltre, l'incisione sull'asta della verga avverte espressamente di non attaccare i golem dormienti, poiché così facendo si riattiverebbe la loro normale routine di combattimento.
 
 STATISTICHE:
 
 Abilità durante l'uso:
-Qualunque golem forgiato da Haz si disattiverà automaticamente al cospetto del portatore della verga. Affinché questa abilità funzioni, è necessario che la verga sia equipaggiata e che il portatore si avvicini al golem da solo. Una volta disattivato, un golem rimarrà dormiente in eterno a meno che non venga attaccato. Questa verga non sortisce alcun effetto su golem che non sono stati forgiati da Haz.
-
-Utilizzabile da:
- Chiunque~
+Qualunque golem forgiato da Haz si disattiverà automaticamente al cospetto del portatore della verga. Affinché questa abilità funzioni, è necessario che la verga sia equipaggiata e che il portatore si avvicini al golem da solo. Una volta disattivato, un golem rimarrà dormiente in eterno a meno che non venga attaccato. Questa verga non sortisce alcun effetto su golem che non sono stati forgiati da Haz.~
 @723 = ~INSEGNE DEL MAESTRO RICONOSCIUTE... INIZIO STATO DI RIPOSO~
 @724 = ~COMPORTAMENTO OSTILE RILEVATO... RIPRISTINO ROUTINE DI COMBATTIMENTO~
 @725 = ~\[Conoscenza\] - Come già saprai, i Ladri Tenebrosi sono più di quel che sembrano e nessun crimine organizzato può aver luogo in città senza prima essere sottoposto al loro vaglio e approvazione. Si mormora addirittura che siano riusciti a ottenere un contatto nel Consiglio di Sei. Ammettilo, avrai bisogno di ogni alleato tu possa trovare se intendi davvero sconfiggerli.~
@@ -2120,9 +1952,7 @@ Bonus alla Classe Armatura: 4
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 2
 Richiede:
- Forza 4
-Non utilizzabile da:
- Mago~
+ Forza 4~
 @5002 = ~Il Guardiano +2~
 @5003 = ~Questo scudo dall'aspetto curioso sembrerebbe interamente composto di foglie indurite. La taglia e la forma inusuali di queste foglie sembrano suggerire che appartenessero un tempo a una delle maestose querce che crescono nel cuore della foresta di Mir. Una più attenta ispezione rivela potenti incantamenti druidici sulla superficie dello scudo apparentemente in grado di migliorare la salute del portatore e di conferirgli la capacità di guarire più rapidamente dalle ferite. All'alba d'ogni mattina una delle foglie emana un tenue bagliore: a quel punto, può essere staccata dallo scudo e piantata e un'altra ne prenderà immediatamente il posto sulla superficie dello scudo. Pronunciando il giusto incantesimo, la foglia che è stata pianta si tramuta in un temibile shambling mound la cui forza e dimensioni sembrano essere direttamente proporzionali al potere di colui che porta lo scudo.
 
@@ -2139,9 +1969,7 @@ Bonus alla Classe Armatura: 3
 Peso: 1
 Richiede:
  Saggezza 12
- Carisma 15
-Utilizzabile da:
- Druidi~
+ Carisma 15~
 @5004 = ~Il Guardiano +3~
 @5005 = ~Questo scudo dall'aspetto curioso sembrerebbe interamente composto di foglie indurite. La taglia e la forma inusuali di queste foglie sembrano suggerire che appartenessero un tempo a una delle maestose querce che crescono nel cuore della foresta di Mir. Una più attenta ispezione rivela potenti incantamenti druidici sulla superficie dello scudo apparentemente in grado di migliorare la salute del portatore e di conferirgli la capacità di guarire più rapidamente dalle ferite. All'alba d'ogni mattina una delle foglie emana un tenue bagliore: a quel punto, può essere staccata dallo scudo e piantata e un'altra ne prenderà immediatamente il posto sulla superficie dello scudo. Pronunciando il giusto incantesimo, la foglia che è stata pianta si tramuta in un temibile shambling mound la cui forza e dimensioni sembrano essere direttamente proporzionali al potere di colui che porta lo scudo.
 
@@ -2158,9 +1986,7 @@ Bonus alla Classe Armatura: 4
 Peso: 1
 Richiede:
  Saggezza 12
- Carisma 15
-Utilizzabile da:
- Druidi~
+ Carisma 15~
 @5006 = ~Ascia delle Tempeste +5~
 @5007 = ~Questa ascia di superba fattura è portatrice di un incantesimo di inusuale origine. Subito dopo essere stata forgiata, l'ascia fu portata sulla cima di un monte presso cui sacerdoti nanici attesero l'arrivo di una grossa tempesta. L'arma fu piazzata su un piedistallo di ferro e fu presto colpita da un fulmine. Grazie a un incantesimo per mezzo del quale era stata precedentemente incantata, assorbì parte delle proprietà del fulmine che l'aveva colpita. L'arma fu poi consegnata a un ufficiale nanico di alto rango affinché lo aiutasse nella conduzione di una battaglia che stava avendo luogo tra le orde degli orchi e i nani delle Profondità di Dorn. L'attacco colse i nani di sorpresa, quando una mattina una sentinella portò la notizia che la più grande armata orchesca che avesse mai visto si trovava a poche ore di distanza. Con poco tempo a disposizione per organizzare le difese, i guerrieri nanici furono travolti e gli orchi si riversarono nelle Profondità di Dorn. I nani furono costretti a barricarsi nelle profondità della cittadella, facendo franare le principali vie d'accesso per coprirsi la ritirata e guadagnare tempo. Anche in tali estreme condizioni, ciò diede ai nani pieno controllo su tempi e luoghi in cui le battaglie avrebbero avuto luogo. Di conseguenza, ogni battaglia costò cara agli orchi, sebbene i nani fossero ugualmente costretti ad un'inesorabile e progressiva ritirata verso il Ghiacciaio del Dente di Drago. Infine, grazie alla propria superiorità numerica, gli orchi fecero breccia tra le linee difensive dei nani e ne razziarono le abitazioni. Rivestita del soprannaturale minerale meteoritico e infusa dell'essenza di un lapislazzulo, quest'arma racchiude un potere grandemente superiore.
 
@@ -2181,12 +2007,7 @@ Tipo di danno: da taglio
 Peso: 5
 Fattore-velocità: 2
 Tipo di competenza: Ascia
-Tipo: a una mano
-Non utilizzabile da:
- Chierico
- Druido
- Ladro
- Mago~
+Tipo: a una mano~
 @5008 = ~Spada corta per pugnalare alle spalle +5~
 @5009 = ~La Spada dell'Ombra fu creata per essere lo strumento più letale dell'assassino. E' molto ricercata dagli intenditori di spade e difficilmente rimane a lungo nelle stesse mani. In quelle di chiunque altro non è che una semplice arma +3 ma se la impugna un ladro, diventa estremamente potente, aumentando la possibilità di colpire un punto vitale e incrementando il suo moltiplicatore di danno per il colpo alle spalle. Infusa col potere delle pietre del ladro, questa spada è ancora più potente.
 
@@ -2204,11 +2025,7 @@ Fattore-velocità: 0
 Tipo di competenza: Spada corta
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Chierico
- Druido
- Mago~
+ Forza 5~
 @5010 = ~Cintura maestra della Fortuna~
 @5011 = ~Le tasche di questa cintura custodiscono una serie di arnesi ottimamente manufatti, generalmente in uso presso fabbri e orologiai. Tuttavia, simili oggetti possono facilmente essere abusati per gli scopi più nefasti, ciò che li ha resi un articolo molto apprezzato anche dai ladri. Questa cintura in particolare ha la lettera "G" incisa sulla fibbia. Gli arnesi sono stati infusi con l'essenza della fortuna e incantati magicamente, al fine di conferire ulteriori benefici all'utilizzatore.
 
@@ -2218,9 +2035,7 @@ Abilità durante l'uso:
 +20% Rimuovere Trappole
 +20% Piazzare Trappole
 
-Peso: 2
-Utilizzabile da:
- Ladri~
+Peso: 2~
 @5012 = ~Dardo Gelido Ritornante +3~
 @5013 = ~Si narra che una scaltra sacerdotessa di Auril creò dozzine di questi dardi per dotare le guardie del tempio di un'arma da usare come estrema risorsa. Il dardo sembrò lo strumento più adatto, essendo facile da nascondere. Grazie all'effetto di alcuni semplici incantesimi, il dardo è in grado di causare ustioni da freddo e di tornare nelle mani del proprietario dopo essere stato lanciato . In generale, armi come questa non si trovano facilmente al di fuori dei templi di Auril, più comunemente ubicati sulla cima dei picchi innevati di Icewind Dale. Tuttavia, in tempi recenti alcuni mercanti dell'area delle Dieci Città hanno accumulato quantità sospettosamente elevate di questi dardi dai gruppi avventurieri locali. Il rivestimento di mithril sembra aver potenziato le proprietà magiche dell'arma.
 
@@ -2234,9 +2049,7 @@ Tipo di danno: proiettile (perforante)
 Peso: 0
 Fattore-velocità: 1
 Tipo di competenza: Dardo
-Tipo: a una mano
-Non utilizzabile da:
- Chierico~
+Tipo: a una mano~
 @5014 = ~Spaccapietre +4~
 @5015 = ~Oscure rune orchesche sono state incise su questa clava. Si tratta di un resto dell'ultima guerra combattuta fra gli orchi e i maghi di Turm. Quando le tribù degli orchi iniziarono a razziare la loro città, i maghi costruirono golem di grande potere affinché li proteggessero. Resosi conto che la forza bruta dei suoi predoni non sarebbe stata sufficiente, il grande capo orchesco Gull-Nar ordinò agli sciamani di forgiare un'arma che gli consentisse di ridurre in polvere le "statue viventi". Sfruttando i tomi che avevano sottratto da una torre di maghi durante una sortita precedente, gli sciamani incantarono l'arma d'elezione del loro capo, un grossa clava. Gull-Nar ne fu compiaciuto al punto che decise di condurre personalmente la razzia successiva, facendo i golem a pezzi a mano a mano che si faceva strada verso il centro della città. L'avanzata sembrava ormai inarrestabile quando un mago solitario di nero vestito apparve dal nulla e lanciò un potente incantesimo che rivoltò gli orchi contro i propri simili. Nel giro di pochi minuti, il loro esercito fu decimato e lo stesso Gull-Nar fu ucciso da coloro che un tempo erano i suoi guerrieri più fidati. Ulteriormente incantata grazie al sapere ricavato dal Libro di Costruzione dei Golem, la clava è ora uno strumento ancor più temibile contro golem e costrutti.
 
@@ -2253,9 +2066,7 @@ Fattore-velocità: 0
 Tipo di competenza: Clava
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Mago~
+ Forza 5~
 @5016 = ~Lapislazzulo~
 @5017 = ~Il lapislazzulo è una gemma blu notte tempestata di piriti che brillano come piccole stelle. Il suo particolare colore è spesso chiamato ultramarino. Certi savi sostengono che queste pietre possano essere utilizzate per potenziare armi magiche che traggano il proprio potere dall'elettricità.~
 @5018 = ~Scarica Statica~
@@ -2279,12 +2090,7 @@ Fattore-velocità: 0
 Tipo di competenza: Scimitarra/Wakizashi/Ninja-To
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Allineamenti caotici
- Chierico
- Druido
- Mago~
+ Forza 5~
 @5021 = ~Randello del Logoramento +3~
 @5022 = ~Creato da un potente sciamano Uthgardt, questa clava è stata appositamente incantata per ridurre le risorse combattive dell'avversario. Fu impugnato da Aukthar, capo tribù del clan Blackraven, in numerose battaglie combattute tra il suo popolo e le orde degli orchi che tentavano periodicamente la conquista di Ravenrock, il loro monte ancestrale. L'arma andò perduta in una battaglia particolarmente sanguinosa, durante la quale le urla di guerra dei combattenti provocarono una gigantesca valanga che li travolse tutti lungo il fianco della montagna. Potenziato dall'essenza di polvere di Beljuril, quest'arma è ora ancora più efficente nel causare affanno agli avversari. Colui che la impugna è immune a tutti gli effetti di affaticamento (come quello che si manifesta a seguito dell'incantesimo Velocità) tranne quelli naturali come l'assenza di riposo.
 
@@ -2304,9 +2110,7 @@ Fattore-velocità: 1
 Tipo di competenza: Clava
 Tipo: a una mano
 Richiede:
- Forza 5
-Non utilizzabile da:
- Mago~
+ Forza 5~
 @5023 = ~Protettore del Vagabondo +3~
 @5024 = ~Questo scudo è stato forgiato da una lega di acciaio brunito con tracce di argento e mithril. Nonostante la superificie appaia estremamente lucida, lo scudo sembra assorbire la luce anziché rifletterla. Un più attento esame rivela una serie di incantamenti del tipo generalmente attribuito ai sacerdoti di Mask. E' probabile che sia stato il Signore delle Ombre stesso a benedire questo oggetto con il suo tocco, conferendogli il potere di celare e proteggere i suoi seguaci da qualunque nemico potessero incotrare nello svolgimento della loro rischiosa professione. Infuso della magica essenza di una Pietra del Ladro e rivestito da un sottile strato di adamantio, questo buckler conferisce ora una maggiore protezione.
 
@@ -2322,10 +2126,7 @@ Invisibilità Potenziata tre volte al giorno
 Bonus alla Classe Armatura: 4
 Speciale: nessuna protezione da attacchi a distanza/perforanti
 Peso: 1
-Richiede: Forza 4
-Utilizzabile da:
- Bardo
- Ladro~
+Richiede: Forza 4~
 
 
 @5025 = ~Spaccapietre +3~
@@ -2345,9 +2146,7 @@ Peso: 3
 Fattore velocità: 1
 Tipo di competenza: Clava
 Tipo: ad una mano
-Richiede: 5 alla Forza
-Non utilizzabile da:
-  Mago~
+Richiede: 5 alla Forza~
 
 
 // Cromwell's new dailogue (6000-6999)

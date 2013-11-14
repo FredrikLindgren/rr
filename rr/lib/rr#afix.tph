@@ -86,7 +86,7 @@ END
 END
 
 
-ACTION_IF !FILE_EXISTS_IN_GAME ~CDDETEVL.pro~ AND !FILE_EXISTS_IN_GAME ~macinit.bcs~ AND !FILE_EXISTS_IN_GAME oh1000.are THEN BEGIN
+ACTION_IF !FILE_EXISTS_IN_GAME ~CDDETEVL.pro~ AND !FILE_EXISTS_IN_GAME ~macinit.bcs~ AND !GAME_IS ~bgee bg2ee~ THEN BEGIN
 PRINT ~G3 BG2 Fixpack Core Fixes not detected, mirroring relevant parts ...~                    // useful as debug info as it shows up in SETUP-RR.DEBUG
 
 // KIT.IDS fixes (mirrors G3 BG2 Fixpack code)

@@ -17,6 +17,8 @@ ALWAYS
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
   // INCLUDE ~rr/lib/tobexfix.tph~                                    // obsolete as of TobEx 0022 which RR now ships with
+
+  LAM bgee_language
 END
 
 README ~rr/doc/readme_rr.html~
@@ -43,9 +45,7 @@ LANGUAGE ~Polski (Clan Children of Bhaal - BoRo & Kinski)~ ~polish~
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#DWF.RR
 
 BEGIN @1 DESIGNATED 0
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
-
-LAM bgee_language
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#DWF.RR~
 
@@ -74,9 +74,7 @@ BUT_ONLY
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#TRNQ.EFF
 
 BEGIN @2 DESIGNATED 1
-REQUIRE_PREDICATE ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
-
-LAM bgee_language
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -159,8 +157,8 @@ COPY_EXISTING ALIGNMNT.2DA override                           // Disallow good a
  PRETTY_PRINT_2DA
 BUT_ONLY
 
-OUTER_SPRINT f_Desc @35
-LAF set_kit_description STR_VAR f_Kit = assasin f_Desc END
+OUTER_SPRINT desc @35
+LAF set_kit_description STR_VAR kit = assassin desc END
 
 
 // Swashbuckler kit revision
@@ -179,8 +177,8 @@ COPY_EXISTING dualclas.2da override                           // dual-class list
   SET_2DA_ENTRY 40 1 1 ~0~                                    // prevent Swashbucklers from dual-classing to Fighters
 BUT_ONLY
 
-OUTER_SPRINT f_Desc @28
-LAF set_kit_description STR_VAR f_Kit = swashbuckler f_Desc END
+OUTER_SPRINT desc @28
+LAF set_kit_description STR_VAR kit = swashbuckler desc END
 
 
 // Bounty Hunter kit revision
@@ -264,12 +262,12 @@ COPY_EXISTING  ~LUTH0.2DA~           ~override/LUTH3.2DA~      // Bountu Hunter'
   PRETTY_PRINT_2DA
 BUT_ONLY
 
-ACTION_IF GAME_IS ~tob bgt~ BEGIN
+ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
   STRING_SET ~71467~ @34                                       // Tracking HLA description updated to include Bounty Hunters
 END
 
-OUTER_SPRINT f_Desc @54
-LAF set_kit_description STR_VAR f_Kit = bounty_hunter f_Desc END
+OUTER_SPRINT desc @54
+LAF set_kit_description STR_VAR kit = bounty_hunter desc END
 
 
 
@@ -283,8 +281,7 @@ LAF set_kit_description STR_VAR f_Kit = bounty_hunter f_Desc END
 
 
 BEGIN @19 DESIGNATED 2
-REQUIRE_PREDICATE ENGINE_IS ~tob~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11
+REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -523,9 +520,7 @@ END
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#PPTSK.RR
 
 BEGIN @17 DESIGNATED 3
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
-
-LAM bgee_language
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPTSK.RR~
 
@@ -555,7 +550,7 @@ BUT_ONLY
 
 
 BEGIN @3 DESIGNATED 4
-REQUIRE_PREDICATE ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -615,8 +610,8 @@ COPY ~RR/RR_CORE/SPELLS/RR#WDIS.SPL~  override                // Weapons Display
     END
   END
 
-OUTER_SPRINT f_Desc @30
-LAF set_kit_description STR_VAR f_Kit = blade f_Desc END
+OUTER_SPRINT desc @30
+LAF set_kit_description STR_VAR kit = blade desc END
 
 
 
@@ -657,8 +652,8 @@ BUT_ONLY
 
 COPY ~RR/RR_CORE/SPELLS/RR#BSK00.SPL~ override                // Revised Skald song
 
-OUTER_SPRINT f_Desc @33
-LAF set_kit_description STR_VAR f_Kit = skald f_Desc END
+OUTER_SPRINT desc @33
+LAF set_kit_description STR_VAR kit = skald desc END
 
 
 
@@ -767,8 +762,8 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS00.EFF~ override                 // Jester song im
   SAY 0x1C @82 // Unaffected by the Jester's song
 BUT_ONLY
 
-OUTER_SPRINT f_Desc @32
-LAF set_kit_description STR_VAR f_Kit = jester f_Desc END
+OUTER_SPRINT dest @32
+LAF set_kit_description STR_VAR kit = jester desc END
 
 
 
@@ -832,8 +827,7 @@ END
 
 
 BEGIN @4 DESIGNATED 5
-REQUIRE_PREDICATE ENGINE_IS ~tob~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11
+REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -1422,9 +1416,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.SPL~    override          // Scribe Scrolls (
 
 
 BEGIN @9 DESIGNATED 6
-REQUIRE_PREDICATE ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
-
-LAM bgee_language
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPBRD.RR~
 
@@ -1489,9 +1481,7 @@ BUT_ONLY
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#GUARA.ITM
 
 BEGIN @5 DESIGNATED 7                                               // Additional equipment for Thieves and Bards
-REQUIRE_PREDICATE (ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are) AND !GAME_IS ~iwd-in-bg2~ @902
-
-LAM bgee_language
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ AND !GAME_IS ~iwd-in-bg2~ @902
 
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
 LAUNCH_ACTION_MACRO ~RR#AFIX~
@@ -1688,7 +1678,7 @@ COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~   override                     // Dagger of A
 COPY ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~ override
   SAY NAME2 @146 SAY DESC @147
 
-ACTION_IF GAME_IS ~soa tob bgt~ BEGIN
+ACTION_IF GAME_IS ~soa tob bgt bg2ee~ BEGIN
   COPY_EXISTING ~ARAN.CRE~ override                                 // Aran Linvail, non-STI (for the Dagger of Acumen)
     ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen (for pickpocketing)
 
@@ -2740,10 +2730,7 @@ END                                                                            /
 
 
 BEGIN @18 DESIGNATED 8
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @902
-REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11
-REQUIRE_PREDICATE !GAME_IS ~ca~ @14
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -2841,7 +2828,7 @@ END
 
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
-REQUIRE_PREDICATE ENGINE_IS ~tob~ OR FILE_EXISTS_IN_GAME oh1000.are @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
 
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)
@@ -3045,10 +3032,7 @@ END                                                                             
 
 
 BEGIN @6 DESIGNATED 11
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @902
-REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11
-REQUIRE_PREDICATE !GAME_IS ~ca~ @14
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -3674,10 +3658,7 @@ END                                                                             
 
 
 BEGIN @7 DESIGNATED 12
-REQUIRE_PREDICATE ENGINE_IS ~tob~ @902
-REQUIRE_PREDICATE !GAME_IS ~iwd-in-bg2~ AND !FILE_EXISTS_IN_GAME oh1000.are @902
-REQUIRE_PREDICATE !GAME_IS ~tutu tutu_totsc~ @11
-REQUIRE_PREDICATE !GAME_IS ~ca~ @14
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -5028,8 +5009,6 @@ BUT_ONLY
 //////////////////////////////////////////////////////
 
 BEGIN @999 DESIGNATED 999
-
-LAM bgee_language
 
 COPY ~rr/rr_core/bam/bg2s~ override
 

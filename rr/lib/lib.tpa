@@ -181,19 +181,122 @@ END
 
 //Load UTF8-encoded tra files if the game is BGEE
 DEFINE_ACTION_MACRO bgee_language BEGIN
-  ACTION_IF FILE_EXISTS_IN_GAME oh1000.are BEGIN
+  ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
     LOAD_TRA ~rr/tra/bgee/english/game.tra~
     LOAD_TRA ~rr/tra/bgee/%LANGUAGE%/game.tra~
   END
 END
 
-DEFINE_ACTION_FUNCTION set_kit_description STR_VAR f_Kit = "" f_Desc = "" BEGIN
+/*
+ * Canon kit names as per KIT.IDS
+ */
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#canon_labels BEGIN
+  archer => feralan
+  assassin => assasin
+  wizard_slayer => wizardslayer
+  undead_hunter => undeadhunter
+  abjurer => mageschool_abjurer
+  conjurer => mageschool_conjurer
+  diviner => mageschool_diviner
+  enchanter => mageschool_enchanter
+  illusionist => mageschool_illusionist
+  invoker => mageschool_invoker
+  necromancer => mageschool_necromancer
+  transmuter => mageschool_transmuter
+  generalist => mageschool_generalist
+  beast_master => beastmaster
+  bounty_hunter => bountyhunter
+  talos => godtalos
+  helm => godhelm
+  lathander => godlathander
+  totemic_druid => totemic
+  totemicdruid => totemic
+  shape_shifter => shapeshifter
+  beast_friend => beastfriend
+  avenger => beastfriend
+  wild_mage => wildmage
+  black_guard => blackguard
+  shadow_dancer => shadowdancer
+  dwarvendefender =>_ dwarwen_defender
+  dragondisciple => dragon_disciple
+  darkmoon => dark_moon
+  sunsoul => sun_soul
+END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#kitlist_labels BEGIN
+  wizardslayer => wizard_slayer
+  undeadhunter => undead_hunter
+  mageschool_abjurer => abjurer
+  mageschool_conjurer => conjurer
+  mageschool_diviner => diviner
+  mageschool_enchanter => enchanter
+  mageschool_illusionist => illusionist
+  mageschool_invoker => invoker
+  mageschool_necromancer => necromancer
+  mageschool_transmuter => transmuter
+  mageschool_generalist => ""
+  bountyhunter => bounty_hunter
+  godtalos => talos
+  godhelm => helm
+  godlathander => lathander
+  totemic => totemic_druid
+  beastfriend => beast_friend
+  trueclass => ""
+  generalist => ""
+END
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#clastext_labels BEGIN
+  wizardslayer => wizard_slayer
+  feralan => archer
+  beastmaster => beast_master
+  undeadhunter => undead_hunter
+  totemic => totemic_druid
+  beastfriend => avenger
+  mageschool_abjurer => abjurer
+  mageschool_conjurer => conjurer
+  mageschool_diviner => diviner
+  mageschool_enchanter => enchanter
+  mageschool_illusionist => illusionist
+  mageschool_invoker => invoker
+  mageschool_necromancer => necromancer
+  mageschool_transmuter => transmuter
+  mageschool_generalist => ""
+  wildmage => wild_mage
+  assasin => assassin
+  bountyhunter => bounty_hunter
+END
+
+DEFINE_ACTION_FUNCTION transform_label
+  STR_VAR
+    label = ""
+    array_name = "fl#canon_labels"
+  RET
+    label
+BEGIN
+  TO_LOWER label
+  ACTION_IF VARIABLE_IS_SET $EVAL "%array_name%"("%label%") BEGIN
+    OUTER_SPRINT label $EVAL "%array_name%"("%label%")
+  END
+END
+
+DEFINE_ACTION_FUNCTION set_kitlist_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#kitlist_labels"
+    RET
+      kit = label
+  END
   OUTER_SET strref = "-1"
   COPY_EXISTING kitlist.2da override
     READ_2DA_ENTRIES_NOW kitlist 9
     FOR (i = 0; i < kitlist; ++i) BEGIN
-      READ_2DA_ENTRY_FORMER kitlist i 1 kit
-      PATCH_IF "%kit%" STRING_EQUAL_CASE "%f_Kit%" BEGIN
+      READ_2DA_ENTRY_FORMER kitlist i 1 k
+      PATCH_IF "%k%" STRING_EQUAL_CASE "%kit%" BEGIN
         READ_2DA_ENTRY_FORMER kitlist i 4 strref
         i = kitlist
       END
@@ -201,6 +304,53 @@ DEFINE_ACTION_FUNCTION set_kit_description STR_VAR f_Kit = "" f_Desc = "" BEGIN
   BUT_ONLY
 
   ACTION_IF strref > 0 BEGIN
-    STRING_SET_EVALUATE strref "%f_Desc%"
-  END ELSE PRINT "Kit description for %f_Kit% not set because the kit is unlisted"
+    STRING_SET_EVALUATE strref "%desc%"
+  END ELSE PRINT "Kit description for %kit% not set because the kit is unlisted"
+END
+
+DEFINE_ACTION_FUNCTION set_clastext_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#clastext_labels"
+    RET
+      kit = label
+  END
+  OUTER_SET strref = "-1"
+  COPY_EXISTING clastext.2da override
+    READ_2DA_ENTRIES_NOW clastext 9
+    FOR (i = 0; i < clastext; ++i) BEGIN
+      READ_2DA_ENTRY_FORMER clastext i 0 k
+      PATCH_IF "%k%" STRING_EQUAL_CASE "%kit%" BEGIN
+        READ_2DA_ENTRY_FORMER clastext i 4 strref
+        i = clastext
+      END
+    END
+  BUT_ONLY
+
+  ACTION_IF strref > 0 BEGIN
+    STRING_SET_EVALUATE strref "%desc%"
+  END ELSE PRINT "Kit description for %kit% not set because the kit is unlisted"
+END
+
+DEFINE_ACTION_FUNCTION set_kit_description
+  STR_VAR
+    kit = ""
+    desc = ""
+BEGIN
+  LAF transform_label
+    STR_VAR
+      label = EVAL "%kit%"
+      array_name = "fl#canon_labels"
+    RET
+      kit = label
+  END
+  LAF set_kitlist_description STR_VAR kit desc END
+  ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
+    LAF set_clastext_description STR_VAR kit desc END
+  END
 END

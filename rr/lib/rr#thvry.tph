@@ -167,7 +167,7 @@ BEGIN
 END
 
 
-ACTION_IF GAME_IS ~tob bgt~ BEGIN
+ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
   // Revise anti-stealing scripts so that sleeping, held, stunned, blind, charmed, dead and feebleminded characters and animals do not call the guards (BG2 & ToB version)
 
   COPY_EXISTING ~AMNCEN1.CRE~ ~override~                           // Amnish Centurion

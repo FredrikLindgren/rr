@@ -134,6 +134,18 @@ COPY_EXISTING SPCL423.SPL override                           // Poison Weapon As
         resource = RR#TAS02
     END
   END
+  PATCH_IF GAME_IS ~bgee bg2ee~ BEGIN
+    LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
+    LPF ADD_SPELL_EFFECT
+      INT_VAR
+        opcode = 321
+        target = 1
+        resist_dispel = 2
+        insert_point = 0
+      STR_VAR
+        resource = EVAL "%SOURCE_RES%"
+    END
+  END
 BUT_ONLY
 
 COPY_EXISTING CLABTH02.2DA override                           // Assassin kit ability table

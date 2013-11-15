@@ -217,7 +217,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY fl#canon_labels BEGIN
   wild_mage => wildmage
   black_guard => blackguard
   shadow_dancer => shadowdancer
-  dwarvendefender =>_ dwarwen_defender
+  dwarvendefender => dwarwen_defender
   dragondisciple => dragon_disciple
   darkmoon => dark_moon
   sunsoul => sun_soul
@@ -273,7 +273,7 @@ DEFINE_ACTION_FUNCTION transform_label
   RET
     label
 BEGIN
-  TO_LOWER label
+  ACTION_TO_LOWER label
   ACTION_IF VARIABLE_IS_SET $EVAL "%array_name%"("%label%") BEGIN
     OUTER_SPRINT label $EVAL "%array_name%"("%label%")
   END

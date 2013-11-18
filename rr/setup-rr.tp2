@@ -774,7 +774,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS00.EFF~ override                 // Jester song im
   SAY 0x1C @82 // Unaffected by the Jester's song
 BUT_ONLY
 
-OUTER_SPRINT dest @32
+OUTER_SPRINT desc @32
 LAF set_kit_description STR_VAR kit = jester desc END
 
 

@@ -297,16 +297,6 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~LUFMT.2DA~ THEN BEGIN
 BUT_ONLY_IF_IT_CHANGES
 END
 
-
-END // ends the ACTION_IF check for the G3 BG2 Fixpack Core Component
-
-
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdfp0003.g3~ AND !FILE_EXISTS_IN_GAME ~macinit.bcs~ THEN BEGIN
-PRINT ~G3 BG2 Fixpack BETA Core Fixes not detected, mirroring relevant parts ...~    // useful as debug info as it shows up in SETUP-RR.DEBUG
-
-
-
 // Fix the duration of the Invisibility 10' Radius spell (mirrors G3 BG2 Fixpack code)
 
 COPY_EXISTING ~spwi307.spl~ ~override~
@@ -329,7 +319,16 @@ COPY_EXISTING ~spwi307.spl~ ~override~
   END
 BUT_ONLY_IF_IT_CHANGES
 
+
+END // ends the ACTION_IF check for the G3 BG2 Fixpack Core Component
+
+
+/*
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdfp0003.g3~ AND !FILE_EXISTS_IN_GAME ~macinit.bcs~ THEN BEGIN
+PRINT ~G3 BG2 Fixpack BETA Core Fixes not detected, mirroring relevant parts ...~    // useful as debug info as it shows up in SETUP-RR.DEBUG
+
 END
+*/
 
 
 // Clone several spells and make them innate in order to avoid Cowled Wizard magic license warning and item caster level issues

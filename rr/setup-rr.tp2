@@ -3493,14 +3493,6 @@ COPY ~RR/RR_CYRIC/SPELLS/RR#GONE!.SPL~            override              // Cutsc
 COPY ~RR/RR_CYRIC/SPELLS/RR#BACK!.SPL~            override              // Cutscene animation restore spell
 COPY ~RR/RR_CYRIC/SPELLS/RR#VSBL.SPL~             override              // Spell which renders the caster visible but doesn't remove Improved Invisibility (used after opponents' Spell Triggers and such to ensure fair play)
 COPY ~rr/rr_cyric/spells/rr#ahit.spl~             override              // Automatic critical hits for 6 seconds (used in cutscenes)
-COPY_EXISTING rr#ahit.spl ~override/fl#akill.spl~                       // Auto crits and instant death
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 13
-      target = 1
-      parameter2 = 4
-      duration = 6
-  END
 
 // CoC creatures and characters
 

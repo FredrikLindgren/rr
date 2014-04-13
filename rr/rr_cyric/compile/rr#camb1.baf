@@ -30,7 +30,7 @@ THEN
         ActionOverride("RR#CAMN",FaceObject("RR#SELI"))
         DisplayStringHead("RR#CAMN",@509)
         SmallWait(1)
-        ActionOverride("RR#VEND",ApplySpellRES("FL#AKILL",Myself))
+        ActionOverride("RR#VEND",ApplySpellRES("RR#AHIT",Myself))
         ActionOverride("RR#VEND",MoveToObjectNoInterrupt("RR#CAMN"))
 	SmallWait(9)
         PlaySound("ACT_07")

@@ -2644,3 +2644,7 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 @9850 = ~Thank you for your cooperation.~
 @9851 = ~In that case, I must confiscate all of your belongings instead.~
 @9852 = ~Resisting arrest? To arms then!~
+
+// Strings missing from BGEE
+
+@10005 = ~Although this hood does not confer any noticeable advantages on its wearer, it does have an aura of latent magic.~ // #66466

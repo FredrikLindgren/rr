@@ -3494,6 +3494,25 @@ COPY ~RR/RR_CYRIC/SPELLS/RR#BACK!.SPL~            override              // Cutsc
 COPY ~RR/RR_CYRIC/SPELLS/RR#VSBL.SPL~             override              // Spell which renders the caster visible but doesn't remove Improved Invisibility (used after opponents' Spell Triggers and such to ensure fair play)
 COPY ~rr/rr_cyric/spells/rr#ahit.spl~             override              // Automatic critical hits for 6 seconds (used in cutscenes)
 
+COPY_EXISTING rr#ahit.spl ~override/fl#akill.spl~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 248
+      target = 1
+      resist_dispel = 2
+      duration = 6
+    STR_VAR
+      resource = fl#akill
+  END
+
+COPY_EXISTING  spcl902.eff ~override/fl#akill.eff~
+  WRITE_LONG 0x10 13 // opcode
+  WRITE_LONG 0x14 2  // target
+  WRITE_LONG 0x1c 0  // p1
+  WRITE_LONG 0x20 8  // p2
+  WRITE_LONG 0x24 1  // timing
+  WRITE_LONG 0x28 6  // duration
+
 // CoC creatures and characters
 
 COPY ~RR/RR_CYRIC/ACTORS/RR#BODK.CRE~             override  // Bodak

@@ -2595,3 +2595,16 @@ Nota: scrivere pergamene è un'operazione delicata che può essere svolta solo in 
 @9851 = ~In questo caso, dovremo confiscare tutti i vostri beni.~
 
 @9852 = ~Resistenza all'arresto? All'armi, dunque!~
+
+// Strings missing from BG: EE
+
+@10000 = ~Arpa~ // #38789
+@10001 = ~Le arpe sono strumenti a corda spesso usate dai bardi. Questa piccola arpa è l'ideale per un cantastorie o un menestrello viaggiante.~ // #39668
+@10002 = ~Pietra Incantata~ // #8181
+@10003 = ~Questa è una piccola pietra che fluttua orbitando attorno alla testa del proprietario. Basta piazzare la pietra vicino alla testa per farla iniziare a orbitare. Queste pietre, ovviamente magiche, hanno proprietà differenti che dipendono dal loro colore.~ // #5770
+@10004 = ~Cappuccio dei Ladri~ // #66467
+@10005 = ~Anche se questo cappuccio non conferisce alcuna abilità magica al suo possessore, possiede comunque una debole aura di magia.
+
+
+Utilizzabile da:
+Ladri~ // #66466

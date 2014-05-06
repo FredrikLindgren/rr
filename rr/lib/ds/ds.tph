@@ -1,5 +1,3 @@
-
-
 // Detectable Spells v3
 //
 // Assembled by Ardanis/GeN1e, using DavidW's version (SCS) as a base
@@ -27,7 +25,7 @@
 OUTER_SPRINT path ~mymod/ds_folder~ // change it to your mod folder
 INCLUDE ~%path%/ds.tph~
 LAF detectable_spells_setup STR_VAR path END
-LAF detectable_spells STR_VAR table=~%path%/cddetect.2da~ END
+LAF detectable_spells STR_VAR path table = ~cddetect.2da~ END
 */
 //
 // Advanced options:
@@ -153,7 +151,7 @@ COPY_EXISTING stats.ids override
 LAM reorder_stats_ids
 
 // fix the bug in G3's DS
-COPY_EXISTING ~misc01.itm~ ~override/cddetect.spl~ // tell CamDawg's (?) version that DS is already installed
+COPY_EXISTING ~spin101.spl~ ~override/cddetect.spl~ // tell CamDawg's (?) version that DS is already installed
 LAM fix_khelben
 
 // fix old Ascension DS

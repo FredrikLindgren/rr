@@ -2805,3 +2805,17 @@ Remarque : écrire des parchemins est une tâche délicate qui ne peut être effectu
 @9850 = ~Merci pour votre coopération.~
 @9851 = ~Dans ce cas, je dois confisquer toutes vos possessions.~
 @9852 = ~Vous résistez à une arrestation ? Aux armes !~
+
+// Strings missing from BGEE
+
+@10000 = ~Harpe~
+@10001 = ~Les harpes sont des instruments à cordes utilisées le plus souvent par les bardes. Cette petite harpe est idéale pour un voyageur.~
+@10002 = ~Pierre ionique~
+@10003 = ~Cette petite pierre flotte autour de la tête de son possesseur quand on la place dans son inventaire. Ces pierres évidemment magiques ont des propriétés différentes en fonction de leur couleur.~
+@10004 = ~Cagoule du Voleur~
+@10005 = ~Malgré une aura magique assez évidente, cette cagoule ne semble pas posséder de pouvoir particuliers.
+
+PARAMETRES
+
+Utilisable seulement par :
+Voleurs~

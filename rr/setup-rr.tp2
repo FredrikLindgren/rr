@@ -45,7 +45,7 @@ LANGUAGE ~Polski (Clan Children of Bhaal - BoRo & Kinski)~ ~polish~
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#DWF.RR
 
 BEGIN @1 DESIGNATED 0
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee iwdee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#DWF.RR~
 
@@ -106,7 +106,7 @@ LAF rogue_twf END
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#TRNQ.EFF
 
 BEGIN @2 DESIGNATED 1
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -325,7 +325,7 @@ LAF set_kit_description STR_VAR kit = bounty_hunter desc END
 
 
 BEGIN @19 DESIGNATED 2
-REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -564,7 +564,7 @@ END
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#PPTSK.RR
 
 BEGIN @17 DESIGNATED 3
-REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~bg2 tob bgee bg2ee iwdee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPTSK.RR~
 
@@ -594,7 +594,7 @@ BUT_ONLY
 
 
 BEGIN @3 DESIGNATED 4
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -871,7 +871,7 @@ END
 
 
 BEGIN @4 DESIGNATED 5
-REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bg2ee~ AND !GAME_IS ~tutu tutu_totsc bgee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -1460,7 +1460,7 @@ COPY    ~RR/RR_CORE/SPELLS/RR#SCRL.SPL~    override          // Scribe Scrolls (
 
 
 BEGIN @9 DESIGNATED 6
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPBRD.RR~
 
@@ -1525,7 +1525,7 @@ BUT_ONLY
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#GUARA.ITM
 
 BEGIN @5 DESIGNATED 7                                               // Additional equipment for Thieves and Bards
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ AND !GAME_IS ~iwd-in-bg2~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ AND !GAME_IS ~iwd-in-bg2 iwdee~ @902
 
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
 LAUNCH_ACTION_MACRO ~RR#AFIX~
@@ -2879,7 +2879,7 @@ END
 
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)

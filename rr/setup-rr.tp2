@@ -2878,7 +2878,8 @@ END
 
 BEGIN @15 DESIGNATED 9  // Use PnP thievery potions and prevent their effects from stacking
 SUBCOMPONENT @8  // Revised Thievery
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ @902
+REQUIRE_PREDICATE !ENGINE_IS ~iwdee~ ~Revised Thievery is not yet available for IWD: EE~
 
 INCLUDE ~RR/LIB/RR#IDTLS.TPH~                                       // Include my custom "Identify Top Level Script" function
 INCLUDE ~RR/LIB/RR#THVRY.TPH~                                       // Include the Revised Thievery macro (hosts main code)

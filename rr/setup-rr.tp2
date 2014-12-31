@@ -126,18 +126,12 @@ COPY ~RR/RR_CORE/SPELLS/RR#TAS01.SPL~ override               // Assassin Death A
   WRITE_BYTE 0x27 RR#DEATA                                   // assign new secondary type
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS1B.SPL~ override               // Death Attack second part (the actual ability)
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      PATCH_IF ("%opcode%" = 221) BEGIN                            // effect #221: remove secondary type
-        WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) RR#DEATA  // set the designated secondary type
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 221 // effect #221: remove secondary type
+      parameter2 = RR#DEATA
   END
 BUT_ONLY
 
@@ -234,48 +228,36 @@ BUT_ONLY
 
 COPY_EXISTING ~SPCL414.SPL~ override                          // patch the Special Snare shell spell to use the revised RR version and rename it
 SAY NAME1 @38 SAY NAME2 @38 // Set Alchemical Trap
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      PATCH_IF ("%opcode%" = 252) BEGIN // effect #252: Set Trap
-        WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "RR#TBH01" #8 // use RR's revised Special Snares
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 252 // effect #252: Set Trap
+    STR_VAR
+      resource = "RR#TBH01"
   END
-  WHILE ("%abil_num%" > 0) BEGIN
-    SET "abil_num" = ("%abil_num%" - 1)
-    WRITE_SHORT ("%abil_off%" + 0x0e + (0x28 * "%abil_num%")) 1     // reduce casting range to 1
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      range = 1
   END
 BUT_ONLY
 
 ADD_PROJECTILE ~RR/RR_CORE/PRO/RR#TBH01.PRO~                   // New projectile for Special Snares (this also assures Trap Cap Removal compatibility)
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH01.SPL~ override                 // RR's revised Bounty Hunter Special Snares (casting shell)
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#TBH01%"              // use new projectile
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#TBH01
   END
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.SPL~ override                 // Special Snares secondary effect level 1-5 (dazzle)
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-     READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-     READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 14052)) BEGIN           // display string: "THAC0 Modification"
-       SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @715  // Dazzled
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 14052 // "THAC0 Modification"
+      parameter1 = RESOLVE_STR_REF (@175) // Dazzled
   END
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.SPL~ override                 // Alchemical Trap subdual damage
@@ -409,19 +391,13 @@ COPY ~RR/RR_CORE/BAM/RR#THL3B.BAM~    override                 // New Evasion ic
 
 COPY ~RR/RR_CORE/SPELLS/RR#THL03.SPL~ override                 // Evasion (replaces default Greater Evasion)
   SAY UNIDENTIFIED_DESC @8003 SAY DESC @8003
-  READ_LONG  0x64 "abil_off"                                   // Make Evasion display the proper "Evades effects" string
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 206) AND ("%param1%" = 14094)) BEGIN // display string: "Immunity To Effect"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @8002 // Evades Effects
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 14094 // "Immunity To Effect"
+      parameter1 = RESOLVE_STR_REF (@8002) // Evades Effects
   END
   PATCH_FOR_EACH spell IN rr#wi103 rr#wi304 rr#wi308 rr#pr302 rr#pflam rr#mligt BEGIN
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = RESOLVE_STR_REF (@8002) insert_point = "-1" duration = 30 STR_VAR resource = EVAL "%spell%" END
@@ -434,19 +410,13 @@ COPY ~RR/RR_CORE/SPELLS/RR#THL01.SPL~ override                 // Crippling Stri
   SAY UNIDENTIFIED_DESC @8005 SAY DESC @8005
 
 COPY ~RR/RR_CORE/SPELLS/RR#THL1A.SPL~ override                 // Crippling Strike (the actual ability)
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 14042)) BEGIN           // display string: "Strength Modification"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @716  // Crippled
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 14042 // "Strength Modification"
+      parameter1 = RESOLVE_STR_REF (@716) // Crippled
   END
 
 COPY ~RR/RR_CORE/SPELLS/RR#THL1A.EFF~ override                 // Crippling Strike cast secondary spell EFF
@@ -463,10 +433,9 @@ COPY ~RR/RR_CORE/SPELLS/RR#THL04.SPL~ override                 // Acid Trap (cas
 ADD_PROJECTILE ~RR/RR_CORE/PRO/RR#THL4B.PRO~                   // Acid Trap projectile
 
 COPY ~RR/RR_CORE/SPELLS/RR#THL4B.SPL~ override                 // Acid Trap (the actual ability)
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%RR#THL4B%"              // use new projectile
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#THL4B
   END
 
 COPY ~RR/RR_CORE/SPELLS/RR#THL4B.EFF~ override                 // Acid Trap no save against secondary effect (used via EFF targeting for Trolls)
@@ -498,30 +467,30 @@ COPY ~rr/rr_core/bam/rr#trpex.bam~    override                 // Exploding Trap
 ADD_PROJECTILE ~rr/rr_core/pro/rr#trpex.pro~                   // Exploding Trap projectile
 
 COPY ~rr/rr_core/spells/rr#thl06.spl~ override                 // Set Exploding Trap (secondary SPL)
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) "%rr#trpex%"              // use new projectile
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = rr#trpex
   END
 
 COPY_EXISTING ~spcl911.spl~ override                           // Set Exploding Trap (primary SPL)
   SAY UNIDENTIFIED_DESC @8016 SAY DESC @8016                   // updated description
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-     READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-     READ_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "resref"
-      PATCH_IF (("%opcode%" = 252) AND ("%resref%" STRING_EQUAL_CASE ~SPCL911B~)) BEGIN  // effect #252: Set Trap
-       WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "RR#THL06" #8 // use RR's revised Exploding Trap
-      END
-      PATCH_IF (("%opcode%" = 215) AND ("%resref%" STRING_EQUAL_CASE ~SPSETSCD~)) BEGIN  // effect #215: Play 3D Effect
-       WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "RR#TRPEX" #8 // use RR's Exploding Trap VVC animation
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 252 // effect #252: Set Trap
+    STR_VAR
+      match_resource = "SPCL911B"
+      resource = "RR#THL06" // use RR's revised Exploding Trap
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 215 // effect #215: Play 3D Effect
+    STR_VAR
+      match_resource = "SPSETSCD"
+      resource = "RR#TRPEX" // use RR's Exploding Trap VVC animation
   END
 BUT_ONLY
 
@@ -533,21 +502,15 @@ ACTION_IF FILE_EXISTS_IN_GAME spcl910.spl BEGIN
   BUT_ONLY
 
   COPY_EXISTING ~spcl910b.spl~ override                        // Set Spike Trap (secondary SPL)
-    READ_LONG  0x64 "abil_off"
-    READ_SHORT 0x68 "abil_num"
-    READ_LONG  0x6a "fx_off"
-    FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-      READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-      READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-      FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-       READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-       READ_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param2"
-        PATCH_IF (("%opcode%" = 12) AND ("%param2%" = 4194304)) BEGIN  // effect #12: HP Damage, type - magical
-         WRITE_LONG ("%fx_off%" + 0x08 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) 1048576 // change damage type to piercing
-        END
-      END
-    END
     WRITE_LONG 0x34 1                                          // Set the spell level to 1
+    LPF ALTER_EFFECT
+      INT_VAR
+        check_globals = 0
+        check_headers = 1
+        match_opcode = 12 // effect #12: HP Damage
+        match_parameter2 = 4194304 // type - magical
+        parameter2 = 1048576 // change damage type to piercing
+    END
   BUT_ONLY
 END
 
@@ -638,19 +601,13 @@ COPY ~RR/RR_CORE/SPELLS/RR#WDIS.EFF~  override                // Weapons Display
 
 COPY ~RR/RR_CORE/SPELLS/RR#WDIS.SPL~  override                // Weapons Display ability
   SAY NAME1 @31 SAY NAME2 @31                                 // Weapons Display
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-       PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 14094)) BEGIN             // display string: "Immunity To Effect"
-        SAY  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @85  // Weapons Display failed: target has too many hit dice
-       END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 14094 // "Immunity To Effect"
+      parameter1 = RESOLVE_STR_REF (@85) // Weapons Display failed: target has too many hit dice
   END
 
 OUTER_SPRINT desc @30
@@ -676,20 +633,14 @@ COPY_EXISTING ~CLABBA04.2DA~ override                         // Skald kit abili
 BUT_ONLY
 
 COPY_EXISTING ~SPCL542.SPL~ override                          // Skald song change
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-        PATCH_IF ("%opcode%" = 251) BEGIN // effect #251: Change Bard Song
-          WRITE_BYTE  ("%fx_off%" + 0x02 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) 1             // target: self
-          WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "RR#BSK00" #8 // song change
-        END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 251 // effect #251: Change Bard Song
+      target = 1 // target: self
+    STR_VAR
+      resource = "RR#BSK00"
   END
 BUT_ONLY
 
@@ -718,56 +669,38 @@ COPY_EXISTING ~CLABBA03.2DA~ override                         // Jester kit abil
 BUT_ONLY
 
 COPY_EXISTING ~SPCL751.SPL~ override                          // Jester song change
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF ("%opcode%" = 251) BEGIN // effect #251: Change Bard Song
-        WRITE_BYTE  ("%fx_off%" + 0x02 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) 1             // target: self
-        WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "RR#BJS00" #8 // song change
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 251 // effect #251: Change Bard Song
+      target = 1 // target: self
+    STR_VAR
+      resource = "RR#BJS00" // song change
   END
 BUT_ONLY
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS00.SPL~ override                // Revised Jester song
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 17424)) BEGIN // display string: "Bad Luck"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @81 // Distracted
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 17424 // "Bad Luck"
+      parameter1 = RESOLVE_STR_REF (@81) // Distracted
   END
 
 LAM load_RR#FSCNT_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS10.SPL~ override                // Revised Jester song part 2 (a Feeblemind spell used for the Mesmerize effect)
   WRITE_BYTE 0x27 RR#FSCNT                                    // assign new secondary type for Mesmerize effects
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 23744)) BEGIN // display string: "Feebleminded"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @91 // Mesmerized
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 23744 // "Feebleminded"
+      parameter1 = RESOLVE_STR_REF (@91) // Mesmerized
   END
 
 
@@ -817,10 +750,9 @@ LAM load_RR#VRPO_var
 COPY_EXISTING ~RR#BSK00.SPL~ override // Skald's regular song
               ~RR#BDF02.SPL~ override // True Bard's regular song
               ~RR#BBL02.SPL~ override // Blade's regular song
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRPO
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#VRPO
   END
 BUT_ONLY
 
@@ -830,10 +762,9 @@ LAM load_RR#VRNP_var
 
 COPY_EXISTING ~RR#BJS00.SPL~ override // Jester's regular song
               ~RR#WDIS.SPL~  override // Blade's Weapon's display ability
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRNP
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#VRNP
   END
 BUT_ONLY
 
@@ -1032,19 +963,13 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS01.SPL~ override                      // Jester's 
   SAY NAME1 @51 SAY NAME2 @51 SAY UNIDENTIFIED_DESC @52 SAY DESC @52
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS02.SPL~ override                      // Jester's Enhanced Song part 2
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 17424)) BEGIN // display string: "Bad Luck"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @81 // Distracted
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 17424 // "Bad Luck"
+      parameter1 = RESOLVE_STR_REF (@81) // Distracted
   END
 
 
@@ -1067,39 +992,28 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJS03.SPL~ override                      // Jester's 
   SAY NAME1 @67 SAY NAME2 @67 SAY UNIDENTIFIED_DESC @68 SAY DESC @68
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS04.SPL~ override                      // Jester's Lingering Song part 2
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 17424)) BEGIN // display string: "Bad Luck"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @81 // Distracted
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 17424 // "Bad Luck"
+      parameter1 = RESOLVE_STR_REF (@81) // Distracted
   END
 
 LAM load_RR#FSCNT_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJS11.SPL~ override                      // Jester's Lingering song part 3 (a Feeblemind spell used for the Mesmerize effect)
   WRITE_BYTE 0x27 RR#FSCNT                                          // assign new secondary type for Mesmerize effects
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 23744)) BEGIN // display string: "Feebleminded"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @91 // Mesmerized
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 23744 // "Feebleminded"
+      parameter1 = RESOLVE_STR_REF (@91) // Mesmerized
   END
+
 
 
 // Jester song protection EFF (used for mindless creatures such as Golems, Skeletons, Slimes and Zombies)
@@ -1131,19 +1045,13 @@ COPY ~RR/RR_CORE/SPELLS/RR#BHL02.EFF~ override                      // Prevents 
 COPY ~RR/RR_CORE/SPELLS/RR#BHL02.SPL~ override                      // Enthralling Melody spell file
   SAY NAME1 @42 SAY NAME2 @42 SAY UNIDENTIFIED_DESC @43 SAY DESC @43
   WRITE_BYTE 0x27 RR#FSCNT                                          // assign new secondary type for Fascinate effects
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 23744)) BEGIN // display string: "Feebleminded"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @93 // Fascinated
-      END
-    END
+    LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 23744 // "Feebleminded"
+      parameter1 = RESOLVE_STR_REF (@93) // Fascinated
   END
 
 
@@ -1220,10 +1128,9 @@ COPY_EXISTING ~RR#BDF04.SPL~ override                               // True Bard
               ~RR#BSK04.SPL~ override                               // Skald's Lingering song
               ~RR#BSK04.SPL~ override                               // Skald's Lingering song
               ~RR#WSIC.SPL~  override                               // Spirit Warrior's Aura of Courage ability
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRPO
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#VRPO
   END
 BUT_ONLY
 
@@ -1237,10 +1144,9 @@ COPY_EXISTING ~RR#BHL01.SPL~ override                               // Mass Char
               ~RR#BHL03.SPL~ override                               // Sound Burst
               ~RR#BJS02.SPL~ override                               // Jester's Enhanced Song
               ~RR#BJS04.SPL~ override                               // Jester's Lingering Song
-  READ_LONG  0x64 ab_off
-  READ_SHORT 0x68 ab_num
-  FOR(i=0; i<ab_num; i+=1) BEGIN
-    WRITE_SHORT (ab_off+i*0x28+0x26) RR#VRNP
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = RR#VRNP
   END
 BUT_ONLY
 

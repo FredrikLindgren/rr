@@ -2802,23 +2802,24 @@ LAUNCH_ACTION_MACRO ~RR#THVRY~
 
 COPY ~RR/RR_CORE/SPELLS/RR#PNP36.SPL~ override                             // PnP Potion of Master Thievery spell (for non-stacking)
      ~RR/RR_CORE/SPELLS/RR#PNP39.SPL~ override                             // PnP Potion of Perception spell (for non-stacking)
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 206) AND ("%param1%" = 14094)) BEGIN                 // display string: "Immunity To Effect"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @72      // Consuming multiple potions of the same type does not grant additional benefits
-      END
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 4742)) BEGIN                  // display string: "Spell Ineffective"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @75      // The potion had no effect on you
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 14094 // "Immunity To Effect"
+      parameter1 = RESOLVE_STR_REF (@72) // Consuming multiple potions of the same type does not grant additional benefits
   END
+  /* // No matching effect exists on the spell
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 4742 // "Spell Ineffective"
+      parameter1 = RESOLVE_STR_REF (@75) // The potion had no effect on you
+  END
+  */
 
 
 // Alter Potions of Master Thievery to match their PnP versions and make their effects non-stackable
@@ -2902,23 +2903,24 @@ LAUNCH_ACTION_MACRO ~RR#THVRY~
 
 COPY ~RR/RR_CORE/SPELLS/RR#PTN36.SPL~ override                             // Potion of Master Thievery spell (for non-stacking)
      ~RR/RR_CORE/SPELLS/RR#PTN39.SPL~ override                             // Potion of Perception spell (for non-stacking)
-  READ_LONG  0x64 "abil_off"
-  READ_SHORT 0x68 "abil_num"
-  READ_LONG  0x6a "fx_off"
-  FOR (index = 0 ; index < abil_num ; index = index + 1 ) BEGIN
-    READ_SHORT  ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
-    READ_SHORT  ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
-    FOR (index2 = 0 ; index2 < abil_fx_num ; index2 = index2 + 1) BEGIN
-      READ_SHORT ("%fx_off%" +        (0x30 * ("%index2%" + "%abil_fx_idx%"))) "opcode"
-      READ_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) "param1"
-      PATCH_IF (("%opcode%" = 206) AND ("%param1%" = 14094)) BEGIN                 // display string: "Immunity To Effect"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @72      // Consuming multiple potions of the same type does not grant additional benefits
-      END
-      PATCH_IF (("%opcode%" = 139) AND ("%param1%" = 4742)) BEGIN                  // display string: "Spell Ineffective"
-        SAY ("%fx_off%" + 0x04 + (0x30 * ("%index2%" + "%abil_fx_idx%"))) @75      // The potion had no effect on you
-      END
-    END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 14094 // "Immunity To Effect"
+      parameter1 = RESOLVE_STR_REF (@72) // Consuming multiple potions of the same type does not grant additional benefits
   END
+  /* // No matching effect exists on the spell
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 4742 // "Spell Ineffective"
+      parameter1 = RESOLVE_STR_REF (@75) // The potion had no effect on you
+  END
+  */
 
 
 // Make Potions of Master Thievery non-stackable

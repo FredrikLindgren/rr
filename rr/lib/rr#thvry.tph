@@ -30,12 +30,8 @@ ACTION_FOR_EACH ~file~ IN
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%file%.sto~ BEGIN
     COPY_EXISTING ~%file%.sto~ ~override~
-      PATCH_IF (%SOURCE_SIZE% > 0x9b) BEGIN
-      // ===============================================================================
-        READ_LONG  0x10 "flags"
-        SET "flags" |= 0x1000                                                            // allow the store to accept stolen goods
-        WRITE_LONG 0x10 "flags"
-      // ===============================================================================
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        WRITE_LONG 0x10 THIS | BIT12 // allow the store to accept stolen goods
       END
     BUT_ONLY
   END
@@ -44,14 +40,11 @@ END
 // Disallow stealing from fences
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~                                   // parses through all stores in the game (even those added by mods)
-  PATCH_IF (%SOURCE_SIZE% > 0x9b) BEGIN
-   READ_LONG  0x10 "flags"
-     PATCH_IF (("%flags%" BAND 0x1000) = 0x1000) BEGIN                               // if the store is flagged as a fence
-        PATCH_IF (("%flags%" BAND 0x08) = 0x08) BEGIN                                // and if that store can be stolen from
-          SET "flags" &= (` 0x08)                                                    // clear the "Can Steal from Store" flag
-          WRITE_LONG 0x10 "flags"
-        END
-      END
+  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+   READ_LONG 0x10 flags
+   PATCH_IF (flags BAND BIT12) = BIT12 BEGIN // if the store is flagged as a fence
+     WRITE_LONG 0x10 THIS BAND BNOT BIT3 // clear the "Can Steal from Store" flag
+   END
   END
 BUT_ONLY
 
@@ -69,14 +62,14 @@ ACTION_FOR_EACH ~file~ IN
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN
     COPY_EXISTING ~%file%.bcs~ ~override~
-      PATCH_IF (%SOURCE_SIZE% > 0x01) BEGIN
+      PATCH_IF SOURCE_SIZE > 0x01 BEGIN
       // ===============================================================================
-        DECOMPILE_BCS_TO_BAF
+        DECOMPILE_AND_PATCH BEGIN
           REPLACE_TEXTUALLY EXACT_MATCH ~StartDialogue("stolen",LastTrigger)~ ~StartDialogOverride("RR#STLN1",LastTrigger)~
           PATCH_IF ("%SOURCE_RES%" STRING_EQUAL_CASE ~STEALHOS~) BEGIN                   // SoA hostile anti-steal script (requries a specific approach)
             REPLACE_TEXTUALLY EXACT_MATCH ~Enemy()~ ~StartDialogOverride("RR#STLN1",LastTrigger)~
           END
-        COMPILE_BAF_TO_BCS
+        END
       // ===============================================================================
       END
     BUT_ONLY
@@ -123,10 +116,10 @@ BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN
     COPY_EXISTING ~%file%.bcs~ ~override~
     // ===============================================================================
-      PATCH_IF (%SOURCE_SIZE% > 0x01) BEGIN
-        DECOMPILE_BCS_TO_BAF
+      PATCH_IF SOURCE_SIZE > 0x01 BEGIN
+        DECOMPILE_AND_PATCH BEGIN
           REPLACE_TEXTUALLY EXACT_MATCH ~StealFailed([ANYONE])~ ~False() StealFailed([ANYONE])~ // Disable the default anti-steal script block
-        COMPILE_BAF_TO_BCS
+        END
       END
     BUT_ONLY
     EXTEND_TOP ~%file%.bcs~  ~RR/RR_CORE/COMPILE/RR#STEAL.BAF~                         // extend the script with the new anti-steal behaviour
@@ -158,8 +151,7 @@ BEGIN
       PATCH_IF valid BEGIN
         PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                        // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
       // ===============================================================================
-        READ_BYTE  0x20 "state"
-        WRITE_BYTE 0x20 ("%state%" BOR 0b00000001)                                         // add the STATE_SLEEPING flag
+        WRITE_BYTE 0x20 THIS BOR BIT0 // add the STATE_SLEEPING flag
       // ===============================================================================
       END
     BUT_ONLY
@@ -180,7 +172,7 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
 
   COPY_EXISTING ~ENFORAM.BCS~  ~override~ // Alarmed enforcer SoA script (invisible creature)
                 ~ALARM25.BCS~  ~override~ // Alarmed enforcer ToB script (invisible creature)
-    DECOMPILE_BCS_TO_BAF
+    DECOMPILE_AND_PATCH BEGIN
       REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+SetInterrupt(TRUE)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) \1~
       REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0)~
       REPLACE_TEXTUALLY ~\(CreateCreatureObject("SARMIL02",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("SARMIL02",Myself,0,0,0)\)~ ~CreateCreatureObject("SARMIL02",Myself,0,0,0) CreateCreatureObject("SARMIL01",Myself,0,0,0)~
@@ -198,7 +190,7 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
       !StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
       !StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
       !StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)~
-    COMPILE_BAF_TO_BCS
+    END
   BUT_ONLY
 
   COMPILE ~RR/RR_CORE/COMPILE/AMNCEN1.D~                         // Amnish Centurion theft dialogue revision
@@ -207,9 +199,9 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
   EXTEND_BOTTOM ~ENFORCED.BCS~ ~RR/RR_CORE/COMPILE/ENFORCED.BAF~ // make the guards leave after the fine has been paid
 
   COPY_EXISTING ~SARMIL02.BCS~ ~override~ // Saradush Militia Soldier script
-    DECOMPILE_BCS_TO_BAF
+    DECOMPILE_AND_PATCH BEGIN
       REPLACE_TEXTUALLY EXACT_MATCH ~DisplayStringHead(Myself,71641)~ ~StartDialogOverride("AMNCEN1",[PC])~
-    COMPILE_BAF_TO_BCS
+    END
   BUT_ONLY
 END
 
@@ -251,22 +243,22 @@ ACTION_FOR_EACH ~file~ IN
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%file%.bcs~ BEGIN
     COPY_EXISTING ~%file%.bcs~ ~override~
-      PATCH_IF (%SOURCE_SIZE% > 0x01) BEGIN
+      PATCH_IF SOURCE_SIZE > 0x01 BEGIN
       // ===============================================================================
-        DECOMPILE_BCS_TO_BAF
-        REPLACE_TEXTUALLY EXACT_MATCH ~See([NOTGOOD])~ ~See([NOTGOOD.HUMANOID])
-        OR(10)
-          !StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
-          !StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
-          !StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)~
-        COMPILE_BAF_TO_BCS
+        DECOMPILE_AND_PATCH BEGIN
+          REPLACE_TEXTUALLY EXACT_MATCH ~See([NOTGOOD])~ ~See([NOTGOOD.HUMANOID])
+          OR(10)
+            !StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
+            !StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
+            !StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)~
+        END
       // ===============================================================================
       END
     BUT_ONLY
@@ -288,24 +280,24 @@ ACTION_IF GAME_IS ~bgt~ BEGIN    // BGT check
                 ~ACT10.BCS~  ~override~
                 ~ACT11.BCS~  ~override~
                 ~ACT12.BCS~  ~override~
-    DECOMPILE_BCS_TO_BAF
-    REPLACE_TEXTUALLY EXACT_MATCH ~!StateCheck(LastTrigger,STATE_INVISIBLE)~ ~OR(10)
-      !StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
-      !StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)
-      !StateCheck(LastTrigger,STATE_INVISIBLE)~
-    COMPILE_BAF_TO_BCS
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY EXACT_MATCH ~!StateCheck(LastTrigger,STATE_INVISIBLE)~ ~OR(10)
+        !StateCheck([NOTGOOD.HUMANOID],1318889) // sleeping, stunned, helpless, all death states, silenced, blind, feebleminded
+        !StateCheck(SecondNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(ThirdNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(FourthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(FifthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(SixthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(SeventhNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(EighthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(NinthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(TenthNearest([NOTGOOD.HUMANOID]),1318889)
+        !StateCheck(LastTrigger,STATE_INVISIBLE)~
+      END
   BUT_ONLY
 END
 
-//ToBEx and the content that relies on ToBEx features
+// ToBEx
 ACTION_IF FILE_EXISTS bgmain.exe BEGIN
   OUTER_SPRINT TOBEX_MOD_DIRECTORY "./rr/lib"
   LOAD_TRA "rr/tra/english/tobex.tra" "rr/tra/%LANGUAGE%/tobex.tra"
@@ -329,13 +321,13 @@ ACTION_IF FILE_EXISTS bgmain.exe BEGIN
     PATCH_IF valid BEGIN
     // ===============================================================================
       LAUNCH_PATCH_FUNCTION ~RR#IDTLS~ RET rr#aemnw = rr#allem END                         // Starts FUNCTION call (my custom "Identify Top Level Script" function)
-      READ_ASCII 0x248 "ovrscript"
-      READ_BYTE  0x270 "allegiance"
-      READ_BYTE  0x271 "general"
-      READ_BYTE  0x275 "gender"
-      READ_ASCII 0x280 "deathvar"
-      PATCH_IF (("%rr#aemnw%" = "0") AND ("%allegiance%" = "128") AND ("%general%" = "1") AND ("%gender%" > "0") AND ("%gender%" < "3")) BEGIN  // only patch neutral humanoid male or female creatures whcih have at least one AI script assigned to them (the gender check is used for skipping over summoned creatures and such, the top level function is used for skipping over cutscene only CREs which have no scripts assigned)
-        PATCH_IF ("%SOURCE_RES%" STRING_CONTAINS_REGEXP ~RR#~ = 1) BEGIN                   // don't patch files prefixed with the designated strings (i.e. skip RR's own creatures)
+      READ_ASCII 0x248 ovrscript
+      READ_BYTE  0x270 allegiance
+      READ_BYTE  0x271 general
+      READ_BYTE  0x275 gender
+      READ_ASCII 0x280 deathvar
+      PATCH_IF ((rr#aemnw = 0) AND (allegiance = 128) AND (general = 1) AND (gender > 0) AND (gender < 3)) BEGIN  // only patch neutral humanoid male or female creatures whcih have at least one AI script assigned to them (the gender check is used for skipping over summoned creatures and such, the top level function is used for skipping over cutscene only CREs which have no scripts assigned)
+        PATCH_IF (SOURCE_RES STRING_CONTAINS_REGEXP ~RR#~ = 1) BEGIN                   // don't patch files prefixed with the designated strings (i.e. skip RR's own creatures)
           PATCH_IF !FILE_CONTAINS_EVALUATED (~pdialog.2da~ ~%deathvar%~) BEGIN             // exclude joinable NPCs
             PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                      // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
             PATCH_IF NOT FILE_EXISTS_IN_GAME ~%ovrscript%.bcs~ BEGIN                       // if the override script doesn't exist

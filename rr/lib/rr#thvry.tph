@@ -50,7 +50,7 @@ BUT_ONLY
 
 
 // Revised BG2 merchant behavior on failed theft attempts
-
+ACTION_IF !FILE_EXISTS_IN_GAME monkfist.2da BEGIN // Don't install on EE due to StealFailed() bug
 
 ACTION_FOR_EACH ~file~ IN
               ~STEALAMN~                                                           // SoA generic merchant anti-steal script
@@ -76,8 +76,11 @@ BEGIN
   END
 END
 
+END
+
 
 // Revised BG1 merchant behavior on failed theft attempts (BGT and Tutu version)
+ACTION_IF !FILE_EXISTS_IN_GAME monkfist.2da BEGIN // Don't install on EE due to StealFailed() bug
 
 ACTION_FOR_EACH ~file~ IN
                ~SHOUT~
@@ -127,7 +130,7 @@ BEGIN
   END
 END
 
-
+END
 
 // Add the proper STATE_SLEEPING flag to sleeping characters so that they can't call the guards
 

@@ -307,9 +307,10 @@ ACTION_IF FILE_EXISTS bgmain.exe BEGIN
     REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~PickpocketFailed Trigger Only=0~ ~PickpocketFailed Trigger Only=1~
     REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Remain Hidden On Pickpocket Success=0~ ~Remain Hidden On Pickpocket Success=1~
   BUT_ONLY
+END
 
-  // Revised behavior on failed pickpocket checks
-
+ // Revised behavior on failed pickpocket checks
+ACTION_IF FILE_EXISTS bgmain.exe OR FILE_EXISTS_IN_GAME monkfist.2da BEGIN
   COMPILE ~RR/RR_CORE/COMPILE/RR#PICKP.BAF~                            // compile the new anti-pickpocketing script
   COMPILE ~RR/RR_CORE/COMPILE/RR#PICKP.D~                              // RR's new pickpocket related dialogue
   COMPILE ~RR/RR_CORE/COMPILE/RR#PPF0.D~                               // RR's new dialogue for characters who have been pickpocketed too many times
@@ -343,7 +344,6 @@ ACTION_IF FILE_EXISTS bgmain.exe BEGIN
     // ===============================================================================
     END
   BUT_ONLY
-
 END
 
 END  // ends macro

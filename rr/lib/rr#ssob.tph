@@ -10,177 +10,22 @@ DEFINE_ACTION_MACRO ~RR#SSOB~ BEGIN
 ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 THEN BEGIN                           // Item Revisions mod check
 
 COPY_EXISTING ~%tutu_var%SW1H10.ITM~ ~override~                                    // Short Sword of Backstabbing
-SAY DESC @61                                                                       // updated description
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "4"                                                               // param1: 4 (IDS Entry - Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBA~                                                       // resref: RR#SSOBA (SSoB +2 THAC0 bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "9"                                                               // param1: 9 (IDS Entry - Fighter/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBA~                                                       // resref: RR#SSOBA (SSoB +2 THAC0 bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "10"                                                              // param1: 10 (IDS Entry - Fighter/Mage/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBA~                                                       // resref: RR#SSOBA (SSoB +2 THAC0 bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "13"                                                              // param1: 13 (IDS Entry - Mage/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBA~                                                       // resref: RR#SSOBA (SSoB +2 THAC0 bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "15"                                                              // param1: 15 (IDS Entry - Cleric/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBA~                                                       // resref: RR#SSOBA (SSoB +2 THAC0 bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "4"                                                               // param1: 4 (IDS Entry - Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBB~                                                       // resref: RR#SSOBB (SSoB +1 backstab multiplier bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "9"                                                               // param1: 9 (IDS Entry - Fighter/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBB~                                                       // resref: RR#SSOBB (SSoB +1 backstab multiplier bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "10"                                                              // param1: 10 (IDS Entry - Fighter/Mage/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBB~                                                       // resref: RR#SSOBB (SSoB +1 backstab multiplier bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "13"                                                              // param1: 13 (IDS Entry - Mage/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBB~                                                       // resref: RR#SSOBB (SSoB +1 backstab multiplier bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect
-
-SET opcode = "177"                                                                 // effect: #177 (use EFF file)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "15"                                                              // param1: 15 (IDS Entry - Cleric/Thief)
-SET parameter2 = "5"                                                               // param2: 5 (IDS File - CLASS.IDS)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~RR#SSOBB~                                                       // resref: RR#SSOBB (SSoB +1 backstab multiplier bonus)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~                                             // add new equipping effect 
-BUT_ONLY_IF_IT_CHANGES
+  SAY DESC @61                                                                     // updated description
+  PATCH_FOR_EACH resource IN RR#SSOBA RR#SSOBB BEGIN
+    PATCH_FOR_EACH parameter1 IN 4 9 10 13 15 BEGIN
+      LPF ADD_ITEM_EQEFFECT
+        INT_VAR
+          opcode = 177 // #177 (use EFF file)
+          target = 1 // self
+          timing = 2 // while equipped
+          parameter1
+          parameter2 = 5 // CLASS.IDS
+        STR_VAR
+          resource
+      END
+    END
+  END
+BUT_ONLY
 
 END  // ends the ACTION_IF Item Revisions check block
 END  // ends macro

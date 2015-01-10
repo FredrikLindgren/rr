@@ -3315,10 +3315,10 @@ COMPILE ~RR/RR_STIM/COMPILE/BODHI.D~                                // single-cl
 
 EXTEND_BOTTOM ~joster.bcs~  ~rr/rr_stim/compile/joster.baf~         // Make Joster (Renal's debt collector) go away if the player has sided with Bodhi
 COPY_EXISTING ~BALDUR.BCS~ override                               // Prevent Joster from returning if the player has sided with Bodhi
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~GlobalTimerExpired("JosterReturn","GLOBAL")~ ~GlobalTimerExpired("JosterReturn","GLOBAL") Global("WorkingForBodhi","GLOBAL",0)~
     REPLACE_TEXTUALLY EXACT_MATCH ~GlobalTimerExpired("JosterPaid","GLOBAL")~ ~GlobalTimerExpired("JosterPaid","GLOBAL") Global("WorkingForBodhi","GLOBAL",0)~
-  COMPILE_BAF_TO_BCS
+  END
 BUT_ONLY
 
 
@@ -3328,11 +3328,11 @@ BUT_ONLY
 // **************************************
 
 COPY_EXISTING ~AR0808.BCS~                           override     // AR0808 script fix for the spawning locations of Yeanasha and Gofus
- DECOMPILE_BCS_TO_BAF
-  REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("C6YEAN",[1413.1022],8)~ ~CreateCreature("C6YEAN",[1261.971],8)~
-  REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("C6GOFUS",[1412.1079],8)~ ~CreateCreature("C6GOFUS",[1534.855],8)~
- COMPILE_BAF_TO_BCS
- BUT_ONLY
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("C6YEAN",[1413.1022],8)~ ~CreateCreature("C6YEAN",[1261.971],8)~
+    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("C6GOFUS",[1412.1079],8)~ ~CreateCreature("C6GOFUS",[1534.855],8)~
+  END
+BUT_ONLY
 
 // Updated .CRE files
 
@@ -3351,8 +3351,7 @@ COPY_EXISTING ~C6ARKAN.CRE~  override                             // Arkanis (AR
   ADD_CRE_ITEM ~SCRL6L~ #1 #0 #0 ~UNSTEALABLE~ ~INV3~               // 1x Scroll of Hold Undead
   ADD_CRE_ITEM ~RESTORE~ #1 #0 #0 ~UNSTEALABLE~ ~INV4~              // 1x Scroll of Lesser Restoration
   ADD_CRE_ITEM ~POTN52~ #5 #0 #0 ~UNSTEALABLE~ ~INV5~               // 5x Potion of Extra Healing
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x18 1320000                                           // current XP
   WRITE_SHORT 0x24 95                                               // current hit points
   WRITE_SHORT 0x26 95                                               // maximum hit points
@@ -3399,7 +3398,7 @@ COPY_EXISTING ~C6ARKAN.CRE~  override                             // Arkanis (AR
   WRITE_BYTE 0x23f 20                                               // morale
   WRITE_BYTE 0x240 1                                                // morale break
   WRITE_BYTE 0x242 1                                                // morale recovery
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x273 9                                                // class
   SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 5                     // Give Arkanis 5 stars in the BG2 Shortsword proficiency
 BUT_ONLY
@@ -3416,8 +3415,7 @@ COPY_EXISTING ~C6KACH.CRE~  override                              // Kachiko (no
   ADD_CRE_ITEM ~POTN24~ #1 #0 #0 ~UNSTEALABLE~ ~QITEM2~             // 1x Potion of Defense
   ADD_CRE_ITEM ~SCRL3H~ #1 #0 #0 ~UNSTEALABLE~ ~QITEM3~             // 1x Scroll of Protection From Evil
   ADD_CRE_ITEM ~POTN52~ #2 #0 #0 ~UNSTEALABLE~ ~INV1~               // 2x Potion of Extra Healing
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x18 660000                                            // current XP
   WRITE_SHORT 0x24 78                                               // current hit points
   WRITE_SHORT 0x26 78                                               // maximum hit points
@@ -3469,7 +3467,7 @@ COPY_EXISTING ~C6KACH.CRE~  override                              // Kachiko (no
   WRITE_BYTE 0x23f 20                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x273 9                                                // class
   WRITE_BYTE 0x275 2                                                // gender
   SET_BG2_PROFICIENCY ~PROFICIENCYDAGGER~ 3                         // Give Kachiko 3 stars in the BG2 Dagger proficiency
@@ -3529,7 +3527,7 @@ COPY_EXISTING ~C6GOFUS.CRE~ override                              // Gofus
   WRITE_BYTE 0x23f 20                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x275 1                                                // gender
   SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 2                      // Give Gofus 2 stars in the BG2 Longsword proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 1                     // Give Gofus 1 star in the BG2 Shortsword proficiency
@@ -3547,8 +3545,7 @@ COPY_EXISTING ~C6YEAN.CRE~ override                               // Yeanasha
   ADD_CRE_ITEM ~RR#HIDN~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~AMULET~ // Undroppable Amulet of Invisibility (for simulating initial Hide in Shadows state)
   ADD_MEMORIZED_SPELL ~SPCL144~ #0 ~innate~                         // Adds 1x Kai innate ability
   ADD_MEMORIZED_SPELL ~SPCL144~ #0 ~innate~                         // Adds 1x Kai innate ability
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x18 700000                                            // current XP
   WRITE_SHORT 0x24 90                                               // current hit points
   WRITE_SHORT 0x26 90                                               // maximum hit points
@@ -3590,9 +3587,10 @@ COPY_EXISTING ~C6YEAN.CRE~ override                               // Yeanasha
   WRITE_BYTE 0x23f 20                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
+  REPLACE_TEXTUALLY "C6THIEF" "" (8)                                // move location of the script
   WRITE_ASCII 0x248 ~C6THIEF~ #8                                    // override AI script
-  WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (KENSAI.BCS)
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "KENSAI" "" (8)                                 // disable default AI script (KENSAI.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x27b 34                                               // alignment
   SET_BG2_PROFICIENCY ~PROFICIENCYKATANA~ 5                         // Give Yeanasha 5 stars in the BG2 Katana proficiency
 BUT_ONLY
@@ -3602,7 +3600,7 @@ BUT_ONLY
 EXTEND_TOP ~C6FLEDG2.BCS~  ~RR/RR_STIM/COMPILE/C6FLEDG2.BAF~        // Fledgling Vampire spawn fix for Kachiko
 
 COPY_EXISTING ~C6ARKAN.BCS~ override                              // Patch for Arkanis Gath's Chapter 6 AI script
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~!Detect([PC])~ ~!Detect([PC]) !Detect([EVILCUTOFF])~
     REPLACE_TEXTUALLY EXACT_MATCH ~Global("MoveToBodhi","LOCALS",0)~ ~Global("MoveToBodhi","LOCALS",0) !Detect([EVILCUTOFF])~
     REPLACE_TEXTUALLY EXACT_MATCH ~MoveToObjectNoInterrupt("DOOR01")~ ~DisplayStringHead(Myself,56214) MoveToObject("DOOR01")~
@@ -3613,15 +3611,15 @@ COPY_EXISTING ~C6ARKAN.BCS~ override                              // Patch for A
     REPLACE_TEXTUALLY EXACT_MATCH ~See([PC])~ ~Detect([PC])~
     REPLACE_TEXTUALLY EXACT_MATCH ~DisplayStringHead(Myself,55914)~ ~DisplayStringHead(Myself,55914) Wait(2)~
     REPLACE_TEXTUALLY EXACT_MATCH ~Dead("c6bodhi")~ ~Dead("c6bodhi") !Detect([EVILCUTOFF]) CombatCounter(0)~
-  COMPILE_BAF_TO_BCS
+  END
 BUT_ONLY
 EXTEND_BOTTOM ~C6ARKAN.BCS~  ~RR/RR_STIM/COMPILE/C6ARKAN.BAF~       // Extend Arkanis Gath's Chapter 6 AI script (add combat AI)
 
 COPY_EXISTING ~C6THIEF.BCS~ override                              // Patch the script of the Chapter 6 Shadow Thief allies
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~Dead("c6harei")~ ~Dead("c6harei") !Detect([EVILCUTOFF])~
     REPLACE_TEXTUALLY EXACT_MATCH ~See([PC])~ ~Detect([PC])~
-  COMPILE_BAF_TO_BCS
+  END
 BUT_ONLY
 EXTEND_BOTTOM ~C6THIEF.BCS~  ~RR/RR_STIM/COMPILE/C6THIEF.BAF~       // Extend the script of the Chapter 6 Shadow Thief allies (add combat AI)
 
@@ -3648,321 +3646,45 @@ APPEND  ~MASTAREA.2DA~  ~RR#012  value~ UNLESS ~RR#012~                      // 
 // Patch two new travel triggers into the Docks Area (code based on Pro5's Dragon Trigger from the BG1 NPC project, thanks cmorgan and Pro5!)
 
 
-COPY_EXISTING ~AR0300.ARE~ override                                      // Docks district STI trigger 1 (guildhall front enterance to RR#011.ARE)
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    SET "Left" = 1327
-    SET "Top" = 858
-    SET "Right" = 1347
-    SET "Bottom" = 950
-    WRITE_SHORT 0x5a ("%info_num%" + 1)
-    INSERT_BYTES "%info_off%" 0xC4                          // Insert new blank info point
-      WRITE_ASCII "%info_off%" ~RR#STI01~                   // Trigger name
-      WRITE_SHORT ("%info_off%" + 0x20) 2                   // Trigger type (trap, info or travel)
-      WRITE_SHORT ("%info_off%" + 0x22) "%Left%"
-      WRITE_SHORT ("%info_off%" + 0x24) "%Top%"
-      WRITE_SHORT ("%info_off%" + 0x26) "%Right%"
-      WRITE_SHORT ("%info_off%" + 0x28) "%Bottom%"
-      WRITE_SHORT ("%info_off%" + 0x2A) 4                   // Number of vertices
-      WRITE_LONG ("%info_off%" + 0x2C) "%vert_num%"         // First vertex index
-      WRITE_SHORT ("%info_off%" + 0x34) 30                  // Cursor type
-   WRITE_ASCII ("%info_off%" + 0x38) ~RR#011~               // Destination area
-   WRITE_ASCII ("%info_off%" + 0x40) ~EXIT0300~             // Destination area's entrance name
-      WRITE_LONG ("%info_off%" + 0x60) 772                  // Flags (i.e. trigger is initially deactivated, party required, NPC's can't pass)
-    PATCH_IF NOT ("%actor_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0xC4)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%item_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%vert_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x7c ("vert_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%var_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%door_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%song_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%note_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0xC4)
-    END
-    // Add 4 new vertices
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-
-    WRITE_SHORT 0x80 ("%vert_num%" + 4)
-    INSERT_BYTES ("%vert_off%" + (0x04 * "%vert_num%")) 0x10
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%") 1327     // Vertex1.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 2) 950  // Vertex1.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 4) 1347 // Vertex2.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 6) 917  // Vertex2.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 8) 1347 // Vertex3.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +10) 858  // Vertex3.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +12) 1327 // Vertex4.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +14)  891  // Vertex4.Y
-    PATCH_IF NOT ("%actor_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0x10)
-    END
-    PATCH_IF NOT ("%info_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x5c ("info_off" + 0x10)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0x10)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0x10)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0x10)
-    END
-    PATCH_IF NOT ("%item_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0x10)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0x10)
-    END
-    PATCH_IF NOT ("%var_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0x10)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0x10)
-    END
-    PATCH_IF NOT ("%door_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0x10)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0x10)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0x10)
-    END
-    PATCH_IF NOT ("%song_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0x10)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0x10)
-    END
-    PATCH_IF NOT ("%note_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0x10)
-    END
-
-
-COPY_EXISTING ~AR0300.ARE~ override                                      // Docks district STI trigger 2 (guildhall upper enterance to RR#012.ARE)
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    SET "Left" = 953
-    SET "Top" = 1146
-    SET "Right" = 1029
-    SET "Bottom" = 1234
-    WRITE_SHORT 0x5a ("%info_num%" + 1)
-    INSERT_BYTES "%info_off%" 0xC4                          // Insert new blank info point
-      WRITE_ASCII "%info_off%" ~RR#STI02~                   // Trigger name
-      WRITE_SHORT ("%info_off%" + 0x20) 2                   // Trigger type (trap, info or travel)
-      WRITE_SHORT ("%info_off%" + 0x22) "%Left%"
-      WRITE_SHORT ("%info_off%" + 0x24) "%Top%"
-      WRITE_SHORT ("%info_off%" + 0x26) "%Right%"
-      WRITE_SHORT ("%info_off%" + 0x28) "%Bottom%"
-      WRITE_SHORT ("%info_off%" + 0x2A) 4                   // Number of vertices
-      WRITE_LONG ("%info_off%" + 0x2C) "%vert_num%"         // First vertex index
-      WRITE_SHORT ("%info_off%" + 0x34) 30                  // Cursor type
-   WRITE_ASCII ("%info_off%" + 0x38) ~RR#012~               // Destination area
-   WRITE_ASCII ("%info_off%" + 0x40) ~EXIT0300~             // Destination area's entrance name
-      WRITE_LONG ("%info_off%" + 0x60) 772                  // Flags (i.e. trigger is initially deactivated, party required, NPC's can't pass)
-    PATCH_IF NOT ("%actor_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0xC4)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%item_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%vert_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x7c ("vert_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%var_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%door_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%song_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%note_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0xC4)
-    END
-    // Add 4 new vertices
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    WRITE_SHORT 0x80 ("%vert_num%" + 4)
-    INSERT_BYTES ("%vert_off%" + (0x04 * "%vert_num%")) 0x10
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%") 1029     // Vertex1.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 2) 1234 // Vertex1.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 4) 953  // Vertex2.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 6) 1217 // Vertex2.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 8) 953  // Vertex3.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +10) 1146 // Vertex3.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +12) 1029 // Vertex4.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +14) 1166 // Vertex4.Y
-    PATCH_IF NOT ("%actor_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0x10)
-    END
-    PATCH_IF NOT ("%info_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x5c ("info_off" + 0x10)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0x10)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0x10)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0x10)
-    END
-    PATCH_IF NOT ("%item_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0x10)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0x10)
-    END
-    PATCH_IF NOT ("%var_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0x10)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0x10)
-    END
-    PATCH_IF NOT ("%door_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0x10)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0x10)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0x10)
-    END
-    PATCH_IF NOT ("%song_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0x10)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0x10)
-    END
-    PATCH_IF NOT ("%note_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0x10)
-    END
+COPY_EXISTING ~AR0300.ARE~ override
+  LPF fj_are_structure // Docks district STI trigger 1 (guildhall front enterance to RR#011.ARE)
+    INT_VAR
+      fj_type = 2 // Trigger type (trap, info or travel)
+      fj_box_left = 1327
+      fj_box_top = 858
+      fj_box_right = 1347
+      fj_box_bottom = 950
+      fj_cursor_idx = 30 // Cursor type
+      fj_flags = BIT2 BOR BIT8 BOR BIT9 // Flags (i.e. trigger is initially deactivated, party required, NPC's can't pass)
+      fj_vertex_0 = 1327 + (950 << 16)
+      fj_vertex_1 = 1347 + (917 << 16)
+      fj_vertex_2 = 1347 + (858 << 16)
+      fj_vertex_3 = 1327 + (891 << 16)
+    STR_VAR
+      fj_structure_type = "region"
+      fj_name = "RR#STI01" // Trigger name
+      fj_destination_area = "RR#011" // Destination area
+      fj_destination_name = "EXIT0300" // Destination area's entrance name
+  END
+  LPF fj_are_structure // Docks district STI trigger 2 (guildhall upper enterance to RR#012.ARE)
+    INT_VAR
+      fj_type = 2
+      fj_box_left = 953
+      fj_box_top = 1146
+      fj_box_right = 1029
+      fj_box_bottom = 1234
+      fj_cursor_idx = 30 // Cursor type
+      fj_flags = BIT2 BOR BIT8 BOR BIT9 // Flags (i.e. trigger is initially deactivated, party required, NPC's can't pass)
+      fj_vertex_0 = 1029 + (1234 << 16)
+      fj_vertex_1 = 953 + (1217 << 16)
+      fj_vertex_2 = 953 + (1146 << 16)
+      fj_vertex_3 = 1029 + (1166 << 16)
+    STR_VAR
+      fj_structure_type = "region"
+      fj_name = "RR#STI02" // Trigger name
+      fj_destination_area = "RR#012" // Destination area
+      fj_destination_name = "EXIT0300" // Destination area's entrance name
+  END
 
 
 // Updated .CRE files
@@ -3977,8 +3699,7 @@ COPY_EXISTING ~STGUARD1.CRE~  override                            // ST Guild do
   ADD_CRE_ITEM ~POTN10~ #2 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QITEM1~ // 2x Potion of Invisibility (undroppable)
   ADD_CRE_ITEM ~POTN52~ #1 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QITEM2~ // 1x Potion of Extra Healing (undroppable)
   ADD_CRE_ITEM ~POTN10~ #1 #0 #0 ~NONE~ ~QITEM3~                    // 1x Potion of Invisibility
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x14 4000                                              // XP value (when killed)
   WRITE_LONG 0x18 161000                                            // current XP
   WRITE_SHORT 0x24 85                                               // current hit points
@@ -4022,8 +3743,9 @@ COPY_EXISTING ~STGUARD1.CRE~  override                            // ST Guild do
   WRITE_BYTE 0x23f 17                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
-  WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (USEITEM.BCS)
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "USEITEM" "" (8)                                // disable class AI script (USEITEM.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTARSGT" "" (8)                                // disable default AI script (WTARSGT.BCS)
   WRITE_BYTE 0x272 1                                                // race
   WRITE_BYTE 0x273 9                                                // class
   WRITE_BYTE 0x27b 50                                               // alignment
@@ -4077,83 +3799,42 @@ COPY_EXISTING ~GAELAN2.CRE~  override                             // Gaelan Bayl
   WRITE_BYTE 0x236 0                                                // level (third class)
   WRITE_BYTE 0x23f 17                                               // morale
   WRITE_ASCII 0x248 ~RR#GAELN~ #8                                   // assign override AI script
-  WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (SHOUTDLG.BCS)
-  WRITE_ASCII 0x258 ~None~ #8                                       // disable race AI script (GPUSE.BCS)
-  WRITE_ASCII 0x260 ~None~ #8                                       // disable general AI script (NONE)
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTARSGT.BCS)
+  REPLACE_TEXTUALLY "SHOUTDLG" "" (8)                               // disable class AI script (SHOUTDLG.BCS)
+  REPLACE_TEXTUALLY "GPUSE" "" (8)                                  // disable race AI script (GPUSE.BCS)
+  REPLACE_TEXTUALLY "WTARSGT" "" (8)                                // disable default AI script (WTARSGT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 2                     // Give Gaelan 2 stars in the BG2 Shortsword proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Gaelan 3 stars in the BG2 Two Weapon Style proficiency
-PATCH_IF FILE_EXISTS_IN_GAME ~RR#TSB01.SPL~ BEGIN           // check for the Thief kit revisions component
-  SET opcode_to_delete = "0"                                     // mark opcode #0 (AC vs. Damage Type Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode_to_delete = "54"                                    // mark opcode #54 (THAC0 Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode = "0"                                               // effect: #0 (AC vs. Damage Type Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "4"                                           // param1: 4
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "15"                                          // caster level: 15
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~~                                           // resref: none
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~SPCL441~                                   // effsource: SPCL441.SPL (Swashbuckler's innate AC bonus)
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-  SET opcode = "284"                                             // effect: #284 (Melee THAC0 Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "7"                                           // param1: 7
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "15"                                          // caster level: 15
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~~                                           // resref: none
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~RR#TSB01~                                  // effsource: RR#TSB01.SPL (Swashbuckler's fighter THAC0 progression)
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-END
+  PATCH_IF FILE_EXISTS_IN_GAME ~RR#TSB01.SPL~ BEGIN           // check for the Thief kit revisions component
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 0 // #0 (AC vs. Damage Type Modifier)
+    END
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 54 // #54 (THAC0 Modifier)
+    END
+    LPF ADD_CRE_EFFECT
+      INT_VAR
+        opcode = 0 // #0 (AC vs. Damage Type Modifier)
+        target = 1 // self
+        timing = 9 // permanent after death
+        parameter1 = 4
+        casterlvl = 15
+      STR_VAR
+        effsource = "SPCL441" // SPCL441.SPL (Swashbuckler's innate AC bonus)
+    END
+    LPF ADD_CRE_EFFECT
+      INT_VAR
+        opcode = 284 // #284 (Melee THAC0 Modifier)
+        target = 1 // self
+        timing = 9 // permanent after death
+        parameter1 = 7
+        casterlvl = 15
+      STR_VAR
+        effsource = "RR#TSB01" // RR#TSB01.SPL (Swashbuckler's fighter THAC0 progression)
+    END
+  END
 BUT_ONLY
 
 COPY_EXISTING ~MOOK02.CRE~ override                               // Mook (hostile)
@@ -4189,10 +3870,8 @@ COPY_EXISTING ~MOOK02.CRE~ override                               // Mook (hosti
   WRITE_BYTE 0x23f 15                                               // morale
   WRITE_BYTE 0x273 9                                                // class
   WRITE_ASCII 0x248 ~RR#MOOK~ #8                                    // assign override AI script
-  WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (SHOUTDLG.BCS)
-  WRITE_ASCII 0x258 ~None~ #8                                       // disable race AI script (NONE)
-  WRITE_ASCII 0x260 ~None~ #8                                       // disable general AI script (NONE)
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "SHOUTDLG" "" (8)                               // disable class AI script (SHOUTDLG.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 2                        // Give Mook 2 stars in the BG2 Longbow proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 2                      // Give Mook 2 stars in the BG2 Longsword proficiency
 BUT_ONLY
@@ -4207,8 +3886,7 @@ COPY_EXISTING ~ARKANISG.CRE~  override                            // Arkanis Gat
   ADD_CRE_ITEM ~SCRL1H~ #1 #0 #0 ~UNSTEALABLE~ ~INV1~               // 1x Scroll of Haste
   ADD_CRE_ITEM ~RR#STS03~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~INV10~  // Tier 3 marker (undroppable, used by script)
   ADD_CRE_ITEM ~RR#STS01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~INV11~  // Tier 1 marker (undroppable, used by script)
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x14 9000                                              // XP value (when killed)
   WRITE_LONG 0x18 1320000                                           // current XP
   WRITE_SHORT 0x24 100                                              // current hit points
@@ -4245,7 +3923,7 @@ COPY_EXISTING ~ARKANISG.CRE~  override                            // Arkanis Gat
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
   WRITE_ASCII 0x248 ~RR#STF01~ #8                                   // assign override AI script
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x27b 50                                               // alignment
   SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 5                     // Give Arkanis 5 stars in the BG2 Shortsword proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Arkanis 3 stars in the BG2 Two Weapon Style proficiency
@@ -4262,8 +3940,7 @@ COPY_EXISTING ~MOOKFT01.CRE~  override                            // Shadow Thie
   ADD_CRE_ITEM ~POTN10~ #1 #0 #0 ~NONE~ ~QITEM2~                    // 1x Potion of Invisibility
   ADD_CRE_ITEM ~POTN52~ #1 #0 #0 ~NONE~ ~QITEM3~                    // 1x Potion of Extra Healing
   ADD_CRE_ITEM ~RR#STS04~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~INV10~  // Tier 4 marker (undroppable, used by script)
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x14 2500                                              // XP value (when killed)
   WRITE_LONG 0x18 161000                                            // current XP
   WRITE_SHORT 0x24 60                                               // current hit points
@@ -4301,7 +3978,7 @@ COPY_EXISTING ~MOOKFT01.CRE~  override                            // Shadow Thie
   WRITE_BYTE 0x23f 15                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_ASCII 0x248 ~RR#STF01~ #8                                   // assign override AI script
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x273 9                                                // class
   WRITE_ASCII 0x280 ~MOOKFT01~ #32                                  // death variable
   SET_BG2_PROFICIENCY ~PROFICIENCYSCIMITARWAKISASHININJATO~ 2       // Give Shadow Thief Thug 2 stars in the BG2 Scimitar proficiency
@@ -4318,8 +3995,7 @@ COPY_EXISTING ~MOOKFT02.CRE~  override                            // Shadow Thie
   ADD_CRE_ITEM ~POTN52~ #1 #0 #0 ~NONE~ ~QITEM1~                    // 1x Potion of Extra Healing
   ADD_CRE_ITEM ~RR#STS04~ #1 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~INV10~  // Tier 4 marker (undroppable, used by script)
   ADD_CRE_ITEM ~RR#STS02~ #1 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~INV11~  // Tier 2 marker (undroppable, used by script)
-  READ_LONG 0x10 "flags"                                            // flags
-  WRITE_LONG 0x10 ("%flags%" BOR 0b00001000)                        // original class: fighter
+  WRITE_LONG 0x10 THIS BOR BIT3                                     // original class: fighter
   WRITE_LONG 0x14 2500                                              // XP value (when killed)
   WRITE_LONG 0x18 161000                                            // current XP
   WRITE_SHORT 0x24 55                                               // current hit points
@@ -4350,7 +4026,7 @@ COPY_EXISTING ~MOOKFT02.CRE~  override                            // Shadow Thie
   WRITE_BYTE 0x23f 15                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_ASCII 0x248 ~RR#STF01~ #8                                   // assign override AI script
-  WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTASIGHT.BCS)
+  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
   WRITE_BYTE 0x273 9                                                // class
   WRITE_ASCII 0x280 ~MOOKFT02~ #32                                  // death variable
   SET_BG2_PROFICIENCY ~PROFICIENCYDAGGER~ 3                         // Give Shadow Thief 3 stars in the BG2 Dagger proficiency
@@ -4370,130 +4046,38 @@ COPY ~RR/RR_STIM/ACTORS/RR#SAW02.CRE~             override              // STG m
   SAY NAME1 @703 SAY NAME2 @703                                              // Shadow Thief Thug
 COPY ~RR/RR_STIM/ACTORS/RR#SAW03.CRE~             override              // STG male Human F/T ranged (Arrows of Detonation)
   SAY NAME1 @702 SAY NAME2 @702                                              // Shadow Thief Archer
-COPY ~RR/RR_STIM/ACTORS/RR#SAW04.CRE~             override              // STG male Human F/T Assasin
-PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
-  SET opcode_to_delete = "278"                                   // mark opcode #278 (To Hit Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode_to_delete = "73"                                    // mark opcode #73 (Extra Damage Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode = "33"                                              // effect: #33 (Save vs. Death Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "1"                                           // param1: 1
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "8"                                           // caster level: 8
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~RR#TAS00~                                   // resref: RR#TAS00.SPL (Poison Expertise)
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~~                                          // effsource: none
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-END
+COPY ~RR/RR_STIM/ACTORS/RR#SAW04.CRE~             override              // STG male Human F/T Assassin
+     ~RR/RR_STIM/ACTORS/RR#SFL01.CRE~             override              // STG male Human F/T Assassin melee
+     ~RR/RR_STIM/ACTORS/RR#SFL03.CRE~             override              // STG male Human F/T Assassin melee
+  PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 278 // #278 (To Hit Modifier)
+    END
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 73 // #73 (Extra Damage Modifier)
+    END
+    LPF ADD_CRE_EFFECT
+      INT_VAR
+        opcode = 33 // #33 (Save vs. Death Modifier)
+        target = 1 // self
+        timing = 9 // permanent after death
+        parameter1 = 1
+        casterlvl = 8
+      STR_VAR
+        effsource = "RR#TAS00" // RR#TAS00.SPL (Poison Expertise)
+    END
+  END
+
 COPY ~RR/RR_STIM/ACTORS/RR#SAW08.CRE~             override              // Tizzak (Bodhi's imprisoned spy)
 COPY ~RR/RR_STIM/ACTORS/RR#SAW09.CRE~             override              // Priestess of Mask (fem. Half-Elf C/M)
   SAY NAME1 @708 SAY NAME2 @708                                              // Priestess of Mask
 COPY ~RR/RR_STIM/ACTORS/RR#HAZ.CRE~               override              // Haz (male Human Mage)
 COPY ~RR/RR_STIM/ACTORS/RR#DEDRL.CRE~             override              // Dedral (male Human Fighter)
-COPY ~RR/RR_STIM/ACTORS/RR#SFL01.CRE~             override              // STG male Human F/T Assassin melee
-PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
-  SET opcode_to_delete = "278"                                   // mark opcode #278 (To Hit Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode_to_delete = "73"                                    // mark opcode #73 (Extra Damage Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode = "33"                                              // effect: #33 (Save vs. Death Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "1"                                           // param1: 1
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "8"                                           // caster level: 8
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~RR#TAS00~                                   // resref: RR#TAS00.SPL (Poison Expertise)
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~~                                          // effsource: none
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-END
+
 COPY ~RR/RR_STIM/ACTORS/RR#SFL02.CRE~             override              // STG male Human F/T Kensai melee
   SAY NAME1 @701 SAY NAME2 @701                                              // Kara-Tur Mercenary
-COPY ~RR/RR_STIM/ACTORS/RR#SFL03.CRE~             override              // STG male Human F/T Assassin melee
-PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
-  SET opcode_to_delete = "278"                                   // mark opcode #278 (To Hit Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode_to_delete = "73"                                    // mark opcode #73 (Extra Damage Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode = "33"                                              // effect: #33 (Save vs. Death Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "1"                                           // param1: 1
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "8"                                           // caster level: 8
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~RR#TAS00~                                   // resref: RR#TAS00.SPL (Poison Expertise)
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~~                                          // effsource: none
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-END
 COPY ~RR/RR_STIM/ACTORS/RR#SFL04.CRE~             override              // STG female Elf Mage-Enchanter
   SAY NAME1 @706 SAY NAME2 @706                                              // Zhentarim Mercenary
 COPY ~RR/RR_STIM/ACTORS/RR#STI01.CRE~             override              // STG male Human F/T melee (ambusher)
@@ -4505,27 +4089,27 @@ COPY ~RR/RR_STIM/ACTORS/RR#STI03.CRE~             override              // STG m
 // Give Booter And Aran the new daggers (only needed if the "Additional equipment for Thieves and Bards" component is not installed)
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#GUARA.ITM~ BEGIN
-COPY ~RR/RR_CORE/BAM/RR#PLAG.BAM~       override                // Plaguebearer (Dagger +3)
-COPY ~RR/RR_CORE/ITEMS/RR#PLAG.ITM~     override
-  SAY NAME2 @124 SAY DESC @125 // Plaguebearer
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.EFF~   override                // Filthy Fever immunity effect (applies to Undead, Constructs, Slimes and Elementals)
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.SPL~   override                // Filthy Fever disease (-2 to DEX and CON)
-  SAY NAME1 @717 SAY NAME2 @717 // Filthy Fever
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.EFF~   override                // Devil Chills immunity effect (applies to Undead, Constructs, Slimes and Elementals)
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.SPL~   override                // Devil Chills disease (-2 to STR + Slow effect)
-  SAY NAME1 @718 SAY NAME2 @718 // Devil Chills
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.EFF~   override                // Mummy Rot immunity effect (applies to Undead, Constructs, Slimes and Elementals)
-COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.SPL~   override                // Mummy Rot disease (deals 20 points of disease damage, 2 per round)
-  SAY NAME1 @719 SAY NAME2 @719 // Mummy Rot
+  COPY ~RR/RR_CORE/BAM/RR#PLAG.BAM~       override                // Plaguebearer (Dagger +3)
+  COPY ~RR/RR_CORE/ITEMS/RR#PLAG.ITM~     override
+    SAY NAME2 @124 SAY DESC @125 // Plaguebearer
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.EFF~   override                // Filthy Fever immunity effect (applies to Undead, Constructs, Slimes and Elementals)
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.SPL~   override                // Filthy Fever disease (-2 to DEX and CON)
+    SAY NAME1 @717 SAY NAME2 @717 // Filthy Fever
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.EFF~   override                // Devil Chills immunity effect (applies to Undead, Constructs, Slimes and Elementals)
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.SPL~   override                // Devil Chills disease (-2 to STR + Slow effect)
+    SAY NAME1 @718 SAY NAME2 @718 // Devil Chills
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.EFF~   override                // Mummy Rot immunity effect (applies to Undead, Constructs, Slimes and Elementals)
+  COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.SPL~   override                // Mummy Rot disease (deals 20 points of disease damage, 2 per round)
+    SAY NAME1 @719 SAY NAME2 @719 // Mummy Rot
 
-COPY_EXISTING  ~DAGG04.ITM~                  override             // Fix the Longtooth Dagger
- WRITE_LONG 0x80 "01"                                               // Increase range to 1 (was 0)
- WRITE_SHORT 0x42 60                                                // Require Lore value of 60 to identify (was 0 in BG2)
+  COPY_EXISTING  ~DAGG04.ITM~                  override             // Fix the Longtooth Dagger
+    WRITE_LONG 0x80 "01"                                               // Increase range to 1 (was 0)
+    WRITE_SHORT 0x42 60                                                // Require Lore value of 60 to identify (was 0 in BG2)
   BUT_ONLY
 
-COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~      override               // Dagger of Acumen icon
-COPY ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~    override               // Dagger of Acumen (Mage Dagger +3)
-  SAY NAME2 @146 SAY DESC @147
+  COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~      override               // Dagger of Acumen icon
+  COPY ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~    override               // Dagger of Acumen (Mage Dagger +3)
+    SAY NAME2 @146 SAY DESC @147
 END
 
 COPY ~RR/RR_STIM/ITEMS/RR#HGROD.ITM~    override               // Haz's Rod of Golem Control
@@ -4556,38 +4140,37 @@ COPY_EXISTING ~ARNFGT06.CRE~ override                             // Haz (non-ST
 // Updated area and AI scripts
 
 COPY_EXISTING ~AR0300.BCS~                           override              // Docks area script, Mook spawn fix
-  DECOMPILE_BCS_TO_BAF         // Switch the locations of MOOK02 and MOOKFT01 in order for Mook's dialogue to trigger first
-  REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOK02",[1710.3625],12)~ ~CreateCreature("MOOK02",[1886.3659],6)~
-  REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOKFT01",[1886.3659],12)~ ~CreateCreature("MOOKFT01",[1710.3625],12)~
-  REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOKFT02",[1720.3560],0)~ ~CreateCreature("RR#STI03",[1720.3560],0)~
-  COMPILE_BAF_TO_BCS
-  BUT_ONLY
+  DECOMPILE_AND_PATCH BEGIN         // Switch the locations of MOOK02 and MOOKFT01 in order for Mook's dialogue to trigger first
+    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOK02",[1710.3625],12)~ ~CreateCreature("MOOK02",[1886.3659],6)~
+    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOKFT01",[1886.3659],12)~ ~CreateCreature("MOOKFT01",[1710.3625],12)~
+    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("MOOKFT02",[1720.3560],0)~ ~CreateCreature("RR#STI03",[1720.3560],0)~
+  END
+BUT_ONLY
 
 EXTEND_BOTTOM ~AR0300.BCS~  ~RR/RR_STIM/COMPILE/AR0300.BAF~                  // Activation block for the new STI areas
 
 COMPILE ~RR/RR_STIM/COMPILE/RR#010.BAF~                                      // STI guildhall basement area script
-COMPILE ~RR/RR_STIM/COMPILE/RR#011.BAF~                                      // STI guildhall main floor area script
-COMPILE ~RR/RR_STIM/COMPILE/RR#012.BAF~                                      // STI guildhall top floor area script
-COMPILE ~RR/RR_STIM/COMPILE/RR#STAMB.BAF~                                    // STI floor trigger for Dedral's ambush
-COMPILE ~RR/RR_STIM/COMPILE/RR#RDBTN.BAF~                                    // STI trigger for the Red Button (for opening the first sanctum door)
-COMPILE ~RR/RR_STIM/COMPILE/RR#PALR.BAF~                                     // Palern's override AI script, makes him escape if invisible (stealth path)
-
-COMPILE ~RR/RR_STIM/COMPILE/RR#STF01.BAF~                                    // Shadow Thief melee combat AI
-COMPILE ~RR/RR_STIM/COMPILE/RR#STF02.BAF~                                    // Shadow Thief ranged combat AI
-COMPILE ~RR/RR_STIM/COMPILE/RR#STM01.BAF~                                    // Shadow Thief mage AI (main & top floor)
-COMPILE ~RR/RR_STIM/COMPILE/RR#STM02.BAF~                                    // Shadow Thief mage/cleric AI (basement Priestess of Mask)
-COMPILE ~RR/RR_STIM/COMPILE/RR#GAELN.BAF~                                    // Gaelan Bayle's AI (includes stealth path pickpocket code)
-COMPILE ~RR/RR_STIM/COMPILE/RR#MOOK.BAF~                                     // Mook's AI (includes stealth path pickpocket code)
-COMPILE ~RR/RR_STIM/COMPILE/RR#BOOTR.BAF~                                    // Booter's AI (includes stealth path pickpocket code)
-COMPILE ~RR/RR_STIM/COMPILE/RR#DEDRL.BAF~                                    // Dedral's AI
-COMPILE ~RR/RR_STIM/COMPILE/RR#HAZ.BAF~                                      // Haz's AI
-COMPILE ~RR/RR_STIM/COMPILE/RR#ARAN2.BAF~                                    // Aran Livail's STI combat AI script
-COMPILE ~RR/RR_STIM/COMPILE/RR#MSLD.BAF~                                     // Mislead script (for Aran's clone)
-COMPILE ~RR/RR_STIM/COMPILE/RR#STGOL.BAF~                                    // Guardian Golem AI script (includes code for deactivation via control rod)
-COMPILE ~RR/RR_STIM/COMPILE/RR#DOR01.BAF~                                    // Door script for Aran's chamber
+        ~RR/RR_STIM/COMPILE/RR#011.BAF~                                      // STI guildhall main floor area script
+        ~RR/RR_STIM/COMPILE/RR#012.BAF~                                      // STI guildhall top floor area script
+        ~RR/RR_STIM/COMPILE/RR#STAMB.BAF~                                    // STI floor trigger for Dedral's ambush
+        ~RR/RR_STIM/COMPILE/RR#RDBTN.BAF~                                    // STI trigger for the Red Button (for opening the first sanctum door)
+        ~RR/RR_STIM/COMPILE/RR#PALR.BAF~                                     // Palern's override AI script, makes him escape if invisible (stealth path)
+        ~RR/RR_STIM/COMPILE/RR#STF01.BAF~                                    // Shadow Thief melee combat AI
+        ~RR/RR_STIM/COMPILE/RR#STF02.BAF~                                    // Shadow Thief ranged combat AI
+        ~RR/RR_STIM/COMPILE/RR#STM01.BAF~                                    // Shadow Thief mage AI (main & top floor)
+        ~RR/RR_STIM/COMPILE/RR#STM02.BAF~                                    // Shadow Thief mage/cleric AI (basement Priestess of Mask)
+        ~RR/RR_STIM/COMPILE/RR#GAELN.BAF~                                    // Gaelan Bayle's AI (includes stealth path pickpocket code)
+        ~RR/RR_STIM/COMPILE/RR#MOOK.BAF~                                     // Mook's AI (includes stealth path pickpocket code)
+        ~RR/RR_STIM/COMPILE/RR#BOOTR.BAF~                                    // Booter's AI (includes stealth path pickpocket code)
+        ~RR/RR_STIM/COMPILE/RR#DEDRL.BAF~                                    // Dedral's AI
+        ~RR/RR_STIM/COMPILE/RR#HAZ.BAF~                                      // Haz's AI
+        ~RR/RR_STIM/COMPILE/RR#ARAN2.BAF~                                    // Aran Livail's STI combat AI script
+        ~RR/RR_STIM/COMPILE/RR#MSLD.BAF~                                     // Mislead script (for Aran's clone)
+        ~RR/RR_STIM/COMPILE/RR#STGOL.BAF~                                    // Guardian Golem AI script (includes code for deactivation via control rod)
+        ~RR/RR_STIM/COMPILE/RR#DOR01.BAF~                                    // Door script for Aran's chamber
 
 COPY_EXISTING ~STGUARD1.BCS~ override                                      // STI Sentry override script fix & Detect -> See (needed for stealth path)
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~Allegiance(Myself,ENEMY)
 !See([PC])~ ~Global("RR#Active","LOCALS",0)
 Allegiance(Myself,ENEMY)
@@ -4597,19 +4180,20 @@ Shout(124)
 ChangeAIScript("",CLASS)
 ChangeAIScript("RR#STF01",OVERRIDE)~
     REPLACE_TEXTUALLY EXACT_MATCH ~Detect([PC])~ ~See([PC])~
-  COMPILE_BAF_TO_BCS
-   BUT_ONLY
- EXTEND_TOP ~STGUARD1.BCS~  ~RR/RR_STIM/COMPILE/STGUARD1.BAF~       // Makes the Sentries flee if Aran is already dead (i.e. via stealth path)
+  END
+BUT_ONLY
+
+EXTEND_TOP ~STGUARD1.BCS~  ~RR/RR_STIM/COMPILE/STGUARD1.BAF~       // Makes the Sentries flee if Aran is already dead (i.e. via stealth path)
 
 
 // New trap scripts
 
 COMPILE ~RR/RR_STIM/COMPILE/RR#TRP01.BAF~                           // Recoverable Arrow of Dispelling trap (1 arrow)
-COMPILE ~RR/RR_STIM/COMPILE/RR#TRP02.BAF~                           // Recoverable Arrow of Detonation trap (1 arrow)
-COMPILE ~RR/RR_STIM/COMPILE/RR#TRP03.BAF~                           // Recoverable Arrow of Biting trap (5 arrows)
-COMPILE ~RR/RR_STIM/COMPILE/RR#TRP04.BAF~                           // Recoverable Acid Arrow trap (5 arrows)
-COMPILE ~RR/RR_STIM/COMPILE/RR#TRP05.BAF~                           // Recoverable Poisoned dart trap (10 darts)
-COMPILE ~RR/RR_STIM/COMPILE/RR#TRP10.BAF~                           // New Grease spell trap
+        ~RR/RR_STIM/COMPILE/RR#TRP02.BAF~                           // Recoverable Arrow of Detonation trap (1 arrow)
+        ~RR/RR_STIM/COMPILE/RR#TRP03.BAF~                           // Recoverable Arrow of Biting trap (5 arrows)
+        ~RR/RR_STIM/COMPILE/RR#TRP04.BAF~                           // Recoverable Acid Arrow trap (5 arrows)
+        ~RR/RR_STIM/COMPILE/RR#TRP05.BAF~                           // Recoverable Poisoned dart trap (10 darts)
+        ~RR/RR_STIM/COMPILE/RR#TRP10.BAF~                           // New Grease spell trap
 
 // Updated dialogue files
 COMPILE ~RR/RR_STIM/COMPILE/GAELAN2.D~                              // STI Gaelan Bayle's updated dialogue (spawn allies)

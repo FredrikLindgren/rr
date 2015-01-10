@@ -2810,16 +2810,15 @@ COPY ~RR/RR_CORE/SPELLS/RR#PNP36.SPL~ override                             // Pn
       match_parameter1 = 14094 // "Immunity To Effect"
       parameter1 = RESOLVE_STR_REF (@72) // Consuming multiple potions of the same type does not grant additional benefits
   END
-  /* // No matching effect exists on the spell
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
       check_headers = 1
+      header = 4
       match_opcode = 139 // display string
       match_parameter1 = 4742 // "Spell Ineffective"
       parameter1 = RESOLVE_STR_REF (@75) // The potion had no effect on you
   END
-  */
 
 
 // Alter Potions of Master Thievery to match their PnP versions and make their effects non-stackable

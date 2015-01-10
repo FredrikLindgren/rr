@@ -2797,7 +2797,6 @@ LAUNCH_ACTION_MACRO ~RR#THVRY~
 // New spells which contain the effects for the PnP potions
 
 COPY ~RR/RR_CORE/SPELLS/RR#PNP36.SPL~ override                             // PnP Potion of Master Thievery spell (for non-stacking)
-     ~RR/RR_CORE/SPELLS/RR#PNP39.SPL~ override                             // PnP Potion of Perception spell (for non-stacking)
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
@@ -2814,6 +2813,16 @@ COPY ~RR/RR_CORE/SPELLS/RR#PNP36.SPL~ override                             // Pn
       match_opcode = 139 // display string
       match_parameter1 = 4742 // "Spell Ineffective"
       parameter1 = RESOLVE_STR_REF (@75) // The potion had no effect on you
+  END
+
+COPY ~RR/RR_CORE/SPELLS/RR#PNP39.SPL~ override                             // PnP Potion of Perception spell (for non-stacking)
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 14094 // "Immunity To Effect"
+      parameter1 = RESOLVE_STR_REF (@72) // Consuming multiple potions of the same type does not grant additional benefits
   END
 
 

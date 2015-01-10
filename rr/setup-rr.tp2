@@ -1862,7 +1862,7 @@ ACTION_IF GAME_IS ~soa tob bgt bg2ee~ BEGIN
        ~RR/RR_STIM/ITEMS/RR#INV.ITM~    override               // Invulnerability item for cutscene creatures
 
   COMPILE ~RR/RR_CORE/COMPILE/RR#VAM01.BAF~                           // Modified vampire AI for Arledrian's vampires
-  COMPILE ~RR/RR_CORE/COMPILE/RR#ARLED.BAF~                           // Arledrian's AI script
+          ~RR/RR_CORE/COMPILE/RR#ARLED.BAF~                           // Arledrian's AI script
 
   EXTEND_BOTTOM ~AR0511.BCS~  ~RR/RR_CORE/COMPILE/AR0511.BAF~         // Arledrian's journal triggers
   EXTEND_BOTTOM ~AR0312.BCS~  ~RR/RR_CORE/COMPILE/AR0312.BAF~         // Arledrian's poster trigger
@@ -3193,31 +3193,31 @@ COPY_EXISTING ~RR#VEND.CRE~             ~override/RR#VEND2.CRE~  // Venduris clo
 
 EXTEND_BOTTOM ~AR0800.BCS~  ~RR/RR_CYRIC/COMPILE/AR0800.BAF~                 // Add the CoC spawn script to the Graveyard area
 COMPILE ~RR/RR_CYRIC/COMPILE/RR#CAMB0.BAF~                                   // CoC starting cutscene, party rendered invisible
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CAMB1.BAF~                                   // CoC Amnish soldier cutscene and Venduris' enterance
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CAMB2.BAF~                                   // CoC prep sequence (potion drinking and spellcasting)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CAMB3.BAF~                                   // Venduris invoking the magical wards
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CEND1.BAF~                                   // Player reads the command phrase and safely exits
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CEND2.BAF~                                   // Player destroys Venduris' scroll and suffers a magical backslash
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CEND3.BAF~                                   // The CoC party departs peacefully
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CEND4.BAF~                                   // The CoC party departs after being intimidated by the Slayer
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CGRAV.BAF~                                   // The graveyard cutscene (fade to black and play ambushed sound)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CSLY1.BAF~                                   // Slayer cutscene part 1 (a.k.a. the threat)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CSLY2.BAF~                                   // Slayer cutscene part 2 (a.k.a. the gibbing :)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CTEST.BAF~                                   // CoC test script (used by the CoC test creature)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#001.BAF~                                     // The area script for the CoC battlefield
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CSAVE.BAF~                                   // The cutscene script for the CoC Final Save
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#CUTCY.BAF~                                   // A new cutscene for Cyric (pocketplane challenge in ToB)
+        ~RR/RR_CYRIC/COMPILE/RR#CAMB1.BAF~                                   // CoC Amnish soldier cutscene and Venduris' enterance
+        ~RR/RR_CYRIC/COMPILE/RR#CAMB2.BAF~                                   // CoC prep sequence (potion drinking and spellcasting)
+        ~RR/RR_CYRIC/COMPILE/RR#CAMB3.BAF~                                   // Venduris invoking the magical wards
+        ~RR/RR_CYRIC/COMPILE/RR#CEND1.BAF~                                   // Player reads the command phrase and safely exits
+        ~RR/RR_CYRIC/COMPILE/RR#CEND2.BAF~                                   // Player destroys Venduris' scroll and suffers a magical backslash
+        ~RR/RR_CYRIC/COMPILE/RR#CEND3.BAF~                                   // The CoC party departs peacefully
+        ~RR/RR_CYRIC/COMPILE/RR#CEND4.BAF~                                   // The CoC party departs after being intimidated by the Slayer
+        ~RR/RR_CYRIC/COMPILE/RR#CGRAV.BAF~                                   // The graveyard cutscene (fade to black and play ambushed sound)
+        ~RR/RR_CYRIC/COMPILE/RR#CSLY1.BAF~                                   // Slayer cutscene part 1 (a.k.a. the threat)
+        ~RR/RR_CYRIC/COMPILE/RR#CSLY2.BAF~                                   // Slayer cutscene part 2 (a.k.a. the gibbing :)
+        ~RR/RR_CYRIC/COMPILE/RR#CTEST.BAF~                                   // CoC test script (used by the CoC test creature)
+        ~RR/RR_CYRIC/COMPILE/RR#001.BAF~                                     // The area script for the CoC battlefield
+        ~RR/RR_CYRIC/COMPILE/RR#CSAVE.BAF~                                   // The cutscene script for the CoC Final Save
+        ~RR/RR_CYRIC/COMPILE/RR#CUTCY.BAF~                                   // A new cutscene for Cyric (pocketplane challenge in ToB)
 
 
 // CoC AI scripts
 
 COMPILE ~RR/RR_CYRIC/COMPILE/RR#BODK.BAF~                                    // Bodak's AI script
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#GROK.BAF~                                    // Grok's AI script
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#KERT.BAF~                                    // Kerith's AI script
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#SELI.BAF~                                    // Selina's AI script
-COMPILE ~RR/RR_STIM/COMPILE/RR#MSLD.BAF~                                     // Mislead AI script (for Zaeron's clone)
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#ZAER.BAF~                                    // Zaeron's AI script
-COMPILE ~RR/RR_CYRIC/COMPILE/RR#VEND.BAF~                                    // Venduris' AI script
+        ~RR/RR_CYRIC/COMPILE/RR#GROK.BAF~                                    // Grok's AI script
+        ~RR/RR_CYRIC/COMPILE/RR#KERT.BAF~                                    // Kerith's AI script
+        ~RR/RR_CYRIC/COMPILE/RR#SELI.BAF~                                    // Selina's AI script
+        ~RR/RR_STIM/COMPILE/RR#MSLD.BAF~                                     // Mislead AI script (for Zaeron's clone)
+        ~RR/RR_CYRIC/COMPILE/RR#ZAER.BAF~                                    // Zaeron's AI script
+        ~RR/RR_CYRIC/COMPILE/RR#VEND.BAF~                                    // Venduris' AI script
 
 
 COPY_EXISTING ~BALDUR.BCS~ override                                        // delay Malchor Harpell's appearance until the CoC encounter is over, also delay quests etc

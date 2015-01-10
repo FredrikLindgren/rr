@@ -2207,21 +2207,35 @@ COPY ~RR/RR_CORE/ITEMS/RR#SAP01.ITM~ override
 
 
 // Erephine's round buckler animations check
-// Should now automatically detect 1PP v2.6 and higher as well as the main component of Item Revisions
+// Should now automatically detect 1PP v2.6 and higher as well as the main component of Item Revisions and IWD:EE
 
-ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) BEGIN // Checks for 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
-  COPY_EXISTING ~RR#BUC01.ITM~ override                               // Fading Glory
-                ~RR#BUC02.ITM~ override                               // Buckler +1
-                ~RR#BUC03.ITM~ override                               // Buckler +2
-                ~RR#BUC04.ITM~ override                               // Buckler +3
-                ~RR#SHL01.ITM~ override                               // Stalwart Defender
-                ~RR#SHL02.ITM~ override                               // Safeguard
-                ~RR#RWARD.ITM~ override                               // Rogue's Ward
-                ~RR#LYRE.ITM~  override                               // Lyre of Progression
-      ~%tutu_var%SHLD20.ITM~   override                               // Kiel's Buckler
-    WRITE_ASCII 0x22 ~D1~ #2                                          // Set the animation to round buckler (D1)
-  BUT_ONLY
+
+
+ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) OR GAME_IS ~iwdee~ BEGIN // Checks for IWD:EE, 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
+ACTION_FOR_EACH ~file~ IN
+                ~RR#BUC01~ // Fading Glory
+                ~RR#BUC02~ // Buckler +1
+                ~RR#BUC03~ // Buckler +2
+                ~RR#BUC04~ // Buckler +3
+                ~RR#SHL01~ // Stalwart Defender
+                ~RR#SHL02~ // Safeguard
+                ~RR#RWARD~ // Rogue's Ward
+                 ~RR#LYRE~ // Lyre of Progression
+                ~_SHLD20~ // Kiel's Buckler (Tutu)
+                 ~SHLD20~ // Kiel's Buckler (BGT)
+BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%file%.itm~ BEGIN
+    COPY_EXISTING ~%file%.itm~ override
+      PATCH_IF (%SOURCE_SIZE% > 0x71) BEGIN
+      // ===============================================================================
+         WRITE_ASCII 0x22 ~D1~ #2 // Set the animation to round buckler (D1)
+      // ===============================================================================
+      END
+    BUT_ONLY
+  END
 END
+END
+
 
 // Make the RR ioun stones use WoRm's animations if they are present
 
@@ -2709,7 +2723,7 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 // Buckler +1
 
 COPY_EXISTING ~kusmith.sto~ ~override~                                               // Conlan's Smithy
-  ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD10~ #0 #0 #0 ~IDENTIFIED~ #2                  // Adds 2x Buckler +1
+  ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD10~ #0 #0 #0 ~IDENTIFIED~ #1                  // Adds 1x Buckler +1
 BUT_ONLY
 
 COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
@@ -2720,6 +2734,10 @@ COPY_EXISTING ~tiernon.sto~ ~override~                                          
   ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD02~ #0 #0 #0 ~IDENTIFIED~ #3                  // Adds 3x Buckler +1
 BUT_ONLY
 
+COPY_EXISTING ~ar3301.are~ ~override~ // Vale of Shadows - Temple of Myrkul
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add = ~RR#BUC02~ END
+BUT_ONLY
+
 
 // Buckler +2
 
@@ -2728,11 +2746,19 @@ COPY_EXISTING ~emmeric.sto~ ~override~                                          
   ADD_STORE_ITEM ~RR#BUC03~ AFTER          ~RR#BUC02~ #0 #0 #0 ~IDENTIFIED~ #2       // Adds 2x Buckler +2
 BUT_ONLY
 
+COPY_EXISTING ~ar4001.are~ ~override~ // Dragon's Eye - first dungeon level (Lizard King)
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = ~RR#BUC03~ END
+BUT_ONLY
+
 
 // Buckler +3
 
 COPY_EXISTING ~tiernon.sto~ ~override~                                               // Tiernon's Forge
    ADD_STORE_ITEM ~RR#BUC04~ AFTER ~RR#BUC03~ #0 #0 #0 ~IDENTIFIED~ #1               // Adds 1x Buckler +3
+BUT_ONLY
+
+COPY_EXISTING ~ar8007.are~ ~override~ // Lower Dorn's Deep - Order of the Kraken manor - second floor, Mekrath
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 6 STR_VAR item_to_add = ~RR#BUC04~ END
 BUT_ONLY
 
 
@@ -2766,8 +2792,8 @@ BUT_ONLY
 
 // The Guardian
 
-COPY_EXISTING ~ldd_nym.sto~ ~override~                                               // Nym's Exotic Goods
-  ADD_STORE_ITEM ~RR#GUARA~ AFTER ~MYSTERY~ #0 #0 #0 ~IDENTIFIED~ #1                 // Adds 1x The Guardian
+COPY_EXISTING ~ar5004.are~ ~override~ // Severed Hand - main tower - fourth floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = ~RR#GUARA~ END
 BUT_ONLY
 
 
@@ -2794,8 +2820,8 @@ BUT_ONLY
 
 // Darkveil
 
-COPY_EXISTING ~ldd_nym.sto~ ~override~                                               // Nym's Exotic Goods
-  ADD_STORE_ITEM ~RR#HEL03~ BEFORE ~HELMHUN~ #0 #0 #0 ~IDENTIFIED~ #1                // Adds 1x Darkveil
+COPY_EXISTING ~seth.cre~ ~override~                                                  // Seth (one of Marketh's cronies)
+  ADD_CRE_ITEM ~RR#HEL03~ #0 #0 #0 ~NONE~ ~HELMET~                                   // Adds 1x Darkveil
 BUT_ONLY
 
 // Darkveil should protect against umber hulk and jackalware gazes on IWD:EE
@@ -2869,7 +2895,7 @@ BUT_ONLY
 // Plaguebearer
 
 COPY_EXISTING ~ar6005.are~ ~override~ // Dorn's Deep - Tiers of the Dead
-  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 10 STR_VAR item_to_add = ~RR#SILV~ END
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 10 STR_VAR item_to_add = ~RR#PLAG~ END
 BUT_ONLY
 
 
@@ -2949,6 +2975,47 @@ BUT_ONLY
 COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
     ADD_STORE_ITEM ~RR#BOW06~ AFTER  ~RR#BOW04~ #0 #0 #0 ~IDENTIFIED~ #1             // Adds 1x Sparkburst
 BUT_ONLY
+
+
+// RR items should not have description icons on IWD:EE
+ACTION_FOR_EACH ~file~ IN
+                ~RR#BUC01~ // Fading Glory
+                ~RR#BUC02~ // Buckler +1
+                ~RR#BUC03~ // Buckler +2
+                ~RR#BUC04~ // Buckler +3
+                ~RR#SHL01~ // Stalwart Defender
+                ~RR#SHL02~ // Safeguard
+                ~RR#RWARD~ // Rogue's Ward
+                ~RR#GUARA~ // The Guardian +1
+                ~RR#GUARB~ // The Guardian +2
+                ~RR#GUARC~ // The Guardian +3
+                ~RR#HRP01~ // Harp of Descant
+                ~RR#BEL01~ // Masterbelt
+                ~RR#HEL01~ // Tri-souled Sapphire
+                ~RR#HEL02~ // Cowl of Acuity
+                ~RR#HEL03~ // Darkveil
+                ~RR#HEL04~ // Fragment of Enlightenment
+                ~RR#SAP01~ // Sap
+                 ~RR#STON~ // Stonesmasher
+                 ~RR#WEAR~ // The Weary Cudgel
+                ~RR#FDART~ // Returning Frost Dart
+                ~RR#ACUMN~ // Dagger of Acumen
+                 ~RR#PLAG~ // Plaguebearer
+                 ~RR#SILV~ // Silverblaze
+                 ~RR#TROL~ // Trollmelter
+                 ~RR#CATC~ // Black Cat's Claw
+                 ~RR#KEEP~ // Keeper of the Law
+                ~RR#BOW02~ // Composite Short Bow
+                ~RR#BOW03~ // Composite Short Bow +1
+                ~RR#BOW04~ // Composite Short Bow +2
+                ~RR#BOW05~ // Composite Short Bow +3
+                ~RR#BOW06~ // Sparkburst
+BEGIN
+  COPY_EXISTING ~%file%.itm~ override
+    WRITE_ASCII 0x58 ~~ #8 // description icon
+  BUT_ONLY
+END
+
 
 
 END                                                                            // ends IWD:EE check

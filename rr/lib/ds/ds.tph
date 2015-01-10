@@ -151,7 +151,7 @@ COPY_EXISTING stats.ids override
 LAM reorder_stats_ids
 
 // fix the bug in G3's DS
-COPY_EXISTING ~spin101.spl~ ~override/cddetect.spl~ // tell CamDawg's (?) version that DS is already installed
+COPY_EXISTING ~spwi101.spl~ ~override/cddetect.spl~ // tell CamDawg's (?) version that DS is already installed
 LAM fix_khelben
 
 // fix old Ascension DS

@@ -3006,322 +3006,47 @@ APPEND  ~MASTAREA.2DA~  ~RR#001  value~ UNLESS ~RR#001~                      // 
 
 // Modifying AR0800 to include the new CoC ambush triggers (code based on Pro5's Dragon Trigger from the BG1 NPC project, thanks cmorgan and Pro5!)
 
-COPY_EXISTING ~AR0800.ARE~ override                                        // Graveyard district CoC trigger 1 (bottom exit)
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    SET "Left" = 1675
-    SET "Top" = 2125
-    SET "Right" = 1968
-    SET "Bottom" = 2175
-    WRITE_SHORT 0x5a ("%info_num%" + 1)
-    INSERT_BYTES "%info_off%" 0xC4                          // Insert new blank info point
-      WRITE_ASCII "%info_off%" ~RR#COC01~                   // Trigger name
-      WRITE_SHORT ("%info_off%" + 0x20) 1                   // Trigger type (trap, info or travel)
-      WRITE_SHORT ("%info_off%" + 0x22) "%Left%"
-      WRITE_SHORT ("%info_off%" + 0x24) "%Top%"
-      WRITE_SHORT ("%info_off%" + 0x26) "%Right%"
-      WRITE_SHORT ("%info_off%" + 0x28) "%Bottom%"
-      WRITE_SHORT ("%info_off%" + 0x2A) 4                   // Number of vertices
-      WRITE_LONG ("%info_off%" + 0x2C) "%vert_num%"         // First vertex index
-      WRITE_SHORT ("%info_off%" + 0x34) 34                  // Cursor type
-      WRITE_LONG ("%info_off%" + 0x60) 1280                 // Flags (i.e. trigger is initially deactivated, party must walk to it when clicked on)
-      WRITE_ASCII ("%info_off%" + 0x7C) ~RR#CGRAV~ #8       // Trigger script name
-      WRITE_LONG ("%info_off%" + 0x84) 1827                 // Walk to X coordinates
-      WRITE_LONG ("%info_off%" + 0x86) 2144                 // Walk to Y coordinates
-    PATCH_IF NOT ("%actor_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0xC4)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%item_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%vert_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x7c ("vert_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%var_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%door_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%song_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%note_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0xC4)
-    END
-    // Add 4 new vertices
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    WRITE_SHORT 0x80 ("%vert_num%" + 4)
-    INSERT_BYTES ("%vert_off%" + (0x04 * "%vert_num%")) 0x10
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%") 1675    // Vertex1.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 2) 2175 // Vertex1.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 4) 1700  // Vertex2.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 6) 2125 // Vertex2.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 8) 1968 // Vertex3.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +10) 2132  // Vertex3.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +12) 1957 // Vertex4.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +14) 2175  // Vertex4.Y
-    PATCH_IF NOT ("%actor_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0x10)
-    END
-    PATCH_IF NOT ("%info_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x5c ("info_off" + 0x10)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0x10)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0x10)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0x10)
-    END
-    PATCH_IF NOT ("%item_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0x10)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0x10)
-    END
-    PATCH_IF NOT ("%var_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0x10)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0x10)
-    END
-    PATCH_IF NOT ("%door_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0x10)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0x10)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0x10)
-    END
-    PATCH_IF NOT ("%song_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0x10)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0x10)
-    END
-    PATCH_IF NOT ("%note_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0x10)
-    END
-
-COPY_EXISTING ~AR0800.ARE~ override                                      // Graveyard district CoC trigger 2 (upper exit)
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    SET "Left" = 878
-    SET "Top" = 1
-    SET "Right" = 1171
-    SET "Bottom" = 44
-    WRITE_SHORT 0x5a ("%info_num%" + 1)
-    INSERT_BYTES "%info_off%" 0xC4                          // Insert new blank info point
-      WRITE_ASCII "%info_off%" ~RR#COC02~                   // Trigger name
-      WRITE_SHORT ("%info_off%" + 0x20) 1                   // Trigger type (trap, info or travel)
-      WRITE_SHORT ("%info_off%" + 0x22) "%Left%"
-      WRITE_SHORT ("%info_off%" + 0x24) "%Top%"
-      WRITE_SHORT ("%info_off%" + 0x26) "%Right%"
-      WRITE_SHORT ("%info_off%" + 0x28) "%Bottom%"
-      WRITE_SHORT ("%info_off%" + 0x2A) 4                   // Number of vertices
-      WRITE_LONG ("%info_off%" + 0x2C) "%vert_num%"         // First vertex index
-      WRITE_SHORT ("%info_off%" + 0x34) 34                  // Cursor type
-      WRITE_LONG ("%info_off%" + 0x60) 1280                 // Flags (i.e. trigger is initially deactivated, party must walk to it when clicked on)
-      WRITE_ASCII ("%info_off%" + 0x7C) ~RR#CGRAV~ #8       // Trigger script name
-      WRITE_LONG ("%info_off%" + 0x84) 1023                 // Walk to X coordinates
-      WRITE_LONG ("%info_off%" + 0x86)   31                 // Walk to Y coordinates
-    PATCH_IF NOT ("%actor_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0xC4)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%item_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%vert_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x7c ("vert_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%var_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%door_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%song_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0xC4)
-    END
-    PATCH_IF NOT ("%note_off%" < "%info_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0xC4)
-    END
-    // Add 4 new vertices
-    READ_LONG 0x54 "actor_off"
-    READ_LONG 0x5c "info_off"
-    READ_SHORT 0x5a "info_num"
-    READ_LONG 0x60 "spawn_off"
-    READ_LONG 0x68 "ent_off"
-    READ_LONG 0x70 "cont_off"
-    READ_LONG 0x78 "item_off"
-    READ_LONG 0x7c "vert_off"
-    READ_SHORT 0x80 "vert_num"
-    READ_LONG 0x84 "amb_off"
-    READ_LONG 0x88 "var_off"
-    READ_LONG 0xa0 "bmp_off"
-    READ_LONG 0xa8 "door_off"
-    READ_LONG 0xb0 "anim_off"
-    READ_LONG 0xb8 "tiled_off"
-    READ_LONG 0xbc "song_off"
-    READ_LONG 0xc0 "rest_off"
-    READ_LONG 0xc4 "note_off"
-    WRITE_SHORT 0x80 ("%vert_num%" + 4)
-    INSERT_BYTES ("%vert_off%" + (0x04 * "%vert_num%")) 0x10
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%") 878       // Vertex1.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 2) 44    // Vertex1.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 4) 1171  // Vertex2.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 6) 44    // Vertex2.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" + 8) 1171  // Vertex3.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +10) 1     // Vertex3.Y
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +12) 878   // Vertex4.X
-        WRITE_SHORT ("%vert_off%" + 0x04 * "%vert_num%" +14) 1     // Vertex4.Y
-    PATCH_IF NOT ("%actor_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x54 ("%actor_off%" + 0x10)
-    END
-    PATCH_IF NOT ("%info_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x5c ("info_off" + 0x10)
-    END
-    PATCH_IF NOT ("%spawn_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x60 ("spawn_off" + 0x10)
-    END
-    PATCH_IF NOT ("%ent_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x68 ("ent_off" + 0x10)
-    END
-    PATCH_IF NOT ("%cont_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x70 ("cont_off" + 0x10)
-    END
-    PATCH_IF NOT ("%item_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x78 ("item_off" + 0x10)
-    END
-    PATCH_IF NOT ("%amb_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x84 ("amb_off" + 0x10)
-    END
-    PATCH_IF NOT ("%var_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0x88 ("var_off" + 0x10)
-    END
-    PATCH_IF NOT ("%bmp_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa0 ("bmp_off" + 0x10)
-    END
-    PATCH_IF NOT ("%door_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xa8 ("door_off" + 0x10)
-    END
-    PATCH_IF NOT ("%anim_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb0 ("anim_off" + 0x10)
-    END
-    PATCH_IF NOT ("%tiled_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xb8 ("tiled_off" + 0x10)
-    END
-    PATCH_IF NOT ("%song_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xbc ("song_off" + 0x10)
-    END
-    PATCH_IF NOT ("%rest_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc0 ("rest_off" + 0x10)
-    END
-    PATCH_IF NOT ("%note_off%" < "%vert_off%") BEGIN
-      WRITE_LONG 0xc4 ("note_off" + 0x10)
-    END
+COPY_EXISTING ~AR0800.ARE~ override
+  LPF fj_are_structure // Graveyard district CoC trigger 1 (bottom exit)
+    INT_VAR
+      fj_type = 1 // Trigger type (trap, info or travel)
+      fj_box_left = 1675
+      fj_box_right = 1968
+      fj_box_top = 2125
+      fj_box_bottom = 2175
+      fj_cursor_idx = 34 // Cursor type
+      fj_flags = BIT8 BOR BIT10 // Flags (i.e. trigger is initially deactivated, party must walk to it when clicked on)
+      fj_alt_x = 1827 // Walk to X coordinates
+      fj_alt_y = 2144 // Walk to Y coordinates
+      fj_vertex_0 = 1675 + (2175 << 16)
+      fj_vertex_1 = 1700 + (2125 << 16)
+      fj_vertex_2 = 1968 + (2132 << 16)
+      fj_vertex_3 = 1957 + (2175 << 16)
+    STR_VAR
+      fj_structure_type = "region"
+      fj_name = "RR#COC01" // Trigger name
+      fj_reg_script = "RR#CGRAV" // Trigger script name
+  END
+  LPF fj_are_structure // Graveyard district CoC trigger 2 (upper exit)
+    INT_VAR
+      fj_type = 1 // Trigger type (trap, info or travel)
+      fj_box_left = 878
+      fj_box_right = 1171
+      fj_box_top = 1
+      fj_box_bottom = 44
+      fj_cursor_idx = 34 // Cursor type
+      fj_flags = BIT8 BOR BIT10 // Flags (i.e. trigger is initially deactivated, party must walk to it when clicked on)
+      fj_alt_x = 1023 // Walk to X coordinates
+      fj_alt_y = 31 // Walk to Y coordinates
+      fj_vertex_0 = 878 + (44 << 16)
+      fj_vertex_1 = 1171 + (44 << 16)
+      fj_vertex_2 = 1171 + (1 << 16)
+      fj_vertex_3 = 878 + (1 << 16)
+    STR_VAR
+      fj_structure_type = "region"
+      fj_name = "RR#COC02" // Trigger name
+      fj_reg_script = "RR#CGRAV" // Trigger script name
+  END
 
 
 // CoC items and icons
@@ -3365,25 +3090,18 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#RNG01.ITM~             override              // Gemin
 COPY ~RR/RR_CYRIC/ITEMS/RR#LCRWN.ITM~             override              // The Blessed Leaf Crown
   SAY NAME2 @240  SAY DESC @241
 COPY ~RR/RR_CYRIC/ITEMS/RR#SDEAT.ITM~             override              // Silent Death
-SAY NAME2 @216 SAY DESC @217
-READ_LONG 0x64 abil_off
-READ_SHORT 0x68 abil_num
-READ_LONG 0x6a fx_off
-  FOR (i = 0; i < "%abil_num%"; i += 1) BEGIN
-    READ_BYTE (%abil_off% + %i% * 0x38) abil_type
-    PATCH_IF (%abil_type% = 1) BEGIN                                                  // only patch the melee ability header
-      READ_SHORT (%abil_off% + %i% * 0x38 + 0x1e) abil_fx_num
-      READ_SHORT (%abil_off% + %i% * 0x38 + 0x20) abil_fx_idx
-      FOR (k = %abil_fx_idx%; k < "%abil_fx_idx%" + "%abil_fx_num%"; k += 1) BEGIN
-        READ_SHORT (%fx_off% + %k% * 0x30) "opcode"
-        READ_LONG  (%fx_off% + %k% * 0x30 + 0x04) "param1"
-         PATCH_IF ((%opcode% = "139") AND (%param1% = "70396")) BEGIN                 // effect: #139 (Display String) and param1 = 70396 (Hit Points Lowered)
-          SAY (%fx_off% + %k% * 0x30 + 0x04) @89                                      // Vital Strike
-	 END
-      END
-    END
+  SAY NAME2 @216 SAY DESC @217
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      header_type = 1 // only patch the melee ability header
+      match_opcode = 139 // effect: #139 (Display String)
+      match_parameter1 = 70396 // Hit Points Lowered
+      parameter1 = RESOLVE_STR_REF (@89) // Vital Strike
   END
 BUT_ONLY
+
 COPY ~RR/RR_CYRIC/ITEMS/RR#VLUCK.ITM~             override              // Venduris' Luckstone
   SAY NAME2 @226 SAY DESC @227
 COPY ~RR/RR_CYRIC/ITEMS/RR#VRING.ITM~             override              // Venduris' Ring of Concealment
@@ -3436,77 +3154,29 @@ COPY ~RR/RR_CYRIC/ACTORS/RR#SELI.CRE~             override  // Selina
 
 COPY ~RR/RR_CYRIC/ACTORS/RR#VEND.CRE~             override  // Venduris
   SAY NAME1 @304 SAY NAME2 @304
-PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
-  SET opcode_to_delete = "278"                                   // mark opcode #278 (To Hit Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  SET opcode_to_delete = "73"                                    // mark opcode #73 (Extra Damage Modifier) for deletion
-  LAUNCH_PATCH_MACRO ~DELETE_CRE_EFFECT~
-  ADD_MEMORIZED_SPELL ~RR#TAS01~ #0 ~innate~                     // adds 1x Death Attack
-  SET opcode = "33"                                              // effect: #33 (Save vs. Death Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "1"                                           // param1: 1
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "8"                                           // caster level: 8
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~~                                           // resref: none
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~RR#TAS00~                                  // effsource: RR#TAS00.SPL (Poison Expertise)
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-  SET opcode = "33"                                              // effect: #33 (Save vs. Death Modifier)
-  SET target = "1"                                               // target: 1 (self)
-  SET timing = "9"                                               // timing mode: 9 (permanent after death)
-  SET parameter1 = "1"                                           // param1: 1
-  SET parameter2 = "0"                                           // param2: 0
-  SET parameter3 = "0"                                           // param3: 0
-  SET parameter4 = "0"                                           // param4: 0
-  SET power = "0"                                                // power: 0
-  SET resist_dispel = "0"                                        // dispel/resistance: 0 (non-magical)
-  SET duration = "0"                                             // duration: 0
-  SET probability1 = "100"                                       // probability1: 100%
-  SET probability2 = "0"                                         // probability2: 0%
-  SET dicenumber = "0"                                           // dicenumber: 0
-  SET dicesize = "0"                                             // dicesize: 0
-  SET savingthrow = "0"                                          // saving throw type: 0 (none)
-  SET savebonus = "0"                                            // save bonus: 0
-  SET school = "0"                                               // school: 0 (schoolless)
-  SET lowestafflvl = "0"                                         // lowest level affected: 0
-  SET highestafflvl = "0"                                        // highest level affected: 0
-  SET casterx = "0"                                              // casterx: 0
-  SET castery = "0"                                              // castery: 0
-  SET targetx = "0"                                              // targetx: 0
-  SET targety = "0"                                              // targety: 0
-  SET casterlvl  = "16"                                          // caster level: 16
-  SET sectype = "0"                                              // secondary type: 0
-  SPRINT ~resource~ ~~                                           // resref: none
-  SPRINT ~resource2~ ~~                                          // resref2: none
-  SPRINT ~resource3~ ~~                                          // resref3: none
-  SPRINT ~vvcresource~ ~~                                        // vvcresref: none
-  SPRINT ~effsource~ ~RR#TAS00~                                  // effsource: RR#TAS00.SPL (Poison Expertise)
-  SPRINT ~effvar~ ~~                                             // effvar: none
-  LAUNCH_PATCH_MACRO ~ADD_CRE_EFFECT~
-END
+  PATCH_IF FILE_EXISTS_IN_GAME ~RR#TAS00.SPL~ BEGIN           // check for the Thief kit revisions component
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 278 // #278 (To Hit Modifier)
+    END
+    LPF DELETE_CRE_EFFECT
+      INT_VAR
+        opcode_to_delete = 73 //  #73 (Extra Damage Modifier)
+    END
+    ADD_MEMORIZED_SPELL ~RR#TAS01~ #0 ~innate~                     // adds 1x Death Attack
+    PATCH_FOR_EACH casterlvl IN 8 16 BEGIN
+      LPF ADD_CRE_EFFECT
+        INT_VAR
+          opcode = 33 // #33 (Save vs. Death Modifier)
+          target = 1 // self
+          timing = 9 // permanent after death
+          parameter1 = 1
+          casterlvl
+        STR_VAR
+          effsource = "RR#TAS00" // RR#TAS00.SPL (Poison Expertise)
+      END
+    END
+  END
 
 
 COPY ~RR/RR_CYRIC/ACTORS/RR#ZAER.CRE~             override  // Zaeron
@@ -3517,8 +3187,8 @@ COPY ~RR/RR_CYRIC/ACTORS/RR#VWARD.CRE~            override  // CoC ward guard (V
 COPY ~RR/RR_CYRIC/ACTORS/RR#CTEST.CRE~            override  // CoC test creature (used for manually testing the encounter)
 COPY ~RR/RR_CYRIC/ACTORS/RR#OBSRV.CRE~            override  // CoC cutscene observer (reveals fog of war)
 COPY_EXISTING ~RR#VEND.CRE~             ~override/RR#VEND2.CRE~  // Venduris clone (needed for the EVILCUTOFF trap setting cutscene sequence)
-  WRITE_ASCII 0x2cc ~None~ #8                                    // disable dialogue file (was RR#VEND.DLG)
-  WRITE_ASCII 0x248 ~None~ #8                                    // disable override AI script (was RR#VEND.BCS)
+  WRITE_ASCII 0x2cc ~~ #8                                        // disable dialogue file (was RR#VEND.DLG)
+  WRITE_ASCII 0x248 ~~ #8                                        // disable override AI script (was RR#VEND.BCS)
   WRITE_BYTE  0x270 255                                          // set allegiance to ENEMY
   WRITE_ASCII 0x280 ~RR#VEND2~ #32                               // assign new death variable (needs to be different from the actual Venduris)
 
@@ -3556,10 +3226,10 @@ COMPILE ~RR/RR_CYRIC/COMPILE/RR#VEND.BAF~                                    // 
 
 
 COPY_EXISTING ~BALDUR.BCS~ override                                        // delay Malchor Harpell's appearance until the CoC encounter is over, also delay quests etc
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~!Exists("c6harp")~ ~!Exists("c6harp") !AreaCheck("RR#001") !AreaCheck("AR0800")~
     REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(^ +!Global("Chapter","GLOBAL",4)[ %lnl%]+!Global("Chapter","GLOBAL",5)[ %lnl%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
-  COMPILE_BAF_TO_BCS
+  END
 UNLESS ~16510 0 1 0 0 "RR#001" "" OB~
 BUT_ONLY
 
@@ -3576,9 +3246,9 @@ COPY_EXISTING nalia.bcs   override
               mazzy.bcs   override
               minsc.bcs   override
               yoshimo.bcs override
-  DECOMPILE_BCS_TO_BAF
+  DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~^\( +!Global("Chapter","GLOBAL",4)[ %lnl%]+!Global("Chapter","GLOBAL",5)[ %lnl%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
-  COMPILE_BAF_TO_BCS
+  END
 UNLESS ~16510 0 1 0 0 "RR#001" "" OB~
 BUT_ONLY
 
@@ -3592,41 +3262,20 @@ COMPILE ~RR/RR_CYRIC/COMPILE/RR#INT01.D~                                     // 
 // Make the RR ioun stones use WoRm's animations if they are present
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ion1bz.bam~ BEGIN                        // Checks for WoRm's Ioun Stone animations (used by IR and CA)
-COPY_EXISTING ~RR#VLUCK.ITM~ override                                            // Venduris' Luckstone
-SET opcode = "215"                                                                 // effect: #215 (play 3d effect)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "0"                                                               // param1: 0 (play over target)
-SET parameter2 = "1"                                                               // param2: 2 (play over target)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~ION1B~                                                          // resref: ION1B (black ioun stone animation part 1)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~
-SET opcode = "215"                                                                 // effect: #215 (play 3d effect)
-SET target = "1"                                                                   // target: 1 (self)
-SET timing = "2"                                                                   // timing mode: 2 (while equipped)
-SET parameter1 = "0"                                                               // param1: 0 (play over target)
-SET parameter2 = "1"                                                               // param2: 2 (play over target)
-SET power = "0"                                                                    // power: 0
-SET resist_dispel = "0"                                                            // dispel/resistance: 0 (non-magical)
-SET duration = "0"                                                                 // duration: 0
-SET probability1 = "100"                                                           // probability1: 100%
-SET probability2 = "0"                                                             // probability2: 0%
-SET dicenumber = "0"                                                               // dicenumber: 0
-SET dicesize = "0"                                                                 // dicesize: 0
-SET savingthrow = "0"                                                              // saving throw type: 0 (none)
-SET savebonus = "0"                                                                // save bonus: 0
-SPRINT ~resource~ ~ION2B~                                                          // resref: ION2B (black ioun stone animation part 2)
-LAUNCH_PATCH_MACRO ~ADD_ITEM_EQEFFECT~
-BUT_ONLY
-END                                                                                // WoRm's Ioun Stone animations check block
+  COPY_EXISTING ~RR#VLUCK.ITM~ override                                            // Venduris' Luckstone
+    PATCH_FOR_EACH resource IN ION1B ION2B BEGIN
+      LPF ADD_ITEM_EQEFFECT
+        INT_VAR
+          opcode = 215 // #215 (play 3d effect)
+          target = 1 // self
+          timing = 2 // while equipped
+          parameter2 = 1 // play over target
+        STR_VAR
+          resource
+      END
+    END
+  BUT_ONLY
+END
 
 
 

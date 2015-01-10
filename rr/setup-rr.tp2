@@ -1836,11 +1836,7 @@ ACTION_IF GAME_IS ~soa tob bgt bg2ee~ BEGIN
     WRITE_BYTE 0x272 2                                                // race
     WRITE_BYTE 0x273 9                                                // class
     WRITE_BYTE 0x27b 34                                               // alignment
-    WRITE_ASCII 0x248 ~RR#ARLED~ #8                                   // assign override AI script
-    WRITE_ASCII 0x250 ~None~ #8                                       // disable class AI script (STEALAMN.BCS)
-    WRITE_ASCII 0x258 ~None~ #8                                       // disable race AI script (GPUSE.BCS)
-    WRITE_ASCII 0x260 ~None~ #8                                       // disable general AI script (NONE)
-    WRITE_ASCII 0x268 ~None~ #8                                       // disable default AI script (WTARSGT.BCS)
+    WRITE_ASCIIL 0x248 ~RR#ARLED~ ~~ ~~ ~~ ~~                         // assign override AI script
     SET_BG2_PROFICIENCY ~PROFICIENCYDAGGER~ 2                         // Give Arledrian 2 stars in the BG2 Dagger proficiency
     SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Arledrian 3 stars in the BG2 Two Weapon Style proficiency
   BUT_ONLY
@@ -3587,10 +3583,7 @@ COPY_EXISTING ~C6YEAN.CRE~ override                               // Yeanasha
   WRITE_BYTE 0x23f 20                                               // morale
   WRITE_BYTE 0x240 5                                                // morale break
   WRITE_BYTE 0x242 30                                               // morale recovery
-  REPLACE_TEXTUALLY "C6THIEF" "" (8)                                // move location of the script
-  WRITE_ASCII 0x248 ~C6THIEF~ #8                                    // override AI script
-  REPLACE_TEXTUALLY "KENSAI" "" (8)                                 // disable default AI script (KENSAI.BCS)
-  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
+  WRITE_ASCIIL 0x248 ~C6THIEF~ ~~ ~~ ~~ ~~                          // override AI script
   WRITE_BYTE 0x27b 34                                               // alignment
   SET_BG2_PROFICIENCY ~PROFICIENCYKATANA~ 5                         // Give Yeanasha 5 stars in the BG2 Katana proficiency
 BUT_ONLY
@@ -3798,11 +3791,7 @@ COPY_EXISTING ~GAELAN2.CRE~  override                             // Gaelan Bayl
   WRITE_BYTE 0x235 0                                                // level (second class)
   WRITE_BYTE 0x236 0                                                // level (third class)
   WRITE_BYTE 0x23f 17                                               // morale
-  WRITE_ASCII 0x248 ~RR#GAELN~ #8                                   // assign override AI script
-  REPLACE_TEXTUALLY "SHOUTDLG" "" (8)                               // disable class AI script (SHOUTDLG.BCS)
-  REPLACE_TEXTUALLY "GPUSE" "" (8)                                  // disable race AI script (GPUSE.BCS)
-  REPLACE_TEXTUALLY "WTARSGT" "" (8)                                // disable default AI script (WTARSGT.BCS)
-  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
+  WRITE_ASCIIL 0x248 ~RR#GAELN~ ~~ ~~ ~~ ~~                         // assign override AI script
   SET_BG2_PROFICIENCY ~PROFICIENCYSHORTSWORD~ 2                     // Give Gaelan 2 stars in the BG2 Shortsword proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCY2WEAPON~ 3                        // Give Gaelan 3 stars in the BG2 Two Weapon Style proficiency
   PATCH_IF FILE_EXISTS_IN_GAME ~RR#TSB01.SPL~ BEGIN           // check for the Thief kit revisions component
@@ -3869,9 +3858,7 @@ COPY_EXISTING ~MOOK02.CRE~ override                               // Mook (hosti
   WRITE_BYTE 0x238 12                                               // Strength
   WRITE_BYTE 0x23f 15                                               // morale
   WRITE_BYTE 0x273 9                                                // class
-  WRITE_ASCII 0x248 ~RR#MOOK~ #8                                    // assign override AI script
-  REPLACE_TEXTUALLY "SHOUTDLG" "" (8)                               // disable class AI script (SHOUTDLG.BCS)
-  REPLACE_TEXTUALLY "WTASIGHT" "" (8)                               // disable default AI script (WTASIGHT.BCS)
+  WRITE_ASCIIL 0x248 ~RR#MOOK~ ~~ ~~ ~~ ~~                          // assign override AI script
   SET_BG2_PROFICIENCY ~PROFICIENCYLONGBOW~ 2                        // Give Mook 2 stars in the BG2 Longbow proficiency
   SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 2                      // Give Mook 2 stars in the BG2 Longsword proficiency
 BUT_ONLY

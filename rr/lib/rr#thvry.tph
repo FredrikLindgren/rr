@@ -150,9 +150,8 @@ ACTION_FOR_EACH ~file~ IN
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%file%.cre~ BEGIN
     COPY_EXISTING ~%file%.cre~ ~override~
-      PATCH_INCLUDE ~RR/lib/fj_cre_validity.tpp~                                         // Nythrun's CRE validity macro (detects corrupt and invalid CREs)
+      LPF FJ_CRE_VALIDITY RET valid END
       PATCH_IF valid BEGIN
-        PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                        // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
       // ===============================================================================
         WRITE_BYTE 0x20 THIS BOR BIT0 // add the STATE_SLEEPING flag
       // ===============================================================================
@@ -321,8 +320,7 @@ ACTION_IF FILE_EXISTS bgmain.exe OR FILE_EXISTS_IN_GAME monkfist.2da BEGIN
   // Extend creature scripts
 
   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~                                         // parse through all creatures in the game
-    PATCH_INCLUDE ~RR/lib/fj_cre_validity.tpp~                                             // Nythrun's CRE validity macro (detects corrupt and invalid CREs)
-    PATCH_IF valid BEGIN
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
     // ===============================================================================
       LAUNCH_PATCH_FUNCTION ~RR#IDTLS~ RET rr#aemnw = rr#allem END                         // Starts FUNCTION call (my custom "Identify Top Level Script" function)
       READ_ASCII 0x248 ovrscript
@@ -333,7 +331,6 @@ ACTION_IF FILE_EXISTS bgmain.exe OR FILE_EXISTS_IN_GAME monkfist.2da BEGIN
       PATCH_IF ((rr#aemnw = 0) AND (allegiance = 128) AND (general = 1) AND (gender > 0) AND (gender < 3)) BEGIN  // only patch neutral humanoid male or female creatures whcih have at least one AI script assigned to them (the gender check is used for skipping over summoned creatures and such, the top level function is used for skipping over cutscene only CREs which have no scripts assigned)
         PATCH_IF (SOURCE_RES STRING_CONTAINS_REGEXP ~RR#~ = 1) BEGIN                   // don't patch files prefixed with the designated strings (i.e. skip RR's own creatures)
           PATCH_IF !FILE_CONTAINS_EVALUATED (~pdialog.2da~ ~%deathvar%~) BEGIN             // exclude joinable NPCs
-            PATCH_INCLUDE ~RR/lib/fj_cre_reindex.tpp~                                      // Nythrun's CRE reindex macro (this also calls the EFF macro if needed)
             PATCH_IF NOT FILE_EXISTS_IN_GAME ~%ovrscript%.bcs~ BEGIN                       // if the override script doesn't exist
               WRITE_ASCII 0x248 ~RR#PICKP~ #8                                              // assign RR#PICKP.BCS as the new override script
             END ELSE INNER_ACTION BEGIN

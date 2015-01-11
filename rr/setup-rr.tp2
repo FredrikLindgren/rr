@@ -14,7 +14,6 @@ ALWAYS
   INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
-  // INCLUDE ~rr/lib/tobexfix.tph~                                    // obsolete as of TobEx 0022 which RR now ships with
 
   LAM bgee_language
 END

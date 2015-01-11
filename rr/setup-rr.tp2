@@ -12,7 +12,6 @@ VERSION ~v4.80b3~
 ALWAYS
   INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
   INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
-  INCLUDE ~rr/lib/regexp.tph~                                         // allows regexp to match tabs and newlines (borrowed from the G3 BG2 Fixpack)
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
   // INCLUDE ~rr/lib/tobexfix.tph~                                    // obsolete as of TobEx 0022 which RR now ships with
@@ -1374,11 +1373,6 @@ COPY_EXISTING ~sw1h01.itm~ ~override/RR#PPBRD.RR~
 // PnP spell progression table based on AD&D "Dungen Master's Option: High-Level Campaigns" supplement and Blucher's work in BG2 Tweaks for levels past 30
 // 2DA patching code borrowed from Nythrun with thanks :)
 
-OUTER_PATCH HELLOEVERYBODY BEGIN                                              // Linefeed code, needed for the complex 2DA patching which comes afterwards
-    WRITE_BYTE 0 10
-    READ_ASCII 0 lnl (1)
-END
-
 COPY_EXISTING ~MXSPLBRD.2DA~ override
   COUNT_2DA_COLS cols
   PATCH_IF cols < 9 BEGIN
@@ -1418,7 +1412,7 @@ COPY_EXISTING ~MXSPLBRD.2DA~ override
   WHILE level < 50 BEGIN
     REPLACE_EVALUATE ~^\(%level%\)\(.+\)~ BEGIN
       SET level += 1
-    END              ~\1\2%lnl%%level%\2~
+    END              ~\1\2%LNL%%level%\2~
   END
 BUT_ONLY
 
@@ -3232,7 +3226,7 @@ COMPILE ~RR/RR_CYRIC/COMPILE/RR#BODK.BAF~                                    // 
 COPY_EXISTING ~BALDUR.BCS~ override                                        // delay Malchor Harpell's appearance until the CoC encounter is over, also delay quests etc
   DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY EXACT_MATCH ~!Exists("c6harp")~ ~!Exists("c6harp") !AreaCheck("RR#001") !AreaCheck("AR0800")~
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(^ +!Global("Chapter","GLOBAL",4)[ %lnl%]+!Global("Chapter","GLOBAL",5)[ %lnl%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(^ +!Global("Chapter","GLOBAL",4)[ %LNL%]+!Global("Chapter","GLOBAL",5)[ %LNL%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
   END
 UNLESS ~16510 0 1 0 0 "RR#001" "" OB~
 BUT_ONLY
@@ -3251,7 +3245,7 @@ COPY_EXISTING nalia.bcs   override
               minsc.bcs   override
               yoshimo.bcs override
   DECOMPILE_AND_PATCH BEGIN
-    REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~^\( +!Global("Chapter","GLOBAL",4)[ %lnl%]+!Global("Chapter","GLOBAL",5)[ %lnl%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~^\( +!Global("Chapter","GLOBAL",4)[ %LNL%]+!Global("Chapter","GLOBAL",5)[ %LNL%]+!Global("Chapter","GLOBAL",7)\)~ ~\1 !AreaCheck("RR#001")~
   END
 UNLESS ~16510 0 1 0 0 "RR#001" "" OB~
 BUT_ONLY

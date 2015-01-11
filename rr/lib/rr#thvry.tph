@@ -175,9 +175,9 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
   COPY_EXISTING ~ENFORAM.BCS~  ~override~ // Alarmed enforcer SoA script (invisible creature)
                 ~ALARM25.BCS~  ~override~ // Alarmed enforcer ToB script (invisible creature)
     DECOMPILE_AND_PATCH BEGIN
-      REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+SetInterrupt(TRUE)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) \1~
-      REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0)~
-      REPLACE_TEXTUALLY ~\(CreateCreatureObject("SARMIL02",Myself,0,0,0)[%tab% %lnl%%mnl%%wnl%]+CreateCreatureObject("SARMIL02",Myself,0,0,0)\)~ ~CreateCreatureObject("SARMIL02",Myself,0,0,0) CreateCreatureObject("SARMIL01",Myself,0,0,0)~
+      REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%TAB% %LNL%]+CreateCreatureObject("AMNLEG1",Myself,0,0,0)[%TAB% %LNL%]+SetInterrupt(TRUE)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) \1~
+      REPLACE_TEXTUALLY ~\(CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%TAB% %LNL%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)[%TAB% %LNL%]+CreateCreatureObject("AMNCEN1",Myself,0,0,0)\)~ ~CreateCreatureObject("AMNCEN1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0) CreateCreatureObject("AMNLEG1",Myself,0,0,0)~
+      REPLACE_TEXTUALLY ~\(CreateCreatureObject("SARMIL02",Myself,0,0,0)[%TAB% %LNL%]+CreateCreatureObject("SARMIL02",Myself,0,0,0)\)~ ~CreateCreatureObject("SARMIL02",Myself,0,0,0) CreateCreatureObject("SARMIL01",Myself,0,0,0)~
       REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride(LastSeenBy(Myself),Enemy())~ ~~
       REPLACE_TEXTUALLY EXACT_MATCH ~DisplayStringHead(Myself,9896)~ ~DisplayStringHead(Myself,9896) ReputationInc(-1)~
       REPLACE_TEXTUALLY EXACT_MATCH ~See([NEUTRAL.HUMANOID])~ ~See([NOTGOOD.HUMANOID])

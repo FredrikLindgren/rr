@@ -179,14 +179,6 @@ DEFINE_ACTION_MACRO load_RR#VRNP_var BEGIN
   END
 END
 
-//Load UTF8-encoded tra files if the game is BGEE
-DEFINE_ACTION_MACRO bgee_language BEGIN
-  ACTION_IF GAME_IS ~bgee bg2ee iwdee~ BEGIN
-    LOAD_TRA ~rr/tra/bgee/english/game.tra~
-    LOAD_TRA ~rr/tra/bgee/%LANGUAGE%/game.tra~
-  END
-END
-
 /*
  * Canon kit names as per KIT.IDS
  */

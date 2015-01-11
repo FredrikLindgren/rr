@@ -1,0 +1,1170 @@
+//-*-coding: utf-8 -*-
+//These strings are displayed in-game and are encoded in UTF8
+
+@21 = ~Malgré la présence d'enchantements sur cette targe, elle est d'apparence quelconque et défie toute identification précise. Une telle standardisation indique probablement qu'elle provient de la milice d'une baronnie oubliée, bien qu'il soit difficile d'en être certain.
+
+PARAMETRES :
+
+Bonus à la CA : 3
+Spécial : pas de protection contre les attaques perforantes et les projectiles
+Poids : 2
+Force nécessaire : 4~
+
+@23 = ~Malgré la présence d'enchantements sur cette targe, elle est d'apparence quelconque et défie toute identification précise. Une telle standardisation indique probablement qu'elle provient de la milice d'une baronnie oubliée, bien qu'il soit difficile d'en être certain.
+
+PARAMETRES :
+
+Bonus à la CA : 4
+Spécial : pas de protection contre les attaques perforantes et les projectiles
+Poids : 2
+Force nécessaire : 4~
+
+
+@25 = ~Ce bouclier étrange semble entièrement fait de grandes feuilles durcies. La forme et la taille inhabituelles des feuilles suggèrent qu'elles viennent des anciens chênes qui poussent au plus profond de la Forêt de Mir. Un examen plus approfondi permet de découvrir de puissants enchantements druidiques émanant de la surface du bouclier. Il semblerait qu'ils augmentent légèrement le niveau de santé du porteur du bouclier, et qu'ils permettent de guérir de toute blessure plus rapidement. Chaque matin, au lever du soleil, une des feuilles luit faiblement pendant un moment. Elle peut être enlevée et plantée dans le sol tandis qu'une autre grandit instantanément pour prendre sa place. Une fois que l'incantation appropriée est prononcée, la feuille plantée croît rapidement en un puissant Tertre Rampant, dont la force et la taille semblent directement liées à la puissance du porteur du bouclier.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ +5 au maximum des points de vie
+ Le porteur régénère 1 point de vie par round
+
+Capacité spéciale :
+ Invocation d'un Tertre Rampant une fois par jour
+
+Bonus à la CA : 2
+Poids : 1
+Caractéristiques nécessaires : 12 en Sagesse et 15 en Charisme~
+
+@27 = ~Ce bouclier est fait d'un alliage d'acier noir qui fut teinté avec des soupçons de mithril et d'argent. Bien que sa surface semble être extrêmement polie, le bouclier paraît d'une manière ou d'une autre réduire la lumière plutôt que la réfléchir. Après un examen plus minutieux, on peut déceler plusieurs enchantements qui sont communément attribués au clergé de Mask. Il est probable que le seigneur des Ombres lui-même ait béni cet objet de sa main, lui procurant le pouvoir de cacher et garder ses suivants de tout danger qu'ils pouvaient rencontrer dans leur profession risquée.
+
+PARAMETRES :
+
+Capacités d’équipement :
+ Bonus de +2 à tous les jets de sauvegarde contre la mort
+ Bonus de +10% pour se cacher dans les ombres
+
+Capacité spéciale :
+ Lance invisibilité Majeure 1 fois/jour
+
+Bonus à la classe d'armure : 3
+Spécial : pas de protection contre les attaques perforantes et les projectiles
+Poids : 1
+Force nécessaire : 4~
+
+@28 = ~BRETTEUR : ce roublard est à la fois un acrobate, une fine lame et une personne d'esprit. Il incarne le charme et la grâce.
+
+Avantages :
+- Gagne un bonus de +1 à la CA tous les 5 niveaux
+- Utilise la table de progression de TAC0 du Guerrier quand il porte une arme de mêlée
+- Peut se spécialiser dans toutes les armes de mêlée utilisables par les voleurs
+- Peut acquérir le don Tornade à haut niveau.
+- Peut acquérir la capacité de Coup perspicace aux plus hauts niveaux
+
+Désavantages :
+- Pas d'attaque sournoise
+- Pas de jumelage en guerrier
+- Ne peut obtenir la capacité d'assassinat
+- Ne peut obtenir la capacité de Coup neutralisant~
+
+@29 = ~BARDE : Le barde est aussi un roublard, mais très différent du voleur. Sa force réside dans sa personnalité plaisante et charmeuse. Grâce à cela et à son ingéniosité, il peut voyager à travers le monde. Le barde est un musicien talentueux et une mine inépuisable de rumeurs, d'histoires et de contes. Tout ce qu'il croise est pour lui source d'apprentissage ; c'est un touche-à-tout, mais il ne maîtrise rien parfaitement. Bien que la plupart des bardes soient des fripouilles, leurs histoires et leurs chants sont bienvenus presque partout et inspirent souvent la confiance à ceux qui les écoutent. Un barde peut rassembler ses alliés en chantant des chansons héroïques ou en élaborant des histoires sur comment ses compagnons prendront le dessus sur leurs adversaires et gagneront la bataille. Les effets du chant du barde varient en fonction de son niveau :
+
+Niveau 1 : +1 au toucher et à tous les jets de sauvegarde, le chant augmente le moral
+Niveau 9 : +2 au toucher et à tous les jets de sauvegarde, le chant guérit de la Peur
+Niveau 18 : +3 au toucher et à tous les jets de sauvegarde, le chant immunise contre la Peur~
+
+@30 = ~MAÎTRE-LAME : Le Maître-Lame est un combattant expérimenté et un aventurier que ses capacités de barde rendent plus redoutable encore. S'il existe un moyen spectaculaire de porter ou de se servir d'une arme, un maître-lame le sait mieux que n'importe qui. Les maîtres-lames réalisent souvent des spectacles impressionnants de maîtrise et de technique, faisant tourbillonner diverses armes autour d'eux avec une précision mortelle. Les armes du maître-lame sont toujours gardées en parfaite condition et hautement polies pour obtenir des effets maximaux pendant une bataille ou un spectacle. Les maîtres-lames s'entraînent et s'exécutent régulièrement avec des armes dans les deux mains, pour finalement développer une ambidextrie totale.
+
+Avantages :
+-  Peut utiliser 'Tornade Offensive' et 'Tornade Défensive' une fois par jour tous les 4 niveaux
+-  Peut utiliser 'Démonstration Martiale' une fois par jour tous les 10 niveaux
+-  Obtient le score maximum en combat à deux armes au niveau 1
+-  Peut acquérir la capacité 'Tornade de fer' à haut niveau
+
+Désavantages :
+-  Score de Connaissance divisé par 2
+-  Score de Vol à la Tire divisé par 2
+-  Le chant de barde ne s'améliore pas avec les niveaux
+-  Les Maîtres-Lames ne peuvent obtenir la capacité spéciale 'Chant de barde amélioré'
+-  Les Maîtres-Lames ne peuvent obtenir la capacité spéciale 'Chant Persistant'
+
+Tornade Offensive :
+Cette capacité dure 24 secondes, offrant au Maître-Lame +2 au toucher, +2 aux dégâts, et une attaque supplémentaire. Par ailleurs, toutes les attaques font le maximum de dégâts pendant ce laps de temps.
+
+Tornade Défensive :
+Cette capacité dure 24 secondes, le cloue au sol mais lui donne -1 à la CA par niveau. Ce bonus de classe d'armure ne peut descendre en dessous de -10.
+
+Démonstration Martiale :
+En faisant tournoyer une arme de mêlée ou de jet autour de lui-même, un Maître-Lame peut affecter le moral et le courage des autres. Une telle démonstration  d'habileté, de précision et de grâce mortelle baisse le moral des adversaires (à moins qu’ils ne réussissent un jet de sauvegarde contre les sorts) tout en  inspirant les alliés, leurs octroyant un bonus de +1 à leurs jets d’attaque. La démonstration doit durer un round entier sans interruption. Pendant ce temps,  toute attaque réussie contre le Maître-Lame ou tout jet de sauvegarde raté par celui-ci interrompt la démonstration. Démonstration Martiale est une capacité surnaturelle, et elle ignore donc complètement la résistance magique des créatures visées. Les  morts-vivants, les golems, les limons, les animaux et les créatures démoniaques ne sont pas affectés par cette capacité. De plus, elle n'affecte pas non plus les créatures possédant un nombre de dés de vie supérieur au niveau du Maître-Lame, tout comme les créatures disposant de plus de 20 DV. Quelqu'un venant d'assister à la Démonstration Martiale ne peut être à nouveau impressionné, du moins pendant un certain temps. L'efficacité de cette capacité ainsi que sa  durée augmentent avec le niveau du Maître-Lame. Le bonus aux jets d'attaque des alliés, ainsi que les pénalités de jets de sauvegarde et d'attaque des  ennemis augmentent d'un point tous les dix niveaux du Maître-Lame. Les effets de la Démonstration Martiale durent pendant un round par niveau du Maître-Lame.~
+
+@32 = ~BOUFFON : Ce barde est versé dans les secrets du rire et du ridicule, et utilise ses capacités pour distraire, troubler et hypnotiser ses ennemis, en cabriolant comme un fou pendant le combat. Bien des sages pensent que les Bouffons vivent en permanence à la limite de la folie. Il est bien connu qu'ils ont grand  besoin d'attention et ne se sentent à l'aise que lorsqu'ils sont le centre du monde. Tous les bouffons sont d'alignement chaotique, car aucun esprit pétri de  loi et d'ordre pourrait supporter une personnalité aussi étrange. Grâce à leur style de combat particulier, ils tendent à éviter les grandes armes ou difficiles à manier.
+
+Avantages :
+- Gagne le Chant du Bouffon au niveau 1. Cette capacité s'améliore aux niveaux 9 et 18
+- Gagne la Chance du Fou et Esprit Chaotique comme capacités passives au niveau 1
+
+Désavantages :
+- Les bouffons ne peuvent être compétents que dans les armes utilisables par un voleur
+- Doivent être d'alignement chaotique
+- Le chant de bataille n'aide pas les alliés.
+
+Chant du bouffon :
+Un chant de bouffon n'aide pas les alliés. Au lieu de cela, il distrait les ennemis à portée d'oreille. Les effets du chant du bouffon s'améliorent à mesure que le niveau du bouffon augmente.
+
+Niveau 1 : les ennemis doivent réussir un jet de sauvegarde contre les sorts ou devenir distraits (bonus de +4 au jet de sauvegarde)
+Niveau 9 : les ennemis doivent réussir un jet de sauvegarde contre les sorts ou devenir distraits (bonus de +2 au jet de sauvegarde) et confus (bonus de +4 au jet de sauvegarde)
+Niveau 18 : les ennemis doivent réussir un jet de sauvegarde contre les sorts ou devenir distraits (pas de bonus au jet de sauvegarde), confus (bonus de +2 au jet de sauvegarde),  et hypnotisés (bonus de +4 au jet de sauvegarde).
+
+Un ennemi distrait a 20% de chance d'échouer une incantation de sortilège et souffre d'une pénalité de 2 au TAC0 et à la CA. Un ennemi confus devient berserk et attaque la créature la plus proche, reste fixe et bafouille, ou erre sans but. Un ennemi hypnotisé voit ses pensées interrompues à un tel point qu'il est incapable de prendre une décision rationnelle tant qu'il entend le chant du bouffon qui le neutralise. Cependant, même dans un tel état, les ennemis peuvent toujours percevoir le danger à un niveau subconscient, et toute action hostile portée contre eux brise automatiquement cet effet. Le chant de bouffon n'a aucun effet sur les créatures sans esprit telles que les golems, les squelettes, les zombies et les gelées.
+
+Chance du Fou :
+-  La survie de la plupart des bouffons en toute situation est surprenante. Ils sont imprudents jusqu'à la stupidité, et sujets à des décisions fantasques.  Peu de gens se rendent compte que c'est bel et bien la chance des fous qui a sauvé la vie de plus d’un bouffon. La Chance du Fou ajoute +1 à la classe d'armure du bouffon, +1 à tous ses jets de sauvegarde et +5% à sa capacité de vol à la tire.
+
+Esprit Chaotique :
+Grâce à leur perception unique des choses, les bouffons sont naturellement immunisés aux effets de sorts, objets et capacités qui provoquent la Confusion.~
+
+@33 = ~SCALDE : Ce barde nordique est aussi un guerrier fort, compétent et vertueux. Ses chants sont des sagas racontant des batailles et des hauts faits  auxquels le scalde dévoue sa vie. Les scaldes sont honorés et respectés en tant que grands guerriers-poètes qui mémorisent chaque raid et chaque  bataille, les écrivant sous forme de poésie. Les sortilèges sont presque inconnus dans la société des scaldes et sont considérés avec méfiance en toute circonstance. Utiliser la magie est légèrement plus difficile pour un scalde et lui demande davantage de temps et d'efforts.
+
+Avantages :
+-  Gagne le chant du scalde au niveau 1. Cette capacité s'améliore aux niveaux 9 et 18.
+-  +1 au toucher et aux dégâts avec toutes les armes au niveau 1.
+
+Désavantages :
+- Score de Vol à la Tire divisé par 4
+- Temps d'incantation augmenté de 1
+
+Chant du Scalde :
+En chantant un chant de guerre, un Scalde peut inspirer ses alliés tandis qu'ils se rendent au combat. Chanter peut élever les esprits, apaiser les peurs face au danger, concentrer l'attention des gens vers le combat et emplir les amis du sentiment d'être immortel. Les effets du chant s'améliorent lorsque le scalde gagne des niveaux.
+
+Niveau 1 : donne aux alliés un bonus de +2 au toucher, +2 aux dégâts, -2 à la classe d'armure, et immunise contre la Peur.
+Niveau 9 : donne aux alliés un bonus de +3 au toucher, +3 aux dégâts, -3 à la classe d'armure, et immunise contre la Peur et la Confusion.
+Niveau 18 : donne aux alliés un bonus de +4 au toucher, +4 aux dégâts, -4 à la classe d'armure, et immunise contre la Peur, l'Etourdissement et la  Confusion~
+
+@35 = ~ASSASSIN : il s'agit d'un tueur spécialisé dans le meurtre discret et efficace, et qui sait exploiter au mieux la prudence et la surprise. Son entraînement en anatomie, en furtivité et dans les poisons permet à un assassin de réaliser des missions mortelles avec une précision terrifiante. Un assassin rusé peut ne jamais être vu par sa victime.
+
+Avantages :
+- Débute avec un multiplicateur d'attaque sournoise de x3.
+- Le multiplicateur d'attaque sournoise peut atteindre x7 au lieu de x5.
+- Peut utiliser l'Arme empoisonnée une fois par jour au niveau 1, et une fois de plus tous les 4 niveaux supplémentaires.
+- Acquiert la capacité d'Expertise en poisons au niveau 8.  Cette capacité s'améliore tous les 8 niveaux supplémentaires.
+- Peut utiliser Attaque mortelle une fois par jour au niveau 16 et une fois de plus tous les 8 niveaux supplémentaires.
+
+Désavantages :
+- Seulement 15 % de compétences de voleur à distribuer à chaque niveau.
+- Doit être d'alignement neutre ou mauvais.
+
+Arme empoisonnée :
+À cause des nécessités de sa profession, un assassin, tôt dans sa carrière, acquiert l'habitude de recouvrir ses armes d'un poison. Toute arme préparée de la sorte infligera 1d3 points de dégâts de poison supplémentaires lors du contact. De plus, à moins qu'un jet de sauvegarde contre le poison ne soit réussi, le poison sera injecté dans la circulation sanguine de la victime, lui infligeant 1 point de dégât supplémentaire par niveau de l'assassin (jusqu'à un maximum de 20). La pellicule de poison s'évapore au bout de 5 rounds. Les golems, les élémentaires, les gelées et les morts-vivants ne peuvent être empoisonnés.
+
+Expertise en poisons :
+À travers l'entraînement et l'expérience, un assassin apprend peu à peu à utiliser du poison plus efficacement. De plus, à cause de son exposition constante au poison, un assassin y devient progressivement moins sensible. Chaque fois que la capacité est apprise, l'assassin gagne un bonus permanent de +1 à ses jets de sauvegarde contre le poison. De plus, le niveau du jet de sauvegarde contre le poison pour éviter les effets de l'Arme empoisonnée est augmenté de 1.
+
+Attaque mortelle :
+En étudiant intensément les points faibles de sa victime, un assassin peut concentrer tous ses talents et prouesses en une seule attaque mortelle. L'attaque suivante devient automatiquement un coup critique, et la cible doit réussir un jet de sauvegarde contre la mort pour ne pas être instantanément tuée. Lorsque l'expérience de l'assassin augmente, l'efficacité de son Attaque mortelle s'améliore. La victime a un malus de -1 au niveau 24, de -2 au niveau 32 et de -3 au niveau 40. Les golems, les élémentaires, les gelées et les morts-vivants ne peuvent être tués par une Attaque mortelle.~
+
+@53 = ~La dague de venin est l'une des armes favorites des assassins des Royaumes. Celle-ci a été créée pour les Voleurs de l'Ombre d'Amn. Chaque fois qu'elle porte un coup, elle diffuse dans l'organisme de la victime un terrible poison agissant très rapidement. Un jet de sauvegarde contre la mort annule cet effet.
+
+PARAMETRES :
+
+Capacité de combat :
+ 15 points de dégâts supplémentaires dûs au poison (1 point par seconde) à chaque coup, jet de sauvegarde contre la mort pour annuler
+
+TAC0 : +2
+Dégâts : 1D4 +2
+Poids : 2
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main~
+
+@54 = ~CHASSEUR DE PRIMES :
+C'est un chasseur d'hommes, spécialisé dans la traque et la capture de proies, que ce soit pour le compte d' une autorité ou pour des maîtres du crime. À cause de la fréquente nécessité de ramener sa proie vivante, un Chasseur de Primes s'en remet souvent aux substances alchimiques qui peuvent neutraliser ou affaiblir ses victimes. Sa capacité à poser des pièges est également meilleure que celle du commun des voleurs.
+
+Avantages :
+- Gagne un bonus de +15 % à la capacité de pose de pièges au premier niveau.
+- Peut utiliser Toxine Paralysante une fois par jour au premier niveau et une de plus tous les 10 niveaux.
+- Peut disposer des Pièges Alchimiques en sus des pièges classiques.
+- Acquiert le talent d'Expertise Alchimique au niveau 10. Cette capacité s'améliore tous les 10 niveaux.
+- Peut acquérir la capacité de Pistage aux plus hauts niveaux.
+
+Désavantages :
+- Ne peut distribuer que 20% par niveau dans ses talents de voleur
+
+Toxine Paralysante :
+Le Chasseur de Primes a une connaissance étroite de l'alchimie et de l'herboristerie, ce qui lui permet de créer une substance qui provoque de graves pertes des fonctions musculaires lorsqu'elle est injectée dans la circulation sanguine. Cette toxine paralysante est un liquide transparent et inodore qui peut facilement être appliqué sur les armes sans craindre de détection. Un coup porté par toute arme couverte de cette substance oblige la cible à réussir un jet de sauvegarde contre la paralysie, sans quoi, elle se retrouve paralysée pendant un round tous les 10 niveaux du Chasseur de Primes. Cependant, la toxine s'évapore rapidement lorsqu'elle est exposée à l'air, rendant l'enduit inefficace au bout d'un seul round. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés à la Toxine Paralysante.
+
+Pièges Alchimiques :
+Combinant sa capacité supérieure de pose de pièges à ses connaissances alchimiques, un Chasseur de Primes peut créer des pièges principalement destinés à neutraliser ses adversaires plutôt qu'à les tuer directement. Les effets du piège varient en fonction du niveau du Chasseur de Primes, mais durent toujours 5 rounds et peuvent être annulés par un jet de sauvegarde contre les souffles réussi :
+
+1er : le piège inflige 2D4 points de dégâts assommants et éblouit la victime
+6e : le piège inflige 4D4 points de dégâts assommants et ralentit la victime
+11e : le piège inflige 6D4 points de dégâts assommants et enchevêtre la victime
+16e : le piège inflige 8D4 points de dégâts assommants et aveugle la victime
+21e : le piège inflige 10D4 points de dégâts assommants et rend la victime inconsciente
+
+Note : les dégâts assommants ne sont pas mortels et rendront la cible inconsciente si ses points de vie tombent sous 0, au lieu de la tuer. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés aux dégâts assommants.
+
+Expertise Alchimique :
+À travers l'entraînement et l'expérience, un Chasseur de Primes apprend progressivement à utiliser des substances alchimiques de manière plus efficace. Chaque fois que la capacité est acquise, le niveau des jets de sauvegarde pour contrer les effets de la Toxine Paralysante et des Pièges Alchimiques est augmenté de 1.~
+
+@57 = ~La Lyre de Progression fut créée par un barde, Sédini Paletto, qui enseignait la musique à de jeunes bardes en des temps difficiles. Cet instrument, dont il ne se séparait jamais, lui permettait de repousser ceux qui les attaquaient, ses élèves et lui. A l'automne de sa vie, il donna la lyre à son meilleur disciple, Galwen Alaman, qui enseigna à son tour quelques années durant avant de devenir aventurier. On pense qu'il a perdu la lyre dans un marais après l'avoir accidentellement laissée tomber.
+
+PARAMETRES :
+
+Quand un barde la coince sous son bras gauche, cette lyre lui permet de mémoriser 2 sorts supplémentaires du 2e niveau et 1 sort supplémentaire du 3e niveau.~
+
+@59 = ~On raconte qu’une astucieuse prêtresse d’Aurile créa des douzaines de ces fléchettes de manière à ce que les gardes de son temple aient toujours une arme de dernier recours à portée de main. Une fléchette semblait parfaitement convenir à cet usage, étant petite et facilement dissimulable. Des enchantements mineurs causant des brûlures de froid et provoquant le retour de la fléchette dans la main du lanceur après avoir frappé furent ajoutés. En général, on rencontre rarement de telles armes en dehors des temples d’Aurile, qui se situent habituellement sur les pics enneigés. Récemment cependant, des marchands de la région des Dix Cités ont acquis de manière suspecte de grandes quantités de ces fléchettes auprès de groupes d'aventuriers locaux.
+
+PARAMETRES :
+
+Capacités de combat :
+ la fléchette revient dans la main du lanceur après avoir été lancée
+ 5% de chance qu'à chaque coup, la cible soit ralentie pour 1 round
+
+TAC0 : +1
+Dégâts : 1D3 +1, +1 dégâts de froid
+Type de dégâts : projectile (perforant)
+Poids : 0
+Facteur de vitesse : 1
+Type de compétence : fléchette
+Type : arme à 1 main~
+
+@61 = ~Lamedombre a été forgée pour devenir l'instrument préféré des assassins. Elle est recherchée par tous ceux qui aiment régler leurs différends par la violence, et ses propriétaires ne la conservent généralement pas longtemps. Dans les mains de n'importe quel personnage, cette épée frappe comme une arme magique standard +3, mais dans les mains d'un voleur, elle devient particulièrement puissante, le gratifiant d'un bonus supplémentaire pour toucher et augmentant son multiplicateur d'attaque sournoise.
+
+PARAMETRES :
+
+Capacités d'équipement (voleurs uniquement) :
+ Augmente de 1 le multiplicateur d'attaque sournoise
+ Confère un bonus de +2 au TAC0
+
+TAC0 : +3
+Dégâts : 1D6 +3
+Type de dégâts : perforant
+Poids : 3
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@73 = ~Cette potion augmente les perceptions sensorielles de celui qui la boit, ce qui permet de réaliser plus efficacement des tâches délicates. Elle rend les capacités des voleurs plus efficaces. Seuls les voleurs peuvent tirer profit de cette potion.
+
+PARAMETRES :
+
+Crocheter les serrures : bonus de 10%
+Détecter les pièges : bonus de 20%
+Détecter les illusions : bonus de 25%
+
+Durée : 8 tours~
+
+@74 = ~Cette potion octroie un bonus temporaire aux compétences de voleur ainsi qu’aux points de vie maximum si le personnage qui la boit est d’un niveau inférieur à 13. Le bonus diminue avec les niveaux et disparaît totalement une fois que le voleur en question maîtrise de lui-même l’art de la roublardise.
+
+PARAMETRES :
+
+Niveau 1-3 : +20% aux compétences de voleur, 5D6 points de vie temporaires gagnés
+
+Niveau 4-6 : +16% aux compétences de voleur, 4D6+1 points de vie temporaires gagnés
+
+Niveau 7-9 : +12% aux compétences de voleur, 3D6+2 points de vie temporaires gagnés
+
+Niveau 10-12 : +8% aux compétences de voleur, 2D6+3 points de vie temporaires gagnés
+
+Niveau 13 et plus : la potion reste sans effet
+
+Durée : 3 tours~
+
+@79 = ~Cet instrument conjuré par la magie rivalise avec les oeuvres des plus grands artisans de Féérune. Néanmoins, vue sous un certain angle, la flûte semble presque transparente, comme si elle était aussi matérielle que les sons produits par des notes de musique. Lorsqu'elle est utilisée par un barde exceptionnellement talentueux, cette flûte permet de briser les enchantements, ce qui annule les effets de tous les sorts et autres capacités magiques (mais pas psioniques) appartenant à l'école d'Enchantement, qu'ils soient bénéfiques ou non (coût : trois charges). De plus, elle peut aussi reproduire n’importe quel sort profane de l’école d’Enchantement (coût : deux charges). La flûte permet enfin d'invoquer un esprit guerrier (coût : une charge).
+
+PARAMETRES :
+
+Capacité 1 :
+Effet : Rupture d’enchantement
+Portée : 10 mètres
+Durée : Instantanée
+Zone d’effet : Créature ciblée
+
+Capacité 2 :
+Effet : Réplique d’enchantement
+Portée : Spéciale
+Durée : Spéciale
+Zone d’effet : Lanceur
+
+Capacité 3 :
+Effet : Invocation d’esprit guerrier
+Portée : Spéciale
+Durée : 10 rounds
+Zone d’effet : Invocateur~
+
+@111 = ~Il s'agit de la targe de Kiel le Tueur de Légions, fils aîné de Durlag Tueur-de-Trolls et prince du Clan de la tour funeste de son père. Sa légèreté et son excellente fabrication augmentent d'un point la dextérité de celui qui la porte.
+
+PARAMETRES :
+
+Capacité d’équipement :
+    Dextérité : bonus de +1
+
+Bonus de Classe d’Armure : 2
+Spécial : pas de protection contre les armes à projectiles
+Poids : 2
+Force nécessaire : 4~
+
+@113 = ~Confectionné par un inventeur gnome excentrique, cet arc court composite a été fabriqué afin d'imprégner n’importe quelle flèche tirée par ses soins d’une petite étincelle de foudre. Dès lors qu’une telle flèche touche sa cible, il y a une faible chance pour qu’elle crée un champ de force électrique autour de cette dernière. Jusqu’à dissipation, ce champ attirera vers la cible tout projectile tiré par la suite.
+
+PARAMÈTRES :
+
+Capacité de combat :
+ 10% des attaques réussies infligent à la cible 1D3 dégâts électriques supplémentaires ainsi qu'un malus de 2 à la CA contre les projectiles durant les trois prochains rounds
+
+TAC0 : +2
+Dégâts : +3
+Poids : 2
+Facteur de vitesse : 4
+Type de compétence : arc court
+Type : arme à 2 mains
+Force nécessaire : 16~
+
+@115 = ~Parfois appelée assomoir, une matraque est un sac en cuir rempli de sable, de billes de plomb, de piécettes ou de tout autre matériau lourd. Elle peut être utilisée pour rendre discrètement inconsciente une victime en lui administrant un coup sur la tête ou sur la nuque. La matraque convient davantage à un environnement urbain qu'aux grands extérieurs ou à l’exploration de donjons. Elle est principalement utilisée dans les situations où il est nécessaire de capturer quelqu'un sans lui infliger de blessure permanente, bien que les voleurs aiment s’en servir à des fins douteuses qui leur sont propres.
+
+PARAMETRES :
+
+Capacité de combat :
+ Lorsqu’un coup de matraque devrait porter la victime à 0 PV ou moins, celle-ci est, à la place, rendue inconsciente.
+
+Dégâts : 1D2
+Type de dégâts : contondant (non-létaux)
+Poids : 1
+Facteur de vitesse : 2
+Type de competence : gourdin
+Type : arme à 1 main
+Force nécessaire : 3~
+
+@117 = ~Cette Pierre Ionique est de forme sphérique et de couleur rouge foncé. Une fois activée, elle améliore la coordination des yeux et des mains, les réflexes et l'équilibre, ce qui en fait un accessoire particulièrement prisé chez les voleurs.
+
+PARAMETRES :
+
+Capacité d’équipement :
+ Dextérité : bonus de +1
+
+Bonus de Classe d'Armure : aucun
+Poids : 0~
+
+@119 = ~Cette Pierre Ionique d’un bleu léger semble avoir été soigneusement polie pour passer d’une texture très rugueuse à sa forme actuelle. La rumeur veut qu’elle ait été à l’origine un morceau de la pierre sensorielle utilisée par Mirdival l’Astucieux, un magicien de cour calimshite qui a passé sa vie entière à rechercher et à confectionner des artefacts pour son Pacha. Durant ses nombreux voyages, le magicien étudia et se familiarisa avec un grand nombre d’objets enchantés ou mystiques. Soucieux de ne pas oublier d’importants détails, et perplexe quand à la nature fragile du papier, Mirdival entreposait régulièrement ses souvenirs dans une pierre sensorielle acquise auprès d’un marchand genasi de feu qui voyageait dans les plans. Malheureusement, une de ses expériences tourna mal, et sa tour fut réduite en poussière par l’explosion qui s’ensuivit. Durant l'effondrement, la pierre sensorielle explosa en de nombreux fragments. Certains possèdent encore une fraction des souvenirs du magicien.
+
+PARAMETRES :
+
+Capacité d’équipement :
+  Connaissances : bonus de +20
+
+Bonus de Classe d’Armure : Aucun
+Poids : 0~
+
+@121 = ~L’hiver 1228 fut particulièrement rude pour les habitats halfelings proches de la forêt de Shalebrook. Les dernières années avaient été difficiles, et la nourriture se faisait très rare. La situation empira en raison de raids menés par les trolls, devenus plus fréquents à cause de la famine qui se répandait dans toute la région. Bien qu’inférieurs en nombre, leur force et leur endurance permirent aux trolls de s’emparer sans pitié des toutes dernières réserves des halfelings. Cependant, la nourriture frugale du petit peuple ne put apaiser leur immense appétit et les trolls commencèrent bientôt à se nourrir des halfelings les plus gras. Indigné, le chef du campement halfeling tenta d’appeler du secours, mais comme les routes principales étaient recouvertes de neige et que les autres sentiers passaient par la forêt infestée de trolls, aucune aide immédiate ne put leur parvenir. Un matin, après que les trolls aient pris sa propre soeur, un jeune voleur nommé Lars Pied-Léger fut gagné par le désespoir. La nuit suivante, il rassembla tout son courage et trouva le moyen de se faufiler à travers la forêt remplie de trolls. A bout de force, il parvint à atteindre un campement nain des environs. Là, il supplia les nains de l’aider, mais ceux-ci avaient leurs propres problèmes avec une invasion d’orques, et ils ne purent lui offrir qu’une partie de leurs armes et provisions excédentaires. Anéanti, Lars empoigna la seule arme qu’il sache manier, une dague, et s’en alla. Dame Tymora lui sourit ce jour-là, car il avait pris sans le savoir une arme qui allait bientôt lui sauver la vie. Comme il se hâtait de rentrer à travers la forêt, le reniflement sourd des trolls le guida jusqu’à la grotte où ils dormaient. La vue d’os de halfelings rongés, dispersés tout autour de l’entrée, était plus qu’il n’en pouvait supporter. Se précipitant à l’aveuglette à l’intérieur, Lars poignarda vicieusement le troll endormi le plus proche avec la dague des nains, sans plus se soucier de sa propre vie, ses pensées allant à sa soeur bien-aimée. A sa plus grande surprise, le troll qu’il avait frappé poussa un cri d’agonie, et son corps hideux commença à fondre et à se dissoudre en une flaque visqueuse. Le reste des trolls se réveilla, mais la vue de leur camarade en train de fondre et la forte odeur d’acide leur firent une telle peur qu’ils s’enfuirent aussitôt, pour ne jamais revenir dans la forêt de Shalebrook. Encore choqué, Lars retrouva lentement ses moyens et délivra sa soeur et les autres halfelings capturés. Pour finir, Lars Pied Léger fut proclamé sauveur de Shalebrook, et son arme reçut le nom de Fond-Troll.
+
+PARAMETRES :
+
+Capacité de combat :
+ 15% de chance d'infliger 15 points de dégâts supplémentaires à tout troll frappé par la lame
+
+TAC0 : +2 (+4 contre les trolls)
+Dégâts : 1D4, +2 points de dégâts acide (+4 points de dégâts acide contre les trolls)
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 3~
+
+@123 = ~Cette dague fut forgée à partir d’argent pur et bénie par Séhanine Archelune, la déesse elfe de la lune. Sa lame est particulièrement efficace contre les vampires, comme si elle avait été enchantée pour canaliser de petites parcelles de pouvoir issues du Plan Positif. Chaque jour, l’arme amasse une petite quantité d'énergie positive pour protéger son porteur pendant quelques temps des griffes draineuses d’âme des vampires. En outre, les vampires frappés par la dague sont parfois étourdis par contact avec son énergie résiduelle.
+
+PARAMETRES :
+
+Capacité de combat :
+ 15% de chance d'étourdir pour 2 rounds tout vampire frappé de la lame
+
+Capacité spéciale :
+ Lance 'Protection contre le Plan Négatif' 3 fois par jour
+
+TAC0 : +3 (+5 contre les vampires)
+Dégâts : 1D4 +3 (+5 contre les vampires)
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 3~
+
+@125 = ~A première vue, cette dague grossièrement travaillée et couverte de rouille semble un choix d’armement très bizarre. Seules les vieilles runes gobelines gravées le long de la lame révèlent une partie de son pouvoir et de son histoire. Apparemment, cette arme était à l’origine l’instrument de torture d’un puissant chaman appelé Shamuk, qui aspirait par-dessus tout à la connaissance de la sorcellerie la plus poussée. La tribu de Shamuk tendait souvent des  embuscades à des mages isolés, profitant de leur sommeil, et les amenait à son chef pour lui permettre de leur dérober leurs secrets. Au cours des interrogatoires, Shamuk frappait méticuleusement ses victimes jusqu’à ce qu’elles soient affaiblies à cause des lésions magiques infligées par la lame ou qu’elles commencent à délirer à cause du sang perdu. Il devenait alors facile pour  Shamuk de soutirer les connaissances qu’il recherchait en s’immisçant dans l’esprit du mage épuisé. Quand il crut avoir amassé suffisamment de pouvoir, Shamuk mena sa tribu dans un raid contre un campement gnome des environs. Cependant, la chance ne fut pas de son côté ce jour-là et lui et l’ensemble de sa cohorte furent brûlés vifs lorsqu’il tenta de lancer sa première boule de feu.
+
+PARAMETRES :
+
+Capacités de combat :
+ 33% de chance que la cible doive réussir un jet de sauvegarde contre la mort ou subir un des effets suivants :
+   - fièvre crasseuse : la cible perd deux points de constitution et un point de dextérité pour un tour
+   - froid du diable : la cible perd deux points de force et est ralentie pendant un tour
+   - pourriture de la momie : la cible reçoit 20 points de dégâts (2 par round)
+
+TAC0 : bonus de +3
+Dégâts : 1D4 +3
+Type de dégâts : perforant
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 3~
+
+@127 = ~Cette lame appartenait autrefois à  Lao-Tzu, un samouraï des provinces méridionales de Kara-Tur. En finissant son entraînement, ce guerrier avait fait le serment de parvenir à libérer ses terres des bandits et brigands, plaie de son peuple durant les dix années précédentes. Cependant, cette tâche se révéla très difficile, car ses ennemis étaient rusés et n’agissaient que tard dans la nuit, en portant toujours des capuchons et des masques. Lao-Tzu comprit que ces bandits n’avaient pas d’honneur et pouvaient bien se cacher parmi le petit peuple qu’il aspirait à protéger, mais il n’osait pas agir sous le coup de l’impulsion car son code de conduite ne lui permettait pas d’accuser à tort un innocent. Pour l’aider dans sa tâche, Lao-Tzu alla trouver un Grand Maître Wu Jen et lui demanda d’enchanter son wakizashi pour lui donner la capacité de déceler les véritables intentions des gens et de frapper avec force les personnes dénuées d’honneur. Le samouraï organisa une fête pour le peuple afin de remonter le moral des personnes dévalisées et de faire sortir les bandits au grand jour. Le peuple répondit à son appel et Lao-tzu s’en réjouit. En utilisant le pouvoir de sa nouvelle arme, il parvint à distinguer les bandits fourbes des simples paysans et à les faire asseoir dans une salle à manger séparée. Une fois qu’ils furent tous rassemblés, le samouraï barra la seule sortie et se battit seul contre une douzaine de voleurs. Après une brève bataille, Lao-Tzu se révéla victorieux, mais son honneur ne l’autorisait pas à tuer, même des ennemis de si peu de valeur. Au lieu de cela, le samouraï exila les bandits hors de la province et son peuple connut enfin la paix.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ +1 à la CA
+
+Capacité spéciale :
+ Lance 'Détection de l'Alignement' 2 fois par jour
+
+TAC0 : bonus de +2, +4 contre les créatures d'alignement Chaotique
+Dégâts : 1D8 +2, +4 contre les créatures d'alignement Chaotique
+Type de dégâts : perforant
+Poids : 2
+Facteur de vitesse : 1
+Type de compétence : Cimeterre/Wakizashi/Ninja-To
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@129 = ~Les professions qu’exercent les ninjas sont très variées. Certains sont des assassins talentueux, tandis que d’autres excellent dans l’art du camouflage et du vol. La propriétaire de cette lame appartenait indubitablement au second groupe. Son véritable nom reste un mystère et personne n’a jamais vu son visage ; pourtant, la ninja appelée “ Le Chat noir ” était une voleuse célèbre bien connue pour sa capacité à “ acquérir ” des objets rares et de valeur auprès des cercles nobles de Kara-Tur. Il n’était pas inhabituel pour elle de voler un précieux joyau dans la collection d’un noble pour ensuite le revendre à un autre riche aristocrate et enfin de s’en emparer de nouveau simplement pour l’excitation que cela lui procurait. Elle fut pourchassée pour ses méfaits par plusieurs guerriers célèbres de Kara-Tur mais un subtil mélange de chance et d’extraordinaires prouesses acrobatiques lui permirent toujours, d’une manière ou d’une autre, d'échapper à ses poursuivants. D’après la légende, elle finit par tomber amoureuse d’un samouraï particulièrement tenace et quitta son pays et sa vie d’autrefois pour vivre avec lui.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ Bonus de +1 à la dextérité
+ Bonus de +1 à la chance
+
+TAC0 : bonus de +2
+Dégâts : 1D8 +2
+Type de dégâts : tranchant
+Poids : 4
+Facteur de vitesse : 2
+Type de compétence : Cimeterre/Wakizashi/Ninja-To
+Type : arme à 1 main
+Force nécessaire : 6~
+
+@131 = ~De sombres runes orques sont incrustées dans ce gourdin. C’est un vestige de la dernière guerre opposant les orques et les mages du Turmish. Quand les tribus orques commencèrent à faire des raids sur leur cité, les mages créèrent des golems terriblement puissants afin de les protéger. Sentant que la force brute de ses guerriers ne suffisait pas, le grand chef orque Gull-Nar ordonna à ses chamans de forger une arme qui lui permettrait de réduire les “ statues vivantes ” en tas de gravats. Ses chamans eurent recours aux grimoires d’une tour de mage qu’ils avaient pillée afin d’enchanter l’arme favorite de leur chef, un énorme gourdin de guerre. Gull-Nar en fut si satisfait qu’il décida de conduire en personne le raid suivant, réduisant en morceaux les golems au fur et à mesure qu’il progressait en direction du coeur de la ville. Alors que la victoire était proche, un mage isolé habillé de noir surgit soudain de nulle part et lança un puissant sort qui poussa les orques enragés à se tourner les uns contre les autres. Ils furent décimés en quelques minutes et Gull-Nar lui-même fut tué par ses plus fidèles guerriers.
+
+PARAMETRES :
+
+Capacité de combat :
+ 10% de chance à chaque coup de briser instantanément les golems de pierre, d'argile et de sable
+
+TAC0 : +2 (+4 contre les golems)
+Dégâts : 1D6 +2 (+4 contre les golems)
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 2
+Type de compétence : gourdin
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@133 = ~Ce bouclier de cérémonie est orné de runes généralement associées à Gaerdal Maindargent, dieu gnome de la vigilance qui est aussi la divinité la plus guerrière du panthéon de cette race. Sa nature sérieuse lui vaut un profond respect. Il apprend aux gnomes à se défendre, lorsqu’ils affrontent des créatures plus grandes et plus puissantes, en tirant profit de leur petite taille ainsi que de leurs capacités naturelles. Gaerdal possède une communauté de fidèles petite mais très dévouée parmi les guerriers gnomes et plus généralement parmi ceux chargés de défendre les foyers gnomes contre les menaces extérieures, aussi a-t-il réussi à gagner le respect du Peuple Oublié dans sa majorité.
+
+PARAMETRES :
+
+Capacité d’équipement :
+  Le porteur reçoit un bonus de +2 à la Classe d’Armure contre les humanoïdes géants.
+
+Bonus à la classe d'armure : 2
+Spécial : pas de protection contre les attaques perforantes ou les projectiles
+Poids :  2
+Force nécessaire : 4~
+
+@135 = ~Ces targes consacrées sont souvent portées par les hauts prêtres de Moradin, le dieu créateur de la race naine, ou par les gardes de ses temples. Le Forgeur d’Ames représente la force et la volonté incarnées, aussi ses armes, armures, et outils sont-elles des extensions de son incarnation. Les enchantements placés sur ce bouclier offriront au porteur la bénédiction de Moradin, laquelle guide l’arme de ce dernier pour frapper droit au but, et le protège des blessures en cas de déroute. Nombre de ces boucliers furent perdus lors de la bataille de la Faille de Dorn, lorsque les envahisseurs orques pillèrent puis rasèrent la mythique forteresse naine.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ Bénédiction
+
+Capacité spéciale :
+ Lance Sanctuaire 1 fois par jour
+
+Classe d'armure : bonus de +3
+Spécial : pas de protection contre les attaques perforantes et les projectiles
+Poids : 2
+Force nécessaire : 4~
+
+@137 = ~Les étuis de cette ceinture contiennent une série d'outils magistralement façonnés, qui sont couramment employés par les serruriers et les horlogers. Cependant, de tels outils peuvent aisément être utilisés à des fins plus viles, rendant ces objets très populaires parmi les voleurs. Cette ceinture, en particulier, possède la lettre "G" gravée sur sa boucle.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +10% au crochetage de serrures
+ +10% au désamorçage des pièges
+ +10% à la pose des pièges
+
+Poids : 2~
+
+@139 = ~Akram Maluzar était un infâme magicien du Zhentarim, obsédé par les secrets de l'ancienne cité de Néthéril. Durant ses nombreux voyages au travers du Grand Désert d'Anauroch, il fouilla de fond en comble un ensemble de grottes qui étaient, comme il l'avait deviné, reliées à une cité néthérisse enfouie. Son enthousiasme fut cependant refroidi lorsqu'il découvrit que les ruines étaient remplies de pièges, bardées d'illusions et barrées de portes solidement verrouillées. Contourner ces obstacles était au-dessus des compétences d'Akram, aussi fut-il gagné par le désespoir. Ne désirant partager la puissance des Néthérisses avec quiconque, Akram choisit de voler les talents qui lui faisaient défaut. Leur promettant un partage avantageux, Akram loua les talents de trois voleurs calimshites exceptionnels – un expert en serrures, un maître des pièges et un éclaireur au regard d'aigle. Au lieu de les envoyer dans l'ancienne cité, Akram trompa les voleurs et emprisonna leurs âmes dans une pierre ionique de saphir, la dotant ainsi des dons qu'il recherchait. L’opération fonctionna, et au début, il fut capable de fouiller profondément dans les ruines sans rencontrer d’obstacle. Cependant, les âmes maintenues dans la pierre ionique commencèrent à se rebeller et à drainer la vigueur du magicien, dans une tentative de prendre possession de son corps. Guidé par sa soif de pouvoir, Akram attacha peu d'importance à ce fait jusqu'à ce qu'il fût trop tard. Epuisé, il s’écroula devant une bibliothèque néthérisse en ruines, activant accidentellement un piège caché qui causa un effondrement et lui coûta la vie. La pierre ionique si précieuse aux yeux d’Akram fut retrouvée plus tard par une tribu de kobolds qui la prit par erreur pour une simple gemme et l'échangea contre des vivres.
+
+Note : afin de gagner les connaissances nécessaires à l’utilisation des capacités de cet objet, le porteur doit en réalité plonger dans la conscience des âmes prisonnières. Ce processus peut être très éprouvant, et utiliser ces capacités cause progressivement une fatigue de plus en plus importante. Plus on utilise ces capacités, plus la fatigue s'accumule. Le seul moyen de ne plus ressentir cette fatigue est de dormir une nuit complète.
+
+PARAMETRES :
+
+Capacités spéciales :
+ Lance 'Détection des pièges' 3 fois par jour
+ Lance 'Déblocage' 3 fois par jour
+ Lance 'Elimination des invisibilités' 3 fois par jour
+
+Poids : 0~
+
+@141 = ~Autrefois propriété de valeur de la guilde des voleurs de Xanathar, cette cagoule d'apparence simple a été traitée par la magie dans le but d'augmenter la perspicacité et la perception de quiconque la porte. La cagoule fut temporairement perdue lors d'une attaque contre une maison de commerce d'esclaves de Xanathar, à Skullport, mais récemment, elle a refait surface à Calimport et fait son chemin jusqu'à Athkatla, via l'une des nombreuses caravanes de commerce appartenant à la compagnie mercantile Sybarr.
+
+PARAMETRES :
+
+Capacités d'équipement :
+  +15% pour détecter les pièges
+  Infravision
+  Immunité à toute forme de cécité
+
+Bonus à la classe d'armure : aucun
+Spécial : protège contre les coups critiques
+Poids : 0~
+
+@143 = ~Harpe de Greagan " L'Audience captive "
+Si cette jolie harpe est bien connue des peuples nomades de l'Est, c'est surtout pour la bassesse de son propriétaire, Greagan des Basses Collines. Celui-ci avait choisi de devenir barde, mais moins par amour des gens que par répugnance pour tout travail. Il pria un mage de sa connaissance de lui fabriquer une harpe dont la magie dissimulerait son manque total de talent artistique. Le pouvoir de cette harpe s'avéra plus puissant qu'il ne l'espérait et il profita bientôt de l'effet captivant de sa musique pour détrousser ses victimes. Greagan finit par disparaître il y a quelques années de cela, et des rumeurs évoqueraient un collège de bardes qui, chose inhabituelle, aurait recouru à la violence. La harpe fonctionne toujours, mais tout troubadour qui se respecte n'en jouerait que dans des circonstances vraiment désespérées.
+
+PARAMETRES :
+
+Capacité spéciale :
+ Lance 'Domination' 3 fois par jour
+
+Poids : 3~
+
+@145 = ~Dame Laxaella Bronshield, baronne de Tanistan, a fabriqué cette harpe pour le bouffon de sa cour, avant de l'envoyer en compagnie de ses meilleurs soldats en finir avec une récente invasion d'Ombres des roches dans la forêt de Thornwood. Au début, les soldats furent surpris qu'un bouffon les accompagnât pour cette tâche, se moquant joyeusement de son physique malingre et de son idiotie apparente, mais après avoir rencontré la première Ombre des roches, ils réalisèrent la véritable importance de son rôle. Au grand étonnement des soldats, le bouffon était totalement immunisé au terrible regard de l'Ombre des roches, qui bouleversait tour à tour les guerriers les plus éprouvés. De plus, l'étrange et lunatique son que la harpe du bouffon produisait semblait, d'une façon ou d'une autre, contrer les effets du regard du monstre, permettant au soldat affligé de recouvrir ses esprits. A la fin, l'invasion fut éradiquée sans mort et avec seulement quelques légères blessures. Sur la majeure partie de leur trajet de retour, les soldats portèrent le bouffon sur leurs épaules, chantant et louant son honneur.
+
+PARAMETRES :
+
+Capacité spéciale : dissipe la confusion 3 fois par jour
+Zone d'effet : une cible
+Poids : 3~
+
+@147 = ~Les runes incandescentes à la finition irréprochable gravées sur la garde de cette dague indiquent qu’elle a été confectionnée à Thay, peut-être à l'intention d’un membre important de la faction des Chercheurs. Bien que la lame puisse être utilisée par n’importe qui de compétent, seuls ceux versés dans l’Art parviennent à utiliser son véritable potentiel. La minuscule arme semble avoir été imprégnée d’un enchantement aiguisant l’intellect de son porteur, le rendant plus vif d’esprit et lui permettant par conséquent d’améliorer ses capacités de mémorisation de sorts profanes.
+
+PARAMETRES :
+
+Capacités d’équipement :
+ Intelligence : bonus de +1
+ Permet aux lanceurs de sorts profanes de mémoriser un sort supplémentaire de niveaux 1 et 2
+
+TAC0 : +3
+Dégâts : 1D4 +3
+Type de dégâts : perforant
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 3~
+
+@149 = ~Créé par un puissant chaman Uthgardt, ce gourdin a été spécialement enchanté pour diminuer les capacités martiales d’un adversaire. Il fut porté par le chef de clan Aukthar de la tribu du Corbeau Noir lors des nombreux affrontements entre son peuple et les hordes orques qui tentaient régulièrement d’envahir Rochecorbeau, leur tertre sacré. L’arme fut perdue au cours d’une bataille particulièrement violente lorsque les cris de guerre des guerriers provoquèrent une extraordinaire avalanche qui les balaya jusqu’au bas de la montagne.
+
+PARAMETRES :
+
+Capacité de combat :
+  25% de chance que la cible doive réussir un jet de sauvegarde contre la mort sous peine d'être fatiguée (note : les golems, les élémentaires, les gelées et les morts-vivants sont immunisés à la fatigue.)
+
+TAC0 : +1
+Dégâts : 1D6 +1
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 3
+Type de compétence : gourdin
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@151 = ~Les arcs composites sont des arcs longs ou courts dont l’armature est fabriquée à l’aide de plus d’un matériau. Cela résulte en une plus grande souplesse et permet aux flèches d’infliger davantage de dégâts. Cet arc ne peut être manié que par des personnages ayant au moins un score de 16 en Force.
+
+PARAMETRES :
+
+Dégâts : +1
+Poids : 2
+Facteur de vitesse : 6
+Type de compétence : arc court
+Type : arme à 2 mains
+Force requise : 16~
+
+@153 = ~Les arcs composites sont des arcs longs ou courts dont l’armature est fabriquée à l’aide de plus d’un matériau. Cela résulte en une plus grande souplesse et permet aux flèches d’infliger davantage de dégâts. Cet arc enchanté ne peut être manié que par des personnages ayant au moins un score de 16 en Force.
+
+PARAMETRES :
+
+TAC0 : +1
+Dégâts : +2
+Poids : 2
+Facteur de vitesse : 5
+Type de compétence : arc court
+Type : arme à 2 mains
+Force requise : 16
+Non utiisable par :
+ Druide
+ Clerc
+ Mage~
+
+@155 = ~Les arcs composites sont des arcs longs ou courts dont l’armature est fabriquée à l’aide de plus d’un matériau. Cela résulte en une plus grande souplesse et permet aux flèches d’infliger davantage de dégâts. Cet arc enchanté ne peut être manié que par des personnages ayant au moins un score de 16 en Force.
+
+PARAMETRES :
+
+TAC0 : +2
+Dégâts : +3
+Poids : 2
+Facteur de vitesse : 4
+Type de compétence : arc court
+Type : arme à 2 mains
+Force nécessaire : 16~
+
+@157 = ~Les arcs composites sont des arcs longs ou courts dont l’armature est fabriquée à l’aide de plus d’un matériau. Cela résulte en une plus grande souplesse et permet aux flèches d’infliger davantage de dégâts. Cet arc enchanté ne peut être manié que par des personnages ayant au moins un score de 16 en Force.
+
+PARAMETRES :
+
+TAC0 : +3
+Dégâts : +4
+Poids : 2
+Facteur de vitesse : 3
+Type de compétence : arc court
+Type : arme à 2 mains
+Force nécessaire : 16~
+
+@159 = ~A première vue, Voile Obscur ressemble à une simple capuche noire cachant le visage du porteur, le rendant tout à fait quelconque. Cependant, lorsque le porteur fait face à une créature qui dispose d’attaques de regard (comme un Basilic, un Vampire ou une Ombre des Roches), la capuche va automatiquement couvrir ses yeux dès lors qu’il est sur le point de croiser le regard de ladite créature, le protégeant ainsi de ses effets néfastes. Malheureusement, le porteur ne peut activer de lui-même cette capacité, aussi a-t-il plus de mal à combattre de telles créatures, malgré sa protection contre leur regard.
+
+PARAMETRES :
+
+Capacités d’équipement :
+ Se cacher dans l’ombre : +5%
+ Le porteur est immunisé aux attaques de regard
+ Le porteur souffre d’un malus de 2 au TAC0 contre les créatures utilisant des attaques de regard
+
+Bonus de Classe d’Armure : aucun
+Spécial : Protège contre les coups critiques
+Poids : 0~
+
+@201 = ~Pendant de nombreuses générations, ce bouclier fut remis à des Hauts Juges d'Amaunator sélectionnés, qui prirent sur eux la tâche de nettoyer les contrées de tous les morts-vivants. Après qu'Amaunator eut apparemment disparu et que le Fort du Soleil Éternel soit tombé, la finition dorée brillante du bouclier commença à ternir, et ses enchantements puissants se mirent à se dissiper. Finalement, l'objet, autrefois puissant, fut relégué en tant que simple décoration murale. Alors que le temps passait, le culte d'Amaunator tomba lentement en désuétude et ses suivants commencèrent à se disperser. Le bouclier fut récemment récupéré dans leur temple, au milieu de nombreuses autres reliques.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ Toute créature mort-vivante qui frappe le porteur du bouclier au corps-à-corps reçoit 1D2 points de dégâts de feu et doit réussir un jet de sauvegarde contre les sorts ou être aveuglé pour 2 rounds
+
+CA : bonus de +2
+Spécial : pas de protection contre les projectiles et les armes perforantes
+Poids : 2
+Force nécessaire : 4~
+
+@203 = ~Cette puissante amulette a été créée par l'enchanteur Célémon de Calimport en 727 CV. Il en confectionna dix sur demande avant que des rivaux jaloux ne l'assassinent et ne tentent de reproduire l’opération. Mais ses concurrents n'étaient pas aussi doués que lui, et ils furent détruits, ainsi que leur laboratoire, lors d'un essai raté. La formule disparut du même coup. Cette amulette bien particulière appartenait au guerrier-mage elfe Pelan Ventdepluie. Elle s’est perdue lorsqu'il fut tué par des géants sur les pentes de l'Epine Dorsale du Monde, aux alentours de 840 CV.
+
+PARAMETRES :
+
+Capacité spéciale :
+ Lance simultanément 'Peau de pierre' et 'Globe d'invulnérabilité mineure' 3 fois par jour~
+
+@205 = ~Ces bottes voyantes (elles sont rouges et vertes) appartenaient au roublard Elpham de Perryvin. Extrêmement doué pour le vol à la tire, Elpham se sentait obligé de narguer ses victimes après les avoir détroussées. Après avoir été attrapé à deux reprises, il investit son argent dans la création de ces bottes. Mais il trouva la mort de manière inopinée lorsqu’il s’en pris à Xain Morobdel, Sorcier Rouge de Thay connu pour son mauvais caractère. Après lui avoir subtilisé une bourse pleine de gemmes, Elpham effectua une petite gigue dans la foule en criant "Et si tu essayais de me poursuivre jusqu'au Priador, Tête d’oeuf ? Ha, ha, ha !" Xain, bouillant de colère, invoqua quatre rôdeurs invisibles et leur ordonna de tuer "le crétin aux bottes rouges et vertes".
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +1 à la CA
+ Augmente la vitesse de déplacement du porteur
+
+Poids : 4~
+
+@207 = ~Cette hache superbement ouvragée détient un enchantement d'origine inhabituelle. Immédiatement après avoir été forgée, elle fut amenée au sommet d'une haute montagne où des prêtres nains attendaient qu'une grande tempête se prépare. L'arme fut placée sur un piédestal de fer et fut peu après frappée par la foudre. Grâce aux enchantements déjà tissés dans la lame, elle absorba une partie des propriétés de l'éclair. La hache fut plus tard donnée à un capitaine nain de haut rang pour l'aider dans la bataille entre les hordes d'orques et les nains du Gouffre de Dorn. L'attaque fut une surprise complète pour les nains, puisqu'un matin un éclaireur arriva et annonça que la plus grande armée orque qu'il ait jamais vue se trouvait à quelques heures de là seulement. Avec aussi peu de temps pour se préparer, les défenses naines furent submergées, et les orques commencèrent à entrer dans le Gouffre de Dorn. Les nains furent forcés de battre en retraite dans les profondeurs de la citadelle, mais les passages clés furent démolis pour couvrir leur repli et leur permettre de gagner du temps. Malgré cette situation désespérée, ceci permit aux nains de garder le contrôle du lieu et du moment où se déroulaient les combats. Chaque bataille coûta très cher aux orques, car les nains combattaient jusqu'à la mort, mais ces derniers étaient sans cesse repoussés vers le Glacier de la Dent de Wyrm. Finalement, grâce à leur supériorité numérique, les orques parvinrent à briser les défenses des nains et à piller leurs habitations.
+
+PARAMETRES :
+
+Capacité d'équipement :
+  +20% de résistance à l'électricité
+
+Capacité de combat :
+  10% de chance, à chaque coup, d'étourdir la cible pour 1 round
+
+TAC0 : +3
+Dégâts : 1D8 +3, +1D3 points de dégâts électriques
+Type de dégâts : tranchant
+Poids : 5
+Facteur de vitesse : 4
+Type de compétence : hache
+Type : arme à 1 main~
+
+@209 = ~Un mage de bataille Zhentarim fabriqua cette lame lorsqu'il fut défié en duel, espérant qu'elle lui permettrait de triompher au corps à corps. Cette puissante épée était censée parer la plupart des coups et immobiliser l'adversaire en même temps. Malheureusement, le mage n’avait pas la moindre compétence à l'épée et il fut facilement vaincu par son ennemi.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ Bonus de +3 à la CA contre les armes tranchantes
+
+Capacité de combat :
+ 10% de chance de lancer le sort Immobilisation des Monstres, à chaque coup
+
+TAC0 : +3
+Dégâts : 1D8 +3
+Type de dégâts : tranchant
+Poids : 2
+Facteur de vitesse : 2
+Type de compétence : épée longue
+Type : arme à 1 main~
+
+@211 = ~Cette armure est entourée d’une aura de mystère et nul ne sait comment ni où elle fut créée. Tout ce que l’on sait est que son cuir fut taillé dans la peau d’un abishai, bien qu’il soit impossible de dire de quelle couleur était ce dernier, car l’armure est teinte dans un noir profond. Elle a de plus une odeur inhabituelle, très légère, de vinaigre. Ceux qui portent cette armure sont dotés d’une légère résistance aux dégâts physiques ainsi que du pouvoir de régénérer leurs blessures. L'on ne sait pas vraiment si ces propriétés viennent du cuir lui-même ou bien d’un enchantement placé sur l'armure.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +15% de résistance aux armes tranchantes, perforantes, contondantes et aux projectiles
+ Le porteur régénère d'1 point de vie toutes les 6 secondes
+
+Classe d'armure : 4
+Poids : 15~
+
+@213 = ~Le mercenaire Naradon de Thesk était connu pour vaincre rapidement et efficacement ses adversaires mages, même en infériorité numérique. Il gagna sa réputation grâce à trois objets : des potions de vitesse, des bottes de vitesse, et son épée courte, Plongeur de Sort. Contrairement à beaucoup d'autres armes magiques, Plongeur de Sort n'a pas une histoire sombre et meurtrière : Naradon a quitté l'aventure à l'âge de trente-deux ans. Son goût pour les potions de vitesse lui valut de mourir de vieillesse quatre ans plus tard. Son seul héritier n'avait aucun désir d'être aventurier. Il vendit l'arme à un cambrioleur bien connu quelques années après la mort de son père. L'épée peut être reconnue au martin-pêcheur gravé sur le pommeau.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +1 aux jets de sauvegarde contre les sorts
+ +5% de résistance à la magie
+
+Capacité de combat :
+ A chaque coup réussi, la cible subit un malus cumulatif de 10% de chance de rater des sorts pendant les 3 prochains rounds
+
+TAC0 : +3
+Dégâts : 1D6 +3
+Type de dégâts : perforant
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à 1 main~
+
+@215 = ~Ce capuchon marron foncé couvre la tête et les épaules. On le doit à Breion Châtaigne, voleur/illusionniste gnome de son état. Breion s'en servit en aventure plusieurs années durant, jusqu'à ce que sa petite amie d'enfance le convainque de se poser. Il donna le capuchon à son neveu, Chirchet, qui le vendit par la suite pour acheter une importante parcelle de terre.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +1 à la CA
+ +15% de Se cacher dans l'ombre
+
+Capacité spéciale :
+ Peut lancer simultanément Flou et Image Miroir 3 fois par jour
+
+Poids : 1~
+
+@217 = ~Cette épée courte appartint jadis à Venduris, un assassin doué au service de Cyric - le Dieu du Meurtre régnant. Quand ce meurtrier devint un Elu de Cyric, il reçut une petite lame comme cadeau de bienvenue. L'épée ne disposait alors que d'enchantements mineurs, mais son pouvoir et son acuité semblèrent s'accroître à chaque meurtre que Venduris commettait au nom de son nouveau maître. L'assassin préférait remplir son devoir rapidement et silencieusement, et ses victimes réalisaient rarement combien proche était leur mort. Parfois pourtant, si la cible avait provoqué la colère du Prince des Mensonges, Venduris appliquait un poison mortel sur la lame avant de frapper ses ennemis. Ils commençaient alors à étouffer, incapables de parler ou de crier à l'aide, tandis que Cyric jubilait de voir leur visage silencieux tordu par la douleur et la souffrance causées par les derniers effets du poison, lesquels menaient finalement à une mort lente pleine de tourments.
+
+Cette épée luit d’un faible éclat verdâtre, et il en émane une puissante aura maléfique. La pointe et la lame de l'épée sont extrêmement aiguisées et constamment recouvertes d'une couche de poison magique, ce qui rend difficile l'utilisation de cette épée sans se blesser soi-même. Seuls des voleurs d'une adresse exceptionnelle peuvent tenter de manier cette arme.
+
+PARAMETRES :
+
+Capacités de combat :
+ la cible subit 4 points de dégâts dus au poison (1 par seconde)
+ Silence sur la cible si elle ne réussit pas un jet de sauvegarde contre le Souffle
+ 4% de chance que l'épée perce une partie vitale du corps et réduise instantanément de 25% les coups portés par la cible
+
+TAC0 : +4
+Dégâts : 1D6 +4
+Type de dégâts : perforant
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à 1 main
+Nécessite : 15 en dextérité et en intelligence~
+
+@219 = ~Un examen approfondi de ces bottes donne l'impression qu'elles sont faites d'un matériau étrange et immatériel. Porter ces bottes donne à leur utilisateur une apparence presque brumeuse ou fantomatique. De surcroît, leur son est curieusement étouffé, comme si on les entendait de loin.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +1 à la CA
+ +10% au Déplacement silencieux
+ +15% pour Se cacher dans l'ombre
+
+Poids : 5~
+
+@221 = ~La Langue de Salamandre est une dague à l’allure funeste, accompagnée d'une histoire qui l'est tout autant. On l'apprécie tant pour ses capacités magiques que pour les dégâts qu'elle inflige. Sa lame ondule à la manière de celle d'un kris et s'achève par deux pointes jumelles. Un petit bout de langue de salamandre vivante a été incrusté au coeur de la lame, près du manche. Elle gigote sans cesse, que le possesseur de l'arme le souhaite ou non.
+
+Personne ne sait d'où vient cette dague, même si l'on pense généralement que son premier détenteur était un assassin gnome de Port-Ponant, le très respecté (et très craint) Turlam Collinecreuse. Turlam fut tué par un rival, un halfling du nom de Deder Sept-Doigts. Ce dernier conserva l'arme comme trophée, et n'apprit ses pouvoirs qu'après qu'elle lui eut été dérobée par l'un de ses sbires, un autre halfling appelé Kreshinal Chiennoir. Kreshinal s'enfuit à Selgaunt, où il resta cinq années durant, faisant confiance à l'arme pour le protéger de la scrutation. Il la perdit finalement suite à une escroquerie ratée et fut tué par les hommes de Deder dans le mois qui suivit. Deder tenta ensuite de récupérer la dague auprès des criminels sembiens qui s'en étaient emparés. Il parvint à les faire fuir mais, accaparé qu'il était par la Langue de Salamandre, il ne s'était pas aperçu que les Sembiens avaient fait appel à un prêtre de Mask pour infiltrer et détruire son réseau de Port-Ponant. La guerre qui s'ensuivit prit fin lorsque le prêtre de Mask, Pieter le Faible, rendit les deux camps si paranoïaques qu'ils finirent par se déchirer de l'intérieur. Saisissant la dague à la première occasion, Pieter s'enfuit pour Montéloy, sûr qu'il était que les employés de Deder Sept-Doigts, décédé au cours de la longue lutte contre les Sembiens, n'oseraient pas le suivre dans une région si hostile aux petites-gens.
+
+Dans une nouvelle escroquerie, Pieter vendit alors la lame à un Faucon de Mulmastre, tout en réunissant d'autres acheteurs potentiels pour une vente aux enchères à Montéloy. Sous couvert d'une amulette de Non-Détection, Pieter et ses associés assassinèrent tous les individus présents avant de s'enfuir avec l'argent. Le Faucon de Mulmastre qui avait récupéré la dague aurait ensuite été tué par des prêtresses d'Umberlie qui lui reprochaient de ne pas avoir fait d'offrande à leur souveraine. Bien des années plus tard, au rythme des guerres intestines déchirant le clergé de la Reine-Garce, la dague se serait retrouvée à des milliers de kilomètres de sa Sembie d'origine. On ignore où se trouvent actuellement Pieter le Faible et ses sbires.
+
+PARAMETRES :
+
+Capacités d'équipement :
+  +10% de résistance au feu
+  +3 aux jets de sauvegarde contre le poison
+  L'utilisateur bénéficie de l'effet du sort Non-détection.
+
+
+Capacités de combat :
+  50% de chance d'infliger +1D2 points de dégâts de feu
+  30% de chance d'infliger +2D2 points de dégâts de feu
+  15% de chance d'infliger +3D2 points de dégâts de feu
+  5% de chance d'infliger +4D2 points de dégâts de feu
+
+TAC0 : +3
+Dégâts : 1D4 +3
+Type de dégâts : tranchant
+Poids : 1
+Facteur de vitesse : 0
+Type de compétence : dague
+Type : arme à 1 main~
+
+@223 = ~Ces heaumes étaient autrefois courants chez les barbares Regheds qui, les premiers, ont occupé ce que l'on appelle aujourd'hui le Val de Bise. Ils sont de conception très simple, puisqu'il s'agit de casques en fer dotés d'une plaque protégeant le visage. Une fois l'assemblage terminé, les artisans gravaient les traits d'un guerrier défunt sur le masque métallique. Le nom de l'homme et un mot décrivant sa mort étaient ensuite gravés sur le front. Le heaume était alors placé sur le bûcher funéraire du disparu. Les prêtres pensaient que le masque magique cacherait la peur que l'homme pourrait avoir de la mort lorsque Tempus le jugerait. Un mois plus tard, le casque des guerriers particulièrement valeureux était récupéré par les prêtres, qui vénéraient ensuite ces héros au cours de leurs rituels quotidiens. S'il faut en croire la légende, quand Tempus trouvait le guerrier particulièrement vaillant, le heaume acquérait le pouvoir d'immuniser son porteur contre la terreur. Ce casque comporte deux mots : le nom " Siglef " et le mot " Hache ".
+
+PARAMETRES :
+
+Capacités d'équipement :
+ Immunité à la Peur et à la Panique
+ -2 au charisme
+
+CA : +1
+Spécial : protège contre les coups critiques
+Poids : 3~
+
+@225 = ~Cette couronne de feuilles et de fleurs de laurier fut offerte par le clergé de Sunie aux prêtresses d'Hanali Celanil en poste à la Main de la Seldarine. Les représentants de la déesse humaine de l'Amour et de la Beauté étaient appréciés des elfes et la grande prêtresse d'Hanali Celanil arborait leur couronne chaque fois que des humains visitaient la Main. Les orques jetèrent les lauriers lorsqu'ils pillèrent la tour des prêtres.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ +1 au charisme
+
+CA : +1
+Spécial : protège contre les coups critiques
+Poids : 1~
+
+@227 = ~Volée à des nymphes du Comté des Tempêtes, cette pierre ionique a servi l'assassin Venduris à contrecoeur ces dix dernières années. L'essence de chance contenue dans la gemme fut exploitée par cet assassin abject pour guider ses coups vers les points faibles de ses ennemis afin qu’ils soient le plus mortels possible. Alors qu'elle était autrefois magnifique à voir, semblant avoir été taillée à même un resplendissant joyau couleur arc-en-ciel, la Pierre de Chance a fini par se corrompre sous l'influence de son nouveau porteur. La noirceur qui réside en elle est un perpétuel souvenir des vils exploits de Venduris.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +3 à la Chance
+
+Bonus à la Classe d'Armure ; aucun
+Spécial : protège contre les coups critiques
+Poids : 0
+Sagesse nécessaire : 10~
+
+@229 = ~Cet anneau fut à l'origine volé à un Sorcier Rouge trop ambitieux qui se mit en travers des plans de Cyric. Quand Venduris fut envoyé pour supprimer ce mage il prit aussi cet anneau d'invisibilité dans son trésor personnel. L'assassin éprouva rarement le besoin de l'employer, car il était très doué dans l’art de la discrétion, mais l'anneau se montra utile dans les rares cas où il dut capturer ses victimes et les ramener vivantes au temple de son maître, pour être interrogées ou torturées.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ Le porteur est indétectable par des moyens magiques tels que Détection de l'invisibilité, Elimination des Invisibilités, Vision véritable et d'autres sorts de divination qui annule l'invisibilité
+
+Capacité spéciale :
+ Lance Invisibilité de masse 1 fois par jour~
+
+@231 = ~Ce parchemin magique fut trouvé sur le corps du roublard Venduris. Sur une des faces se trouve ce qui semble être une note du magicien qui l'a créé, tandis que l'autre face est recouverte de runes variées. La note dit :
+
+"Comme vous l'avez demandé, Venduris, les glyphes de garde qui piègeront <CHARNAME> ont été directement liés aux runes de ce parchemin. Puisque vous avez insisté pour être le seul à connaître le mot de commande permettant leur activation, j'ai laissé une ligne vide en bas du verso afin que vous puissiez l'y inscrire. Sachez cependant que, une fois que vous l'aurez fait, il faudra absolument garder ce parchemin à l'abri. En raison de la méthode d'incantation inhabituelle que j'ai utilisée, je ne peux rien vous garantir de ce qui pourrait arriver aux glyphes si ce parchemin était endommagé ou détruit.
+
+-S.~
+
+@233 = ~Une analyse magique révèle que cette sombre cape était à l'origine tissée à partir de l'essence ectoplasmique d'une ombre et de la soie d'une araignée éclipsante. Elle fut ensuite enchantée davantage par des prêtres de Cyric pour garantir à ses plus fidèles suivants protection et discrétion. Lorsque la cape est portée, les pensées de son porteur ne peuvent être décelées par des moyens magiques. De plus, grâce à la nature particulière de son tissu, la cape améliore également la capacité de son porteur à se fondre dans les ombres, rendant ses points vitaux impossible à distinguer et protégeant ainsi efficacement le porteur contre les attaques sournoises.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +1 à la CA
+ +1 à tous les jets de sauvegarde
+ +50% de chance de Se cacher dans l'ombre
+ Immunité à l'attaque sournoise
+ L'alignement du porteur ne peut être détecté
+
+Poids : 1~
+
+@235 = ~Cet arc composite irradie de puissants enchantements nécromanciens qui sont couramment employés par les prêtres Yuan-Ti. La hampe de l'arc ressemble à deux serpents, chacun essayant d'avaler un orbe oculaire sculpté dans la poignée. Le long des deux côtés de la hampe est inscrite la phrase "Puisse la grandeur de Sseth aveugler l'indigne !". L'arc fut primitivement utilisé par les sentinelles Yuan-Ti afin d'empêcher les voyageurs imprudents de découvrir l'emplacement d'un temple secret qui fut caché profondément dans la forêt du Val d'Ashen. Pour une raison quelconque, les spectateurs et leurs semblables paraissent être hautement vulnérables à toute flèche tirée de cet arc.
+
+PARAMETRES :
+
+Capacités de combat :
+20% de chance que tous les coups aveuglent la cible pour 3 rounds (jet de sauvegarde contre les sorts pour annuler, les Spectateurs ont une pénalité de -5)
+
+TAC0 : +3 (+5 contre les Spectateurs)
+Dégâts : +4 (+6 contre les Spectateurs)
+Poids : 1
+Facteur de vitesse : 3
+Type de compétence : arc court
+Type : arme à 2 mains
+Force nécessaire : 16~
+
+@237 = ~La cotte de mailles drow est une maille noire satinée finement travaillée, qui n'encombre pas le moins du monde son porteur. Elle s'apparente aux cottes de mailles elfiques magiques. Typiquement, elles sont fabriquées comme des tuniques, les drows partageant avec leurs cousins des forêts leur préférence pour les armures ni trop lourdes ni restrictives. L'exceptionnelle légèreté de cette armure lui permet d'être portée par les voleurs et les guerriers/mages avec peu de restrictions. De plus, les cottes de mailles drow offrent un petit bonus de résistance à la magie et réduit légèrement le temps d'incantation de tous les sorts lorsqu'elles sont portées.
+
+Contrairement à la plupart de l'équipement drow, cette cotte de mailles particulière n'a pas été fabriquée à base d'adamantine, puisqu'elle a été conçue pour les espions qui voyagent régulièrement à la surface. Elle ne se réduit donc pas en poussière quand elle est exposée à la lumière directe du soleil, mais elle n'offre pas une protection aussi bonne qu'une armure drow classique.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +5% de Résistance à la magie
+ Amélioration du temps d'incantation des sorts de 1
+
+Classe d'armure : 4
+Poids : 7
+Nécessite : 5 en force~
+
+@239 = ~Anneau des arcanes : “ Geminus “
+
+On raconte que jadis, un grand magicien amnien défia les pouvoirs magiques de Mystra. Des légendes racontent que ce magicien était doué d'une capacité de mémorisation illimitée pour lancer des sorts. Il s'avéra finalement que son pouvoir provenait de plusieurs anneaux magiques qu'il s'était fabriqué. Sa prétendue " mémoire infinie " n'était qu'une plaisanterie, mais ses anneaux continuent de figurer parmi les objets les plus recherchés des Royaumes.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ double la quantité de sorts de 1er et de 2ème niveau qu'un mage peut mémoriser.~
+
+@241 = ~Rillifane Rallathil est le protecteur des forêts et le gardien de l’harmonie de la nature. Le Seigneur des Feuilles est souvent représenté par ses prêtres comme un immense chêne éthéré, si grand que ses racines se fondent dans celles de toutes les autres plantes des Royaumes, et qui se dresse au centre d'Arvandor, la Haute Forêt d’Olympe. L’arbre géant attire à lui le flux et le reflux des saisons et se tient dans les forêts des elfes sauvages. Il protège également ces terres de la maladie, des prédateurs et des agressions de toutes sortes. Lors d’occasions spéciales, les hauts prêtres de Rillifane montrent leur respect au Seigneur des Feuilles en tressant des feuilles de chêne en forme de couronnes, lesquelles sont ensuite bénies et dotées d'enchantements protecteurs. Ces couronnes cérémoniales ne quittent que rarement les terres elfes, principalement car leur magie est intimement liée aux âmes-mêmes du Beau Peuple. Seul un renégat ou un exilé oserait emporter un objet aussi sacré hors de la communauté elfique.
+
+PARAMETRES :
+
+Capacités d’équipement :
+  Bénédiction
+  Immunité au poison et à la maladie
+
+Bonus à la Classe d'Armure : 1
+Poids : 0~
+
+@720 = ~Une baguette d'effroi instille la terreur en toute créature se trouvant dans sa zone d'effet. Le résultat n'est pas garanti cependant, les plus courageux y résistant. A l'instar de toutes ses pareilles, elle ne sert qu'un certain nombre de fois avant d'être détruite.
+
+PARAMETRES :
+
+Spécial : fait fuir les cibles, sauf jet de sauvegarde réussi contre les baguettes
+Portée : 30 mètres
+Zone : rayon de 6 mètres
+Durée : 6 rounds~
+
+@722 = ~Lorsque Haz commença à créer la première série de golems commandés par le Maître des Ombres local, plusieurs de ses compères Voleurs de l’Ombre insistèrent pour qu'il crée un moyen sûr de désactiver ces puissantes créatures, si jamais le besoin venait à se faire sentir. Haz commença par considérer ces soucis comme injustifiés, mais après que plusieurs membres haut placés de la guilde aient exprimé des doutes et ouvertement questionné les motivations du mage, celui-ci finit par céder et créa plusieurs sceptres de contrôle qui furent confiés à ses plus grands détracteurs. En effet, toute personne ayant en sa possession l’un de ces sceptres se trouve capable de désactiver n’importe quel golem façonné par Haz simplement en tenant l’objet de manière à le rendre visible et en pénétrant le champ de vision de la créature. Naturellement, il est impossible de désactiver un golem se trouvant à proximité de son créateur. De plus, les inscriptions sur le manche ont pour but d’avertir qu'attaquer un golem désactivé lui fera reprendre sa routine de combat.
+
+PARAMETRES :
+
+Capacité d’équipement :
+  Tout golem confectionné par Haz se désactivera automatiquement dès qu’il détectera la présence du porteur du sceptre. Pour que cette capacité soit active, le sceptre doit être équipé de manière visible et seul son porteur doit approcher le golem. Une fois désactivé, celui-ci restera en repos pour une durée indéterminée, ou jusqu’à ce qu’il soit attaqué. Le sceptre n’a aucun effet sur les golems n’ayant pas été construits par Haz.~
+
+// RR Upgradeable items (5000-5999)
+
+@5001 = ~Pendant de nombreuses générations, ce bouclier fut remis à des Hauts Juges d'Amaunator sélectionnés, qui prirent sur eux la tâche de nettoyer les contrées de tous les morts-vivants. Après qu'Amaunator eut apparemment disparu et que le Fort du Soleil Éternel soit tombé, la finition dorée brillante du bouclier commença à ternir, et ses enchantements puissants se mirent à se dissiper.  Finalement, l'objet, autrefois puissant, fut relégué en tant que simple décoration murale. Alors que le temps passait, le culte d'Amaunator tomba lentement en désuétude et ses suivants commencèrent à se disperser. Le bouclier fut récemment récupéré dans leur temple, au milieu de nombreuses autres reliques.
+
+Fusionné avec le symbole sacré d'Amaunator, le bouclier rayonne à nouveau d'énergie. Certains de ses anciens pouvoirs ont été rétablis.
+
+
+PARAMETRES :
+
+Capacités d'équipement :
+ Bonus de +2 à la CA contre les morts-vivants
+ Toute créature morte-vivante qui frappe le porteur du bouclier au corps-à-corps reçoit 2D4 points de dégâts de feu et doit réussir un jet de sauvegarde contre les sorts ou être aveuglé pour 4 rounds
+
+Capacité spéciale :
+ Lance Feu Solaire 1x/jour
+
+CA : bonus de +4
+Spécial : pas de protection contre les projectiles et les armes perforantes
+Poids : 2
+Force nécessaire : 4~
+
+@5003 = ~Ce bouclier à l'aspect étrange semble entièrement composé de feuilles durcies. La forme et la taille inhabituelles des feuilles suggèrent qu'elles ont autrefois appartenu à un des anciens chênes qui poussent au plus profond de la Forêt de Mir. En y regardant de plus près, des enchantements druidiques puissants peuvent être découverts à la surface du bouclier. Il semble qu'ils améliorent légèrement la santé du porteur du bouclier et guérissent plus rapidement toute blessure subie. Chaque matin, lorsque le soleil se lève, l'une des feuilles brille faiblement pendant un moment. Elle peut alors être saisie et plantée dans le sol, pendant qu'une autre pousse instantanément à sa place. Après que l'incantation correcte ait été récitée, la feuille plantée pousse rapidement pour donner un effrayant Tertre Errant dont la force et la taille semblent directement liées à la puissance du porteur du bouclier.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +10 au maximum de points de vie
+ Le porteur du bouclier régénère de 2 points de vie par round
+
+Capacité spéciale :
+ Convocation d'un Tertre Errant 1x/jour
+
+CA : bonus de +3
+Poids : 1
+Sagesse nécessaire : 12
+Charisme nécessaire : 15~
+
+@5005 = ~Ce bouclier à l'aspect étrange semble entièrement composé de feuilles durcies. La forme et la taille inhabituelles des feuilles suggèrent qu'elles ont autrefois appartenu à un des anciens chênes qui poussent au plus profond de la Forêt de Mir. En y regardant de plus près, des enchantements druidiques puissants peuvent être découverts à la surface du bouclier. Il semble qu'ils améliorent légèrement la santé du porteur du bouclier et guérissent plus rapidement toute blessure subie. Chaque matin, lorsque le soleil se lève, l'une des feuilles brille faiblement pendant un moment. Elle peut alors être saisie et plantée dans le sol, pendant qu'une autre pousse instantanément à sa place. Après que l'incantation correcte ait été récitée, la feuille plantée pousse rapidement pour donner un effrayant Tertre Errant dont la force et la taille semblent directement liées à la puissance du porteur du bouclier.
+
+PARAMETRES :
+
+Capacités d'équipement :
+ +15 au maximum de points de vie
+ Le porteur du bouclier régénère de 3 points de vie par round
+
+Capacité spéciale :
+ Convocation d'un Tertre Majeur 1x/jour
+
+CA : bonus de +4
+Poids : 1
+Sagesse nécessaire : 12
+Charisme nécessaire : 15~
+
+@5007 = ~Cette hache superbement réalisée retient un enchantement d'origine inhabituelle. Immédiatement après avoir été forgée, la hache fut envoyée à la cime d'une haute montagne, où des prêtres nains attendirent qu'une grande tempête se formât. L'arme fut placée sur un socle en fer, et peu après, frappée par un éclair. À cause des enchantements préalablement placés, elle absorba une partie des propriétés de l'éclair. La hache fut ensuite confiée à un haut officier nain pour l'aider durant la bataille imminente entre les hordes d'orques et les nains de l'abîme de Dorn. L'attaque survint comme une surprise totale pour les nains, alors qu'un éclaireur vint un matin pour relater que la plus grosse armée orque qu'il ait vu de sa vie était seulement à quelques heures de là. Avec peu de temps pour se préparer, les guerriers nains furent submergés et les orques commencèrent à entrer dans l'abîme de Dorn. Les nains furent obligés de battre en retraite dans les profondeurs de la citadelle, mais les passages clefs furent éboulés afin de couvrir leurs mouvements et leur donner du temps. Même dans de telles conditions, cela permit aux nains de contrôler où et quand ils combattaient. Chaque combat coûta très cher aux orques, car les nains se battaient sur leur terrain, mais ils furent malgré cela repoussés de plus en plus loin vers le Glacier de la Dent du Ver. Finalement, grâce à leur supériorité numérique, les orques parvinrent à provoquer une brèche dans les défenses des nains et pillèrent leurs maisons.
+
+Couvert de minerai d'étoile et fusionné avec l'essence d'un lapis-lazuli, les pouvoirs de cette arme déjà formidable ont été grandement améliorés.
+
+PARAMETRES :
+
+Capacité d'équipement :
+ +50% de résistance à l'électricité
+
+Capacité de combat :
+ 15% de chances à chaque coup que la cible soit étourdie pendant un round
+
+Capacité spéciale :
+ Décharge statique 1 fois/jour : inflige 10D6 points de dégâts à une cible unique
+
+TAC0 : +5
+Dégâts : 1D8 +5, +1D6 points de dégâts électriques
+Type de dégâts : tranchant
+Poids : 5
+Facteur de vitesse : 2
+Type de compétence : hache
+Type : arme à 1 main~
+
+@5009 = ~La Lame des Ombres fut créée pour être l'outil parfait de l'assassin. Elle est activement recherchée par quiconque règle ses problèmes par une lame, et beaucoup de ceux qui la possèdent ne le sont pas pour longtemps. Entre les mains de n'importe quel personnage, cette épée agit comme une arme magique +5 classique, mais entre les mains d'un voleur, elle devient spécialement puissante, en augmentant ses chances de réaliser un coup critique et en améliorant son multiplicateur d'attaque sournoise.
+
+Fusionnée avec l'essence magique de l'esseulite, la lame devient encore plus puissante dans les mains d'un voleur.
+
+PARAMETRES :
+
+Capacités d'équipement (voleurs uniquement) :
+ Augmente le multiplicateur d'attaque sournoise de 1
+ Augmente les chances d'obtenir un coup critique de 2
+
+TAC0 : bonus de +5
+Dégâts : 1D6 +5
+Type de dégâts : perforant
+Poids : 3
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@5011 = ~Les poches de cette ceinture contiennent une série d'outils magistralement ouvragés qui sont très couramment utilisés par les serruriers et les horlogers. Cependant, de tels objets peuvent facilement être détournés à des fins néfastes, les rendant très populaires parmi les voleurs. Cette ceinture particulière a la lettre «*G*» gravée sur sa boucle.
+
+Les outils ont été fusionnés avec l'essence de la chance, et enchantés par magie. Ils confèrent maintenant des bonus supplémentaires.
+
+STATISTIQUES :
+
+Capacités d'équipement :
+ +1 en chance
+ +20% au crochetage des serrures
+ +20% pour désamorcer les pièges
+ +20% à la pose de pièges
+
+Poids : 2~
+
+@5013 = ~Il est dit qu'une astucieuse prêtresse d'Aurile créa des douzaines de ces fléchettes dans le but d'équiper les gardiens de son temple avec une arme de dernier espoir. Une fléchette semblait parfaite pour cette tâche dans la mesure où elle était très simple à dissimuler. Des enchantements mineurs, causant des morsures de froid et le retour de la fléchette dans la main de son lanceur après avoir frappé, furent apportés. En général, de telles armes sont rarement vues en dehors des temples d'Aurile qui sont fréquemment situés dans les pics enneigés d'Icewind Dale. Cependant, ces dernières années, quelques marchands de la région des Dix Cités ont douteusement acquis de grandes quantités de ces fléchettes auprès de groupes d'aventuriers locaux.
+
+La couverture en mithril semble avoir encore amélioré les capacités magiques de la fléchette.
+
+PARAMETRES :
+
+Capacités de combat :
+ La fléchette revient instantanément dans la main de son lanceur après avoir été lancée
+ 15% de chances à chaque coup que la cible soit ralentie pendant un round
+
+TAC0 : +3
+Dégâts : 1D3 +3, +1D3 de froid
+Type de dégâts : projectile (perçant)
+Poids : 0
+Facteur de vitesse : 1
+Type de compétence : fléchette
+Type : arme à 1 main~
+
+@5015 = ~De sombres runes orques sont gravées sur ce gourdin. C'est un vestige de la dernière guerre entre les orques et les mages de Turm. Lorsque les tribus orques commencèrent à assaillir leur cité, les mages créèrent des golems d'un pouvoir terrifiant afin de les protéger. Sentant que la force brute de ses guerriers ne suffirait pas, le grand chef orque Gull-Nar ordonna à ses shamans de fabriquer une arme qui puisse lui permettre de fracasser les "statues vivantes" et de les réduire en miettes. Ses shamans utilisèrent le livre d'une tour de mage assaillie afin d'enchanter l'arme préférée de leur chef, un grand gourdin de guerre. Gull-Nar fut tellement heureux qu'il décida de mener personnellement l'assaut suivant, fracassant les golems en morceaux alors qu'il progressait vers le centre de la cité. La victoire était proche, mais soudain, un mage solitaire tout de noir vêtu apparut de nulle part, et lança un sortilège puissant, qui eut pour conséquence de retourner les orques enragés contre eux-mêmes. En quelques minutes, leur nombre fut décimé et Gull-Nar lui-même fut tué par ses guerriers les plus fidèles.
+
+Davantage enchanté, utilisant la connaissance acquise du manuel des golems, le gourdin devient une meilleure arme contre les créations dénuées de peur.
+
+PARAMETRES :
+
+Capacités de combat :
+ 20% de chances de détruire instantanément les golems de pierre, d'argile et de sable à chaque coup
+
+TAC0 : +4 (+6 contre les golems)
+Dégâts : 1D6 +4 (+6 contre les golems)
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 0
+Type de compétence : gourdin
+Type: arme à 1 main
+Force nécessaire : 5~
+
+@5017 = ~Le lapis-lazuli est une gemme d'un bleu profond avec des inclusions dorées de pyrite qui scintillent telles de petites étoiles. Sa couleur particulière est quelquefois comparée à celle de l'ultramarine. Quelques sages supputent que ces gemmes peuvent être utilisées pour améliorer des objets magiques qui utilisent les pouvoirs de la foudre.~
+
+@5020 = ~Cette lame a autrefois appartenu à Lao-Tzu, un samouraï d'une des provinces méridionales de Kara-Tur. Après avoir achevé son entraînement, le guerrier jura de délivrer son pays des bandits et brigands qui empoisonnaient la vie de ses concitoyens depuis dix ans. Cependant, cette tâche s'avéra être assez difficile alors que ses adversaires étaient astucieux, ne frappant que la nuit tombée et portant toujours des masques et des cagoules. Lao-Tzu comprit que ces bandits n'avaient aucun honneur et qu'ils pouvaient se cacher parmi les gens qu'il cherchait à protéger, mais il n'osait pas agir simplement par intuition, car son code de conduite ne lui permettait pas d'accuser à tort un innocent. En vue de recevoir de l'aide dans sa tâche, Lao-Tzu rencontra le grand maître Wu Jen et lui demanda d'enchanter son wakizashi avec la capacité de sentir les véritables intentions d'une personne et de frapper vigoureusement ceux qui n'avaient aucun honneur. Le samouraï organisa une fête pour ses gens afin de révéler les esprits des bandits au grand jour. Les gens répondirent à son appel, et Lao-Tzu fut content. Utilisant le pouvoir de sa nouvelle arme, il parvint à séparer les bandits rusés des simples paysans et de les faire s'asseoir dans une salle séparée. Alors qu'ils étaient tous assis, le samouraï bloqua la seule sortie et combattit seul contre une douzaine de bandits. Après un bref corps à corps, Lao-Tzu sortit vainqueur, mais son honneur ne lui autorisait pas de tuer même les ennemis sans valeur. Au lieu de cela, le samouraï les contraignit à l'exil de la province, et ses gens connurent finalement la paix.
+
+Infusée des propriétés de la saumure des illithids, l'épée est devenue encore plus efficace contre les alignements chaotiques. De plus, elle protège désormais son porteur contre la magie axée sur le chaos, pendant une courte période de temps.
+
+PARAMETRES :
+
+Capacités d'équipement :
+    bonus de +1 à la CA, +3 contre les créatures d'alignement chaotique
+
+Capacités spéciales :
+    Lancer le sort Détection des alignements 3 fois/jour
+    Lancer le sort Ordres Chaotiques 1 fois/jour
+
+TAC0 : bonus de +3, +5 contre les créatures d'alignement chaotique
+Dégâts : 1D8 +3, +5 contre les créatures d'alignement chaotique
+Type de dégâts : perforant
+Poids : 2
+Facteur de vitesse : 0
+Type de compétence : cimeterre/wakizashi/ninja-to
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@5022 = ~Créé par un puissant chaman Uthgardt, ce gourdin a été spécifiquement enchanté pour diminuer les capacités martiales d’un adversaire. Il fut porté par le chef de clan Aukthar de la tribu du Corbeau Noir lors des nombreux affrontements entre son peuple et les hordes orques qui tentaient régulièrement d’envahir Rochecorbeau, leur tertre sacré. L’arme fut perdue au cours d’une bataille particulièrement violente lorsque les cris de guerre des guerriers provoquèrent une extraordinaire avalanche qui les balaya jusqu’au bas de la montagne.
+
+Insufflée de l'essence d'une gemme beljuril réduite en poudre, cette arme est devenue encore plus efficace pour fatiguer les ennemis. En conséquence, le porteur de l'arme est immunisé à la fatigue causée artificiellement (provoquée par exemple par un sort de Hâte) mais continue à subir les effets de la fatigue dûs à un manque de repos.
+
+PARAMETRES :
+
+Capacité d'équipement :
+  le porteur est immunisé aux effets de fatigue causés artificiellement
+
+Capacité de combat :
+  25% de chance que la cible doive réussir un jet de sauvegarde contre la mort sous peine de devenir fatiguée (note : les golems, les élémentaux, les gelées et les morts-vivants sont immunisés à la fatigue.)
+
+TAC0 : +3
+Dégâts : 1D6 +3
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 1
+Type de compétence : gourdin
+Type : arme à 1 main
+Force nécessaire : 5~
+
+@5024 = ~Ce bouclier est fait d'un alliage d'acier noir qui fut teinté avec des soupçons de mithril et d'argent. Bien que sa surface semble être extrêmement polie, le bouclier paraît d'une manière ou d'une autre réduire la lumière plutôt que la réfléchir. Après un examen plus minutieux, on peut déceler plusieurs enchantements qui sont communément attribués au clergé de Mask. Il est probable que le seigneur des Ombres lui-même ait béni cet objet de sa main, lui procurant le pouvoir de cacher et garder ses suivants de tout danger qu'ils pouvaient rencontrer dans leur profession risquée.
+
+Insufflé de l'essence magique d'une esseulite et couvert d'une fine couche d'adamantine, le bouclier offre encore une meilleure protection.
+
+PARAMETRES :
+
+Capacités d’équipement :
+  Bonus de +3 à tous les jets de sauvegarde contre la mort
+  Bonus de +15% pour se cacher dans les ombres
+
+Capacité spéciale :
+  Lance invisibilité Majeure 3 fois/jour
+
+Bonus à la classe d'armure : 4
+Spécial : pas de protection contre les attaques perforantes et les projectiles
+Poids : 1
+Force nécessaire : 4~
+
+@5026 = ~De sombres runes orques sont gravées sur ce gourdin. C'est un vestige de la dernière guerre entre les orques et les mages de Turm. Lorsque les tribus orques commencèrent à assaillir leur cité, les mages créèrent des golems d'un pouvoir terrifiant afin de les protéger. Sentant que la force brute de ses guerriers ne suffirait pas, le grand chef orque Gull-Nar ordonna à ses shamans de fabriquer une arme qui puisse lui permettre de fracasser les "statues vivantes" et de les réduire en miettes. Ses shamans utilisèrent le livre d'une tour de mage assaillie afin d'enchanter l'arme préférée de leur chef, un grand gourdin de guerre. Gull-Nar fut tellement heureux qu'il décida de mener personnellement l'assaut suivant, fracassant les golems en morceaux alors qu'il progressait vers le centre de la cité. La victoire était proche, mais soudain, un mage solitaire tout de noir vêtu apparut de nulle part, et lança un sortilège puissant, qui eut pour conséquence de retourner les orques enragés contre eux-mêmes. En quelques minutes, leur nombre fut décimé et Gull-Nar lui-même fut tué par ses guerriers les plus fidèles.
+
+Davantage enchanté, utilisant la connaissance acquise du manuel des golems, le gourdin devient une meilleure arme contre les créations dénuées de peur.
+
+PARAMETRES :
+
+Capacités de combat :
+15% de chances de détruire instantanément les golems de pierre, d'argile et de sable à chaque coup
+
+
+TAC0 : +3 (+5 contre les golems)
+Dégâts : 1D6 +3 (+5 contre les golems)
+Type de dégâts : contondant
+Poids : 3
+Facteur de vitesse : 1
+Type de compétence : gourdin
+Type : arme à 1 main
+Force nécessaire : 5~
+
+// Strings missing from BGEE
+
+@10000 = ~Harpe~
+@10001 = ~Les harpes sont des instruments à cordes utilisées le plus souvent par les bardes. Cette petite harpe est idéale pour un voyageur.~
+@10002 = ~Pierre ionique~
+@10003 = ~Cette petite pierre flotte autour de la tête de son possesseur quand on la place dans son inventaire. Ces pierres évidemment magiques ont des propriétés différentes en fonction de leur couleur.~
+@10004 = ~Cagoule du Voleur~
+@10005 = ~Malgré une aura magique assez évidente, cette cagoule ne semble pas posséder de pouvoir particuliers.~

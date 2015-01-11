@@ -1,0 +1,999 @@
+//-*- coding: utf-8 -*-
+//These strings are displayed in-game and are encoded in UTF8
+
+@21 = ~Obwohl auf diesem Schild sehr effektive Verzauberungen liegen, wirkt er ziemlich alltäglich und lässt sich nicht genauer einordnen. Vermutlich ist er in großer Stückzahl hergestellt worden und hat bei der Armee einer mächtigen, längst vergessenen Baronie Verwendung gefunden. Natürlich kann man sich da keineswegs sicher sein.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -3
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+
+@23 = ~Obwohl auf diesem Schild sehr effektive Verzauberungen liegen, wirkt er ziemlich alltäglich und lässt sich nicht genauer einordnen. Vermutlich ist er in großer Stückzahl hergestellt worden und hat bei der Armee einer mächtigen, längst vergessenen Baronie Verwendung gefunden. Natürlich kann man sich da keineswegs sicher sein.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -4
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+
+@25 = ~Dieser seltsam aussehende Schild scheint komplett aus großen gehärteten Blättern gemacht zu sein. Die ungewöhnliche Form und Größe der Blätter legt nahe, dass sie einst zu den alten Eichen gehört haben, die tief im Mir-Wald wachsen. ´Bei genauerer Untersuchung kann man auf der Oberfläche des Schildes mächtige druidische Verzauberungen erkennen und diese scheinen die Lebenskraft des Trägers leicht zu erhöhen und jede erlittene Wunde schneller verheilen zu lassen. Jeden Morgen bei Sonnenaufgang, leuchtet eines der Blätter für einen Moment schwach. Dann kann es herausgenommen und in den Boden eingesetzt werden, während sofort ein anderes nachwächst um seinen Platz einzunehmen. Nachdem die richtige Beschwörung ausgesprochen wurde wächst das eingepflanzte Blatt schnell zu einem furchteinflößenden Modernden Schlurfer heran, dessen Stärke und Größe von der Erfahrung des Trägers des Schildes abzuhängen scheint.
+
+EIGENSCHAFTEN:
+
+Modernder Schlurfer (1x täglich)
+
+RK-Bonus: -3
+Regeneration: 1 TP pro Runde
+Trefferpunkte: +5
+Gewicht: 1
+Mindestweisheit: 12
+Mindestcharisma: 15~
+
+@27 = ~Diese Tartsche wurde aus einer Dunkelstahl-Legierung gefertigt, die mit Spuren von Mithril und Silber gefärbt wurde. Obwohl seine Oberfläche vollkommen poliert ist, scheint der Schild irgendwie Licht aufzusaugen anstatt es zu reflektieren. Bei genauerer Betrachtung kann man mehrere Verzauberungen entdecken, die gewöhnlich der Priesterschaft des Mask zugeordnet werden. Es ist wahrscheinlich, dass der Schattenlord selbst diesen Gegenstand mit seiner Berührung gesegnet hat. Dabei hat er ihm die Macht gegeben, alle seine Gefolgsleute vor jeglicher Gefahr zu verstecken und beschützen, der sie bei der Ausübung ihrer gefährlichen Tätigkeit begegnen könnten.
+
+EIGENSCHAFTEN:
+
+Verbesserte Unsichtbarkeit (3x täglich)
+
+RK-Bonus: -4
+(kein Schutz vor Stich-/Geschosswaffen)
+RW-Bonus: -3 gg. Tod
+Im Schatten verstecken: +15%
+Gewicht: 1
+Mindeststärke: 4~
+
+@28 = ~SÄBELRASSLER: Dieser Spitzbube stellt die perfekte Mischung aus meisterlichem Fechten, Akrobat und schlagfertigem Gauner dar. Er bezaubert das andere Geschlecht mit spitzbübischem Charme und einer flinken Klinge.
+
+Besondere Vorteile:
+- Erhält für je 5 Stufen einen Bonus von -1 auf die Rüstungsklasse
+- Benutzt die ETW0-Tabelle eines Kämpfers solange er Nahkampfwaffen trägt
+- Kann sich auf jede Nahkampfwaffe spezialisieren, die ein Dieb nutzen kann
+- Kann auf hohen Stufen die "Wirbelwind-Fähigkeit" erhalten
+- Kann auf hohen Stufen den "Gefühlvollen Schlag" erlernen
+
+Besondere Nachteile:
+- Verursacht bei einem hinterhältigen Angriff keinen zusätzlichen Schaden
+- Kann nicht zu einem mehrklassigen Kämpfer werden
+- Kann auf hoher Stufe die Fähigkeit "Meuchelmord" nicht erlernen
+- Kann auf hoher Stufe keinen "Verkrüppelnden Schlag" erlernen~
+
+@29 = ~BARDE: Der Barde gehört auch zu den Spitzbuben, unterscheidet sich aber dramatisch vom Dieb. Seine Stärke ist seine angenehme und charmante Persönlichkeit. Er schlägt sich mit seinem Charme und seinem Witz durch die Welt. Ein Barde ist ein talentierter Musiker und eine lebende Schatztruhe, randvoll gefüllt mit Legenden, abenteuerlichen Geschichten und Gerüchten. Der Barde schnappt von allem ein wenig auf und ist so in den meisten Dingen bewandert, ohne aber je etwas wirklich zu meistern. Es gibt zwar etliche Barden, die Halunken sind, aber normalerweise ist er Barde mit seinen Geschichten und Liedern überall ein gern gesehener Gast. Die Auswirkungen des Bardenlieds verändern sich mit der Stufe:
+
+1. Stufe:  +1 Bonus auf Treffer und -1 Bonus auf alle Rettungswürfe, Lied erhöht die Moral
+9. Stufe:  +2 Bonus auf Treffer und -2 Bonus auf alle Rettungswürfe, Lied vertreibt Furcht
+18. Stufe: +3 Bonus auf Treffer und -3 Bonus auf alle Rettungswürfe, Lied schütz vor Furcht~
+
+@30 = ~WAFFENKÜNSTLER: Der Waffenkünstler ist ein geschulter Kämpfer und erfahrener Abenteurer. Seine Fähigkeiten als Barde sorgen dafür, dass er noch einschüchternder und furchterregender wirkt. Wenn es eine angeberische Art gibt, eine Waffe zu führen und mit ihr umzugehen, dann kennt sie ein Waffenkünstler besser als jeder andere. Waffenkünstler stellen ihr Geschick und ihrer Körperbeherrschung häufig in atemberaubender Weise zur Schau, wenn sie verschiedenste Waffen mit tödliche Präzision um ihren Körper herumwirbeln. Ihre Klingen sind immer in perfektem Zustand und auf Hochglanz poliert, um während einer Schlacht oder einem Auftritt den größtmöglichen Effekt zu erzielen. Waffenkünstler trainieren regelmäßig den Kampf mit zwei Waffen und entwickeln so unter Umständen eine vollkommene Beidhändigkeit.
+
+Besondere Vorteile:
+- Kann für je 4 Stufen die Fähigkeiten "Angriffs- und Verteidigungswirbel" einmal täglich einsetzen
+- Angriffswirbel: Hat eine Wirkungsdauer von 4 Runden. Der Waffenkünstler erhält währenddessen +2 auf alle Trefferwürfe, +2 auf Schaden, einen zusätzlichen Angriff und verursacht mit jedem Treffer maximalen Schaden. Kann nicht in Verbindung mit Hast oder Verbesserter Hast verwendet werden.
+- Verteidigungswirbel: Hat eine Wirkungsdauer von 4 Runden. Der Waffenkünstler kann sich währenddessen nicht von der Stelle bewegen, erhält aber je Stufe einen Bonus von -1 auf die Rüstungklasse. Die maximal mögliche Rüstungsklasse beträgt -10.
+- Kann für je 10 Stufen die Fähigkeit "Waffenpräsentation" einmal täglich einsetzen
+- Beginnt mit maximaler Kenntnis (3 Punkte) im Kampfstil mit zwei Waffen
+- Kann auf hoher Stufe die Wirbelwind-Fähigkeit erlernen
+
+Besondere Nachteile:
+- Nur 50% des normalen Fertigkeitswertes auf Sagenkunde
+- Nur 50% des normalen Fertigkeitswertes auf Taschendiebstahl
+- Bardenlieder verbessern sich nicht mit steigender Stufe
+- Kann auf hohen Stufen kein "Verbessertes Bardenlied" erlernen
+- Kann auf hohen Stufen keine "Nachhaltige Bardenmusik" erlernen
+
+
+Waffenpräsentation
+
+Reichweite: Lang
+Dauer: 1 Runde/Stufe
+Zeitaufwand: 1 Runde
+Bereich: 9 m Radius
+Rettungswurf: Speziell (gg. Zauber)
+
+Indem er eine Nahkampfwaffe um seinen Körper wirbelt, kann der Waffenkünstler die Moral und die Tapferkeit anderer beeinflussen. Eine derartige Zurschaustellung von Geschick, Präzesion und tötlicher Grazie senkt die Moral seiner Gegner (sie müssen einen Rettungswurf gegen Zauber bestehen, um dem Moralversagen zu entgehen) und inspiriert gleichzeitig seine Verbündeten, wodurch sie einen Bonus von +1 auf ihren Angriffswurf erhalten. Die Präsentation muss eine ganze Runde ohne Unterbrechungen erfolgen. Während dieser Zeit unterbricht jeder erfolgreiche Angriff auf und jeder gescheiterte Rettungswurf durch den Waffenkünstler die Waffenpräsentation.
+
+Anmerkung: Die Waffenpräsentation ist eine außergewöhnliche (nicht-magische) Fertigkeit und ignoriert deshalb bei der Zielkreatur jeglicher Magiewiderstand. Untote, Konstrukte, Schleime, Tiere und dämonische Kreaturen bleiben von der Waffenpräsentation unbeeinflusst. Darüber hinaus kann die Fähigkeit keine Geschöpfe beeinflussen, deren gesamte Zahl an Trefferwürfeln die Stufe des Waffenkünstlers übersteigt oder die mehr als 20 Trefferwürfel besitzen. Jemand, der erst kürzlich Zeuge der Waffenpräsentation geworden ist, wird davon sehr wahrscheinlich nicht noch einmal beeindruckt sein, zumindest für eine Weile. Die Effektivität und die Dauer dieser Fähigkeit verbessert sich mit der Sutfe des Waffenküstlers. Der Bonus auf den Angriffswurf seiner Verbündeten und der Malus auf die Rettungswürfe seiner Feinde erhöht sich alle 10 Erfahrungsstufen des Waffenkünstlers um 1.~
+
+@32 = ~HARLEKIN: Dieser Barde ist darin zu bewandert, dumme Späße zu machen und andere zu veralbern und zu verspotten. Er setzt seine Fähigkeiten ein, um seine Gegner zu verwirren. Meist tollt er im Kampf wild umher und verwirrt so seine Feinde. Viele Gelehrte glauben, dass Harlekins ständig am Rande des Wahnsinns leben. Es ist bekannt, dass sie leben, um Aufmerksamkeit zu erlangen, und dass sie sich nur entspannt fühlen, wenn sie im Mittelpunkt der Ereignisse stehen. Ein Harlekin muss von chaotischer Gesinnung sein, denn kein Geist, der auf Recht und Ordnung eingestellt ist, könnte solch eine merkwürdige Persönlichkeit ertragen. Aufgrund ihres eigenwilligen Kampfstils tendieren Harlekine dazu große und unhandliche Waffen zu vermeiden.
+
+Besondere Vorteile:
+- Anders als ein typisches Bardenlied gewährt das eines Harlekins Verbündeten keine Boni, sondern wirkt auf jeden Gegner in Hörweite abhängig von der Stufe des Harlekins:
+1. Stufe:  Muss einen Rettungswurf gegen Zauber bestehen oder wird abgelenkt (-2 Rettungswurf-Bonus)
+9. Stufe:  Muss einen Rettungswurf gegen Zauber bestehen oder wird abgelenkt (kein Rettungswurf-Bonus) oder verwirrt (-2 Rettungswurf-Bonus)
+18. Stufe: Muss einen Rettungswurf gegen Zauber bestehen oder wird abgelenkt (+2 Rettungswurf-Malus), verwirrt (kein Rettungswurf-Bonus) oder betäubt (-2 Rettungswurf-Bonus)
+
+Anmerkung: Bei abgelenkten Charakteren misslingen Zaubersprüche zu 20%. Außerdem erhalten sie einen Malus von -2 auf ihren Angriffswurf und von +2 auf ihre Rüstungsklasse.
+
+Glück des Narren:
+- Harlekins sind leichtsinnig, närrisch und neigen zu skurrilen Entscheidungen. Dennoch scheinen sie aber eine unheimliche Fähigkeit zu besitzen, die es ihnen erlaubt in beinahe jeder Situation zu überleben. Nur wenige Mensche begreifen, dass es tatsächlich das Glück der Narren war, dass die Leben vieler Harlekins gerettet hat. Dieses besondere Merkmal gewährt dem Harlekin einen Bonus von -1 auf seine Rüstungklasse, von +1 auf alle seine Rettungswürfe und von 5% auf seine Fertigkeiten im Taschendiebstahl.
+
+Geist des Narren:
+- Harlekins sind gegen Angriffe, die Wahnsinn verursachen, immun. Beispiele sind der Blick eines Erdkolosses oder der Zauber Verwirrung.
+
+Besondere Nachteile:
+- Harlekins können nur den Umgang mit Waffen erlernen, die von Dieben nutzbar sind~
+
+@33 = ~SKALDE: Dieser nordische Barde ist neben seinen Fähigkeiten als Barde auch ein Krieger, der über große Stärke, erstaunliche Fähigkeiten im Kampf und ein starkes Ehrgefühl verfügt. Er singt inspirierende Oden, die von epischen Schlachten und großem Heldenmut künden. Er richtet sein Leben danach aus, die Dinge, von denen er singt, auch zu erleben. Skalden sind ehrenwerte und geachtet Kriegspoeten, die die Leistungen bei jedem Angriff und jeder Schlacht im Gedächtnis behalten und sie in poetischer Form niederschreiben. Zaubersprüche hingegen sind in der Gesellschaft der Skalden beinahe unbekannt und werden auf jeden Fall mit Argwohn betrachtet. Daher ist das Zaubern für Skalden etwas schwieriger, sie müssen sich mehr anstrengen und benötigen etwas länger.
+
+Besondere Vorteile:
+- Erhält einen Bonus von +1 auf Angriffs- und Schadenswürfe mit allen Waffen
+- Setzt eine besondere Form des Bardenliedes ein. Dessen Auswirkungen sind von der Stufe des Skalden abhängig:
+1. Stufe:  +2 Bonus auf Angriffs- und Schadenswürfe, -2 Bonus auf die Rüstungsklasse, Immunität gegen Furcht
+9. Stufe:  +3 Bonus auf Angriffs- und Schadenswürfe, -3 Bonus auf die Rüstungsklasse, Immunität gegen Furcht und Verwirrung
+18. Stufe: +4 Bonus auf Angriffs- und Schadenswürfe, -4 Bonus auf die Rüstungsklasse, Immunität gegen Furcht, Betäubung und Verwirrung
+
+Besondere Nachteile:
+- Nur 25% des normalen Fertigkeitswertes auf Taschendiebstahl
+- Der Zeitaufwand beim Zaubern erhöht sich um 1~
+
+@35 = ~MEUCHELMÖRDER: Der tödliche Meuchelmörder wurde darin ausgebildet, unauffällig und effizient zu töten. Dazu verlässt er sich bei der Ausübung seines Handwerks auf seine Fähigkeiten: Er kann überraschend zuschlagen und bleibt dabei unerkannt. Ein geschickter Meuchelmörder wird von seinem Opfer vielleicht nie gesehen. Die meisten Meuchelmörder sind von böser Gesinnung, jedoch sind neutrale (wenn auch keine guten) ebenfalls denkbar.
+
+Besondere Vorteile:
+- Kann seine Waffe für je 4 Stufen einmal täglich vergiften. Der nächste Treffer mit dieser Waffe vergiftet das Ziel, wodurch dieses für die nächsten 4 Runden 1 Schadenspunkt pro Sekunde erleidet (3 Schadenspunkte während der ersten Runde). Gelingt dem Opfer ein Rettungswurf gegen Gift, erleidet es insgesamt nur 12 Schadenspunkte.
+- Erhält einen Bonus von +1 auf Angriffs- und Schadenswürfe
+- Der Multiplikator beim hinterhältigen Angriff erreicht x7 anstelle von x5
+
+Besondere Nachteile:
+- Darf pro Stufenanstieg nur 15 Prozentpunkte auf Diebesfähigkeiten verteilen~
+
+@53 = ~Der Giftdolch ist eine wirkdame Klinge, die von Mördern in allen Reichen bevorzugt wird. Dieser besondere Giftdolch wurde für den Gebrauch von den Schattendieben von Amn geschaffen. Jedes Mal, wenn er einen Gegner trifft, sondert er ein Gift in den Blutstrom des Wesens ab. Das Gift arbeitet schnell und wirksam.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W4 +2 (Stich)
+Schadensbonus:
+ +15 (Gift in 15 Sekunden)
+ETW0-Bonus: -2
+Gewicht: 2
+Initiativefaktor: 0
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@54 = ~KOPFGELDJÄGER: Dieser Jäger jagt intelligentes Wild, und er ist darin geschult, seine Beute aufzuspüren und lebend zum Auftraggeber zurückzubringen, egal ob es sich dabei um die offiziellen Autoritäten eines Staaates oder um einen mächtigen Verbrecherboss handelt. Kopfgeldjäger sind für das, was sie tun, ausgezeichnet ausgebildete und stellen furchterregende Gegner dar. Ihr Fähigkeiten bei der Fallenherstellung liegen ebenfalls weit über denen von durchschnittlichen Dieben und sie können, zusätzlich zu den normalen Fallen, Schlingen legen. Darüber hinaus machen sich Kopfgeldjäger auch die Alchemie zu Nutze. Sie verwenden verschiedenste Substanzen und Gifte, um ihre Beute zu schwächen oder sogar außer Gefecht zu setzen.
+
+Besondere Vorteile:
+- +15% auf Fallen stellen
+- Kann seine Waffe für je 8 Stufen einmal täglich mit einem lähmenden Gift versehen. Alle Angriffe innerhalb der nächsten 3 Runden zwingen das Opfer dazu einen Rettungswurf gegen Tod zu bestehen oder er wird für eine Runde gelähmt.
+- Kann auf hohen Stufen die Fähigkeit Spuren lesen erlernen
+- Kann besondere Fallen stellen (andere als alle anderen Diebe). Diese sind wesentlich effektiver, als die Fallen, die ein normaler Dieb stellen kann. Sie sind jedoch vor allem dazu gedacht, Gegner kampfunfähig zu machen und nicht um sie auf der Stelle zu töten. Die weiteren Effekte der Fallen hängen von der Stufe ab, aber halten immer fünf Runden an und können durch einen erfolgreichen Rettungswurf verhindert werden.
+
+1. Stufe:  Verursacht 2W6 Schadenspunkt und blendet das Ziel
+6. Stufe:  Verursacht 4W6 Schadenspunkt und verlangsamt das Ziel
+11. Stufe: Verursacht 6W6 Schadenspunkt und verstrickt das Ziel
+16. Stufe: Verursacht 8W6 Schadenspunkt und macht das Ziel blind
+21. Stufe: Verursacht 10W6 Schadenspunkt und macht das Ziel bewusstlos
+
+Besondere Nachteile:
+- Darf pro Stufenanstieg nur 20 Prozentpunkte auf Diebesfähigkeiten verteilen~
+
+@57 = ~Die Leier des Fortschritts wurde von einem Barden namens Sedini Paletto erschaffen. Sedini war während schwieriger Zeiten ein Lehrer für junge, aufstrebende Barden. Dieses Instrument, das immer verborgen gehalten wurde, half Sedini gegen diejenigen zu kämpfen, die ihn oder seine Studenten angreifen wollten. Als Sedini alt wurde, gab er sie an seinen besten Studenten, Galwen Alaman, weiter. Galwen lehrte für einige Jahre weiter, bevor er in die Wildnis auszog, um das Leben eines Abenteuers zu führen. Man vermutet, dass er die Leier verlor, als er sie versehentlich in einen Sumpf fallen ließ.
+
+EIGENSCHAFTEN:
+
+Zauber:
+ +2 (Grad 2)
+ +1 (Grad 3)~
+
+
+@59 = ~Es wird gemunkelt, dass eine gerissene Priesterin von Auril Dutzende von diesen Pfeilen erschaffen hat, um ihr Tempelwachen mit einer Waffe als letzten Ausweg auszustatten. Ein Wurfpfeil schien für diese Aufgabe perfekt, denn er war sehr einfach zu verbergen. Kleinere Verzauberungen, die Frostverbrennungen verursachen und nach dem Wurf für die Rückkehr in die Hand des Werfers sorgen, wurden ebenfalls beigefügt. Im Allgemeinen tauchen solche Waffen nur selten außerhalb von Aurils Tempeln auf, die sich ihrerseits für gewöhnlich auf den schneebedeckten Gipfeln in der Nähe des Eiswind Tals befinden. Jedoch haben in den letzten Jahren einige Händler aus den Zehnstädten eine überraschend große Anzahl dieser Wurfpfeile von lokalen Abenteurergruppen erwerben können.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 5%ige Chance das Ziel für 1 Runde zu verlangsamen.
+
+Schaden: 1W3 +1 (Geschoss)
+Schadensbonus: +1 (Kälte)
+ETW0-Bonus: -1
+(Kehrt sofort zum Werfer zurück)
+Gewicht: 0
+Initiativefaktor: 1
+Fertigkeit: Wurfpfeil
+Typ: 1-händig~
+
+@61 = ~Das Kurzschwert der Heimtücke ist auch als Klinge des Schattens bekannt und wurde als perfektes Mordwerkzeug geschaffen. Es wird von all jenen begehrt, die Meinungsverschiedenheiten mit dem Schwert beilegen, und ihr Besitz ist oft von nur kurzer Dauer. In der Hand der meisten Leute verhält sich dieses Schwert wie eine normale magische Waffe +3, aber in der Hand eines Diebes wird es besonders wirksam. Es gewährt ihm einen zusätzlichen Bonus auf seinen Angriffswurf und erhöht seinen Multiplikator beim Hinterhältigen Angriff.
+
+EIGENSCHAFTEN:
+
+Bei Dieben erhöht sich der Multiplikator beim Hinterhältigen Angriff um 1.
+
+Schaden: 1W6 +3 (Stich)
+ETW0-Bonus: -3, -5 bei Dieben
+Gewicht: 3
+Initiativefaktor: 0
+Mindeststärke: 5
+Fertigkeit: Kurzschwert
+Typ: 1-händig~
+
+@73 = ~Dieser Trank verstärkt die Sinneswahrnehmung des Trinkenden, so dass er heikle Aufgaben besser bewältigen kann. Die Wirkung besteht darin, dass bestimmte Diebesfertigkeiten verbessert werden. Nur Diebe profitieren von diesem Trank.
+
+EIGENSCHAFTEN:
+
+Fallen finden/entschärfen: +20%
+Illusionen entdecken: +25%
+Schlösser öffnen: +10%
+Dauer: 8 Phasen~
+
+@74 = ~Dieser Trank gewährt einem Dieb eine zwischenzeitliche Verbesserung seiner Diebesfertigkeiten und eine Aufstockung seiner Trefferpunkte, falls er die Stufe 13 noch nicht erreicht hat. Der Bonus nimmt ab, wenn der Dieb erfahrener wird und verschwindet vollständig, wenn er die Diebeskünste von sich selbst aus meistern kann.
+
+EIGENSCHAFTEN:
+
+Stufe 1-3:
+ +20% auf alle Diebesfertigkeiten
+ vorübergehend 5W6 zusätzliche TP
+Stufe 4-6:
+ +16% auf alle Diebesfertigkeiten
+ vorübergehend 4W6+1 zusätzliche TP
+Stufe 7-9:
+ +12% auf alle Diebesfertigkeiten
+ vorübergehend 3W6+2 zusätzliche TP
+Stufe 10-12:
+ +8% auf alle Diebesfertigkeiten
+ vorübergehend 2W6+3 zusätzliche TP
+Stufe 13+:
+ ohne Wirkung
+
+Dauer: 3 Phasen~
+
+@79 = ~Dieses magisch heraufbeschwörenen Instrument kann es mit der Arbeit der besten Handwerker von Faerun aufnehmen. Dennoch scheint die Flöte aus bestimmten Blickwinkeln beinahe transparent zu sein, so als wäre sie aus nichts als dem puren Klang der Musik geschaffen. Wenn sie von einem außergewöhnlich talentierten Barden gespielt wird kann die Flöte dazu benutzt werden, Verzauberungen zu brechen. Dies negiert vollständig alle Auswirkung von Zaubersprüchen oder zauberspruch-ähnlichen (nicht aber von psionischen) Fähigkeiten, die zur Schule der Verzauberung gehören, egal ob sie guter oder schlachter Natur sind (drei Ladungen). Darüber hinaus kann man die Flöte dazu benutzen, jeden Effekt eines arkanen Spruches der Schule der Verzauberung nachzuahmen (zwei Ladungen). Schlussendlich kann die Flöte auch noch einen Geisterkrieger beschwören (eine Ladung).
+
+EIGENSCHAFTEN:
+
+Verzauberung brechen
+ Reichweite: Lang
+ Dauer: Sofort
+ Bereich: 1 Wesen
+
+Verzauberung nachahmen
+ Reichweite: Speziell
+ Dauer: Speziell
+ Bereich: Anwender
+
+Geisterkrieger beschwören
+ Reichweite: Mittel
+ Dauer: 1 Phase
+ Bereich: Speziell~
+
+@111 = ~Das ist die Tartsche von Kiel Legionentöter, dem erstgeborenen Sohn von Durlag Trolltöter. Er war der Clan-Prinz und hätte eines Tages den Turm seines Vaters beherrschen sollen, doch dieser war ja bekanntlich dem Untergang geweiht. Die Tartsche ist außergewöhnlich leicht und mit großem handwerklichen Geschick gefertigt, wodurch der Träger einen Bonus auf seine Geschicklichkeit erhält.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -2
+(kein Schutz vor Stich-/Geschosswaffen)
+Geschicklichkeit: +1
+Gewicht: 2
+Mindeststärke: 4~
+
+@113 = ~Dieser Komposit-Kurzbogen wurden von einem exzentrischen gnomischen Erfinder erschaffen. Er lädt automatischen jeden Pfeil, der von ihm abgeschossen wird, mit einer winzigen elektrischen Ladung auf. Immer dann, wenn ein solcher Pfeil einen Gegner trifft, besteht eine geringe Chance, dass ein statisches elektrisches Feld um das Ziel erzeugt wird. Bis es sich auflöst wird dieses Feld jedes weitere Geschoss zu eben jenem Ziel hinziehen.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 10%ige Chance das Ziel für 3 Runden mit einem Malus von +2 auf seine Rüstungklasse gegen Geschosse zu belegen.
+
+Schadensbonus:
+ +3 (Geschoss)
+ +1W3 (Elektrizität)
+ETW0-Bonus: -2
+Gewicht: 2
+Initiativefaktor: 4
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@115 = ~Der Knüttel, wahlweise auch als Schwarzmaler bezeichnet, ist ein kleiner Ledersack, der mit Sand, Bleikugeln, Münzen oder anderen schweren Materialen gefüllt ist. Indem man dem Opfer einen Schlag gegen den Kopf oder den Nacken versetzt, kann der Knüttel dazu benutzt werden, ein Opfer geräuschlos ohnmächtig zu machen. Er ist für städtische Umgebungen besser geeignet als für die Wildnis oder ein Verlies und wird hauptsächlich in Situationen eingesetzt, die es nötig machen, jemanden ohne dauerhaften Schaden gefangen zu nehmen. Dennoch bevorzugen Diebe diese Waffe häufig für ihre eigenen, schändlichen Ziele.
+
+EIGENSCHAFTEN:
+
+Würde der Knüttel die Trefferpunkte eines Opfers auf 0 oder darunter absenken, wird dieses bewusstlos.
+
+Schaden: 1W2 (Wucht, nicht tödlich)
+Gewicht: 1
+Initiativefaktor: 2
+Mindeststärke: 3
+Fertigkeit: Keule
+Typ: 1-händig~
+
+@117 = ~Dieser Ionenstein ist kugelförmig und von tiefroter Farbe. Einmal aktiviert, kann er die Hand-Augen-Koordination, die Reflexe und das Gleichgewicht des Trägers verbessern, was diesen Stein unter Dieben zu einem höchst wertvollen Zubehör macht.
+
+EIGENSCHAFTEN:
+
+Geschicklichkeit: +1
+Gewicht: 0~
+
+@119 = ~Dieser matt-blaue Ionenstein scheint aus einer viel roheren Form behutsam in seine jetztige poliert worden zu sein. Gerüchte besagen, dass er ursprünglich ein Teil jenes Sinnessteines war, den Mirdival der Listigen benutzt hatte. Mirdival war ein Hofmagier aus Calimshan, der sein gesamtes Leben damit verbracht hat, für seinen Pascha magische Artefakte aufzuspüren und zu erschaffen. Unmengen von verzauberten Gegenständen und mystischen Objekten wurden von eben jenem Zauberer während seiner vielen Reisen untersucht und er machte sich mit diesen vertraut.
+
+Weil er stets Angst davor hatte, wichtige Details zu vergessen, und weil er der vergänglichen Natur des Papieres nicht vertraute, speicherte Mirdival seine Erinnerungen regelmäßig in einem Sinnesstein, den er während einer Reise in die Ebenen von einem Händler der Feuer Genasi erworben hatte. Unglücklicherweise schlug eines seine Experimente schrecklich fehl und sein gesamter Turm wurde durch die darauffolgende Explosion dem Erdboden gleichgemacht. Während der Turm zusammenstürzte, wurde der Sinnesstein in viele Bruchstücke zerlegt, von denen einige immer noch einen kleinen Teil der Erinnerung des Magiers in sich tragen.
+
+EIGENSCHAFTEN:
+
+Sagenkunde: +20
+Gewicht: 0~
+
+@121 = ~Der Winter von 1228 war besonders hart für eine Halblingssiedlung nahe dem Wald von Shalebrook. Die vergangenen Jahre waren rau gewesen und Nahrung war sehr knapp. Die Situation wurde durch die Trollüberfälle, die aufgrund der sich überall in der Region ausbreitenden Hungersnot immer häufiger wurden, noch weiter verschlimmert. Obwohl sie zahlenmäßig unterlegen waren, befähigte ihre große Stärke und Widerstandsfähigkeit die Trolle dazu, die Halblinge gnadenlos zu belagern, um ihre allerletzten Vorräte zu erlangen. Jedoch hatten die Lebensmittel, die für das kleine Volk ausreichend gewesen wären, den gewaltigen Hunger der Trolle nicht stillen können und so begannen sie bald, sich von den gesunden Halblingen zu ernähren. Außer sich vor Wut bemühte sich der Anführer der Halblingssiedlung um Unterstützung, aber nachdem die Hauptstraßen zugeschneit waren und die Nebenstraßen durch den troll-verseuchten Wald führten, war nicht mit schneller Hilfe zu rechnen.
+
+Eines Morgens, nachdem die Trolle seine eigene Schwester geholt hatten, übermannte einen jungen Dieb namens Lars der Leichtfüßige die Verzweiflung. In der darauf folgenden Nacht nahm er all seinen Mut zusammen und schlüpfte irgendwie durch den Wald voller Trolle hindurch. Mit allerletzter Kraft schaffte er es, die nahegelegene Zwergensiedlung zu erreichen. Er flehte die Zwerge an, ihm zu helfen, aber aufgrund ihrer eigenen Probleme mit der andauernden Orkinvasion, konnten sie ihm nur einige ihrer überflüssigen Waffen und Vorräte anbieten. Am Boden zerstört schnappt Lars nach der einzigen Waffe, mit der er umzugehen wusste, einem Dolch, und zog von Dannen.
+
+Tymora lächelte wohl an diesem Tag auf ihn herab, denn er hatte unabsichtlich eine Waffe ausgewählt, die ihm bald das Leben retten würde. Als er zurück durch den Wald lief, führte ihn das laute Schnarchen der Trolle zu einer Höhle, in der diese schliefen. Der Anblick abgenagter Halblingsknochen, die um den Eingang herum verstreut lagen, war der letzte Tropfen, der das Fass zum Überlaufen brachte. Lars rannte blind hinein und stach mit dem zwergischen Dolch brutal auf den Troll ein, der am nächsten zu ihm schlief. Er war sich dabei nicht bewusst, dass er sein eigenes Leben riskierte, sondern dachte nur an seine geliebte Schwester. Zu seinem Erstaunen schrie der Troll, den er angegriffen hatte, voller Qual als sein scheußlicher Körper zu schmelzen begann und sich in eine schleimige Pfütze verwandelte. Der Rest der Trolle wachte auf, aber der Anblick ihres schmelzenden Kammeraden und der starke Säuregeruch rief bei ihnen eine solch große Furcht hervor, dass sie sofort damit begannen davonzulaufen. Sie sind niemals wieder zum Wald von Shalebrook zurückgekehrt.
+
+Obwohl er immer noch geschockt war, sammelte sich Lars langsam und befreite seine Schwester und die anderen gefangenen Halblinge. Schließlich wurde Lars der Leichtfüßige zum Retter von Shalebrook ausgerufen und sein Waffe wurde fortan Trollschmelzer genannt.
+
+EIGENSCHAFTEN:
+
+Wird ein Troll getroffen besteht eine 15%ige Chance bei diesem weitere 15 Schadenspunkte durch Säure zu verursachen.
+
+Schaden: 1W4 (Stich)
+Schadensbonus:
+ +2 (Säure)
+ +2 (Säure gg. Trolle)
+ETW0-Bonus: -2, -4 (gg. Trolle)
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@123 = ~Dieser Dolch wurde aus reinstem Silber geschmiedet und von Sehanine Mondbogen, der elfischen Göttin des Mondes, gesegnet. Seine Klinge ist besonder wirksam gegen Vampire, da sie dazu verzaubert wurde, auch das kleinste herumirrende Bisschen Kraft von der Ebene Positiver Energie zu kanalisieren. Jeden Tag sammelt die Waffe etwas von dieser Positiven Energie an, die ihr Träger dann als Schutzschild gegen die lebenskraft-entziehenden Klauen der Vampire benutzen kann. Darüber hinaus wird jeder Vampir, der von der Klinge getorffen wird, unter Umständen durch den Kontakt mit der aufgestauten Energie betäubt.
+
+EIGENSCHAFTEN:
+
+Schutz vor Negativer Energie (3x täglich)
+
+Wird ein Vampir getroffen besteht eine 15%ige Chance diesen für 2 Runden zu betäuben.
+
+Schaden:
+ 1W4 +3 (Stich)
+ 1W4 +5 (gg. Vampire)
+ETW0-Bonus: -3, -5 (gg. Vampire)
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@125 = ~Auf den ersten Anblick erscheint die Wahl dieses grob geschmiedeten, rostbedeckten Dolches als Waffe sehr seltsam. Nur die alten Goblinrunen, die entlang der Klinge eingekerbt sind, enthüllen etwas von der Macht und dder Geschichte des Dolches. Offensichtlich war diese Waffen ursprünglich das Folterwerkzeug eines mächtigen Goblin-Shamanan namens Sharnuk, der allem voran das Wissen um höhere Zauberkünste suchte. Sein Stamm überfiel häufig einsame Magier im Schlaf und brachte sie zu Sharnuk, damit dieser sie dann ihrer Geheimnisse berauben konnte. Während den Befragungen stach Sharnuk akribisch auf sein Opfer ein, bis dieses entweder durch magische Leiden, die von der Klinge hervorgerufen wurden, geschwächt wurde oder einfach durch den Blutverlust ins Delirium befördert wurde. In einem solchen Zustand war es für ihn einfach, das Wissen, nach dem im Verstand des Magier suchte, aufzuspüren. Als er glaubte mächtig genug zu sein, führte Sharnuk seinen Stamm auf einen Raubzug in eine nahegelegene gnomische Siedlung. Das Glück war jedoch an diesem Tag nicht auf seiner Seite, denn seine gesamte Kohorte wurde abgefackelt, als er versuchte, seinen ersten Feuerball zu Zaubern.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 33%ige Chance das Ziel mit einer der folgenden Krankheiten anzustecken (Rettungswurf gg. Tod):
+- Schmutzfieber: Konstitutions- und Geschicklichkeitsmalus von -2 für 1 Phase
+- Teufelsfrost: Stärkemalus von -2 und verlangsamt für 1 Phase
+- Mumienfäulnis: 20 Schadenspunkte (in 1 Phase)
+
+Schaden: 1W4 +3 (Stich)
+ETW0-Bonus: -3
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@127 = ~Diese Klinge gehörte einst Lao-Tzu, einem Samurai aus einer der südlichen Provinzen Kara-Turs. Nachdem er seine Ausbildung beendet hatte, schwor der Krieger einen Eid: Er wollte sein Land endlich von den Räubern und Banditen befreien, die sein Volk seit zehn Jahre quälten. Diese Aufgabe erwies sich jedoch als ziemlich schwierig, denn seine Gegner waren gerissen, schlugen nur mitten in der Nacht zu und trugen immer Masken und Kapuzen. Lao-Tzu verstand, dass diese Banditen keine Ehre besaßen und sich möglicherweise sogar unter genau den Menschen versteckten, die er beschützen wollte. Aber er wagte es nicht auf bloßen Verdacht zu handeln, denn sein Verhaltenskodex erlaubte es ihm nicht, einen Unschuldigen fälschlich anzuklagen. Lao-Tzu suchte den großen Wu Jen Meister auf und bat ihn, sein Wakizashi zu verzaubern, um ihn so bei diesem Unterfangen zu unterstützen. Es sollte die wahren Absichten eines Menschen aufdecken und die ohne Ehre mit voller Kraft niederstrecken.
+
+Um den Beraubten neuen Zuversicht zu spenden und die Banditen aus ihren Verstecken zu locken, richtete der Samurai für das Volk ein Fest aus. Das Volk folgte seinem Ruf und Lao-Tzu war zufreiden. Mit Hilfe seiner neuen Waffe schaffte er es, die durchtriebenen Räuber von den einfachen Bauern zu trennen und sie in einen eigenen Speisesaal zu setzen. Sobald sie alle versammelt waren, verbarrikadierte der Samurai den einzigen Ausgang und kämpfte allein gegen das Dutzend Diebe. Nach einem kurzen Gefecht ging Lao-Tzu als Sieger hervor, aber sein Ehrenkodex verbot es ihm, selbst solch unwürdige Feinde zu töten. Stattdessen verbannte er die Banditen aus der Provinz und sein Volk konnte endlich in Frieden leben.
+
+EIGENSCHAFTEN:
+
+Gesinnung erkennen (2x täglich)
+
+Schaden:
+ 1W8 +2 (Klinge)
+ 1W8 +4 (gg. chaotische Wesen)
+ETW0-Bonus: -2
+ -4 (gg. chaotische Wesen)
+RK-Bonus: -1
+Gewicht: 2
+Initiativefaktor: 1
+Mindeststärke: 5
+Fertigkeit: Krummsäbel
+Typ: 1-händig~
+
+@129 = ~Der Berufsstand des Ninjas ist sehr vielschichtig, einige sind fähige Attentäter während andere die Kunst des Schleichens und die Diebeskünste pefektionieren. Die Eigentümerin dieser Klinge gehörte zweifelsohne zu der zweiten Gruppe. Ihr wahrer Name bleibt ein Geheimnis, doch sie wurde als die Schwarze Katze berühmt. Sie war eine ruchlose Diebin, die bekannt dafür war für und auch von den besser gestellten Adeligen Kara-Turs seltene Güter zu beschaffen. Es war für sie nicht unüblich ein wertvolles Juwel aus der Sammlung eines Adeligen zu stehlen, es dann an einen anderen wohlhabenden Aristokraten zu verkaufen und es schließlich aus reinem Nervenkitzel zurückzustehlen. Für ihre Untaten wurde die Schwarze Katze von vielen berühmten Kriegern Kara-Turs gejagt, doch durch das Zusammenspiel von Glück und einem außerordentlichen akrobatischen Geschick schaffte sie es immer ihren Verfolgern zu entkommen. Schließlich, so erzählt die Geschichte, verliebte sie sich in einen besonders hartnäckigen Samurai und verlies zusammen mit ihm ihr Land und ihr früheres Leben.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W8 +2 (Klinge)
+ETW0-Bonus: -1
+Glücks-Bonus: +1
+Geschicklichkeit: +1
+Gewicht: 4
+Initiativefaktor: 2
+Mindeststärke: 6
+Fertigkeit: Krummsäbel
+Typ: 1-händig~
+
+@131 = ~Dunkle orkische Runen sind in diese Keule geätzt. Sie ist ein Überbleibsel aus dem letzten Krieg zwischen den Orks und den Magiern von Turmish. Als die orkischen Stämme begannen, die Städte der Magier zu überfallen, erschufen diese zu ihrem Schutz Golems von schrecklicher Macht. Weil er spürte, dass die rohe Kraft seiner Krieger nicht ausreichend war, befahl der große Orkhäuptling Gull-Nar seinen Schamanen eine Waffe zu fertigen, die es ihm erlauben sollte, die "lebenden Statuen" zu Schotter zu zerlegen. Seine Schamanen benutzten ein Buch aus einem geplünderten Magierturm um die Lieblingswaffe ihres Häuptlings zu verzaubern: eine große Kriegskeule. Gull-Nar war so erfreut, dass er sich dazu entschied, den nächsten Überfall persönlich anzuführen und die Golems auf dem Weg zum Stadtzentrum in Stücke zu zerschalgen. Der Sieg war zum Greifen nah, doch dann erschien plötzlich ein einzelner, schwarz-gekleideter Magier aus dem nichts und sprach einen mächtigen Zauber, der die tobenden Orks dazu brachte, sich gegenseitig anzugreifen. Innerhalb weniger Minuten war ihre Zahl stark dezimiert und Gull-Nar selbst war von den Kriegern, denen er am meisten vertraut hatte, getötet worden.
+
+EIGENSCHAFTEN:
+
+Wird ein Stein-, Lehm- oder Sandgolem getroffen besteht eine 10%ige Chance diesen sofort zu zerstören.
+
+Schaden:
+ 1W6 +2 (Wucht)
+ 1W6 +4 (gg. Golems)
+ETW0-Bonus: -2, -4 (gg. Golems)
+Gewicht: 3
+Initiativefaktor: 2
+Mindeststärke: 5
+Fertigkeit: Keule
+Typ: 1-händig~
+
+@133 = ~Diese zeremonielle Tartsche trägt magische Runen, die gewöhnlich mit Gaerdal Eisenhand, dem gnomischen Gott der Wachsamkeit und damit der kriegerischsten Gottheit des Gnomischen Pantheons, in Verbindung gebracht werden. Sein ernstes Wesen verschafft ihm sachlichen Respekt und er unterweist Gnome darin, sich im Kampf mit größeren und stärkeren Kreaturen zu behaupten indem sie ihre Größe und naturgegebenen Fähigkeiten zu ihrem Vorteil nutzen. Gaerdal hat eine kleine aber strenggläubige Anhängerschaft unter gnomischen Kriegern und denen, die für die Verteidigung gnomischer Gemeinschaften gegen Bedrohungen von außen verantwortlich sind. Darüber hinaus hat er sich allgemein den Respekt des Vergessenen Volkes verdient.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -2, -4 gg. riesige Humanoiden
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+
+@135 = ~Diese gesegneten Tartschen werden oft von den Hohepriestern und Tempelwachen Moradins, dem Gottvater der zwergischen Rasse, getragen. Der Seelenschmied stellt die Verkörperung von Stärke und Willenskraft dar und seine Waffen, Rüstungen und Werkzeuge sind gewissermaßen Verlängungen seiner Inkarnation. Aufgrund der Verzauberungen des Schildes wird seinem Träger Moradins Segen zuteil, wodurch er mit seiner Waffe besser trifft und er in düsteren Zeiten vor Unheil beschützt wird. Viele dieser Tartschen gingen während der Schlacht bei Dorns Klamm verloren, als die einfallenden Orks die mächtige Zwergenfestung plünderten und niederbrannten.
+
+EIGENSCHAFTEN:
+
+Heiligtum (1x täglich)
+
+Auf dem Träger liegen die Auswirkungen von Segen.
+
+RK-Bonus: -3
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+
+@137 = ~In den Beuteln an diesem Gürtel befindt sich eine Vielzahl meisterlich gefertigter Werkzeuge, die normalerweise von Schlossern und Uhrenmachern benutzt werden. Da jedoch solche Gegenstände mühelos für ruchlose Zwecke missbraucht werden können, sind sie unter Dieben ein sehr beliebtes Zubehör. Auf die Schnalle dieses Gürtels ist der Buchstabe "G" eingraviert.
+
+EIGENSCHAFTEN:
+
+Fallen finden/entschärfen: +10%
+Fallen stellen: +10%
+Schlösser öffnen: +10%
+Gewicht: 2~
+
+@139 = ~Akram Maluzar war ein berüchtigter Magier der Zhentarim, der von den Geheimnissen der alten Nesseril besessen war. Während seiner vielen Reisen durch die Große Wüste erforschte er ein System von Höhlen, das, wie er vermutet hatte, mit einer begrabenen Stadt der Nesseril verbunden war. Sein Enthusiasmus wurde jedoch deutlich gedämpft, als er herausfand, dass die Ruinen mit einer Vielzahl von Fallen, illusionären Stockwerken und soliden, versperrten Türen gespickt waren. Er war der Verzweiflung nahe, denn die Überwingung diese Hindernisse überstieg Akrams Fertigkeiten. Da er die Macht der Nesseril aber mit niemandem teilen wollte, beschloss Akram stattdessen, die Talente zu stehlen, die ihm fehlten. Der Zauberer heuerte mit dem Versprechen, ihnen einen großen Teil der Reichtümer abzugeben, drei außergewöhnlich fähige Diebe aus Calimshan an - einen erfahrenen Einbrecher, einen zwielichtigen Fallensteller und einen aufmerksamen Späher. Anstatt sie zu der alten Stadt zu schicken, legte Akram die Diebe herein und sperrte ihre Seelen in einen Saphirblauen Ionenstein, der auf diese Weise mit genau den Fähigkeiten verzaubert wurde, die der Magier gesucht hatte.
+
+Das Verfahren war erfolgreich und zunächst konnte er ungehindert tief in die Ruinen vordringen. Schließlich begannen jedoch die drei im Ionenstein gefangenen Seelen der Diebe zu rebellieren und fingen damit an, die Lebensenergie des Magiers abzusaugen. Auf diese Weise wollten so seinen Körper als den ihren in Besitz nehmen. Von seinem Streben nach Macht getrieben, achtete Akram kaum auf seine körperliche Verfassung - bis es zu spät war. Er brach völlig erschöpft vor der verfallen Bibliothek der Nesseril zusammen und aktivierte dabei versehentlich eine versteckte Falle, die den Einsturz der Decke auslöste und sein Leben beendete. Akrams wertvoller Ionenstein wurde später von einem umherziehenden Stamm von Kobolden geborgen, die ihn für einen einfachen Edelstein hielten und ihn deshalb gegen Vorräte eintauschten.
+
+Anmerkung: Um das Wissen zu erlangen, das dazu nötwenidg ist, die Fähigkeiten zu nutzen, die in diesem Gegenstand stecken, muss sein Träger wirklich in das Bewusstsein der gefangenen Seelen eintauchen. Dieser Prozess kann sehr anstrengend sein und die Benutzung der Fähigkeiten verursacht mehr und mehr Erschöpfung. Je mehr man sie benutzt, desto müder wird man, und der einzige Weg, die Erschöpfung wieder loszuwerden, ist eine Nacht voller Schlaf.
+
+EIGENSCHAFTEN:
+
+Fallen finden (3x täglich)
+Klopfen (3x täglich)
+Unsichtbarkeit aufheben (3x täglich)
+
+Gewicht: 0~
+
+@141 = ~Diese schlicht wirkende Kapuze war einst das geschätzte Eigentum der Diebesgilde von Xanathar. Sie wurde magisch behandelt, um Scharfsinn und Wahrnehmung ihres Träger zu verbessern. Die Kapuze ging während der Plünderung eines Hauses der Xanathar-Sklavenhändler in Skullport zwischenzeitlich verloren, tauchte in Calimhafen wieder auf und fand mit einer der vielen Handelskaravanen der Handelsgesellschaft aus Sybarr ihren Weg nach Atkhatla.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Blindheit.
+
+Infravision
+Fallen finden/entschärfen: +10%
+Schützt vor kritischen Treffern
+Gewicht: 0~
+
+@143 = ~Das Unfreiwillige Publikum
+
+Diese fein gearbeitete Harfe ist unter den nomadischen Völkern des Ostens wohlbekannt, wenn auch mehr wegen der Unverschämtheit ihres Besitzers, Greagan von den Kleinen Hügeln. Er war so etwas wie ein Barde, wenn auch weniger aus Menschenliebe als aus Abneigung gegenüber harter Arbeit. Er bat einen mit ihm verwandten Magier darum, diese Harfe zu konstruieren, um ihre Magie dazu zu benutzen, seinen gravierenden Mangel an künstlerischem Talent zu verschleiern. Ihre Macht war größer als erhofft und später wurde aus ihm nichts weiter als ein einfacher Einbrecher, der seine Opfer mit Hilfe "seiner" Musik entzückte. Greagan verschwand vor einigen Jahren endgültig, als Gerüchte davon umgingen, dass eine Bardenschule ungewöhnlicherweise in die Gewalt abgerutscht war. Die Harfe funktioniert immer noch, obgleich sich jeder Troubadour mit Selbstachtung ihren Einsatz für Augenblicke größter Not aufheben würde.
+
+EIGENSCHAFTEN:
+
+Beherrschung (3x täglich)
+
+Gewicht: 3~
+
+@145 = ~Lady Laxaella Bronschild, die Baroness von Tanistan, lies diese Harfe für ihren Hofnarren bauen, bevor sie ihn zusammen mit ihren besten Soldaten ausschickte, um sich um eine neuerliche Erdkolossplage im Dornwald zu kümmern. Zuerst waren die Soldaten überrascht, dass ein Harlekin sie bei dieser Aufgabe unterstützen sollte. Sie verspotteten ihn gerne wegen seines dürren Körperbaus und seiner offenkundigen Einfältigkeit, aber nach ihrem Zusammentreffen mit dem ersten Erdkoloss begriffen sie bald seine wahre Rolle. Zum Erstaunen der Soldaten blieb der Harlekin vom schrecklichen Blick des Erdkolosses völlig unbeeindruckt, der gleichzeitig einen ihrer standhaftesten Krieger in einen benommenen Idioten verwandelt hatte. Darüber hinaus schien die seltsame, schrullige Melodie, die die Harfe des Harlekins produzierte, irgendwie dem Effekt des Blicks entgegenzuwirken und die geistige Gesundheit des betroffenen Soldaten wiederherzustellen. Am Ende wurde die Plage ohne Opfer und mit minimalen Verletzungen beseitigt. Den größten Teil ihres Heimweges trugen die Soldaten den Harlekin auf ihren Schultern und sagen währenddessen zu seinen Ehren Lobeshymnen.
+
+EIGENSCHAFTEN:
+
+Verwirrung aufheben (3x täglich)
+ Bereich: 1 Wesen
+
+Gewicht: 3~
+
+@147 = ~Die aufwändigen und feurigen Runen, die in das Heft dieses Dolches geätzt wurden, zeigen, dass er in Thay geschaffen wurde, vermutlich von einem hochrangigen Mitglied der Forschergruppe. Obwohl die Klinge von jedem benutzt werden kann, der dazu in der Lage ist, sie zu führen, entlocken nur die, die in den arkanen Künsten geschult sind, dem Dolch sein wahres Potenzial. Diese winzige Waffe scheint mit einer Verzauberung belegt worden zu sein, die den Verstand ihres Trägers schärft und dadurch die Zahl der arkanen Sprüche, die ein Zauberer sich merken kann, vergrößert.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W4 +3 (Stich)
+ETW0-Bonus: -3
+Intelligenz: +1
+Zauber: +1 (Grad 1 und 2)
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@149 = ~Diese Keule wurde von einem mächtigen Uthgardt Schamanan erschaffen und speziell dazu verzaubert, die Kampfkraft eines Gegner zu vermindern. Sie wurde von Aukthar, einem Häuptling des Stammes des Schwarzen Raben, in vielen Konflikten zwischen seinem Volk und den orkischen Horden geführt. Diese Orks versuchen regelmäßig den Rabenfelsen, den Ahnenhügel der Barbaren, zu erobern. Diese Waffe ging während einer besonders hitzigen Schlacht verloren, als die Kreigsschreie der Kämpfer beider Seiten eine gewaltige Lawine auslösten, die alle den Berghang hinunterriss.
+
+EIGENSCHAFTEN:
+
+Wird ein humanoides Wesen getroffen, leidet dieses unter Erschöpfung (Rettungswurf gg. Tod, -4 Bonus).
+
+Schaden: 1W6 +2 (Wucht)
+ETW0-Bonus: -2
+Gewicht: 3
+Initiativefaktor: 2
+Mindeststärke: 5
+Fertigkeit: Keule
+Typ: 1-händig~
+
+@151 = ~Zu den Komposit-Bögen zählen Lang- und Kurzbögen, die aus mehreren unterschiedlichen Materialien bestehen. Dadurch wird der Bogen flexibler und von ihm verschossene Pfeile richten größeren Schaden an. Dieser Bogen kann nur von Charakteren geführt werden, die eine Stärke von 16 oder mehr besitzen.
+
+EIGENSCHAFTEN:
+
+Schadensbonus: +1 (Geschoss)
+Gewicht: 2
+Initiativefaktor: 6
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@153 = ~Zu den Komposit-Bögen zählen Lang- und Kurzbögen, die aus mehreren unterschiedlichen Materialien bestehen. Dadurch wird der Bogen flexibler und von ihm verschossene Pfeile richten größeren Schaden an. Dieser Bogen kann nur von Charakteren geführt werden, die eine Stärke von 16 oder mehr besitzen.
+
+EIGENSCHAFTEN:
+
+Schadensbonus: +2 (Geschoss)
+ETW0-Bonus: -1
+Gewicht: 2
+Initiativefaktor: 5
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@155 = ~Zu den Komposit-Bögen zählen Lang- und Kurzbögen, die aus mehreren unterschiedlichen Materialien bestehen. Dadurch wird der Bogen flexibler und von ihm verschossene Pfeile richten größeren Schaden an. Dieser Bogen kann nur von Charakteren geführt werden, die eine Stärke von 16 oder mehr besitzen.
+
+EIGENSCHAFTEN:
+
+Schadensbonus: +3 (Geschoss)
+ETW0-Bonus: -2
+Gewicht: 2
+Initiativefaktor: 4
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@157 = ~Zu den Komposit-Bögen zählen Lang- und Kurzbögen, die aus mehreren unterschiedlichen Materialien bestehen. Dadurch wird der Bogen flexibler und von ihm verschossene Pfeile richten größeren Schaden an. Dieser Bogen kann nur von Charakteren geführt werden, die eine Stärke von 16 oder mehr besitzen.
+
+EIGENSCHAFTEN:
+
+Schadensbonus: +4 (Geschoss)
+ETW0-Bonus: -3
+Gewicht: 2
+Initiativefaktor: 3
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@159 = ~Auf den ersten Blick sieht dieser Gegensatnd aus wie eine schlichte, schwarze Haube, die die Gesichtszüge des Trägers verdeckt und so seine Erkennung verhindert. Wenn ihr Träger jedoch Kreaturen gegenübersteht, die Blickangriffe einsetzen können (wie etwa Basilisken, Vampiren oder Erdkolossen), zieht sich die Haube immer dann magisch über die Augen des Träger, wenn dieser kurz davor steht, vom Blick der Kreatur getroffen zu werden. Auf diese Weise schützt die Haube ihn vor allen schädlichen Auswirkungen. Unglücklicherweise kann der Träger diesen Vorgang nicht bewusst steuern und daher ist es für ihn schwierig, gegen solche Kreaturen zu kämpfen, obwohl er gegen ihren Blickangriff geschützt ist.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Blickangriffe.
+
+ETW0-Malus:
+ +2 (gg. Wesen mit Blickangriffen)
+Im Schatten verstecken: +5%
+Schützt vor kritischen Treffern
+Gewicht: 0~
+
+@201 = ~Viele Generationen lang wurde dieses Schild an ausgewählt Hohe Richter von Amaunator übergeben, die sich selbst die Pflicht auferlegt hatten, alle Länder von Untoten zu befreien. Nachdem Amaunator scheinbar verschwunden und die Festung der Ewigen Sonne gefallen war, begann der goldenen Glanz der Schilds zu verblassen und seine mächtigen Verzauberungen fingen an sich aufzulösen. Schließlich war das einst mächtige Artefakt zu einer bloßen Wanddekoration verkommen. Als die Zeit verging verfielen Amaunators Anhänger langsam in Unordnung und begannen auseinanderzugehen. Das Schild wurde zuletzt zusammen mir vielen anderen Relikten aus ihrem Tempel geplündert.
+
+EIGENSCHAFTEN:
+
+Jedes untote Wesen, das den Träger im Nahkampf trifft, erleidet 1W2 Schadenspunkt durch Feuer. Außerdem wird es für 2 Runden geblendet (Rettungswurf gg. Zauber).
+
+RK-Bonus: -2
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht:  2
+Mindeststärke: 4~
+
+@203 = ~Dieses mächtige Amulett wurde 727 DR von dem Verzauberer Celemon von Calimhafen erschaffen. Er stellte zehn solcher Amulette für Geld her bevor eifersüchtige Konkurrenten ihn töteten und versuchten das Verfahren zu kopieren. Seine Mitstreiter waren nicht so talentiert wie Celemon und vernichteten sowohl ihr Laboratorium als auch sich selbst, als ein Unglück passierte. Das Rezept wurde ebenfalls zerstört. Dieses spezielle Amulett gehörte dem elfischen Kampfmagier Pelan Regenwind. Es ging verloren als er irgendwann um 840 DR am Grat der Welt von Riesen getötet wurde.
+
+EIGENSCHAFTEN:
+
+Kleinere Kugel der Unverwundbarkeit und Steinhaut zugleich (3x täglich)~
+
+@205 = ~Diese grell roten und grünen Stiefel wurden von dem Schurken Elpham von Perrywine getragen. Elpham war ein Taschendieb von außergewöhnlichem Talent, der das Glück dadurch herausforderte, dass er seine Opfer kurz nach dem Raub ihrer Habseligkeiten verspottete. Nachdem er zweimal geschnappt worden war, investierte Elpham sein Geld in die Herstellung dieser Stiefel. Natürlich ereilt Elpham ein vorzeitiges Ende, als er in die Taschen von Xain Morobdel, einem notorisch schlecht gelaunten Roten Magier von Thay, griff. Elpham stahl einen kleinen Beutel voller Edelsteine von Xains Hüfte und tanzte in die Menge davon, während er schrie: "Warum versucht Ihr nicht, mich zurück nach Priador zu jagen, Glatzkopf?  Ha ha!"  Xain, der im Stillen vor Wut kochte, beschwor sofort vier Unsichtbare Pirscher und befahl ihnen: "Tötet den Idioten in den rot-grünen Stiefeln."
+
+EIGENSCHAFTEN:
+
+Die Bewegungsrate des Träger wird erhöht.
+
+RK-Bonus: -1
+Gewicht: 4~
+
+@207 = ~Diese herrlich gefertigte Axt trägt eine Verzauberung ungewöhnlichen Ursprungs. Sofort nach ihrer Herstellung wurde die Axt auf die Spitze eines Berges gebracht, wo Zwergenpriester darauf warteten, dass sich ein großer Sturm zusammenzog. Die Waffe wurde auf ein eisernes Podest gestellt und bald darauf von einem Blitz getroffen. Aufgrund der zuvor ausgesprochenen Verzauberungen absorbierte die Axt einige der Eigenschaften des Blitzes. Sie wurde später an einen hochrangigen zwergischen Offizier übergeben, um ihm bei der folgenden Schlacht zwischen den orkischen Horden und den Zwergen von Dorns Klamm zu helfen.
+
+Der Angriff kam für die Zwerge vollkommen überraschend, als eines Morgens ein Späher auftauchte und berichtete, dass die größte orkische Armee, die er je gesehen hatte, nur noch ein paar Stunden entfernt war. Da sie nur wenig Vorbereitungszeit hatten, wurden die zwergischen Krieger überrannt und die Orks begannen in Dorns Klamm zu strömen. Die Zwerge wurden dazu gezwungen, sich in die Tiefen der Zitadelle zurückzuziehen, aber Schlüsselstellen wurden zum Einsturz gebracht, um ihren Rüchzug zu decken und ihnen Zeit zu erkaufen. Selbst unter solch düsteren Voraussetzungen erlaubte dies den Zwergen zu bestimmen, wann und wo sie kämpfen wollten. Jede Schlacht kostete die Orks große Opfer, da die Zwerge zu ihren Bedingungen kämpften, aber dennoch wurden sie weiter und weiter in den Wyrmzahngletscher zurückgetrieben. Schließlich gelang es den Orks aufgrund ihrer überlegenen Anzahl die Verteidigungslinien der Zwerge zu durchbrechen und ihr Heim zu plündern.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 10%ige Chance das Ziel für 1 Runde zu betäuben.
+
+Schaden: 1W8 +3 (Klinge)
+Schadensbonus: +1W3 (Elektrizität)
+ETW0-Bonus: -3
+Elektrizitätswiderstand: +20%
+Gewicht: 5
+Initiativefaktor: 4
+Mindeststärke: 10
+Fertigkeit: Axt
+Typ: 1-händig~
+
+@209 = ~Ein Schlachtenmagier der Zhentarim fertigte diese Klinge in der Hoffnung sie würde ihm bei einem Duell, zu dem er herausgefordert worden war, helfen im Nahkampf die Oberhand zu gewinnen. Das mächtige Schwert war dazu gedacht, die meisten ankommenden Schläge abzufangen und gleichzeitig seinen Gegner bewegungsunfähig zu machen. Unglücklicherweise fehlte es dem Magier an echter Fertigkeit mit der Waffe und so wurde er von Gegner mühelos besiegt.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 10%ige Chance auf das Ziel Monster festhalten zu wirken.
+
+Schaden: 1W8 +3 (Klinge)
+ETW0-Bonus: -3
+RK-Bonus: -3 gg. Klingenwaffen
+Gewicht: 2
+Initiativefaktor: 2
+Mindeststärke: 6
+Fertigkeit: Langschwert
+Typ: 1-händig~
+
+@211 = ~Diese Rüstung umgibt ein großes Mysterium und niemand weiß sicher, wo und wann sie entstand. Was man aber weiß, ist dass das Leder aus der Haut eines Abishai herausgeschnitten wurde, obwohl es aufgrund der Tatsache, dass die Rüstung tief schwarz gefärbt wurde, unmöglich zu sagen ist, welche Farbe dieser hatte. Zusätzlich besitzt sie einen ungewöhnlichen, sehr schwachen und essigähnlichen Duft. Diejenigen, die diese Rüstung tragen, werden mit einem leichten Widerstand gegen physischen Schaden und der Fähigkeit, Wunden zu regenerieren, ausgestattet. Es ist unklar, ob diese Eigenschaften vom Leder selbst oder von einer darauf liegenden Verzauberung herrühren.
+
+EIGENSCHAFTEN:
+
+Rüstungsklasse: 4
+Regeneration: 1 TP pro Runde
+Widerstand gg. alle Waffen: +15%
+Gewicht: 15~
+
+@213 = ~Der Schwertmagier Naradon von Thesk war für seine Fähigkeit bekannt, selbst in Unterzahl gegnerische Magier schnell und effektiv zu besiegen. Er hatte sich diesen Ruf mit Hilfe von drei Dinge verdient: Schnelligkeitsöl, Siebenmeilenstiefeln und seinem zuverlässigen Kurzschwert, Spruchtaucher. Anders als viele andere magische Waffen hat Spruchtaucher keine dunkle, mörderische Vergangenheit. Naradon setzte sich im Alter von 32 von der Abenteurerei zur Ruhe. Seine Vorliebe für Geschwindigkeitsöl wurde ihm vier Jahre später zum Verhängnis, als er an Altersschwäche starb. Sein einziger Erbe hatte kein Interesse daran ein Abenteurer zu werden. Ein paar Jahre nach dem Tod seines Vaters verkaufte er diese Waffe an einen bekannten Fassadenkletterer. Das Schwert lässt sich gut anhand des in die Klinge eingeprägten Eisvogels erkennen.
+
+EIGENSCHAFTEN:
+
+Nach jedem Treffer besteht für das Opfer 3 Runden lang eine kummulative 10%ige Chance, dass ihm Zaubersprüche misslingen.
+
+Schaden: 1W6 +3 (Stich)
+ETW0-Bonus: -3
+RW-Bonus: -1 gg. Zauber
+Magiewiderstand: +5%
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 5
+Fertigkeit: Kurzschwert
+Typ: 1-händig~
+
+@215 = ~Diese dunkelbraune Kapuze ist dazu gedacht, sie als weiten Überwurf über Kopf und über Schultern zu tragen. Sie wurde einem gnomischen Dieb und Illusionisten namens Brein Maroni gefertigt, der sie etliche Jahre auf seinen Abenteuern nutzte, bevor ihn schließlich seine Jugendliebe davon überzeugte, sich niederzulassen. Er gab die Kapuze an seinen Neffen Chirchet weiter, der sie seinerseits für einen großes Stück Ackerland verkaufte.
+
+EIGENSCHAFTEN:
+
+Verschwimmen und Spiegelbild zugleich (3x täglich)
+
+RK-Bonus: -1
+Im Schatten verstecken: +15%
+Gewicht: 1~
+
+@217 = ~Dieses Schwert war einst Eigentum von Venduris, einem gerissenen Meuchelmörder in Diensten Cyrics - dem amtierenden Gott des Mordes. Als der Schurke zu den Auserwählten des Cyric aufgenommen wurde, erhielt er zu Beginn als Willkommensgeschenk eine kleine, schlichte Klinge. Obwohl das Schwert zu dieser Zeit zunächst nur schwächere Verzauberungen in sich trug, schien seine Macht und Schärfe mit jedem, den Venduris im Namen seines neuen Meisters ermordete, zu wachsen. Der Attentäter erledigte diese Aufgaben gerne schnell und leise, so dass sich seine Opfer ihres nahenden Untergangs fast nie bewusst waren. Bei bestimmten Gelegenheiten jedoch, wenn ein Feind den Prinz der Lügen besonders verärgert hatte, brachte Venduris vor seiner Tat ein tödliches Gift auf seine Klinge auf. So fingen das Opfer an zu würgen und war unfähig zu sprechen oder um Hilfe zu schreien, während Cyric fröhlich darüber lachte, wie sich das stumme Gesicht seines Widersachers vor Schmerz und Qual verzerrte. Verursacht wurde das durch die nacheinander einsetzenden Auswirkungen des Giftes, die schlussendlich zu einem langsamen und qualvollen Tod führten.
+
+Das Schwert pulsiert in schwachem, grünlichem Licht und es verströmt eine mächtige Aura des Bösen. Die Spitze und die Schneiden der Klinge sind extrem scharf und ständig von einer dünnen Schicht magischen Gifts bedeckt, was es sehr schwierig macht, das Schwert zu benutzen ohne sich selbst zu verletzen. Der Versuch diese Waffe zu führen, bleibt äußerst fähigen und durchtriebenen Dieben vorbehalten.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 4%ige Chance einen lebenswichtiges Körperteil zu durchstoßen und so die Trefferpunkte des Opfers um 20% zu verringern. Außerdem liegt auf dem Opfer für 4 Runden Stille (Rettungswurf gg. Odemwaffen).
+
+Schaden: 1W6 +4 (Stich)
+Schadensbonus:
+ +4 (Gift über 4 Sekunden)
+ETW0-Bonus: -4
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 5
+Mindestgeschicklichkeit: 15
+Mindestintelligenz: 15
+Fertigkeit: Kurzschwert
+Typ: 1-händig~
+
+@219 = ~Bei genauerem Hinblick scheint der Stoff dieser Stiefel aus einem merkwürdigem, körperlosen Material zu bestehen. Trägt man diese Stiefel, so nimmt man eine schatten- oder geisterhafte Gestalt an. Zusätzlich werden Geräusche auf unheimliche Weise so verhüllt, als ob sie aus großer Entfernung stammen würde.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -1
+Im Schatten verstecken: +15%
+Leise bewegen: +10%
+Gewicht: 5~
+
+@221 = ~Als übel aussehender Dolch mit dunkler Vergangenheit, ist die Salamanderzunge sowohl zur Verwndung als Waffe wie auch aufgrund ihrer versteckten magischen Kräfte wertvoll. Die Klinge dieses exotisch aussehenden Dolches ist wellenförmig, ähnlich wie bei einem Kris, und endet in zwei kleinen Spitzen. Ein kleines Stück einer schleimigen, leuchtend roten, lebenden Salamanderzunge wurde irgendwie nahe dem Griff in das Herz der Klinge eingebettet. Es pulsiert und windet sich zufällig ohne dass der Träger dies kontrollieren könnte.
+
+Die genauen Ursprünge dieser Klinge sind unbekannt, aber man glaubt, dass der erste Eigentümer dieser Waffe Turlam Seichthügel, ein geachteter und gefürchtetet gnomischer Dieb und Attentäter aus Westtor, war. Turlam wurde im Kampf mit einem Konkurrenten, einem Halbling namens Deder Siebenfinger, getötet, der die Waffe als Trophäe behielt. Er war sich ihrer Macht bis zu dem Zeitpunkt nicht bewusst, an dem sie ihm von einem seiner Untergebenen, einem Halblingskameraden namens Kreshinal Schwarzhund, gestohlen wurde. Kreshinal floh mit dem Dolch für fünf Jahre nach Selgaunt und verlies sich dabei auf dessen Kräfte, um sich vor Entdeckung zu schützen. Kreshinal verlor den Dolch bei einem vermurksten Spielbetrug und wurde noch im selben Monat von Deders Agenten getötet. Deder versuchte den Dolch von jenen sembianischen Kriminiellen zurückzubekommen, die ihn zuvor erbeutet hatten. Er spürte die Diebe erfolgreich auf und beschaffte sich den Dolch wieder zurück, aber er hatte seine Aufmerksamkeit so sehr auf die Klinge konzentriert, dass er nicht bemerkt hatte, wie die sembianischen Verbrecher einen Priester des Mask angeheuerten, um seine Unternehmungen in Westtor zu unterwandern und zum Scheitern zu bringen. Der darauffolgende Krieg zwischen den Gruppen in Westtor und Selgaunt endete, als der Priester des Mask, Pieter der Schwache, beide Seiten so paranoid gemacht hatte, dass sie sich selbst von Innen heraus ruinierten. Als er die Gelegenheit dazu hatte, schnappte Pieter sich den Dolch und entkam im Vertrauen darauf nach Fernberg, dass die unorganisierten halbmenschlichen Anhänger des späten Deder Siebenfingers ihm nicht an einen Ort folgen würden, der ihrer Art so feindlich gesonnen war.
+
+Bei einem weiteren Betrug verkaufte Pieter die Klinge an einen Mulmaster Hawk, während er andere potentielle Käufer zu einer Versteigerung nach Fernberg lockte. Pieter und seine Gefährten ermordeten die Käufer bei der getürkten Auktion und machten sich unter dem Schutz eines Amuletts der Unauffindbarkeit zusammen mit dem Geld aus dem Staub. Der Mulmaster Hawk, der die Klinge erworben hatte, wurde vermutlich von einer Priesterin der Umberlee getötet, die darüber verärgert war, dass sich der Meuchelmörder weigerte, der Königen der Schlampen Tribut zu zahlen. Vermutlich durch den jahrelangen Kampf zwischen verschiedenen Untergruppen der Anhängerschaft Umberlees legte der Dolch von seinen bescheidenen Anfängen in Sembia fast 3.000 Meilen zurück. Über den Verbleib von Pieter dem Schwachen und seinen Schlägern ist derzeit nichts bekannt.
+
+EIGENSCHAFTEN:
+
+Auf dem Träger liegt Unauffindbarkeit.
+
+Schaden: 1W4 +3 (Stich)
+Schadensbonus:
+ +1W2 (Feuer): 50% Chance
+ +2W2 (Feuer): 10% Chance
+ +3W2 (Feuer): 15% Chance
+ +4W2 (Feuer): 5% Chance
+ETW0-Bonus: -3
+RW-Bonus: -3 gg. Gift
+Feuerwiderstand: +10%
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig~
+
+@223 = ~Diese altertümlichen Helme waren unter den Reghed-Barbaren, die das spätere Eiswindtal besiedelten, weit verbreitet. Die Konstruktion ist relativ simpel: Sie besteht aus einem einfachen Eisenhelm mit aufklappbarem Visier. Wenn die Herstellung des eigentlichen Helms vollendet war, wurde auf das Visier das Bild eines toten Kriegers aufgeprägt. Auf der Stirn wurden zusätzlich der Name des Kriegers und die Todesursache eingraviert. Dann wurde der Helm auf den Scheiterhaufen des Toten gelegt. Die Priester glaubten, die Maske würde die Furcht der Toten vor dem Leben nach dem Tod verbergen, wenn sie von Tempus gerichtet würden. Die Helme der tapfersten Krieger wurden nach einem Monat von den Priestern in Verwahrung genommen. Die Namen dieser Krieger wurden in den darauf folgenden Jahren in den täglichen Ritualen der Priester lobend erwähnt. Legenden zufolge machte der Helm seinen Träger tatsächlich gegenüber Furcht immun, wenn Tempos den Krieger als tapfer befand. Dieses Exemplar ist mit dem Namen "Siglef" und dem Wort "Axt" versehen.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen Furcht und Panik.
+
+RK-Bonus: -1
+Charisma: -2
+Schützt vor kritischen Treffern
+Gewicht: 3~
+
+@225 = ~Dieser Kranz aus Lorbeerblättern und Rosen war ein Geschenk der Kirche von Sune an die Priesterinnen von Hanali Celanil in Seldarines Obhut. Die Vertreter der menschlichen Göttin der Liebe und Schönheit wurden gut empfangen, und die Hohepriesterin von Hanali Celanil trug den Lorbeer, wann auch immer Menschen die Obhut aufsuchten. Die Orks warfen den Lorbeer als nutzlosen Abfall weg, als sie den Turm der Priester plünderten.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -1
+Charisma: +1
+Schützt vor kritischen Treffern
+Gewicht: 1~
+
+@227 = ~Dieser Ionenstein wurde ursprünglich von den Nymphen in Stormshire gestohlen und diente Venduris die letzten zehn Jahre unzufrieden. Die Essenz des Glücks, die sich in ihm befindet, wurde von diesem bösen Attentäter dazu missbraucht, seine Attacken zur Schwachstelle eines Gegner zu lenken und so die größtmögliche Tödlichkeit seiner Angriffe sicherzustellen. Einst war der Glücksstein wunderschön anzusehen und ähnelte einem strahlenden, regenbogenarten Juwel. Doch dann wurde er durch den Einfluss seinen neuen Besitzers korumpiert und letzten Endes begann sein Zauber zu verblassen. Die Dunkelheit, die sich nun in ihm befindet, ist einen Erinnerung an Venduris widerwärtige Taten.
+
+EIGENSCHAFTEN:
+
+Glücks-Bonus: +3
+Schützt vor kritischen Treffern
+Gewicht: 0
+Mindestweisheit: 10~
+
+@229 = ~Dieser Gegenstand wurde ursprünglich von einem mehr als ehrgeizigen thayischen Illusionisten entwendet, der es irgendwie geschafft hatte, Cyrics Pläne zu durchkreuzen. Als Venduris zur Beseitigung des Magiers ausgesandt wurde, nahm er diesen Unsichtbarkeitsring aus dessen persönlichen Gegenständen an sich. Der Meuchelmörder hatte kaum Bedarf, ihn einzusetzen, da er in der Kunst des Schleichens sehr versiert war, jedoch stellte sich der Ring bei einigen wenigen Gelegenheiten als sehr nützlich heraus. Nämlich immer dann, wenn er seine Opfer lebend gefangen nehmen und sie für Befragungen oder Folter zurück zum Tempel seines Meisters schleifen sollte, ohne dabei durch Magie aufgespürt werden zu können.
+
+EIGENSCHAFTEN:
+
+Massenunsichtbarkeit (1x täglich)
+
+Der Träger ist immun gegen Unsichtbarkeit entdecken, Unsichtbarkeit aufheben, Wahrer Blick und ähnlich göttliche Zauber.~
+
+@231 = ~Diese magische Schriftrolle stammt von der Leiche von Venduris dem Dieb. Die Inschrift auf der einen Seite scheint ein Hinweis des Zauberers, der die Schriftrolle geschaffen hat, zu sein, während die andere Seite des Papiers mit verschiedenen arkanen Runen bedeckt ist. Der Hinweis lautet:
+
+"Venduris, wie gewünscht wurden die Abwehrglyphen, die <CHARNAME> einfangen sollen, direkt mit den Runen auf dieser Schriftrolle verbunden. Da Ihr darauf bestanden habt, der einzige zu sein, der das Befehlswort kennt, habe ich eine Zeile am Ende der Rückseite leer gelassen, in die Ihr diesen eintragen könnt. Doch seid gewarnt, sobald Ihr das getan habt, solltet Ihr dafür sorgen, dass die Schriftrolle jederzeit sicher und gut versteckt aufbewahrt ist. Aufgrund der ungewöhnlichen Zaubertechnik kann ich keine Garantie darauf geben, was mit den Glyphen passieren wird, sollte die Schriftrolle beschädigt oder zerstört werden."
+
+-S.~
+
+@233 = ~Eine magische Untersuchung enthüllt, dass dieser dunkle Umhang zunächst aus der ektoplasmischen Essenz eines Schattens und der Seide einer Phasenspinne gewoben wurde. Anschließend wurde er von Priestern des Cyric weiter verzaubert, um Cyrics ergebensten Dienern sowohl Schutz als auch Diskretion zu bieten. So kann der Verstand des Trägers nicht mit magischen Mitteln erforscht werden. Darüber hinaus verbessert dieser Umhang durch die besondere Natur seines Gewebes auch die Fähigkeit, mit den Schatten zu verschmelzen, und macht es unmöglich, Schwachstellen beim Träger zu erkennen, wodurch dieser effektiv gegen hinterhältige Angriffe geschützt ist.
+
+EIGENSCHAFTEN:
+
+Der Träger ist immun gegen hinterhältige Angriffe und Gesinnung erkennen.
+
+RK-Bonus: -1
+RW-Bonus: -1
+Im Schatten verstecken: +50%
+Gewicht: 1~
+
+@235 = ~Dieser Bogen zeigt Spuren einer starken Verzauberung, die oft von Priesterinnen der Yuan-Ti benutzt wird. Der Bogenschaft ähnelt zwei Schlangen, die beide versuchen einen in den Griff geschnitzten Augapfel zu verschlingen. Über beide Seiten des Schaftes steht der Satz "Möge die Größe von Sseth die Unwürdigen blenden!" geschrieben. Offenbar war es die Hauptaufgabe dieses Bogens, unvorsichtige Eindringlinge davon abzuhalten, den Standort des geheimen Yuan_Ti Tempels zu entdecken, der tief im Wald von Aschental versteckt lag.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 25%ige Chance das Ziel für 5 Runden zu blenden (Rettungswurf gg. Zauber).
+
+Schadensbonus: +4 (Geschoss)
+ETW0-Bonus: -3
+Gewicht: 1
+Initiativefaktor: 3
+Mindeststärke: 16
+Fertigkeit: Kurzbogen
+Typ: 2-händig~
+
+@237 = ~Ein Drow-Kettenhemd ist ein ausgezeichnet gefertigtes, seidig schwarzes Netz aus Metal, das seinen Träger nicht im Mindesten belastet. Es ist ähnlich, aber nicht identisch zu magischen Elfenkettenhemden. Üblicherweise wird es nur einen Waffenrock angeformt, da Drow mit ihren waldverbundenen Vettern die Vorliebe für Rüstungen teilen, die angemessen schützen ohne dabei zu schwer oder einschränkend zu sein. Die außergewöhnliche Leichtigkeit dieser Rüstung erlaubt es, dass sie von Dieben und Kämpfer/Magiern ohne Beschränkungen getragen werden kann. Weiterhin gewährt ein Drow-Kettenhemd seinem Träger geringen Magiewiderstand und verringert den Zeitaufwand bei der Verwenung beliebiger Zaubersprüche.
+
+Im Gegensatz zum Großteil der Drow-Ausrüstung wurde dieses spezielle Kettenhemd nicht aus Adamantit gefertigt, da es für Späher, die regelmäßig an die Oberflächen reisten, gedacht war. Daher zerfällt es nicht, wenn es direkter Sonneneinstrahlung ausgesetzt wird, schützt aber im Gegenzug auch nicht so gut wie eine gewöhnliche Rüstung der Drow.
+
+EIGENSCHAFTEN:
+
+Der Zeitaufwand beim Zaubern verringert sich um 1.
+
+Rüstungsklasse: 4
+Magiewiderstand: +5%
+Gewicht: 7
+Mindeststärke: 5~
+
+@239 = ~Ring der Zauberei: Geminus
+
+Vor langer Zeit wurde gemunkelt, dass ein bedeutender Magier aus Amn sich Mystras Beschränkungen der magischen Künste widersetzt hatte. In Legenden wird berichtet, dass dieser Magier dazu in der Lage war Zauber zu wirken, ohne die Beschränkung sie sich vorher einprägen zu müssen. Zu guter Letzt fand man heraus, dass seine Kräfte von mehreren magischen Ringen stammten, die er für sich selbst erschaffen hatte. Seine von ihm ausgerufene "immerwährende Erinnerung" war ein Schabernack, obgleich seine Ringe immer noch zu den meist gesuchten Gegenständen in den Reiche zählen.
+
+EIGENSCHAFTEN:
+
+Zauber: x2 (Grad 1 und 2)~
+
+@241 = ~Rillifane Rallathil ist der Beschützer des Waldes und der Wächter der Harmonie in der Natur. Der Blattherr wird von seinen Priestern oft mit einer riesigen, himmlischen Eiche verglichen, die so gewaltig ist, dass sich ihre Wurzeln mit denen jeder anderen Pflanze in den Reichen vermischen, und die im Herzen Arvandors, dem Hochwald des Olympus, steht. Der große Baum steuert den Ablauf der Jahreszeiten und lebt in den Wäldern der Wildelfen. Gleichzeitig verteidigt und unterstützt er diese Länder gegen Krankheit, Raub und Überfälle jeder Art. Zu besonderen Anlässen zeigen Rillifanes Hohepriester dem Blattherrn ihren Respekt indem sie aus Eichenblättern Kronen flechten, die anschließend gesegnet und mit Schutzzaubern versehen werden. Diese zeremoniellen Kronen verlassen nur selten die Reiche der Elfen, vor allem weil ihr Zauber eng an die Seele des Stillen Volkes angepasst ist. Nur ein Abtrünniger oder ein Verbannter würde es wagen, einen solch geheiligten Gegenstand von der Gemeinschaft der Elfen zu entfernen.
+
+EIGENSCHAFTEN:
+
+Auf dem Träger liegen die Auswirkungen von Segen. Außerdem ist er immun gegen Krankheit und Gift.
+
+RK-Bonus: -1
+Gewicht: 0~
+
+@720 = ~Ein Stab der Furcht pflanzt Entsetzen in das Herz jedes Lebewesens innerhalb seiner Reichweite. Diese Panik ist allerdings nicht übermächtig, da Tapfere dem Zauber widerstehen können. Ebenso wie andere Zauberstäbe, kann auch der Stab der Furcht nur in einer bestimmten Zahl von Fällen eingesetzt werden, bevor er zerstört wird.
+
+EIGENSCHAFTEN:
+
+Panik auslösen
+ Reichweite: Lang
+ Dauer: 6 Runden
+ Bereich: 6 m Radius
+ Rettungswurf: Ja (gg. Zauberstäbe)~
+
+@722 = ~Als Haz damit anfing, die erste Lieferung Verteidigungsgolems im Auftrag eines örtlichen Schattenmeisters zu erschaffen, bestanden einige seiner Schattendiebkollegen darauf, dass der Magier einen narrensicheren Weg zur Verfügung stellen sollte, um die mächtigen Konstrukte im Fall der Fälle deaktivieren zu können. Haz wies diese Befürchtungen zunächst als unbegründet zurück, doch nachdem einige hochrangige Mitglieder der Gilde begannen, ihre Bedenken zu äußern und Hazs Motive offen in Frage zu stellen, gab der Magier schließlich nach und fertigte mehrere Kontrollstäbe, die dann an die lautetesten Skeptiker ausgehändigt wurden. Als Resultat daraus kann jeder, der einen solchen Gegenstand besitzt, jeden von Hazs Golems durch bloßes Hochhalten des Kontrollstabes deaktivieren und somit in das Blickfeld des Konstruktes treten. Natürlich ist es jedoch nicht möglich einen Golem abzuschalten, während dieser sich in unmittelbarer Nähe seines Erschaffers befindet. Weiterhin warnt die Inschrift auf dem Stab explizit davor, deaktivierte Golems anzugreifen, denn so werden diese in ihren Standard-Kampfmodus zurückversetzt.
+
+EIGENSCHAFTEN:
+
+Jeder von Haz erschaffene Golem wird durch die Anwesenheit des Trägers dieses Stabes automatisch deaktiviert. Damit dieser Effekt eintritt muss sich der Stab im Schnellzugriff des Trägers befinden und dieser muss sich dem Golem alleine nähern. Einmal abgeschalten bleibt ein Golem für immer untätig, es sei denn er wird angegriffen. Dieser Stab hat keine Auswirkungen auf Konstrukte, die nicht von Haz erschaffen wurden.~
+
+// RR Verbesserbare Gegenstände (5000-5999)
+
+@5001 = ~Viele Generationen lang wurde dieses Schild an ausgewählt Hohe Richter von Amaunator übergeben, die sich selbst die Pflicht auferlegt hatten, alle Länder von Untoten zu befreien. Nachdem Amaunator scheinbar verschwunden und die Festung der Ewigen Sonne gefallen war, begann der goldenen Glanz der Schilds zu verblassen und seine mächtigen Verzauberungen fingen an sich aufzulösen. Schließlich war das einst mächtige Artefakt zu einer bloßen Wanddekoration verkommen. Als die Zeit verging verfielen Amaunators Anhänger langsam in Unordnung und begannen auseinanderzugehen. Das Schild wurde zuletzt zusammen mir vielen anderen Relikten aus ihrem Tempel geplündert.
+
+Durch die Kombination mit dem heiligen Symbol Amaunators pulsiert das Schild erneut vor Energie. Etwas von seiner früheren Macht wurde damit wiederhergestellt.
+
+EIGENSCHAFTEN:
+
+Sonnenfeuer (1x täglich)
+
+Jedes untote Wesen, dass den Träger im Nahkampf trifft, erleidet 2W4 Schadenspunkt durch Feuer. Außerdem wird es für 4 Runden geblendet (Rettungswurf gg. Zauber).
+
+RK-Bonus: -4, -6 gg. Untote
+(kein Schutz vor Stich-/Geschosswaffen)
+Gewicht:  2
+Mindeststärke: 4~
+
+@5003 = ~Dieser seltsam aussehende Schild scheint komplett aus großen gehärteten Blättern gemacht zu sein. Die ungewöhnliche Form und Größe der Blätter legt nahe, dass sie einst zu den alten Eichen gehört haben, die tief im Mir-Wald wachsen. ´Bei genauerer Untersuchung kann man auf der Oberfläche des Schildes mächtige druidische Verzauberungen erkennen und diese scheinen die Lebenskraft des Trägers leicht zu erhöhen und jede erlittene Wunde schneller verheilen zu lassen. Jeden Morgen bei Sonnenaufgang, leuchtet eines der Blätter für einen Moment schwach. Dann kann es herausgenommen und in den Boden eingesetzt werden, während sofort ein anderes nachwächst um seinen Platz einzunehmen. Nachdem die richtige Beschwörung ausgesprochen wurde wächst das eingepflanzte Blatt schnell zu einem furchteinflößenden Modernden Schlurfer heran, dessen Stärke und Größe von der Erfahrung des Trägers des Schildes abzuhängen scheint.
+
+EIGENSCHAFTEN:
+
+Modernder Schlurfer (1x täglich)
+
+RK-Bonus: -3
+Regeneration: 2 TP pro Runde
+Trefferpunkte: +10
+Gewicht: 1
+Mindestweisheit: 12
+Mindestcharisma: 15~
+
+@5005 = ~Dieser seltsam aussehende Schild scheint komplett aus großen gehärteten Blättern gemacht zu sein. Die ungewöhnliche Form und Größe der Blätter legt nahe, dass sie einst zu den alten Eichen gehört haben, die tief im Mir-Wald wachsen. ´Bei genauerer Untersuchung kann man auf der Oberfläche des Schildes mächtige druidische Verzauberungen erkennen und diese scheinen die Lebenskraft des Trägers leicht zu erhöhen und jede erlittene Wunde schneller verheilen zu lassen. Jeden Morgen bei Sonnenaufgang, leuchtet eines der Blätter für einen Moment schwach. Dann kann es herausgenommen und in den Boden eingesetzt werden, während sofort ein anderes nachwächst um seinen Platz einzunehmen. Nachdem die richtige Beschwörung ausgesprochen wurde wächst das eingepflanzte Blatt schnell zu einem furchteinflößenden Modernden Schlurfer heran, dessen Stärke und Größe von der Erfahrung des Trägers des Schildes abzuhängen scheint.
+
+EIGENSCHAFTEN:
+
+Höherer Modernder Schlurfer (1x täglich)
+
+RK-Bonus: -4
+Regeneration: 3 TP pro Runde
+Trefferpunkte: +15
+Gewicht: 1
+Mindestweisheit: 12
+Mindestcharisma: 15~
+
+@5007 = ~Diese herrlich gefertigte Axt trägt eine Verzauberung ungewöhnlichen Ursprungs. Sofort nach ihrer Herstellung wurde die Axt auf die Spitze eines Berges gebracht, wo Zwergenpriester darauf warteten, dass sich ein großer Sturm zusammenzog. Die Waffe wurde auf ein eisernes Podest gestellt und bald darauf von einem Blitz getroffen. Aufgrund der zuvor ausgesprochenen Verzauberungen absorbierte die Axt einige der Eigenschaften des Blitzes. Sie wurde später an einen hochrangigen zwergischen Offizier übergeben, um ihm bei der folgenden Schlacht zwischen den orkischen Horden und den Zwergen von Dorns Klamm zu helfen.
+
+Der Angriff kam für die Zwerge vollkommen überraschend, als eines Morgens ein Späher auftauchte und berichtete, dass die größte orkische Armee, die er je gesehen hatte, nur noch ein paar Stunden entfernt war. Da sie nur wenig Vorbereitungszeit hatten, wurden die zwergischen Krieger überrannt und die Orks begannen in Dorns Klamm zu strömen. Die Zwerge wurden dazu gezwungen, sich in die Tiefen der Zitadelle zurückzuziehen, aber Schlüsselstellen wurden zum Einsturz gebracht, um ihren Rüchzug zu decken und ihnen Zeit zu erkaufen. Selbst unter solch düsteren Voraussetzungen erlaubte dies den Zwergen zu bestimmen, wann und wo sie kämpfen wollten. Jede Schlacht kostete die Orks große Opfer, da die Zwerge zu ihren Bedingungen kämpften, aber dennoch wurden sie weiter und weiter in den Wyrmzahngletscher zurückgetrieben. Schließlich gelang es den Orks aufgrund ihrer überlegenen Anzahl die Verteidigungslinien der Zwerge zu durchbrechen und ihr Heim zu plündern.
+
+Durch das Eingießen des außerirdischen Meteoritenerzes wurde die Macht dieser bereits zuvor furchterregenden Waffe noch weiter vergrößert.
+
+EIGENSCHAFTEN:
+
+Statische Entladung (1x täglich)
+ Schaden: 10W6 (Elektrizität)
+ Bereich: 1 Wesen
+
+Bei jedem Treffer besteht eine 15%ige Chance das Ziel für 1 Runde zu betäuben.
+
+Schaden: 1W8 +5 (Klinge)
+Schadensbonus: +1W6 (Elektrizität)
+ETW0-Bonus: -5
+Elektrizitätswiderstand: +50%
+Gewicht: 5
+Initiativefaktor: 2
+Mindeststärke: 10
+Fertigkeit: Axt
+Typ: 1-händig~
+
+@5009 = ~Das Kurzschwert der Heimtücke ist auch als Klinge des Schattens bekannt und wurde als perfektes Mordwerkzeug geschaffen. Es wird von all jenen begehrt, die Meinungsverschiedenheiten mit dem Schwert beilegen, und ihr Besitz ist oft von nur kurzer Dauer. In der Hand der meisten Leute verhält sich dieses Schwert wie eine normale magische Waffe +3, aber in der Hand eines Diebes wird es besonders wirksam. Es gewährt ihm einen zusätzlichen Bonus auf seinen Angriffswurf und erhöht seinen Multiplikator beim Hinterhältigen Angriff.
+
+Durch den Einfluss der magischen Essenz eines Spitzbubensteins wird diese Klinge in den Händen eines Diebes zu einer noch mächtigeren Waffe.
+
+EIGENSCHAFTEN:
+
+Der Multiplikator beim Hinterhältigen Angriff erhöht sich um 1. Außerdem erhöht sich bei ihnen die kritische Reichweite um 2.
+
+Schaden: 1W6 +5 (Stich)
+ETW0-Bonus: -5
+Gewicht: 3
+Initiativefaktor: 0
+Mindeststärke: 5
+Fertigkeit: Kurzschwert
+Typ: 1-händig~
+
+@5011 = ~In den Beuteln an diesem Gürtel befindt sich eine Vielzahl meisterlich gefertigter Werkzeuge, die normalerweise von Schlossern und Uhrenmachern benutzt werden. Da jedoch solche Gegenstände mühelos für ruchlose Zwecke missbraucht werden können, sind sie unter Dieben ein sehr beliebtes Zubehör. Auf die Schnalle dieses Gürtels ist der Buchstabe "G" eingraviert.
+
+Die Werkzeuge im Meistergürtel wurden durch die Essenz des Glücks beeinflusst und magisch verzaubert. Sie bieten nun zusätzliche Vorteile.
+
+EIGENSCHAFTEN:
+
+Glücks-Bonus: +1
+Fallen finden/entschärfen: +20%
+Fallen stellen: +20%
+Schlösser öffnen: +20%
+Gewicht: 2~
+
+@5013 = ~Es wird gemunkelt, dass eine gerissene Priesterin von Auril Dutzende von diesen Pfeilen erschaffen hat, um ihr Tempelwachen mit einer Waffe of last resort auszustatten. Ein Wurfpfeil schien für diese Aufgabe perfekt, denn er war sehr einfach zu verbergen. Kleinere Verzauberungen, die Frostverbrennungen verursachen und nach dem Wurf für die Rückkehr in die Hand des Werfers sorgen, wurden ebenfalls beigefügt. Im Allgemeinen tauchen solche Waffen nur selten außerhalb von Aurils Tempeln auf, die sich ihrerseits für gewöhnlich auf den schneebedeckten Gipfeln in der Nähe des Eiswind Tals befinden. Jedoch haben in den letzten Jahren einige Händler aus den Zehnstädten eine überraschend große Anzahl dieser Wurfpfeile von lokalen Abenteurergruppen erwerben können.
+
+Der Überzug aus Mithril scheint das magische Leistungsvermögen des Wurfpfeils ein bisschen weiter verbessert zu haben.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer besteht eine 15%ige Chance das Ziel für 1 Runde zu verlangsamen.
+
+Schaden: 1W3 +3 (Geschoss)
+Schadensbonus: +1W3 (Kälte)
+ETW0-Bonus: -3
+(Kehrt sofort zum Werfer zurück)
+Gewicht: 0
+Initiativefaktor: 1
+Fertigkeit: Wurfpfeil
+Typ: 1-händig~
+
+@5015 = ~Dunkle orkische Runen sind in diese Keule geätzt. Sie ist ein Überbleibsel aus dem letzten Krieg zwischen den Orks und den Magiern von Turmish. Als die orkischen Stämme begannen, die Städte der Magier zu überfallen, erschufen diese zu ihrem Schutz Golems von schrecklicher Macht. Weil er spürte, dass die rohe Kraft seiner Krieger nicht ausreichend war, befahl der große Orkhäuptling Gull-Nar seinen Schamanen eine Waffe zu fertigen, die es ihm erlauben sollte, die "lebenden Statuen" zu Schotter zu zerlegen. Seine Schamanen benutzten ein Buch aus einem geplünderten Magierturm um die Lieblingswaffe ihres Häuptlings zu verzaubern: eine große Kriegskeule. Gull-Nar war so erfreut, dass er sich dazu entschied, den nächsten Überfall persönlich anzuführen und die Golems auf dem Weg zum Stadtzentrum in Stücke zu zerschalgen. Der Sieg war zum Greifen nah, doch dann erschien plötzlich ein einzelner, schwarz-gekleideter Magier aus dem nichts und sprach einen mächtigen Zauber, der die tobenden Orks dazu brachte, sich gegenseitig anzugreifen. Innerhalb weniger Minuten war ihre Zahl stark dezimiert und Gull-Nar selbst war von den Kriegern, denen er am meisten vertraut hatte, getötet worden.
+
+Durch weitere Verzauberungen, bei denen Wissen aus dem Leitfaden der Golemkonstruktion Verwendung gefunden hat, wird die Keule sogar zu einer noch wirkungsvolleren Waffe im Kampf gegen die furchterregenden Knostrukte.
+
+EIGENSCHAFTEN:
+
+Wird ein Stein-, Lehm- oder Sandgolem getroffen besteht eine 20%ige Chance diesen sofort zu zerstören.
+
+Schaden:
+ 1W6 +4 (Wucht)
+ 1W6 +6 (gg. Golems)
+ETW0-Bonus: -4, -6 (gg. Golems)
+Gewicht: 3
+Initiativefaktor: 0
+Mindeststärke: 5
+Fertigkeit: Keule
+Typ: 1-händig~
+
+@5017 = ~Ein Lapis Lazuli ist ein tiefblauer Edelstein mit goldenen Pyrit-Einschlüssen, die wie kleine Sterne funkeln. Seine auffällige Farbe wird manchmal auch als ultramarin bezeichnet. Einige Legenden mutmaßen, dass diese Edelsteine dazu verwendet werden könnten, magische Gegenstände, die sich die Kraft der Blitze zunutze machen, weiter zu verbessern.~
+@5018 = ~Statische Entladung~
+
+@5020 = ~Diese Klinge gehörte einst Lao-Tzu, einem Samurai aus einer der südlichen Provinzen Kara-Turs. Nachdem er seine Ausbildung beendet hatte, schwor der Krieger einen Eid: Er wollte sein Land endlich von den Räubern und Banditen befreien, die sein Volk seit zehn Jahre quälten. Diese Aufgabe erwies sich jedoch als ziemlich schwierig, denn seine Gegner waren gerissen, schlugen nur mitten in der Nacht zu und trugen immer Masken und Kapuzen. Lao-Tzu verstand, dass diese Banditen keine Ehre besaßen und sich möglicherweise sogar unter genau den Menschen versteckten, die er beschützen wollte. Aber er wagte es nicht auf bloßen Verdacht zu handeln, denn sein Verhaltenskodex erlaubte es ihm nicht, einen Unschuldigen fälschlich anzuklagen. Lao-Tzu suchte den großen Wu Jen Meister auf und bat ihn, sein Wakizashi zu verzaubern, um ihn so bei diesem Unterfangen zu unterstützen. Es sollte die wahren Absichten eines Menschen aufdecken und die ohne Ehre mit voller Kraft niederstrecken.
+
+Um den Beraubten neuen Zuversicht zu spenden und die Banditen aus ihren Verstecken zu locken, richtete der Samurai für das Volk ein Fest aus. Das Volk folgte seinem Ruf und Lao-Tzu war zufreiden. Mit Hilfe seiner neuen Waffe schaffte er es, die durchtriebenen Räuber von den einfachen Bauern zu trennen und sie in einen eigenen Speisesaal zu setzen. Sobald sie alle versammelt waren, verbarrikadierte der Samurai den einzigen Ausgang und kämpfte allein gegen das Dutzend Diebe. Nach einem kurzen Gefecht ging Lao-Tzu als Sieger hervor, aber sein Ehrenkodex verbot es ihm, selbst solch unwürdige Feinde zu töten. Stattdessen verbannte er die Banditen aus der Provinz und sein Volk konnte endlich in Frieden leben.
+
+Durch die Eigenschaften des Salzwassertrankes der Gedankenschinder wurde das Schwert im Kampf gegen chaotische Gegner sogar noch mächtiger. Darüber hinaus kann es nun den Geist seines Träger für kurze Zeit vor chaos-basierter Magie beschützen.
+
+EIGENSCHAFTEN:
+
+Chaotische Befehle (1x täglich)
+Gesinnung erkennen (3x täglich)
+
+Schaden:
+ 1W8 +3 (Stich)
+ 1W8 +5 (gg. chaotische Wesen)
+ETW0-Bonus: -3
+ -4 (gg. chaotische Wesen)
+RK-Bonus: -1, -3 gg. chaotische Wesen
+Gewicht: 2
+Initiativefaktor: 0
+Mindeststärke: 5
+Fertigkeit: Krummsäbel
+Typ: 1-händig~

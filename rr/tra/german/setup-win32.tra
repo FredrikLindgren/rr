@@ -23,7 +23,7 @@
 
 @900 = ~This component is only available for the Windows version of the game~
 @902 = ~* * * This component cannot be installed on this game * * *~
-@911 = ~(No need to install. G3 fixpack version already present.)~
+@911 = ~(Installation nicht nötig. Version aus dem G3 Fixpack bereits vorhanden.)~
 @999 = ~BG2-style icons for RR content~
 
 //WeiDU prompts

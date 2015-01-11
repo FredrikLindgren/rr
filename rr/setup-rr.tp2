@@ -15,7 +15,20 @@ ALWAYS
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
 
-  LAM bgee_language
+  ACTION_DEFINE_ARRAY fl#tra BEGIN game END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+      infer_charset = 1
+    STR_VAR
+      tra_path = "rr/tra"
+      convert_array = fl#tra
+      reload_array = fl#tra
+  END
+  ACTION_IF GAME_IS ~bgee bg2ee iwdee~ BEGIN
+    LOAD_TRA ~rr/tra/ee/%LANGUAGE%/game.tra~
+  END
 END
 
 README ~rr/doc/readme_rr.html~
@@ -23,8 +36,8 @@ ASK_EVERY_COMPONENT
 
 
 LANGUAGE ~English~ ~ENGLISH~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~
-LANGUAGE ~Francais (by the d'Oghmatiques)~ ~FRENCH~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/french/game.tra~ ~rr/tra/french-%WEIDU_OS%.tra~
-LANGUAGE ~Espanol (por Immortality, SirLancelot, Nieve, Clan DLAN y Lisandro)~ ~SPANISH~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/spanish/game.tra~ ~rr/tra/spanish-%WEIDU_OS%.tra~
+LANGUAGE ~Francais (by the d'Oghmatiques)~ ~FRENCH~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/french/game.tra~ ~rr/tra/french/setup-%WEIDU_OS%.tra~
+LANGUAGE ~Espanol (por Immortality, SirLancelot, Nieve, Clan DLAN y Lisandro)~ ~SPANISH~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/spanish/game.tra~ ~rr/tra/spanish/setup-%WEIDU_OS%.tra~
 LANGUAGE ~Deutsch (by Cronox and Leomar)~ ~GERMAN~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/german/game.tra~ ~rr/tra/german/setup-%WEIDU_OS%.tra~
 LANGUAGE ~Russian (by the Aerie.ru and arcanecoast.ru teams)~ ~RUSSIAN~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/russian/game.tra~
 LANGUAGE ~Italian (by Andrea C. and ilot)~ ~ITALIAN~ ~rr/tra/english/game.tra~ ~rr/tra/english/setup.tra~ ~rr/tra/italian/game.tra~ ~rr/tra/italian/setup-%WEIDU_OS%.tra~

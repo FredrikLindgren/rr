@@ -14,7 +14,6 @@ ALWAYS
   INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
-  INCLUDE ~rr/lib/rr#aglef.tph~                                       // Include my custom "Add Global Effect" function
 
   ACTION_DEFINE_ARRAY fl#tra BEGIN game END
 
@@ -819,8 +818,13 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
                 ~RR#BJS00.SPL~ override // Jester's regular song
     LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~ END // stacking prevention
     LPF ADD_SPELL_EFFECT INT_VAR insert_point = 1 opcode = 324 target = 2 duration = 1 parameter2 = 66 STR_VAR resource = EVAL ~%SOURCE_RES%~ END // deafness targeting
-  LPF RR#AGLEF INT_VAR "rr#opcode" = "136" "rr#target" = "1" "rr#timing" = "1" "rr#prob1" = "100" END
-  PATCH_INCLUDE ~rr/lib/fj_spl_itm_reindex.tpp~
+    LPF ADD_ITEM_EQEFFECT
+      INT_VAR
+        opcode = 136
+        target = 1
+        timing = 1
+    END
+  BUT_ONLY
 END
 
 

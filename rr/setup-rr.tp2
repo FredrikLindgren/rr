@@ -14,6 +14,7 @@ ALWAYS
   INCLUDE ~rr/lib/rr#bg1v.tpa~                                        // Include the BG1 variables macro (used for proper Tutu and BGT compatibility)
   INCLUDE ~rr/lib/rr#sp2in.tph~                                       // Include my custom "Spell to Innate" function
   INCLUDE "rr/lib/lib.tpa"
+  INCLUDE ~rr/lib/rr#aglef.tph~                                       // Include my custom "Add Global Effect" function
 
   ACTION_DEFINE_ARRAY fl#tra BEGIN game END
 
@@ -573,12 +574,14 @@ REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
+ACTION_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the True Bard song on IWD:EE
 // True Bard
 
 COPY_EXISTING ~CLABBA01.2DA~ override                         // True Bard ability table
   SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                           // Assign the new song to the True Bard
   PRETTY_PRINT_2DA
 BUT_ONLY
+END                                                           // ends IWD:EE check
 
 COPY ~RR/RR_CORE/SPELLS/RR#BDF01.SPL~ override                // True Bard new song part 1
      ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~ override                // True Bard new song part 2
@@ -600,7 +603,9 @@ COPY ~RR/RR_CORE/SPELLS/RR#BBLIT.SPL~ override                // New innate trai
 COPY_EXISTING ~CLABBA02.2DA~ override                         // Blade kit ability table
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability at level 1
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
+  PATCH_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the Blade song on IWD:EE
+    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
+  END                                                           // ends IWD:EE check
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBLIT END // Grant the Blade 3 points in TWF
   PRETTY_PRINT_2DA
 BUT_ONLY
@@ -804,6 +809,19 @@ ACTION_IF FILE_EXISTS_IN_GAME spcl920.spl BEGIN
   BUT_ONLY
 END
 
+
+// Use proper bard song stacking prevention on IWD:EE
+// Also deafened characters should not benefit from bard songs on IWD:EE
+// Lastly, all bard songs should always break invisibility on IWD:EE
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+  COPY_EXISTING ~RR#BSK00.SPL~ override // Skald's regular song
+                ~RR#BJS00.SPL~ override // Jester's regular song
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 STR_VAR resource = EVAL ~%SOURCE_RES%~ END // stacking prevention
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 1 opcode = 324 target = 2 duration = 1 parameter2 = 66 STR_VAR resource = EVAL ~%SOURCE_RES%~ END // deafness targeting
+  LPF RR#AGLEF INT_VAR "rr#opcode" = "136" "rr#target" = "1" "rr#timing" = "1" "rr#prob1" = "100" END
+  PATCH_INCLUDE ~rr/lib/fj_spl_itm_reindex.tpp~
+END
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -1438,15 +1456,14 @@ BUT_ONLY
 // *** For fellow modders *** this component can be detected by searching for the following file - RR#GUARA.ITM
 
 BEGIN @5 DESIGNATED 7                                               // Additional equipment for Thieves and Bards
-REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee~ AND !GAME_IS ~iwd-in-bg2 iwdee~ @902
+REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ AND !GAME_IS ~iwd-in-bg2~ @902
 
 INCLUDE ~RR/LIB/RR#SSOB.TPH~                                        // Include the Short Sword of Backstabbing patch macro
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
 INCLUDE "rr/lib/ds.tpa"                                             // Detectable Spells
 
-
-ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
+ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 AND !GAME_IS ~iwdee~ BEGIN
   COPY ~RR/RR_CORE/BAM/RR#CKIEL.BAM~ override                         // Kiel's Buckler description icon (CSHLD20.BAM is missing in BG2)
 
   // Patch the changes into Kiel's buckler
@@ -2004,6 +2021,7 @@ COPY ~RR/RR_CORE/ITEMS/RR#HEL02.ITM~ override
 COPY ~RR/RR_CORE/BAM/RR#CGREA.BAM~   override                // Greagan's Harp description icon (CMISC2P.BAM is missing in BG2)
      ~RR/RR_CORE/BAM/RR#HEL02.BAM~   override
 
+ACTION_IF !GAME_IS ~iwdee~ BEGIN // not on IWD:EE
 COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
   SAY NAME2 @142 SAY DESC @143
   WRITE_ASCII 0x58 ~RR#CGREA~ #8                             // use the proper description icon (CMISC2P.BAM is missing in BG2)
@@ -2053,6 +2071,7 @@ COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
       resource = ~SPNWCHRM~
   END
 BUT_ONLY
+END // not on IWD:EE
 
 
 // Harp of Descant
@@ -2173,21 +2192,35 @@ COPY ~RR/RR_CORE/ITEMS/RR#SAP01.ITM~ override
 
 
 // Erephine's round buckler animations check
-// Should now automatically detect 1PP v2.6 and higher as well as the main component of Item Revisions
+// Should now automatically detect 1PP v2.6 and higher as well as the main component of Item Revisions and IWD:EE
 
-ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) BEGIN // Checks for 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
-  COPY_EXISTING ~RR#BUC01.ITM~ override                               // Fading Glory
-                ~RR#BUC02.ITM~ override                               // Buckler +1
-                ~RR#BUC03.ITM~ override                               // Buckler +2
-                ~RR#BUC04.ITM~ override                               // Buckler +3
-                ~RR#SHL01.ITM~ override                               // Stalwart Defender
-                ~RR#SHL02.ITM~ override                               // Safeguard
-                ~RR#RWARD.ITM~ override                               // Rogue's Ward
-                ~RR#LYRE.ITM~  override                               // Lyre of Progression
-      ~%tutu_var%SHLD20.ITM~   override                               // Kiel's Buckler
-    WRITE_ASCII 0x22 ~D1~ #2                                          // Set the animation to round buckler (D1)
-  BUT_ONLY
+
+
+ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) OR GAME_IS ~iwdee~ BEGIN // Checks for IWD:EE, 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
+ACTION_FOR_EACH ~file~ IN
+                ~RR#BUC01~ // Fading Glory
+                ~RR#BUC02~ // Buckler +1
+                ~RR#BUC03~ // Buckler +2
+                ~RR#BUC04~ // Buckler +3
+                ~RR#SHL01~ // Stalwart Defender
+                ~RR#SHL02~ // Safeguard
+                ~RR#RWARD~ // Rogue's Ward
+                 ~RR#LYRE~ // Lyre of Progression
+                ~_SHLD20~ // Kiel's Buckler (Tutu)
+                 ~SHLD20~ // Kiel's Buckler (BGT)
+BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%file%.itm~ BEGIN
+    COPY_EXISTING ~%file%.itm~ override
+      PATCH_IF (%SOURCE_SIZE% > 0x71) BEGIN
+      // ===============================================================================
+         WRITE_ASCII 0x22 ~D1~ #2 // Set the animation to round buckler (D1)
+      // ===============================================================================
+      END
+    BUT_ONLY
+  END
 END
+END
+
 
 // Make the RR ioun stones use WoRm's animations if they are present
 
@@ -2464,7 +2497,7 @@ BEGIN
 END
 
 
-// Add a Sap to most fences (BG2/ToB only)
+// Add a Sap to most fences and oterwise suitable characters (BG2/ToB only)
 
 ACTION_FOR_EACH ~file~ IN
                 ~AMSMUG01~                                                              // Amkethran Smugglers
@@ -2520,7 +2553,7 @@ BEGIN
 END
 
 
-// Add Bucklers +1 to BG2 stores which carry Small Shields +1 (BG2 and ToB only)
+// Add Bucklers +1 to BG2 stores which carry Small Shields +1 (BG2 and ToB)
 
 ACTION_FOR_EACH ~file~ IN
                 ~BERNARD~                                                                // Copper Coronet
@@ -2669,6 +2702,313 @@ ACTION_IF GAME_IS ~ca~ BEGIN                                                   /
     END
   BUT_ONLY
 END                                                                            // ends check for Classic Adventures
+
+
+
+// IWD:EE compatibility
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+
+// Buckler +1
+
+COPY_EXISTING ~kusmith.sto~ ~override~                                               // Conlan's Smithy
+  ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD10~ #0 #0 #0 ~IDENTIFIED~ #1                  // Adds 1x Buckler +1
+BUT_ONLY
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+  ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD08~ #0 #0 #0 ~IDENTIFIED~ #3                  // Adds 3x Buckler +1
+BUT_ONLY
+
+COPY_EXISTING ~tiernon.sto~ ~override~                                               // Tiernon's Forge
+  ADD_STORE_ITEM ~RR#BUC02~ AFTER ~SHLD02~ #0 #0 #0 ~IDENTIFIED~ #3                  // Adds 3x Buckler +1
+BUT_ONLY
+
+COPY_EXISTING ~ar3301.are~ ~override~ // Vale of Shadows - Temple of Myrkul
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add = ~RR#BUC02~ END
+BUT_ONLY
+
+
+// Buckler +2
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+              ~tiernon.sto~ ~override~                                               // Tiernon's Forge
+  ADD_STORE_ITEM ~RR#BUC03~ AFTER          ~RR#BUC02~ #0 #0 #0 ~IDENTIFIED~ #2       // Adds 2x Buckler +2
+BUT_ONLY
+
+COPY_EXISTING ~ar4001.are~ ~override~ // Dragon's Eye - first dungeon level (Lizard King)
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = ~RR#BUC03~ END
+BUT_ONLY
+
+
+// Buckler +3
+
+COPY_EXISTING ~tiernon.sto~ ~override~                                               // Tiernon's Forge
+   ADD_STORE_ITEM ~RR#BUC04~ AFTER ~RR#BUC03~ #0 #0 #0 ~IDENTIFIED~ #1               // Adds 1x Buckler +3
+BUT_ONLY
+
+COPY_EXISTING ~ar8007.are~ ~override~ // Lower Dorn's Deep - Order of the Kraken manor - second floor, Mekrath
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 6 STR_VAR item_to_add = ~RR#BUC04~ END
+BUT_ONLY
+
+
+// Fading Glory
+
+COPY_EXISTING ~ar5001.are~ ~override~ // Severed Hand - main tower - first floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 6 STR_VAR item_to_add = ~RR#BUC01~ END
+BUT_ONLY
+
+
+// Rogue's Ward
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+  ADD_STORE_ITEM ~RR#RWARD~ AFTER          ~RR#BUC03~ #1 #1 #1 ~IDENTIFIED~ #1       // Adds 1x Rogue's Ward
+BUT_ONLY
+
+
+// Safeguard
+
+COPY_EXISTING ~ar6005.are~ ~override~ // Dorn's Deep - Tiers of the Dead
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 7 STR_VAR item_to_add = ~RR#SHL02~ END
+BUT_ONLY
+
+
+// Stalwart Defender
+
+COPY_EXISTING ~ar3503.are~ ~override~ // Vale of Shadows - Tomb of Kresselack - third level
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 3 STR_VAR item_to_add = ~RR#SHL01~ END
+BUT_ONLY
+
+
+// The Guardian
+
+COPY_EXISTING ~ar5004.are~ ~override~ // Severed Hand - main tower - fourth floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = ~RR#GUARA~ END
+BUT_ONLY
+
+
+// Harp of Descant
+
+COPY_EXISTING ~ar5303.are~ ~override~ // Severed Hand - Tower of Corellon - third floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 3 STR_VAR item_to_add = ~RR#HRP01~ END
+BUT_ONLY
+
+
+// Masterbelt
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+  ADD_STORE_ITEM ~RR#BEL01~ AFTER             ~BAG07~ #0 #0 #0 ~IDENTIFIED~ #1       // Adds 1x Masterbelt
+BUT_ONLY
+
+
+// Cowl of Acuity
+
+COPY_EXISTING ~ar4004.are~ ~override~ // Dragon's Eye - fourth dungeon level (Eldathyn)
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 11 STR_VAR item_to_add = ~RR#HEL02~ END
+BUT_ONLY
+
+
+// Darkveil
+
+COPY_EXISTING ~seth.cre~ ~override~                                                  // Seth (one of Marketh's cronies)
+  ADD_CRE_ITEM ~RR#HEL03~ #0 #0 #0 ~NONE~ ~HELMET~                                   // Adds 1x Darkveil
+BUT_ONLY
+
+// Darkveil should protect against umber hulk and jackalware gazes on IWD:EE
+COPY_EXISTING ~rr#hel03.ITM~ ~override~
+  LPF CLONE_EFFECT INT_VAR check_globals = 1 check_headers = 0 match_opcode = 206 STR_VAR match_resource = ~SPIN784~ resource = ~SPIN161~ END // Jackalware gaze
+  LPF CLONE_EFFECT INT_VAR check_globals = 1 check_headers = 0 match_opcode = 206 STR_VAR match_resource = ~SPIN784~ resource = ~SPIN192~ END // Umber Hulk gaze
+BUT_ONLY
+
+
+// Fragment of Enlightenment
+
+COPY_EXISTING ~kuork0.sto~ ~override~                                                // Orrick's Study
+  ADD_STORE_ITEM ~RR#HEL04~ BEFORE ~AMULBRO~ #0 #0 #0 ~IDENTIFIED~ #1                // Adds 1x Fragment of Enlightenment
+BUT_ONLY
+
+
+// Tri-souled Sapphire
+
+COPY_EXISTING ~kieran2.sto~ ~override~                                               // Kieran Nye
+  ADD_STORE_ITEM ~RR#HEL01~   AFTER   ~OHIOUN02~ #3 #3 #3 ~IDENTIFIED~ #1            // Adds 1x Tri-souled Sapphire
+BUT_ONLY
+
+// Ioun Stones should not protect against critical hits on IWD:EE
+COPY_EXISTING ~rr#hel01.ITM~ ~override~ // Tri-souled Sapphire
+              ~rr#hel04.ITM~ ~override~ // Fragment of Enlightenment
+  WRITE_LONG 0x18 (THIS BOR BIT25) // set the critical hit protection flag
+BUT_ONLY
+
+
+// Sap
+
+COPY_EXISTING ~kusmith.sto~ ~override~                                               // Conlan's Smithy
+  ADD_STORE_ITEM ~RR#SAP01~ AFTER  ~BLUN01~ #0 #0 #0 ~IDENTIFIED~ #6                 // Adds 6x Sap
+BUT_ONLY
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+  ADD_STORE_ITEM ~RR#SAP01~ AFTER  ~RR#RWARD~ #0 #0 #0 ~IDENTIFIED~ #6               // Adds 6x Sap
+BUT_ONLY
+
+
+// Stonesmasher
+
+COPY_EXISTING ~ar5001.are~ ~override~ // Severed Hand - main tower - first floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 7 STR_VAR item_to_add = ~RR#STON~ END
+BUT_ONLY
+
+
+// The Weary Cudgel
+
+COPY_EXISTING ~ar3601.are~ ~override~ // Temple of the Forgotten God - first level
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 11 STR_VAR item_to_add = ~RR#WEAR~ END
+BUT_ONLY
+
+
+// Returning Frost Dart
+
+COPY_EXISTING ~dwhitcom.dlg~ ~override~ // Whitcomb gives this to the player along with Lysan's other belongings
+  DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY EXACT_MATCH ~GiveItemCreate("Scrl06",LastTalkedToBy,1,0,0)~ ~GiveItemCreate("Scrl06",LastTalkedToBy,1,0,0) GiveItemCreate("RR#FDART",LastTalkedToBy,1,0,0)~
+  END
+BUT_ONLY
+
+
+// Dagger of Acumen
+
+COPY_EXISTING ~edion.sto~ ~override~                                                 // Edion Caradoc
+  ADD_STORE_ITEM ~RR#ACUMN~ BEFORE ~CYNICIS~ #0 #0 #0 ~IDENTIFIED~ #1                // Adds 1x Dagger of Acumen
+BUT_ONLY
+
+
+// Plaguebearer
+
+COPY_EXISTING ~ar6005.are~ ~override~ // Dorn's Deep - Tiers of the Dead
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 10 STR_VAR item_to_add = ~RR#PLAG~ END
+BUT_ONLY
+
+
+// Silverblaze
+
+COPY_EXISTING ~ar9714.are~ ~override~ // Anauroch Castle - Watchknight Tomb
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 22 STR_VAR item_to_add = ~RR#SILV~ END
+BUT_ONLY
+
+
+// Trollmelter
+
+COPY_EXISTING ~ar4001.are~ ~override~ // Dragon's Eye - first dungeon level (Lizard King)
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 4 STR_VAR item_to_add = ~RR#TROL~ END
+BUT_ONLY
+
+
+// Black Cat's Claw
+
+COPY_EXISTING ~ar4005.are~ ~override~ // Dragon's Eye - fifth dungeon level (Yxunomei)
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 17 STR_VAR item_to_add = ~RR#CATC~ END
+BUT_ONLY
+
+
+// Keeper of the Law
+
+COPY_EXISTING ~waukeen.sto~ ~override~                                               // The Golden Lodge
+  ADD_STORE_ITEM ~RR#KEEP~ AFTER  ~AMAUNAT~ #1 #2 #0 ~IDENTIFIED~ #1                 // Adds 1x Keeper of the Law
+BUT_ONLY
+
+
+// Composite Short Bow
+
+COPY_EXISTING ~ehpomab.sto~ ~override~                                               // Pomab's Emporium
+              ~kusmith.sto~ ~override~                                               // Conlan's Smithy
+              ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+    ADD_STORE_ITEM ~RR#BOW02~ AFTER  ~BOW05~ #0 #0 #0 ~IDENTIFIED~ #6                // Adds 6x Composite Short Bow
+BUT_ONLY
+
+
+// Composite Short Bow +1
+
+COPY_EXISTING ~kusmith.sto~ ~override~                                               // Conlan's Smithy
+              ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+    ADD_STORE_ITEM ~RR#BOW03~ AFTER  ~BOW06~ #0 #0 #0 ~IDENTIFIED~ #2                // Adds 2x Composite Short Bow +1
+BUT_ONLY
+
+
+// Composite Short Bow +2
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+    ADD_STORE_ITEM ~RR#BOW04~ AFTER  ~RR#BOW03~ #0 #0 #0 ~IDENTIFIED~ #1             // Adds 1x Composite Short Bow +2
+BUT_ONLY
+
+COPY_EXISTING ~ar5002.are~ ~override~ // Severed Hand - main tower - second floor
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = ~RR#BOW04~ END
+BUT_ONLY
+
+COPY_EXISTING ~ar9400.are~ ~override~ // Burial Isle - Wylfdene's barrow
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add = ~RR#BOW04~ END
+BUT_ONLY
+
+
+// Composite Short Bow +3
+
+COPY_EXISTING ~ar8006.are~ ~override~ // Lower Dorn's Deep - Order of the Kraken manor - first floor, Ginafae
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 2 STR_VAR item_to_add = ~RR#BOW05~ END
+BUT_ONLY
+
+COPY_EXISTING ~ar9200.are~ ~override~ // Barbarian camp
+  LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 8 STR_VAR item_to_add = ~RR#BOW05~ END
+BUT_ONLY
+
+
+// Sparkburst
+
+COPY_EXISTING ~emmeric.sto~ ~override~                                               // Emmerich's Archery
+    ADD_STORE_ITEM ~RR#BOW06~ AFTER  ~RR#BOW04~ #0 #0 #0 ~IDENTIFIED~ #1             // Adds 1x Sparkburst
+BUT_ONLY
+
+
+// RR items should not have description icons on IWD:EE
+ACTION_FOR_EACH ~file~ IN
+                ~RR#BUC01~ // Fading Glory
+                ~RR#BUC02~ // Buckler +1
+                ~RR#BUC03~ // Buckler +2
+                ~RR#BUC04~ // Buckler +3
+                ~RR#SHL01~ // Stalwart Defender
+                ~RR#SHL02~ // Safeguard
+                ~RR#RWARD~ // Rogue's Ward
+                ~RR#GUARA~ // The Guardian +1
+                ~RR#GUARB~ // The Guardian +2
+                ~RR#GUARC~ // The Guardian +3
+                ~RR#HRP01~ // Harp of Descant
+                ~RR#BEL01~ // Masterbelt
+                ~RR#HEL01~ // Tri-souled Sapphire
+                ~RR#HEL02~ // Cowl of Acuity
+                ~RR#HEL03~ // Darkveil
+                ~RR#HEL04~ // Fragment of Enlightenment
+                ~RR#SAP01~ // Sap
+                 ~RR#STON~ // Stonesmasher
+                 ~RR#WEAR~ // The Weary Cudgel
+                ~RR#FDART~ // Returning Frost Dart
+                ~RR#ACUMN~ // Dagger of Acumen
+                 ~RR#PLAG~ // Plaguebearer
+                 ~RR#SILV~ // Silverblaze
+                 ~RR#TROL~ // Trollmelter
+                 ~RR#CATC~ // Black Cat's Claw
+                 ~RR#KEEP~ // Keeper of the Law
+                ~RR#BOW02~ // Composite Short Bow
+                ~RR#BOW03~ // Composite Short Bow +1
+                ~RR#BOW04~ // Composite Short Bow +2
+                ~RR#BOW05~ // Composite Short Bow +3
+                ~RR#BOW06~ // Sparkburst
+BEGIN
+  COPY_EXISTING ~%file%.itm~ override
+    WRITE_ASCII 0x58 ~~ #8 // description icon
+  BUT_ONLY
+END
+
+
+
+END                                                                            // ends IWD:EE check
 
 
 ///////////////////////////////////////////////////////////////////////

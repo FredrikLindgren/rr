@@ -1883,6 +1883,8 @@ ACTION_IF GAME_IS ~soa tob bgt bg2ee~ BEGIN
   EXTEND_BOTTOM ~AR0511.BCS~  ~RR/RR_CORE/COMPILE/AR0511.BAF~         // Arledrian's journal triggers
   EXTEND_BOTTOM ~AR0312.BCS~  ~RR/RR_CORE/COMPILE/AR0312.BAF~         // Arledrian's poster trigger
 
+  ADD_JOURNAL @650 @651 @652 @653 @654 @660 @661 @662 @663 @664 @665 @666 @670 @671 @672 @673
+
   COMPILE ~RR/RR_CORE/COMPILE/RR#ARLEJ.D~                             // Arledrian's journal dialogue
   COMPILE ~RR/RR_CORE/COMPILE/ARLED.D~                                // Arledrian's new dialogue
   COMPILE ~RR/RR_CORE/COMPILE/GAELAN.D~                               // Gaelan's dialogue additions
@@ -3538,6 +3540,8 @@ COPY_EXISTING ~RR#VEND.CRE~             ~override/RR#VEND2.CRE~  // Venduris clo
 
 
 // CoC cutscenes and area scripts
+
+ADD_JOURNAL TITLE (@631) @600 @601 @602 @610 @611 @620 @621 @622 @623 @624 @630
 
 EXTEND_BOTTOM ~AR0800.BCS~  ~RR/RR_CYRIC/COMPILE/AR0800.BAF~                 // Add the CoC spawn script to the Graveyard area
 COMPILE ~RR/RR_CYRIC/COMPILE/RR#CAMB0.BAF~                                   // CoC starting cutscene, party rendered invisible

@@ -279,18 +279,6 @@ COPY ~RR/RR_CORE/SPELLS/RR#TBH01.SPL~ override                 // RR's revised B
     END
   END
 
-COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.SPL~ override                 // Special Snares secondary effect level 1-5 (dazzle)
-  /* // No matching effect exists on the spell
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 14052 // "THAC0 Modification"
-      parameter1 = RESOLVE_STR_REF (@175) // Dazzled
-  END
-  */
-
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.SPL~ override                 // Alchemical Trap subdual damage
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.EFF~ override                 // Alchemical Trap subdual damage immunity

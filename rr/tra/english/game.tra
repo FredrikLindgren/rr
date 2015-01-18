@@ -2865,4 +2865,58 @@ Note: scribing scrolls is a delicate task which can only be undertaken in safe (
 
 Usable by:
 Thieves~ // #66466
+@10006 = ~You cannot cast this spell until the current casting has run out.~ // #74011
+@10007 = ~Stricken by a foul disease~ // #39752
+@10008 = ~Entangled~ // #334
+@10009 = ~Spin already active.~ // #32087
+@10010 = ~Snare - here~ // #22461
+@10011 = ~Summon Shambling Mound~ // #3899
+@10012 = ~Blinded~ // #1474
+@10013 = ~Buckler +1~ // #39971
+@10014 = ~A buckler is a small shield of wood or metal that fastens to the forearm.  Because of its size it is light and can be worn with very little restriction to movement.  This buckler has some form of generic enchantment, making it more resistant to blows.
 
+STATISTICS:
+
+Armor Class Bonus:  2
+Special:  No Missile/Piercing Attack Protection
+Weight:  2
+Requires: 4 Strength
+Unusable By:
+ Mage~ // #39970
+@10015 = ~Spell Ineffective~ // #4742
+@10016 = ~Magnetized~ // #8325
+@10017 = ~Slowed~ // #335
+@10018 = ~Wakizashi~ // #7526
+@10019 = ~Wakizashi
+The wakizashi, or companion sword is extremely important to samurai.  It is worn at all times, even indoors, and is near the samurai when he sleeps at night.  As finely made as the katana, the wakizashi, a shorter sword with a length between 12 and 24 inches, is a dangerous weapon in the hands of a skilled user.
+
+STATISTICS:
+
+Damage:  1D8
+Damage type:  piercing
+Weight:  3
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninja-To
+Type:  1-handed
+Requires: 5 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage~ // #36181
+@10020 = ~Ninja-To~ // #7529
+@10021 = ~Ninja-To
+The sword of the ninja, the ninja-to, is of lower quality than other Kara-Tur blades such as the katana.  The ninja-to is short with a straight blade, making it ideal for the subterfuge of the ninja.  The ninja-to is also more suited to fighting in closed places, sometimes giving the ninja an advantage over the longer blades that the samurai used.
+
+STATISTICS:
+
+Damage:  1D8
+Damage type:  slashing
+Weight:  5
+Speed Factor: 4
+Proficiency Type: Scimitar/Wakizashi/Ninja-To
+Type:  1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage~ // #39467

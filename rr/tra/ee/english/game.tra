@@ -1159,4 +1159,36 @@ Requires: 5 Strength~
 
 // Strings missing from BGEE
 
-@10005 = ~Although this hood does not confer any noticeable advantages on its wearer, it does have an aura of latent magic.~ // #66466
+@10005 = ~Although this hood does not confer any noticeable advantages on its wearer, it does have an aura of latent magic.~ // #66466, without usability info
+@10014 = ~A buckler is a small shield of wood or metal that fastens to the forearm.  Because of its size it is light and can be worn with very little restriction to movement.  This buckler has some form of generic enchantment, making it more resistant to blows.
+
+STATISTICS:
+
+Armor Class Bonus:  2
+Special:  No Missile/Piercing Attack Protection
+Weight:  2
+Requires: 4 Strength~ // #39970, without usability info
+@10019 = ~Wakizashi
+The wakizashi, or companion sword is extremely important to samurai.  It is worn at all times, even indoors, and is near the samurai when he sleeps at night.  As finely made as the katana, the wakizashi, a shorter sword with a length between 12 and 24 inches, is a dangerous weapon in the hands of a skilled user.
+
+STATISTICS:
+
+Damage:  1D8
+Damage type:  piercing
+Weight:  3
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninja-To
+Type:  1-handed
+Requires: 5 Strength~ // #36181, without usability info
+@10021 = ~Ninja-To
+The sword of the ninja, the ninja-to, is of lower quality than other Kara-Tur blades such as the katana.  The ninja-to is short with a straight blade, making it ideal for the subterfuge of the ninja.  The ninja-to is also more suited to fighting in closed places, sometimes giving the ninja an advantage over the longer blades that the samurai used.
+
+STATISTICS:
+
+Damage:  1D8
+Damage type:  slashing
+Weight:  5
+Speed Factor: 4
+Proficiency Type: Scimitar/Wakizashi/Ninja-To
+Type:  1-handed
+Requires: 6 Strength~ // #39467, without usability info

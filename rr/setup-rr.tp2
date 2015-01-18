@@ -135,6 +135,14 @@ LAM load_RR#DEATA_var
 COPY ~RR/RR_CORE/SPELLS/RR#TAS01.SPL~ override               // Assassin Death Attack innate ability (coat weapons shell)
   SAY NAME1 @36 SAY NAME2 @36 // Death Attack
   WRITE_BYTE 0x27 RR#DEATA                                   // assign new secondary type
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 74011 // You cannot cast this spell until the current casting has run out.
+      parameter1 = RESOLVE_STR_REF (@10006) // You cannot cast this spell until the current casting has run out.
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS1B.SPL~ override               // Death Attack second part (the actual ability)
   LPF ALTER_EFFECT
@@ -260,6 +268,16 @@ COPY ~RR/RR_CORE/SPELLS/RR#TBH01.SPL~ override                 // RR's revised B
     INT_VAR
       projectile = RR#TBH01
   END
+  PATCH_FOR_EACH match_opcode IN 253 254 BEGIN
+    LPF ALTER_EFFECT
+      INT_VAR
+        check_globals = 1
+        check_headers = 1
+        match_opcode
+        match_parameter1 = 22461 // Snare - here
+        parameter1 = RESOLVE_STR_REF (@10010) // Snare - here
+    END
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.SPL~ override                 // Special Snares secondary effect level 1-5 (dazzle)
   /* // No matching effect exists on the spell
@@ -279,7 +297,32 @@ COPY ~RR/RR_CORE/SPELLS/RR#TBH1A.EFF~ override                 // Alchemical Tra
   SAY 0x1C @90 // Immune to subdual damage
 
 COPY ~RR/RR_CORE/SPELLS/RR#TBH1B.SPL~ override                 // Alchemical Trap secondary effects
-     ~RR/RR_CORE/SPELLS/RR#TBH1B.EFF~ override                 // Alchemical Trap secondary effects immunity
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 14052 // "THAC0 Modification"
+      parameter1 = RESOLVE_STR_REF (@175) // Dazzled
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 334 // Entangled
+      parameter1 = RESOLVE_STR_REF (@10008) // Entangled
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1474 // Blinded
+      parameter1 = RESOLVE_STR_REF (@10012) // Blinded
+  END
+
+COPY ~RR/RR_CORE/SPELLS/RR#TBH1B.EFF~ override                 // Alchemical Trap secondary effects immunity
      ~RR/RR_CORE/BAM/RR#TRNQ.BAM~     override                 // Bounty Hunter's Paralytic Toxin innate ability icon
      ~RR/RR_CORE/SPELLS/RR#TRNQ.EFF~  override                 // Paralytic Toxin cast secondary spell effect
 
@@ -288,6 +331,14 @@ COPY ~RR/RR_CORE/SPELLS/RR#TRNQ2.EFF~ override                 // Paralytic Toxi
 
 COPY ~RR/RR_CORE/SPELLS/RR#TRNQ.SPL~  override                 // Bounty Hunter's Paralytic Toxin innate ability (coat weapons shell)
   SAY NAME1 @55 SAY NAME2 @55 // Paralytic Toxin
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 74011 // You cannot cast this spell until the current casting has run out.
+      parameter1 = RESOLVE_STR_REF (@10006) // You cannot cast this spell until the current casting has run out.
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#TRNQ2.SPL~ override                 // Paralytic Toxin second part (the actual ability)
 
@@ -625,6 +676,22 @@ COPY ~RR/RR_CORE/SPELLS/RR#WDIS.SPL~  override                // Weapons Display
       match_opcode = 139 // display string
       match_parameter1 = 14094 // "Immunity To Effect"
       parameter1 = RESOLVE_STR_REF (@85) // Weapons Display failed: target has too many hit dice
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 74011 // You cannot cast this spell until the current casting has run out.
+      parameter1 = RESOLVE_STR_REF (@10006) // You cannot cast this spell until the current casting has run out.
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 32087 // Spin already active.
+      parameter1 = RESOLVE_STR_REF (@10009) // Spin already active.
   END
 
 OUTER_SPRINT desc @30
@@ -1546,8 +1613,10 @@ COPY ~RR/RR_CORE/ITEMS/RR#BUC01.ITM~  override               // Fading Glory (Bu
   SAY NAME2 @200 SAY DESC @201
 
 COPY ~RR/RR_CORE/BAM/RR#BUC02.BAM~    override               // Buckler +1 (round)
-     ~RR/RR_CORE/ITEMS/RR#BUC02.ITM~  override
      ~RR/RR_CORE/BAM/RR#BUC03.BAM~    override               // Buckler +2
+
+COPY ~RR/RR_CORE/ITEMS/RR#BUC02.ITM~  override
+  SAY NAME2 @10013 SAY DESC @10014
 
 COPY ~RR/RR_CORE/ITEMS/RR#BUC03.ITM~  override
   SAY NAME2 @20 SAY DESC @21
@@ -1577,15 +1646,44 @@ COPY ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~  override               // Lesser Shambler'
      ~RR/RR_CORE/ITEMS/RR#SHM02.ITM~  override               // Shambling Mound's weapon
      ~RR/RR_CORE/ITEMS/RR#SHM03.ITM~  override               // Greater Shambler's weapon
   LAUNCH_PATCH_FUNCTION ~cure_spell_immunities~ END          // add immunity to cure/cause wound spells
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 39752 // Stricken by a foul disease
+      parameter1 = RESOLVE_STR_REF (@10007) // Stricken by a foul disease
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 4742 // Spell Ineffective
+      parameter1 = RESOLVE_STR_REF (@10015) // Spell Ineffective
+  END
+  // TODO: 267 with p1 32089 should be p1 -1 or removed BGEE
+  // TODO: lots of 267 here
 
 COPY ~RR/RR_CORE/SPELLS/RR#SHM01.EFF~ override               // Lesser Shambler's summoning EFF
      ~RR/RR_CORE/SPELLS/RR#SHM02.EFF~ override               // Shambling Mound's summoning EFF
      ~RR/RR_CORE/SPELLS/RR#SHM03.EFF~ override               // Greater Shambler's summoning EFF
-     ~RR/RR_CORE/SPELLS/RR#SHM.SPL~   override               // Shambler summoning spell
      ~RR/RR_CORE/BAM/RR#SHM.BAM~      override               // Shambler GUI icon
      ~RR/RR_CORE/SPELLS/RR#SMENT.EFF~ override               // Shambler entanglement immunity (for huge and incorporeal creatures)
-     ~RR/RR_CORE/SPELLS/RR#SMENT.SPL~ override               // Shambler entanglement ability
      ~RR/RR_CORE/SPELLS/RR#INVIS.SPL~ override               // Custom Invisibility spell, used for shambler blending
+
+COPY ~RR/RR_CORE/SPELLS/RR#SMENT.SPL~ override               // Shambler entanglement ability
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 334 // Entangled
+      parameter1 = RESOLVE_STR_REF (@10008) // Entangled
+  END
+
+COPY ~RR/RR_CORE/SPELLS/RR#SHM.SPL~   override               // Shambler summoning spell
+  SAY NAME1 @10011 SAY UNIDENTIFIED_DESC @10011
 
 COPY ~RR/RR_CORE/ACTORS/RR#SHM01.CRE~ override               // Lesser Shambler
   SAY NAME1 @63 SAY NAME2 @63 SAY INITIAL_MEETING @421
@@ -1638,8 +1736,17 @@ COPY ~RR/RR_CORE/ITEMS/RR#LYRE.ITM~  override
   SAY NAME2 @56 SAY DESC @57
 
 COPY ~RR/RR_CORE/BAM/RR#FDART.BAM~   override                     // Returning Frost Dart
+
 COPY ~RR/RR_CORE/ITEMS/RR#FDART.ITM~ override
   SAY NAME2 @58 SAY DESC @59
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 335 // Slowed
+      parameter1 = RESOLVE_STR_REF (@10017) // Slowed
+  END
 
 COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~   override                     // Dagger of Acumen (for Aran Linvail)
 
@@ -1937,18 +2044,42 @@ COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.EFF~ override                // Filthy Fever im
 
 COPY ~RR/RR_CORE/SPELLS/RR#PLAG1.SPL~ override                // Filthy Fever disease (-2 to DEX and CON)
   SAY NAME1 @717 SAY NAME2 @717 // Filthy Fever
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 39752 // Stricken by a foul disease
+      parameter1 = RESOLVE_STR_REF (@10007) // Stricken by a foul disease
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.EFF~ override                // Devil Chills immunity effect (applies to Undead, Constructs, Slimes and Elementals)
   SAY 0x1C @87 // Unaffected by Disease
 
 COPY ~RR/RR_CORE/SPELLS/RR#PLAG2.SPL~ override                // Devil Chills disease (-2 to STR + Slow effect)
   SAY NAME1 @718 SAY NAME2 @718 // Devil Chills
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 39752 // Stricken by a foul disease
+      parameter1 = RESOLVE_STR_REF (@10007) // Stricken by a foul disease
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.EFF~ override                // Mummy Rot immunity effect (applies to Undead, Constructs, Slimes and Elementals)
   SAY 0x1C @87 // Unaffected by Disease
 
 COPY ~RR/RR_CORE/SPELLS/RR#PLAG3.SPL~ override                // Mummy Rot disease (deals 20 points of disease damage, 2 per round)
   SAY NAME1 @719 SAY NAME2 @719 // Mummy Rot
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 39752 // Stricken by a foul disease
+      parameter1 = RESOLVE_STR_REF (@10007) // Stricken by a foul disease
+  END
 
 
 
@@ -1960,6 +2091,7 @@ COPY ~RR/RR_CORE/BAM/RR#KEEP.BAM~    override
      ~RR/RR_CORE/ITEMS/RR#KEEPD.EFF~ override                // +2 bonus to damage rolls vs. chaotic creatures
 
 COPY ~RR/RR_CORE/ITEMS/RR#KEEP.ITM~  override
+  SAY NAME1 @10018 SAY UNIDENTIFIED_DESC @10019
   SAY NAME2 @126 SAY DESC @127
 
 
@@ -1968,6 +2100,7 @@ COPY ~RR/RR_CORE/ITEMS/RR#KEEP.ITM~  override
 COPY ~RR/RR_CORE/BAM/RR#CATC.BAM~    override
 
 COPY ~RR/RR_CORE/ITEMS/RR#CATC.ITM~  override
+  SAY NAME1 @10020 SAY UNIDENTIFIED_DESC 20021
   SAY NAME2 @128 SAY DESC @129
 
 
@@ -2021,6 +2154,16 @@ COPY ~RR/RR_CORE/BAM/RR#HEL02.BAM~   override
 COPY ~RR/RR_CORE/ITEMS/RR#HEL02.ITM~ override
   SAY NAME1 @10004 SAY UNIDENTIFIED_DESC @10005
   SAY NAME2 @140 SAY DESC @141
+  // TODO: BGEE uses #31786 for Blinded
+  // Spell protects against #1474, which is something else on BGEE
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 206 // protection from spell
+      match_parameter1 = 4742 // Spell Ineffective
+      parameter1 = RESOLVE_STR_REF (@10015) // Spell Ineffective
+  END
 
 // Greagan's Harp changes
 
@@ -2155,6 +2298,14 @@ COPY ~RR/RR_CORE/BAM/RR#BOW06.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW06.ITM~ override
   SAY NAME2 @112 SAY DESC @113
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 0
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 8325 // Magnetized
+      parameter1 = RESOLVE_STR_REF (@10016) // Magnetized
+  END
 
 
 // Darkveil (thieves' hood which grants immunity to gaze attacks)

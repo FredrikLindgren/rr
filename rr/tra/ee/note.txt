@@ -4,6 +4,7 @@ games.
 Main differences:
   No usability information in item descriptions.
   Kit descriptions match the EE format (at least for English).
+  Separate descriptions for kit abilities
 
 They should contain no redundant strings (strings that differ only in
 encoding), apart from non-English kit descriptions.

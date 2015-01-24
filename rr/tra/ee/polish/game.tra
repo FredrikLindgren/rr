@@ -1039,3 +1039,28 @@ Opóźnienie: 1
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
 Wymagana siła: 5~
+
+// Ability descriptions (cropped from the kit descriptions)
+
+@11000 = ~Pokaz siły
+Wykonując pozy, w których fechtmistrz, jakby owija wokół siebie swe ostrza, może zaburzyć morale oraz odwagę innych. Taki pokaz umiejętności, precyzji i śmiertelnego wdzięku obniża morale przeciwnika (wrogowie muszą wykonać rzut obronny przeciw czarom, by uniknąć spadku morale) i jednocześnie inspiruje sojuszników, dodając +1 do ataku. Pokaz musi trwać całą rundę bez przerwania. Przez ten czas, każdy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa pokaz. Pokaz siły jest niezwykłą (niemagiczną) umiejętnością, co za tym idzie, ignoruje wszelkie odporności magiczne stworów. Nieumarli, golemy, galarety, zwierzęta oraz demoniczne stworzenia są całkowicie odporne na Pokaz siły. Umiejętność ta nie może zadziałać na stwory, których maksymalna kostka ataku przewyższa poziom barda oraz stwory, których kostka ataku ma 20 i więcej są całkowicie odporne. Efekt oraz czas trwania tej umiejętności wzrasta z poziomem fechtmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiększają się o 1 na każde 10 poziomów fechtmistrza. Efekt Pokazu siły trwa jedną rundę na każdy poziom fechtmistrza.~
+
+@11001 = ~Zatrucie ostrza
+Z powodu wymagań, jakie narzuca nań jego profesja, Zabójca przywykł do pokrywania swej broni trucizną już na początku kariery. Każda broń w ten sposób przygotowana będzie zadawać dodatkowe 1K3 obrażeń od trucizny. W związku z czym, jeśli nie zostanie wykonany rzut obronny przeciw truciźnie, substancja przeniknie przez ranę do krwiobiegu ofiary zadając dodatkowe obrażenia na każdy poziom zabójcy (maksymalnie do poziomu 20). Trucizna odparowuje po 5 rundach od chwili nałożenia. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zatrute.~
+
+@11002 = ~Zabójczy atak
+Poprzez wnikliwe badanie słabości jego ofiary, Zabójca potrafi skupić swoją przebiegłość oraz ponadprzeciętne zdolności w jeden śmiertelny cios. Następny cios, który wyprowadza automatycznie staje się ciosem krytycznym, a jego ofiara musi wykonać rzut obronny przeciwko śmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skuteczność Zabójczego ataku rośnie. Rzuty obronne ofiary spadają o 1 na 24 poziomie, 2 na 32 i 3 na 40 poziomie. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zabite przy użyciu Zabójczego ataku.~
+
+@11003 = ~Paraliżująca toksyna
+Skomplikowane pojmowanie alchemii, jak również zielarstwa pozwala łowcy nagród tworzyć substancje znacznie obniżające pracę mięśni po wprowadzeniu do krwiobiegu. Jest to przeźroczysta, pozbawiona zapachu ciecz, którą można bez obaw wykrycia nałożyć na ostrze broni. Po trafieniu taką bronią, ofiara musi wykonać rzut obronny przeciw paraliżowi, albo zostanie unieruchmiona przez rundę na każde 10 poziomów łowcy nagród. Niestety, po nałożeniu na ostrze, ciecz ta szybko się ulatnia, czyniąc go skutecznym tylko przez jedną rundę. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na działanie paraliżującej toksyny.~
+
+@11004 = ~Pułapki alchemiczne
+Wynikiem połączenia niesamowitych umiejętności zastawiania sideł ze znajomością alchemii, łowca nagród potrafi stworzyć pułapki, które zamiast zabijać, są raczej zaprojektowane tak, by unieruchomić ofiarę. Efekt działania pułapki zależy od poziomu łowcy nagród, ale zawsze utrzymują się one przez 5 rund i mogą być zneutralizowane przez udany rzut obronny przeciw zionięciom:
+
+1 poziom - zadaje 1K4 obrażeń i oszałamia ofiarę
+6 poziom - zadaje 4k4 obrażeń i spowalnia ofiarę
+11 poziom - zadaje 6k4 obrażeń i oplata ofiarę
+16 poziom - zadaje 8k4 obrażeń i oślepia ofiarę
+21 poziom - zadaje 10k4 obrażeń i pozbawia ofiarę przytomności
+
+Uwaga: obrażenia pułapek alchemicznych nie zabijają ofiary, gdy ilość jej punktów życia spadnie poniżej 0, tylko pozbawiają ją przytomności. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na ten typ obrażeń.~

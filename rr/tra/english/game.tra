@@ -2920,3 +2920,28 @@ Not Usable By:
  Druid
  Cleric
  Mage~ // #39467
+
+// Ability descriptions for EE
+
+@11000 = Weapons Display
+By whirling a melee weapon about his body a Blade can affect the morale and courage of others. Such a display of skill, precision, and deadly grace lowers opponents' morale (enemies must save vs. spell to avoid morale failure) and simultaneously inspires allies, granting a +1 bonus to their attack rolls. The display must occur for a full round without interruption. During this time, any successful attack upon the Blade or failed saving throw by the Blade disrupts the display. Weapons Display is an extraordinary (non-magical) ability, therefore it completely ignores any magic resistance of the subject creatures. Undead, Constructs, Slimes, Animals and Demonic creatures are completely unaffected by the Weapons Display. Furthermore, the ability cannot affect creatures whose total Hit Dice exceed the Blade's current level and creatures with more than 20 Hit Dice are completely unaffected. The effectiveness and the duration of this ability improve as the Blade gains more levels. The bonus granted to the attack rolls of allies and the saving throw penalty for the enemies increase by one point per ten experience levels of the Blade. The effects of Weapons Display last for one round per each level of the Blade.~
+
+@11001 = ~Poison Weapon
+Due to the requirements of his profession, an Assassin becomes adapt at coating his weapons in poison early during his career. Any weapon prepared in this manner will deal an extra 1d3 points of poison damage upon contact. Furthermore, unless a saving throw vs. poison is made, the poison will be injected into the bloodstream of the victim, dealing one additional point of damage per each level of the Assassin (up to a maximum of 20). The poison coating evaporates after 5 rounds. Constructs, Elementals, Slimes and Undead creatures cannot be poisoned.~
+
+@11002 = ~Death Attack
+By thoroughly studying the weak spots of his victim, an Assassin can focus all of his cunning and prowess into a single, deadly strike. The next attack he makes automatically becomes a critical hit and his victim must make a saving throw vs. death or die instantly. As the Assassin gains more experience, the lethality of the Death Attack increases. The victim saves with a -1 penalty at level 24, a -2 penalty at level 32 and a -3 penalty at level 40. Constructs, Elementals, Slimes and Undead creatures cannot be slain by a Death Attack.~
+
+@11003 = ~Paralytic Toxin
+The Bounty Hunter's intricate understanding of alchemy and herbalism allows him to create a substance that causes severe loss of muscular function when injected into the bloodstream. This paralytic toxin is a transparent, odorless liquid which can be easily applied to weapons without fear of detection. A hit from any weapon coated in this substance causes the target to make a saving throw vs. paralyzation or become paralyzed for one round per every ten levels of the Bounty Hunter. However, the toxin evaporates quickly when exposed to air, making the coating last only a single round. Constructs, Elementals, Slimes and Undead creatures are unaffected by the Paralytic Toxin.~
+
+@11004 = ~Set Alchemical Trap
+Combining his superior trap-setting skills with his alchemical knowledge, a Bounty Hunter can create traps that are primarily designed for incapacitating his opponents, rather than killing them outright. The effects of the traps vary according to the Bounty Hunter's level, but always last for five rounds and can be negated by a successful saving throw vs. breath:
+
+1st:  trap deals 2d4 points of subdual damage and dazzles the target
+6th:  trap deals 4d4 points of subdual damage and slows the target
+11th: trap deals 6d4 points of subdual damage and entangles the target
+16th: trap deals 8d4 points of subdual damage and blinds the target
+21st: trap deals 10d4 points of subdual damage and renders the target unconscious
+
+Note: subdual damage is non-lethal and will render the target unconscious if its hit points drop below 0, instead of killing it. Constructs, Elementals, Slimes and Undead creatures are immune to subdual damage.~

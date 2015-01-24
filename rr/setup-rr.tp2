@@ -134,6 +134,7 @@ LAM load_RR#DEATA_var
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS01.SPL~ override               // Assassin Death Attack innate ability (coat weapons shell)
   SAY NAME1 @36 SAY NAME2 @36 // Death Attack
+  SAY UNIDENTIFIED_DESC @11002
   WRITE_BYTE 0x27 RR#DEATA                                   // assign new secondary type
   LPF ALTER_EFFECT
     INT_VAR
@@ -163,6 +164,7 @@ BUT_ONLY
 COPY ~RR/RR_CORE/SPELLS/RR#TAS2B.SPL~ override               // Poison Weapon second part (the actual ability)
 
 COPY_EXISTING SPCL423.SPL override                           // Poison Weapon Assassin ability
+  SAY UNIDENTIFIED_DESC @11001
   PATCH_FOR_EACH opcode IN
                  248
                  249
@@ -246,7 +248,8 @@ COPY_EXISTING CLABTH03.2DA override                           // Bounty Hunter's
 BUT_ONLY
 
 COPY_EXISTING ~SPCL414.SPL~ override                          // patch the Special Snare shell spell to use the revised RR version and rename it
-SAY NAME1 @38 SAY NAME2 @38 // Set Alchemical Trap
+  SAY NAME1 @38 SAY NAME2 @38 // Set Alchemical Trap
+  SAY UNIDENTIFIED_DESC @11004
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
@@ -319,6 +322,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#TRNQ2.EFF~ override                 // Paralytic Toxi
 
 COPY ~RR/RR_CORE/SPELLS/RR#TRNQ.SPL~  override                 // Bounty Hunter's Paralytic Toxin innate ability (coat weapons shell)
   SAY NAME1 @55 SAY NAME2 @55 // Paralytic Toxin
+  SAY UNIDENTIFIED_DESC @11003
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
@@ -667,6 +671,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#WDIS.EFF~  override                // Weapons Display
 
 COPY ~RR/RR_CORE/SPELLS/RR#WDIS.SPL~  override                // Weapons Display ability
   SAY NAME1 @31 SAY NAME2 @31                                 // Weapons Display
+  SAY UNIDENTIFIED_DESC @11000
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0

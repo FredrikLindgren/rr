@@ -1168,3 +1168,28 @@ Force nécessaire : 5~
 @10003 = ~Cette petite pierre flotte autour de la tête de son possesseur quand on la place dans son inventaire. Ces pierres évidemment magiques ont des propriétés différentes en fonction de leur couleur.~
 @10004 = ~Cagoule du Voleur~
 @10005 = ~Malgré une aura magique assez évidente, cette cagoule ne semble pas posséder de pouvoir particuliers.~
+
+// Ability descriptions for EE (cropped from the kit descriptions)
+
+@11000 = ~Démonstration Martiale
+En faisant tournoyer une arme de mêlée ou de jet autour de lui-même, un Maître-Lame peut affecter le moral et le courage des autres. Une telle démonstration  d'habileté, de précision et de grâce mortelle baisse le moral des adversaires (à moins qu’ils ne réussissent un jet de sauvegarde contre les sorts) tout en  inspirant les alliés, leurs octroyant un bonus de +1 à leurs jets d’attaque. La démonstration doit durer un round entier sans interruption. Pendant ce temps,  toute attaque réussie contre le Maître-Lame ou tout jet de sauvegarde raté par celui-ci interrompt la démonstration. Démonstration Martiale est une capacité surnaturelle, et elle ignore donc complètement la résistance magique des créatures visées. Les  morts-vivants, les golems, les limons, les animaux et les créatures démoniaques ne sont pas affectés par cette capacité. De plus, elle n'affecte pas non plus les créatures possédant un nombre de dés de vie supérieur au niveau du Maître-Lame, tout comme les créatures disposant de plus de 20 DV. Quelqu'un venant d'assister à la Démonstration Martiale ne peut être à nouveau impressionné, du moins pendant un certain temps. L'efficacité de cette capacité ainsi que sa  durée augmentent avec le niveau du Maître-Lame. Le bonus aux jets d'attaque des alliés, ainsi que les pénalités de jets de sauvegarde et d'attaque des  ennemis augmentent d'un point tous les dix niveaux du Maître-Lame. Les effets de la Démonstration Martiale durent pendant un round par niveau du Maître-Lame.~
+
+@11001 = ~Arme empoisonnée
+À cause des nécessités de sa profession, un assassin, tôt dans sa carrière, acquiert l'habitude de recouvrir ses armes d'un poison. Toute arme préparée de la sorte infligera 1d3 points de dégâts de poison supplémentaires lors du contact. De plus, à moins qu'un jet de sauvegarde contre le poison ne soit réussi, le poison sera injecté dans la circulation sanguine de la victime, lui infligeant 1 point de dégât supplémentaire par niveau de l'assassin (jusqu'à un maximum de 20). La pellicule de poison s'évapore au bout de 5 rounds. Les golems, les élémentaires, les gelées et les morts-vivants ne peuvent être empoisonnés.~
+
+@11002 = ~Attaque mortelle
+En étudiant intensément les points faibles de sa victime, un assassin peut concentrer tous ses talents et prouesses en une seule attaque mortelle. L'attaque suivante devient automatiquement un coup critique, et la cible doit réussir un jet de sauvegarde contre la mort pour ne pas être instantanément tuée. Lorsque l'expérience de l'assassin augmente, l'efficacité de son Attaque mortelle s'améliore. La victime a un malus de -1 au niveau 24, de -2 au niveau 32 et de -3 au niveau 40. Les golems, les élémentaires, les gelées et les morts-vivants ne peuvent être tués par une Attaque mortelle.~
+
+@11003 = ~Toxine Paralysante
+Le Chasseur de Primes a une connaissance étroite de l'alchimie et de l'herboristerie, ce qui lui permet de créer une substance qui provoque de graves pertes des fonctions musculaires lorsqu'elle est injectée dans la circulation sanguine. Cette toxine paralysante est un liquide transparent et inodore qui peut facilement être appliqué sur les armes sans craindre de détection. Un coup porté par toute arme couverte de cette substance oblige la cible à réussir un jet de sauvegarde contre la paralysie, sans quoi, elle se retrouve paralysée pendant un round tous les 10 niveaux du Chasseur de Primes. Cependant, la toxine s'évapore rapidement lorsqu'elle est exposée à l'air, rendant l'enduit inefficace au bout d'un seul round. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés à la Toxine Paralysante.~
+
+@11004 = ~Pièges Alchimiques
+Combinant sa capacité supérieure de pose de pièges à ses connaissances alchimiques, un Chasseur de Primes peut créer des pièges principalement destinés à neutraliser ses adversaires plutôt qu'à les tuer directement. Les effets du piège varient en fonction du niveau du Chasseur de Primes, mais durent toujours 5 rounds et peuvent être annulés par un jet de sauvegarde contre les souffles réussi :
+
+1er : le piège inflige 2D4 points de dégâts assommants et éblouit la victime
+6e : le piège inflige 4D4 points de dégâts assommants et ralentit la victime
+11e : le piège inflige 6D4 points de dégâts assommants et enchevêtre la victime
+16e : le piège inflige 8D4 points de dégâts assommants et aveugle la victime
+21e : le piège inflige 10D4 points de dégâts assommants et rend la victime inconsciente
+
+Note : les dégâts assommants ne sont pas mortels et rendront la cible inconsciente si ses points de vie tombent sous 0, au lieu de la tuer. Les golems, les élémentaires, les gelées et les morts-vivants sont immunisés aux dégâts assommants.~

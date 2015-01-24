@@ -146,7 +146,6 @@ Attraverso l'addestramento e l'esperienza, un assassino apprende a mano a mano c
 
 
 Colpo Mortale
-
 Con un'accurata analisi dei punti deboli della sua vittima, un assassino può concentrare tutta la sua astuzia e la sua forza in un singolo colpo letale. L'attacco successivo diviene automaticamente un colpo critico e la vittima deve superare un tiro-salvezza contro morte o essere istantaneamente uccisa. A mano a mano che l'assassino diventa più esperto, la letalità del Colpo Mortale aumenta. La vittima riceve una penalità di -1 al tiro-salvezza al livello 24, di -2 al livello 32 e di -3 al livello 40. Costrutti, elementali, gelatine e non morti non possono essere uccisi dal Colpo Mortale.~
 
 @53 = ~Il pugnale avvelenato è una potente lama apprezzata da tutti gli assassini dei Reami. Questo in particolare fu creato per i Ladri Tenebrosi di Amn. Ad ogni colpo inferto al nemico, rilascia un veleno nel suo flusso sanguigno a meno che questi non superi un tiro-salvezza contro morte. Il veleno agisce rapido e letale.
@@ -175,7 +174,6 @@ Svantaggi:
 - Può distribuire solo il 20% nelle abilità da ladro ogni livello.
 
 Tossina Paralizzante
-
 La sua profonda conoscenza di alchimia ed erboristeria consente al cacciatore di taglie di mescere una sostanza in grado di ridurre drasticamente le funzionalità muscolari una volta entrata in circolo. Questa tossina paralizzante è un liquido trasparente e inodore che può facilmente essere applicato a un'arma senza timore che venga notato. Un colpo portato a segno con un arma rivestita di questa sostanza costringe la vittima a superare un tiro-salvezza contro paralisi o divenire paralizzata per un round ogni dieci livelli del cacciatore di taglie. Tuttavia, la tossina evapora rapidamente a contatto con l'aria, facendo svanire i propri effetti nel giro di un round. Costrutti, elementali, gelatine e non morti sono immuni alla Tossina Paralizzante.
 
 
@@ -1149,3 +1147,40 @@ Richiede: 5 alla Forza~
 @10003 = ~Questa è una piccola pietra che fluttua orbitando attorno alla testa del proprietario. Basta piazzare la pietra vicino alla testa per farla iniziare a orbitare. Queste pietre, ovviamente magiche, hanno proprietà differenti che dipendono dal loro colore.~ // #5770
 @10004 = ~Cappuccio dei Ladri~ // #66467
 @10005 = ~Anche se questo cappuccio non conferisce alcuna abilità magica al suo possessore, possiede comunque una debole aura di magia.~ // #66466
+
+// Ability  descriptions (cropped from the kit descriptions)
+
+@11000 = ~Esibizione Marziale
+ Raggio d'azione: linea di vista
+ Durata: 1 round per livello
+ Tempo di lancio: 1 round
+ Area d'effetto: Raggio di 9 m
+ Tiro-salvezza: Speciale
+Agitando un'arma da mischia attorno al suo corpo, una lama può influenzare il morale o il coraggio di chi le sta intorno. Una tale manifestazione di abilità, precisione e letale armonia abbassa il morale degli avversari (tiro-salvezza contro incantesimi per evitare un fallimento morale) e, al contempo, ispira gli alleati dando loro un bonus di +1 al tiro per colpire. L'esibizione deve proseguire per un intero round senza interruzioni. In questo arco di tempo, qualunque attacco andato a segno o tiro-salvezza fallito da parte della lama interrompe l'esibizione.
+Nota: Esibizione Marziale è un'abilità straordinaria (non magica) ed ignora pertanto la resistenza magica del bersaglio. Non morti, costrutti, gelatine, animali e creature demoniache sono completamente immuni all'Esibizione Marziale. Inoltre, l'abilità non ha effetto sulle creature i cui Dadi-vita superano quelli della lama o hanno comunque più di 20 Dadi-vita. Chiunque abbia appena assistito all'Esibizione Marziale sarà difficilmente impressionato da una seconda, almeno per un po'. L'efficacia e la durata di questa abilità migliorano a mano a mano che la lama aumenta di livello. Il bonus al tiro per colpire degli alleati e la penalità al tiro-salvezza degli avversari aumentano di 1 ogni dieci livelli d'esperienza della lama.~
+
+@11001 = ~Avvelenare Arma
+A causa dei requisiti della sua professione, l'assissino acquisisce presto una certa esperienza nel ricoprire di veleno la lama delle proprie armi. Qualunque arma così trattata infligge 1d3 danni extra da veleno a qualsiasi bersaglio con cui venga in contatto. Inoltre, a meno che la vittima non superi un tiro-salvezza contro veleno, il veleno entrerà nel suo circolo sanguigno infliggendo un ulteriore danno per ogni livello dell'assassino (fino a un massimo di 20). Il rivestimento di veleno evapora dopo 5 round. Costrutti, elementali, gelatine e non morti non possono essere avvelenati.~
+
+@11002 = ~Colpo Mortale
+Con un'accurata analisi dei punti deboli della sua vittima, un assassino può concentrare tutta la sua astuzia e la sua forza in un singolo colpo letale. L'attacco successivo diviene automaticamente un colpo critico e la vittima deve superare un tiro-salvezza contro morte o essere istantaneamente uccisa. A mano a mano che l'assassino diventa più esperto, la letalità del Colpo Mortale aumenta. La vittima riceve una penalità di -1 al tiro-salvezza al livello 24, di -2 al livello 32 e di -3 al livello 40. Costrutti, elementali, gelatine e non morti non possono essere uccisi dal Colpo Mortale.~
+
+@11003 = ~Tossina Paralizzante
+La sua profonda conoscenza di alchimia ed erboristeria consente al cacciatore di taglie di mescere una sostanza in grado di ridurre drasticamente le funzionalità muscolari una volta entrata in circolo. Questa tossina paralizzante è un liquido trasparente e inodore che può facilmente essere applicato a un'arma senza timore che venga notato. Un colpo portato a segno con un arma rivestita di questa sostanza costringe la vittima a superare un tiro-salvezza contro paralisi o divenire paralizzata per un round ogni dieci livelli del cacciatore di taglie. Tuttavia, la tossina evapora rapidamente a contatto con l'aria, facendo svanire i propri effetti nel giro di un round. Costrutti, elementali, gelatine e non morti sono immuni alla Tossina Paralizzante.~
+
+@11004 = ~Trappole Alchemiche
+Unendo le sua straordinaria abilità nel piazzare trappole alla sua conoscenza dell'alchimia, un cacciatore di taglie è in grado di creare trappole specificamente pensate per incapacitare i suoi avversari, piuttosto che ucciderli sul colpo. Gli effetti delle trappole variano in base al livello del cacciatore di taglie ma durano sempre 5 round e possono essere negati da un tiro-salvezza contro soffio:
+
+
+  1°: la trappola infligge 2d4 danni non letali e confonde il bersaglio
+
+  6°: la trappola infligge 4d4 danni non letali e rallenta il bersaglio
+
+ 11°: la trappola infligge 6d4 danni non letali e intralcia il bersaglio
+
+ 16°: la trappola infligge 8d4 danni non letali e e acceca il bersaglio
+
+ 21°: la trappola infligge 10d4 danni non letali e fa perdere conoscenza al bersaglio
+
+
+Nota: quando i punti-ferita di un bersaglio scendono sotto zero a causa di danni non letali, questi perde conoscenza anziché morire. Costrutti, elementali, gelatine e non morti sono immuni ai danni non letali.~

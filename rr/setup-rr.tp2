@@ -622,7 +622,17 @@ BUT_ONLY
 END                                                           // ends IWD:EE check
 
 COPY ~RR/RR_CORE/SPELLS/RR#BDF01.SPL~ override                // True Bard new song part 1
-     ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~ override                // True Bard new song part 2
+
+COPY ~RR/RR_CORE/SPELLS/RR#BDF02.SPL~ override                // True Bard new song part 2
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 267 END
+  LPF protection_from_string
+    INT_VAR
+      header = 3
+      timing = 10
+      duration = 100
+    STR_VAR
+      string = "panic"
+  END
 
 //String remains #9562 in BGEE
 STRING_SET ~9562~ @29                                         // Updated True Bard kit description
@@ -717,6 +727,38 @@ COPY_EXISTING ~SPCL542.SPL~ override                          // Skald song chan
 BUT_ONLY
 
 COPY ~RR/RR_CORE/SPELLS/RR#BSK00.SPL~ override                // Revised Skald song
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 267 END
+  LPF protection_from_string
+    INT_VAR
+      header = 1
+      target = 1
+      timing = 10
+      duration = 100
+    STR_VAR
+      string = "panic"
+  END
+  PATCH_FOR_EACH string IN "panic" "confused" BEGIN
+    LPF protection_from_string
+      INT_VAR
+        header = 2
+        target = 2
+        timing = 10
+        duration = 100
+      STR_VAR
+        string
+    END
+  END
+  PATCH_FOR_EACH string IN "panic" "confused" "stunned" BEGIN
+    LPF protection_from_string
+      INT_VAR
+        header = 3
+        target = 2
+        timing = 10
+        duration = 100
+      STR_VAR
+        string
+    END
+  END
 
 OUTER_SPRINT desc @33
 LAF set_kit_description STR_VAR kit = skald desc END
@@ -726,6 +768,14 @@ LAF set_kit_description STR_VAR kit = skald desc END
 // Jester kit revision
 
 COPY ~RR/RR_CORE/SPELLS/RR#BJSIT.SPL~ override                // New innate traits for the Jester kit
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 267 END
+  LPF protection_from_string
+    INT_VAR
+      target = 1
+      timing = 9
+    STR_VAR
+      string = "confused"
+  END
 
 COPY_EXISTING ~CLABBA03.2DA~ override                         // Jester kit ability table
   SET "rr#once" = "0"
@@ -1650,8 +1700,10 @@ COPY ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~  override               // Lesser Shambler'
       match_parameter1 = 4742 // Spell Ineffective
       parameter1 = RESOLVE_STR_REF (@10015) // Spell Ineffective
   END
-  // TODO: 267 with p1 32089 should be p1 -1 or removed BGEE
-  // TODO: lots of 267 here
+  LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 267 END
+  PATCH_FOR_EACH string IN "devour brain" "confused" "panic" "charmed" "held" "stunned" "diseased" BEGIN
+    LPF protection_from_string STR_VAR string END
+  END
 
 COPY ~RR/RR_CORE/SPELLS/RR#SHM01.EFF~ override               // Lesser Shambler's summoning EFF
      ~RR/RR_CORE/SPELLS/RR#SHM02.EFF~ override               // Shambling Mound's summoning EFF
@@ -2142,8 +2194,8 @@ COPY ~RR/RR_CORE/BAM/RR#HEL02.BAM~   override
 COPY ~RR/RR_CORE/ITEMS/RR#HEL02.ITM~ override
   SAY NAME1 @10004 SAY UNIDENTIFIED_DESC @10005
   SAY NAME2 @140 SAY DESC @141
-  // TODO: BGEE uses #31786 for Blinded
-  // Spell protects against #1474, which is something else on BGEE
+  LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 267 END
+  LPF protection_from_string STR_VAR string = "blinded" END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0

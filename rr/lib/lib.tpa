@@ -346,3 +346,178 @@ BEGIN
     LAF set_clastext_description STR_VAR kit desc END
   END
 END
+
+DEFINE_PATCH_FUNCTION signature
+  RET
+    sig
+    ver
+BEGIN
+  READ_ASCII 0 sig ELSE invalid (4)
+  READ_ASCII 4 ver ELSE invalid (4)
+END
+
+DEFINE_PATCH_FUNCTION protection_from_string
+  INT_VAR
+    header = 0 // all headers
+    target = 2
+    timing = 0
+    duration = 6
+  STR_VAR
+    string = ""
+BEGIN
+  PATCH_MATCH "%string%" WITH
+    "blind" "blinded" "blindness"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1474 12015 12948 13017 14071 14674 17399 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12015 12948 13017 14071 14674 17399 25861 26295 26352 31786 END
+      END
+    END
+
+    "charm" "charmed" "dire charmed" "dominated"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1476 14672 14780 8364 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14672 14780 31787 26206 END
+      END
+    END
+
+    "confused" "rigid thinking"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12101 12931 14782 14791 17393 17394 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12101 12931 14782 14791 17393 17394 25807 26182 26184 END
+      END
+    END
+
+    "devour brain"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 32089 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "diseased" "stricken by a foul disease"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 39752 54337 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 26453 31238 END
+      END
+    END
+
+    "haste" "hasted" "hastened"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 349 8825 14023 14667 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14023 14667 26019 31731 31800 END
+      END
+    END
+
+    "held"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 340 384 915 1473 8823 14102 17404 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14102 17404 25866 31730 31738 31769 31785 31799 END
+      END
+    END
+
+    "level drain"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 41495 40968 40969 40979 41616 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN END
+      END
+    END
+
+    "panic"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14007 17427 END /* 20568? */
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14007 17427 25817 25818 END /* 20568? */
+      END
+    END
+
+    "poison" "poisoned"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 5805 14662 14017 17397 30988 32304 END /* 10405? */
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14017 14662 17397 24454 25425 26215 END
+      END
+    END
+
+    "sleep" "unconscious"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12047 12958 13027 14001 17405 20438 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 12047 12958 13027 14001 17405 20438 25130 26040 26371 END
+      END
+    END
+
+    "slow" "slowed"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 335 1446 11799 12081 12992 13062 13692 14000 14668 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 11799 12081 12992 13062 13692 14000 14668 25856 26103 31728 31772 END
+      END
+    END
+
+    "stun" "stunned"
+    BEGIN
+      PATCH_IF ENGINE_IS ~soa tob bg2ee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 1280 14043 END
+      END ELSE PATCH_IF ENGINE_IS ~bgee~ BEGIN
+        DEFINE_ARRAY strrefs BEGIN 14043 25862 26050 END
+      END
+    END
+
+    DEFAULT
+      PATCH_WARN "protection_from_string does not know about string %string%"
+  END
+  LPF signature RET sig END
+  PATCH_MATCH "%sig%" WITH
+    "ITM "
+    BEGIN
+      PHP_EACH strrefs AS _ => parameter1 BEGIN
+        LPF ADD_ITEM_EQEFFECT
+          INT_VAR
+            opcode = 267
+            target = 1
+            timing = 2
+            parameter1
+        END
+      END
+    END
+
+    "SPL "
+    BEGIN
+      PHP_EACH strrefs AS _ => parameter1 BEGIN
+        LPF ADD_SPELL_EFFECT
+          INT_VAR
+            insert_point = 0
+            header
+            target
+            timing
+            duration
+            opcode = 267
+            parameter1
+        END
+      END
+    END
+
+    DEFAULT
+      PATCH_WARN "protection_from_string does not know what to do with file type %sig%"
+  END
+END

@@ -82,7 +82,7 @@ DEFINE_PATCH_FUNCTION cure_spell_immunities BEGIN
             opcode     = 206                      // effect: #206 (Protection from Spell)
             target     = 1                        // target: 1 (self)
             timing     = 9                        // timing mode: 9 (permanent after death)
-            parameter1 = 4742                     // param1: string (Spell Ineffective)
+            parameter1 = RESOLVE_STR_REF (@10015) // param1: string (Spell Ineffective)
           STR_VAR
             resource
         END
@@ -93,7 +93,7 @@ DEFINE_PATCH_FUNCTION cure_spell_immunities BEGIN
             opcode     = 206                      // effect: #206 (Protection from Spell)
             target     = 1                        // target: 1 (self)
             timing     = 2                        // timing mode: 2 (while equipped)
-            parameter1 = 4742                     // param1: string (Spell Ineffective)
+            parameter1 = RESOLVE_STR_REF (@10015) // param1: string (Spell Ineffective)
           STR_VAR
             resource
         END

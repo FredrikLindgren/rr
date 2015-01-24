@@ -1686,16 +1686,8 @@ COPY ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~  override               // Lesser Shambler'
   LAUNCH_PATCH_FUNCTION ~cure_spell_immunities~ END          // add immunity to cure/cause wound spells
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 39752 // Stricken by a foul disease
-      parameter1 = RESOLVE_STR_REF (@10007) // Stricken by a foul disease
-  END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
+      check_globals = 1
+      check_headers = 0
       match_opcode = 206 // protection from spell
       match_parameter1 = 4742 // Spell Ineffective
       parameter1 = RESOLVE_STR_REF (@10015) // Spell Ineffective
@@ -2140,7 +2132,7 @@ COPY ~RR/RR_CORE/ITEMS/RR#KEEP.ITM~  override
 COPY ~RR/RR_CORE/BAM/RR#CATC.BAM~    override
 
 COPY ~RR/RR_CORE/ITEMS/RR#CATC.ITM~  override
-  SAY NAME1 @10020 SAY UNIDENTIFIED_DESC 20021
+  SAY NAME1 @10020 SAY UNIDENTIFIED_DESC @10021
   SAY NAME2 @128 SAY DESC @129
 
 
@@ -2198,8 +2190,8 @@ COPY ~RR/RR_CORE/ITEMS/RR#HEL02.ITM~ override
   LPF protection_from_string STR_VAR string = "blinded" END
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 0
-      check_headers = 1
+      check_globals = 1
+      check_headers = 0
       match_opcode = 206 // protection from spell
       match_parameter1 = 4742 // Spell Ineffective
       parameter1 = RESOLVE_STR_REF (@10015) // Spell Ineffective

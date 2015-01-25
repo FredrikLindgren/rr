@@ -1162,12 +1162,39 @@ Force nécessaire : 5~
 
 // Strings missing from BGEE
 
-@10000 = ~Harpe~
-@10001 = ~Les harpes sont des instruments à cordes utilisées le plus souvent par les bardes. Cette petite harpe est idéale pour un voyageur.~
-@10002 = ~Pierre ionique~
-@10003 = ~Cette petite pierre flotte autour de la tête de son possesseur quand on la place dans son inventaire. Ces pierres évidemment magiques ont des propriétés différentes en fonction de leur couleur.~
-@10004 = ~Cagoule du Voleur~
 @10005 = ~Malgré une aura magique assez évidente, cette cagoule ne semble pas posséder de pouvoir particuliers.~
+@10014 = ~Une targe est un petit bouclier de bois ou de métal, qui se fixe à l'avant-bras. Sa petite taille et son faible poids permettent de le porter sans être trop encombré. La targe possède un certain type d'enchantement générique qui la rend plus résistante aux chocs.
+
+PARAMETRES :
+
+Bonus de Classe d'Armure : 2
+Spécial : ne protège pas contre les attaques de type Missiles ou Perforantes.
+Poids : 2
+Force nécessaire : 4~ // #39970
+@10019 = ~Wakizashi
+Le wakizashi est une arme essentielle pour tout samouraï. C'est l'arme qu'il porte en permanence, même en intérieur, et qu'il garde à portée de main pendant son sommeil. Fabriqué de la même façon que le katana, le wakizashi est, malgré sa plus petite taille, une arme redoutable entre les mains d'un pratiquant accompli.
+
+PARAMETRES :
+
+Dégâts : 1D8
+Type de dégât : perforant
+Poids : 3
+Facteur de vitesse : 3
+Type de compétence : cimeterre/wakizashi/ninja-to
+Type : arme à 1 main
+Force nécessaire : 5~ // #36181
+@10021 = ~Ninja-To
+L'épée du ninja, le ninja-to est de qualité inférieure aux autres lames de Kara-Tur, comme le katana. Le ninja-to est court et sa lame est droite, ce qui le rend idéal pour la dissimulation. Il est aussi plus approprié pour le combat en espace confiné, donnant parfois l'avantage aux ninjas sur les lames plus longues utilisées par les samouraïs.
+
+PARAMETRES :
+
+Dégâts : 1D8
+Type de dégât : tranchant
+Poids : 5
+Facteur de vitesse : 4
+Type de compétence : cimeterre/wakizashi/ninja-to
+Type : arme à 1 main
+Force nécessaire : 6~ // #39467
 
 // Ability descriptions for EE (cropped from the kit descriptions)
 

@@ -2821,3 +2821,58 @@ PARAMETRES
 
 Utilisable seulement par :
 Voleurs~
+@10006 = ~Vous ne pouvez pas lancer ce sort tant que le précédent fait encore effet.~ // #74011
+@10007 = ~Victime d'une grave maladie~ // #39752
+@10008 = ~Empêtré~ // #334
+@10009 = ~Vous êtes déjà en position.~ // #32087
+@10010 = ~Piège... ici~ // #22461
+@10011 = ~Invoquer tertre errant~ // #3899
+@10012 = ~Aveuglé~ // #1474
+@10013 = ~Targe +1~ // #39971
+@10014 = ~Une targe est un petit bouclier de bois ou de métal, qui se fixe à l'avant-bras. Sa petite taille et son faible poids permettent de le porter sans être trop encombré. La targe possède un certain type d'enchantement générique qui la rend plus résistante aux chocs.
+
+PARAMETRES :
+
+Bonus de Classe d'Armure : 2
+Spécial : ne protège pas contre les attaques de type Missiles ou Perforantes.
+Poids : 2
+Force nécessaire : 4
+Non utilisable par :
+ Magicien~ // #39970
+@10015 = ~Sort inefficace~ // #4742
+@10016 = ~Magnétisé~ // #8325
+@10017 = ~Ralenti~ // #335
+@10018 = ~Wakizashi~ // #7526
+@10019 = ~Wakizashi
+Le wakizashi est une arme essentielle pour tout samouraï. C'est l'arme qu'il porte en permanence, même en intérieur, et qu'il garde à portée de main pendant son sommeil. Fabriqué de la même façon que le katana, le wakizashi est, malgré sa plus petite taille, une arme redoutable entre les mains d'un pratiquant accompli.
+
+PARAMETRES :
+
+Dégâts : 1D8
+Type de dégât : perforant
+Poids : 3
+Facteur de vitesse : 3
+Type de compétence : cimeterre/wakizashi/ninja-to
+Type : arme à 1 main
+Force nécessaire : 5
+Inutilisable par :
+ Druide
+ Clerc
+ Mage~ // #36181
+@10020 = ~Ninja-To~ // #7529
+@10021 = ~Ninja-To
+L'épée du ninja, le ninja-to est de qualité inférieure aux autres lames de Kara-Tur, comme le katana. Le ninja-to est court et sa lame est droite, ce qui le rend idéal pour la dissimulation. Il est aussi plus approprié pour le combat en espace confiné, donnant parfois l'avantage aux ninjas sur les lames plus longues utilisées par les samouraïs.
+
+PARAMETRES :
+
+Dégâts : 1D8
+Type de dégât : tranchant
+Poids : 5
+Facteur de vitesse : 4
+Type de compétence : cimeterre/wakizashi/ninja-to
+Type : arme à 1 main
+Force nécessaire : 6
+Inutilisable par :
+ Druide
+ Clerc
+ Mage~ // #39467

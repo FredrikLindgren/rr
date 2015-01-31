@@ -2923,7 +2923,7 @@ Not Usable By:
 
 // Ability descriptions for EE
 
-@11000 = Weapons Display
+@11000 = ~Weapons Display
 By whirling a melee weapon about his body a Blade can affect the morale and courage of others. Such a display of skill, precision, and deadly grace lowers opponents' morale (enemies must save vs. spell to avoid morale failure) and simultaneously inspires allies, granting a +1 bonus to their attack rolls. The display must occur for a full round without interruption. During this time, any successful attack upon the Blade or failed saving throw by the Blade disrupts the display. Weapons Display is an extraordinary (non-magical) ability, therefore it completely ignores any magic resistance of the subject creatures. Undead, Constructs, Slimes, Animals and Demonic creatures are completely unaffected by the Weapons Display. Furthermore, the ability cannot affect creatures whose total Hit Dice exceed the Blade's current level and creatures with more than 20 Hit Dice are completely unaffected. The effectiveness and the duration of this ability improve as the Blade gains more levels. The bonus granted to the attack rolls of allies and the saving throw penalty for the enemies increase by one point per ten experience levels of the Blade. The effects of Weapons Display last for one round per each level of the Blade.~
 
 @11001 = ~Poison Weapon

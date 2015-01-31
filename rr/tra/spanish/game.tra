@@ -7,7 +7,7 @@
 CARACTERÍSTICAS:
 
 Bonificación a la clase de armadura: 3
-Especial: protección contra ataques perforantes (no procedentes de proyectiles)
+Especial: no ofrece protección contra ataques perforantes o procedentes de proyectiles
 Peso: 2
 Requiere: 4 Fuerza
 
@@ -19,16 +19,14 @@ No usable por:
 CARACTERÍSTICAS:
 
 Bonificación a la clase de armadura: 4
-Especial: protección contra ataques perforantes (no procedentes de proyectiles)
+Especial: no ofrce protección contra ataques perforantes o procedentes de proyectiles
 Peso: 2
 Requiere: 4 Fuerza
 
 No usable por:
  Mago~
 @24    = ~El Guardián~
-@25    = ~El Guardián
-
-Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida.
+@25    = ~Este escudo parece hecho enteramente de hojas. La forma y tamaño inusual de estas hojas sugiere que vinieron de robles ancestrales de muy profundo en el bosque de Mir. Al examinarlo más detenidamente, se pueden descubrir encantamientos druídicos en la superficie del mismo, y parece incrementar la salud del portador. Cada mañana, al salir el sol, una de las hojas brilla por un momento. Puede ser entonces recogida y plantada en el suelo, y otra toma su lugar en el escudo. Luego de decir el encantamiento correcto, la hoja plantada crece en forma de Masa bamboleante, cuya fuerza depende de la habilidad del Druida.
 
 CARACTERÍSTICAS:
 
@@ -43,7 +41,7 @@ Requiere: Sabiduría 12, Carisma 15
 Sólo usable por:
  Druidas~
 @26    = ~Protección del Ladrón~
-@27    = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de la Máscara. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones.
+@27    = ~Este broquel se ha creado utilizando una aleación de acero oscuro, plata y mithril. Aunque su superficie está muy pulida, el broquel parece unirse a la luz más que reflejarla. Al examinarlo más de cerca, comprobáis que contiene encantamientos utilizados por los clérigos de Mask. El Señor de las Sombras bendijo este escudo con su toque para esconder y guardar a quienes le siguen de cualquier daño que pueda encontrar en sus profesiones.
 
 CARACTERÍSTICAS:
 
@@ -83,8 +81,6 @@ Desventajas:
 
 Ventajas:
 - Puede utilizar sus habilidades "Giro ofensivo" y su "Posición defensiva" una vez al día por cada 4 niveles de experiencia que posea
-- Giro ofensivo: dura 24 segundos, y concede al espadachín un +2 al ataque, +2 al daño y un ataque adicional. Además, mientras dure el efecto, todos sus ataques infligirán el mayor daño posible. Giro ofensivo no puede ser usado en conjunción con Celeridad o Celeridad Mejorada
-- Postura defensiva: dura 24 segundos durante los cuales el personaje no podrá moverse del sitio, pero se beneficiará de un -1 a la CA por nivel de experiencia que posea. Este bonificador a la Clase de Armadura no puede ser superior a -10
 - Puede utilizar la habilidad 'Desplegar Armas' una vez al día por cada 10 niveles.
 - Comienzan con talento máximo (3 puntos) en dos estilos de lucha.
 - Pueden adquirir "Torbellino", como habilidad de alto nivel.
@@ -95,6 +91,12 @@ Desventajas:
 - Su Canción de bardo no mejora a medida que sube de nivel
 - No puede adquirir la habilidad Canción mejorada
 - No puede adquirir la habilidad Canción persistente
+
+Giro ofensivo:
+Dura 24 segundos, y concede al espadachín un +2 al ataque, +2 al daño y un ataque adicional. Además, mientras dure el efecto, todos sus ataques infligirán el mayor daño posible. Giro ofensivo no puede ser usado en conjunción con Celeridad o Celeridad Mejorada.
+
+Postura defensiva:
+Dura 24 segundos durante los cuales el personaje no podrá moverse del sitio, pero se beneficiará de un -1 a la CA por nivel de experiencia que posea. Este bonificador a la Clase de Armadura no puede ser superior a -10.
 
 Desplegar Armas:
 
@@ -111,22 +113,25 @@ Nota: Esta es una habilidad extraordinaria, y por lo tanto ignora la resistencia
 @32    = ~BUFÓN: Este bardo está versado en las artes del ridículo y la hilaridad, y utiliza sus habilidades para distraer y confundir a sus enemigos, correteando alocadamente durante el combate. Sin embargo, no conviene tomarlo por un verdadero tonto, ya que puede resultar bastante mortífero.
 
 Ventajas:
-- La canción del bufón no ayuda a sus aliados; en su lugar, afecta a todos los oponentes que le oigan voluntaria o involuntariamente. Los efectos van en función del nivel del bufón.
+- Consigue la canción del bufón en el nivel uno. Esta habilidad consigue una mejora en los niveles 9 y 18.
+- Consigue las habilidades Suerte del tonto y Mente de bufón como características pasivas en el nivel uno.
 
-Nivel 1: Los enemigos deben salvarse vs hechizos o distraerse (bonificación +2 a salvación)
-Nivel 9: Los enemigos deben salvarse vs hechizos o distraerse (sin bonificación a la salvación) y confundirse (bonificación +2 a la salvación)
-Nivel 18: Los enemigos deben salvarse vs hechizos o distraerse (penalizador -2 a salvación), confundirse (sin bonifiación a la salvación) y quedar atontados (bonificación +2 a salvación)
+Desventajas:
+- Los bufones sólo pueden adquirir competencia (básica) con las armas permitidas a los ladrones normales.
+- La canción del bufón no ayuda los aliados.
+- Deben ser de alineamiento caótico.
 
-Nota: Los oponentes distraídos tienen un 20% de fallar el lanzamiento de conjuros y sufren un penalización de -2 al THACO y la CA.
+1º: Los enemigos deben salvarse vs hechizos o distraerse (bonificación +2 a salvación)
+9º: Los enemigos deben salvarse vs hechizos o distraerse (sin bonificación a la salvación) y confundirse (bonificación +2 a la salvación)
+18º: Los enemigos deben salvarse vs hechizos o distraerse (penalizador -2 a salvación), confundirse (sin bonifiación a la salvación) y quedar atontados (bonificación +2 a salvación)
+
+Nota: Los oponentes distraídos tienen un 20% de fallar el lanzamiento de conjuros y sufren un penalización de -2 al THACO y la CA. Los oponentes confundidos atacan a criaturas cercanas o corren por doquier sin razón. Los oponentes atontados pierden la conciencia hasta un punto que son incapaces de dejar de escuchar al la canción del bufón, la cual los deja incapacitados completamente, pero, a pesar de su estado, pueden percibir el daño, por lo cual cualquier ataque hacia uno de ellos automáticamente rompe este efecto. La canción del bufón no afecta a criaturas sin mente como no muertos, cienos y constructos.
 
 Suerte del tonto:
 - Es sorprendente ver como los bufones salen siempre ilesos de todas las situaciones. Son descuidados, tontos e incluso alocados. Es la suerte del tonto lo que les salva. Los bufones reciben un +1 de bonificación a todas las tiradas de salvación y +5% de bonificación a todas las habilidades de ladrón. También reciben +1 de bonificación a la CA.
 
 Mente del bufón:
-- Los bufones son inmunes a ataques que causan locura (por ejemplo, el hechizo Confusión)
-
-Desventajas:
-- Los bufones sólo pueden adquirir competencia (básica) con las armas permitidas a los ladrones normales. ~
+- Los bufones son inmunes a ataques que causan locura (por ejemplo, el hechizo Confusión)~
 @33    = ~POETA: este bardo del Norte también es un guerrero de gran fuerza, habilidad y virtud. Sus canciones son inspiradores relatos de batallas y valor, objetivos a los que el poeta dedica su vida. Los poetas son miembros honrados y respetados en sus clanes. Ellos memorizan cada batalla, poniéndola en forma de poesía. De esta forma, las hazañas del pasado pueden ser contadas en el presente y pasadas a otros para el futuro.
 
 Ventajas:
@@ -138,21 +143,33 @@ Ventajas:
 
 Desventajas:
 - Su habilidad de Robar equivale a una cuarta parte de la normal
-- Lanzamiento de conjuros un segundo más lento~
+- Lanzamiento de conjuros un décimo de ronda más lento~
 @34    = ~Rastrear
-Gracias a su profundo conocimiento de su entorno y las criaturas que viven en él, el explorador puede utilizar la aptitud Rastrear para hacerse una idea general de qué criaturas hay en la zona y en qué dirección se encuentran. Las flechas rojas del borde de la pantalla señalarán hacia la dirección general en que se encuentren las criaturas del área. ~
-@35    = ~ASESINO: esta persona ha sido entrenada para matar de manera discreta y eficaz, y confía en el anonimato y la sorpresa para llevar a cabo su labor. Un Asesino listo nunca será visto por su víctima. La mayoría de los asesinos son de alineamiento maligno, sin embargo, es concebible que puedan tener alineamiento neutral, aunque nunca bueno.
+Gracias a su profundo conocimiento de su entorno y las criaturas que viven en él, el cazarrecompensas puede utilizar la aptitud Rastrear para hacerse una idea general de qué criaturas hay en la zona y en qué dirección se encuentran. Las flechas rojas del borde de la pantalla señalarán hacia la dirección general en que se encuentren las criaturas del área. ~
+@35    = ~ASESINO: esta persona ha sido entrenada para matar de manera discreta y eficaz, y confía en el anonimato y la sorpresa para llevar a cabo su labor. Su entrenamiento en anatomía, sigilo y el uso de venenos ayuda al Asesino a llevar a cabo sus misiones mortal con una terrífica precisión. Es probable que un Asesino listo nunca sea visto por su víctima.
 
 Ventajas:
-- Puede impregnar su arma con veneno una vez al día por cada 4 niveles de experiencia que posea. El siguiente golpe que propine con esa arma inyectará el veneno en la víctima, infligiéndole 1 punto de daño por segundo durante un total de 24 segundos (3 de daño durante los primeros 6 segundos). Una tirada exitosa de salvación contra veneno reducirá el daño a 12 en total.
-
+- Puede impregnar su arma con veneno una vez al día por cada 4 niveles de experiencia que posea.
+- Comienza con un apuñalamiento por la espalda de x3
 - Bonificador +1 al ataque y +1 al daño
 - El apuñalamiento por la espalda llega hasta x7 y no sólo hasta x5
+- Adquiere la habilidad de Maestría en Venenos a partir del 8º nivel, la cual recibirá mejoras cada 8 niveles
+- Puede realizare un ataque mortal una vez al día a partir del nivel 16 por cada 8 niveles de experiencia que posea
 
 Desventajas:
-- Sólo obtiene 15% por nivel de experiencia para repartir entre sus habilidades de ladrón~
-@36    = ~Ataque de muerte~
-@37    = ~Intentando ataque de muerte~
+- Sólo obtiene 15% por nivel de experiencia para repartir entre sus habilidades de ladrón
+- Debe ser de alineamiento neutral o malvado
+
+Impregnar arma con veneno:
+Dados los requerimientos de su profesión, un Asesino aprende a manejar venenos con presisión a una temprana edad. Cualquier arma preparada de esta manera adquiere 1d3 puntos de daño al envenenar a la víctima. Además, si la víctima no consigue salvarse con una tirada de salvación contra veneno, el veneno entrará en el torrente sanguíneo de la víctima, causando un punto de daño por cada nivel del Asesino (a un máximo de 20 puntos de daño). El veneno se evapora del arma pasadas las cinco rondas. Constructos, elementales, cienos y no-muertos son inmunes al veneno, por lo cual esta habilidad no los afecta.
+
+Maestría en Venenos:
+A través del aprendizaje y la experiencia, un Asesino gradualmente mejora su habilidad venenos de una forma más eficaz. Por lo cual, dado el continuo contacto del asesino con los venenos, se pierde sensibilidad a ellos, por lo cual, cada vez que esta habilidad es adquirida, el Asesino recibe una bonificación de un punto a su tirada de salvación contra veneno. Al mismo tiempo, la tirada de salvación que deben realizar las víctimas del Asesino al ser inyectadas con veneno reciben una penalización de un punto.
+
+Ataque Mortal:
+Mediante el constante estudio de los puntos débiles de sus víctimas, un Asesino puede concentrar toda su astucia y su proeza en un solo golpe mortal. El próximo ataque que realize el Asesino será un golpe crítico, i su víctima debe hacer una tirada de salvación o perecerá en el instante. La tirada de salvación que debe realizar la víctima para evitar morir en el instante recibe una penalidad de -1 cuando el Asesino llega al nivel 24, y obtiene mejoras de un punto en los niveles 32 y 40.~
+@36    = ~Ataque Mortal~
+@37    = ~Intentando ataque mortal~
 @38    = ~Colocar Trampa Química~
 @40    = ~Encantar en Masa~
 @41    = ~Encantar en Masa
@@ -222,22 +239,34 @@ Tipo: una mano
 No usable por:
  Clérigo~
 @54    = ~CAZARRECOMPENSAS:
-Este personaje es un cazador de hombres, y posee la habilidad de rastrear a sus presas y traerlas con vida ante quien las ande buscando (ya sean las autoridades legales o los amos de los bajos fondos). Los cazarrecompensas están especialmente entrenados en su tarea, y son oponentes terribles. Su aptitud para poner trampas ha sido perfeccionada más allá de la de un ladrón corriente:
+Este personaje es un cazador de hombres, y posee la habilidad de rastrear a sus presas y traerlas con vida ante quien las ande buscando, ya sean las autoridades legales o los amos de los bajos fondos. Dada la frecuencia con la cual necesita traer a sus víctimas con vida, los Cazarrecompenzas confían en substancias químicas capaces de incapacitar o debilitar a sus víictimas. Los cazarrecompensas están especialmente entrenados en su tarea, y son oponentes terribles. Su aptitud para poner trampas ha sido perfeccionada más allá de la de un ladrón corriente.
 
 Ventajas:
 - +15% poner trampas
-- Puede poner una toxina paralizante en su arma una vez al día por cada 8 niveles. Todos los ataques en los siguientes 3 asaltos fuerzan a la víctima a salvarse contra paralización o ser inmovilizada durante un asalto.
+- Puede poner una toxina paralizante en su arma una vez al día por cada 10 niveles
+- Adquiere la habilidad pasiva Experiencia en Alquimia cada 10 niveles a partir del nivel 10
+- Puede colocar trampas químicas además de las trampas normales
 - Puede seleccionar Rastrear como habilidad de alto nivel
-- Puede colocar trampas especiales (distintas a las de los ladrones corrientes) Éstas son más poderosas que las típicas del oficio de pícaro, y su efecto varía según el nivel del cazarrecompensas. Los efectos secundarios al daño descritos a continuación duran cinco asaltos y admiten tirada de salvación:
-
-1: la trampa inflige 2d6 daño y deslumbra a su víctima
-6: la trampa inflige 4d6 daño y ralentiza a su víctima
-11: la trampa inflige 6d6 daño y enreda a su víctima
-16: la trampa inflige 8d6 daño y ciega a su víctima
-21: la trampa inflige 10d6 daño y deja a su víctima inconsciente
 
 Desventajas:
-- Sólo obtiene un 20% de los puntos de latrocinio normales ganados por nivel~
+- Sólo obtiene 20% por nivel de experiencia para repartir entre sus habilidades de ladrón
+
+Toxina paralizante:
+Los intrincados estudios de un Cazarrecompenzas en alquimia lo ayudan a crear una substancia que causa una severa perdida de funcionalidad muscular cuando es inyectada en el torrente sanguíneo de la víctima. La toxina paralizante es un liquido transparente e inodoro que puede ser fácilmente aplicado sobre armas sin peligro de que sea detectado. Un solo golpe de cualquier arma cubierta de esta substancia, paralizará a la víctima por uno ronda por cada diez niveles de experiencia del Cazarrecompensas, a no ser que la víctima haga una tirada de salvación contra paralización. Sin embargo, la toxina se evapora rápidamente cuando es expuesta al aire, por lo cual solo dura una ronda aplicada sobre las armas. Los constructor, elementales, no-muertos y cienos son inmunes a la toxina paralizante.
+
+Trampas químicas:
+Combinando su superior habilidad en poner trampas y su sabiduría en alquimia, un Cazarrecompensas puede crear trampas primariamente para debilitar a sus oponentes e incapacitarlos, en vez de matarlos. Los efectos de esta trampa var’an segœn el nivel del Cazarrecompensas, duran cinco rondas y pueden ser negados por una tirada de salvación contra armas de aliento:
+
+1º: la trampa inflige 2d4 puntos de daño no letal y deslumbra a su víctima
+6º: la trampa inflige 4d4 puntos de daño no letal y ralentiza a su víctima
+11º: la trampa inflige 6d4 puntos de daño no letal y enreda a su víctima
+16º: la trampa inflige 8d4 puntos de daño no letal y ciega a su víctima
+21º: la trampa inflige 10d4 puntos de daño no letal y deja a su víctima inconsciente
+
+Nota: El daño no letal no mata a la víctima pero la deja inconsciente. Constructos, cienos y no-muertos son inmunes a las trampas químicas.
+
+Experiencia en Alquimia:
+A través del entrenamiento y la experiencia, un Cazarrecompenzas gradualmente aprende a utilizar substancias químicas más efectivamente. Cada vez que esta habilidad es adquirida, la dificultad de la tirada de salvación de las Trampas químicas y Toxina paralizante se incrementa por un punto.~
 @55    = ~Toxina paralizante~
 @56    = ~Lira de progresión~
 @57    = ~La Lira de progresión fue creada por Sedini Paletto. Sedini era un maestro de jóvenes bardos durante tiempos difíciles. Este instrumento ayudó a Sedini a quienes le atacaban y a sus estudiantes. Cuando Sedini se hizo viejo, pasó el conocimiento a Galwen Alaman. Galwen continuó enseñando antes de lanzarse a la aventura. Se cree que perdió la lira cuando se le cayó accidentalmente en un pantano.
@@ -249,15 +278,14 @@ Sostenida bajo el brazo izquierdo, el instrumento permite al bardo memorizar dos
 Sólo usable por:
  Bardos~
 @58    = ~Dardo helado que regresa~
-@59    = ~Dardo helado que regresa
-
-El arma viene del Valle del Viento Helado. Se rumorea que una sacerdotisa de Auril creó varios de estos dardos para tenerlos como armas de último recurso, y raramente se los ve lejos de algún adorador de Auril. Recientemente, mercaderes de los Diez Pueblos los han estado consiguiendo gracias a varios grupos de aventureros.
+@59    = ~El arma viene del Valle del Viento Helado. Se rumorea que una sacerdotisa de Auril creó varios de estos dardos para tenerlos como armas de último recurso, y raramente se los ve lejos de algún adorador de Auril. Recientemente, mercaderes de los Diez Pueblos los han estado consiguiendo gracias a varios grupos de aventureros.
 
 CARACTERÍSTICAS:
 
 Aptitudes de combate:
  El dardo retorna instantáneamente a la mano del portador
  5% de ralentizar al oponente durante 1 asalto
+
 THAC0: +1 bonificación
 Daño: 1D3 +1, +1 de frío
 Tipo de daño: misil (perforante)
@@ -269,9 +297,7 @@ Tipo: una mano
 No usable por:
  Clérigo~
 @60    = ~Espada corta para apuñalar por la espalda~
-@61    = ~Espada corta para apuñalar por la espalda: 'La Hoja de la Sombra'
-
-La Hoja de la Sombra fue creada para ser el arma perfecta para el asesino. Es muy codiciada por todos aquéllos dispuestos a resolver cualquier asunto por medio de una espada y muchos de los que llegan a poseerla no la conservan por mucho tiempo.
+@61    = ~La Hoja de la Sombra fue creada para ser el arma perfecta para el asesino. Es muy codiciada por todos aquéllos dispuestos a resolver cualquier asunto por medio de una espada y muchos de los que llegan a poseerla no la conservan por mucho tiempo.
 
 Nota: En las manos de cualquier personaje esta espada se comporta como una espada mágica +3, pero en manos de un Ladrón es más poderosa, entregando bonificación al daño e incrementando el multiplicador de apuñalamiento por la espalda.
 
@@ -280,6 +306,7 @@ CARACTERÍSTICAS:
 Aptitudes equipado: (sólo ladrones)
  Incrementa el multiplicador de daño del apuñalamiento en 1
  Añade un bono +2 extra al THACO
+
 THAC0: +3 bonificación
 Daño: 1D6 +3
 Tipo de daño: perforante
@@ -297,7 +324,7 @@ No usable por:
 @63    = ~Arrastrador menor~
 @64    = ~Arrastrador mayor~
 @65    = ~Hojas de Roble Rotas~
-@66    = ~Sin la guía de un Druida los encantamientos del escudo se dispersan, y el otrora confiable Guardián se vuelve hostil. ~
+@66    = ~Sin la guía de un Druida los encantamientos del escudo se dispersan, y el otrora confiable Guardián se vuelve hostil.~
 @67    = ~Canción persistente~
 @68    = ~Canción persistente
 
@@ -389,6 +416,7 @@ CARACTERÍSTICAS:
 
 Aptitudes Portador:
  Destreza +1
+
 Bonificador a la Clase de Armadura: 2
 Especial: sin protección contra ataques perforantes/de proyectil
 Peso: 2
@@ -403,6 +431,7 @@ CARACTERÍSTICAS:
 
 Habilidades de combate:
  Cada golpe acertado tiene un 10% de causar una penalización de -2 a la CA contra proyectiles durante los siguientes 3 asaltos
+
 THAC0: +2 bonificación
 Daño: +3 misiles, +1 eléctrico
 Peso: 2
@@ -440,6 +469,7 @@ CARACTERÍSTICAS:
 
 Habilidades equipada:
  +1 a la Destreza
+
 Bonificación a la CA: Ninguna
 Peso: 0
 
@@ -452,23 +482,23 @@ CARACTERÍSTICAS:
 
 Habilidades equipado:
  +20 al Conocimiento
+
 Bonificación a la CA: Ninguna
 Peso: 0
 
 Usable por:
  Todos~
 @120   = ~Derritetrolls~
-@121   = ~Derritetrolls
-
-Invierno de 1228. Duro para los medianos de los asentamientos cercanos al bosque Shalebrook. Casi no había comida. La situación empeoró por las bandas de trolls que se hicieron más frecuentes en la región debido a la hambruna. Aunque inferiores en número, su gran resistencia permitió a los trolls hacerse con los últimos suministros de los medianos. Sin embargo, la escasa comida hizo que además, comenzaran a alimentarse de los mismos medianos. Enfadado, el jefe mediano intentó pedir ayuda, pero como las principales rutas estaban nevadas, no podía llegar ninguna ayuda inmediata. Una mañana, después de que los trolls se llevaran a su propia hermana, un ladrón joven, Lars Piesligeros se desesperó. La noche siguiente juntó coraje y se metió en el bosque infestado de trolls. Con sus últimas fuerzas, pudo llegar a un asentamiento enano. Le rogó a los enanos para que le ayudaran, pero debido a sus problemas con una invasión orca, sólo pudieron darle algunos pobres suministros. Devastado, Lars cogió la única arma que sabía utilizar: una daga, y se fue. La dama Tymora le sonrió ese día, porque sin darse cuenta, era un arma que salvaría su vida. Mientras regresaba por el bosque escuchó ronquidos y se dio cuenta de que era la cueva donde dormían los trolls. Los huesos de los medianos en la entrada fue la gota que derramó el vaso. Loco de rabia, Lars entró en la cueva y apuñaló a uno de los trolls, sin darse cuenta del peligro que corría su vida, pensando en su hermana. Para su sorpresa, el troll gritó en agonía y comenzó a desintegrarse y disolverse. El resto se despertó, pero al ver a su camarada disuelto y el hedor a ácido, corrieron por miedo a perder sus vidas. Aún sorprendido, Lars se recompuso y liberó a su hermana y al resto de medianos cautivos. Eventualmente, Lars Piesligeros fue proclamado salvador de Shalebrook, y su arma fue bautizada como Derritetrolls.
+@121   = ~Invierno de 1228. Duro para los medianos de los asentamientos cercanos al bosque Shalebrook. Casi no había comida. La situación empeoró por las bandas de trolls que se hicieron más frecuentes en la región debido a la hambruna. Aunque inferiores en número, su gran resistencia permitió a los trolls hacerse con los últimos suministros de los medianos. Sin embargo, la escasa comida hizo que además, comenzaran a alimentarse de los mismos medianos. Enfadado, el jefe mediano intentó pedir ayuda, pero como las principales rutas estaban nevadas, no podía llegar ninguna ayuda inmediata. Una mañana, después de que los trolls se llevaran a su propia hermana, un ladrón joven, Lars Piesligeros se desesperó. La noche siguiente juntó coraje y se metió en el bosque infestado de trolls. Con sus últimas fuerzas, pudo llegar a un asentamiento enano. Le rogó a los enanos para que le ayudaran, pero debido a sus problemas con una invasión orca, sólo pudieron darle algunos pobres suministros. Devastado, Lars cogió la única arma que sabía utilizar: una daga, y se fue. La dama Tymora le sonrió ese día, porque sin darse cuenta, era un arma que salvaría su vida. Mientras regresaba por el bosque escuchó ronquidos y se dio cuenta de que era la cueva donde dormían los trolls. Los huesos de los medianos en la entrada fue la gota que derramó el vaso. Loco de rabia, Lars entró en la cueva y apuñaló a uno de los trolls, sin darse cuenta del peligro que corría su vida, pensando en su hermana. Para su sorpresa, el troll gritó en agonía y comenzó a desintegrarse y disolverse. El resto se despertó, pero al ver a su camarada disuelto y el hedor a ácido, corrieron por miedo a perder sus vidas. Aún sorprendido, Lars se recompuso y liberó a su hermana y al resto de medianos cautivos. Eventualmente, Lars Piesligeros fue proclamado salvador de Shalebrook, y su arma fue bautizada como Derritetrolls.
 
 
 CARACTERÍSTICAS:
 
-THAC0: +2 (+4 contra Trolls)
-Daño: 1D4, +2 Ácido Daño (+4 Ácido Daño contra Trolls)
 Habilidades de combate:
  15% posibilidad que cualquier Troll golpeado reciba 15 puntos de Daño ácido adicional
+
+THAC0: +2 (+4 contra Trolls)
+Daño: 1D4, +2 Ácido Daño (+4 Ácido Daño contra Trolls)
 Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Daga
@@ -478,18 +508,17 @@ Requiere: 3 Fuerza
 No usable por:
  Clérigo~
 @122   = ~Llama argéntea~
-@123   = ~Llama argéntea
-
-La daga fue forjada y usada por Sehanine Moonbow, la diosa elfa de la luna. La daga es potente contra vampiros, ya que canaliza su poder del plano positivo. Cada día el arma posee energía suficiente para proteger al portador de los poderes vampíricos. Los vampiros golpeados por la daga se atontan por el poder de la energía positiva.
+@123   = ~La daga fue forjada de la plata más pura, y bendecida por Sehanine Moonbow, la diosa elfa de la luna. La daga es potente contra vampiros, ya que canaliza su poder del Plano Positivo de Energía. Cada día el arma posee energía suficiente para proteger al portador de los poderes vampíricos. Los vampiros golpeados por la daga se atontan por el poder de la energía positiva.
 
 
 CARACTERÍSTICAS:
 
-THAC0: +3 (+5 contra vampiros)
-Daño: 1D4 + 3 (+5 contra vampiros)
 Habilidades especiales:
  15% posibilidad que cualquier vampiro golpeado sea atontado durante 2 asaltos
  Protección contra el plano negativo tres veces al día
+
+THAC0: +3 (+5 contra vampiros)
+Daño: 1D4 + 3 (+5 contra vampiros)
 Peso: 1
 Factor de velocidad: 0
 Tipo de Talento: Daga
@@ -499,9 +528,7 @@ Requiere: 3 Fuerza
 No usable por:
  Clérigo~
 @124   = ~Portaplaga~
-@125   = ~Portaplaga
-
-Esta daga herrumbrada parece una rara elección. Sólo unas runas goblin denotan algo de su poder e historia. Aparentemente, esta arma era originalmente un objeto de tortura utilizado por el chamán goblin Sharnuk, que sobre todo, buscaba la maestría en la magia. La tribu de Sharnuk emboscaba magos para poder robarles sus secretos. Durante las interrogaciones, Sharnuk apuñalaba a sus víctimas para que se enfermaran o deliraran. En tal estado, era fácil para él el obtener los conocimientos del mago. Cuando creyó que tenía poder suficiente, Sharnuk condujo a los suyos contra un asentamiento gnomo. Sin embargo, no tuvo suerte, ya que él y los suyos ardieron al intentar lanzar su primera bola de fuego.
+@125   = ~Esta daga herrumbrada parece una rara elección. Sólo unas runas goblin denotan algo de su poder e historia. Aparentemente, esta arma era originalmente un objeto de tortura utilizado por el chamán goblin Sharnuk, que sobre todo, buscaba la maestría en la magia. La tribu de Sharnuk emboscaba magos para poder robarles sus secretos. Durante las interrogaciones, Sharnuk apuñalaba a sus víctimas para que se enfermaran o deliraran. En tal estado, era fácil para él el obtener los conocimientos del mago. Cuando creyó que tenía poder suficiente, Sharnuk condujo a los suyos contra un asentamiento gnomo. Sin embargo, no tuvo suerte, ya que él y los suyos ardieron al intentar lanzar su primera bola de fuego.
 
 
 CARACTERÍSTICAS:
@@ -511,6 +538,7 @@ Aptitudes de combate:
  Fiebre de la mugre - Constitución y Destreza -2 durante 1 turno
  Escalofríos diabólicos - Fuerza -2 y reducción de movimiento. 1 turno
  Putridez de momia - 20 puntos de daño repartidos en 10 asaltos (2 PD/asalto)
+
 THAC0: +3 bonificación
 Daño: 1D4 +3
 Tipo de daño: perforante
@@ -523,17 +551,16 @@ Requiere: Fuerza 3
 No usable por:
 Clérigo~
 @126   = ~Guardián de la Ley~
-@127   = ~Guardián de la Ley
-
-Esta espada perteneció a Lao-Tzu, un samurái de Kara-Tur. Tras finalizar su entrenamiento como guerrero, juró liberar a sus tierras de los bandidos que las azotaban desde hacía más de 10 años. Sin embargo, era difícil, ya que sus oponentes eran tramposos, y sólo atacaban por la noche, siempre enmascarados. Lao-Tzu comprendió que no tenían honor y que podrían esconderse entre la gente que intentaba defender, pero no quería actuar hasta estar seguro, ya que no quería acusar a alguien inocente. Para ayudarle, Lao-Tzu buscó a Wu Jen y le pidió encantar su wakizashi con la habilidad de conocer las intenciones de la gente y golpear a aquellos sin honor. El samurái organizó entonces una fiesta para atraer a los bandidos. Usando el poder de su espada los separó de la gente normal y los hizo sentar en una habitación aparte. Una vez separados, cerró la puerta y luchó solo contra ellos. Lao-Tzu emergió victorioso, pero su honor no le permitía siquiera matarlos. En su lugar, los echó de la provincia y reinó la paz.
+@127   = ~Esta espada perteneció a Lao-Tzu, un samurái de Kara-Tur. Tras finalizar su entrenamiento como guerrero, juró liberar a sus tierras de los bandidos que las azotaban desde hacía más de 10 años. Sin embargo, era difícil, ya que sus oponentes eran tramposos, y sólo atacaban por la noche, siempre enmascarados. Lao-Tzu comprendió que no tenían honor y que podrían esconderse entre la gente que intentaba defender, pero no quería actuar hasta estar seguro, ya que no quería acusar a alguien inocente. Para ayudarle, Lao-Tzu buscó a Wu Jen y le pidió encantar su wakizashi con la habilidad de conocer las intenciones de la gente y golpear a aquellos sin honor. El samurái organizó entonces una fiesta para atraer a los bandidos. Usando el poder de su espada los separó de la gente normal y los hizo sentar en una habitación aparte. Una vez separados, cerró la puerta y luchó solo contra ellos. Lao-Tzu emergió victorioso, pero su honor no le permitía siquiera matarlos. En su lugar, los echó de la provincia y reinó la paz.
 
 CARACTERÍSTICAS
 
-THAC0: +2 bonificación, +4 contra criaturas de alineamiento caótico
-Daño: 1D8 +2, +4 contra criaturas de alineamiento caótico
 Habilidades especiales:
  +1 a la clase de armadura
  Lanza Detectar Alineamiento 2x/día
+
+THAC0: +2 bonificación, +4 contra criaturas de alineamiento caótico
+Daño: 1D8 +2, +4 contra criaturas de alineamiento caótico
 Tipo de daño: punzante
 Peso: 2
 Factor de velocidad: 1
@@ -547,16 +574,14 @@ No usable por:
  Clérigo
  Mago~
 @128   = ~Garra de gato negro~
-@129   = ~Garra de gato negro
-
-La profesión del ninja es versátil. Algunos son asesinos mientras que otros son ladrones. El dueño de esta arma era ladrón. Nadie sabe su nombre ni vio su cara, pero la ninja llamada 'Gato negro' era famosa por adquirir varios objetos de círculos aristocráticos. Robaba gemas y objetos de las colecciones de los nobles, las vendía a otros y luego las volvía a robar. Fue perseguida por muchos guerreros de Kara-Tur pero por su habilidad acrobática, siempre parecía escapar. Eventualmente, se enamoró de un samurái y dejó el país y su vida anterior por él.
-
+@129   = ~La profesión del ninja es versátil. Algunos son asesinos mientras que otros son ladrones. El dueño de esta arma era ladrón. Nadie sabe su nombre ni vio su cara, pero la ninja llamada 'Gato negro' era famosa por adquirir varios objetos de círculos aristocráticos. Robaba gemas y objetos de las colecciones de los nobles, las vendía a otros y luego las volvía a robar. Fue perseguida por muchos guerreros de Kara-Tur pero por su habilidad acrobática, siempre parecía escapar. Eventualmente, se enamoró de un samurái y dejó el país y su vida anterior por él.
 
 CARACTERÍSTICAS
 
 Aptitudes equipado:
  Destreza: +1
  Suerte: +1
+
 THAC0: +2 bonificación
 Daño: 1D8 +2
 Tipo de daño: cortante
@@ -571,17 +596,16 @@ No usable por:
  Clérigo
  Mago~
 @130   = ~Aplastapiedras~
-@131   = ~Aplastapiedras
-
-Este palo tiene runas orcas. Es un recuerdo de la última guerra entre orcos y magos Turmish. Cuando los orcos comenzaron a atacar, los magos crearon gólems para defenderse. Viendo que la fuerza bruta de los guerreros no era suficiente, el feje orco Gull-Nar ordenó crear un arma que le permitiera romperlos. Sus chamanes encantaron su arma favorita, un gran palo. Gull-Nar estaba tan contento que decidió liderar la siguiente batalla, reventando gólems partió hacia el centro de la ciudad. La victoria estaba cerca, pero un mago solitario vestido de negro lanzó un hechizo que hizo que los orcos comenzaran a luchar unos contra otros. En unos minutos sus números caían en picado y Gull-Nar fue muerto por uno de sus guerreros.
+@131   = ~Este palo tiene runas orcas. Es un recuerdo de la última guerra entre orcos y magos Turmish. Cuando los orcos comenzaron a atacar, los magos crearon gólems para defenderse. Viendo que la fuerza bruta de los guerreros no era suficiente, el feje orco Gull-Nar ordenó crear un arma que le permitiera romperlos. Sus chamanes encantaron su arma favorita, un gran palo. Gull-Nar estaba tan contento que decidió liderar la siguiente batalla, reventando gólems partió hacia el centro de la ciudad. La victoria estaba cerca, pero un mago solitario vestido de negro lanzó un hechizo que hizo que los orcos comenzaran a luchar unos contra otros. En unos minutos sus números caían en picado y Gull-Nar fue muerto por uno de sus guerreros.
 
 CARACTERÍSTICAS:
+
+Habilidades especiales:
+ 10% posibilidad de romper Gólems de piedra, arcilla y arena al tacto
 
 THAC0: +2, (+4 contra Gólems)
 Daño: 1D6 + 2, (+4 contra Gólems)
 Tipo de daño: aplastante
-Habilidades especiales:
- 10% posibilidad de romper piedra, arcilla y arena
 Peso: 3
 Factor de velocidad: 2
 Tipo de Talento: Palo
@@ -591,13 +615,13 @@ Requiere: 5 Fuerza
 No usable por:
 Mago~
 @132   = ~El Defensor Acérrimo~
-@133   = ~Esta rodela ceremonial lleva grabadas en su superficie unas runas mágicas que normalmente se asocian con Gaerdal Ironhand, el dios gnomo de la vigilancia y la disciplina marcial. Su seria naturaleza le hace ganarse una sobria y grave admiración entre sus adeptos. Gaerdal enseña a los gnomos a defenderse por si mismos de criaturas más grandes y fuertes que ellos instándoles a usar sus aptitudes naturales y transformando sus propias características físicas, que podrían considerarse desventajas, en ventajas. El dios gnomo tiene un reducido pero devoto número de seguidores entre los de su raza, muchos de los cuales son guerreros o protectores de la comunidad. Por estos y otros motivos, es una deidad que goza del respeto del Pueblo Olvidado.
-
+@133   = ~Esta rodela ceremonial lleva grabadas en su superficie unas runas mágicas que normalmente se asocian con Gaerdal Ironhand, el dios gnomo de la vigilancia. Su seria naturaleza le hace ganarse una sobria y grave admiración entre sus adeptos. Gaerdal enseña a los gnomos a defenderse por si mismos de criaturas más grandes y fuertes que ellos instándoles a usar sus aptitudes naturales y transformando sus propias características físicas, que podrían considerarse desventajas, en ventajas. El dios gnomo tiene un reducido pero devoto número de seguidores entre los de su raza, muchos de los cuales son guerreros o protectores de la comunidad. Por estos y otros motivos, es una deidad que goza del respeto del Pueblo Olvidado.
 
 CARACTERÍSTICAS:
 
 Aptitudes portador:
  +2 (bono) CA vs. humanoides de gran tamaño
+
 Bonificación a la clase de armadura: 2
 Especial: sin protección contra ataques perforantes ó de proyectil
 Peso: 2
@@ -608,12 +632,12 @@ No lo puede usar:
 @134   = ~Salvaguarda~
 @135   = ~Estas rodelas consagradas a Moradin, el dios creador de la raza enana, son llevadas por altos sacerdotes de su clero o guardias protectores de sus templos. El Forjador de Almas es fuerte de mente y espíritu y encarna la fuerza de voluntad, por lo que todos los objetos tocados por él son extensiones de su entidad y poseen algunas de sus virtudes. Los encantamientos de éste escudo conceden la bendición de Moradin a quien lo usa, guiando su arma certeramente y salvándolo de las heridas. Muchos de estos escudos se perdieron en la batalla de Dorn cuando los orcos tomaron el fuerte enano.
 
-
 CARACTERÍSTICAS:
 
 Habilidades especiales:
  Bendición
  Santuario 1/día
+
 Bonificación a la clase de armadura: 3
 Especial: sin protección contra ataques perforantes ó de proyectil
 Peso: 2
@@ -622,9 +646,7 @@ Requiere: Fuerza 4
 No usable por:
  Mago~
 @136   = ~Cinturón maestro~
-@137   = ~Cinturón maestro
-
-Los bolsillos de este cinturón contienen muchas herramientas utilizadas por cerrajeros y relojeros. Sin embargo, tales objetos pueden ser abusados para motivos oscuros y son muy populares entre los ladrones. Este cinturón en particular tiene la letra "G" grabada en la hebilla.
+@137   = ~Los bolsillos de este cinturón contienen muchas herramientas utilizadas por cerrajeros y relojeros. Sin embargo, tales objetos pueden ser abusados para motivos oscuros y son muy populares entre los ladrones. Este cinturón en particular tiene la letra "G" grabada en la hebilla.
 
 CARACTERÍSTICAS:
 
@@ -632,26 +654,26 @@ Habilidades equipadas:
  +10% a abrir cerraduras
  +10% a desarmar trampas
  +10% a colocar trampas
+
 Peso: 2
 
 Usable por:
 Ladrones~
 @138   = ~Zafiro tri-alma~
-@139   = ~Zafiro tri-alma
-
-Akram Maluzar era un mago Zhentarim infame, con secretos del antiguo Nethril. En sus muchos viajes a través del Gran Yermo encontró una serie de cuevas que, como había predicho, se conectaban con una ciudad subterránea. Su entusiasmo acabó cuando se dio cuenta que las ruinas estaban fuertemente cerradas y llenas de trampas y suelos ilusorios. La habilidad de sortear estos obstáculos iba más allá de Akram, así que se desesperó. Al no querer compartir el poder de Nethrese con nadie más, Akram intentó robar los talentos que carecía. Prometiendo parte del tesoro, el mago contrató tres ladrones de Calimshan: un cerrajero, uno habilidoso con las trampas y un buen espía. En vez de enviarlos a la ciudad, Akram los engañó y capturó sus almas dentro de una piedra Ioun de Zafiro. La treta dio resultado, y pudo caminar por las ruinas sin problema alguno. Sin embargo, eventualmente las almas de los tres ladrones en la Piedra Ioun comenzaron a revelarse y succionar el poder del mago para tomar el cuerpo del mismo como suyo. Conducido por su ansia de poder, Akram no prestó atención hasta que fue demasiado tarde. Terriblemente fatigado cayó frente a una biblioteca Nethrese, activando una trampa que acabó con su vida. La piedra Ioun de Akram fue recuperada por una tribu de kobolds que la confundió con una piedra y la vendió por suministros.
+@139   = ~Akram Maluzar era un infame mago Zhentarim, obsesionado con secretos del antiguo Nethril. En sus muchos viajes a través del Gran Yermo encontró una serie de cuevas que, como había predicho, se conectaban con una ciudad Nethrese enterrada. Su entusiasmo acabó cuando se dio cuenta que las ruinas estaban fuertemente cerradas y llenas de trampas y suelos ilusorios. La habilidad de sortear estos obstáculos iba más allá de Akram, así que se desesperó. Al no querer compartir el poder de Nethrese con nadie más, Akram intentó robar los talentos que carecía. Prometiendo parte del tesoro, el mago contrató tres ladrones de Calimshan: un cerrajero, uno habilidoso con las trampas y un buen espía. En vez de enviarlos a la ciudad, Akram los engañó y capturó sus almas dentro de una piedra Ioun de Zafiro. La treta dio resultado, y pudo caminar por las ruinas sin problema alguno. Sin embargo, eventualmente las almas de los tres ladrones en la Piedra Ioun comenzaron a revelarse y succionar el poder del mago para tomar el cuerpo del mismo como suyo. Conducido por su ansia de poder, Akram no prestó atención hasta que fue demasiado tarde. Terriblemente fatigado cayó frente a una biblioteca Nethrese, activando una trampa que acabó con su vida. La piedra Ioun de Akram fue recuperada por una tribu de kobolds que la confundió con una gema y la vendió por suministros.
 
 Nota: Para poder conseguir el talento necesario para usar las habilidades de este objeto, el portador debe sumergirse en la conciencia de las almas atrapadas. Este proceso puede ser agotador y el utilizar las habilidades causa fatiga. Cuanta más habilidad se use, más fatiga se acumula. La única forma de deshacerse de la fatiga es dormir una noche entera.
 
 
 CARACTERÍSTICAS:
 
-Bonificación a la clase de armadura: Ninguna
 Especial: Protege contra golpes críticos
  Usa encontrar trampas 3x/día
  Usa abrir cerraduras 3x/día
  Usa disipar invisibilidad 3x/día
+
 Nota: El uso de estas habilidades causa fatiga
+Bonificación a la clase de armadura: Ninguna
 Peso: 0
 
 Usable por:
@@ -659,24 +681,24 @@ Usable por:
 @140   = ~Capucha de Agudeza~
 @141   = ~Una vez fue un objeto preciado de la Cofradía de ladrones de Xanathar, esta capucha fue tratada con magia para mejorar el conocimiento y la percepción de cualquiera que la use. La capucha fue perdida temporalmente en una escaramuza a una de las casas de esclavos que Xanathar poseía, pero hace poco resurgió en Calimport y viajó hacia Atkhatla en una de las muchas caravanas pertenecientes a la compañía mercantil de Sybarr.
 
-
 CARACTERÍSTICAS:
 
-Bonificación a la Clase de Armadura: Ninguna
-Especial: Protege contra golpes críticos
 Habilidades equipadas:
  +15% a encontrar trampas
  Infravisión
  Inmunidad contra ceguera
+
+Bonificación a la Clase de Armadura: Ninguna
+Especial: Protege contra golpes críticos
 
 Peso: 0
 Usable por:
  Ladrón
  Monje~
 @142   = ~Arpa de Greagan~
-@143   = ~Arpa de Greagan
-'La Audiencia cautivada'
-Esta arpa es bien conocida por los nómadas del este, aunque más por su infame dueño, Greagan de las Colinas Bajas. Era un bardo, aunque no por el amor de su gente si no por el odio a su trabajo. Hizo que un mago creara el arpa para que la magia pudiera cubrir el poco talento que tenía en las artes. Su poder era mayor del que esperaba, y terminó robando y usando "su" música para cautivar a sus víctimas. Greagan desapareció luego de unos rumores acerca de un colegio bardo tornado a la violencia. El arpa aún funciona, aunque cualquier trovador se reservaría su uso para las peores circunstancias.
+@143   = ~Arpa de Greagan 'La Audiencia cautivada'
+
+Esta arpa es bien conocida por los nómadas del este, aunque más por su infame dueño, Greagan de las Colinas Bajas. Era un bardo, aunque no por el amor de su gente si no por el odio a el trabajo pesado. Hizo que un mago creara el arpa para que la magia pudiera cubrir el poco talento que tenía en las artes. Su poder era mayor del que esperaba, y terminó robando y usando "su" música para cautivar a sus víctimas. Greagan desapareció luego de unos rumores acerca de un colegio bardo tornado a la violencia. El arpa aún funciona, aunque cualquier trovador se reservaría su uso para las peores circunstancias.
 
 CARACTERÍSTICAS:
 
@@ -718,7 +740,7 @@ Requiere: 3 Fuerza
 No usable por:
 Clérigo~
 @148   = ~El Extenuador~
-@149   = ~Forjada por un poderoso chamán Úzhgardt, ésta clava ha sido específicamente diseñada para disminuir la efectividad del oponente. Fue empuñada por Aukthar el Cuervo Negro en numerosas disputas entre su gente y las hordas orcas que periódicamente intentaban invadir Ravenrock, el túmulo ancestral. El arma se perdió durante una particularmente encarnizada contienda, cuando el estruendo de la batalla provocó una avalancha que barrió todo a su paso.
+@149   = ~Forjada por un poderoso chamán de Úzhgardt, ésta clava ha sido específicamente diseñada para disminuir la efectividad del oponente. Fue empuñada por Aukthar, jefe de la tribu Cuervo Negro en numerosas disputas entre su gente y las hordas orcas que periódicamente intentaban invadir Ravenrock, su túmulo ancestral. El arma se perdió durante una particularmente encarnizada contienda, cuando el estruendo de la batalla provocó una avalancha que barrió todo a su paso.
 
 
 CARACTERÍSTICAS:
@@ -813,6 +835,7 @@ Aptitudes portador:
  Esconderse en las Sombras +5%
  Inmunidad a ataques de mirada (como la del Basilisco)
  -2 al THAC0 (penalizador) contra criaturas con poderes de mirada
+
 Bonificación a la Clase de Armadura: ninguno
 Especial: protege contra golpes críticos
 Peso: 0
@@ -916,6 +939,7 @@ CARACTERÍSTICAS:
 
 Aptitudes de combate:
  Cualquier criatura no-muerta que alcance en refriega al portador sufre 1D2 de daño ígneo y debe salvarse vs. hechizos o ser cegada durante 2 asaltos
+
 Bonificación a la clase de armadura: 2
 Especial: No da protección para ataques de misil o punzantes
 Peso: 2
@@ -940,10 +964,11 @@ Usable por:
 CARACTERÍSTICAS:
 
 +1 Bonificación a la clase de armadura
-Incrementa la velocidad de movimiento~
+Incrementa la velocidad de movimiento
+
+Peso: 4~
 @206   = ~Hacha de tormenta~
-@207   = ~Hacha de tormenta
-Esta hacha contiene un encantamiento de interesante origen. Inmediatamente después de ser forjada, el hacha fue llevada a la cima de una montaña donde sacerdotes enanos la esperaban para convocar una gran tormenta. El arma fue puesta en un pedestal y la tormenta lanzó un rayo. Gracias a un encantamiento, pudo absorber parte de tal rayo.
+@207   = ~Esta hacha contiene un encantamiento de interesante origen. Inmediatamente después de ser forjada, el hacha fue llevada a la cima de una montaña donde sacerdotes enanos la esperaban para convocar una gran tormenta. El arma fue puesta en un pedestal y la tormenta lanzó un rayo. Gracias a un encantamiento, pudo absorber parte de tal rayo.
 
 El hacha fue entregada a un capitán enano para ayudarle en la batalla contra las hordas de orcos. El ataque llegó como sorpresa para los enanos cuando un día llegó un explorador y dijo que el ejército orco estaba solamente a horas de distancia. Con poco tiempo para prepararse, los guerreros fueron vencidos y comenzaron a tomar el lugar. Los enanos fueron obligados a retroceder a la profundidad de la ciudad pero varios pasajes fueron derruidos para detener los movimientos del ejército orco. Incluso en tales condiciones, esto permitió a los enanos tomar el control y poder luchar. Cada batalla costó caro a los orcos, aunque los enanos seguían teniendo que retirarse más profundamente. Eventualmente, por sus números superiores, los orcos lograron conquistar el lugar.
 
@@ -951,8 +976,10 @@ CARACTERÍSTICAS:
 
 Habilidades:
  +20% resistencia eléctrica
+
 Aptitudes de combate:
  10% de atontar al objetivo alcanzado
+
 Daño: 1D8+3, +1d3 daño eléctrico
 THAC0: +3
 Tipo de daño: Cortante
@@ -967,16 +994,16 @@ Clérigo
 Mago
 Ladrón~
 @208   = ~Inmovilización rápida~
-@209   = ~Inmovilización rápida
-
-Un mago de batalla Zhentarim creó esta arma esperando que le ayudara cuando se le retó a duelo. La espada debería dispersar el daño de la mayoría de los golpes e incapacitar a su enemigo al mismo tiempo. Desafortunadamente, el mago no tenía talento con el arma y fue rápidamente vencido por su oponente.
+@209   = ~Un mago de batalla Zhentarim creó esta arma esperando que le ayudara cuando se le retó a duelo. La espada debería dispersar el daño de la mayoría de los golpes e incapacitar a su enemigo al mismo tiempo. Desafortunadamente, el mago no tenía talento con el arma y fue rápidamente vencido por su oponente.
 
 CARACTERÍSTICAS:
 
 Aptitudes portador:
  Bonificación +3 a la CA contra armas cortantes
+
 Habilidades de combate:
  10% de lanzar Inmovilizar monstruo con cada golpe
+
 THAC0: +3 bonificación
 Daño: 1D8 +3
 Tipo de daño: cortante
@@ -990,15 +1017,14 @@ Druida
 Clérigo
 Mago~
 @210   = ~Piel de Abishai ~
-@211   = ~Piel de Abishai
-
-Se rumorea que esta peculiar armadura viene de Sigil. No se sabe mucho de sus antiguos dueños pero parece haber sido hecha de piel de un Baatezu menor, y aquellos que la equipan provocan daño y resistencias elementales. No se sabe si estos poderes se dan por la misma piel o si es un encantamiento puesto en ella.
+@211   = ~Se rumorea que esta peculiar armadura viene de Sigil. No se sabe mucho de sus antiguos dueños pero parece haber sido hecha de piel de un Baatezu menor, y aquellos que la equipan reciben resistencias al daño, físico y elemental. No se sabe si estos poderes se dan por la misma piel o si es un encantamiento puesto en ella.
 
 CARACTERÍSTICAS:
 
 Aptitudes equipado:
  +15% resistencia al daño cortante, perforante, contundente y de proyectil
  Regeneración 1 PG/6 seg
+
 Clase de Armadura: 4
 Peso: 15
 
@@ -1013,8 +1039,10 @@ CARACTERÍSTICAS:
 Aptitudes portador:
  +1 a salvación contra hechizos
  +5% resistencia mágica
+
 Aptitudes de combate:
  La criatura alcanzada recibe un 10% acumulativo de fallar el lanzamiento de conjuros durante los siguientes 3 asaltos
+
 Daño: 1D6+3
 THAC0: +3
 Tipo de daño: perforante
@@ -1050,6 +1078,7 @@ Por cada golpe acertado:
  4 puntos de daño por veneno (1 por segundo)
  Salvación contra aliento o silenciar durante 4 asaltos
  4% posibilidad de alcanzar punto vital y reducir los PG en un 20%
+
 THAC0: +4 bonificación
 Daño: 1D6 +4
 Tipo de daño: perforante
@@ -1062,8 +1091,7 @@ Requiere: 15 destreza e inteligencia
 Permitido a:
  Ladrones malignos o neutrales~
 @218   = ~Botas ensombrecidas~
-@219   = ~Botas ensombrecidas
-Mirando las botas con detalle vemos que la tela está hecha de un material incorpóreo. El usar estas botas hace que la persona se vea como un fantasma. Adicionalmente, el sonido se escucha como si fuera distante.
+@219   = ~Mirando las botas con detalle vemos que la tela está hecha de un material incorpóreo. El usar estas botas hace que la persona se vea como un fantasma. Adicionalmente, el sonido se escucha como si fuera distante.
 
 CARACTERÍSTICAS:
 
@@ -1076,10 +1104,9 @@ Peso: 5
 Sólo usable por:
  Ladrón~
 @220   = ~La lengua de la salamandra~
-@221   = ~La lengua de la salamandra
-Una daga con un pasado oscuro, La lengua de la salamandra es preciada como arma y por sus poderes mágicos. La hoja parece ser una daga exótica que termina en dos puntas. Una pequeña lengua de salamandra roja está tallada en el corazón de la hoja, cerca del mango. Pulsa al azar sin intervención del usuario.
+@221   = ~Una daga con un pasado oscuro, La lengua de la salamandra es preciada como arma y por sus poderes mágicos. La hoja parece ser una daga exótica que termina en dos puntas. Una pequeña lengua de salamandra roja está tallada en el corazón de la hoja, cerca del mango. Pulsa al azar sin intervención del usuario.
 
-No se conocen exactamente los orígenes de la hoja, pero se cree que su primer dueño fue un gnomo asesino llamado Turlam Shallowhill. Turlam fue asesinado por un rival, un mediano llamado Deder Seven Fingers. Deder guardó el arma como trofeo, sin conocer su poder hasta que le fue robada por un compañero llamado Kreshinal Blackhound. Kreshinal se escapó a Selgaunt durante 5 años. Kreshinal perdió la daga en una apuesta, y fue asesinado por los agentes de Deder. Deder intentó recuperar la daga de los criminales de Sembia que la tenían. Tuvo éxito, pero estaba tan centrado en el arma que no se dio cuenta de que los criminales de Sembia habían contratado un sacerdote de la Máscara para infiltrarse. La guerra entre facciones terminó cuando el sacerdote de la máscara, Pieter el Tonto, hizo a las dos facciones tan paranoicas que se destruyeron desde dentro. Pieter tomó la daga y escapó a Colinas Lejanas, confiado en que no le seguirían.
+No se conocen exactamente los orígenes de la hoja, pero se cree que su primer dueño fue un gnomo asesino llamado Turlam Shallowhill. Turlam fue asesinado por un rival, un mediano llamado Deder Seven Fingers. Deder guardó el arma como trofeo, sin conocer su poder hasta que le fue robada por un compañero llamado Kreshinal Blackhound. Kreshinal se escapó a Selgaunt durante 5 años. Kreshinal perdió la daga en una apuesta, y fue asesinado por los agentes de Deder. Deder intentó recuperar la daga de los criminales de Sembia que la tenían. Tuvo éxito, pero estaba tan centrado en el arma que no se dio cuenta de que los criminales de Sembia habían contratado un sacerdote de Mask para infiltrarse. La guerra entre facciones terminó cuando el sacerdote de Mask, Pieter el Tonto, hizo a las dos facciones tan paranoicas que se destruyeron desde dentro. Pieter tomó la daga y escapó a Colinas Lejanas, confiado en que no le seguirían.
 
 En otro episodio, Pieter vendió la daga a Mulmaster Hawk mientras atraía a otros vendedores a la subasta. Pieter y sus socios mataron a los compradores y se fueron con el dinero escondiéndose gracias a un amuleto de No detección. Mulmaster Hawk, quien compró la espada fue muerto por una sacerdotisa de Umberlee que estaba enfadada porque Mulmaster no quería pagar tributo a la Reina Perra. Se cree que los años de lucha entre la gente de Umberlee hicieron que la daga fuera nuevamente transportada a Sembia. Dónde están Pieter y los suyos se desconoce.
 
@@ -1087,11 +1114,13 @@ Aptitudes portador:
  +10% Resistencia al fuego
  +3 salvación contra veneno
  Usuario bajo los efectos de No-detección
+
 Aptitudes de combate:
  50% posibilidad de hacer +1D2 daño por fuego
  30% posibilidad de hacer +2D2 daño por fuego
  15% posibilidad de hacer +3D2 daño por fuego
  5% posibilidad de hacer +4D2 daño por fuego
+
 Daño: 1D4 +3
 THAC0: +3 bonificación
 Tipo de daño: perforante
@@ -1103,16 +1132,16 @@ Tipo: una mano
 No usable por:
  Clérigo~
 @222   = ~Cara del muerto~
-@223   = ~Cara del muerto
-Estos yelmos eran comunes entre los bárbaros Reghedmen que llegaron al Valle del Viento Helado. El diseño es simple: un yelmo de hierro con una máscara. Una vez que la construcción fuera finalizada, el herrero daba forma de cara de muerto a la máscara. El nombre del guerrero y una descripción de su muerte eran grabados en la frente. El yelmo se ponía en la pira funeraria. Los sacerdotes creían que la máscara escondería el miedo del guerrero cuando se enfrentara a Tempos. Un mes después, los yelmos de los mejores guerreros eran recuperados. Durante los años siguientes los sacerdotes les rezaban diariamente. Según la leyenda, si Tempos veía que un guerrero era valiente, el yelmo podría hacer a su usuario inmune al miedo. Este yelmo tiene el nombre "Siglef" y la palabra "Hacha".
+@223   = ~Estos yelmos eran comunes entre los bárbaros Reghedmen que llegaron al Valle del Viento Helado. El diseño es simple: un yelmo de hierro con una máscara. Una vez que la construcción fuera finalizada, el herrero daba forma de cara de muerto a la máscara. El nombre del guerrero y una descripción de su muerte eran grabados en la frente. El yelmo se ponía en la pira funeraria. Los sacerdotes creían que la máscara escondería el miedo del guerrero cuando se enfrentara a Tempos. Un mes después, los yelmos de los mejores guerreros eran recuperados. Durante los años siguientes los sacerdotes les rezaban diariamente. Según la leyenda, si Tempos veía que un guerrero era valiente, el yelmo podría hacer a su usuario inmune al miedo. Este yelmo tiene el nombre "Siglef" y la palabra "Hacha".
 
 CARACTERÍSTICAS:
 
-Bonificación a la clase de armadura: 1
 Especial:
  Protege contra golpes críticos
  Inmunidad al Miedo y Falta de moral
  -2 al carisma
+
+Bonificación a la clase de armadura: 1
 Peso: 3
 
 No usable por:
@@ -1120,8 +1149,7 @@ No usable por:
  Bardo
  Ladrón~
 @224   = ~Laurel del Favor de Sune~
-@225   = ~Laurel del Favor de Sune
-Esta corona de laureles y rosas era un regalo de la iglesia de Sune a las sacerdotisas de Hanali Celanil en la Mano del Seldarine. Los representantes de la diosa del amor y la belleza fueron bien recibidos por las sacerdotisas de Hanali Celanil, que usaron las coronas cuando los humanos visitaban la Mano. Los orcos descartaron los laureles como basura cuando tomaron la torre de las sacerdotisas.
+@225   = ~Esta corona de laureles y rosas era un regalo de la iglesia de Sune a las sacerdotisas de Hanali Celanil en la Mano del Seldarine. Los representantes de la diosa del amor y la belleza fueron bien recibidos por las sacerdotisas de Hanali Celanil, que usaron las coronas cuando los humanos visitaban la Mano. Los orcos descartaron los laureles como basura cuando tomaron la torre de las sacerdotisas.
 
 CARACTERÍSTICAS:
 
@@ -1138,6 +1166,7 @@ CARACTERÍSTICAS:
 
 Aptitudes equipado:
  Suerte +3
+
 Bonificación a la clase de armadura: ninguna
 Especial: protege contra golpes críticos
 Peso: 0
@@ -1155,6 +1184,7 @@ CARACTERÍSTICAS:
 
 Aptitudes equipado:
  El usuario no es afectado por Detectar invisibilidad, Anular invisibilidad, Visión verdadera y hechizos divinatorios de eliminación de invisibilidad parecidos
+
 Habilidades:
  Invisibilidad en Masa 1/día
 
@@ -1169,17 +1199,17 @@ Sólo usable por:
 
 -S. ~
 @232   = ~Capa de las sombras de Venduris~
-@233   = ~Capa de las sombras de Venduris
-Esta capa fue inicialmente creada a partir de ectoplasma de una sombra y tela de una araña fase. Fue luego encantada por sacerdotes de Cyric para brindar protección y discreción. Mientras se utiliza la capa, es imposible conocer los pensamientos de quien la usa. Además, la capa también permite mezclarse mejor en las sombras.
+@233   = ~Esta capa fue inicialmente creada a partir de ectoplasma de una sombra y tela de una araña fase. Fue luego encantada por sacerdotes de Cyric para brindar protección y discreción. Mientras se utiliza la capa, es imposible conocer los pensamientos de quien la usa. Además, la capa también permite mezclarse mejor en las sombras.
 
 CARACTERÍSTICAS:
 
 Clase de Armadura: +1 bonificación
 Tirada de salvación: +1 bonificación
+
 Habilidades especiales:
-Bonificación a Esconderse en las sombras: +50%
-Inmunidad al apuñalamiento por la espalda
-Alineamiento del usuario no es detectable.
+- Bonificación a Esconderse en las sombras: +50%
+- Inmunidad al apuñalamiento por la espalda
+- Alineamiento del usuario no es detectable.
 Peso: 1
 
 Usable por:
@@ -1189,7 +1219,8 @@ Ladrones~
 
 CARACTERÍSTICAS:
 
-Habilidades de combate: 20% de cegar al objetivo alcanzado por 3 asaltos (salvación contra conjuros, Contempladores salvan con penalización de -5)
+Habilidades de combate:
+20% de cegar al objetivo alcanzado por 3 asaltos (salvación contra conjuros, Contempladores salvan con penalización de -5)
 
 
 THAC0: +3 bonificación (+5 contra Contempladores)
@@ -1214,6 +1245,7 @@ CARACTERÍSTICAS:
 Habilidades especiales:
  Resistencia mágica +5%
  Reduce el tiempo de lanzamiento en 1
+
 Clase de Armadura: 4
 Peso: 7
 Requiere: 5 Fuerza
@@ -1231,7 +1263,7 @@ CARACTERÍSTICAS:
 Conjuros: Duplica la cantidad de conjuros de primer y segundo nivel que un mago puede memorizar
 
 Sólo lo puede usar:
-El mago~
+ Magos~
 @240   = ~Corona de hojas bendita~
 @241   = ~Rillifane Rallathil es el protector de los bosques y el preservador de la armonía en la naturaleza. El Señor de las Frondas es a menudo asemejado a un gigantesco roble etéreo, tan grande que sus raíces se entrecruzan con las raíces de todos los árboles, plantas, etc, de los Reinos. Este gigantesco roble etéreo descansa en el corazón de Arvandor, el Bosque Alto del Olimpo, y en los bosques de los elfos atrae para sí todo el flujo y reflujo de las estaciones. Al mismo tiempo, sustenta y protege dichas tierras de la enfermedad, los predadores y los asaltos de toda índole. En ocasiones especiales, los altos sacerdotes que le veneran le muestran su admiración tejiéndole coronas de laurel en su nombre, mediante hojas de roble que posteriormente bendicen. Estas coronas ceremoniales raramente abandonan las tierras de los elfos, principalmente porque su magia está estrechamente ligada a las mismas almas de los seres faéricos. Sólo un renegado o un exiliado se atrevería a llevar semejante objeto fuera de la comunidad élfica.
 
@@ -1240,6 +1272,7 @@ CARACTERÍSTICAS:
 Aptitudes portador:
  Bendición
  Inmunidad a la enfermedad y al veneno
+
 Bonificación a la clase de armadura: 1
 Peso: 0
 
@@ -1304,17 +1337,17 @@ Criaturas de alineamiento maligno~
 @554   = ~¿¡Qué!? ...urrrgh... ~
 @560   = ~La dificultad del juego es demasiado baja. ~
 @561   = ~No puedes comenzar un encuentro desde esta área. ~
-@562   = ~El Elegido de Cyric ya está muerto. ~
+@562   = ~Los Elegidos de Cyric ya están muertos. ~
 @600   = ~Emboscado en las Puertas de la Ciudad
 
-Tras derrotar a Bodhi y recuperar la Linterna Rynn, fui emboscado por un grupo de bribones al intentar abandonar la ciudad. No pude hablar demasiado con ellos, pero su líder me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~ ~Emboscada en las Puertas de la Ciudad
+Tras derrotar a Bodhi y recuperar la Linterna de Rynn, fui emboscado por un grupo de bribones al intentar abandonar la ciudad. No pude hablar demasiado con ellos, pero su líder me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~ ~Emboscada en las Puertas de la Ciudad
 
-Tras derrotar a Bodhi y recuperar la Linterna Rynn, fui emboscada por un grupo de bribones al intentar abandonar la ciudad. No pude hablar demasiado con ellos, pero su líder me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~
+Tras derrotar a Bodhi y recuperar la Linterna de Rynn, fui emboscada por un grupo de bribones al intentar abandonar la ciudad. No pude hablar demasiado con ellos, pero su líder me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~
 @601   = ~Emboscado por los Elegidos de Cyric
 
-Tras derrotar a Bodhi y recuperar la Linterna Rynn, fui emboscado por un grupo de bribones al intentar abandonar la ciudad. Se identificaron como los altos rangos de los Elegidos de Cyric en todo el área de la Costa de la Espada. Su orden fanática cree firmemente en la superioridad de Cyric y buscan sembrar la discordia intentando ascender al poder entre todas las religiones. Aparentemente, querían acabar con mi vida para alegrar a su patrón y evitar el que realizara las profecías de Alaundo. Su líder, el asesino Venduris, me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~ ~Emboscada por los Elegidos de Cyric
+Tras derrotar a Bodhi y recuperar la Linterna de Rynn, fui emboscado por un grupo de bribones al intentar abandonar la ciudad. Se identificaron como los altos rangos de los Elegidos de Cyric en todo el área de la Costa de la Espada. Su orden fanática cree firmemente en la superioridad de Cyric y buscan sembrar la discordia intentando ascender al poder entre todas las religiones. Aparentemente, querían acabar con mi vida para alegrar a su patrón y evitar el que realizara las profecías de Alaundo. Su líder, el asesino Venduris, me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~ ~Emboscada por los Elegidos de Cyric
 
-Tras derrotar a Bodhi y recuperar la Linterna Rynn, fui emboscada por un grupo de bribones al intentar abandonar la ciudad. Se identificaron como los altos rangos de los Elegidos de Cyric en todo el área de la Costa de la Espada. Su orden fanática cree firmemente en la superioridad de Cyric y buscan sembrar la discordia intentando ascender al poder entre todas las religiones. Aparentemente, querían acabar con mi vida para alegrar a su patrón y evitar el que realizara las profecías de Alaundo. Su líder, el asesino Venduris, me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~
+Tras derrotar a Bodhi y recuperar la Linterna de Rynn, fui emboscada por un grupo de bribones al intentar abandonar la ciudad. Se identificaron como los altos rangos de los Elegidos de Cyric en todo el área de la Costa de la Espada. Su orden fanática cree firmemente en la superioridad de Cyric y buscan sembrar la discordia intentando ascender al poder entre todas las religiones. Aparentemente, querían acabar con mi vida para alegrar a su patrón y evitar el que realizara las profecías de Alaundo. Su líder, el asesino Venduris, me atrapó en algún tipo de barrera mágica, ya que pensó que le ayudaría a derrotarme. ~
 @602   = ~Emboscado por los Elegidos de Cyric: Los Glifos de guarda
 
 Venduris tontamente me dijo que directamente controla los sellos que me mantienen atrapado aquí. Esto parece extraño, ya que obviamente no tiene entrenamiento arcano y no utilizó los gestos que los hechiceros utilizan para lanzar hechizos. Sospecho que alguien más ha colocado los glifos de guarda y que los controla usando un componente de hechizo vital o un hechizo de control. ~ ~Emboscada por los Elegidos de Cyric: Los Glifos de guarda
@@ -1361,7 +1394,6 @@ Como esperaba, en cuanto mostré el poder del Asesino, el cobarde bribón huyó ens
 
 Como esperaba, el bribón cobarde huyó luego que demostrara el poder del Asesino. ¡Ja! Esos idiotas creyeron saberlo todo sobre mí, pero se dieron cuenta del grado de su ignorancia cuando se enfrentaron a mi furia interna. ¡Si esos debiluchos vuelven a amenazarme no seré tan benevolente!~
 @631   = ~Emboscado en las Puertas de la Ciudad~
-
 @650   = ~ ¿Un perista perdido?
 
 Aran me ha informado que Gaelan Bayle, el agente que me refirió a él, ha dicho que uno de sus peristas se ha perdido. Es posible que dicho hombre se haya unido a una cofradía rival, así que debo visitar a Gaelan preguntar sobre el asunto en cuanto tenga oportunidad. ~
@@ -1422,7 +1454,7 @@ He informado a Gaelan sobre el destino de Arledrian. El ladrón no estaba feliz d
 @705   = ~Con la muerte de Aran Linvail el resto de los ladrones escapan de la cofradía. La salida está libre. ~
 @706   = ~Mercenario Zhentarim ~
 @707   = ~Falla al utilizar el pergamino~
-@708   = ~Sacerdotisa de la Máscara~
+@708   = ~Sacerdotisa de Mask~
 @709   = ~Intenta detectar ilusiones~
 @710   = ~Trampa Recuperada~
 @711   = ~Intenta esconderse en las sombras~
@@ -2284,7 +2316,7 @@ CARACTERÍSTICAS:
 
 Habilidades de combate:
  Dardo regresa a la mano de su propietario
- 15% posibilidad de que el objetivo sea enlentecido por 1 asalto
+ 15% posibilidad de que el objetivo sea ralentizado por 1 asalto
 
 THAC0: +3 bonificación
 Daño: 1D3 +3, +1d3 Frío
@@ -2622,3 +2654,67 @@ Nota: Escribir pergaminos es una tarea muy delicada la cual sólo puede ser abord
 @9850  = ~Gracias por vuestra cooperación. ~
 @9851  = ~En ese caso, deberé confiscar todos vuestros apreciados bienes. ~
 @9852  = ~¿Resistiéndose al arresto? ¡A las armas entonces! ~
+
+// Strings missing from BGEE
+
+@10000=~Arpa~
+@10001=~Las arpas son instrumentos de cuerda utilizados a menudo por los bardos. Esta pequeña arpa es ideal para cantores itinerantes o relatos y baladas.~
+@10002=~Piedra ioun~
+@10003=~Es una pequeña piedra que gira alrededor de la cabeza del propietario. Sólo tienes que equiparte con ella para que ésta empiece a recorrer su órbita. Estas piedras, obviamente mágicas, tienen diferentes propiedades dependiendo de su color.~
+@10004=~Capucha de los ladrones~
+@10005=~Aunque esta capucha no confiere ninguna ventaja ostensible a quien la lleva, posee un aura de magia latente.
+
+Permitida a:
+ Ladrones~
+@10006=~No puedes ejecutar este conjuro hasta que expire el último que has lanzado.~
+@10007=~Aquejado de una terrible enfermedad~
+@10008=~Enredado~
+@10009=~El giro ya está activado.~
+@10010=~Trampa - aquí~
+@10011=~Convocar masa bamboleante~
+@10012=~Cegado~
+@10013=~Rodela +1~
+@10014=~Una rodela (o broquel) es un pequeño escudo de madera o metal que se sujeta al antebrazo. Gracias a su tamaño, es ligera y puede transportarte sin sufrir grandes restricciones al movimiento. Esta rodela posee un encantamiento genérico que la hace más resistente a los golpes.
+
+ESTADISTICAS:
+
+Bonificador a la Clase de Armadura: +2
+Especial: protección contra ataques perforantes (no procedentes de proyectiles)
+Peso: 4
+No Permitido a:
+Mago~
+@10015=~Conjuro ineficaz~
+@10016=~Imantado~
+@10017=~Ralentizado~
+@10018=~Wakizashi~
+@10019=~Wakizashi
+El wakizashi, o "espada compañera", es muy importante para un samurái. Se lleva en todo momento, incluso por dentro, y está cerca del samurái mientras duerme por la noche. El wakizashi tiene tanta calidad como la katana, aunque es más corta; mide entre 30 y 60 centímetros, resultando un arma peligrosa en manos expertas.
+
+ESTADISTICAS:
+
+Daño: 1D8
+Tipo de daño: Cortante
+Peso: 3
+Factor de velocidad: 3
+Talento marcial: Cimitarra/Wakizashi/Ninja-to
+Tipo: una mano
+No permitido a:
+Druida
+Mago
+Clérigo~
+@10020=~Ninja-to~
+@10021=~Ninja-to
+La espada ninja, ninja-to, es de peor calidad que otras espadas de Kara-Tur, como la katana. Ésta es corta y tiene una hoja recta que la hace ideal para el subterfugio de los ninja. También es más fácil de blandir en espacios cerrados, lo que en ocasiones proporciona ventaja al ninja sobre las espadas largas que utilizan los samuráis.
+
+ESTADISTICAS:
+
+Daño: 1D8
+Tipo de daño: Cortante
+Peso: 5
+Factor de velocidad: 4
+Talento marcial: Cimitarra/Wakizashi/Ninja-to
+Tipo: una mano
+No permitido a:
+Druida
+Mago
+Clérigo~

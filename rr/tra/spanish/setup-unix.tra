@@ -26,5 +26,61 @@
 @911   = ~ (No hay necesidad de instalar. G3 fixpack ya existe.)~
 @999   = ~Estilo de Iconos de BG2 para el contenido de RR~
 
+@-1000 = ~El mod %TP2_FILE_NAME% contiene~
+@-1001 = ~componentes opcionales distintos.
+Para ahorrar tiempo, puedes escoger qué hacer con cada uno de ellos a nivel
+general en lugar de ir contestando preguntas sobre cada uno.
+~
+@-1002 = ~¿Qué hacer con todos los componentes que TODAVIA NO están instalados?
+¿[I]nstalarlos, [S]altarlos o pregunt[A]r por cada uno? ~
+@-1003 = ~¿Qué hacer con los componentes que YA estßn instalados?
+¿[R]einstalarlos, q[U]itarlos, [S]altarlos o pregunt[A]r por cada uno? ~
 @-1004 = ~POR FAVOR, reportar los mensajes de error en un archivo ~
 @-1005 = "a"
+
+@-1006 = ~¿Instalar el componente [~
+@-1007 = ~]?
+¿[R]einstalar, co[N]servar, q[U]itar o [Q]uiero salir? ~
+
+@-1008 = ~]?
+¿[I]nstalar, [N]o instalar o [Q]uiero salir? ~
+
+@-1009 = ~Introduce parte del nombre del mod: ~
+@-1010 = ~Reinstalación del componente [~
+@-1011 = ~]~
+@-1012 = ~Reinstalación usando el idioma~
+@-1013 = ~Quitar instalación antigua de [~
+@-1014 = ~] primero...~
+@-1015 = ~ELIMINACION CON EXITO        ~
+@-1016 = ~Instalación en progreso~
+@-1017 = ~ERROR durante de la instalación de [~
+@-1018 = ~] - volviendo al estado previo...~
+@-1019 = ~INSTALACION CON EXITO        ~
+@-1020 = ~Saltando~
+@-1021 = ~Eliminación de [~
+@-1022 = ~] (componente #~
+@-1023 = ~)~
+@-1024 = ~ELIMINACION CON EXITO DE [~
+
+@-1025 = ~]?
+[R]einstalar, co[N]servar, q[U]itar, [Q]uiero salir o seleccionar uno:~
+@-1026 = ~]?
+[N]o, [Q]uiero salir o seleccionar uno:~
+
+@-1027 = ~ (actualmente instalado)~
+@-1028 = ~¿Quieres que se te muestren los componentes de [~
+@-1029 = ~]?
+¿[Y]es/Sí, [N]o? ~
+
+@-1030 = ~]?
+Selecciona uno:~
+
+@-1031 = ~]?
+[R]einstalar, co[N]servar, [Q]uiero salir o seleccionar uno:~
+
+@-1032 = ~NO INSTALADO DEBIDO A ERRORES~
+@-1033 = ~INSTALADO CON AVISOS         ~
+@-1034 = ~¿Quieres ver el readme? [Y]es/Sí, [N]o~
+@-1035 = ~Usando el idioma~
+@-1036 = ~Saltando el GRUPO [~
+@-1037 = ~] porque faltan sus requisitos.~

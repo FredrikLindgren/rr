@@ -1141,12 +1141,43 @@ Richiede: 5 alla Forza~
 
 // Strings missing from BG: EE
 
-@10000 = ~Arpa~ // #38789
-@10001 = ~Le arpe sono strumenti a corda spesso usate dai bardi. Questa piccola arpa è l'ideale per un cantastorie o un menestrello viaggiante.~ // #39668
-@10002 = ~Pietra Incantata~ // #8181
-@10003 = ~Questa è una piccola pietra che fluttua orbitando attorno alla testa del proprietario. Basta piazzare la pietra vicino alla testa per farla iniziare a orbitare. Queste pietre, ovviamente magiche, hanno proprietà differenti che dipendono dal loro colore.~ // #5770
-@10004 = ~Cappuccio dei Ladri~ // #66467
 @10005 = ~Anche se questo cappuccio non conferisce alcuna abilità magica al suo possessore, possiede comunque una debole aura di magia.~ // #66466
+@10014 = ~Questo è un piccolo scudo di legno o metallo che si tiene sull'avambraccio. A causa della sua dimensione è
+leggero e può essere indossato con poca restrizione dei movimenti. Questo scudo è dotato qualche forma di incantesimo
+generico, che lo rende più resistente ai colpi.
+
+STATISTICHE:
+
+Bonus classe armatura: 2
+Speciali: Nessuna protezione contro attacchi a proiettile e da punta
+Peso: 2~ // #39970
+@10019 = ~La wakizashi, o spada compagna, è estremamente importante per il samurai. Viene portata sempre,
+anche all'interno di un edificio, e si trova accanto al samurai quando dorme la notte. Costruita altrettanto
+accuratamente quanto una katana, la wakizashi è una spada più corta, lunga tra i 30 ed i 60 cm., ed è un'arma
+pericolosa in mano a chi sa usarla.
+
+STATISTICHE:
+
+Danni: 1d8
+Tipo di danno: da taglio
+Peso: 3
+Fattore-Velocità: 3
+Tipo di Competenza: Scimitarra/Wakizashi/Ninja-to
+Tipo: a 1 mano~ // #36181
+@10021 = ~Ninja-to
+
+La spada del ninja, la ninja-to, è di qualità inferiore rispetto alle altre spade Kara-Tur come la katana.
+la ninja-to è corta e ha una lama dritta, l'ideale per i sotterfugi dei ninja. Essa è più adatta ai luoghi chiusi
+e a volte avvantaggia il ninja rispetto alle spade più lunghe usate dal samurai.
+
+STATISTICHE:
+
+Danni: 1d8
+Tipo di danno: da taglio
+Peso: 5
+Fattore-Velocità: 4
+Tipo di Competenza: Scimitarra/Wakizashi/Ninja-to
+Tipo: a 1 mano~ // #39467
 
 // Ability  descriptions (cropped from the kit descriptions)
 

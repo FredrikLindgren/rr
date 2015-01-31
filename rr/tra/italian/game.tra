@@ -2610,3 +2610,62 @@ Nota: scrivere pergamene è un'operazione delicata che può essere svolta solo in 
 
 Utilizzabile da:
 Ladri~ // #66466
+@10006 = ~Non puoi lanciare questo incantesimo fino a che il precedente non è terminato.~ // #74011
+@10007 = ~Colpito da una terribile malattia~ // #39752
+@10008 = ~Intrappolato~ // #334
+@10009 = ~Rotazione già attiva.~ // #32087
+@10010 = ~Una trappola - qui~ // #22461
+@10011 = ~Evocare Shambling Mound~ // #3899
+@10012 = ~Accecato~ // #1474
+@10013 = ~Scudo +1~ // #39971
+@10014 = ~Questo è un piccolo scudo di legno o metallo che si tiene sull'avambraccio. A causa della sua dimensione è
+leggero e può essere indossato con poca restrizione dei movimenti. Questo scudo è dotato qualche forma di incantesimo
+generico, che lo rende più resistente ai colpi.
+
+STATISTICHE:
+
+Bonus classe armatura: 2
+Speciali: Nessuna protezione contro attacchi a proiettile e da punta
+Peso: 2
+Non utilizzabile da:
+Mago~ // #39970
+@10015 = ~Incantesimo Inefficace~ // #4742
+@10016 = ~Magnetizzato~ // #8325
+@10017 = ~Rallentato~ // #335
+@10018 = ~Wakizashi~ // #7526
+@10019 = ~La wakizashi, o spada compagna, è estremamente importante per il samurai. Viene portata sempre,
+anche all'interno di un edificio, e si trova accanto al samurai quando dorme la notte. Costruita altrettanto
+accuratamente quanto una katana, la wakizashi è una spada più corta, lunga tra i 30 ed i 60 cm., ed è un'arma
+pericolosa in mano a chi sa usarla.
+
+STATISTICHE:
+
+Danni: 1d8
+Tipo di danno: da taglio
+Peso: 3
+Fattore-Velocità: 3
+Tipo di Competenza: Scimitarra/Wakizashi/Ninja-to
+Tipo: a 1 mano
+Non utilizzabile da:
+Druido
+Chierico
+Mago~ // #36181
+@10020 = ~Ninja-To~ // #7529
+@10021 = ~Ninja-to
+
+La spada del ninja, la ninja-to, è di qualità inferiore rispetto alle altre spade Kara-Tur come la katana.
+la ninja-to è corta e ha una lama dritta, l'ideale per i sotterfugi dei ninja. Essa è più adatta ai luoghi chiusi
+e a volte avvantaggia il ninja rispetto alle spade più lunghe usate dal samurai.
+
+STATISTICHE:
+
+Danni: 1d8
+Tipo di danno: da taglio
+Peso: 5
+Fattore-Velocità: 4
+Tipo di Competenza: Scimitarra/Wakizashi/Ninja-to
+Tipo: a 1 mano
+Non utilizzabile da:
+Druido
+Chierico
+Mago~ // #39467

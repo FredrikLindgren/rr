@@ -2718,3 +2718,37 @@ No permitido a:
 Druida
 Mago
 Clérigo~
+
+// Ability descriptions for EE
+
+@11000 = ~Desplegar Armas
+
+Alcance: Visual
+Duración: 1 asalto por nivel
+Tiempo de lanzamiento: 1 asalto
+Área de efecto: radio de 10,5 metros
+Tirada de salvación: Especial
+
+Con sus armas cuerpo a cuerpo, un espadachín puede afectar la moral y coraje de otros. Tal habilidad, precisión y gracia intimida enemigos más débiles (salvación contra conjuros) causando una bajada de moral que los fuerza a correr o entrar en estado de locura y atacar a la criatura más próxima, ya sea amigo o enemigo. Este acto también inspira a los aliados, dando como resultado un +1 al THACO. La habilidad debe ejecutarse durante un asalto completo sin interrupción. Durante este tiempo, recibir un golpe o fallar una salvación desbarata el efecto.
+
+Nota: Esta es una habilidad extraordinaria, y por lo tanto ignora la resistencia mágica de la criatura objetivo. Criaturas no muertas, demoníacas, cienos, animales o constructos no son afectadas por Desplegar Armas. Además, no afecta a las criaturas cuya tirada de golpe sea mayor que el nivel actual del bardo. Las criaturas con nivel mayor a 20 no son afectadas. Alguien que ha visto tal despliegue no volverá a ser impresionado por el mismo durante un tiempo. La efectividad y la duración de esta habilidad mejora según el bardo gana niveles. La bonificación al ataque de los aliados aumenta un punto por cada diez niveles de experiencia del espadachín. La tirada de salvación de los enemigos se dificulta en un punto también por cada diez niveles.~
+
+@11001 = ~Impregnar arma con veneno
+Dados los requerimientos de su profesión, un Asesino aprende a manejar venenos con presisión a una temprana edad. Cualquier arma preparada de esta manera adquiere 1d3 puntos de daño al envenenar a la víctima. Además, si la víctima no consigue salvarse con una tirada de salvación contra veneno, el veneno entrará en el torrente sanguíneo de la víctima, causando un punto de daño por cada nivel del Asesino (a un máximo de 20 puntos de daño). El veneno se evapora del arma pasadas las cinco rondas. Constructos, elementales, cienos y no-muertos son inmunes al veneno, por lo cual esta habilidad no los afecta.~
+
+@11002 = ~Ataque Mortal
+Mediante el constante estudio de los puntos débiles de sus víctimas, un Asesino puede concentrar toda su astucia y su proeza en un solo golpe mortal. El próximo ataque que realize el Asesino será un golpe crítico, i su víctima debe hacer una tirada de salvación o perecerá en el instante. La tirada de salvación que debe realizar la víctima para evitar morir en el instante recibe una penalidad de -1 cuando el Asesino llega al nivel 24, y obtiene mejoras de un punto en los niveles 32 y 40.~
+
+@11003 = ~Toxina paralizante
+Los intrincados estudios de un Cazarrecompenzas en alquimia lo ayudan a crear una substancia que causa una severa perdida de funcionalidad muscular cuando es inyectada en el torrente sanguíneo de la víctima. La toxina paralizante es un liquido transparente e inodoro que puede ser fácilmente aplicado sobre armas sin peligro de que sea detectado. Un solo golpe de cualquier arma cubierta de esta substancia, paralizará a la víctima por uno ronda por cada diez niveles de experiencia del Cazarrecompensas, a no ser que la víctima haga una tirada de salvación contra paralización. Sin embargo, la toxina se evapora rápidamente cuando es expuesta al aire, por lo cual solo dura una ronda aplicada sobre las armas. Los constructor, elementales, no-muertos y cienos son inmunes a la toxina paralizante.~
+
+@11004 = ~Trampas químicas
+Combinando su superior habilidad en poner trampas y su sabiduría en alquimia, un Cazarrecompensas puede crear trampas primariamente para debilitar a sus oponentes e incapacitarlos, en vez de matarlos. Los efectos de esta trampa var’an segœn el nivel del Cazarrecompensas, duran cinco rondas y pueden ser negados por una tirada de salvación contra armas de aliento:
+
+1º: la trampa inflige 2d4 puntos de daño no letal y deslumbra a su víctima
+6º: la trampa inflige 4d4 puntos de daño no letal y ralentiza a su víctima
+11º: la trampa inflige 6d4 puntos de daño no letal y enreda a su víctima
+16º: la trampa inflige 8d4 puntos de daño no letal y ciega a su víctima
+21º: la trampa inflige 10d4 puntos de daño no letal y deja a su víctima inconsciente
+
+Nota: El daño no letal no mata a la víctima pero la deja inconsciente. Constructos, cienos y no-muertos son inmunes a las trampas químicas.~

@@ -2503,6 +2503,7 @@ BEGIN
         ADD_STORE_ITEM ~RR#SHL02~ AFTER          ~RR#BUC03~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Safeguard
         ADD_STORE_ITEM ~RR#LYRE~  AFTER          ~RR#SHL02~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Lyre of Progression
         ADD_STORE_ITEM ~RR#HEL02~ AFTER           ~RR#LYRE~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Cowl of Acuity
+        ADD_STORE_ITEM ~RR#FDART~ AFTER  ~%tutu_var%DART03~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Returning Frost Dart
       // ===============================================================================
       END
     BUT_ONLY
@@ -2542,7 +2543,6 @@ BEGIN
         ADD_STORE_ITEM ~RR#BOW02~ AFTER   ~%tutu_var%BOW05~ #0 #0 #0 ~IDENTIFIED~ #3      // Adds 3x Composite Short Bow
         ADD_STORE_ITEM ~RR#BOW03~ AFTER          ~RR#BOW02~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Composite Short Bow +1
         ADD_STORE_ITEM ~RR#BOW04~ AFTER          ~RR#BOW03~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Composite Short Bow +2
-        ADD_STORE_ITEM ~RR#FDART~ AFTER  ~%tutu_var%DART03~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Returning Frost Dart
         ADD_STORE_ITEM ~RR#BUC02~ AFTER  ~%tutu_var%PLAT01~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Buckler +1
         ADD_STORE_ITEM ~RR#BUC03~ AFTER          ~RR#BUC02~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Buckler +2
         ADD_STORE_ITEM ~RR#BUC01~ AFTER          ~RR#BUC03~ #0 #0 #0 ~IDENTIFIED~ #1      // Adds 1x Fading Glory

@@ -26,7 +26,7 @@ ALWAYS
       convert_array = fl#tra
       reload_array = fl#tra
   END
-  ACTION_IF GAME_IS ~bgee bg2ee iwdee~ BEGIN
+  ACTION_IF GAME_IS ~bgee bg2ee iwdee eet~ BEGIN
     LOAD_TRA ~rr/tra/ee/%LANGUAGE%/game.tra~
   END
 END
@@ -180,7 +180,7 @@ COPY_EXISTING SPCL423.SPL override                           // Poison Weapon As
         resource = RR#TAS02
     END
   END
-  PATCH_IF GAME_IS ~bgee bg2ee~ BEGIN
+  PATCH_IF GAME_IS ~bgee bg2ee eet~ BEGIN
     LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
     LPF ADD_SPELL_EFFECT
       INT_VAR
@@ -343,7 +343,7 @@ COPY_EXISTING  ~LUTH0.2DA~           ~override/LUTH3.2DA~      // Bountu Hunter'
   PRETTY_PRINT_2DA
 BUT_ONLY
 
-ACTION_IF GAME_IS ~tob bgt bg2ee~ BEGIN
+ACTION_IF GAME_IS ~tob bgt bg2ee eet~ BEGIN
   STRING_SET ~71467~ @34                                       // Tracking HLA description updated to include Bounty Hunters
 END
 
@@ -1363,6 +1363,13 @@ ACTION_IF FILE_EXISTS_IN_GAME bgscrl1v.itm AND !VARIABLE_IS_SET RR#DimensionDoor
 ~~~~~
 END
 
+ACTION_IF FILE_EXISTS_IN_GAME scrl1v_.itm AND !VARIABLE_IS_SET RR#DimensionDoor BEGIN // EET Dimension Door scroll
+  OUTER_SPRINT RR#DimensionDoor
+~~~~~
++ ~HaveSpell(2402)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("scrl1v_",Myself,1,1,1)~ EXIT //Dimension Door
+~~~~~
+END
+
 ACTION_IF FILE_EXISTS_IN_GAME _scrl1v.itm AND !VARIABLE_IS_SET RR#DDoor450 BEGIN // Tutu Dimension Door scroll
   OUTER_SPRINT RR#DDoor450
 ~~~~~
@@ -1790,7 +1797,7 @@ COPY ~RR/RR_CORE/BAM/RR#ACUMN.BAM~   override                     // Dagger of A
 COPY ~RR/RR_CORE/ITEMS/RR#ACUMN.ITM~ override
   SAY NAME2 @146 SAY DESC @147
 
-ACTION_IF GAME_IS ~soa tob bgt bg2ee~ BEGIN
+ACTION_IF GAME_IS ~soa tob bgt bg2ee eet~ BEGIN
   COPY_EXISTING ~ARAN.CRE~ override                                 // Aran Linvail, non-STI (for the Dagger of Acumen)
     ADD_CRE_ITEM ~RR#ACUMN~ #0 #0 #0 ~NONE~ ~INV7~                  // Give Aran the Dagger of Acumen (for pickpocketing)
 
@@ -3213,7 +3220,7 @@ END                                                                            /
 
 
 BEGIN @18 DESIGNATED 8
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -3526,7 +3533,7 @@ END                                                                             
 
 
 BEGIN @6 DESIGNATED 11
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
@@ -3822,7 +3829,7 @@ END
 
 
 BEGIN @7 DESIGNATED 12
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @902
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 

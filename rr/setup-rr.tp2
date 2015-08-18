@@ -1366,14 +1366,14 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME _scrl1v.itm AND !VARIABLE_IS_SET RR#DDoor450 BEGIN // Tutu Dimension Door scroll
   OUTER_SPRINT RR#DDoor450
 ~~~~~
-+ ~HaveSpell(2450)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("_scrl1v",Myself,1,1,1)~ EXIT //Dimension Door
++ ~HaveSpell(2450)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2450) GiveItemCreate("_scrl1v",Myself,1,1,1)~ EXIT //Dimension Door
 ~~~~~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME d0scrldd.itm AND !VARIABLE_IS_SET RR#DDoor450 BEGIN // D0Tweaks Dimension Door scroll
   OUTER_SPRINT RR#DDoor450
 ~~~~~
-+ ~HaveSpell(2450)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2402) GiveItemCreate("d0scrldd",Myself,1,1,1)~ EXIT //Dimension Door
++ ~HaveSpell(2450)~ + #12082 DO ~TakePartyGold(250) DestroyGold(250) RemoveSpell(2450) GiveItemCreate("d0scrldd",Myself,1,1,1)~ EXIT //Dimension Door
 ~~~~~
 END
 

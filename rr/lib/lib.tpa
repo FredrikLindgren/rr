@@ -342,7 +342,7 @@ BEGIN
       kit = label
   END
   LAF set_kitlist_description STR_VAR kit desc END
-  ACTION_IF GAME_IS ~bgee bg2ee iwdee~ BEGIN
+  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee~ BEGIN
     LAF set_clastext_description STR_VAR kit desc END
   END
 END

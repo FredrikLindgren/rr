@@ -28,7 +28,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @24 = ~Obroñca~
-@25 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Kniei Mir. Przy bli¿szym zbadaniu na powierzchni tarczy mo¿na odkryæ potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê byæ bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
+@25 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Kniei Mir. Przy bli¿szym zbadaniu na powierzchni tarczy mo¿na odkryæ potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
 
 PARAMETRY:
 
@@ -43,7 +43,7 @@ Mo¿e u¿ywaæ tylko:
  Druid~
 
 @26 = ~Stra¿nik ³otrzyka~
-@27 = ~Puklerz ten wykonany zosta³ ze stopu mrocznej stali, zabarwionej przez œladowe iloœci mitrylu i srebra. Chocia¿ jego powierzchnia wygl¹da na doskonale wypolerowan¹, wydaje siê, ¿e tarcza w jakiœ sposób poch³ania œwiat³o zamiast je odbijaæ. Przy bli¿szym zbadaniu mo¿na odkryæ na³o¿onych kilka zaklêæ charakterystycznych dla kap³anów Maska. Mo¿liwe, ¿e sam Pan Cienia osobiœcie pob³ogos³awi³ ten przedmiot swym dotykiem, obdarzaj¹c go moc¹ skrywania i wyprowadzania swych wyznawców z wszelkich opa³ów, w jakich mog¹ siê znaleŸæ, pa³aj¹c siê swoj¹ ryzykowna profesj¹.
+@27 = ~Puklerz ten wykonany zosta³ ze stopu mrocznej stali, zabarwionej przez œladowe iloœci mitrylu i srebra. Chocia¿ jego powierzchnia wygl¹da na doskonale wypolerowan¹, wydaje siê, ¿e tarcza w jakiœ sposób poch³ania œwiat³o, zamiast je odbijaæ. Przy bli¿szym zbadaniu mo¿na odkryæ na³o¿onych kilka zaklêæ charakterystycznych dla kap³anów Maska. Mo¿liwe, ¿e sam Pan Cienia osobiœcie pob³ogos³awi³ ten przedmiot swym dotykiem, obdarzaj¹c go moc¹ skrywania i wyprowadzania swych wyznawców z wszelkich opa³ów, w jakich mog¹ siê znaleŸæ, pa³aj¹c siê swoj¹ ryzykown¹ profesj¹.
 
 PARAMETRY:
 
@@ -61,9 +61,9 @@ Mo¿e u¿ywaæ:
 
 @28 = ~ZAWADIAKA: Ten ³otrzyk to akrobata, szermierz i dowcipniœ: wcielenie uroku i elegancji.
 
-Zalety :
+Zalety:
 - Premia +1 do KP co 5 poziomów
-- U¿ywaj¹c broni do walki wrêcz korzysta z tabeli TraK0 wojownika
+- U¿ywaj¹c broni do walki wrêcz, korzysta z tabeli TraK0 wojownika
 - Mo¿e specjalizowaæ siê w ka¿dej rêcznej broni, z jakiej mo¿e korzystaæ z³odziej
 - Ze zdolnoœci wysokiego poziomu mo¿e wybraæ M³yniec i Przeszywaj¹cy cios
 
@@ -74,11 +74,11 @@ Wady:
 
 @29 = ~BARD: Bard równie¿ jest ³otrzykiem, ale znacznie ró¿ni¹cym siê od z³odzieja. Jego atutem jest wdziêk i urocza osobowoœæ. Jest utalentowanym muzykiem i chodz¹c¹ skarbnic¹ plotek, niesamowitych opowieœci, ale równie¿ wiedzy. Wie nieco o tym, co spotka³ na swej drodze i choæ zna siê na wszystkim, to w niczym nie jest mistrzem. Mimo ¿e wiêkszoœæ bardów to ³ajdacy, ich opowieœci oraz pieœni zawsze i wszêdzie s¹ chêtnie s³uchane. Dziêki swoim heroicznym pieœniom i opowieœciom bard mo¿e wspomóc swoich towarzyszy na duchu. Jego œpiew mo¿e zawa¿yæ o zwyciêstwie podczas niejednej walki. Pieœñ ma nastêpuj¹ce w³aœciwoœci:
 
-1 poziom: +1 do trafienia i wszystkich rzutów obronnych, podnosi morale
-9 poziom: +2 do trafienia i wszystkich rzutów obronnych, usuwa efekty strachu
-18 poziom: +3 do trafienia i wszystkich rzutów obronnych, chroni przed strachem~
+1. poziom: +1 do trafienia i wszystkich rzutów obronnych, podnosi morale
+9. poziom: +2 do trafienia i wszystkich rzutów obronnych, usuwa efekty strachu
+18. poziom: +3 do trafienia i wszystkich rzutów obronnych, chroni przed strachem~
 
-@30 = ~FECHTMISTRZ: Fechtmistrz to doœwiadczony wojownik i poszukiwacz przygód. Dziêki grze aktorskiej wydaje siê bardziej groŸny ni¿ jest w rzeczywistoœci. Jego styl walki zawiera w sobie elementy aktorstwa i pozerstwa, ale jest œmiertelnie zabójczy. Fechtmistrzowie czêsto przejawiaj¹ siê niesamowit¹ kontrol¹ i umiejêtnoœci¹ kiedy w spektakularny sposób pos³uguj¹ siê broni¹ ze œmiertelna precyzj¹. Orê¿ fechtmistrza jest zawsze utrzymywany w nienagannym stanie, starannie wypolerowany dla najwy¿szej efektywnoœci podczas bitwy lub przedstawienia. Fechtmistrzowie potrafi¹ walczyæ dwiema broniami na raz i ten styl walki doprowadzili do perfekcji.
+@30 = ~FECHTMISTRZ: Fechtmistrz to doœwiadczony wojownik i poszukiwacz przygód. Dziêki grze aktorskiej wydaje siê bardziej groŸny, ni¿ jest w rzeczywistoœci. Jego styl walki zawiera w sobie elementy aktorstwa i pozerstwa, ale jest œmiertelnie zabójczy. Fechtmistrzowie czêsto przejawiaj¹ siê niesamowit¹ kontrol¹ i umiejêtnoœci¹, kiedy w spektakularny sposób pos³uguj¹ siê broni¹ z zabójcz¹ precyzj¹. Orê¿ fechtmistrza jest zawsze utrzymywany w nienagannym stanie, starannie wypolerowany dla najwy¿szej efektywnoœci podczas bitwy lub przedstawienia. Fechtmistrzowie potrafi¹ walczyæ dwiema broniami naraz i ten styl walki doprowadzili do perfekcji.
 
 Zalety:
 - Co 4 poziomy mo¿e u¿yæ zdolnoœci Piruet ofensywny i Piruet defensywny
@@ -96,10 +96,10 @@ Piruet ofensywny:
 Trwa 24 sekundy i daje +2 do trafienia, +2 do obra¿eñ oraz jeden atak wiêcej. Poza tym wszystkie ataki zadaj¹ maksymalne obra¿enia.
 
 Piruet defensywny:
-Trwa 24 sekundy, przykuwa go do miejsca, lecz daje premiê +1 KP na ka¿dy poziom doœwiadczenia. Maksymalna premia mo¿e wynieœæ +10 do KP. Fechtmistrz nie mo¿e siê poruszaæ, gdy wykonuje pozycjê obronn¹.
+Trwa 24 sekundy, przykuwa go do miejsca, lecz daje premiê +1 KP na ka¿dy poziom doœwiadczenia. Maksymalna premia mo¿e wynieœæ +10 do KP. Fechtmistrz nie mo¿e siê poruszaæ, gdy wykonuje piruet defensywny.
 
 Pokaz si³y:
-Wykonuj¹c pozy, w których fechtmistrz, jakby owija wokó³ siebie swe ostrza, mo¿e zaburzyæ morale oraz odwagê innych. Taki pokaz umiejêtnoœci, precyzji i œmiertelnego wdziêku obni¿a morale przeciwnika (wrogowie musz¹ wykonaæ rzut obronny przeciw czarom, by unikn¹æ spadku morale) i jednoczeœnie inspiruje sojuszników, dodaj¹c +1 do ataku. Pokaz musi trwaæ ca³¹ rundê bez przerwania. Przez ten czas, ka¿dy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa pokaz. Pokaz si³y jest niezwyk³¹ (niemagiczn¹) umiejêtnoœci¹, co za tym idzie, ignoruje wszelkie odpornoœci magiczne stworów. Nieumarli, golemy, galarety, zwierzêta oraz demoniczne stworzenia s¹ ca³kowicie odporne na Pokaz si³y. Umiejêtnoœæ ta nie mo¿e zadzia³aæ na stwory, których maksymalna kostka ataku przewy¿sza poziom barda oraz stwory, których kostka ataku ma 20 i wiêcej s¹ ca³kowicie odporne. Efekt oraz czas trwania tej umiejêtnoœci wzrasta z poziomem fechtmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiêkszaj¹ siê o 1 na ka¿de 10 poziomów fechtmistrza. Efekt Pokazu si³y trwa jedn¹ rundê na ka¿dy poziom fechtmistrza.~
+Wykonuj¹c pozy, w których niejako owija wokó³ siebie swe ostrza, fechtmistrz mo¿e wp³yn¹æ negatywnie na morale i odwagê innych. Taki pokaz umiejêtnoœci, precyzji i zabójczego wdziêku obni¿a morale przeciwnika (wrogowie musz¹ wykonaæ rzut obronny przeciw czarom, aby unikn¹æ spadku morale), inspiruj¹c jednoczeœnie sojuszników, którzy otrzymuj¹ premiê +1 do ataku. Pokaz musi trwaæ pe³n¹ rundê bez przerywania. Przez ten czas, ka¿dy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa dzia³anie zdolnoœci. Pokaz si³y jest niemagiczn¹ zdolnoœci¹ nadzwyczajn¹, co pozwala jej ignorowaæ odpornoœæ na magiê atakowanych istot. Zdolnoœæ ta nie dzia³a na nieumar³ych, golemy, galarety, zwierzêta oraz demoniczne stworzenia. Dodatkowo nie wp³ywa na istoty, których iloœæ Kostek przewy¿sza poziom barda lub które posiadaj¹ 20, lub wiêcej Kostek. Efektywnoœæ oraz czas dzia³ania tej zdolnoœci wzrastaj¹ wraz z poziomem fechtmistrza. Premia do ataku sojuszników oraz kary do rzutów obronnych przeciwników wzrastaj¹ o 1 na ka¿de 10 poziomów fechtmistrza. Efekty dzia³ania Pokazu si³y utrzymuj¹ siê 1 rundê na ka¿dy poziom fechtmistrza.~
 
 @31 = ~Pokaz si³y~
 
@@ -117,21 +117,19 @@ Wady:
 Pieœñ b³azna:
 Pieœñ ta nie pomaga sojusznikom. Zamiast tego, rozprasza ka¿dego wroga w zasiêgu s³uchu. Efekt pieœni ulepsza siê na wy¿szych poziomach:
 
-1 poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom z premi¹ +4 lub ulegn¹ Rozkojarzeniu
-9 poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom z premi¹ +2 lub ulegn¹ Rozkojarzeniu i wpadn¹ w Zamêt (rzut obronny z premi¹ +4)
-18 poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom lub ulegn¹ Rozkojarzeniu, Zamêtowi (rzut obronny z premi¹ +2) i Os³upieniu (rzut obronny z premi¹ +4)
+1. poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom z premi¹ +4 lub ulegn¹ Rozkojarzeniu
+9. poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom z premi¹ +2 lub ulegn¹ Rozkojarzeniu i wpadn¹ w Zamêt (rzut obronny z premi¹ +4)
+18. poziom: Przeciwnicy musz¹ wykonaæ rzut obronny przeciwko czarom lub ulegn¹ Rozkojarzeniu, Zamêtowi (rzut obronny z premi¹ +2) i Os³upieniu (rzut obronny z premi¹ +4)
 
-Rozkojarzeni przeciwnicy maj¹ 20% szans niepowodzenia przy rzucaniu czarów. Otrzymuj¹ te¿ kary -2 do TraK0 i KP. Zm¹ceni przeciwnicy albo wpadn¹ w sza³ i zaatakuj¹ najbli¿sz¹ postaæ, albo zostan¹ w miejscu, albo zmieszane zaczn¹ b³¹kaæ siê przez okres dzia³ania czaru.
-Os³upieni wrogowie maj¹ do tego stopnia zaburzon¹ œwiadomoœæ, ¿e nie potrafi¹ wykonaæ ¿adnej, nawet najprostszej czynnoœci podczas s³uchania Pieœni b³azna. Nie mniej jednak, oponent jest w stanie podœwiadomie odczuæ zagro¿enie, tak wiêc ka¿de wrogie akcje uwalniaj¹ od dzia³ania uroku.
-Pieœñ b³azna nie dzia³a na bezmyœlne stworzenia takie jak golemy, szkielety, zombie czy galarety.
+Rozkojarzeni przeciwnicy maj¹ 20% szans niepowodzenia podczas rzucaniu czarów. Otrzymuj¹ te¿ karê -2 do TraK0 i KP. Wrogowie bêd¹cy pod wp³ywem zamêtu wpadn¹ w sza³, zaatakuj¹ najbli¿sz¹ postaæ, stan¹ w miejscu, albo zmieszane zaczn¹ b³¹kaæ siê przez okres dzia³ania zdolnoœci. Os³upiali przeciwnicy maj¹ do tego stopnia zaburzon¹ œwiadomoœæ, ¿e s³uchaj¹c Pieœni b³azna, nie potrafi¹ wykonaæ ¿adnej, nawet najprostszej czynnoœci. Niemniej jednak s¹ oni w stanie podœwiadomie odczuæ zagro¿enie, tak wiêc ka¿de wrogie dzia³anie uwalnia ich spod dzia³ania uroku. Pieœñ b³azna nie dzia³a na bezmyœlne stworzenia takie jak golemy, szkielety, zombie czy galarety.
 
 Szczêœcie trefnisia:
-B³azny s¹ beztroscy, lekkomyœlni i sk³onni do podejmowania szalonych decyzji, jednak wydaj¹ siê posiadaæ osobliw¹ umiejêtnoœæ, która pozwala im przetrwaæ prawie w ka¿dej sytuacji. Zdolnoœæ zapewnia premiê +1 do bazowej Klasy Pancerza, +1 do wszystkich rzutów obronnych oraz +5 pkt. umiejêtnoœci kradzie¿y kieszonkowej.
+B³azny s¹ beztroscy, lekkomyœlni i sk³onni do podejmowania szalonych decyzji, jednak wydaj¹ siê dysponowaæ osobliw¹ umiejêtnoœci¹, która pozwala im przetrwaæ prawie ka¿d¹ sytuacjê. Zdolnoœæ ta zapewnia premiê +1 do bazowej Klasy Pancerza, +1 do wszystkich rzutów obronnych oraz +5 punktów do umiejêtnoœci Kradzie¿y kieszonkowej.
 
 Chaotyczne myœli:
 Z powodu ich unikalnego postrzegania œwiata, B³azny s¹ naturalnie odporne na efekty zaklêæ, przedmiotów i umiejêtnoœci wywo³uj¹cych zamêt.~
 
-@33 = ~SKALD: To nordycki bard, który jest równie¿ wojownikiem obdarzonym wielk¹ si³¹, umiejêtnoœciami i cnot¹. Skald poœwiêca swe ¿ycie, by d¹¿yæ do doskona³oœci. Skaldowie s¹ znani i szanowani jako wielcy wojowniczy poeci, którzy zapamiêtuj¹ ka¿dy smaczek z najazdu czy bitwy nadaj¹c im formê poematu. Zaklêcia s¹ niemal nieznane w spo³eczeñstwie skaldów i s¹ uznawane za coœ podejrzanego bez wzglêdu na okolicznoœæ. U¿ywanie magii jest znacznie trudniejsze dla Skalda i wymaga poœwiêcenia dodatkowej iloœci czasu i wysi³ku.
+@33 = ~SKALD: To nordycki bard, który jest równie¿ wojownikiem obdarzonym wielk¹ si³¹, umiejêtnoœciami i cnot¹. Skald poœwiêca swe ¿ycie, d¹¿¹c do doskona³oœci. Skaldowie s¹ znani i szanowani jako wielcy wojowniczy poeci, którzy zapamiêtuj¹ ka¿dy smaczek z najazdu czy bitwy, nadaj¹c im formê poematu. Zaklêcia s¹ niemal nieznane w spo³eczeñstwie skaldów i uznaje siê je za coœ podejrzanego, bez wzglêdu na okolicznoœci. U¿ywanie magii jest dla skalda znacznie trudniejsze i wymaga to od niego poœwiêcenia dodatkowej iloœci czasu i wysi³ku.
 
 Zalety:
 - Pieœñ skalda ró¿ni siê od pieœni typowego barda. Zdolnoœæ polepsza siê na 9. i 18. poziomie
@@ -142,16 +140,16 @@ Wady:
 - Kara -1 do szybkoœci rzucania zaklêæ
 
 Pieœñ skalda:
-Œpiewaj¹c pieœni wojenne, skald inspiruje towarzyszy, gdy ci kieruj¹ siê w wir bitwy, œpiew ten mo¿e podnieœæ ducha walki, eliminowaæ obawy zagro¿enia, skupia myœli towarzyszy na bitwie i wype³nia przyjemnymi si³ami sprawiaj¹c uczucie niez³omnoœci. Efekt pieœni poprawia siê wraz z poziomem:
+Œpiewaj¹c pieœni wojenne, skald inspiruje towarzyszy, gdy ci ruszaj¹ do bitwy. Œpiew ten mo¿e podnosiæ ducha walki, t³umiæ obawê przed zagro¿eniami, skupiaæ myœli towarzyszy na bitwie i wype³niaæ serca sojuszników poczuciem niez³omnoœci. Efekt pieœni staje siê potê¿niejszy na wy¿szych poziomach:
 
-1 poziom: zapewnia sojusznikom premie +2 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach
-9 poziom: zapewnia sojusznikom premie +3 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach i zamêt
-18 poziom: zapewnia sojusznikom premie +3 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach, zamêt i og³uszenie.~
+1. poziom: zapewnia sojusznikom premie +2 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach
+9. poziom: zapewnia sojusznikom premie +3 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach i zamêt
+18. poziom: zapewnia sojusznikom premie +3 do trafienia, obra¿eñ i KP oraz odpornoœæ na strach, zamêt i og³uszenie.~
 
 @34 = ~Tropienie
 Z obszern¹ wiedz¹ o w³asnym otoczeniu, jak i istot je zamieszkuj¹cych, ³owca czy te¿ ³owca nagród mog¹ u¿yæ tej umiejêtnoœci do okreœlenia, jakiego rodzaju stworzenia wystêpuj¹ na danym obszarze i w jakim kierunku siê one znajduj¹. Czerwone strza³ki na krawêdziach ekranu wska¿¹ kierunek po³o¿enia stworów.~
 
-@35 = ~ZABÓJCA: Jest to morderca, który opanowa³ sztukê szybkiego i dyskretnego zabijania. Aby jak najlepiej wykonywaæ swoje obowi¹zki, dzia³a anonimowo i przez zaskoczenie. Nauka anatomii, wyszkolenie w skrytobójstwie i u¿ywaniu trucizn pozwala zabójcy doprowadzaæ do œmierci z wyj¹tkow¹ precyzj¹. Zdolny z³odziej nigdy nie powinien zostaæ zauwa¿ony na miejscu przestêpstwa.
+@35 = ~ZABÓJCA: Jest to morderca, który opanowa³ sztukê szybkiego i dyskretnego zabijania. Aby jak najlepiej wykonywaæ swoje obowi¹zki, dzia³a anonimowo i poprzez zaskoczenie. Nauka anatomii, wyszkolenie w skrytobójstwie i u¿ywaniu trucizn pozwala mu na zadawanie œmierci z wyj¹tkow¹ precyzj¹. Zdolny zabójca mo¿e zupe³nie zaskoczyæ niczego niespodziewaj¹c¹ siê ofiarê.
 
 Zalety:
 - Mo¿e u¿ywaæ Zatrucia ostrza raz na dzieñ na 1 poziomie co 4 poziomy
@@ -164,13 +162,13 @@ Wady:
 - Musi mieæ z³y lub neutralny charakter
 
 Zatrucie ostrza:
-Z powodu wymagañ, jakie narzuca nañ jego profesja, Zabójca przywyk³ do pokrywania swej broni trucizn¹ ju¿ na pocz¹tku kariery. Ka¿da broñ w ten sposób przygotowana bêdzie zadawaæ dodatkowe 1K3 obra¿eñ od trucizny. W zwi¹zku z czym, jeœli nie zostanie wykonany rzut obronny przeciw truciŸnie, substancja przeniknie przez ranê do krwiobiegu ofiary zadaj¹c dodatkowe obra¿enia na ka¿dy poziom zabójcy (maksymalnie do poziomu 20). Trucizna odparowuje po 5 rundach od chwili na³o¿enia. Golemy, ¿ywio³aki, galarety oraz nieumarli nie mog¹ zostaæ zatrute.
+Z powodu wymagañ, jakie narzuca nañ jego profesja, zabójca przywyk³ do pokrywania swej broni trucizn¹ ju¿ na pocz¹tku kariery. Ka¿da broñ przygotowana w ten sposób bêdzie zadawaæ dodatkowe 1K3 obra¿eñ od trucizny. W zwi¹zku z czym, jeœli nie zostanie wykonany rzut obronny przeciw truciznom, substancja przeniknie przez ranê do krwiobiegu ofiary, zadaj¹c dodatkowe obra¿enia na ka¿dy poziom zabójcy (maksymalnie do 20. poziomu). Trucizna odparowuje po 5 rundach od chwili na³o¿enia. Zdolnoœæ ta nie dzia³a na golemy, ¿ywio³aki, galarety oraz nieumar³ych nie mog¹ zostaæ zatrute.
 
 Wiedza o truciznach:
-Poprzez naukê i doœwiadczenia, zabójca posiad³ wiedzê neutralizacji trucizn. Z powodu ci¹g³ego wystawiania siê na kontakt z trucizn¹, powoli uodparnia siê na jej dzia³ania. Za ka¿dym razem po otrzymaniu tej umiejêtnoœci, zabójca otrzymuje na sta³e +1 do rzutów obronnych przeciwko truciznom. W tym samym momencie poziom rzutu obronnego przeciw jego truciŸnie równie¿ roœnie o 1.
+Poprzez naukê i doœwiadczenia, zabójca posiad³ wiedzê o neutralizowaniu trucizn. Z powodu ci¹g³ego wystawiania siê na kontakt z trucizn¹, powoli uodparnia siê na jej dzia³ania. Za ka¿dym razem po otrzymaniu tej zdolnoœci, zabójca otrzymuje na sta³e premiê +1 do rzutów obronnych przeciwko truciznom. W tym samym momencie poziom rzutu obronnego przeciw jego truciŸnie równie¿ roœnie o 1.
 
 Zabójczy atak:
-Poprzez wnikliwe badanie s³aboœci jego ofiary, Zabójca potrafi skupiæ swoj¹ przebieg³oœæ oraz ponadprzeciêtne zdolnoœci w jeden œmiertelny cios. Nastêpny cios, który wyprowadza automatycznie staje siê ciosem krytycznym, a jego ofiara musi wykonaæ rzut obronny przeciwko œmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skutecznoœæ Zabójczego ataku roœnie. Rzuty obronne ofiary spadaj¹ o 1 na 24 poziomie, 2 na 32 i 3 na 40 poziomie. Golemy, ¿ywio³aki, galarety oraz nieumarli nie mog¹ zostaæ zabite przy u¿yciu Zabójczego ataku.~
+Poprzez wnikliwe badanie s³aboœci ofiary, zabójca potrafi skupiæ swoj¹ przebieg³oœæ oraz ponadprzeciêtne zdolnoœci w jeden œmiertelny atak. Nastêpny cios, który zostanie przez niego wyprowadzony, staje siê automatycznie ciosem krytycznym, a ofiara musi wykonaæ rzut obronny przeciwko œmierci, w przeciwnym razie zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skutecznoœæ Zabójczego ataku wzrasta. Rzuty obronne ofiary spadaj¹ o 1 na 24. poziomie, 2 na 32. poziomie i 3 na 40. poziomie. Zdolnoœæ ta nie dzia³a na golemy, ¿ywio³aki, galarety oraz nieumar³ych nie mog¹ zostaæ zatrute.~
 
 @36 = ~Zabójczy atak~
 @37 = ~Próba wykonania Zabójczego ataku~
@@ -251,7 +249,7 @@ Typ broni: 1-rêczna
 Nie mo¿e u¿ywaæ:
  Kap³an~
 
-@54 = ~£OWCA NAGRÓD: To ³owca ludzi, wyszkolony w tropieniu zwierzyny i sprowadzaniu jej ¿ywcem... wszystko jedno, czy dla przedstawicieli prawa czy w³adców podziemi. £owcy nagród s¹ szczególnie dobrze wyszkoleni w tej dziedzinie i s¹ straszliwymi przeciwnikami. Czêsto korzystaj¹ z substancji alchemicznych, by obezw³adniæ czy os³abiæ swa ofiarê. Ich zdolnoœæ zastawiania pu³apek znacznie przewy¿szaj¹ umiejêtnoœci zwyk³ego z³odzieja.
+@54 = ~£OWCA NAGRÓD: To ³owca ludzi, wyszkolony w tropieniu zwierzyny i sprowadzaniu jej ¿ywcem... wszystko jedno, czy dla przedstawicieli prawa, czy w³adców podziemi. £owcy nagród s¹ szczególnie dobrze wyszkoleni w tej dziedzinie i s¹ strasznymi przeciwnikami. Ich umiejêtnoœci zastawiania pu³apek znacznie przewy¿szaj¹ umiejêtnoœci zwyk³ego z³odzieja.
 
 Zalety:
 - +15 pkt. do zastawiania pu³apek
@@ -264,26 +262,26 @@ Wady:
 - Co poziom otrzymuje jedynie 20 pkt. na umiejêtnoœci z³odziejskie
 
 Parali¿uj¹ca toksyna:
-Skomplikowane pojmowanie alchemii, jak równie¿ zielarstwa pozwala ³owcy nagród tworzyæ substancje znacznie obni¿aj¹ce pracê miêœni po wprowadzeniu do krwiobiegu. Jest to przeŸroczysta, pozbawiona zapachu ciecz, któr¹ mo¿na bez obaw wykrycia na³o¿yæ na ostrze broni. Po trafieniu tak¹ broni¹, ofiara musi wykonaæ rzut obronny przeciw parali¿owi, albo zostanie unieruchmiona przez rundê na ka¿de 10 poziomów ³owcy nagród. Niestety, po na³o¿eniu na ostrze, ciecz ta szybko siê ulatnia, czyni¹c go skutecznym tylko przez jedn¹ rundê. Golemy, ¿ywio³aki, galarety oraz nieumarli s¹ ca³kowicie odporni na dzia³anie parali¿uj¹cej toksyny.
+Zaawansowane pojmowanie alchemii, jak równie¿ zielarstwa, pozwala ³owcy nagród tworzyæ substancjê, która po wprowadzeniu do obiegu znacznie obni¿a pracê miêœni. Jest to przezroczysta, pozbawiona zapachu ciecz, któr¹ mo¿na na³o¿yæ na ostrze bez obawy, ¿e zostanie wykryta. Po trafieniu tak¹ broni¹ ofiara musi wykonaæ rzut obronny przeciw parali¿owi albo zostanie unieruchomiona przez rundê na ka¿de 10 poziomów ³owcy nagród. Niestety po na³o¿eniu na ostrze ciecz ta szybko siê ulatnia, czyni¹c go skutecznym tylko przez jedn¹ rundê. Golemy, ¿ywio³aki, galarety oraz nieumarli s¹ niewra¿liwi na dzia³anie parali¿uj¹cej toksyny.
 
 Pu³apki alchemiczne:
-Wynikiem po³¹czenia niesamowitych umiejêtnoœci zastawiania side³ ze znajomoœci¹ alchemii, ³owca nagród potrafi stworzyæ pu³apki, które zamiast zabijaæ, s¹ raczej zaprojektowane tak, by unieruchomiæ ofiarê. Efekt dzia³ania pu³apki zale¿y od poziomu ³owcy nagród, ale zawsze utrzymuj¹ siê one przez 5 rund i mog¹ byæ zneutralizowane przez udany rzut obronny przeciw zioniêciom:
+Dziêki po³¹czeniu niesamowitych umiejêtnoœci zastawiania pu³apek ze znajomoœci¹ alchemii, ³owca nagród potrafi stworzyæ pu³apki zaprojektowane do unieruchomiania a nie zabijania ofiary. Efekty dzia³ania pu³apki zale¿¹ od poziomu ³owcy nagród, ale zawsze utrzymuj¹ siê przez 5 rund i mog¹ zostaæ zneutralizowane przez udany rzut obronny przeciw zioniêciom:
 
-1 poziom - zadaje 1K4 obra¿eñ i osza³amia ofiarê
-6 poziom - zadaje 4k4 obra¿eñ i spowalnia ofiarê
-11 poziom - zadaje 6k4 obra¿eñ i oplata ofiarê
-16 poziom - zadaje 8k4 obra¿eñ i oœlepia ofiarê
-21 poziom - zadaje 10k4 obra¿eñ i pozbawia ofiarê przytomnoœci
+1. poziom - zadaje 1K4 punktów obra¿eñ i osza³amia ofiarê
+6. poziom - zadaje 4K4 punktów obra¿eñ i spowalnia ofiarê
+11. poziom - zadaje 6K4 punktów obra¿eñ i opl¹tuje ofiarê
+16. poziom - zadaje 8K4 punktów obra¿eñ i oœlepia ofiarê
+21. poziom - zadaje 10K4 punktów obra¿eñ i pozbawia ofiarê przytomnoœci
 
 Uwaga: obra¿enia pu³apek alchemicznych nie zabijaj¹ ofiary, gdy iloœæ jej punktów ¿ycia spadnie poni¿ej 0, tylko pozbawiaj¹ j¹ przytomnoœci. Golemy, ¿ywio³aki, galarety oraz nieumarli s¹ ca³kowicie odporni na ten typ obra¿eñ.
 
 Ekspert alchemiczny
-Poprzez ci¹g³e doœwiadczenia z ró¿nymi rodzajami odczynników, ³owca nagród nauczy³ siê wykorzystywaæ substancje alchemiczne z wiêksz¹ skutecznoœci¹. Za ka¿dym razem, gdy podnosi siê poziom umiejêtnoœci, rzuty obronne przeciwko parali¿uj¹cej toksyny i pu³apkom alchemicznym, jakie ofiara musi wykonaæ, wzrasta o 1.~
+Poprzez ci¹g³e doœwiadczenia z ró¿nymi rodzajami odczynników, ³owca nagród nauczy³ siê wykorzystywaæ substancje alchemiczne z wiêksz¹ skutecznoœci¹. Za ka¿dym razem, gdy podnosi siê poziom tej umiejêtnoœci, rzuty obronne wykonywane przez ofiarê przeciwko parali¿uj¹cej toksynie i pu³apkom alchemicznym wzrastaj¹ o 1.~
 
 @55 = ~Parali¿uj¹ca toksyna ~
 
-@56 = ~Lira Postêpu~
-@57 = ~Lirê Postêpu stworzy³ bard Sedini Paletto. Sedini by³ nauczycielem m³odych, ambitnych bardów w ciê¿kich czasach. Instrument ten, ca³y czas trzymany blisko, pomaga³ Sediniemu zwalczaæ tych, którzy atakowali jego b¹dŸ jego studentów. Kiedy Sedini postarza³ siê, przekaza³ lirê swemu najlepszemu studentowi o imieniu Galwen Alaman. Galwen uczy³ przez kilka lat zanim postanowi³ wybraæ siê w dzikie ostêpy i wieœæ ¿ycie poszukiwacza przygód. Niektórzy s¹dz¹, ¿e straci³ swój instrument, kiedy przypadkowo upuœci³ go do mokrad³a.
+@56 = ~Lira postêpu~
+@57 = ~Lira postêpu jest dzie³em barda o imieniu Sedini Paletto. By³ on nauczycielem m³odych ambitnych bardów w trudnych czasach. Sedini nosi³ ten instrument zawsze przy sobie, gdy¿ pomaga³ on zwalczaæ bardowi ka¿dego, kto oœmieli³ siê zaatakowaæ jego albo bêd¹cych pod jego opiek¹ studentów. Kiedy Sedini siê zestarza³, przekaza³ lirê najlepszemu ze swych studentów, Galwenowi Alamanowi. Galwen kontynuowa³ przez kilka lat nauczanie, zanim postanowi³ wyruszyæ w dzikie ostêpy, by wieœæ ¿ycie poszukiwacza przygód. Niektórzy uwa¿aj¹, ¿e zgubi³ swój instrument, upuszczaj¹c go pewnego razu prosto w mokrad³a.
 
 PARAMETRY:
 
@@ -292,9 +290,8 @@ Trzymany w lewej rêce instrument pozwala zapamiêtaæ dwa dodatkowe czary 2. pozio
 Mo¿e u¿ywaæ:
  Bard~
 
-
 @58 = ~Powracaj¹ca lodowa strza³ka~
-@59 = ~Powiadaj¹, ¿e pewna przebieg³a kap³anka Auril stworzy³a dziesi¹tki takich strza³ek w celu zaopatrzenia œwi¹tynnych stra¿ników w broñ na czarn¹ godzinê. Doskona³ym narzêdziem do tego wydawa³a siê byæ w³aœnie strza³ka, z uwagi na ³atwoœæ jej ukrycia. Pomniejsze zaklêcia, którymi zosta³a wzmocniona, sprawiaj¹, ¿e dos³ownie zamra¿a ofiarê, a ponadto wraca do rêki miotacza. Taka broñ jest na ogó³ rzadko spotykana poza œwi¹tyniami Auril, których kilka usianych jest na oœnie¿onych szczytach Doliny Lodowego Wichru. Jednak¿e w ostatnich latach kilku handlarzy z Dekapolis naby³o podejrzanie spore iloœci tych strza³ek od miejscowych dru¿yn poszukiwaczy przygód.
+@59 = ~Powiadaj¹, ¿e pewna przebieg³a kap³anka Auril stworzy³a dziesi¹tki takich strza³ek w celu zaopatrzenia œwi¹tynnych stra¿ników w broñ na czarn¹ godzinê. Doskona³ym narzêdziem do tego wydawa³a siê w³aœnie strza³ka, z uwagi na ³atwoœæ jej ukrycia. Pomniejsze zaklêcia, którymi zosta³a wzmocniona, sprawiaj¹, ¿e dos³ownie zamra¿a ofiarê, a ponadto wraca do rêki miotacza. Taka broñ jest na ogó³ rzadko spotykana poza œwi¹tyniami Auril, których kilka usianych jest na oœnie¿onych szczytach Doliny Lodowego Wichru. Jednak¿e w ostatnich latach kilku handlarzy z Dekapolis naby³o podejrzanie spore iloœci tych strza³ek od miejscowych dru¿yn poszukiwaczy przygód.
 
 PARAMETRY:
 
@@ -312,7 +309,7 @@ Nie mo¿e u¿ywaæ:
  Kap³an~
 
 @60 = ~Krótki miecz ciosów w plecy~
-@61 = ~Cieniste Ostrze wykuto z myœl¹ o zabójcy - mia³o byæ dla niego doskona³ym narzêdziem. Marzy o nim wielu lubi¹cych rozstrzygaæ spory za pomoc¹ ciosu w plecy. Niewielu jednak posiada ten miecz przez d³ugi czas. W rêku dowolnej postaci miecz ten zachowuje siê jak zwyk³a broñ o umagicznieniu +3. Jednak szczególnie potê¿na w d³oni z³odzieja staje siê wskutek zwiêkszenia szansy na trafienie oraz podniesienia wspó³czynnika sztyletowania.
+@61 = ~Cieniste Ostrze wykuto z myœl¹ o zabójcy - mia³o byæ dla niego doskona³ym narzêdziem. Marzy o nim wielu lubi¹cych rozstrzygaæ spory za pomoc¹ ciosu w plecy. Niewielu jednak posiada ten miecz przez d³ugi czas. W rêku dowolnej postaci miecz ten zachowuje siê jak zwyk³a broñ o umagicznieniu +3. Jednak staje siê szczególnie potê¿na w d³oni z³odzieja wskutek zwiêkszenia szansy na trafienie oraz podniesienia wspó³czynnika sztyletowania.
 
 PARAMETRY:
 
@@ -381,7 +378,7 @@ Mo¿e u¿ywaæ:
 @76 = ~Prze³amanie zaklêcia~
 @77 = ~Imitacja zaklêcia~
 @78 = ~Przywo³anie Ducha wojownika~
-@79 = ~Ten magicznie wyczarowany instrument mo¿e rywalizowaæ z wyrobami najlepszych rzemieœlników w ca³ym Faerunie. Jednak pod pewnym k¹tem flet wydaje siê byæ wrêcz przejrzysty, jak gdyby stworzono go jedynie z dŸwiêku nut. W rêkach szczególnie utalentowanego barda, flet ten mo¿e zostaæ wykorzystany, aby prze³amaæ zauroczenia, tym samym skutecznie neutralizuj¹c efekt wszelkich uroków, jak i podobnych umiejêtnoœci (z wyj¹tkiem psioniki) ze szko³y magii zauroczeñ, obojêtnie czy s¹ one dobroczynne, czy te¿ nie (trzy ³adunki). Mo¿e byæ równie¿ u¿yty do naœladowania wszystkich zaklêæ magii uroków (dwa ³adunki). Jako ostatni¹ czynnoœæ, flet mo¿e przywo³aæ Ducha wojownika (jeden ³adunek).
+@79 = ~Ten magicznie wyczarowany instrument mo¿e rywalizowaæ z wyrobami najlepszych rzemieœlników w ca³ym Faerunie. Jednak pod pewnym k¹tem flet wydaje siê wrêcz przejrzysty, jak gdyby stworzono go jedynie z dŸwiêku nut. W rêkach szczególnie utalentowanego barda flet ten mo¿e zostaæ wykorzystany, aby prze³amaæ zauroczenia, tym samym skutecznie neutralizuj¹c efekt wszelkich uroków, jak i podobnych umiejêtnoœci (z wyj¹tkiem psioniki) ze szko³y magii zauroczeñ, obojêtnie czy s¹ one dobroczynne, czy te¿ nie (trzy ³adunki). Mo¿e byæ równie¿ u¿yty do naœladowania wszystkich zaklêæ magii uroków (dwa ³adunki). Jako ostatni¹ czynnoœæ, flet mo¿e przywo³aæ Ducha wojownika (jeden ³adunek).
 
 PARAMETRY:
 
@@ -421,7 +418,7 @@ Mo¿e u¿ywaæ:
 @92 = ~Przerwano efekt unieruchomienia~
 @93 = ~Fascynacja~
 
-@111 = ~Jest to puklerz Kiela Zabójcy Legionów, pierworodnego syna Durlaga Zabójcy Trolli i Klanowego Ksiêcia w nieszczêsnej wie¿y swego ojca. Dziêki temu, ¿e jest niezwykle lekki i znakomicie wykonany, zwiêksza zrêcznoœæ u¿ywaj¹cej go osoby o 1.
+@111 = ~Jest to puklerz Kiela Zabójcy Legionów, pierworodnego syna Durlaga Zabójcy Trolli i Klanowego Ksiêcia w nieszczêsnej wie¿y swego ojca. Dziêki temu, ¿e jest niezwykle lekki i znakomicie wykonany, zwiêksza Zrêcznoœæ u¿ywaj¹cej go osoby o 1.
 
 PARAMETRY:
 
@@ -455,14 +452,14 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @114 = ~T³uk~
-@115 = ~Nazywany równie¿ piêœciakiem. T³uk to ma³a skórzana sakiewka wype³niona piaskiem, œrutem, monetami lub jakimkolwiek ciê¿szym materia³em. U¿ywany do dyskretnego pozbawienia ofiary przytomnoœci poprzez uderzenie w g³owê lub w ty³ szyi. T³uk bardziej nadaje siê do miejskiego otoczenia ni¿ wyprawy czy pl¹drowanie lochów. Na ogó³ doskonale siê sprawdza w chwilach, gdy chcemy pojmaæ kogoœ nie robi¹c mu tym krzywdy, jednak z³odzieje upodobali sobie tê broñ ze wzglêdu na jej nikczemne zastosowanie.
+@115 = ~Nazywany równie¿ piêœciakiem. T³uk to ma³a skórzana sakiewka wype³niona piaskiem, œrutem, monetami lub jakimkolwiek ciê¿szym materia³em. U¿ywany do dyskretnego pozbawienia ofiary przytomnoœci poprzez uderzenie w g³owê lub w ty³ szyi. T³uk bardziej nadaje siê do miejskiego otoczenia ni¿ wyprawy czy pl¹drowanie lochów. Na ogó³ doskonale siê sprawdza w chwilach, gdy chcemy pojmaæ kogoœ, nie robi¹c mu tym krzywdy, jednak z³odzieje upodobali sobie tê broñ ze wzglêdu na jej nikczemne zastosowanie.
 
 PARAMETRY:
 
 Obra¿enia: 1k2
 Typ obra¿eñ: obuchowe (nie powoduj¹ œmierci)
 Specjalne:
- Jeœli uderzona t³ukiem ofiara straci punkty ¿ycia, traci przytomnoœæ zadaje obra¿enia, które nie powoduj¹ œmierci
+ Trafiona t³ukiem ofiara, której punkty ¿ycia spadn¹ do 0 lub poni¿ej, nie umiera, lecz zamiast tego traci przytomnoœæ
 Waga: 1
 OpóŸnienie: 2
 Rodzaj bieg³oœci: maczuga
@@ -481,8 +478,8 @@ Specjalne:
  +1 do Zrêcznoœci, kiedy kamieñ jest u¿ywany
 Waga: 2~
 
-@118 = ~Cz¹stka Oœwiecenia~
-@119 = ~Ten ciemnoniebieski kamieñ Ioun wygl¹da jakby jego kszta³t zosta³ starannie wypolerowany z bardziej surowej formy. Kr¹¿¹ pog³oski, ¿e dawniej by³ czêœci¹ kamienia zmys³ów Mirdivala Przebieg³ego, calimshañskiego nadwornego czarodzieja, który poœwiêci³ swe ¿ycie na szukaniu i tworzeniu magicznych artefaktów dla swojego Baszy. W trakcie wielu swych podró¿y, czarodziej studiowa³ i zaznajamia³ siê z ogromna liczb¹ zaklêtych przedmiotów i mistycznych obiektów. W obawie przed zapomnieniem wa¿nych szczegó³ów oraz z braku zaufania do trwa³oœci papieru, Mirdival regularnie zapisywa³ swe wspomnienia w kamieniu zmys³ów, który otrzyma³ od przemierzaj¹cego krainy kupca Ogniowego genasi. Niestety, jeden z jego eksperymentów nie powiód³ siê, a jego wie¿a zosta³a zniszczona w wyniku eksplozji. W chwili upadku wie¿y jego kamieñ zmys³ów roztrzaska³ siê na setki fragmentów. Niektóre po dziœ dzieñ przechowuj¹ niewielk¹ czêœæ wspomnieñ czarodzieja.
+@118 = ~Cz¹stka oœwiecenia~
+@119 = ~Ten ciemnoniebieski kamieñ Ioun wygl¹da, jakby jego kszta³t zosta³ starannie wypolerowany z bardziej surowej formy. Kr¹¿¹ pog³oski, ¿e dawniej by³ czêœci¹ kamienia zmys³ów Mirdivala Przebieg³ego, calishyckiego nadwornego czarodzieja, który poœwiêci³ swe ¿ycie na szukaniu i tworzeniu magicznych artefaktów dla swojego Paszy. Podczas wielu ze swych podró¿y czarodziej studiowa³ i zaznajamia³ siê z ogromn¹ liczb¹ zaklêtych przedmiotów i mistycznych obiektów. W obawie przed zapomnieniem wa¿nych szczegó³ów oraz z braku zaufania do trwa³oœci papieru Mirdival regularnie zapisywa³ swe wspomnienia w kamieniu zmys³ów, który otrzyma³ od przemierzaj¹cego krainy kupca Ogniowego genasi. Niestety, jeden z jego eksperymentów nie powiód³ siê, a jego wie¿a zosta³a zniszczona w wyniku eksplozji. W chwili upadku wie¿y jego kamieñ zmys³ów roztrzaska³ siê na setki fragmentów. Niektóre po dziœ dzieñ przechowuj¹ niewielk¹ czêœæ wspomnieñ czarodzieja.
 
 PARAMETRY:
 
@@ -492,7 +489,7 @@ Specjalne:
 Waga: 2~
 
 @120 = ~Trollostapiacz~
-@121 = ~W roku 1228 zima by³a wyj¹tkowo ciê¿ka dla osady nizio³ków niedaleko Lasu Shalebrook. Przez ostatnie lata nie by³o im ³atwo, na domiar z³ego zapasy ¿ywnoœci kurczy³y siê. Sytuacja jeszcze bardziej siê pogorszy³a wraz z najazdami trolli, które stawa³y siê coraz to czêstsze z powodu g³odu ogarniaj¹cego ca³y region. Pomimo niewielkiej iloœci, ich wielka si³a i odpornoœæ pozwoli³y trollom bezlitoœnie odebraæ nizio³kom resztki ¿ywnoœci. Ogromny apetyt trolli nie zosta³ jednak zaspokojony tak drobn¹ iloœci¹ po¿ywienia, wiêc zaczêli po¿ywiaæ siê zdrowszymi nizio³kami. Rozwœcieczony przywódca osady usi³owa³ wezwaæ pomoc, ale z powodu zasypanych œniegiem dróg i odciêtym przez las, w którym roi³o siê od trolli, ¿adne nag³e wsparcie nie mog³o nadejœæ. Pewnego ranka, gdy trolle porwali jego m³odsz¹ siostrê, m³ody ³otrzyk Lars Lekkostopy podj¹³ desperackie kroki. Tej samej nocy zebra³ w sobie odwagê i przedar³ siê przez las trolli. Ostatkiem si³ uda³o mu siê dotrzeæ do osady krasnoludów. B³aga³ ich o pomoc, ale z powodu nadchodz¹cego najazdu orków, krasnoludy nie mogli zaoferowaæ niczego z wyj¹tkiem broni i zasobów. Straci³ wszelk¹ nadziejê. Za³amany, Lars z³apa³ jedyn¹ broñ jak¹ potrafi³ w³adaæ, by³ to sztylet, po czym odszed³. Pani Tymora tego dnia uœmiechnê³a siê do niego, poniewa¿ nieumyœlnie wzi¹³ ze sob¹ ostrze, które wkrótce uratowa³o mu ¿ycie. Przedzieraj¹c siê przez las, g³oœne powarkiwanie zaprowadzi³o go do jaskini, w której spa³y trolle. Widok porozrzucanych dooko³a nadgryzionych koœci jego pobratymców przela³ czarê goryczy. Wbieg³szy bezmyœlnie do jaskini, Lars brutalnie wbi³ ostrze krasnoludzkiego sztyletu w najbli¿ej œpi¹cego trolla, myœlami by³ ju¿ przy swej ukochanej siostrze. Ku jego zdziwieniu, troll którego w³aœnie dŸgn¹³ zerwa³ siê, wrzeszcz¹c w agonii, gdy jego paskudne cielsko zaczê³o siê roztapiaæ i rozp³ywaæ w ka³u¿ê brei. Reszta trolli obudzi³a siê, ale widok ich rozp³ywaj¹cego siê kompana oraz odór kwasu wprowadzi³ ich w tak ogromny lêk, ¿e czym prêdzej uciekli, by ju¿ nigdy nie powróciæ do Lasu Shalebrook. Wci¹¿ zszokowany, Lars powoli zebra³ swe myœli i uwolni³ sw¹ siostrê wraz z pozosta³¹ grup¹ porwanych nizio³ków. Ostatecznie, Lars Lekkostopy zosta³ og³oszony Zbawicielem Shalebrook, a jego broni nadano imiê Trollostapiacza.
+@121 = ~W 1228 KD zima by³a wyj¹tkowo ciê¿ka dla osady nizio³ków niedaleko Lasu Shalebrook. Przez ostatnie lata nie by³o im ³atwo, na domiar z³ego zapasy ¿ywnoœci kurczy³y siê. Sytuacja pogorszy³a siê jeszcze bardziej wraz z najazdami trolli, które stawa³y siê coraz czêstsze z powodu g³odu ogarniaj¹cego ca³y region. Pomimo niewielkiej iloœci, wielka si³a i odpornoœæ pozwoli³y trollom bezlitoœnie odebraæ nizio³kom resztki ¿ywnoœci. Ogromny apetyt trolli nie zosta³ jednak zaspokojony tak drobn¹ iloœci¹ po¿ywienia, wiêc zaczêli po¿ywiaæ siê zdrowszymi nizio³kami. Rozwœcieczony przywódca osady usi³owa³ wezwaæ pomoc, ale z powodu zasypanych œniegiem dróg i odciêtym przez las, w którym roi³o siê od trolli, ¿adne nag³e wsparcie nie mog³o nadejœæ. Pewnego ranka, gdy trolle porwali jego m³odsz¹ siostrê, m³ody ³otrzyk Lars Lekkostopy podj¹³ desperackie kroki. Tej samej nocy zebra³ w sobie odwagê i przedar³ siê przez las trolli. Ostatkiem si³ uda³o mu siê dotrzeæ do osady krasnoludów. B³aga³ ich o pomoc, ale z powodu nadchodz¹cego najazdu orków, krasnoludy nie mogli zaoferowaæ niczego z wyj¹tkiem broni i zasobów. Straci³ wszelk¹ nadziejê. Za³amany, Lars z³apa³ za sztylet, jedyn¹ broñ, jak¹ potrafi³ w³adaæ, po czym odszed³. Pani Tymora uœmiechnê³a siê tego dnia do niego, poniewa¿ nieumyœlnie wzi¹³ ze sob¹ ostrze, które wkrótce uratowa³o mu ¿ycie. Przedzieraj¹c siê przez las, g³oœne powarkiwanie doprowadzi³o go do jaskini, w której spa³y trolle. Widok porozrzucanych dooko³a nadgryzionych koœci jego pobratymców przela³ czarê goryczy. Wbieg³szy bezmyœlnie do jaskini, Lars wbi³ brutalnie ostrze krasnoludzkiego sztyletu w najbli¿ej œpi¹cego trolla, myœlami bêd¹c ju¿ przy swej ukochanej siostrze. Ku jego zdziwieniu, troll, którego w³aœnie dŸgn¹³, zerwa³ siê, wrzeszcz¹c w agonii, gdy jego paskudne cielsko zaczê³o siê roztapiaæ i rozp³ywaæ w ka³u¿ê brei. Reszta trolli obudzi³a siê, ale widok ich rozp³ywaj¹cego siê kompana oraz odór kwasu wprowadzi³ ich w tak ogromny lêk, ¿e czym prêdzej uciekli, by ju¿ nigdy nie powróciæ do Lasu Shalebrook. Wci¹¿ zszokowany, Lars powoli zebra³ swe myœli i uwolni³ sw¹ siostrê wraz z pozosta³¹ grup¹ porwanych nizio³ków. Ostatecznie Lars Lekkostopy zosta³ og³oszony Zbawicielem Shalebrook, a jego broni nadano imiê Trollostapiacza.
 
 PARAMETRY:
 
@@ -509,7 +506,7 @@ Nie mo¿e u¿ywaæ:
  Kap³an~
 
 @122 = ~Srebrny p³omieñ~
-@123 = ~Sztylet ten zosta³ wykuty z najczystszego srebra i pob³ogos³awiony przez Sehanine Ksiê¿ycowy £uk, elfi¹ boginiê ksiê¿yca. Jego ostrze jest niezwykle skuteczne w walce z wampirami, jako ¿e zosta³ zaklêty tak, by przekazywaæ choæby najmniejsza cz¹stkê mocy ze sfery pozytywnej energii. Ka¿dego dnia broñ ta gromadzi niewielkie iloœci pozytywnej energii. Mo¿na je póŸniej wykorzystaæ jako tarczê przeciw wysysaj¹cym dusze szponom wampira. Dodatkowo ka¿dy wampir trafiony tym¿e sztyletem mo¿e zostaæ og³uszony na skutek zgromadzonej w nim energii.
+@123 = ~Sztylet ten zosta³ wykuty z najczystszego srebra i pob³ogos³awiony przez Sehanine Ksiê¿ycowy £uk, elfi¹ boginiê ksiê¿yca. Jego ostrze jest niezwykle skuteczne w walce z wampirami, jako ¿e zosta³ zaklêty tak, by przekazywaæ choæby najmniejsz¹ cz¹stkê mocy ze sfery pozytywnej energii. Ka¿dego dnia broñ ta gromadzi niewielkie iloœci pozytywnej energii. Mo¿na je póŸniej wykorzystaæ jako tarczê przeciw wysysaj¹cym dusze szponom wampira. Dodatkowo ka¿dy wampir trafiony tym¿e sztyletem mo¿e zostaæ og³uszony na skutek zgromadzonej w nim energii.
 
 PARAMETRY:
 
@@ -517,7 +514,7 @@ Obra¿enia: 1K4 +3, +5 przeciwko wampirom
 TraK0: +3, +5 przeciwko wampirom
 Typ obra¿eñ: k³ute
 Specjalne:
- Ochrona przed negatywn¹ energi¹ 3 razy dziennie
+ Ochrona przed negatywn¹ energi¹, 3 razy dziennie
  15% szans, ¿e ka¿dy wampir zostanie og³uszony na 2 rundy
 Waga: 1
 OpóŸnienie: 0
@@ -528,7 +525,7 @@ Nie mo¿e u¿ywaæ:
  Kap³an~
 
 @124 = ~Siewca zarazy~
-@125 = ~Na pierwszy rzut oka ten niedok³adnie wykonany, pokryty rdz¹ sztylet jest raczej kiepskim wyborem na broñ. Dopiero gobliñskie runy wyryte na ostrzu zdradzaj¹ nieco jego mocy i historii. Broñ ta najwyraŸniej s³u¿y³a jako narzêdzie tortur potê¿nego gobliñskiego szamana Sharnuka, który ponad wszystko pragn¹³ zg³êbiaæ sw¹ magiczn¹ wiedzê. Plemiê Sharnuka czêsto porywa³o samotnie podró¿uj¹cych magów, by potem wyci¹gn¹æ z nich ich wszystkie sekrety. W czasie przes³uchania, Sharnuk skrupulatnie nak³uwa³ swoje ofiary, dopóki nie os³abi³y ich magiczne dolegliwoœci albo z powodu du¿ej iloœci utraconej krwi nie zaczêli majaczyæ. W takim stanie z ³atwoœci¹ móg³ wysysaæ wiedzê z umys³ów czarodziei. Gdy ju¿ stwierdzi³, ¿e ma ju¿ wystarczaj¹c¹ potêgê, Sharnuk zaprowadzi³ swoje plemiê i najecha³ poblisk¹ osadê gnomów. Szczêœcie, niestety, mu nie dopisa³o, jako ¿e ca³a jego kohorta zosta³a doszczêtnie spalona przez jego pierwsz¹ próbê rzucenia Ognistej kuli.
+@125 = ~Na pierwszy rzut oka ten niedok³adnie wykonany, pokryty rdz¹ sztylet jest raczej kiepskim wyborem na broñ. Dopiero gobliñskie runy wyryte na ostrzu zdradzaj¹ nieco jego mocy i historii. Broñ ta najwyraŸniej s³u¿y³a jako narzêdzie tortur potê¿nego gobliñskiego szamana Sharnuka, który ponad wszystko pragn¹³ zg³êbiaæ sw¹ magiczn¹ wiedzê. Plemiê Sharnuka czêsto porywa³o samotnie podró¿uj¹cych magów, by potem wyci¹gn¹æ z nich ich wszystkie sekrety. W czasie przes³uchania Sharnuk skrupulatnie nak³uwa³ swoje ofiary, dopóki nie os³abi³y ich magiczne dolegliwoœci albo z powodu du¿ej iloœci utraconej krwi nie zaczêli majaczyæ. W takim stanie z ³atwoœci¹ móg³ wysysaæ wiedzê z umys³ów czarodziei. Gdy ju¿ stwierdzi³, ¿e ma ju¿ wystarczaj¹c¹ potêgê, Sharnuk zaprowadzi³ swoje plemiê i najecha³ poblisk¹ osadê gnomów. Szczêœcie, niestety, mu nie dopisa³o, jako ¿e ca³a jego kohorta zosta³a doszczêtnie spalona przez jego pierwsz¹ próbê rzucenia Ognistej kuli.
 
 PARAMETRY:
 
@@ -571,7 +568,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @128 = ~Pazur Czarnego Kota~
-@129 = ~Zawód ninja jest bardzo wszechstronny, niektórzy to zdolni zabójcy inni zaœ góruj¹ w umiejêtnoœci skradania i kradzie¿y. W³aœcicielka tego ostrza nale¿a³a zdecydowanie do tej drugiej grupy. Jej prawdziwe imiê pozostaje tajemnic¹, znana jednak by³a jako Czarny Kot, nies³awna z³odziejka s³yn¹ca ze zdobywania rzadkich towarów dla, i od wy¿szej klasy obywateli Kara-Tur. Nie by³o niczym niezwyk³ym, gdy ukrad³a wartoœciowy klejnot z kolekcji jakiegoœ szlachcica, by póŸniej sprzedaæ go innemu arystokracie, a na koniec ukraœæ go ponownie dla samej przyjemnoœci kradzie¿y. Za jej intrygi Czarny Kot by³ œcigany przez wielu wojowników z Kara-Tur, ale dziêki po³¹czeniu jej szczêœcia z nadzwyczajnymi zdolnoœciami akrobacji udawa³o jej siê zawsze unikaæ poœcigu. Zgodnie z opowieœci¹, ostatecznie zakocha³a siê w szczególnie upartym samuraju, z którym opuœci³a kraj oraz jej dotychczasowe ¿ycie.
+@129 = ~Zawód ninja jest bardzo wszechstronny, niektórzy to zdolni zabójcy inni zaœ góruj¹ w umiejêtnoœci skradania i kradzie¿y. W³aœcicielka tego ostrza nale¿a³a zdecydowanie do tej drugiej grupy. Jej prawdziwe imiê pozostaje tajemnic¹, znana jednak by³a jako Czarny Kot, nies³awna z³odziejka s³yn¹ca ze zdobywania rzadkich towarów dla i od obywateli Kara-Tur z wy¿szych sfer. Nie by³o niczym niezwyk³ym, gdy ukrad³a wartoœciowy klejnot z kolekcji jakiegoœ szlachcica, by póŸniej sprzedaæ go innemu arystokracie, a na koniec ukraœæ go ponownie dla samej przyjemnoœci kradzie¿y. Za jej intrygi Czarny Kot by³ œcigany przez wielu wojowników z Kara-Tur, ale dziêki po³¹czeniu jej szczêœcia z nadzwyczajnymi zdolnoœciami akrobacji udawa³o jej siê zawsze unikaæ poœcigu. Zgodnie z opowieœci¹, ostatecznie zakocha³a siê w szczególnie upartym samuraju, z którym opuœci³a kraj oraz jej dotychczasowe ¿ycie.
 
 PARAMETRY:
 
@@ -591,7 +588,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @130 = ~Kruszyska³a~
-@131 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ "¿ywe statuy" w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
+@131 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ „¿ywe statuy” w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
 
 PARAMETRY:
 
@@ -609,7 +606,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @132 = ~Ptasi obroñca~
-@133 = ~Ten ceremonialny puklerz zdobiony jest magicznymi runami, które powszechnie zwi¹zane s¹ z Gaerdalem ¯elazn¹ D³oni¹, gnomim bóstwem czujnoœci i najbardziej bojowym patronem z panteonu gnomów. Szacunek zawdziêcza swej powa¿nej naturze, uczy³ bowiem gnomy jak walczyæ z wiêkszymi od siebie wykorzystuj¹c swoj¹ ma³¹ posturê i naturalne zdolnoœci na sw¹ korzyœæ. Gaerdal mia³ ma³¹, ale gorliw¹ grupkê wyznawców spoœród gnomich wojowników i tych odpowiedzialnych za eliminowanie zewnêtrznego zagro¿enia. Tym samym zdoby³ sobie szacunek Zapomnianego Ludu.
+@133 = ~Ten ceremonialny puklerz zdobiony jest magicznymi runami, które powszechnie zwi¹zane s¹ z Gaerdalem ¯elazn¹ D³oni¹, gnomim bóstwem czujnoœci i najbardziej bojowym patronem z panteonu gnomów. Szacunek zawdziêcza swej powa¿nej naturze, uczy³ bowiem gnomy, jak walczyæ z wiêkszymi od siebie wykorzystuj¹c na sw¹ korzyœæ ma³¹ posturê i naturalne zdolnoœci. Gaerdal mia³ ma³¹, ale gorliw¹ grupkê wyznawców poœród gnomich wojowników oraz tych, którzy byli odpowiedzialni za eliminowanie zagro¿eñ z zewn¹trz. Zdoby³ sobie tym samym szacunek Zapomnianego Ludu.
 
 PARAMETRY:
 
@@ -623,7 +620,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @134 = ~Solidna os³ona~
-@135 = ~Tego rodzaju poœwiêcone puklerze czêsto stosowane s¹ przez wysokich kap³anów oraz stra¿ników œwi¹tyni Moradina, stwórcy krasnoludzkiej rasy. Kowal Dusz jest ucieleœnieniem potêgi oraz silnej woli, a ka¿da broñ, pancerz oraz narzêdzie jest przed³u¿eniem jego boskiego wcielenia. Zaklêcia zawarte w tej tarczy obdarzaj¹ b³ogos³awieñstwem Moradina ka¿dego, kto j¹ dzier¿y, prowadz¹c jego broñ do pewnego uderzenia i ochrony przez wszelkimi urazami. Wiele takich puklerzy zaginê³o podczas bitwy w G³êbi Dorna po tym, jak naje¿d¿aj¹ce orki zniszczy³y i spl¹drowa³y potê¿n¹ twierdzê krasnoludów.
+@135 = ~Tego rodzaju poœwiêcone puklerze stosowane s¹ czêsto przez wysokich kap³anów oraz stra¿ników œwi¹tyni Moradina, stwórcy krasnoludzkiej rasy. Kowal Dusz jest ucieleœnieniem potêgi oraz silnej woli, a ka¿da broñ, pancerz oraz narzêdzie jest przed³u¿eniem jego boskiego wcielenia. Zaklêcia zawarte w tej tarczy obdarzaj¹ b³ogos³awieñstwem Moradina ka¿dego, kto j¹ dzier¿y, prowadz¹c jego broñ do pewnego uderzenia i ochrony przez wszelkimi urazami. Wiele takich puklerzy zaginê³o podczas bitwy w G³êbi Dorna po tym, jak naje¿d¿aj¹ce orki zniszczy³y i spl¹drowa³y potê¿n¹ twierdzê krasnoludów.
 
 PARAMETRY:
 
@@ -649,17 +646,17 @@ Mo¿e u¿ywaæ:
  Z³odziej~
 
 @138 = ~Szafir trojga dusz~
-@139 = ~Akram Maluzar by³ nies³awnym zhentarimskim czarodziejem, obsesyjnie zg³êbiaj¹cym tajemnice staro¿ytnego Nethrilu. W trakcie wielu swych podró¿y po Wielkim Pustkowiu, trafi³ na system jaskiñ, które jak twierdzi³, by³y czêœci¹ Netherilskiego miasta. Jego entuzjazm jednak opad³, gdy okaza³o siê, ¿e poza solidnymi drzwiami w ruinach a¿ roi siê od iluzji i zabójczych pu³apek. Mo¿liwoœæ przekroczenia wszystkich przeszkód by³a poza zdolnoœciami Akrama, który w akcie desperacji podj¹³ nierozwa¿ne kroki. Nie chc¹c siê z nikim podzieliæ potêg¹ Nethrilian, zdecydowa³ siê skraœæ od innych wszystkie umiejêtnoœci, których sam nie posiada³. Obiecuj¹c œwietny udzia³ w zyskach, Akram wynaj¹³ trzech Calimshañskich z³odziei - eksperta od wytrychów, mistrza pu³apek oraz bystrego zwiadowcê. Zamiast wys³aæ ich do staro¿ytnego miasta, Akram oszuka³ z³odziei i uwiêzi³ ich wewn¹trz szafirowego kamienia Ioun, nasycaj¹c w ten sposób kamieñ umiejêtnoœciami, których po¿¹da³. Zabieg zakoñczy³ siê sukcesem i przez pewien czas udawa³o mu siê pokonywaæ przeszkody bez wiêkszego trudu. W koñcu, dusze uwiêzionych z³odziei wewn¹trz kamienia Ioun zaczê³y siê buntowaæ i powoli wysysa³y zdrowie z cia³a czarodzieja, by przej¹æ jego cia³o dla siebie. Kierowany ¿¹dz¹ potêgi Akram nie zwraca³ na to szczególnej uwagi, dopóki nie by³o za póŸno. Potwornie wyczerpany, upad³ tu¿ przed Nethriliañsk¹ bibliotek¹ i przez przypadek uruchomi³ pu³apkê, która zawalaj¹c jaskinie odebra³a mu ¿ycie. Cenny kamieñ Ioun Akrama zosta³ póŸniej odnaleziony przez wêdruj¹cy szczep koboldów, twierdz¹c ¿e to zwyczajny klejnot, wymienili go na zapasy.
+@139 = ~Akram Maluzar by³ nies³awnym zhentarimskim czarodziejem, obsesyjnie zg³êbiaj¹cym tajemnice staro¿ytnego Nethrilu. W trakcie wielu swych podró¿y po Wielkim Pustkowiu trafi³ na system jaskiñ, które jak twierdzi³, by³y czêœci¹ netheryjskiego miasta. Jego entuzjazm opad³ jednak gdy okaza³o siê, ¿e poza solidnymi drzwiami w ruinach a¿ roi siê od iluzji i zabójczych pu³apek. Mo¿liwoœæ przekroczenia wszystkich przeszkód by³a poza zasiêgiem Akrama, który w akcie desperacji podj¹³ nierozwa¿ne kroki. Nie chc¹c dzieliæ siê z nikim potêg¹ Netheryjczyków, zdecydowa³ siê skraœæ innym wszystkie umiejêtnoœci, których sam nie posiada³. Obiecuj¹c œwietny udzia³ w zyskach, Akram wynaj¹³ trzech calishyckich z³odziei – eksperta od wytrychów, mistrza pu³apek oraz bystrego zwiadowcê. Zamiast wys³aæ ich do staro¿ytnego miasta, Akram oszuka³ z³odziei i uwiêzi³ ich wewn¹trz szafirowego kamienia Ioun, nasycaj¹c go w ten sposób umiejêtnoœciami, których sam po¿¹da³. Zabieg zakoñczy³ siê sukcesem i przez pewien czas udawa³o mu siê bez wiêkszego wysi³ku pokonywaæ wszelkie przeszkody. W koñcu, dusze uwiêzionych wewn¹trz kamienia Ioun z³odziei zaczê³y siê buntowaæ i wysysaæ powoli zdrowie z cia³a czarodzieja, z zamiarem przejêcia jego cia³o dla siebie. Kierowany ¿¹dz¹ potêgi Akram nie zwraca³ na to szczególnej uwagi, dopóki nie by³o zbyt póŸno. Potwornie wyczerpany, upad³ tu¿ przed netheryjsk¹ bibliotek¹ i przez przypadek uruchomi³ pu³apkê, która zawalaj¹c jaskiniê, odebra³a mu ¿ycie. Cenny kamieñ Ioun, bêd¹cy w³asnoœci¹ Akrama, zosta³ póŸniej odnaleziony przez wêdruj¹cy szczep koboldów, którzy twierdz¹c, ¿e to zwyczajny klejnot, wymienili go na zapasy.
 
-Uwaga: W celu pozyskania wiedzy w nim zawartej, w³aœciciel musi wrêcz zanurzyæ siê w œwiadomoœæ uwiêzionych w nim dusz. Proces ten mo¿e byæ bardzo obci¹¿aj¹cy. Im wiêcej siê go u¿ywa, tym coraz to wiêksze zmêczenie ogarnia w³aœciciela. Jedyny sposobem na usuniêcie zmêczenia jest ca³onocny odpoczynek.
+Uwaga: W celu pozyskania zawartej w kamieniu wiedzy, w³aœciciel musi wrêcz zanurzyæ siê w œwiadomoœæ uwiêzionych w nim dusz. Proces ten mo¿e byæ bardzo obci¹¿aj¹cy. Im wiêcej siê go u¿ywa, tym coraz ogarniaj¹ce w³aœciciela zmêczenie jest coraz wiêksze. Jedynym sposobem na zniwelowanie zmêczenia jest ca³onocny odpoczynek.
 
 PARAMETRY:
 
 Specjalne:
- Szukanie pu³apek, Otwarcie i Ujawnianie niewidzialnych 3 razy dziennie~
+ Szukanie pu³apek, Otwarcie i Ujawnienie niewidzialnych, 3 razy dziennie~
 
 @140 = ~Kaptur ostro¿noœci~
-@141 = ~Niegdyœ cenna w³asnoœæ Gildii z³odziei Xanathara, ten pozornie wygl¹daj¹cy kaptur zosta³ potraktowany magi¹ w celu poprawienia bystroœci i percepcji ka¿dego, kto go za³o¿y. Zaginiony podczas najazdu na handlarzy niewolników Xanathara w Skullporcie, kaptur pojawi³ siê niedawno w Calimporcie i pokona³ d³ug¹ drogê a¿ do Athkatli razem z wielk¹ karawan¹ nale¿¹c¹ do kompanii handlowej Syberytów.
+@141 = ~Niegdyœ cenna w³asnoœæ Gildii z³odziei Xanathara, ten pozornie wygl¹daj¹cy kaptur zosta³ potraktowany magi¹ w celu poprawienia bystroœci i percepcji ka¿dego, kto go za³o¿y. Zaginiony podczas najazdu na handlarzy niewolników Xanathara w mieœcie Skullport, kaptur pojawi³ siê niedawno w Calimporcie i pokona³ d³ug¹ drogê a¿ do Athkatli razem z wielk¹ karawan¹ nale¿¹c¹ do kompanii handlowej Syberytów.
 
 PARAMETRY:
 
@@ -667,14 +664,14 @@ Specjalne:
  Chroni przed trafieniami krytycznymi
  +15% do Wykrywania pu³apek
  Infrawizja
- Odpornoœæ na oœlepienie
+ Odpornoœæ na wszelkie formy œlepoty
 Mo¿e u¿ywaæ:
  Z³odziej
  Mnich~
 
 @142 = ~Harfa Greagana~
 @143 = ~Harfa Greagana: Pojmana widownia
-Ta œwietnie wykonana harfa jest powszechnie znana poœród ludu nomadów ze wschodu, bardziej jednak ze wzglêdu na jej w³aœciciela, Greagana z Niskich Wzgórz. By³ bardem, w pewnym sensie, bardziej znanym z jego umi³owania do ludzi ni¿ do ciê¿kiej pracy. Rozkaza³ magowi skonstruowaæ tê harfê, by jej magiczne moce ukry³y jego brak talentu. Moc jej by³a jednak du¿o wiêksza ni¿ siê tego spodziewa³, sprowadzaj¹c go na œcie¿kê kradzie¿y u¿ywa³ "swej" muzyki do zniewolenia jego ofiar. Greagan ostatecznie znikn¹³ kilka lat temu pod¹¿aj¹c za pog³oskami o szkole bardów wyj¹tkowo sk³onnej do przemocy. Harfa wci¹¿ dzia³a, jednak ka¿dy szanuj¹cy siê trubadur wola³by wstrzymaæ siê z jej u¿yciem dopóki nie bêdzie to konieczne.
+Ta œwietnie wykonana harfa jest powszechnie znana poœród ludu nomadów ze wschodu, bardziej jednak ze wzglêdu na jej w³aœciciela, Greagana z Niskich Wzgórz. By³ bardem, w pewnym sensie, bardziej znanym z jego umi³owania do ludzi ni¿ do ciê¿kiej pracy. Rozkaza³ magowi skonstruowaæ tê harfê, by jej magiczne moce ukry³y jego brak talentu. Jej moc by³a jednak du¿o wiêksza, ni¿ siê spodziewa³, a on sam wykorzystywa³ j¹ do zwyk³ych kradzie¿y, u¿ywaj¹c „swojej” muzyki do niewolenia ofiar. Greagan znikn¹³ ostatecznie kilka lat temu, pod¹¿aj¹c za pog³oskami o szkole bardów znanej z niecodziennej sk³onnoœci do przemocy. Harfa wci¹¿ dzia³a, jednak ka¿dy szanuj¹cy siê trubadur wola³by wstrzymaæ siê z jej u¿yciem, dopóki nie bêdzie to konieczne.
 
 PARAMETRY:
 
@@ -685,7 +682,7 @@ Mo¿e u¿ywaæ:
  Bard~
 
 @144 = ~Harfa dyszkantu~
-@145 = ~Lady Laxaella Bronshield, burmistrz Tanistanu, kaza³a stworzyæ tê harfê dla jej nadwornego b³azna zanim wys³a³a go, wraz kompani¹ jej najlepszych ¿o³nierzy, by rozprawi³ siê z plaga Umbrowych kolosów w Ciernistym lesie. Na pocz¹tku ¿o³nierze byli zaskoczeni, ¿e b³azen ma im towarzyszyæ w tym zadaniu, lekko wyœmiewaj¹c siê z jego mizernej budowy cia³a i jego pozornej g³upoty, ale gdy natrafili na pierwszego Umbrowego kolosa, zrozumieli prawdziwe znaczenie jego osoby. Ku ich zaskoczeniu, b³azen by³ ca³kowicie odporny na potworne spojrzenie Umbrowego kolosa, który wczeœniej zamieni³ jednego z niez³omnych ¿o³nierzy w bezmyœlnego idiotê. Co wiêcej, dziwaczny dŸwiêk dochodz¹cy z harfy zdawa³ siê przeciwdzia³aæ spojrzeniu bestii, przywracaj¹c rozs¹dek cierpi¹cego ¿o³nierza. W koñcu uda³o siê oczyœciæ las z Umbrowych kolosów bez ¿adnych strat w ludziach i tylko z kilkoma obra¿eniami. Podczas powrotu do domu, ¿o³nierze nieœli b³azna na swych ramionach, przez ca³y czas skanduj¹c na jego czeœæ.
+@145 = ~Lady Laxaella Bronshield, burmistrz Tanistanu, kaza³a stworzyæ tê harfê dla jej nadwornego b³azna, zanim wys³a³a go, wraz z kompani¹ jej najlepszych ¿o³nierzy, by rozprawi³ siê z plag¹ umbrowych kolosów w Ciernistym Lesie. Z pocz¹tku ¿o³nierze byli zaskoczeni, i¿ b³azen ma im towarzyszyæ w tym zadaniu, wyœmiewaj¹c siê lekko z jego mizernej budowy cia³a i pozornej g³upoty, ale gdy natrafili na pierwszego umbrowego kolosa, zrozumieli prawdziwe znaczenie jego roli. Ku ich zaskoczeniu, b³azen by³ ca³kowicie niewra¿liwy na potworne spojrzenie umbrowego kolosa, który chwilê wczeœniej zamieni³ jednego z niez³omnych ¿o³nierzy w bezmyœlnego idiotê. Co wiêcej, dziwaczny dŸwiêk dochodz¹cy z harfy zdawa³ siê przeciwdzia³aæ spojrzeniu bestii, przywracaj¹c rozs¹dek cierpi¹cemu ¿o³nierzowi. W koñcu uda³o siê oczyœciæ las z umbrowych kolosów bez ¿adnych strat w ludziach i tylko z kilkoma obra¿eniami. Podczas powrotu do domu, ¿o³nierze nieœli b³azna na ramionach, przez ca³y czas skanduj¹c na jego czeœæ.
 
 PARAMETRY:
 
@@ -696,7 +693,7 @@ Mo¿e u¿ywaæ:
  Bard~
 
 @146 = ~Sztylet rozs¹dku~
-@147 = ~Gor¹ce, niczym z lawy runy wyryte na ostrzu tego sztyletu wskazuj¹ na to, ¿e zosta³ wykuty w Thay, prawdopodobnie dla wysoko postawionego cz³onka frakcji badaczy. Choæ ostrze mo¿e byæ u¿ywane przez ka¿dego, tylko ci biegli w sztukach tajemnych potrafi¹ wydobyæ jego prawdziwy potencja³. Ta niewielkich rozmiarów broñ wydaje siê byæ nasycona zaklêciem wyostrzaj¹cym umys³ dzier¿¹cej go osoby, zwiêkszaj¹c zdolnoœæ zapamiêtywania czarodzieja.
+@147 = ~Gor¹ce, niczym lawa runy wyryte na ostrzu tego sztyletu wskazuj¹ na to, ¿e zosta³ on wykuty w Thay, prawdopodobnie dla wysoko postawionego cz³onka frakcji badaczy. Choæ ostrze mo¿e byæ u¿ywane przez ka¿dego, tylko biegli w sztukach tajemnych potrafi¹ wydobyæ jego prawdziwy potencja³. Ta niewielkich rozmiarów broñ wydaje byæ nasycona zaklêciem wyostrzaj¹cym umys³ dzier¿¹cej go osoby, zwiêkszaj¹c zdolnoœæ zapamiêtywania czarów przez czarodziejów.
 
 PARAMETRY:
 
@@ -910,7 +907,7 @@ Otrzyma³em dziœ nowe rozkazy. Moim zadaniem jest obserwowaæ sam¹ Pani¹ Wampirów.
 
 
 @200 = ~Miniona chwa³a~
-@201 = ~Przez wiele pokoleñ tarcza ta by³a przekazywana wybranym Najwy¿szym Jurystom Amaunatora, którzy przyjmowali na siebie obowi¹zek oczyszczania krain z wszelkich nieumar³ych. Po znikniêciu Amaunatora i upadku Twierdzy wiekuistego s³oñca, olœniewaj¹ce z³otem wykoñczenia tarczy wyp³owia³y, a spowijaj¹ce j¹ potê¿ne zaklêcia uleg³y roz³o¿eniu. W koñcu, ten niegdyœ potê¿ny artefakt, zosta³ sprowadzony do roli ozdoby naœciennej. wraz z up³ywem czasu wœród wyznawców Amaunatora powoli zapanowa³a dezorganizacja i zaczêli siê rozpraszaæ. Ta tarcza zosta³a ostatnio skradziona wraz z wieloma innymi pozosta³oœciami z jednej z ich œwi¹tyñ.
+@201 = ~Przez wiele pokoleñ tarcza ta by³a przekazywana wybranym Najwy¿szym Jurystom Amaunatora, którzy przyjmowali na siebie obowi¹zek oczyszczania krain z wszelkich nieumar³ych. Po znikniêciu Amaunatora i upadku Twierdzy wiekuistego s³oñca olœniewaj¹ce z³otem wykoñczenia tarczy wyp³owia³y, a spowijaj¹ce j¹ potê¿ne zaklêcia uleg³y roz³o¿eniu. W koñcu ten niegdyœ potê¿ny artefakt zosta³ sprowadzony do roli ozdoby naœciennej. Wraz z up³ywem czasu wœród wyznawców Amaunatora zapanowa³a powoli dezorganizacja i zaczêli siê oni rozpraszaæ. Tarcza ta zosta³a ostatnio skradziona wraz z wieloma innymi pozosta³oœciami z jednej z ich œwi¹tyñ.
 
 PARAMETRY:
 
@@ -925,7 +922,7 @@ Nie mo¿e u¿ywaæ:
 
 
 @202 = ~Amulet bariery~
-@203 = ~Ten potê¿ny amulet zosta³ wykonany w 727 roku KD przez mistrza zauroczeñ Celemona z Calimportu, który zdo³a³ przygotowaæ dziesiêæ podobnych artefaktów, zanim zosta³ zabity przez zawistnych rywali, którzy potem próbowali odkryæ tajniki procesu tworzenia amuletów. Niestety, nie byli oni równie utalentowani jak Celemon, dlatego w wyniku pope³nionej pomy³ki spowodowali wybuch, zabijaj¹c siebie samych i niszcz¹c przy tym laboratorium mistrza razem z tajemn¹ formu³¹. Ten egzemplarz amuletu nale¿a³ do elfiego maga-wojownika o imieniu Pelan Rainwind. Zagin¹³ oko³o 840 roku KD, kiedy jego w³aœciciel poleg³ z r¹k olbrzymów w górach Grzbiet Œwiata.
+@203 = ~Ten potê¿ny amulet zosta³ wykonany w roku 727 KD przez mistrza zauroczeñ Celemona z Calimportu. Zdo³a³ on przygotowaæ dziesiêæ podobnych artefaktów, nim zosta³ zabity przez zawistnych rywali, którzy próbowali nastêpnie odkryæ tajniki procesu tworzenia amuletów. Niestety, nie byli oni równie utalentowani, jak Celemon, dlatego w wyniku pope³nionej pomy³ki spowodowali wybuch, zabijaj¹c samych siebie i niszcz¹c przy tym laboratorium mistrza razem z tajemn¹ formu³¹. Ten egzemplarz amuletu nale¿a³ do elfiego maga-wojownika o imieniu Pelan Rainwind. Zagin¹³ oko³o roku 840 KD, kiedy jego w³aœciciel poleg³ z r¹k olbrzymów w górach Grzbietu Œwiata.
 
 PARAMETRY:
 
@@ -934,18 +931,18 @@ Specjalne:
 Mo¿e u¿ywaæ:
  Mag~
 
-@204 = ~Buty Lisa~
-@205 = ~Te jaskrawo czerwone i zielone buty mia³ na swych nogach rzezimieszek Elpham z Perrywine. Elpham by³ kieszonkowcem o wyj¹tkowych uzdolnieniach, który kusi³ los, szydz¹c i naigrawaj¹c siê ze swych ofiar wkrótce po tym, jak je obrabowa³. Kiedy zosta³ dwukrotnie z³apany, postanowi³ zainwestowaæ pieni¹dze w te w³aœnie buty. Naturalnie zmar³ przedwczeœnie, kiedy okrad³ znanego ze swej porywczoœci Czerwonego Maga z Thay, Xaina Morobdela. Elpham skrad³ sakiewkê pe³n¹ klejnotów wprost z pasa Xaina i odp³yn¹³ w t³um krzycz¹c: "A mo¿e bêdziesz mnie goni³ a¿ do Priador, ³ysa pa³o? Cha, cha!" Xain, dusz¹c w sobie wœciek³oœæ, natychmiast wezwa³ czterech niewidzialnych myœliwych i rozkaza³ im zabiæ tego idiotê w czerwono-zielonych butach."
+@204 = ~Buty lisa~
+@205 = ~Te jaskrawo czerwone i zielone buty mia³ na swych nogach rzezimieszek Elpham z Perrywine. Elpham by³ kieszonkowcem o wyj¹tkowych uzdolnieniach, który kusi³ los, szydz¹c i naigrawaj¹c siê ze swych ofiar wkrótce po tym, jak je obrabowa³. Kiedy zosta³ dwukrotnie z³apany, postanowi³ zainwestowaæ pieni¹dze w te w³aœnie buty. Naturalnie zmar³ przedwczeœnie, kiedy okrad³ znanego ze swej porywczoœci Czerwonego Maga z Thay, Xaina Morobdela. Elpham skrad³ sakiewkê pe³n¹ klejnotów wprost z pasa Xaina i odp³yn¹³ w t³um, krzycz¹c: „A mo¿e bêdziesz mnie goni³ a¿ do Priador, ³ysa pa³o? Cha, cha!” Xain, dusz¹c w sobie wœciek³oœæ, natychmiast wezwa³ czterech niewidzialnych myœliwych i rozkaza³ im zabiæ tego idiotê w czerwono-zielonych butach.
 
 PARAMETRY:
 
 Specjalne:
- +40% do szybkoœci
+ Zwiêkszona prêdkoœæ poruszania siê
  +1 do Klasy Pancerza
 Waga: 4~
 
 @206 = ~Topór wy³adowañ~
-@207 = ~Ten doskonale wykonany topór posiada zaklêcie niezwyk³ego pochodzenia. Natychmiast po stworzeniu zosta³ wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kap³ani oczekiwali na potê¿n¹ nawa³nicê, by siê zgromadziæ. Broñ zosta³a umieszczona na ¿elaznym piedestale i wkrótce potem trafiona gromem. Dziêki umieszczonemu w niej wczeœniej zaklêciu wch³onê³a nieco z w³aœciwoœci pioruna. Nastêpnie zosta³a ofiarowana najwy¿szemu rang¹ krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach miêdzy hordami orków a kransoludami z G³êbi Dorna. Atak, który nadszed³, by³ ca³kowicie nieoczekiwany. Pewnego ranka przyby³ zwiadowca z wieœci¹, ¿e najwiêksza armia orków, jak¹ kiedykolwiek widzia³, jest tylko kilka godzin drogi st¹d. Po krótkim czasie zu¿ytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczê³o wlewaæ siê do G³êbi. Krasnoludy zosta³y zmuszone do wycofania siê w g³¹b swej cytadeli, jednak zdo³a³y zawaliæ kluczowe przejœcia, by ukryæ swe ruchy i zyskaæ na czasie. Nawet w tak niesprzyjaj¹cych okolicznoœciach, pozwoli³o to krasnoludom wybieraæ miejsce i czas staræ. Poniewa¿ walczy³y na swoich warunkach, ka¿da bitwa by³a drogo op³acana przez orki. Mimo to krasnoludy wci¹¿ musia³y siê cofaæ dalej i dalej wg³¹b Lodowca Z¹b Wielkiego Gada. W koñcu dziêki swojej olbrzymiej przewadze liczebnej, orki zdo³a³y prze³amaæ krasnoludzk¹ obronê i spl¹drowaæ ich domostwo.
+@207 = ~Ten doskonale wykonany topór posiada zaklêcie niezwyk³ego pochodzenia. Natychmiast po stworzeniu zosta³ wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kap³ani oczekiwali na potê¿n¹ nawa³nicê, by siê zgromadziæ. Broñ zosta³a umieszczona na ¿elaznym piedestale i wkrótce potem trafiona gromem. Dziêki umieszczonemu w niej wczeœniej zaklêciu wch³onê³a nieco z w³aœciwoœci pioruna. Nastêpnie zosta³a ofiarowana najwy¿szemu rang¹ krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach miêdzy hordami orków a krasnoludami z G³êbi Dorna. Atak, który nadszed³, by³ ca³kowicie nieoczekiwany. Pewnego ranka przyby³ zwiadowca z wieœci¹, ¿e najwiêksza armia orków, jak¹ kiedykolwiek widzia³, jest tylko kilka godzin drogi st¹d. Po krótkim czasie zu¿ytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczê³o wlewaæ siê do G³êbi. Krasnoludy zosta³y zmuszone do wycofania siê w g³¹b swej cytadeli, jednak zdo³a³y zawaliæ kluczowe przejœcia, by ukryæ swe ruchy i zyskaæ na czasie. Nawet w tak niesprzyjaj¹cych okolicznoœciach, pozwoli³o to krasnoludom wybieraæ miejsce i czas staræ. Poniewa¿ walczy³y na swoich warunkach, ka¿da bitwa by³a drogo op³acana przez orki. Mimo to krasnoludy wci¹¿ musia³y siê cofaæ dalej i dalej w g³¹b Lodowca Z¹b Wielkiego Gada. W koñcu dziêki swojej olbrzymiej przewadze liczebnej, orki zdo³a³y prze³amaæ krasnoludzk¹ obronê i spl¹drowaæ ich domostwo.
 
 PARAMETRY:
 
@@ -965,7 +962,7 @@ Nie mo¿e u¿ywaæ:
  Mag
  Z³odziej~
 
-@208 = ~Szybkie Unieruchomienie~
+@208 = ~Szybkie unieruchomienie~
 @209 = ~Zhentarimski mag bojowy stworzy³ to ostrze w nadziei, ¿e pomo¿e mu ono zwyciê¿yæ w walce wrêcz, gdy zostanie wyzwany na pojedynek. Ten potê¿ny miecz mia³ parowaæ wiêkszoœæ otrzymywanych ciosów, obezw³adniaj¹c jednoczeœnie wroga. Na swoje nieszczêœcie mag nie by³ zbyt wprawny w boju i z ³atwoœci¹ zosta³ pokonany przez swojego przeciwnika.
 
 PARAMETRY:
@@ -986,7 +983,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @210 = ~Skóra abishai~
-@211 = ~Wielka tajemnica otacza tê zbrojê i nikt nie ma pewnoœci jak i gdzie powsta³a. Co jest wiadome, to fakt, i¿ zosta³a wyciêta ze skóry abishai. Mimo i¿ nie jest mo¿liwym okreœlenie jakiego koloru by³o to stworzenie, to zbroja jest zabarwiona na najciemniejsz¹ spoœród czerni. W dodatku wydziela niezwyk³y, ledwie wyczuwalny zapach octu. Nosz¹cy j¹ otrzymuje niewielk¹ odpornoœæ na obra¿enia fizyczne oraz zdolnoœæ regeneracji ran. Nie mo¿na okreœliæ, czy w³aœciwoœci te pochodz¹ z samej skóry czy te¿ s¹ wynikiem na³o¿onego na zbrojê zaklêcia.
+@211 = ~Wielka tajemnica otacza tê zbrojê i nikt nie ma pewnoœci jak i gdzie powsta³a. Co jest wiadome, to fakt, i¿ zosta³a wyciêta ze skóry abishai. Mimo i¿ nie jest mo¿liwym okreœlenie, jakiego koloru by³o to stworzenie, to zbroja zabarwiona jest na najciemniejsz¹ spoœród czerni. W dodatku wydziela niezwyk³y, ledwie wyczuwalny zapach octu. Nosz¹cy j¹ otrzymuje niewielk¹ odpornoœæ na obra¿enia fizyczne oraz zdolnoœæ regeneracji ran. Nie mo¿na okreœliæ, czy w³aœciwoœci te pochodz¹ z samej skóry, czy te¿ s¹ wynikiem na³o¿onego na zbrojê zaklêcia.
 
 PARAMETRY:
 
@@ -999,12 +996,12 @@ Nie mo¿e u¿ywaæ:
  Mag
  Paladyn~
 
-@212 = ~Zag³uszacz Czarów~
-@213 = ~Fechtmistrz Naradon z Thesk by³ znany z tego, ¿e potrafi³ szybko pokonaæ wrogich magów, nawet w obliczu przewa¿aj¹cych si³ nieprzyjaciela. Udawa³o mu siê to dziêki trzem przedmiotom: miksturom szybkoœci, butom szybkoœci i dziêki swojemu mieczowi, Zag³uszaczowi Czarów. W przeciwieñstwie do wiêkszoœci innych broni magicznych, historia Zag³uszacza nie jest ani mroczna, ani zwi¹zana z niezliczonymi trupami. Naradon zrezygnowa³ z wypraw w poszukiwaniu przygód, kiedy mia³ trzydzieœci dwa lata. Nadu¿ywanie mikstur szybkoœci da³o siê we znaki, kiedy umar³ œmierci¹ starca cztery lata póŸniej. Jego jedyny spadkobierca nie mia³ w sobie ¿y³ki poszukiwacza przygód, dlatego kilka lat po œmierci ojca sprzeda³ jego miecz pewnemu w³amywaczowi. Broñ Naradona mo¿na rozpoznaæ po wygrawerowanym wizerunku zimorodka.
+@212 = ~Zag³uszacz czarów~
+@213 = ~Fechtmistrz Naradon z Thesk znany by³ z tego, ¿e potrafi³ szybko pokonaæ wrogich magów, nawet w obliczu przewa¿aj¹cych si³ nieprzyjaciela. Udawa³o mu siê to dziêki trzem przedmiotom: miksturom szybkoœci, butom szybkoœci i dziêki swojemu mieczowi, Zag³uszaczowi czarów. W przeciwieñstwie do wiêkszoœci innych broni magicznych historia Zag³uszacza nie jest ani mroczna, ani zwi¹zana z niezliczonymi trupami. Naradon zrezygnowa³ z kariery poszukiwacza przygód w wieku trzydzieœci dwóch lat. Nadu¿ywanie mikstur szybkoœci da³o mu siê we znaki, kiedy umar³ œmierci¹ starca cztery lata póŸniej. Jego jedyny spadkobierca nie mia³ w sobie ¿y³ki poszukiwacza przygód, dlatego kilka lat po œmierci ojca sprzeda³ jego miecz pewnemu w³amywaczowi. Broñ Naradona mo¿na rozpoznaæ po wygrawerowanym wizerunku zimorodka.
 
 PARAMETRY:
 
-Obra¿enia: 1K6+3
+Obra¿enia: 1K6 +3
 TraK0: +3
 Typ obra¿eñ: k³ute
 Specjalne:
@@ -1034,8 +1031,9 @@ Mo¿e u¿ywaæ:
  Z³odziej
  Bard~
 
-@216 = ~Milcz¹ca Œmieræ~
-@217 = ~Ten miecz nale¿a³ niegdyœ do Vendurisa, przebieg³ego zabójcy w s³u¿bie Cyrika - panuj¹cego Boga Mordu. Kiedy ³otrzyk zosta³ wstêpnie zaakceptowany w Zakonie Wybrañców Cyrika otrzyma³ ma³e, zwyczajnie wygl¹daj¹ce ostrze jako dar powitalny. Chocia¿ na miecz na³o¿one zosta³y tylko pomniejsze zaklêcia, jego moc i ostroœæ zauwa¿alnie siê zwiêksza³y wraz z ka¿dym dokonanym przez Vendurisa w imiê swojego nowego mistrza mordem. Morderca lubi³ wype³niaæ swoje zadanie szybko i cicho, tak ¿e jego ofiary na ogó³ nie by³y œwiadome zbli¿aj¹cego siê koñca. Jednak¿e w przypadkach, gdy nieprzyjaciel szczególnie zirytowa³ Ksiêcia K³amstw, Venduris przed zadaniem ciosu zwyk³ rozprowadzaæ na ostrzu zabójcz¹ truciznê. Ofiara zaczyna³a siê dusiæ, niezdolna do mówienia czy wezwania pomocy, podczas gdy Cyric œmia³ siê zadowolony widz¹c niem¹ twarz swojego przeciwnika wykrzywion¹ w bólu i agonii powodowanej przez nastêpuj¹ce kolejno efekty trucizny, wiod¹ce w koñcu ku powolnej œmierci w mêczarniach.
+@216 = ~Milcz¹ca œmieræ~
+@217 = ~Miecz ten nale¿a³ niegdyœ do Vendurisa, przebieg³ego zabójcy w s³u¿bie Cyrika – aktualnie panuj¹cego Boga Mordu. Kiedy ³otrzyk zosta³ wstêpnie zaakceptowany w Zakonie Wybrañców Cyrika, otrzyma³ ma³e, zwyczajnie wygl¹daj¹ce ostrze jako dar powitalny. Chocia¿ na miecz na³o¿one zosta³y tylko pomniejsze zaklêcia, jego moc i ostroœæ zwiêksza³y zauwa¿alnie wraz z ka¿dym mordem dokonanym przez Vendurisa w imiê swojego nowego mistrza. Morderca lubi³ wype³niaæ swoje zadanie szybko i cicho, tak ¿e jego ofiary na ogó³ nie by³y œwiadome zbli¿aj¹cego siê koñca. Jednak¿e w przypadkach, gdy nieprzyjaciel szczególnie zirytowa³ Ksiêcia K³amstw, Venduris przed zadaniem ciosu zwyk³ rozprowadzaæ na ostrzu zabójcz¹ truciznê. Ofiara zaczyna³a siê dusiæ, bêd¹c niezdoln¹ do mówienia, czy wezwania pomocy, podczas gdy Cyric œmia³ siê zadowolony, widz¹c niem¹ twarz swojego przeciwnika, wykrzywion¹ w bólu i agonii powodowanej przez nastêpuj¹ce kolejno efekty trucizny, prowadz¹ce w koñcu ku powolnej œmierci w mêczarniach.
+
 Ostrze to pulsuje przyæmion¹, zielonkaw¹ poœwiat¹ i emanuje potê¿n¹ aur¹ z³a. Szpic i krawêdzie miecza s¹ niezwykle ostre, a tak¿e nieustannie powleczone warstw¹ magicznej trucizny sprawiaj¹cej, ¿e jego u¿ywanie bez przynoszenia sobie szkody jest niezwykle trudne. Tylko z³odzieje o niebywa³ych umiejêtnoœciach i wprawie mog¹ podj¹æ siê dobycia tej broni.
 
 PARAMETRY:
@@ -1057,7 +1055,7 @@ Mo¿e u¿ywaæ:
  Z³odziej o z³ym lub neutralnym charakterze~
 
 @218 = ~Cieniste buty~
-@219 = ~Po bli¿szym przyjrzeniu siê tym butom, widaæ ¿e zrobione s¹ one z jakiegoœ nieznanego materia³u. Nosz¹cy je, bêdzie wydawa³ siê tak cienisty, jak same buty, a dodatkowo nie bêdzie s³ychaæ jego kroków.
+@219 = ~Po bli¿szym przyjrzeniu siê tym butom widaæ, ¿e zrobione s¹ one z jakiegoœ nieznanego materia³u. Nosz¹cy je bêdzie wydawa³ siê tak cienisty, jak same buty, a dodatkowo nie bêdzie s³ychaæ jego kroków.
 
 PARAMETRY:
 
@@ -1069,10 +1067,12 @@ Waga: 5
 Mo¿e u¿ywaæ:
  Z³odziej~
 
-@220 = ~Jêzyk Salamandry~
-@221 = ~Ten z³owieszczo wygl¹daj¹cy sztylet, posiadaj¹cy mroczn¹ historiê, cieszy siê uznaniem jako broñ i jako przedmiot magiczny. Ostrze przypomina nieco sztylety egzotyczne i zakoñczone jest faliœcie, niczym kris, dwoma ma³ymi punkcikami. Zaraz przy uchwycie, w klindze sztyletu, wtopiony jest ma³y kawa³ek obœlizg³ego, jasnoczerwonego jêzyka ¿ywej salamandry. Pulsuje i wije siê bez³adnie, bez udzia³u posiadacza.
-Dok³adne pochodzenie sztyletu nie jest znane, ale powiada siê, ¿e pierwszym posiadaczem sztyletu by³ szanowany i budz¹cy postrach gnomi z³odziej i p³atny zabójca z Bramy Zachodu imieniem Turlam Shallowhill. Zosta³ zabity w bójce przez nizio³ka Dedera Siedmiopalcego. Deder zatrzyma³ broñ jako trofeum, nie wiedz¹c nic o jego mocy a¿ do chwili, gdy zosta³ wykradziony przez s³u¿¹cego, równie¿ nizio³ka, Kreshinala Blackhounda. Kreshinal umkn¹³ ze sztyletem do Selgauntu na piêæ lat, ufaj¹c, ¿e moc sztyletu ukryje go przed zdemaskowaniem. Straci³ go na skutek w³asnego partactwa przy hazardzie i zosta³ zamordowany przez agentów Dedera w przeci¹gu miesi¹ca. Sam Deder próbowa³ odzyskaæ sztylet z r¹k sembiañskich przestêpców, którzy weszli w jego posiadanie. Uda³o mu siê pojmaæ z³odziei i pozyskaæ sztylet, ale tak bardzo siê na tym skoncentrowa³, ¿e nie zauwa¿y³, i¿ owi kryminaliœci zatrudnili kap³ana Maska, aby przejrza³ i zrujnowa³ interesy Dedera w Bramie Zachodu. Wynik³a st¹d wojna pomiêdzy stronnikami Bramy Zachodu a Selgauntu zakoñczy³a siê, gdy kap³an Maska, Pieter S³abowity, sprawi³ dziêki swej magii, ¿e obie strony konfliktu dozna³y ob³êdu i same zniszczy³y siê od œrodka. Pieter zaœ zabra³ sztylet, kiedy nadarzy³a siê po temu okazja i uciek³ do Hillsfar, przekonany, ¿e niezorganizowani pó³ludzie, bêd¹cy zwolennikami Dedera Siedmiopalcego, nie pójd¹ za nim do miejsca tak bardzo wrogiego ich rasie.
-Nastêpnie Pieter sprzeda³ sztylet Mulmasterowi Hawkowi, zaœ na aukcjê do Hillsfar zwabi³ innych potencjalnych nabywców. Tam, wraz ze swymi wspólnikami, zamordowa³ niedosz³ych kupców na niby-aukcji i uciek³ z gotówk¹, kryj¹c siê pod opiek¹ Amuletu Niewykrywalnoœci. Mulmaster Hawk, który naby³ sztylet, zosta³ wedle wszelkiego prawdopodobieñstwa zamordowany przez kap³anki Umberlee, zagniewane, ¿e zabójca odmówi³ zap³acenia daniny Królowej Suce. Lata walk frakcyjnych pomiêdzy Umberlanami spowodowa³y, jak siê przypuszcza, przemieszczenie siê sztyletu a¿ trzy tysi¹ce mil dalej od jego miejsca pochodzenia - Sambii. Nie wiadomo obecnie, gdzie podziewa siê Pieter i jego kompani.
+@220 = ~Jêzyk salamandry~
+@221 = ~Ten z³owieszczo wygl¹daj¹cy i posiadaj¹cy mroczn¹ historiê sztylet, cieszy siê uznaniem, jako broñ i przedmiot magiczny. Ostrze przypomina nieco egzotyczne sztylety i zakoñczone jest faliœcie niczym kris, dwoma ma³ymi punkcikami. Zaraz przy uchwycie, w klingê sztyletu, wtopiony jest ma³y kawa³ek oœlizg³ego jasnoczerwonego jêzyka ¿ywej salamandry. Pulsuje on i wije siê bez³adnie, bez udzia³u posiadacza.
+
+Dok³adne pochodzenie sztyletu nie jest znane, ale powiada siê, ¿e pierwszym jego posiadaczem by³ szanowany i budz¹cy postrach gnomi z³odziej i p³atny zabójca z Wrót Zachodu imieniem Turlam Niskie Wzgórze. Zosta³ on zabity w bójce przez nizio³ka Dedera Siedmiopalcego. Deder zatrzyma³ broñ jako trofeum, nie wiedz¹c nic o jego mocy a¿ do chwili, gdy zosta³ wykradziony przez s³u¿¹cego, równie¿ nizio³ka, Kreshinala Czarnego Ogara. Kreshinal umkn¹³ ze sztyletem do Selgauntu na piêæ lat, ufaj¹c, ¿e jego moc ukryje go przed zdemaskowaniem. Straci³ jednak sztylet na skutek b³êdów pope³nionych podczas gry hazardowej i zosta³ zamordowany przez agentów Dedera w ci¹gu miesi¹ca. Sam Deder próbowa³ odzyskaæ sztylet z r¹k sembijskich przestêpców, którzy weszli w jego posiadanie. Uda³o mu siê pojmaæ z³odziei i pozyskaæ sztylet, ale tak bardzo siê na tym skoncentrowa³, ¿e nie zauwa¿y³, i¿ owi kryminaliœci zatrudnili kap³ana Maski, aby przejrza³ i zrujnowa³ interesy Dedera we Wrotach Zachodu. Wynik³a z tego powodu wojna pomiêdzy stronnikami Wrót Zachodu a Selgauntu zakoñczy³a siê, gdy kap³an Maski, Pieter S³abowity, sprawi³ dziêki swej magii, ¿e obie strony konfliktu dozna³y ob³êdu i same zniszczy³y siê od œrodka. Pieter zaœ zabra³ sztylet, kiedy nadarzy³a siê po temu okazja i uciek³ do Hillsfar, przekonany, ¿e niezorganizowani pó³ludzie, bêd¹cy zwolennikami Dedera Siedmiopalcego, nie pójd¹ za nim do miejsca tak bardzo wrogiego ich rasie.
+
+Nastêpnie Pieter sprzeda³ sztylet Mulmasterowi Hawkowi, zwabiaj¹c w miêdzyczasie na aukcjê do Hillsfar innych potencjalnych nabywców. Tam, wraz ze swymi wspólnikami, zamordowa³ niedosz³ych kupców na niby-aukcji i uciek³ z gotówk¹, kryj¹c siê pod opiek¹ Amuletu niewykrywalnoœci. Mulmaster Hawk, który naby³ sztylet, zosta³ wedle wszelkiego prawdopodobieñstwa zamordowany przez kap³anki Umberlee, rozgniewane, i¿ zabójca odmówi³ zap³acenia daniny Królowej Suce. Lata walk frakcyjnych pomiêdzy wyznawcami Umberlee spowodowa³y, jak siê przypuszcza, przemieszczenie sztyletu a¿ trzy tysi¹ce mil dalej od jego miejsca pochodzenia – Sembii. Nie wiadomo, gdzie obecnie podziewa siê Pieter i jego kompani.
 
 PARAMETRY:
 
@@ -1094,8 +1094,8 @@ Typ broni: 1-rêczna
 Nie mo¿e u¿ywaæ:
  Kap³an~
 
-@222 = ~Oblicze Poleg³ego~
-@223 = ~Te he³my cieszy³y siê kiedyœ wielk¹ popularnoœci¹ wœród reghedzkich barbarzyñców, którzy przybyli na tereny dzisiejszej Doliny Lodowego Wichru. Ich budowa jest doœæ prosta: sk³adaj¹ siê z he³mu z litego ¿elaza i p³ytki ochronnej spuszczanej na twarz. W czasie produkcji p³atnerze umieszczaj¹ na tej p³ytce twarzowej wizerunek poleg³ego wojownika, a na czole he³mu graweruj¹ jego imiê i jedno s³owo opisuj¹ce sposób, w jaki zgin¹³. Nastêpnie he³m taki zostawiano w stosie kremacyjnym zmar³ego. Kap³ani wierzyli, ¿e w ten sposób wojownik bêdzie móg³ ukryæ strach przed ¿yciem poœmiertnym, kiedy Tempos bêdzie go s¹dzi³. Po up³ywie miesi¹ca he³my najdzielniejszych wojowników by³y wyjmowane z grobów. Przez nastêpne kilka lat kap³ani czcili poleg³ych wojowników w czasie codziennych modlitw. Legenda g³osi, ¿e jeœli Tempos uzna jakiegoœ wojownika za prawdziwie walecznego, jego he³m nabierze mocy, która obdarzy tego, kto go bêdzie nosi³, niewra¿liwoœci¹ na strach. Na tym konkretnym he³mie wyryto imiê "Siglef" i s³owo "Topór".
+@222 = ~Oblicze poleg³ego~
+@223 = ~He³my te cieszy³y siê kiedyœ wielk¹ popularnoœci¹ wœród reghedzkich barbarzyñców, którzy przybyli na tereny dzisiejszej Doliny Lodowego Wichru. Ich budowa jest doœæ prosta: sk³adaj¹ siê z he³mu z litego ¿elaza i p³ytki ochronnej spuszczanej na twarz. W czasie produkcji p³atnerze umieszczaj¹ na tej p³ytce twarzowej wizerunek poleg³ego wojownika, a na czole he³mu graweruj¹ jego imiê i jedno s³owo opisuj¹ce sposób, w jaki zgin¹³. Nastêpnie he³m taki zostawiano w stosie kremacyjnym zmar³ego. Kap³ani wierzyli, ¿e w ten sposób wojownik bêdzie móg³ ukryæ strach przed ¿yciem poœmiertnym, kiedy Tempos bêdzie go s¹dzi³. Po up³ywie miesi¹ca he³my najdzielniejszych wojowników by³y wyjmowane z grobów. Przez nastêpne kilka lat kap³ani czcili poleg³ych wojowników w czasie codziennych modlitw. Legenda g³osi, ¿e jeœli Tempos uzna jakiegoœ wojownika za prawdziwie walecznego, jego he³m nabierze mocy, która obdarzy tego, kto go bêdzie nosi³, niewra¿liwoœci¹ na strach. Na tym konkretnym he³mie wyryto imiê „Siglef” i s³owo „Topór”.
 
 PARAMETRY:
 
@@ -1110,8 +1110,8 @@ Nie mo¿e u¿ywaæ:
  Bard
  Z³odziej~
 
-@224 = ~Laur Przychylnoœci Sune~
-@225 = ~Ten wieniec z liœci laurowych i ró¿ by³ darem od koœcio³a Sune dla kap³anki Hanali Celanil z D³oni Seldarine. Reprezentanci ludzkiej bogini mi³oœci i piêkna zostali dobrze przyjêci, a wysoka kap³anka Hanali Celanil nosi³a ten laur za ka¿dym razem, kiedy ludzie sk³adali wizytê w D³oni. Kiedy orki napad³y i z³upi³y wie¿ê kap³anów, wyrzuci³y wieniec, gdy¿ uzna³y go za przedmiot bezu¿yteczny.
+@224 = ~Laur przychylnoœci Sune~
+@225 = ~Ten wieniec z liœci laurowych i ró¿ by³ darem od koœcio³a Sune dla kap³anki Hanali Celanil z D³oni Seldarine. Reprezentanci ludzkiej bogini mi³oœci i piêkna zostali dobrze przyjêci, a wysoka kap³anka Hanali Celanil nosi³a ten laur za ka¿dym razem, kiedy ludzie sk³adali wizytê w D³oni. Kiedy orkowie napadli i z³upili wie¿ê kap³anów, wyrzucili wieniec, gdy¿ uznali go za przedmiot bezu¿yteczny.
 
 PARAMETRY:
 
@@ -1139,7 +1139,7 @@ Mo¿e u¿ywaæ:
  Bard~
 
 @228 = ~Pierœcieñ ukrycia Vendurisa~
-@229 = ~Przedmiot ten pierwotnie zosta³ odebrany pewnemu nadmiernie ambitnemu iluzjoniœcie z Thay, który w jakiœ sposób zdo³a³ pokrzy¿owaæ plany Cyrika. Kiedy Venduris otrzyma³ zadanie pozbycia siê maga, z jego osobistych skarbów wzi¹³ tak¿e i ten pierœcieñ. Zabójca z uwagi na swe znaczne umiejêtnoœci w sztuce ukrywania siê rzadko czu³ potrzebê u¿ycia go, jednak pierœcieñ udowodni³ swoj¹ przydatnoœæ w tych kilku przypadkach, gdy mia³ pojmaæ swe ofiary ¿ywcem i przywieœæ je z powrotem do œwi¹tyni swego mistrza w celu wypytania wzglêdnie torturowania bez nara¿ania siê na magiczne wykrycie.
+@229 = ~Przedmiot ten pierwotnie zosta³ odebrany pewnemu nadmiernie ambitnemu iluzjoniœcie z Thay, który w jakiœ sposób zdo³a³ pokrzy¿owaæ plany Cyrika. Kiedy Venduris otrzyma³ zadanie pozbycia siê maga, z jego osobistych skarbów wzi¹³ tak¿e i ten pierœcieñ. Zabójca z uwagi na swe znaczne umiejêtnoœci w sztuce ukrywania siê rzadko czu³ potrzebê u¿ycia go, jednak pierœcieñ udowodni³ swoj¹ przydatnoœæ w tych kilku przypadkach, gdy mia³ pojmaæ swe ofiary ¿ywcem i przywieœæ je z powrotem do œwi¹tyni swego mistrza w celu wypytania, ewentualnie torturowania, bez nara¿ania siê na magiczne wykrycie.
 
 PARAMETRY:
 
@@ -1154,12 +1154,12 @@ Mo¿e u¿ywaæ:
 @230 = ~Zwój Vendurisa~
 @231 = ~Ten magiczny zwój zosta³ znaleziony przy ciele ³otrzyka Vendurisa. Napis widniej¹cy na tej stronie wygl¹da na notatkê czarownika, który go stworzy³, druga z kolei pokryta jest ró¿nymi mistycznymi runami. Notatki brzmi nastêpuj¹co:
 
-"Jak sobie ¿yczy³eœ, Vendurisie, glify stra¿nicze, które spêtaj¹ nasz cel, imieniem <CHARNAME>, ³¹cz¹ siê bezpoœrednio z runami na tym zwoju. Kiedy upar³eœ siê byæ jedynym, który winien znaæ has³o umo¿liwiaj¹ce ich aktywacjê, na odwrocie u spodu znajdziesz pust¹ liniê, w któr¹ mo¿esz je wpisaæ. Ostrzegam ciê, kiedy ju¿ to uczynisz, upewnij siê dok³adnie, ¿e zwój ten zawsze przechowywany jest w bezpiecznym i dobrze ukrytym miejscu. Z powodu tego niezwyk³ego sposobu rzucenia tego czaru, nie potrafiê przewidzieæ, co stanie siê, gdy zwój zostanie uszkodzony lub zniszczony."
+„Jak sobie ¿yczy³eœ, Vendurisie, glify stra¿nicze, które spêtaj¹ nasz cel, imieniem <CHARNAME>, ³¹cz¹ siê bezpoœrednio z runami na tym zwoju. Kiedy upar³eœ siê byæ jedynym, który winien znaæ has³o umo¿liwiaj¹ce ich aktywacjê, na odwrocie u spodu znajdziesz pust¹ liniê, w któr¹ mo¿esz je wpisaæ. Ostrzegam ciê, kiedy ju¿ to uczynisz, upewnij siê dok³adnie, ¿e zwój ten zawsze przechowywany jest w bezpiecznym i dobrze ukrytym miejscu. Z powodu tego niezwyk³ego sposobu rzucenia tego czaru, nie potrafiê przewidzieæ, co stanie siê, gdy zwój zostanie uszkodzony lub zniszczony”.
 
 -S.~
 
 @232 = ~P³aszcz cienia Vendurisa~
-@233 = ~Magiczne próby ujawniaj¹, ¿e ten mroczny p³aszcz pocz¹tkowo spleciony zosta³ z esencji ektoplazmy oraz jedwabnej przêdzy paj¹ka przenikaj¹cego. Jego dalszego umagicznienia podjêli siê kap³ani Cyrika, by zapewniæ najbardziej oddanym wyznawcom, zarówno ochronê, jak i dyskrecjê. W trakcie noszenia p³aszcza, myœli nosz¹cego nie mog¹ zostaæ zbadane przy pomocy magicznych œrodków. Co wiêcej, z uwagi na magiczna naturê jego tkaniny, p³aszcz ulepsza tak¿e umiejêtnoœæ zlewania siê z cieniami i czyni niemo¿liwymi do zauwa¿enia czu³e punkty, skutecznie chroni¹c posiadacza przed jak¹kolwiek prób¹ zasztyletowania go.
+@233 = ~Magiczne próby ujawniaj¹, ¿e ten mroczny p³aszcz pocz¹tkowo spleciony zosta³ z esencji ektoplazmy oraz jedwabnej przêdzy paj¹ka przenikaj¹cego. Jego dalszego umagicznienia podjêli siê kap³ani Cyrika, by zapewniæ najbardziej oddanym wyznawcom, zarówno ochronê, jak i dyskrecjê. W trakcie noszenia p³aszcza, myœli nosz¹cego nie mog¹ zostaæ zbadane przy pomocy magicznych œrodków. Co wiêcej, z uwagi na magiczn¹ naturê jego tkaniny, p³aszcz ulepsza tak¿e umiejêtnoœæ zlewania siê z cieniami i czyni niemo¿liwymi do zauwa¿enia czu³e punkty, skutecznie chroni¹c posiadacza przed jak¹kolwiek prób¹ zasztyletowania go.
 
 PARAMETRY:
 
@@ -1174,7 +1174,7 @@ Mo¿e u¿ywaæ:
  Z³odziej~
 
 @234 = ~£uk oœlepiaj¹cego ciosu~
-@235 = ~Ten krótki ³uk kompozytowy promieniuje silnymi, nekromantycznymizaklêciami zwykle u¿ywanymi przez kap³anów Yuan-Ti. Kszta³t ³uku przypomina dwa wê¿e próbuj¹ce po³kn¹æ wyrzeŸbion¹ na uchwycie ga³kê oczn¹. Wzd³u¿ obu stron ³êczyska wyryta jest sentencja "Niech wielkoœæ Ssetha oœlepi niewiernych!". £uk pierwotnie u¿ywany by³ przez wartowników Yuan-Ti, by powstrzymaæ nieœwiadomych intruzów od odkrycia siedziby ukrytej œwi¹tyni, schowanej g³êboko wewn¹trz lasu Popielatej Doliny. Z jakiegoœ powodu obserwatorzy i pokrewni im zdaj¹ siê byæ bardzo podatni na dowolne strza³y wypuszczane z tego ³uku.
+@235 = ~Ten krótki ³uk kompozytowy promieniuje silnymi, nekromantycznymi zaklêciami zwykle u¿ywanymi przez kap³anów yuan-ti. Kszta³t ³uku przypomina dwa wê¿e próbuj¹ce po³kn¹æ wyrzeŸbion¹ na uchwycie ga³kê oczn¹. Wzd³u¿ obu stron ³êczyska wyryta jest sentencja „Niech wielkoœæ Ssetha oœlepi niewiernych!”. £uk pierwotnie u¿ywany by³ przez wartowników yuan-ti, by powstrzymaæ nieœwiadomych intruzów od odkrycia siedziby ukrytej œwi¹tyni, schowanej g³êboko wewn¹trz lasu Popielatej Doliny. Z jakiegoœ powodu obserwatorzy i pokrewni im zdaj¹ siê bardzo podatni na dowolne strza³y wypuszczane z tego ³uku.
 
 PARAMETRY:
 
@@ -1194,7 +1194,9 @@ Nie mo¿e u¿ywaæ:
 
 @236 = ~Elfia kolczuga drowów~
 @237 = ~Delikatne, aczkolwiek wytrzyma³e rzemios³o elfów pozwala im tworzyæ wiele piêknych, a mimo to u¿ytecznych przedmiotów. Wœród nich s¹ kolczugi splecione tak misternie, ¿e mo¿na nosiæ je pod zwyk³ym ubraniem, nie ujawniaj¹c ich obecnoœci. To oraz ich lekkoœæ pozwala nosiæ je z³odziejom oraz wojownikom/magom z niewieloma ograniczeniami.
-Ten przedmiot, podobnie jak wiêkszoœæ ekwipunku mrocznych elfów, stworzony zosta³ za pomoc¹ adamantyny, stopu adamantytu, który szybko zmienia siê w py³, gdy wyniesie siê go z Podmroku.
+
+Ten przedmiot, podobnie jak wiêkszoœæ ekwipunku drowów, stworzony zosta³ przy pomocy adamantyny, stopu adamantytu, który szybko zmienia siê w py³, gdy wyniesie siê go z Podmroku.
+
 Ta magiczna kolczuga drowów daje nosicielowi dodatkowe 5% odpornoœci na magiê i zwiêksza szybkoœæ rzucania wszystkich zaklêæ.
 
 PARAMETRY:
@@ -1202,7 +1204,7 @@ PARAMETRY:
 Klasa Pancerza: 4
 Specjalne:
  +5% odpornoœci na magiê
- Przyspiesza szybkoœæ rzucania zaklêæ o 1
+ Zwiêksza szybkoœæ rzucania zaklêæ o 1
 Waga: 7
 Wymagana si³a: 5
 Nie mo¿e u¿ywaæ:
@@ -1211,17 +1213,17 @@ Nie mo¿e u¿ywaæ:
 
 @238 = ~Geminus~
 @239 = ~Pierœcieñ czarów: Geminus
-Dawno temu kr¹¿y³y pog³oski, ¿e wielki mag z Amn przekroczy³ na³o¿one przez Mystrê granice arkanów magii. Powiadaj¹, ¿e mag ten potrafi³ rzucaæ czary bez ograniczeñ w zapamiêtywaniu. Ostatecznie okaza³o siê, ¿e jego moce pochodzi³y z kilku magicznych pierœcieni, które sobie stworzy³. Choæ "pamiêæ wiekuista", któr¹ siê che³pi³, stanowi³a tylko mistyfikacjê, to wspomniane pierœcienie w dalszym ci¹gu pozostaj¹ jednymi z najbardziej poszukiwanych przedmiotów w Krainach.
+Dawno temu kr¹¿y³y pog³oski, ¿e wielki mag z Amn przekroczy³ na³o¿one przez Mystrê granice arkanów magii. Powiadaj¹, ¿e mag ten potrafi³ rzucaæ czary bez ograniczeñ w zapamiêtywaniu. Ostatecznie okaza³o siê, ¿e jego moce pochodzi³y z kilku magicznych pierœcieni, które sobie stworzy³. Choæ „pamiêæ wiekuista”, któr¹ siê che³pi³, stanowi³a tylko mistyfikacjê, to wspomniane pierœcienie w dalszym ci¹gu pozostaj¹ jednymi z najbardziej poszukiwanych przedmiotów w Krainach.
 
 PARAMETRY:
 
 Specjalne:
- Podwaja liczbê czarów z poziomu 1. i 2.
+ Podwaja iloœæ czarów 1. i 2. poziomu, jak¹ mag mo¿e zapamiêtaæ
 Mo¿e u¿ywaæ:
  Mag~
 
 @240 = ~B³ogos³awiony wieniec dêbowy~
-@241 = ~Rillifane Rallathil jest obroñc¹ lasów i stra¿nikiem harmonii w naturze. Pan Liœci jest czêsto porównywany przez jego kap³anów do wielkiego, eterycznego dêbu, tak olbrzymiego, ¿e jego korzenie ³¹cz¹ siê z korzeniami ka¿dej innej roœliny w Krainach, pozostaj¹c jednoczeœnie w sercu Arvandoru, Strzelistej Puszczy Olimpu. To wielkie drzewo kieruje up³ywem pór roku i bytów w lasach zielonych elfów, jednoczeœnie chroni¹c te ziemie i powstrzymuj¹c wszelkiego rodzaju choroby, grabie¿e i napaœci. Na specjalne okazje, najwy¿si kap³ani Rillifane'a pokazuj¹ swój szacunek Panu Liœci przyozdabiaj¹c swe skronie dêbowymi liœæmi w formie wieñców laurowych, które nastêpnie s¹ b³ogos³awione i wzmacniane zaklêciami ochronnymi. Korony te rzadko opuszczaj¹ ziemie elfów, przede wszystkim z powodu swej magii, œciœle zestrojonej z samymi duszami Piêknego Ludu. Tylko odszczepieniec lub wygnaniec oœmieli³by siê wynieœæ tak œwiêty przedmiot poza spo³ecznoœæ elfów.
+@241 = ~Rillifane Rallathil jest obroñc¹ lasów i stra¿nikiem harmonii w naturze. Pan Liœci jest czêsto porównywany przez jego kap³anów do wielkiego, eterycznego dêbu, tak olbrzymiego, ¿e jego korzenie ³¹cz¹ siê z korzeniami ka¿dej innej roœliny w Krainach, pozostaj¹c jednoczeœnie w sercu Arvandoru, Strzelistej Puszczy Olimpu. To wielkie drzewo kieruje up³ywem pór roku i bytów w lasach zielonych elfów, jednoczeœnie chroni¹c te ziemie i powstrzymuj¹c wszelkiego rodzaju choroby, grabie¿e i napaœci. Na specjalne okazje, najwy¿si kap³ani Rillifane'a pokazuj¹ swój szacunek Panu Liœci, przyozdabiaj¹c swe skronie dêbowymi liœæmi w formie wieñców laurowych, które nastêpnie s¹ b³ogos³awione i wzmacniane zaklêciami ochronnymi. Korony te rzadko opuszczaj¹ ziemie elfów, przede wszystkim z powodu swej magii, œciœle zestrojonej z samymi duszami Piêknego Ludu. Tylko odszczepieniec lub wygnaniec oœmieli³by siê wynieœæ tak œwiêty przedmiot poza spo³ecznoœæ elfów.
 
 PARAMETRY:
 
@@ -1462,15 +1464,15 @@ Poinformowa³am Gaelana o losie Arledirana. £otr nie by³ zachwycony tym, ¿e nie d
 @682 = ~Chwa³a Selune, nareszcie po wszystkim.~
 @683 = ~Zakoñczy³em swa misjê. Teraz muszê przekazaæ tê wiedzê Radzie.~
 
-@700 = ~Z³odziej Cienia Stra¿nik~
+@700 = ~Z³odziej Cienia stra¿nik~
 @701 = ~Najemnik z Kara-Tur~
-@702 = ~Z³odziej Cienia £ucznik~
-@703 = ~Z³odziej Cienia Zbir~
+@702 = ~Z³odziej Cienia ³ucznik~
+@703 = ~Z³odziej Cienia zbir~
 @704 = ~Schodz¹c po schodach, s³yszysz rozlegaj¹cy siê alarm, po czym wszystkie drzwi zamykaj¹ siê z trzaskiem. Wygl¹da na to, ¿e wszystkie wyjœcia z gildii zosta³y odciête.~
 @705 = ~Wraz ze œmierci¹ Arana Linvaila, jedyny ocala³y Z³odziej Cienia ucieka z gildii. Droga do wyjœcia jest ju¿ oczywista.~
 @706 = ~Najemnik Zhentarimów~
 @707 = ~Nieudane u¿ycie zwoju~
-@708 = ~Kap³anka Maska~
+@708 = ~Kap³anka Maski~
 @709 = ~Próbuje wykryæ iluzjê~
 @710 = ~Pu³apka rozbrojona~
 @711 = ~Próbuje ukryæ siê w cieniu~
@@ -1497,12 +1499,12 @@ Nie mo¿e u¿ywaæ:
  Z³odziej~
 
 @721 = ~Ber³o kontroli~
-@722 = ~Gdy Haz rozpocz¹³ pierwsz¹ produkcjê swych golemów obronnych z rozkazu miejscowego Mistrza P³aszczy, kilku zaprzyjaŸnionych Z³odziei Cienia zasugerowa³o, aby mag zapewni³ bezpieczny sposób na wy³¹czenie potê¿nych konstruktów, gdy to bêdzie konieczne. Haz odrzuci³ jednak ich spostrze¿enia uwa¿aj¹c je za nieuzasadnione, ale po tym, jak kilku wysoko postawionych cz³onków gildii zaczê³o otwarcie wyra¿aæ swoje obawy, jak i kwestionowaæ jego motywy, Haz w koñcu podda³ siê negatywnej opinii i stworzy³ kilka Bere³ kontrolnych, które póŸniej wrêczy³ g³oœno wyra¿aj¹cym sw¹ opinie niedowiarkom. Œciœle mówi¹c, ka¿dy kto jest w posiadaniu takiego Ber³a, mo¿e deaktywowaæ ka¿dego golema stworzonego przez Haza poprzez zwyczajne uniesienie Ber³a kontroli i wejœcie w zasiêg widzenia danego konstrukta. Oczywiœcie, niemo¿liwym jest wy³¹czenie golema, gdy jest on w niewielkiej odleg³oœci od swego twórcy. Co wiêcej, instrukcja wyryta na trzonku ber³a wyraŸnie ostrzega przed prób¹ ataku dezaktywowanego golema, wznowi to bowiem ich procedury obronne.
+@722 = ~Gdy Haz rozpocz¹³ pierwsz¹ produkcjê swych golemów obronnych z rozkazu miejscowego Mistrza P³aszczy, kilku zaprzyjaŸnionych Z³odziei Cienia zasugerowa³o, aby mag zapewni³ bezpieczny sposób na wy³¹czenie potê¿nych konstruktów, gdy to bêdzie konieczne. Haz odrzuci³ jednak ich spostrze¿enia, uwa¿aj¹c je za nieuzasadnione, ale po tym, jak kilku wysoko postawionych cz³onków gildii zaczê³o otwarcie wyra¿aæ swoje obawy, jak i kwestionowaæ jego motywy, Haz w koñcu podda³ siê negatywnej opinii i stworzy³ kilka Bere³ kontrolnych, które póŸniej wrêczy³ g³oœno wyra¿aj¹cym sw¹ opiniê niedowiarkom. Œciœle mówi¹c, ka¿dy, kto posiada takie ber³o, mo¿e deaktywowaæ ka¿dego golema stworzonego przez Haza poprzez zwyczajne uniesienie ber³a kontroli i wejœcie w zasiêg widzenia danego konstruktu. Oczywiœcie niemo¿liwe jest wy³¹czenie golema, gdy jest on w niewielkiej odleg³oœci od swego twórcy. Co wiêcej, instrukcja wyryta na trzonku ber³a wyraŸnie ostrzega przed prób¹ ataku dezaktywowanego golema, wznowi to bowiem ich procedury obronne.
 
 PARAMETRY:
 
 Specjalne:
- Ka¿dy golem stworzony przez Haza zostanie automatycznie dezaktywowany w obecnoœci osoby trzymaj¹cej ber³o. W celu skutecznego dzia³ania, ber³o musi byæ wyposa¿one w widocznym miejscu a osoba, która go trzyma musi sama podejœæ do golema. Po wy³¹czeniu, golem pozostanie nieczynny tak d³ugo, dopóki nie zostanie zaatakowany. Ber³o to nie bêdzie dzia³aæ na ¿adnym golemie, jaki nie zosta³ stworzy przez Haza.
+ Ka¿dy golem stworzony przez Haza zostanie automatycznie dezaktywowany w obecnoœci osoby trzymaj¹cej ber³o. W celu skutecznego dzia³ania ber³o musi byæ wyposa¿one w widocznym miejscu, a osoba, która go trzyma, musi sama podejœæ do golema. Po wy³¹czeniu golem pozostanie nieczynny dopóty, dopóki nie zostanie zaatakowany. Ber³o to nie bêdzie dzia³aæ na ¿adnym golemie, który nie zosta³ stworzony przez Haza.
 
 Mo¿e u¿ywaæ:
  Ka¿dy~
@@ -1546,7 +1548,7 @@ Mo¿e u¿ywaæ:
 @1003 = ~(Z³odziejski ¿argon) - Witaj Marino. Mogê jeszcze raz zerkn¹æ na twoj¹ specjaln¹ ofertê?~
 @1004 = ~Przepraszam... ale czy przypadkiem nie masz siostry, lub kogoœ z rodziny kto praktykuje sztuki tajemne? Spotka³em niedawno czarodziejkê, która bardzo ciebie przypomina.~ ~Przepraszam... ale czy przypadkiem nie masz siostry, lub kogoœ z rodziny kto praktykuje sztuki tajemne? Spotka³am niedawno czarodziejkê, która bardzo ciebie przypomina.~
 @1005 = ~Znalaz³em Arledriana.~ ~Znalaz³am Arledriana.~
-@1006 = ~Owszem mam, ale wpierw bêdziesz musia³ wykupiæ drobn¹... "polisê" za 50 sztuk z³ota. (Uœmiecha siê) Wiesz... "pozyskanie" przedmiotów o tak wielkiej mocy bywa ryzykowne.~ ~Owszem mam, ale wpierw bêdziesz musia³a wykupiæ drobn¹... "polisê" za 50 sztuk z³ota. (Uœmiecha siê) Wiesz... "pozyskanie" przedmiotów o tak wielkiej mocy bywa ryzykowne.~
+@1006 = ~Owszem mam, ale wpierw bêdziesz musia³ wykupiæ drobn¹... „polisê” za 50 sztuk z³ota. (Uœmiecha siê) Wiesz... „pozyskanie” przedmiotów o tak wielkiej mocy bywa ryzykowne.~ ~Owszem mam, ale wpierw bêdziesz musia³a wykupiæ drobn¹... „polisê” za 50 sztuk z³ota. (Uœmiecha siê) Wiesz... „pozyskanie” przedmiotów o tak wielkiej mocy bywa ryzykowne.~
 @1007 = ~Hmm... (przez chwilê bada ciê tajemniczym spojrzeniem)~
 @1008 = ~Có¿, wydajesz siê byæ w porz¹dku.~
 @1009 = ~Ale¿ oczywiœcie, kolego (Uœmiecha siê serdecznie, z zaciekawieniem wyczekuj¹c na zakup).~ ~Ale¿ oczywiœcie, kole¿anko (Uœmiecha siê serdecznie, z zaciekawieniem wyczekuj¹c na zakup).~
@@ -1593,7 +1595,7 @@ Mo¿e u¿ywaæ:
 @1050 = ~Ten biedny ³ajdak zosta³ wys³any na œmieræ!~
 @1051 = ~<CHARNAME>, Arledrian uda³ siê do Dzielnicy Cmentarnej w nadziei uzyskania jakichœ informacji na temat nowej gildii, ale... ale z pewnoœci¹ zginie próbuj¹c!~
 @1052 = ~Musisz ruszyæ mu z pomoc¹, w przeciwnym razie mo¿e ju¿ nie wróciæ ¿ywy!~
-@1053 = ~'Wys³any na œmieræ?' Czy Arledrian dla kogoœ pracowa³?~
+@1053 = ~„Wys³any na œmieræ?” Czy Arledrian dla kogoœ pracowa³?~
 @1054 = ~I co mam niby zrobiæ? Wywêszyæ go?~
 @1055 = ~Nie ma czasu na wyjaœnienia! Masz, weŸ z powrotem jego dziennik.~
 @1056 = ~Poszukaj Arledriana w Dzielnicy Cmentarnej, wydaje mi siê, ¿e zszed³ do podziemnych krypt. Proszê, pospiesz siê, mam z³e przeczucia...~
@@ -1668,8 +1670,8 @@ Mo¿e u¿ywaæ:
 @1154 = ~Spokojnie, odprê¿ siê. Mogê ciê uleczyæ z pomoc¹ mojej magii.~
 @1155 = ~Spokojnie, odprê¿ siê. WeŸ proszê tê miksturê leczenia, zaraz postawi ciê na nogi (daj mu miksturê leczenia).~
 @1156 = ~Spokojnie, odprê¿ siê. WeŸ proszê tê miksturê leczenia, zaraz postawi ciê na nogi (daj mu miksturê dodatkowego leczenia).~
-@1157 = ~(Sk³am) - Hmm, kiepsko wygl¹dasz. Masz, wypij tê... "miksturê leczenia", pokrzepi ciê i rozgrzeje (daj Miksturê wybuchów).~
-@1158 = ~(Sk³am) - Hmm, kiepsko wygl¹dasz. Masz, wetrzyj tê... "maœæ lecznicz¹" na rany, spa... uum, w trymiga zamknie twoje rany (daj Olej wœciek³ego p³omienia).~
+@1157 = ~(Sk³am) - Hmm, kiepsko wygl¹dasz. Masz, wypij tê... „miksturê leczenia”, pokrzepi ciê i rozgrzeje (daj Miksturê wybuchów).~
+@1158 = ~(Sk³am) - Hmm, kiepsko wygl¹dasz. Masz, wetrzyj tê... „maœæ lecznicz¹” na rany, spa... uum, w trymiga zamknie twoje rany (daj Olej wœciek³ego p³omienia).~
 @1159 = ~Gdybym tylko mia³ coœ, co uœmierzy twój bój... ale, niestety, nie mam. Za to mogê ciê zabraæ do kap³ana, jeœli chcesz.~ ~Gdybym tylko mia³a coœ, co uœmierzy twój bój... ale, niestety, nie mam. Za to mogê ciê zabraæ do kap³ana, jeœli chcesz.~
 @1160 = ~(Prawie ¿e oœlepiony przez sp³ywaj¹c¹ z czo³a krew, obola³y ³otr zbiera siê do wypicia mikstury, z braku si³ nawet nie sprawdziwszy zawartoœci)~
 @1161 = ~(Prawie ¿e oœlepiony przez sp³ywaj¹c¹ z czo³a krew, obola³y ³otr zbiera siê do u¿ycia maœci, z braku si³ nawet nie sprawdziwszy zawartoœci)~
@@ -1698,7 +1700,7 @@ Mo¿e u¿ywaæ:
 @1184 = ~Do tego czasu... ¯egnaj.~
 @1185 = ~Rozumiem...~
 @1186 = ~Wiêc wiesz, czy¿ nie?~
-@1187 = ~(Spostrzegawczoœæ) - ¯e jesteœ agentem Rady Wojennej Suldanessellaru? Tak, tu nie mam najmniejszych w¹tpliwoœci, ale kim s¹ ci "wygnañcy" o których wspomina³eœ?~
+@1187 = ~(Spostrzegawczoœæ) - ¯e jesteœ agentem Rady Wojennej Suldanessellaru? Tak, tu nie mam najmniejszych w¹tpliwoœci, ale kim s¹ ci „wygnañcy” o których wspomina³eœ?~
 @1188 = ~(Zastrasz) - Tak, twój ma³y przekrêt wyszed³ na jaw. Hmm, myœlê ¿e Gaelan i W³adca Cienia byliby wzburzeni wiedz¹c komu *tak naprawdê* jesteœ oddany.~
 @1189 = ~Ja...~
 @1190 = ~Przykro mi, nie mogê rzec nic wiêcej. Moi prze³o¿eni domagaj¹ siê, bym utrzyma³ tê sprawê w tajemnicy, dopóki w³aœciwy czas nie nadejdzie.~
@@ -1779,7 +1781,7 @@ Mo¿e u¿ywaæ:
 @1303 = ~Znalaz³em dziennik Arledriana, ale nie umiem go odczytaæ. Jest napisany w jêzyku elfów.~ ~Znalaz³am dziennik Arledriana, ale nie umiem go odczytaæ. Jest napisany w jêzyku elfów.~
 @1304 = ~Znalaz³em dziennik Arledriana.~ ~Znalaz³am dziennik Arledriana.~
 @1305 = ~Jak dot¹d nic. Dam ci znaæ, gdy dowiem siê wiêcej.~
-@1306 = ~Niech no spojrzê. Hm, to mi wygl¹da na jeden z tych plakatów, co je rozdaj¹ w Piêciu Dzbanach. Powinienem by³ siê domyœliæ, ¿e tam przesiaduje... ca³y czas marudzi³ coœ o "braku kultury" w naszym... jak to mówi³, zgni³ym mieœcie.~
+@1306 = ~Niech no spojrzê. Hm, to mi wygl¹da na jeden z tych plakatów, co je rozdaj¹ w Piêciu Dzbanach. Powinienem by³ siê domyœliæ, ¿e tam przesiaduje... ca³y czas marudzi³ coœ o „braku kultury” w naszym... jak to mówi³, zgni³ym mieœcie.~
 @1307 = ~Najlepiej jak udasz siê tam zaraz i przyciœniesz ober¿ystê, wyci¹gnij z niego co siê da.~
 @1308 = ~W porz¹dku. Dam ci znaæ, gdy dowiem siê czegoœ nowego.~
 @1309 = ~Niczego nie obiecujê. Zrobiê to, gdy bêdê mia³ okazjê.~
@@ -1845,7 +1847,7 @@ Mo¿e u¿ywaæ:
 
 
 @1500 = ~I prawdê powiada, dobry Samuelu. Tutejsze przedstawienia s¹ prawdziwie wyszukane, nawet jak na mój gust.~
-@1501 = ~Jakoœ nie wydaje mi siê, aby sprawia³o to jakiœ problem. A skoro ju¿ jesteœmy przy tym, moglibyœmy "przeszukaæ" równie¿ pozosta³e pomieszczenia, dla pewnoœci, ¿e niczego nie przegapiliœmy.~
+@1501 = ~Jakoœ nie wydaje mi siê, aby sprawia³o to jakiœ problem. A skoro ju¿ jesteœmy przy tym, moglibyœmy „przeszukaæ” równie¿ pozosta³e pomieszczenia, dla pewnoœci, ¿e niczego nie przegapiliœmy.~
 @1502 = ~Bacz na s³owa, ³otrze!~
 @1503 = ~Jeœli mo¿na, mój kruku, powiedz... czy ta zagadka, bardzo ciê trapi?~
 @1504 = ~Mo¿e dane mi bêdzie przys³u¿yæ siê nieco. W trakcie mych podró¿y mia³em przyjemnoœæ poznaæ odrobinê z ka¿dego jêzyka, elfi nale¿y do mych ulubionych.~
@@ -1944,8 +1946,8 @@ Mo¿e u¿ywaæ:
 @2102 = ~Przyjrzyj siê runom bardziej dok³adnie.~
 @2103 = ~Niestety, brak wiedzy i umiejêtnoœci nie pozwala ci rozszyfrowaæ znaczenia tajemnych znaków na tym zwoju.~
 @2104 = ~Potargaj zwój w frustracji.~
-@2105 = ~"Tak jak prosi³eœ Vendurisie, glify stra¿nicze, które uwiê¿¹ <CHARNAME> zosta³y bezpoœrednio po³¹czone z runami na tym zwoju. Jako ¿e chcia³eœ byæ jedynym, znaj¹cym Zaklêcie Rozkazu, potrzebnym do jego aktywacji, zostawi³am puste miejsce u do³u, z drugiej strony zwoju, abyœ móg³ je tam wpisaæ."~
-@2106 = ~"Wiedz jednak, ¿e gdy to uczynisz, musisz mieæ absolutn¹ pewnoœæ, ¿e zwój jest przechowywany w bezpiecznym i ukrytym miejscu. Z powodu wyj¹tkowego sposobu rzucania, nie mogê ci daæ ¿adnej gwarancji na to, co mog³oby siê staæ z runami w chwili uszkodzenia zwoju lub jego zniszczenia." -S.~
+@2105 = ~„Tak jak prosi³eœ Vendurisie, glify stra¿nicze, które uwiê¿¹ <CHARNAME> zosta³y bezpoœrednio po³¹czone z runami na tym zwoju. Jako ¿e chcia³eœ byæ jedynym, znaj¹cym Zaklêcie Rozkazu, potrzebnym do jego aktywacji, zostawi³am puste miejsce u do³u, z drugiej strony zwoju, abyœ móg³ je tam wpisaæ.”~
+@2106 = ~„Wiedz jednak, ¿e gdy to uczynisz, musisz mieæ absolutn¹ pewnoœæ, ¿e zwój jest przechowywany w bezpiecznym i ukrytym miejscu. Z powodu wyj¹tkowego sposobu rzucania, nie mogê ci daæ ¿adnej gwarancji na to, co mog³oby siê staæ z runami w chwili uszkodzenia zwoju lub jego zniszczenia.” -S.~
 @2107 = ~Ta strona zwoju zawiera wiele run i symboli, które w pewien sposób pokrywaj¹ siê z uk³adem znaków blokuj¹cych tw¹ drogê. Rozpoznajesz uk³ad run i zdajesz sobie sprawê, ¿e jest mo¿liwoœæ u¿ycia go dla swej korzyœci.~
 @2108 = ~Przyjrzyj siê wiadomoœci.~
 @2109 = ~(Wiedza tajemna) - Spróbuj rozszyfrowaæ znaki ze zwoju.~
@@ -2238,7 +2240,7 @@ Mo¿e u¿ywaæ:
   //RR Ulepszenia przedmiotów (5000-5999)
 
 @5000 = ~Miniona chwa³a~
-@5001 = ~Przez wiele pokoleñ tarcza ta by³a przekazywana wybranym Najwy¿szym Jurystom Amaunatora, którzy przyjmowali na siebie obowi¹zek oczyszczania krain z wszelkich nieumar³ych. Po znikniêciu Amaunatora i upadku Twierdzy wiekuistego s³oñca, olœniewaj¹ce z³otem wykoñczenia tarczy wyp³owia³y, a spowijaj¹ce j¹ potê¿ne zaklêcia uleg³y roz³o¿eniu. W koñcu, ten niegdyœ potê¿ny artefakt, zosta³ sprowadzony do roli ozdoby naœciennej. wraz z up³ywem czasu wœród wyznawców Amaunatora powoli zapanowa³a dezorganizacja i zaczêli siê rozpraszaæ. Ta tarcza zosta³a ostatnio skradziona wraz z wieloma innymi pozosta³oœciami z jednej z ich œwi¹tyñ.
+@5001 = ~Przez wiele pokoleñ tarcza ta by³a przekazywana wybranym Najwy¿szym Jurystom Amaunatora, którzy przyjmowali na siebie obowi¹zek oczyszczania krain z wszelkich nieumar³ych. Po znikniêciu Amaunatora i upadku Twierdzy wiekuistego s³oñca olœniewaj¹ce z³otem wykoñczenia tarczy wyp³owia³y, a spowijaj¹ce j¹ potê¿ne zaklêcia uleg³y roz³o¿eniu. W koñcu ten niegdyœ potê¿ny artefakt zosta³ sprowadzony do roli ozdoby naœciennej. Wraz z up³ywem czasu wœród wyznawców Amaunatora powoli zapanowa³a dezorganizacja i zaczêli siê rozpraszaæ. Ta tarcza zosta³a ostatnio skradziona wraz z wieloma innymi pozosta³oœciami z jednej z ich œwi¹tyñ.
 
 Po³¹czona ze Œwiêtym symbolem Amaunatora, tarcza ponownie pulsuje energi¹. Zosta³a przywrócona tak¿e czêœæ dawnych mocy.
 
@@ -2256,7 +2258,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @5002 = ~Obroñca +2~
-@5003 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Kniei Mir. Przy bli¿szym zbadaniu na powierzchni tarczy odkryæ mo¿na potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê byæ bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
+@5003 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Lasu Mir. Przy bli¿szym zbadaniu na powierzchni tarczy odkryæ mo¿na potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
 
 PARAMETRY:
 
@@ -2272,7 +2274,7 @@ Mo¿e u¿ywaæ:
  Druid~
 
 @5004 = ~Obroñca +3~
-@5005 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Kniei Mir. Przy bli¿szym zbadaniu na powierzchni tarczy odkryæ mo¿na potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê byæ bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
+@5005 = ~Ta dziwnie wygl¹daj¹ca tarcza wygl¹da, jakby w ca³oœci wykonana zosta³a z d³ugich, stwardnia³ych liœci. Niezwyk³y kszta³t i rozmiar liœci nasuwa przypuszczenie, ¿e nale¿a³y one niegdyœ do staro¿ytnego dêbu rosn¹cego w ostêpach Lasu Mir. Przy bli¿szym zbadaniu na powierzchni tarczy odkryæ mo¿na potê¿ne druidyczne zaklêcia. Wygl¹da na to, ¿e nieco wzmacniaj¹ one zdrowie j¹ dzier¿¹cego. Ponadto sprawiaj¹, ¿e wszelkie otrzymane rany goj¹ siê szybciej. Ka¿dego ranka o œwicie na jedn¹ chwilê jeden z liœci roz¿arza siê delikatnie. Mo¿e wówczas zostaæ wyci¹gniêty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu w³aœciwej inkantacji zasadzony liœæ b³yskawicznie rozrasta siê w przera¿aj¹cy Pokraczny kopiec, którego si³a i rozmiar wydaj¹ siê bezpoœrednio powi¹zane z moc¹ nosz¹cego tarczê.
 
 PARAMETRY:
 
@@ -2288,7 +2290,7 @@ Mo¿e u¿ywaæ:
  Druid~
 
 @5006 = ~Topór wy³adowañ +5~
-@5007 = ~Ten doskonale wykonany topór posiada zaklêcie niezwyk³ego pochodzenia. Natychmiast po stworzeniu zosta³ wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kap³ani oczekiwali na potê¿n¹ nawa³nicê, by siê zgromadziæ. Broñ zosta³a umieszczona na ¿elaznym piedestale i wkrótce potem trafiona gromem. Dziêki umieszczonemu w niej wczeœniej zaklêciu wch³onê³a nieco z w³aœciwoœci pioruna. Nastêpnie zosta³a ofiarowana najwy¿szemu rang¹ krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach miêdzy hordami orków a kransoludami z G³êbi Dorna. Atak, który nadszed³, by³ ca³kowicie nieoczekiwany. Pewnego ranka przyby³ zwiadowca z wieœci¹, ¿e najwiêksza armia orków, jak¹ kiedykolwiek widzia³, jest tylko kilka godzin drogi st¹d. Po krótkim czasie zu¿ytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczê³o wlewaæ siê do G³êbi. Krasnoludy zosta³y zmuszone do wycofania siê w g³¹b swej cytadeli, jednak zdo³a³y zawaliæ kluczowe przejœcia, by ukryæ swe ruchy i zyskaæ na czasie. Nawet w tak niesprzyjaj¹cych okolicznoœciach, pozwoli³o to krasnoludom wybieraæ miejsce i czas staræ. Poniewa¿ walczy³y na swoich warunkach, ka¿da bitwa by³a drogo op³acana przez orki. Mimo to krasnoludy wci¹¿ musia³y siê cofaæ dalej i dalej w g³¹b Lodowca Z¹b Wielkiego Gada. W koñcu dziêki swojej olbrzymiej przewadze liczebnej, orki zdo³a³y prze³amaæ krasnoludzk¹ obronê i spl¹drowaæ ich domostwo.
+@5007 = ~Ten doskonale wykonany topór posiada zaklêcie niezwyk³ego pochodzenia. Natychmiast po stworzeniu zosta³ wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kap³ani oczekiwali na potê¿n¹ nawa³nicê, by siê zgromadziæ. Broñ zosta³a umieszczona na ¿elaznym piedestale i wkrótce potem trafiona gromem. Dziêki umieszczonemu w niej wczeœniej zaklêciu wch³onê³a nieco z w³aœciwoœci pioruna. Nastêpnie zosta³a ofiarowana najwy¿szemu rang¹ krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach miêdzy hordami orków a krasnoludami z G³êbi Dorna. Atak, który nadszed³, by³ ca³kowicie nieoczekiwany. Pewnego ranka przyby³ zwiadowca z wieœci¹, ¿e najwiêksza armia orków, jak¹ kiedykolwiek widzia³, jest tylko kilka godzin drogi st¹d. Po krótkim czasie zu¿ytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczê³o wlewaæ siê do G³êbi. Krasnoludy zosta³y zmuszone do wycofania siê w g³¹b swej cytadeli, jednak zdo³a³y zawaliæ kluczowe przejœcia, by ukryæ swe ruchy i zyskaæ na czasie. Nawet w tak niesprzyjaj¹cych okolicznoœciach, pozwoli³o to krasnoludom wybieraæ miejsce i czas staræ. Poniewa¿ walczy³y na swoich warunkach, ka¿da bitwa by³a drogo op³acana przez orki. Mimo to krasnoludy wci¹¿ musia³y siê cofaæ dalej i dalej w g³¹b Lodowca Z¹b Wielkiego Gada. W koñcu dziêki swojej olbrzymiej przewadze liczebnej, orki zdo³a³y prze³amaæ krasnoludzk¹ obronê i spl¹drowaæ ich domostwo.
 
 Powleczenie pozaziemsk¹ Rud¹ z Gwiezdnego Kamienia i po³¹czenie z esencj¹ lapis lazuli sprawi³o, ¿e moc tej ju¿ wczeœniej potê¿nej broni znacz¹co wzros³a.
 
@@ -2312,7 +2314,7 @@ Nie mo¿e u¿ywaæ:
  Z³odziej~
 
 @5008 = ~Krótki miecz ciosów w plecy +5~
-@5009 = ~Cieniste Ostrze wykuto z myœl¹ o zabójcy - mia³o byæ dla niego doskona³ym narzêdziem. Marzy o nim wielu lubi¹cych rozstrzygaæ spory za pomoc¹ ciosu w plecy. Niewielu jednak posiada ten miecz przez d³ugi czas. W rêce dowolnej postaci miecz ten zachowuje siê jak zwyk³a broñ o umagicznieniu +5, jednak szczególnie potê¿na w d³oni z³odzieja staje siê wskutek zwiêkszenia szansy na trafienie krytyczne oraz podniesienia wspó³czynnika ciosu w plecy.
+@5009 = ~Cieniste ostrze wykuto z myœl¹ o zabójcy – mia³o byæ dla niego doskona³ym narzêdziem. Marzy o nim wielu lubi¹cych rozstrzygaæ spory za pomoc¹ ciosu w plecy. Niewielu jednak posiada ten miecz przez d³ugi czas. W rêce dowolnej postaci miecz ten zachowuje siê jak zwyk³a broñ o umagicznieniu +5, jednak szczególnie potê¿na w d³oni z³odzieja staje siê wskutek zwiêkszenia szansy na trafienie krytyczne oraz podniesienia wspó³czynnika ciosu w plecy.
 
 Nas¹czone magiczn¹ esencj¹ kamieni ³otrzyków, ostrze to sta³o siê jeszcze potê¿niejszym w rêkach z³odzieja.
 
@@ -2369,7 +2371,7 @@ Nie mo¿e u¿ywaæ:
  Kap³an~
 
 @5014 = ~Kruszyska³a +4~
-@5015 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ "¿ywe statuy" w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
+@5015 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ „¿ywe statuy” w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
 
 Wskutek wzmocnienia jej kolejnymi, pochodz¹cymi z Podrêcznika na temat golemów, zaklêciami, maczuga ta sta³a siê jeszcze potê¿niejsz¹ broni¹ przeciw tym przera¿aj¹cym tworom.
 
@@ -2394,9 +2396,9 @@ Nie mo¿e u¿ywaæ:
 @5018 = ~Wy³adowanie statyczne~
 
 @5019 = ~Stra¿nik prawa +3~
-@5020 = ~Ostrze to nale¿a³o niegdyœ do Lao-Tzu, samuraja pochodz¹cego z jednej z po³udniowych prowincji Kara-Tur. Po zakoñczeniu szkolenia wojownik ten z³o¿y³ przysiêgê, ¿e wreszcie uwolni swoje ziemie z bandytów i zbójców, którzy przeœladowali jego lud przez ca³¹ minion¹ dekadê. Zadanie to jednak¿e okaza³o siê trudne do zrealizowania, jego przeciwnicy bowiem byli przebiegli i atakowali wy³¹cznie póŸn¹ noc¹, zawsze przy tym nosz¹c kaptury i maski. Lao-Tzu zrozumia³, ¿e bandyci ci pozbawieni s¹ honoru i ¿e równie dobrze mog¹ ukrywaæ siê wœród ludu, który poprzysi¹g³ chroniæ. Mimo to, nie oœmieli³ siê dzia³aæ spontanicznie, poniewa¿ jego kodeks postêpowania nie pozwala³ mu fa³szywie oskar¿aæ niewinnych. By pomóc sobie w tym zadaniu, odnalaz³ wielkiego mistrza Wu Jen i poprosi³ go o zaklêcie jego wakizashi zdolnoœci¹ wyczuwania prawdziwych intencji ludzi, by niechybnie odnaleŸæ w tych bez honoru. Samuraj zorganizowa³ ucztê dla ludu, by podnieœæ na duchu obrabowywanych oraz ujawniæ bandytów. Ludzie skorzystali z jego zaproszenia, co ucieszy³o Lao-Tzu. Korzystaj¹c z mocy swojej nowej broni doprowadzi³ do oddzielenia sprytnych bandytów od zwyk³ych ch³opów i posadzenia ich w osobnym pomieszczeniu. Kiedy ju¿ siê tam zgromadzili, samuraj zablokowa³ jedyne wyjœcie i samotnie stawi³ czo³a tuzinowi ³otrów. To on by³ zwyciêzc¹ krótkiego starcia, jednak honor nie pozwoli³ mu zabiæ nawet tak niegodnych wrogów. Zamiast tego wygna³ ich ze swojej prowincji, a jego lud wreszcie pozna³ pokój.
+@5020 = ~Ostrze to nale¿a³o niegdyœ do Lao-Tzu, samuraja pochodz¹cego z jednej z po³udniowych prowincji Kara-Tur. Po zakoñczeniu szkolenia wojownik ten z³o¿y³ przysiêgê, ¿e wreszcie uwolni swoje ziemie z bandytów i zbójców, którzy przeœladowali jego lud przez ca³¹ minion¹ dekadê. Zadanie to jednak¿e okaza³o siê trudne do zrealizowania, jego przeciwnicy bowiem byli przebiegli i atakowali wy³¹cznie póŸn¹ noc¹, zawsze przy tym nosz¹c kaptury i maski. Lao-Tzu zrozumia³, ¿e bandyci ci pozbawieni s¹ honoru i ¿e równie dobrze mog¹ ukrywaæ siê wœród ludu, który poprzysi¹g³ chroniæ. Mimo to nie oœmieli³ siê dzia³aæ spontanicznie, poniewa¿ jego kodeks postêpowania nie pozwala³ mu fa³szywie oskar¿aæ niewinnych. By pomóc sobie w tym zadaniu, odnalaz³ wielkiego mistrza Wu Jen i poprosi³ go o zaklêcie jego wakizashi zdolnoœci¹ wyczuwania prawdziwych intencji ludzi, by niechybnie odnaleŸæ w tych bez honoru. Samuraj zorganizowa³ ucztê dla ludu, by podnieœæ na duchu obrabowywanych oraz ujawniæ bandytów. Ludzie skorzystali z jego zaproszenia, co ucieszy³o Lao-Tzu. Korzystaj¹c z mocy swojej nowej broni, doprowadzi³ do oddzielenia sprytnych bandytów od zwyk³ych ch³opów i posadzenia ich w osobnym pomieszczeniu. Kiedy ju¿ siê tam zgromadzili, samuraj zablokowa³ jedyne wyjœcie i samotnie stawi³ czo³a tuzinowi ³otrów. To on by³ zwyciêzc¹ krótkiego starcia, jednak honor nie pozwoli³ mu zabiæ nawet tak niegodnych wrogów. Zamiast tego wygna³ ich ze swojej prowincji, a jego lud wreszcie pozna³ pokój.
 
-Nas¹czone w³aœciwoœciami Solnej mikstury, ostrze to sta³o siê jeszcze bardziej efektywne w obliczu przeciwników o charakterze chaotycznym. Ponadto obecnie potrafi na krótki okres czasu chroniæ umys³ przeciw magii opartej o chaos.
+Nas¹czone w³aœciwoœciami Solnej mikstury, ostrze to sta³o siê jeszcze bardziej efektywne w obliczu przeciwników o charakterze chaotycznym. Ponadto obecnie potrafi na krótki czas chroniæ umys³ przeciw magii opartej o chaos.
 
 PARAMETRY:
 
@@ -2419,8 +2421,9 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @5021 = ~Zmêczona pa³ka +3~
-@5022 = ~Stworzona przez potê¿nego szamana Uthgardta, maczugê tê zaklêto, by obni¿a³a mo¿liwoœci bojowe przeciwnika. U¿ywa³ jej herszt Aukthar z plemienia Czarnego Kruka w wielu starciach pomiêdzy jego ludem a hordami orków, które regularnie próbowa³y najechaæ Krucz¹ Ska³ê, ich rodowy pagórek. Broñ ta zosta³a utracona podczas jednej ze szczególnie za¿artych bitew, kiedy okrzyki bojowe walcz¹cych wywo³a³y ogromn¹ lawinê, która zmiot³a ich w przepaœæ.
-Nas¹czona sproszkowan¹ esencj¹ beljurylu, broñ ta sta³a siê jeszcze bardziej efektywna w wywo³ywaniu zmêczenia. Co wiêcej, dzier¿¹cy j¹ staje siê odporny na ka¿dy nienaturalnie spowodowany efekt zmêczenia (np. nastêpuj¹cy po skorzystaniu z zaklêcia Przyspieszenie), jednak wci¹¿ jest podatny na zwyk³e zmêczenie wynikaj¹ce z braku snu.
+@5022 = ~Tê stworzon¹ przez potê¿nego szamana z plemienia Uthgardt maczugê zaklêto tak, by obni¿a³a mo¿liwoœci bojowe przeciwnika. By³a ona u¿ywana przez Aukthara, herszta plemienia Czarnego Kruka, który walczy³ ni¹ w wielu potyczkach pomiêdzy jego ludŸmi a hordami orków, które regularnie próbowa³y najechaæ ich rodowy pagórek, Krucz¹ Ska³ê. Broñ tê utracono podczas jednej ze szczególnie za¿artych bitew, kiedy okrzyki bojowe walcz¹cych wywo³a³y ogromn¹ lawinê, która zmiot³a wszystkich w przepaœæ.
+
+Nas¹czona sproszkowan¹ esencj¹ beljurylu, broñ ta sta³a siê jeszcze bardziej efektywna w wywo³ywaniu zmêczenia. Co wiêcej, dzier¿¹cy j¹ staje siê odporny na ka¿dy nienaturalnie spowodowany efekt zmêczenia (np. nastêpuj¹cy po skorzystaniu z zaklêcia Przyspieszenie), wci¹¿ jest jednak podatny na zwyk³e zmêczenie wynikaj¹ce z braku snu.
 
 PARAMETRY:
 
@@ -2439,8 +2442,8 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 
-@5023 = ~Stra¿nik £otrzyka +3~
-@5024 = ~Puklerz ten wykonany zosta³ ze stopu mrocznej stali, zabarwionej przez œladowe iloœci mitrylu i srebra. Chocia¿ jego powierzchnia wygl¹da na doskonale wypolerowan¹, wydaje siê, ¿e tarcza ta w jakiœ sposób poch³ania œwiat³o zamiast je odbijaæ. Przy bli¿szym badaniu mo¿na odkryæ na³o¿onych kilka zaklêæ charakterystycznych dla kap³anów Maska. Mo¿liwe, ¿e sam Pan Cienia osobiœcie pob³ogos³awi³ ten przedmiot swym dotykiem, obdarzaj¹c go moc¹ skrywania i wyprowadzania swych wyznawców z wszelkich opa³ów, w jakich mog¹ siê znaleŸæ pa³aj¹c siê swoj¹ ryzykowna profesj¹.
+@5023 = ~Stra¿nik ³otrzyka +3~
+@5024 = ~Puklerz ten wykonany zosta³ ze stopu mrocznej stali, zabarwionej przez œladowe iloœci mitrylu i srebra. Chocia¿ jego powierzchnia wygl¹da na doskonale wypolerowan¹, wydaje siê, ¿e tarcza ta w jakiœ sposób poch³ania œwiat³o, zamiast je odbijaæ. Przy bli¿szym badaniu mo¿na odkryæ na³o¿onych kilka zaklêæ charakterystycznych dla kap³anów Maski. Mo¿liwe, ¿e sam Pan Cienia osobiœcie pob³ogos³awi³ ten przedmiot swym dotykiem, obdarzaj¹c go moc¹ skrywania i wyprowadzania swych wyznawców z wszelkich opa³ów, w jakich mog¹ siê znaleŸæ, pa³aj¹c siê swoj¹ ryzykowna profesj¹.
 
 Nas¹czony magiczn¹ esencj¹ kamieni ³otrzyków i powleczony cienk¹ warstw¹ adamantytu, puklerz ten obecnie zapewnia jeszcze lepsz¹ ochronê.
 
@@ -2459,7 +2462,7 @@ Mo¿e u¿ywaæ:
  Bard~
 
 @5025 = ~Kruszyska³a +3~
-@5026 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ "¿ywe statuy" w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
+@5026 = ~Maczugê tê pokrywaj¹ mroczne orcze runy. Stanowi ona pozosta³oœæ po ostatniej wojnie miêdzy orkami a turmijskimi magami. Kiedy orcze plemiona zaczê³y naje¿d¿aæ ich miasto, magowie stworzyli golemy o przera¿aj¹cej mocy dla ochrony samych siebie. Widz¹c, ¿e brutalna si³a orczych wojowników jest niewystarczaj¹ca, wielki herszt orków Gull-Nar rozkaza³ swoim szamanom stworzyæ broñ umo¿liwiaj¹c¹ skruszyæ „¿ywe statuy” w proch. Szamani u¿yli ksi¹g ze spl¹drowanej wie¿y magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar by³ tak zadowolony, ¿e zdecydowa³ siê osobiœcie poprowadziæ nastêpny najazd, w jego czasie niszcz¹c golemy w py³, kiedy posuwa³ siê w stronê centrum miasta. Zwyciêstwo by³o na wyci¹gniêcie d³oni, kiedy samotny mag przywdziany w czerñ pojawi³ siê znik¹d i rzuci³ potê¿ny czar, który zwróci³ wœciek³e orki przeciw sobie. W parê minut ich armia zosta³a zdziesi¹tkowana, a sam Gull-Nar zosta³ zamordowany przez swoich najbardziej zaufanych wojowników.
 
 Wskutek wzmocnienia jej kolejnymi, pochodz¹cymi z Ksiêgi budowy golemów, zaklêciami, maczuga ta sta³a siê jeszcze potê¿niejsz¹ broni¹ przeciw tym przera¿aj¹cym tworom.
 
@@ -2754,3 +2757,100 @@ Uwaga: pisanie zwojów wymaga skupienia, musi wiêc to zostaæ przeprowadzone w bez
 @9850 = ~Dziêkujê za wspó³pracê.~
 @9851 = ~W takim razie, bêdê zmuszony skonfiskowaæ twoje przedmioty.~
 @9852 = ~Stawiasz opór? Braæ go!~
+
+// Strings missing from BGEE
+
+@10000 = ~Harfa~ // #38789
+@10001 = ~Harfy to instrumenty strunowe czêsto stosowane przez bardów. Ta ma³a harfa nadaje siê idealnie dla wêdrownego œpiewaka albo do opowiadania opowieœci i ballad.~ // #39668
+@10002 = ~Kamieñ Ioun~ // #8181
+@10003 = ~Ten ma³y kamieñ orbituje wokó³ g³owy w³asciciela. Zwyczajnie za³ó¿ go, by zacz¹³ lataæ. Te ewidentnie magiczne kamienie maj¹ ró¿ne w³aœciwoœci, zale¿nie od swego koloru.~ // #5770
+@10004 = ~Kaptur z³odzieja~ // #66467
+@10005 = ~Mimo ¿e ten kaptur nie posiada ¿adnych odczuwalnych zalet, to mo¿na w nim wyczuæ aurê skrytej magii.
+
+
+Mo¿e u¿ywaæ:
+Z³odziej~ // #66466
+@10006 = ~Nie mo¿esz rzuciæ tego zaklêcia, póki nie skoñczysz rzucaæ obecnego czaru.~ // #74011
+@10007 = ~Zapada na ciê¿k¹ chorobê~ // #39752
+@10008 = ~Opl¹tany~ // #334
+@10009 = ~Piruet jest ju¿ aktywny.~ // #32087
+@10010 = ~Pu³apka - tutaj~ // #22461
+@10011 = ~Przywo³anie pokracznego kopca~ // #3899
+@10012 = ~Oœlepienie~ // #1474
+@10013 = ~Puklerz +1~ // #39971
+@10014 = ~Puklerz jest bardzo ma³¹ tarcz¹ wykonan¹ z drewna lub ¿elaza, któr¹ mocuje siê do przedramienia. Z powodu swojego rozmiaru jest bardzo lekki i praktycznie nie spowalnia ruchów. Ten ma w sobie pewnego rodzaju magiê, która czyni go bardziej odpornym na ciosy.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +2
+– Nie chroni przed obra¿eniami k³utymi i pociskami
+Wymagania:
+– Si³a: 4
+Waga: 2
+Nie mo¿e u¿ywaæ:
+ Mag~ // #39970
+@10015 = ~Zaklêcie nie zadzia³a³o~ // #4742
+@10016 = ~Namagnetyzowanie~ // #8325
+@10017 = ~Spowolnienie~ // #335
+@10018 = ~Wakizashi~ // #7526
+@10019 = ~Wakizashi
+Wakizashi, czyli miecz pomocniczy, jest niezwykle wa¿ny dla samuraja. Nosi siê go przez ca³y czas, nawet w mieszkaniu, spoczywa blisko samuraja, gdy ten œpi. Wykonany z równ¹ pieczo³owitoœci¹ co katana, krótszy miecz, d³ugoœci trzydziestu piêciu do szeœædziesiêciu centymetrów jest niebezpieczn¹ broni¹ w rêkach wyszkolonego szermierza.
+
+PARAMETRY:
+
+Obra¿enia: 1k8
+Typ obra¿eñ: k³ute
+OpóŸnienie: 3
+Rodzaj bieg³oœci: sejmitar/wakizashi/ninja-to
+Typ broni: 1-rêczna
+Wymagania:
+– Si³a: 5
+Waga: 3
+Nie mo¿e u¿ywaæ:
+ Druid
+ Kap³an
+ Mag~ // #36181
+@10020 = ~Ninja-to~ // #7529
+@10021 = ~Ninja-to
+Miecz ninja, zwany ninja-to, jest gorszej jakoœci ni¿ inne klingi z Kara-Tur, takie jak katana. Ninja-to jest krótki i ma proste ostrze, co sprawia, ¿e jest idealnym narzêdziem podstêpnych ninja. Ninja-to jest te¿ lepszy do walki w zamkniêtych przestrzeniach, daj¹c czasem ninja przewagê nad samurajami uzbrojonymi w d³u¿sz¹ broñ.
+
+PARAMETRY:
+
+Obra¿enia: 1k8
+Typ obra¿eñ: sieczne
+OpóŸnienie: 4
+Rodzaj bieg³oœci: sejmitar/wakizashi/ninja-to
+Typ broni: 1-rêczna
+Wymagania:
+– Si³a: 6
+Waga: 5
+Nie mo¿e u¿ywaæ:
+ Druid
+ Kap³an
+ Mag~ // #39467
+
+// Ability descriptions for EE
+
+@11000 = ~Pokaz si³y
+Wykonuj¹c pozy, w których fechtmistrz, jakby owija wokó³ siebie swe ostrza, mo¿e zaburzyæ morale oraz odwagê innych. Taki pokaz umiejêtnoœci, precyzji i œmiertelnego wdziêku obni¿a morale przeciwnika (wrogowie musz¹ wykonaæ rzut obronny przeciw czarom, by unikn¹æ spadku morale) i jednoczeœnie inspiruje sojuszników, dodaj¹c +1 do ataku. Pokaz musi trwaæ ca³¹ rundê bez przerwania. Przez ten czas, ka¿dy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa pokaz. Pokaz si³y jest niezwyk³¹ (niemagiczn¹) umiejêtnoœci¹, co za tym idzie, ignoruje wszelkie odpornoœci magiczne stworów. Nieumarli, golemy, galarety, zwierzêta oraz demoniczne stworzenia s¹ ca³kowicie odporne na Pokaz si³y. Umiejêtnoœæ ta nie mo¿e zadzia³aæ na stwory, których maksymalna kostka ataku przewy¿sza poziom barda oraz stwory, których kostka ataku ma 20 i wiêcej s¹ ca³kowicie odporne. Efekt oraz czas trwania tej umiejêtnoœci wzrasta z poziomem fechtmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiêkszaj¹ siê o 1 na ka¿de 10 poziomów fechtmistrza. Efekt Pokazu si³y trwa jedn¹ rundê na ka¿dy poziom fechtmistrza.~
+
+@11001 = ~Zatruta broñ
+Z powodu wymagañ, jakie narzuca nañ jego profesja, Zabójca przywyk³ do pokrywania swej broni trucizn¹ ju¿ na pocz¹tku kariery. Ka¿da broñ w ten sposób przygotowana bêdzie zadawaæ dodatkowe 1K3 obra¿eñ od trucizny. W zwi¹zku z czym, jeœli nie zostanie wykonany rzut obronny przeciw truciŸnie, substancja przeniknie przez ranê do krwiobiegu ofiary, zadaj¹c dodatkowe obra¿enia na ka¿dy poziom zabójcy (maksymalnie do poziomu 20). Trucizna odparowuje po 5 rundach od chwili na³o¿enia. Golemy, ¿ywio³aki, galarety oraz nieumarli nie mog¹ zostaæ zatrute.~
+
+@11002 = ~Zabójczy atak
+Poprzez wnikliwe badanie s³aboœci jego ofiary, Zabójca potrafi skupiæ swoj¹ przebieg³oœæ oraz ponadprzeciêtne zdolnoœci w jeden œmiertelny cios. Nastêpny cios, który wyprowadza, staje siê automatycznie ciosem krytycznym, a jego ofiara musi wykonaæ rzut obronny przeciwko œmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skutecznoœæ Zabójczego ataku roœnie. Rzuty obronne ofiary spadaj¹ o 1 na 24. poziomie, 2 na 32. i 3 na 40. poziomie. Golemy, ¿ywio³aki, galarety oraz nieumarli nie mog¹ zostaæ zabite przy u¿yciu Zabójczego ataku.~
+
+@11003 = ~Parali¿uj¹ca toksyna
+Skomplikowane pojmowanie alchemii, jak równie¿ zielarstwa pozwala ³owcy nagród tworzyæ substancje znacznie obni¿aj¹ce pracê miêœni po wprowadzeniu do krwiobiegu. Jest to przeŸroczysta, pozbawiona zapachu ciecz, któr¹ mo¿na bez obaw wykrycia na³o¿yæ na ostrze broni. Po trafieniu tak¹ broni¹, ofiara musi wykonaæ rzut obronny przeciw parali¿owi, albo zostanie unieruchomiona przez rundê na ka¿de 10 poziomów ³owcy nagród. Niestety, po na³o¿eniu na ostrze, ciecz ta szybko siê ulatnia, czyni¹c go skutecznym tylko przez 1 rundê. Golemy, ¿ywio³aki, galarety oraz nieumarli s¹ ca³kowicie odporni na dzia³anie parali¿uj¹cej toksyny.~
+
+@11004 = ~Pu³apka alchemiczna
+Wynikiem po³¹czenia niesamowitych umiejêtnoœci zastawiania side³ ze znajomoœci¹ alchemii, ³owca nagród potrafi stworzyæ pu³apki, które zamiast zabijaæ, s¹ raczej zaprojektowane tak, by unieruchomiæ ofiarê. Efekt dzia³ania pu³apki zale¿y od poziomu ³owcy nagród, ale zawsze utrzymuj¹ siê one przez 5 rund i mog¹ byæ zneutralizowane przez udany rzut obronny przeciw zioniêciom:
+
+1. poziom - zadaje 2K4 obra¿eñ i osza³amia ofiarê
+6. poziom - zadaje 4k4 obra¿eñ i spowalnia ofiarê
+11. poziom - zadaje 6k4 obra¿eñ i oplata ofiarê
+16. poziom - zadaje 8k4 obra¿eñ i oœlepia ofiarê
+21. poziom - zadaje 10k4 obra¿eñ i pozbawia ofiarê przytomnoœci
+
+Uwaga: obra¿enia pu³apek alchemicznych nie zabijaj¹ ofiary, gdy iloœæ jej punktów ¿ycia spadnie poni¿ej 0, tylko pozbawiaj¹ j¹ przytomnoœci. Golemy, ¿ywio³aki, galarety oraz nieumarli s¹ ca³kowicie odporni na ten typ obra¿eñ.~

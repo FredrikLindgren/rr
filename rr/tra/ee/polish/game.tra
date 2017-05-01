@@ -5,259 +5,276 @@
 
 PARAMETRY:
 
-Klasa Pancerza: +3
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
-Waga: 2
-Wymagana siła: 4~
+- Klasa Pancerza: +3
+- Nie chroni przed obrażeniami kłutymi i pociskami
+
+Wymagania:
+- Siła 4
+
+Waga: 2~
 
 @23 = ~Pomimo skuteczności magicznych wzmocnień tej tarczy, trudno ją opisać i precyzyjnie zidentyfikować. Taka standaryzacja pozwala przypuszczać, że była używana przez straż jakiejś zapomnianej baronii, ale to nic pewnego.
 
 PARAMETRY:
 
-Klasa Pancerza: +4
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
-Waga: 2
-Wymagana siła: 4~
+- Klasa Pancerza: +4
+- Nie chroni przed obrażeniami kłutymi i pociskami
 
-@25 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Kniei Mir. Przy bliższym zbadaniu na powierzchni tarczy można odkryć potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się być bezpośrednio powiązane z mocą noszącego tarczę.
+Wymagania:
+- Siła: 4
+
+Waga: 2~
+
+@25 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Kniei Mir. Przy bliższym zbadaniu na powierzchni tarczy można odkryć potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się bezpośrednio powiązane z mocą noszącego tarczę.
 
 PARAMETRY:
 
-Klasa Pancerza: +2
 Specjalne:
- +5 do maksymalnych punktów życia
- Regeneruje 1 punkt życia na rundę
- Raz dziennie pozwala przywołać Pomniejszego pokracznego kopca
-Waga: 1
-Wymagana mądrość: 12, charyzma: 15~
+- Klasa Pancerza: +2
+- Maksymalne punkty życia: +5
+- Regeneracja punktów życia: 1/rundę
+- Przyzywa Pomniejszego pokracznego kopca, raz dziennie
 
-@27 = ~Puklerz ten wykonany został ze stopu mrocznej stali, zabarwionej przez śladowe ilości mitrylu i srebra. Chociaż jego powierzchnia wygląda na doskonale wypolerowaną, wydaje się, że tarcza w jakiś sposób pochłania światło zamiast je odbijać. Przy bliższym zbadaniu można odkryć nałożonych kilka zaklęć charakterystycznych dla kapłanów Maska. Możliwe, że sam Pan Cienia osobiście pobłogosławił ten przedmiot swym dotykiem, obdarzając go mocą skrywania i wyprowadzania swych wyznawców z wszelkich opałów, w jakich mogą się znaleźć, pałając się swoją ryzykowna profesją.
+Wymagania:
+- Mądrość: 12
+- Charyzma: 15
+
+Waga: 1~
+
+@27 = ~Puklerz ten wykonany został ze stopu mrocznej stali, zabarwionej przez śladowe ilości mithrilu i srebra. Chociaż jego powierzchnia wygląda na doskonale wypolerowaną, wydaje się, że tarcza w jakiś sposób pochłania światło, zamiast je odbijać. Przy bliższym zbadaniu można odkryć nałożonych kilka zaklęć charakterystycznych dla kapłanów Maska. Możliwe, że sam Pan Cienia osobiście pobłogosławił ten przedmiot swym dotykiem, obdarzając go mocą skrywania i wyprowadzania swych wyznawców z wszelkich opałów, w jakich mogą się znaleźć, pałając się swoją ryzykowną profesją.
 
 PARAMETRY:
 
-Klasa Pancerza: +3
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- +2 do rzutów obronnych przeciw śmierci
- +10% do Krycia się w cieniu
- Raz dziennie pozwala rzucić Ulepszoną niewidzialność
-Waga: 1
-Wymagana siła: 4~
+- Klasa Pancerza: +3
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Rzuty obronne: +2 przeciw śmierci
+- Krycie się w cieniu: +10%
+- Ulepszona niewidzialność, raz dziennie
+
+Wymagania:
+- Siła: 4
+
+Waga: 1~
 
 @28 = ~ZAWADIAKA: Ten łotrzyk to akrobata, szermierz i dowcipniś: wcielenie uroku i elegancji.
 
-Zalety :
-- Premia +1 do KP co 5 poziomów
-- Używając broni do walki wręcz korzysta z tabeli TraK0 wojownika
-- Może specjalizować się w każdej ręcznej broni, z jakiej może korzystać złodziej
-- Ze zdolności wysokiego poziomu może wybrać Młyniec i Przeszywający cios
+Zalety:
+- +1 do Klasy Pancerza na 1. poziomie i kolejne +1 co pięć poziomów.
+- Używając broni do walki wręcz, korzysta z tabeli TraK0 wojownika.
+- Może osiągnąć Specjalizację (dwa punkty biegłości) w każdej broni białej, z której może korzystać złodziej.
 
 Wady:
-- Nie może używać ciosu w plecy
-- Nie może dwuklasować na wojownika
-- Ze zdolności wysokiego poziomu nie może wybrać Zabójstwa i Potężnego uderzenia~
+- Nie może korzystać ze zdolności Cios w plecy.
+- Nie może dwuklasować na wojownika.~
 
 @29 = ~BARD: Bard również jest łotrzykiem, ale znacznie różniącym się od złodzieja. Jego atutem jest wdzięk i urocza osobowość. Jest utalentowanym muzykiem i chodzącą skarbnicą plotek, niesamowitych opowieści, ale również wiedzy. Wie nieco o tym, co spotkał na swej drodze i choć zna się na wszystkim, to w niczym nie jest mistrzem. Mimo że większość bardów to łajdacy, ich opowieści oraz pieśni zawsze i wszędzie są chętnie słuchane. Dzięki swoim heroicznym pieśniom i opowieściom bard może wspomóc swoich towarzyszy na duchu. Jego śpiew może zaważyć o zwycięstwie podczas niejednej walki. Pieśń ma następujące właściwości:
 
-1 poziom: +1 do trafienia i wszystkich rzutów obronnych, podnosi morale
-9 poziom: +2 do trafienia i wszystkich rzutów obronnych, usuwa efekty strachu
-18 poziom: +3 do trafienia i wszystkich rzutów obronnych, chroni przed strachem~
+1. poziom: +1 do testów trafienia i rzutów obronnych, podnosi morale.
+9. poziom: +2 do testów trafienia i rzutów obronnych, usuwa efekty strachu.
+18. poziom: +3 do testów trafienia i rzutów obronnych, chroni przed strachem.~
 
-@30 = ~FECHTMISTRZ: Fechtmistrz to doświadczony wojownik i poszukiwacz przygód. Dzięki grze aktorskiej wydaje się bardziej groźny niż jest w rzeczywistości. Jego styl walki zawiera w sobie elementy aktorstwa i pozerstwa, ale jest śmiertelnie zabójczy. Fechtmistrzowie często przejawiają się niesamowitą kontrolą i umiejętnością kiedy w spektakularny sposób posługują się bronią ze śmiertelna precyzją. Oręż fechtmistrza jest zawsze utrzymywany w nienagannym stanie, starannie wypolerowany dla najwyższej efektywności podczas bitwy lub przedstawienia. Fechtmistrzowie potrafią walczyć dwiema broniami na raz i ten styl walki doprowadzili do perfekcji.
-
-Zalety:
-- Co 4 poziomy może użyć zdolności Piruet ofensywny i Piruet defensywny
-- Co 10 poziomów może użyć zdolności Pokaz siły
-- Na 1 poziomie otrzymuje 3 punkty biegłości w stylu walki dwiema broniami
-- Ze zdolności wysokiego poziomu może wybrać Młyniec
-
-Wady:
-- Dysponuje tylko połową normalnej wiedzy
-- Umiejętność kradzieży kieszonkowych na poziomie 1/2 normy
-- Pieśń barda nie staje się lepsza na następnych poziomach
-- Ze zdolności wysokiego poziomu nie może wybrać Ulepszonej pieśni barda i Magicznego fletu
-
-Piruet ofensywny:
-Trwa 24 sekundy i daje +2 do trafienia, +2 do obrażeń oraz jeden atak więcej. Poza tym wszystkie ataki zadają maksymalne obrażenia.
-
-Piruet defensywny:
-Trwa 24 sekundy, przykuwa go do miejsca, lecz daje premię +1 KP na każdy poziom doświadczenia. Maksymalna premia może wynieść +10 do KP. Fechtmistrz nie może się poruszać, gdy wykonuje pozycję obronną.
-
-Pokaz siły:
-Wykonując pozy, w których fechtmistrz, jakby owija wokół siebie swe ostrza, może zaburzyć morale oraz odwagę innych. Taki pokaz umiejętności, precyzji i śmiertelnego wdzięku obniża morale przeciwnika (wrogowie muszą wykonać rzut obronny przeciw czarom, by uniknąć spadku morale) i jednocześnie inspiruje sojuszników, dodając +1 do ataku. Pokaz musi trwać całą rundę bez przerwania. Przez ten czas, każdy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa pokaz. Pokaz siły jest niezwykłą (niemagiczną) umiejętnością, co za tym idzie, ignoruje wszelkie odporności magiczne stworów. Nieumarli, golemy, galarety, zwierzęta oraz demoniczne stworzenia są całkowicie odporne na Pokaz siły. Umiejętność ta nie może zadziałać na stwory, których maksymalna kostka ataku przewyższa poziom barda oraz stwory, których kostka ataku ma 20 i więcej są całkowicie odporne. Efekt oraz czas trwania tej umiejętności wzrasta z poziomem fechtmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiększają się o 1 na każde 10 poziomów fechtmistrza. Efekt Pokazu siły trwa jedną rundę na każdy poziom fechtmistrza.~
-
-@32 = ~BŁAZEN: Bard ten zna się na sztuce kpiarstwa i szyderstwa. Wykorzystuje swe umiejętności, by rozpraszać swych wrogów oraz im przeszkadzać, hasając wesoło w trakcie walki. Wielu mędrców sądzi, iż błazny żyją w stanie ciągłego balansowania na skraju szaleństwa. Powszechnie wiadomo o ich żądzy uwagi i że czują się świetnie tylko, gdy są w centrum zainteresowania. Wszyscy błaźni mają charakter chaotyczny, jako że żaden umysł podporządkowany prawu i porządkowi nie mógłby utrzymać tak dziwacznego usposobienia. Z powodu ich wyjątkowego stylu walki, błazny unikają dużych i trudnych w opanowaniu broni.
+@30 = ~FECHMISTRZ: Fechmistrz to doświadczony wojownik i poszukiwacz przygód. Dzięki grze aktorskiej wydaje się bardziej groźny, niż jest w rzeczywistości. Jego styl walki zawiera w sobie elementy aktorstwa i pozerstwa, ale jest śmiertelnie zabójczy. Fechmistrzowie często przejawiają się niesamowitą kontrolą i umiejętnością, kiedy w spektakularny sposób posługują się bronią z zabójczą precyzją. Oręż fechtmistrza jest zawsze utrzymywany w nienagannym stanie, starannie wypolerowany dla najwyższej efektywności podczas bitwy lub przedstawienia. Fechmistrzowie potrafią walczyć dwiema broniami naraz i ten styl walki doprowadzili do perfekcji.
 
 Zalety:
-- Na 1 poziomie otrzymują Pieśń błazna. Umiejętność ta rozwija się dalej na 9 oraz 18 poziomie
-- Na 1 poziomie otrzymują Szczęście trefnisia oraz Chaotyczne myśli jako pasywne umiejętności
+- Raz dziennie, co cztery poziomy, może posłużyć się zdolnościami Piruet ofensywny i Piruet defensywny.
+- Raz dziennie, co dziesięć poziomów, może posłużyć się zdolnością Pokaz siły.
+- Na 1. poziomie otrzymuje maksymalną ilość punktów biegłości w Stylu walki dwoma broniami.
 
 Wady:
-- Może być biegły tylko w broniach, których może używać złodziej
-- Musi być chaotycznego charakteru
-- Pieśni bitewne nie pomagają sojusznikom
+- Dysponuje tylko połową normalnej Wiedzy.
+- Umiejętność Kradzieży kieszonkowej na poziomie połowy normalnej wartości.
+- Pieśń barda nie staje się potężniejsza na wyższych poziomach.
 
-Pieśń błazna:
-Pieśń ta nie pomaga sojusznikom. Zamiast tego, rozprasza każdego wroga w zasięgu słuchu. Efekt pieśni ulepsza się na wyższych poziomach:
+PIRUET OFENSYWNY:
+Zdolność ta działa przez dwadzieścia cztery sekundy, zapewniając premię +2 do testów trafienia, +2 do testów obrażeń oraz jeden dodatkowy atak. Ponadto do końca trwania zdolności wszystkie ataki wykonywane przez fechmistrza zadają maksymalne obrażenia.
 
-1 poziom: Przeciwnicy muszą wykonać rzut obronny przeciwko czarom z premią +4 lub ulegną Rozkojarzeniu
-9 poziom: Przeciwnicy muszą wykonać rzut obronny przeciwko czarom z premią +2 lub ulegną Rozkojarzeniu i wpadną w Zamęt (rzut obronny z premią +4)
-18 poziom: Przeciwnicy muszą wykonać rzut obronny przeciwko czarom lub ulegną Rozkojarzeniu, Zamętowi (rzut obronny z premią +2) i Osłupieniu (rzut obronny z premią +4)
+PIRUET DEFENSYWNY:
+Zdolność ta działa przez dwadzieścia cztery sekundy, przykuwając fechmistrza do miejsca, zapewniając mu jednak w zamian premię +1 do Klasy Pancerza na każdy poziom doświadczenia (maksymalnie +10). Podczas wykonywania Piruetu defensywnego fechmistrz nie może się poruszać.
 
-Rozkojarzeni przeciwnicy mają 20% szans niepowodzenia przy rzucaniu czarów. Otrzymują też kary -2 do TraK0 i KP. Zmąceni przeciwnicy albo wpadną w szał i zaatakują najbliższą postać, albo zostaną w miejscu, albo zmieszane zaczną błąkać się przez okres działania czaru.
-Osłupieni wrogowie mają do tego stopnia zaburzoną świadomość, że nie potrafią wykonać żadnej, nawet najprostszej czynności podczas słuchania Pieśni błazna. Nie mniej jednak, oponent jest w stanie podświadomie odczuć zagrożenie, tak więc każde wrogie akcje uwalniają od działania uroku.
-Pieśń błazna nie działa na bezmyślne stworzenia takie jak golemy, szkielety, zombie czy galarety.
+POKAZ SiŁY:
+Wykonując pozy, w których niejako owija wokół siebie swe ostrza, fechmistrz może wpłynąć negatywnie na morale i odwagę innych. Taki pokaz umiejętności, precyzji i zabójczego wdzięku obniża morale przeciwnika (wrogowie muszą wykonać rzut obronny przeciw czarom, aby uniknąć spadku morale), inspirując jednocześnie sojuszników, którzy otrzymują premię +1 do testów ataku. Pokaz musi trwać pełną rundę bez przerywania. Przez ten czas, każdy udany atak przeciwko fechmistrzowi lub nieudany rzut obronny fechmistrza przerywa działanie zdolności. Pokaz siły jest niemagiczną zdolnością nadzwyczajną, co pozwala jej ignorować odporność na magię atakowanych istot. Zdolność ta nie działa na nieumarłych, golemy, galarety, zwierzęta oraz demoniczne stworzenia. Dodatkowo nie wpływa na istoty, których ilość Kostek przewyższa poziom barda lub które posiadają 20, lub więcej Kostek. Efektywność oraz czas działania tej zdolności wzrastają wraz z poziomem fechmistrza. Premia do ataku sojuszników oraz kary do rzutów obronnych przeciwników wzrastają o jeden punkt na każde dziesięć poziomów fechmistrza. Efekty działania Pokazu siły utrzymują się jedną rundę na każdy poziom fechmistrza.~
 
-Szczęście trefnisia:
-Błazny są beztroscy, lekkomyślni i skłonni do podejmowania szalonych decyzji, jednak wydają się posiadać osobliwą umiejętność, która pozwala im przetrwać prawie w każdej sytuacji. Zdolność zapewnia premię +1 do bazowej Klasy Pancerza, +1 do wszystkich rzutów obronnych oraz +5 pkt. umiejętności kradzieży kieszonkowej.
-
-Chaotyczne myśli:
-Z powodu ich unikalnego postrzegania świata, Błazny są naturalnie odporne na efekty zaklęć, przedmiotów i umiejętności wywołujących zamęt.~
-
-@33 = ~SKALD: To nordycki bard, który jest również wojownikiem obdarzonym wielką siłą, umiejętnościami i cnotą. Skald poświęca swe życie, by dążyć do doskonałości. Skaldowie są znani i szanowani jako wielcy wojowniczy poeci, którzy zapamiętują każdy smaczek z najazdu czy bitwy nadając im formę poematu. Zaklęcia są niemal nieznane w społeczeństwie skaldów i są uznawane za coś podejrzanego bez względu na okoliczność. Używanie magii jest znacznie trudniejsze dla Skalda i wymaga poświęcenia dodatkowej ilości czasu i wysiłku.
+@32 = ~BŁAZEN: Bard ten zna się na sztuce kpiarstwa i szyderstwa, wykorzystując swe umiejętności do rozpraszania wrogów i przeszkadzania im podczas walki swymi wesołymi pląsami. Wielu mędrców uważa, że funkcjonują oni niemal na granicy permanentnego szaleństwa. Powszechnie wiadomo, iż nieustannie pożądają uwagi i czują się dobrze tylko wówczas, gdy znajdują się w centrum zainteresowania. Wszyscy błaźni mają charakter chaotyczny, jako że żaden umysł podporządkowany prawu i porządkowi nie mógłby skrywać tak dziwacznej osobowości. Z powodu ich niecodziennego stylu walki, błaźni unikają dużych i nieporęcznych broni.
 
 Zalety:
-- Pieśń skalda różni się od pieśni typowego barda. Zdolność polepsza się na 9. i 18. poziomie
-- +1 do trafienia i +1 do obrażeń przy użyciu wszelkiej broni.
+- Na 1. poziomie otrzymuje zdolność Pieśń błazna, która staje się potężniejsza na 9. oraz 18. poziomie.
+- Na 1. poziomie otrzymuje zdolności Szczęście trefnisia oraz Chaotyczne myśli, które są zdolnościami pasywnymi.
 
 Wady:
-- Umiejętność kradzieży kieszonkowej na poziomie 1/4 normy
-- Kara -1 do szybkości rzucania zaklęć
+- Może osiągnąć Wyszkolenie (jeden punkt biegłości) w broniach dostępnych złodziejowi.
+- Musi mieć charakter chaotyczny.
+- Pieśń barda nie wspomaga sojuszników.
 
-Pieśń skalda:
-Śpiewając pieśni wojenne, skald inspiruje towarzyszy, gdy ci kierują się w wir bitwy, śpiew ten może podnieść ducha walki, eliminować obawy zagrożenia, skupia myśli towarzyszy na bitwie i wypełnia przyjemnymi siłami sprawiając uczucie niezłomności. Efekt pieśni poprawia się wraz z poziomem:
+PIEŚĆ BŁAZNA:
+Pieśń ta nie wspomaga sojuszników. Zamiast tego, rozprasza uwagę każdego wroga w zasięgu słuchu. Efekt pieśni staje się potężniejszy na wyższych poziomach:
 
-1 poziom: zapewnia sojusznikom premie +2 do trafienia, obrażeń i KP oraz odporność na strach
-9 poziom: zapewnia sojusznikom premie +3 do trafienia, obrażeń i KP oraz odporność na strach i zamęt
-18 poziom: zapewnia sojusznikom premie +3 do trafienia, obrażeń i KP oraz odporność na strach, zamęt i ogłuszenie.~
+1. poziom: Przeciwnicy muszą wykonać rzut obronny przeciw czarom (z modyfikatorem +4) lub będą rozkojarzeni.
+9. poziom: Przeciwnicy muszą wykonać rzut obronny przeciw czarom lub będą rozkojarzeni i wpadną w zamęt (rzut obronny przeciw rozkojarzeniu wykonywany jest z modyfikatorem +2, a przeciw zamętowi z modyfikatorem +4)
+18. poziom: Przeciwnicy muszą wykonać rzut obronny przeciw czarom lub będą rozkojarzeni, wpadną w zamęt i staną jak osłupiali (rzut obronny przeciw rozkojarzeniu wykonywany jest bez żadnych modyfikatorów, przeciw zamętowi z modyfikatorem +2, a przeciw osłupieniu z modyfikatorem +4).
 
-@35 = ~ZABÓJCA: Jest to morderca, który opanował sztukę szybkiego i dyskretnego zabijania. Aby jak najlepiej wykonywać swoje obowiązki, działa anonimowo i przez zaskoczenie. Nauka anatomii, wyszkolenie w skrytobójstwie i używaniu trucizn pozwala zabójcy doprowadzać do śmierci z wyjątkową precyzją. Zdolny złodziej nigdy nie powinien zostać zauważony na miejscu przestępstwa.
+Rozkojarzeni przeciwnicy mają 20% szans niepowodzenia podczas rzucaniu czarów. Otrzymują też karę -2 do TraK0 i Klasy Pancerza. Wrogowie będący pod wpływem zamętu wpadną w szał, zaatakują najbliższą postać, staną w miejscu, albo zmieszane zaczną błąkać się przez okres działania zdolności. Osłupiali przeciwnicy mają do tego stopnia zaburzoną świadomość, że słuchając Pieśni błazna, nie potrafią wykonać żadnej, nawet najprostszej czynności. Niemniej jednak są oni w stanie podświadomie odczuć zagrożenie, tak więc każde wrogie działanie uwalnia ich spod działania uroku. Pieśń błazna nie działa na bezmyślne stworzenia takie jak golemy, szkielety, zombie czy galarety.
+
+SZCZĘŚCIE TREFNISIA:
+Błazny są beztroscy, lekkomyślni i skłonni do podejmowania szalonych decyzji, jednak wydają się dysponować osobliwą umiejętnością, która pozwala im przetrwać prawie każdą sytuację. Zdolność ta zapewnia premię +1 do bazowej Klasy Pancerza, +1 do wszystkich rzutów obronnych oraz +5 punktów do umiejętności Kradzieży kieszonkowej.
+
+CHAOTYCZNE MYŚLI:
+Z powodu ich unikalnego postrzegania świata, błazny mają wrodzoną niewrażliwość na efekty zaklęć, przedmiotów i umiejętności wywołujących zamęt.~
+
+@33 = ~SKALD: To nordycki bard, który jest również wojownikiem obdarzonym wielką siłą, umiejętnościami i cnotą. Skald poświęca swe życie, dążąc do doskonałości. Skaldowie są znani i szanowani jako wielcy wojowniczy poeci, którzy zapamiętują każdy smaczek z najazdu czy bitwy, nadając im formę poematu. Zaklęcia są niemal nieznane w społeczeństwie skaldów i uznaje się je za coś podejrzanego, bez względu na okoliczności. Używanie magii jest dla skalda znacznie trudniejsze i wymaga to od niego poświęcenia dodatkowej ilości czasu i wysiłku.
 
 Zalety:
-- Może używać Zatrucia ostrza raz na dzień na 1 poziomie co 4 poziomy
-- Otrzymuje Wiedzę o truciznach na 8 poziomie, umiejętność rozwija się co 8 poziomów
-- Raz dziennie może użyć Zabójczego ataku od 16 poziomie, kolejne uzyskuje co 8 poziomów
-- Mnożnik ciosu w plecy wynosi x7 zamiast x5
+- Na 1. poziomie otrzymuje zdolność Pieśń błazna, która staje się potężniejsza na 9. oraz 18. poziomie.
+- Na 1. poziomie otrzymuje premię +1 do testów trafienia i +1 do testów obrażeń używając dowolnej broni.
 
 Wady:
-- Co poziom otrzymuje tylko 15 pkt. do wykorzystania na umiejętności złodziejskie.
-- Musi mieć zły lub neutralny charakter
+- Umiejętność Kradzieży kieszonkowej na poziomie 1/4 normalnej wartości.
+- Otrzymuje karę -1 do szybkości rzucania zaklęć.
 
-Zatrucie ostrza:
-Z powodu wymagań, jakie narzuca nań jego profesja, Zabójca przywykł do pokrywania swej broni trucizną już na początku kariery. Każda broń w ten sposób przygotowana będzie zadawać dodatkowe 1K3 obrażeń od trucizny. W związku z czym, jeśli nie zostanie wykonany rzut obronny przeciw truciźnie, substancja przeniknie przez ranę do krwiobiegu ofiary zadając dodatkowe obrażenia na każdy poziom zabójcy (maksymalnie do poziomu 20). Trucizna odparowuje po 5 rundach od chwili nałożenia. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zatrute.
+PIEŚŃ SKALDA:
+Śpiewając pieśni wojenne, skald inspiruje towarzyszy, gdy ci ruszają do bitwy. Śpiew ten może podnosić ducha walki, tłumić obawę przed zagrożeniami, skupiać myśli towarzyszy na bitwie i wypełniać serca sojuszników poczuciem niezłomności. Efekt pieśni staje się potężniejszy na wyższych poziomach:
 
-Wiedza o truciznach:
-Poprzez naukę i doświadczenia, zabójca posiadł wiedzę neutralizacji trucizn. Z powodu ciągłego wystawiania się na kontakt z trucizną, powoli uodparnia się na jej działania. Za każdym razem po otrzymaniu tej umiejętności, zabójca otrzymuje na stałe +1 do rzutów obronnych przeciwko truciznom. W tym samym momencie poziom rzutu obronnego przeciw jego truciźnie również rośnie o 1.
+1. poziom: zapewnia sojusznikom premię +2 do testów trafienia, obrażeń i Klasy Pancerza oraz niewrażliwość na strach.
+9. poziom: zapewnia sojusznikom premię +3 do testów trafienia, obrażeń i Klasy Pancerza oraz niewrażliwość na strach i zamęt.
+18. poziom: zapewnia sojusznikom premię +3 do testów trafienia, obrażeń i Klasy Pancerza oraz niewrażliwość na strach, zamęt i ogłuszenie.~
 
-Zabójczy atak:
-Poprzez wnikliwe badanie słabości jego ofiary, Zabójca potrafi skupić swoją przebiegłość oraz ponadprzeciętne zdolności w jeden śmiertelny cios. Następny cios, który wyprowadza automatycznie staje się ciosem krytycznym, a jego ofiara musi wykonać rzut obronny przeciwko śmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skuteczność Zabójczego ataku rośnie. Rzuty obronne ofiary spadają o 1 na 24 poziomie, 2 na 32 i 3 na 40 poziomie. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zabite przy użyciu Zabójczego ataku.~
+@35 = ~ZABÓJCA: Jest to morderca, który opanował sztukę szybkiego i dyskretnego zabijania. Aby jak najlepiej wykonywać swoje obowiązki, działa anonimowo i poprzez zaskoczenie. Nauka anatomii, wyszkolenie w skrytobójstwie i używaniu trucizn pozwala mu na zadawanie śmierci z wyjątkową precyzją. Zdolny zabójca może zupełnie zaskoczyć niczego niespodziewającą się ofiarę.
 
-@53 = ~Sztylet jadu jest potężną bronią, którą upodobali sobie zabójcy. Ten sztylet został stworzony dla Złodziei Cienia z Amn. Za każdym razem kiedy trafi w przeciwnika, sztylet wydziela jad, który przedostaje się do krwiobiegu ofiary, jeśli ta nie wykona udanego rzutu obronnego przeciw śmierci. Jad działa szybko i pewnie.
+Zalety:
+- Rozpoczyna z mnożnikiem ciosu w plecy x3.
+- Mnożnik ciosu w plecy wynosi x7 zamiast x5.
+- Raz dziennie, co cztery poziomy, począwszy od 1. poziomu, może posłużyć się zdolnością Zatrucie ostrza.
+- Na 8. poziomie otrzymuje zdolność Wiedza o truciznach, która staje się potężniejsza co 8 poziomów.
+- Raz dziennie, co osiem poziomów, począwszy od 16. poziomu może posłużyć się zdolnością Zabójczy atak.
+
+Wady:
+- Co poziom otrzymuje tylko 15 punktów do wykorzystania na umiejętności złodziejskie.
+- Musi mieć charakter zły lub neutralny.
+
+ZATRUCIE OSTRZA:
+Z powodu wymagań, jakie narzuca nań jego profesja, zabójca przywykł do pokrywania swej broni trucizną już na początku kariery. Każda broń przygotowana w ten sposób będzie zadawać dodatkowe 1k3 obrażeń od trucizny. W związku z czym, jeśli nie zostanie wykonany rzut obronny przeciw truciznom, substancja przeniknie przez ranę do krwiobiegu ofiary, zadając dodatkowe obrażenia na każdy poziom zabójcy (maksymalnie do 20. poziomu). Trucizna odparowuje po pięciu rundach od chwili nałożenia. Zdolność ta nie działa na golemy, żywiołaki, galarety oraz nieumarłych nie mogą zostać zatrute.
+
+WIEDZA O TRUCIZNACH:
+Poprzez naukę i doświadczenia, zabójca posiadł wiedzę o neutralizowaniu trucizn. Z powodu ciągłego wystawiania się na kontakt z trucizną, powoli uodparnia się na jej działania. Za każdym razem po otrzymaniu tej zdolności, zabójca otrzymuje na stałe premię +1 do rzutów obronnych przeciwko truciznom. W tym samym momencie poziom rzutu obronnego przeciw jego truciźnie również rośnie o 1.
+
+ZABÓJCZY ATAK:
+Poprzez wnikliwe badanie słabości ofiary, zabójca potrafi skupić swoją przebiegłość oraz ponadprzeciętne zdolności w jeden śmiertelny atak. Następny cios, który zostanie przez niego wyprowadzony, staje się automatycznie ciosem krytycznym, a ofiara musi wykonać rzut obronny przeciwko śmierci, w przeciwnym razie zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skuteczność Zabójczego ataku wzrasta. Rzuty obronne ofiary spadają o 1 na 24. poziomie, 2 na 32. poziomie i 3 na 40. poziomie. Zdolność ta nie działa na golemy, żywiołaki, galarety oraz nieumarłych nie mogą zostać zatrute.~
+
+@53 = ~Sztylet jadu jest potężną bronią, którą upodobali sobie zabójcy. Ten akurat wykonano dla Złodziei Cienia z Amn. Przy każdym trafieniu, oręż wsącza jad w ciało ofiary. Na znaczne efekty tej trucizny nie trzeba czekać długo.
 
 PARAMETRY:
 
-Obrażenia: 1K4 +2
-TraK0: +2
 Specjalne:
- +15 obrażeń od trucizny (1 pkt na sekundę przez 15 sekund), rzut obronny przeciw śmierci neguje
-Waga: 2
+- Dodatkowe 15 obrażeń od trucizny (1 obrażenie na sekundę przez piętnaście sekund), rzut obronny przeciw śmierci neguje
+
+Obrażenia: 1k4 +2
+TraK0: +2
+Typ obrażeń: kłute
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
-Typ broni: 1-ręczna~
+Typ broni: 1-ręczna
 
-@54 = ~ŁOWCA NAGRÓD: To łowca ludzi, wyszkolony w tropieniu zwierzyny i sprowadzaniu jej żywcem... wszystko jedno, czy dla przedstawicieli prawa czy władców podziemi. Łowcy nagród są szczególnie dobrze wyszkoleni w tej dziedzinie i są straszliwymi przeciwnikami. Często korzystają z substancji alchemicznych, by obezwładnić czy osłabić swa ofiarę. Ich zdolność zastawiania pułapek znacznie przewyższają umiejętności zwykłego złodzieja.
+Waga: 2~
+
+@54 = ~ŁOWCA NAGRÓD: To łowca ludzi, wyszkolony w tropieniu zwierzyny i sprowadzaniu jej żywcem... wszystko jedno, czy dla przedstawicieli prawa, czy władców podziemi. Łowcy nagród są szczególnie dobrze wyszkoleni w tej dziedzinie i są strasznymi przeciwnikami. Ich umiejętności zastawiania pułapek znacznie przewyższają umiejętności zwykłego złodzieja.
 
 Zalety:
-- +15 pkt. do zastawiania pułapek
-- Raz na dzień może użyć Paraliżującej toksyny, zdolność ta jest dostępna na 1. poziomie. Umiejętność ta rozwija się co 10 poziomów
-- Może zastawiać pułapki alchemiczne jako dodatek do umiejętności podstawowej
-- Na 10 poziomie zdobywa umiejętność Eksperta alchemicznego. Umiejętność ta rozwija się co 10 poziomów
-- Ze zdolności wysokiego poziomu może wybrać Tropienie
+- +15% do Zastawiania pułapek.
+- Raz dziennie, co dziesięć poziomów, począwszy od 1. poziomu, może posłużyć się zdolnością Paraliżująca toksyna.
+- Oprócz podstawowych rodzajów pułapek, może również zastawiać pułapki alchemiczne.
+- Na 10. poziomie otrzymuje zdolność Ekspert alchemiczny, która staje się potężniejsza co 10 poziomów.
+- Na wyższych poziomach może wybrać zdolność Tropienie.
 
 Wady:
-- Co poziom otrzymuje jedynie 20 pkt. na umiejętności złodziejskie
+- Co poziom otrzymuje tylko 20 punktów do wykorzystania na umiejętności złodziejskie.
 
-Paraliżująca toksyna:
-Skomplikowane pojmowanie alchemii, jak również zielarstwa pozwala łowcy nagród tworzyć substancje znacznie obniżające pracę mięśni po wprowadzeniu do krwiobiegu. Jest to przeźroczysta, pozbawiona zapachu ciecz, którą można bez obaw wykrycia nałożyć na ostrze broni. Po trafieniu taką bronią, ofiara musi wykonać rzut obronny przeciw paraliżowi, albo zostanie unieruchmiona przez rundę na każde 10 poziomów łowcy nagród. Niestety, po nałożeniu na ostrze, ciecz ta szybko się ulatnia, czyniąc go skutecznym tylko przez jedną rundę. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na działanie paraliżującej toksyny.
+PARALIŻUJĄCA TOKSYNA:
+Zaawansowane pojmowanie alchemii, jak również zielarstwa, pozwala łowcy nagród tworzyć substancję, która po wprowadzeniu do obiegu znacznie obniża pracę mięśni. Jest to przezroczysta, pozbawiona zapachu ciecz, którą można nałożyć na ostrze bez obawy, że zostanie wykryta. Po trafieniu taką bronią ofiara musi wykonać rzut obronny przeciw paraliżowi albo zostanie unieruchomiona przez rundę na każde 10 poziomów łowcy nagród. Niestety po nałożeniu na ostrze ciecz ta szybko się ulatnia, czyniąc go skutecznym tylko przez jedną rundę. Golemy, żywiołaki, galarety oraz nieumarli są niewrażliwi na działanie paraliżującej toksyny.
 
-Pułapki alchemiczne:
-Wynikiem połączenia niesamowitych umiejętności zastawiania sideł ze znajomością alchemii, łowca nagród potrafi stworzyć pułapki, które zamiast zabijać, są raczej zaprojektowane tak, by unieruchomić ofiarę. Efekt działania pułapki zależy od poziomu łowcy nagród, ale zawsze utrzymują się one przez 5 rund i mogą być zneutralizowane przez udany rzut obronny przeciw zionięciom:
+PUŁAPKA ALCHEMICZNA:
+Dzięki połączeniu niesamowitych umiejętności zastawiania pułapek ze znajomością alchemii, łowca nagród potrafi stworzyć pułapki zaprojektowane do unieruchomiania a nie zabijania ofiary. Efekty działania pułapki zależą od poziomu łowcy nagród, ale zawsze utrzymują się przez pięć rund i mogą zostać zneutralizowane po wykonaniu rzutu obronnego przeciw zionięciom:
 
-1 poziom - zadaje 1K4 obrażeń i oszałamia ofiarę
-6 poziom - zadaje 4k4 obrażeń i spowalnia ofiarę
-11 poziom - zadaje 6k4 obrażeń i oplata ofiarę
-16 poziom - zadaje 8k4 obrażeń i oślepia ofiarę
-21 poziom - zadaje 10k4 obrażeń i pozbawia ofiarę przytomności
+1. poziom - zadaje 2k4 obrażeń (stłuczenia) i oszałamia ofiarę
+6. poziom - zadaje 4k4 obrażeń (stłuczenia) i spowalnia ofiarę
+11. poziom - zadaje 6k4 obrażeń (stłuczenia) i oplątuje ofiarę
+16. poziom - zadaje 8k4 obrażeń (stłuczenia) i oślepia ofiarę
+21. poziom - zadaje 10k4 obrażeń (stłuczenia) i pozbawia ofiarę przytomności
 
-Uwaga: obrażenia pułapek alchemicznych nie zabijają ofiary, gdy ilość jej punktów życia spadnie poniżej 0, tylko pozbawiają ją przytomności. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na ten typ obrażeń.
+Uwaga: Stłuczenia nie zabijają ofiary, gdy ilość jej punktów życia spadnie poniżej 0, zamiast tego pozbawiając ją przytomności. Golemy, żywiołaki, galarety oraz nieumarli są niewrażliwi na ten typ obrażeń.
 
-Ekspert alchemiczny
-Poprzez ciągłe doświadczenia z różnymi rodzajami odczynników, łowca nagród nauczył się wykorzystywać substancje alchemiczne z większą skutecznością. Za każdym razem, gdy podnosi się poziom umiejętności, rzuty obronne przeciwko paraliżującej toksyny i pułapkom alchemicznym, jakie ofiara musi wykonać, wzrasta o 1.~
+EKSPERT ALCHEMICZNY:
+Poprzez ciągłe doświadczenia z różnymi rodzajami odczynników, łowca nagród nauczył się wykorzystywać substancje alchemiczne z większą skutecznością. Za każdym razem, gdy podnosi się poziom tej umiejętności, rzuty obronne wykonywane przez ofiarę przeciwko paraliżującej toksynie i pułapkom alchemicznym wzrastają o 1.~
 
-@57 = ~Lirę Postępu stworzył bard Sedini Paletto. Sedini był nauczycielem młodych, ambitnych bardów w ciężkich czasach. Instrument ten, cały czas trzymany blisko, pomagał Sediniemu zwalczać tych, którzy atakowali jego bądź jego studentów. Kiedy Sedini postarzał się, przekazał lirę swemu najlepszemu studentowi o imieniu Galwen Alaman. Galwen uczył przez kilka lat zanim postanowił wybrać się w dzikie ostępy i wieść życie poszukiwacza przygód. Niektórzy sądzą, że stracił swój instrument, kiedy przypadkowo upuścił go do mokradła.
-
-PARAMETRY:
-
-Trzymany w lewej ręce instrument pozwala zapamiętać dwa dodatkowe czary 2. poziomu oraz jeden dodatkowy czar 3. poziomu~
-
-@59 = ~Powiadają, że pewna przebiegła kapłanka Auril stworzyła dziesiątki takich strzałek w celu zaopatrzenia świątynnych strażników w broń na czarną godzinę. Doskonałym narzędziem do tego wydawała się być właśnie strzałka, z uwagi na łatwość jej ukrycia. Pomniejsze zaklęcia, którymi została wzmocniona, sprawiają, że dosłownie zamraża ofiarę, a ponadto wraca do ręki miotacza. Taka broń jest na ogół rzadko spotykana poza świątyniami Auril, których kilka usianych jest na ośnieżonych szczytach Doliny Lodowego Wichru. Jednakże w ostatnich latach kilku handlarzy z Dekapolis nabyło podejrzanie spore ilości tych strzałek od miejscowych drużyn poszukiwaczy przygód.
+@56 = ~Lira postępu~
+@57 = ~Lira postępu jest dziełem barda o imieniu Sedini Paletto. Był on nauczycielem młodych ambitnych bardów w trudnych czasach. Sedini nosił ten instrument zawsze przy sobie, gdyż pomagał on zwalczać bardowi każdego, kto ośmielił się zaatakować jego albo będących pod jego opieką studentów. Kiedy Sedini się zestarzał, przekazał lirę najlepszemu ze swych studentów, Galwenowi Alamanowi. Galwen kontynuował przez kilka lat nauczanie, zanim postanowił wyruszyć w dzikie ostępy, by wieść życie poszukiwacza przygód. Niektórzy uważają, że zgubił swój instrument, upuszczając go pewnego razu prosto w mokradła.
 
 PARAMETRY:
 
-Obrażenia: 1K3 +1, +1 od zimna
-TraK0: +1
-Typ obrażeń: pocisk (kłute)
 Specjalne:
- Wraca po rzucie do właściciela
- 5% szans na to, że trafiony przeciwnik ulegnie spowolnieniu na 1 rundę
-Waga: 0
+- Trzymany w lewej ręce instrument pozwala zapamiętać dwa dodatkowe czary 2. poziomu oraz jeden dodatkowy czar 3. poziomu~
+
+@59 = ~Powiadają, że pewna przebiegła kapłanka Auril stworzyła dziesiątki takich strzałek w celu zaopatrzenia świątynnych strażników w broń na czarną godzinę. Doskonałym narzędziem do tego wydawała się właśnie strzałka, z uwagi na łatwość jej ukrycia. Pomniejsze zaklęcia, którymi została wzmocniona, sprawiają, że dosłownie zamraża ofiarę, a ponadto wraca do ręki miotacza. Taka broń jest na ogół rzadko spotykana poza świątyniami Auril, których kilka usianych jest na ośnieżonych szczytach Doliny Lodowego Wichru. Jednakże w ostatnich latach kilku handlarzy z Dekapolis nabyło podejrzanie spore ilości tych strzałek od miejscowych drużyn poszukiwaczy przygód.
+
+PARAMETRY:
+
+Specjalne:
+– Po rzucie wraca do właściciela
+- 5% szans na spowolnienie przeciwnika przez jedną rundę, po trafieniu
+
+Obrażenia: 1k3 +1, +1 od zimna
+TraK0: +1
+Typ obrażeń: pocisk
 Opóźnienie: 1
 Rodzaj biegłości: strzałka
-Typ broni: 1-ręczna~
+Typ broni: 1-ręczna
 
-@61 = ~Cieniste Ostrze wykuto z myślą o zabójcy - miało być dla niego doskonałym narzędziem. Marzy o nim wielu lubiących rozstrzygać spory za pomocą ciosu w plecy. Niewielu jednak posiada ten miecz przez długi czas. W ręku dowolnej postaci miecz ten zachowuje się jak zwykła broń o umagicznieniu +3. Jednak szczególnie potężna w dłoni złodzieja staje się wskutek zwiększenia szansy na trafienie oraz podniesienia współczynnika sztyletowania.
+Waga: 0~
+
+@61 = ~Cieniste ostrze wykuto z myślą o zabójcy - miało być dla niego doskonałym narzędziem. Marzy o nim wielu lubiących rozstrzygać spory za pomocą ciosu w plecy. Niewielu jednak posiada ten miecz przez długi czas. W ręku dowolnej postaci miecz ten zachowuje się jak zwykła broń o umagicznieniu +3. Jednak staje się szczególnie potężna w dłoni złodzieja wskutek zwiększenia szansy na trafienie oraz podniesienia współczynnika sztyletowania.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +3
+Specjalne (tylko dla złodziei):
+- Mnożnik Ciosu w plecy zwiększony o 1
+- TraK0: +2
+
+Obrażenia: 1k6 +3
 TraK0: +3
 Typ obrażeń: kłute
-Specjalne (tylko dla złodziei):
- Mnożnik ciosu w plecy zwiększony o 1
- +2 do TraK0
-Waga: 3
 Opóźnienie: 0
-Rodzaj biegłości: krótki miecz
+Rodzaj biegłości: miecz krótki
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@73 = ~Ta mikstura zwiększa zdolność percepcji pijącej go osoby, pozwalając mu wykonać delikatne zadania z większą precyzją. Ma to na celu uczynić niektóre złodziejskie umiejętności lepszymi w osiągnięciu celu. Tylko złodzieje mogą czerpać korzyści z tej mikstury.
+Wymagania:
+- Siła: 5
+
+Waga: 3~
+
+@73 = ~Mikstura ta wyostrza zmysły pijącego, co pozwala mu lepiej wykonywać czynności wymagające wyczucia. W efekcie może on z większym powodzeniem używać niektórych zdolności złodziejskich. Tylko złodzieje mogą czerpać korzyści z tej mikstury.
 
 PARAMETRY:
 
-Specjalne:
- +10% do Otwierania zamków
- +20% do Wykrywania pułapek
- +25% do Wykrywania iluzji
+Otwieranie zamków: +10%
+Znajdowanie pułapek: +20%
+Wykrycie iluzji: +25%
 
-Czas trwania: 8 tur~
+Czas działania: 8 tur~
 
 @74 = ~Mikstura ta tymczasowo zwiększa umiejętności złodziejskie i ilość punktów życia złodzieja, jeśli ten nie ma poziomu wyższego od 13. Premie te maleją, gdy złodziej osiąga wyższe poziomy doświadczenia i na koniec całkowicie zanikają, gdy osiągnie on mistrzostwo w sztuce złodziejskiej.
 
 PARAMETRY:
 
-Specjalne:
- Poziom 1-3: +20% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość PŻ o 5k6
- Poziom 4-6: +16% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość PŻ o 4k6+1
- Poziom 7-9: +12% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość PŻ o 3k6+2
- Poziom 10-12: +8% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość PŻ o 2k6+3
- Poziom 13+: brak efektów
+Poziom 1-3: +20% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość punktów życia o 5k6
+Poziom 4-6: +16% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość punktów życia o 4k6 +1
+Poziom 7-9: +12% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość punktów życia o 3k6 +2
+Poziom 10-12: +8% do wszystkich umiejętności złodziejskich, tymczasowo zwiększa ilość punktów życia o 2k6 +3
+Poziom 13+: brak efektów
 
-Czas trwania: 3 tury~
+Czas działania: 3 tury~
 
-@79 = ~Ten magicznie wyczarowany instrument może rywalizować z wyrobami najlepszych rzemieślników w całym Faerunie. Jednak pod pewnym kątem flet wydaje się być wręcz przejrzysty, jak gdyby stworzono go jedynie z dźwięku nut. W rękach szczególnie utalentowanego barda, flet ten może zostać wykorzystany, aby przełamać zauroczenia, tym samym skutecznie neutralizując efekt wszelkich uroków, jak i podobnych umiejętności (z wyjątkiem psioniki) ze szkoły magii zauroczeń, obojętnie czy są one dobroczynne, czy też nie (trzy ładunki). Może być również użyty do naśladowania wszystkich zaklęć magii uroków (dwa ładunki). Jako ostatnią czynność, flet może przywołać Ducha wojownika (jeden ładunek).
+@79 = ~Ten magicznie wyczarowany instrument może rywalizować z wyrobami najlepszych rzemieślników w całym Faerûnie. Jednak pod pewnym kątem flet wydaje się wręcz przejrzysty, jak gdyby stworzono go jedynie z dźwięku nut. W rękach szczególnie utalentowanego barda flet ten może zostać wykorzystany, aby przełamać zauroczenia, tym samym skutecznie neutralizując efekt wszelkich uroków, jak i podobnych umiejętności (z wyjątkiem psioniki) ze szkoły magii zauroczeń, obojętnie czy są one dobroczynne, czy też nie (trzy ładunki). Może być również użyty do naśladowania wszystkich zaklęć magii uroków (dwa ładunki). Jako ostatnią czynność, flet może przywołać Ducha wojownika (jeden ładunek).
 
 PARAMETRY:
 
@@ -274,480 +291,581 @@ Czas działania: specjalny
 Obszar działania: rzucający czar
 
 Właściwość 3:
-Efekt: Przywołanie Ducha wojownika
+Efekt: Przywołanie ducha wojownika
 Zasięg: specjalny
 Czas działania: 10 rund
 Obszar działania: rzucający czar~
 
-@111 = ~Jest to puklerz Kiela Zabójcy Legionów, pierworodnego syna Durlaga Zabójcy Trolli i Klanowego Księcia w nieszczęsnej wieży swego ojca. Dzięki temu, że jest niezwykle lekki i znakomicie wykonany, zwiększa zręczność używającej go osoby o 1.
+@111 = ~Jest to puklerz Kiela Zabójcy Legionów, pierworodnego syna Durlaga Zabójcy Trolli i Klanowego Księcia w nieszczęsnej wieży swego ojca. Dzięki temu, że jest niezwykle lekki i znakomicie wykonany, zwiększa Zręczność używającej go osoby o 1.
 
 PARAMETRY:
 
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- +1 do Zręczności
+- Klasa Pancerza: 2
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Zręczność: +1
 
-Klasa Pancerza: 2
-Waga: 2
-Wymagana siła: 4~
+Wymagania:
+- Siła: 4
+
+Waga: 2~
 
 @113 = ~Ten krótki łuk refleksyjny został stworzony przez ekscentrycznego gnomiego wynalazcę tak, by każdą wystrzeloną strzałę naładować małym ładunkiem elektrycznym. Za każdym razem, gdy taka strzała trafi cel, istnieje szansa, że utworzone zostanie pole elektryczne wokół jego ofiary. Dopóki efekt nie zostanie rozproszony, otaczające go pole przyciągnie każdy lecący w jego stronę pocisk.
 
 PARAMETRY:
 
+Specjalne:
+- 10% wszystkich trafień zadaje dodatkowo 1k3 obrażeń od elektryczności, a także pogarsza Klasę Pancerza celu przeciw pociskom o 2 przez kolejne trzy rundy
+
 Obrażenia: +3
 TraK0: +2
- Specjalne:
- 10% wszystkich trafień zadaje dodatkowe 1K3 pkt. od elektryczności i pogarsza KP celu przeciwko pociskom o 2 przez 3 kolejne rundy
-Waga: 2
 Opóźnienie: 4
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
 
-@115 = ~Nazywany również pięściakiem. Tłuk to mała skórzana sakiewka wypełniona piaskiem, śrutem, monetami lub jakimkolwiek cięższym materiałem. Używany do dyskretnego pozbawienia ofiary przytomności poprzez uderzenie w głowę lub w tył szyi. Tłuk bardziej nadaje się do miejskiego otoczenia niż wyprawy czy plądrowanie lochów. Na ogół doskonale się sprawdza w chwilach, gdy chcemy pojmać kogoś nie robiąc mu tym krzywdy, jednak złodzieje upodobali sobie tę broń ze względu na jej nikczemne zastosowanie.
+Wymagania:
+- Siła: 16
+
+Waga: 2~
+
+@115 = ~Nazywany również pięściakiem. Tłuk to mała skórzana sakiewka wypełniona piaskiem, śrutem, monetami lub jakimkolwiek cięższym materiałem. Używany do dyskretnego pozbawienia ofiary przytomności poprzez uderzenie w głowę lub w tył szyi. Tłuk bardziej nadaje się do miejskiego otoczenia niż wyprawy czy plądrowanie lochów. Na ogół doskonale się sprawdza w chwilach, gdy chcemy pojmać kogoś, nie robiąc mu tym krzywdy, jednak złodzieje upodobali sobie tę broń ze względu na jej nikczemne zastosowanie.
 
 PARAMETRY:
 
-Obrażenia: 1k2
-Typ obrażeń: obuchowe (nie powodują śmierci)
 Specjalne:
- Jeśli uderzona tłukiem ofiara straci punkty życia, traci przytomność zadaje obrażenia, które nie powodują śmierci
-Waga: 1
+- Trafiona tłukiem ofiara, której punkty życia spadną do 0 lub poniżej, nie umiera, lecz zamiast tego traci przytomność
+
+Obrażenia: 1k2
+Typ obrażeń: obuchowe (stłuczenia)
 Opóźnienie: 2
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 3~
+
+Wymagania:
+- Siła: 3
+
+Waga: 1~
 
 @117 = ~Okrągły kamień Ioun o głębokim czerwonym odcieniu. Po założeniu poprawia koordynację ruchu, refleks oraz równowagę, czyniąc go wysoko cenionym dodatkiem pośród złodziei.
 
 PARAMETRY:
 
-Klasa Pancerza: bez zmian
 Specjalne:
- +1 do Zręczności, kiedy kamień jest używany
+ - Zręczność: +1
+
+Klasa Pancerza: bez zmian
+
 Waga: 2~
 
-@119 = ~Ten ciemnoniebieski kamień Ioun wygląda jakby jego kształt został starannie wypolerowany z bardziej surowej formy. Krążą pogłoski, że dawniej był częścią kamienia zmysłów Mirdivala Przebiegłego, calimshańskiego nadwornego czarodzieja, który poświęcił swe życie na szukaniu i tworzeniu magicznych artefaktów dla swojego Baszy. W trakcie wielu swych podróży, czarodziej studiował i zaznajamiał się z ogromna liczbą zaklętych przedmiotów i mistycznych obiektów. W obawie przed zapomnieniem ważnych szczegółów oraz z braku zaufania do trwałości papieru, Mirdival regularnie zapisywał swe wspomnienia w kamieniu zmysłów, który otrzymał od przemierzającego krainy kupca Ogniowego genasi. Niestety, jeden z jego eksperymentów nie powiódł się, a jego wieża została zniszczona w wyniku eksplozji. W chwili upadku wieży jego kamień zmysłów roztrzaskał się na setki fragmentów. Niektóre po dziś dzień przechowują niewielką część wspomnień czarodzieja.
+@119 = ~Ten ciemnoniebieski kamień Ioun wygląda, jakby jego kształt został starannie wypolerowany z bardziej surowej formy. Krążą pogłoski, że dawniej był częścią kamienia zmysłów Mirdivala Przebiegłego, calishyckiego nadwornego czarodzieja, który poświęcił swe życie na szukaniu i tworzeniu magicznych artefaktów dla swojego Paszy. Podczas wielu ze swych podróży czarodziej studiował i zaznajamiał się z ogromną liczbą zaklętych przedmiotów i mistycznych obiektów. W obawie przed zapomnieniem ważnych szczegółów oraz z braku zaufania do trwałości papieru Mirdival regularnie zapisywał swe wspomnienia w kamieniu zmysłów, który otrzymał od przemierzającego krainy kupca Ogniowego genasi. Niestety, jeden z jego eksperymentów nie powiódł się, a jego wieża została zniszczona w wyniku eksplozji. W chwili upadku wieży jego kamień zmysłów roztrzaskał się na setki fragmentów. Niektóre po dziś dzień przechowują niewielką część wspomnień czarodzieja.
 
 PARAMETRY:
 
-Klasa Pancerza: bez zmian
 Specjalne:
- +20 do Wiedzy
+ - +20 do Wiedzy
+
+Klasa Pancerza: bez zmian
+
 Waga: 2~
 
-@121 = ~W roku 1228 zima była wyjątkowo ciężka dla osady niziołków niedaleko Lasu Shalebrook. Przez ostatnie lata nie było im łatwo, na domiar złego zapasy żywności kurczyły się. Sytuacja jeszcze bardziej się pogorszyła wraz z najazdami trolli, które stawały się coraz to częstsze z powodu głodu ogarniającego cały region. Pomimo niewielkiej ilości, ich wielka siła i odporność pozwoliły trollom bezlitośnie odebrać niziołkom resztki żywności. Ogromny apetyt trolli nie został jednak zaspokojony tak drobną ilością pożywienia, więc zaczęli pożywiać się zdrowszymi niziołkami. Rozwścieczony przywódca osady usiłował wezwać pomoc, ale z powodu zasypanych śniegiem dróg i odciętym przez las, w którym roiło się od trolli, żadne nagłe wsparcie nie mogło nadejść. Pewnego ranka, gdy trolle porwali jego młodszą siostrę, młody łotrzyk Lars Lekkostopy podjął desperackie kroki. Tej samej nocy zebrał w sobie odwagę i przedarł się przez las trolli. Ostatkiem sił udało mu się dotrzeć do osady krasnoludów. Błagał ich o pomoc, ale z powodu nadchodzącego najazdu orków, krasnoludy nie mogli zaoferować niczego z wyjątkiem broni i zasobów. Stracił wszelką nadzieję. Załamany, Lars złapał jedyną broń jaką potrafił władać, był to sztylet, po czym odszedł. Pani Tymora tego dnia uśmiechnęła się do niego, ponieważ nieumyślnie wziął ze sobą ostrze, które wkrótce uratowało mu życie. Przedzierając się przez las, głośne powarkiwanie zaprowadziło go do jaskini, w której spały trolle. Widok porozrzucanych dookoła nadgryzionych kości jego pobratymców przelał czarę goryczy. Wbiegłszy bezmyślnie do jaskini, Lars brutalnie wbił ostrze krasnoludzkiego sztyletu w najbliżej śpiącego trolla, myślami był już przy swej ukochanej siostrze. Ku jego zdziwieniu, troll którego właśnie dźgnął zerwał się, wrzeszcząc w agonii, gdy jego paskudne cielsko zaczęło się roztapiać i rozpływać w kałużę brei. Reszta trolli obudziła się, ale widok ich rozpływającego się kompana oraz odór kwasu wprowadził ich w tak ogromny lęk, że czym prędzej uciekli, by już nigdy nie powrócić do Lasu Shalebrook. Wciąż zszokowany, Lars powoli zebrał swe myśli i uwolnił swą siostrę wraz z pozostałą grupą porwanych niziołków. Ostatecznie, Lars Lekkostopy został ogłoszony Zbawicielem Shalebrook, a jego broni nadano imię Trollostapiacza.
+@121 = ~WW 1228 KD zima była wyjątkowo ciężka dla osady niziołków niedaleko Lasu Shalebrook. Przez ostatnie lata nie było im łatwo, na domiar złego zapasy żywności kurczyły się. Sytuacja pogorszyła się jeszcze bardziej wraz z najazdami trolli, które stawały się coraz częstsze z powodu głodu ogarniającego cały region. Pomimo niewielkiej ilości, wielka siła i odporność pozwoliły trollom bezlitośnie odebrać niziołkom resztki żywności. Ogromny apetyt trolli nie został jednak zaspokojony tak drobną ilością pożywienia, więc zaczęli pożywiać się zdrowszymi niziołkami. Rozwścieczony przywódca osady usiłował wezwać pomoc, ale z powodu zasypanych śniegiem dróg i odciętym przez las, w którym roiło się od trolli, żadne nagłe wsparcie nie mogło nadejść. Pewnego ranka, gdy trolle porwali jego młodszą siostrę, młody łotrzyk Lars Lekkostopy podjął desperackie kroki. Tej samej nocy zebrał w sobie odwagę i przedarł się przez las trolli. Ostatkiem sił udało mu się dotrzeć do osady krasnoludów. Błagał ich o pomoc, ale z powodu nadchodzącego najazdu orków, krasnoludy nie mogli zaoferować niczego z wyjątkiem broni i zasobów. Stracił wszelką nadzieję. Załamany, Lars złapał za sztylet, jedyną broń, jaką potrafił władać, po czym odszedł. Pani Tymora uśmiechnęła się tego dnia do niego, ponieważ nieumyślnie wziął ze sobą ostrze, które wkrótce uratowało mu życie. Przedzierając się przez las, głośne powarkiwanie doprowadziło go do jaskini, w której spały trolle. Widok porozrzucanych dookoła nadgryzionych kości jego pobratymców przelał czarę goryczy. Wbiegłszy bezmyślnie do jaskini, Lars wbił brutalnie ostrze krasnoludzkiego sztyletu w najbliżej śpiącego trolla, myślami będąc już przy swej ukochanej siostrze. Ku jego zdziwieniu, troll, którego właśnie dźgnął, zerwał się, wrzeszcząc w agonii, gdy jego paskudne cielsko zaczęło się roztapiać i rozpływać w kałużę brei. Reszta trolli obudziła się, ale widok ich rozpływającego się kompana oraz odór kwasu wprowadził ich w tak ogromny lęk, że czym prędzej uciekli, by już nigdy nie powrócić do Lasu Shalebrook. Wciąż zszokowany, Lars powoli zebrał swe myśli i uwolnił swą siostrę wraz z pozostałą grupą porwanych niziołków. Ostatecznie Lars Lekkostopy został ogłoszony Zbawicielem Shalebrook, a jego broni nadano imię Trollostapiacza.
 
 PARAMETRY:
 
-Obrażenia: 1K4, +2 od kwasu, +4 przeciwko trollom
-TraK0: +2, +4 przeciwko trollom
 Specjalne:
- 15% szans, że każdy trafiony troll otrzyma dodatkowe 15 pkt obrażeń od kwasu
-Waga: 1
+- 15% szans na dodatkowe 15 obrażeń od kwasu przeciw trollom, po trafieniu
+
+Obrażenia: 1k4, +2 od kwasu, +4 przeciw trollom
+TraK0: +2, +4 przeciw trollom
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
 Typ broni: 1-ręczna
-Wymagana siła: 3~
 
-@123 = ~Sztylet ten został wykuty z najczystszego srebra i pobłogosławiony przez Sehanine Księżycowy Łuk, elfią boginię księżyca. Jego ostrze jest niezwykle skuteczne w walce z wampirami, jako że został zaklęty tak, by przekazywać choćby najmniejsza cząstkę mocy ze sfery pozytywnej energii. Każdego dnia broń ta gromadzi niewielkie ilości pozytywnej energii. Można je później wykorzystać jako tarczę przeciw wysysającym dusze szponom wampira. Dodatkowo każdy wampir trafiony tymże sztyletem może zostać ogłuszony na skutek zgromadzonej w nim energii.
+Wymagania:
+- Siła: 3
+
+Waga: 1~
+
+@123 = ~Sztylet ten został wykuty z najczystszego srebra i pobłogosławiony przez Sehanine Księżycowy Łuk, elfią boginię księżyca. Jego ostrze jest niezwykle skuteczne w walce z wampirami, jako że został zaklęty tak, by przekazywać choćby najmniejszą cząstkę mocy ze sfery pozytywnej energii. Każdego dnia broń ta gromadzi niewielkie ilości pozytywnej energii. Można je później wykorzystać jako tarczę przeciw wysysającym dusze szponom wampira. Dodatkowo każdy wampir trafiony tymże sztyletem może zostać ogłuszony na skutek zgromadzonej w nim energii.
 
 PARAMETRY:
 
-Obrażenia: 1K4 +3, +5 przeciwko wampirom
-TraK0: +3, +5 przeciwko wampirom
+Specjalne:
+- Ochrona przed negatywną energią, trzy razy dziennie
+- 15% szans na ogłuszenie wampira przez dwie rundy, po trafieniu
+
+Obrażenia: 1k4 +3, +5 przeciw wampirom
+TraK0: +3, +5 przeciw wampirom
 Typ obrażeń: kłute
-Specjalne:
- Ochrona przed negatywną energią 3 razy dziennie
- 15% szans, że każdy wampir zostanie ogłuszony na 2 rundy
-Waga: 1
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
 Typ broni: 1-ręczna
-Wymagana siła: 3~
 
-@125 = ~Na pierwszy rzut oka ten niedokładnie wykonany, pokryty rdzą sztylet jest raczej kiepskim wyborem na broń. Dopiero goblińskie runy wyryte na ostrzu zdradzają nieco jego mocy i historii. Broń ta najwyraźniej służyła jako narzędzie tortur potężnego goblińskiego szamana Sharnuka, który ponad wszystko pragnął zgłębiać swą magiczną wiedzę. Plemię Sharnuka często porywało samotnie podróżujących magów, by potem wyciągnąć z nich ich wszystkie sekrety. W czasie przesłuchania, Sharnuk skrupulatnie nakłuwał swoje ofiary, dopóki nie osłabiły ich magiczne dolegliwości albo z powodu dużej ilości utraconej krwi nie zaczęli majaczyć. W takim stanie z łatwością mógł wysysać wiedzę z umysłów czarodziei. Gdy już stwierdził, że ma już wystarczającą potęgę, Sharnuk zaprowadził swoje plemię i najechał pobliską osadę gnomów. Szczęście, niestety, mu nie dopisało, jako że cała jego kohorta została doszczętnie spalona przez jego pierwszą próbę rzucenia Ognistej kuli.
+Wymagania:
+- Siła: 3
+
+Waga: 1~
+
+@125 = ~Na pierwszy rzut oka ten niedokładnie wykonany, pokryty rdzą sztylet jest raczej kiepskim wyborem na broń. Dopiero goblińskie runy wyryte na ostrzu zdradzają nieco jego mocy i historii. Broń ta najwyraźniej służyła jako narzędzie tortur potężnego goblińskiego szamana Sharnuka, który ponad wszystko pragnął zgłębiać swą magiczną wiedzę. Plemię Sharnuka często porywało samotnie podróżujących magów, by potem wyciągnąć z nich ich wszystkie sekrety. W czasie przesłuchania Sharnuk skrupulatnie nakłuwał swoje ofiary, dopóki nie osłabiły ich magiczne dolegliwości albo z powodu dużej ilości utraconej krwi nie zaczęli majaczyć. W takim stanie z łatwością mógł wysysać wiedzę z umysłów czarodziei. Gdy już stwierdził, że ma już wystarczającą potęgę, Sharnuk zaprowadził swoje plemię i najechał pobliską osadę gnomów. Szczęście, niestety, mu nie dopisało, jako że cała jego kohorta została doszczętnie spalona przez jego pierwszą próbę rzucenia Ognistej kuli.
 
 PARAMETRY:
 
-Obrażenia: 1K4 +3
+Specjalne:
+- 33% szans na to, że ofiara znajdzie się pod wpływem jednego z poniższych efektów (rzut obronny przeciw śmierci neguje):
+Plugawa gorączka - utrata 2 punktów Kondycji i Zręczności na jedną turę
+Piekielne dreszcze - utrata 2 punktów Siły i spowolnienie na jedną turę
+Zgnilizna mumii - dodatkowe 20 obrażeń przez dwie rundy
+
+Obrażenia: 1k4 +3
 TraK0: +3
 Typ obrażeń: kłute
-Specjalne:
- 33% szans na losowe efekty, jeśli ofierze nie powiedzie się rzut obronny przeciwko śmierci:
- Plugawa gorączka - utrata 2 pkt. Kondycji i Zręczności na 1 turę
- Piekielne dreszcze - utrata 2 pkt. Siły i spowolnienie na 1 turę
- Zgnilizna mumii - dodatkowe 20 pkt. obrażeń przez 2 rundy
-Waga: 1
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
 Typ broni: 1-ręczna
-Wymagana siła: 3~
 
-@127 = ~To ostrze należało niegdyś do Lao-Tzuna, samuraja żyjącego na jednej z prowincji Kara-Tur. Z chwilą ukończenia swego szkolenia, wojownik przysiągł, że uwolni jego kraj od rozbójników i bandytów nękających jego pobratymców przez ostatnie 10 lat. Niestety, nie było to łatwe zadanie, gdyż jego przeciwnicy byli sprytni i odziani w maski atakowali jedynie pod osłoną nocy. Lao-Tzu zrozumiał, że ci bandyci nie mają honoru i równie dobrze mogą ukrywać się pośród ludzi, których chciał chronić, nie podjął się jednak drastycznych kroków, jako że jego kodeks postępowania nie pozwalał mu na bezpodstawne oskarżanie niewinnych ludzi. Aby ułatwić sobie zadanie, Lao-Tzu odnalazł wielkiego mistrza Wu Jena i poprosił go, by ten zaklął jego wakizashi mocą wykrywania charakteru, dzięki czemu mógłby odnaleźć i zlikwidować każdego, pozbawionego honoru. Samuraj zorganizował ucztę dla skrzywdzonych ludzi, by podnieść ich na duchu i jednocześnie zwabić bandytów. Lao-Tzu był zachwycony wiadomością, że ludzie odpowiedzieli na jego zaproszenie. Korzystając z nowej zdolności jego ostrza, samuraj zdołał oddzielić sprytnych bandytów od prostych ludzi w oddzielnych salach. Gdy już się wszyscy zebrali, Lao-Tzu zabarykadował jedyne wyjście i stawił czoła tuzinom łotrów. Po krótkiej bitwie udało mu się pokonać wszystkich rozbójników, ale jego honor nie pozwolił mu zabić nawet tak bezwartościowych wrogów. Zamiast tego wygnał ich z prowincji, a jego ludzie znów zaznali spokoju.
+Wymagania:
+- Siła: 3
+
+Waga: 1~
+
+@127 = ~To ostrze należało niegdyś do Lao-Tzuna, samuraja żyjącego na jednej z prowincji Kara-Tur. Z chwilą ukończenia swego szkolenia, wojownik przysiągł, że uwolni jego kraj od rozbójników i bandytów nękających jego pobratymców przez ostatnie dziesięć lat. Niestety, nie było to łatwe zadanie, gdyż jego przeciwnicy byli sprytni i odziani w maski atakowali jedynie pod osłoną nocy. Lao-Tzu zrozumiał, że ci bandyci nie mają honoru i równie dobrze mogą ukrywać się pośród ludzi, których chciał chronić, nie podjął się jednak drastycznych kroków, jako że jego kodeks postępowania nie pozwalał mu na bezpodstawne oskarżanie niewinnych ludzi. Aby ułatwić sobie zadanie, Lao-Tzu odnalazł wielkiego mistrza Wu Jena i poprosił go, by ten zaklął jego wakizashi mocą wykrywania charakteru, dzięki czemu mógłby odnaleźć i zlikwidować każdego, pozbawionego honoru. Samuraj zorganizował ucztę dla skrzywdzonych ludzi, by podnieść ich na duchu i jednocześnie zwabić bandytów. Lao-Tzu był zachwycony wiadomością, że ludzie odpowiedzieli na jego zaproszenie. Korzystając z nowej zdolności jego ostrza, samuraj zdołał oddzielić sprytnych bandytów od prostych ludzi w oddzielnych salach. Gdy już się wszyscy zebrali, Lao-Tzu zabarykadował jedyne wyjście i stawił czoła tuzinom łotrów. Po krótkiej bitwie udało mu się pokonać wszystkich rozbójników, ale jego honor nie pozwolił mu zabić nawet tak bezwartościowych wrogów. Zamiast tego wygnał ich z prowincji, a jego ludzie znów zaznali spokoju.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +2, +4 przeciwko chaotycznym
-TraK0: +2, +4 przeciwko chaotycznym
-Typ obrażeń: kłute
 Specjalne:
- +1 do Klasy Pancerza
- Poznanie charakteru 2 razy dziennie
-Waga: 2
+- Klasa Pancerza: +1
+- Poznanie charakteru, dwa razy dziennie
+
+Obrażenia: 1k8 +2, +4 przeciw istotom chaotycznym
+TraK0: +2, +4 przeciw istotom chaotycznym
+Typ obrażeń: kłute
 Opóźnienie: 1
 Rodzaj biegłości: sejmitar/wakizashi/ninja-to
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@129 = ~Zawód ninja jest bardzo wszechstronny, niektórzy to zdolni zabójcy inni zaś górują w umiejętności skradania i kradzieży. Właścicielka tego ostrza należała zdecydowanie do tej drugiej grupy. Jej prawdziwe imię pozostaje tajemnicą, znana jednak była jako Czarny Kot, niesławna złodziejka słynąca ze zdobywania rzadkich towarów dla, i od wyższej klasy obywateli Kara-Tur. Nie było niczym niezwykłym, gdy ukradła wartościowy klejnot z kolekcji jakiegoś szlachcica, by później sprzedać go innemu arystokracie, a na koniec ukraść go ponownie dla samej przyjemności kradzieży. Za jej intrygi Czarny Kot był ścigany przez wielu wojowników z Kara-Tur, ale dzięki połączeniu jej szczęścia z nadzwyczajnymi zdolnościami akrobacji udawało jej się zawsze unikać pościgu. Zgodnie z opowieścią, ostatecznie zakochała się w szczególnie upartym samuraju, z którym opuściła kraj oraz jej dotychczasowe życie.
+Wymagania:
+- Siła: 5
+
+Waga: 2~
+
+@129 = ~Zawód ninja jest bardzo wszechstronny, niektórzy to zdolni zabójcy inni zaś górują w umiejętności skradania i kradzieży. Właścicielka tego ostrza należała zdecydowanie do tej drugiej grupy. Jej prawdziwe imię pozostaje tajemnicą, znana jednak była jako Czarny Kot, niesławna złodziejka słynąca ze zdobywania rzadkich towarów dla i od obywateli Kara-Tur z wyższych sfer. Nie było niczym niezwykłym, gdy ukradła wartościowy klejnot z kolekcji jakiegoś szlachcica, by później sprzedać go innemu arystokracie, a na koniec ukraść go ponownie dla samej przyjemności kradzieży. Za jej intrygi Czarny Kot był ścigany przez wielu wojowników z Kara-Tur, ale dzięki połączeniu jej szczęścia z nadzwyczajnymi zdolnościami akrobacji udawało jej się zawsze unikać pościgu. Zgodnie z opowieścią, ostatecznie zakochała się w szczególnie upartym samuraju, z którym opuściła kraj oraz jej dotychczasowe życie.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +2
+Specjalne:
+- Zręczność: +1
+- Szczęście: +1
+
+Obrażenia: 1k8 +2
 TraK0: +2
 Typ obrażeń: sieczne
-Specjalne:
- +1 do Zręczności i Szczęścia
-Waga: 4
 Opóźnienie: 2
 Rodzaj biegłości: sejmitar/wakizashi/ninja-to
 Typ broni: 1-ręczna
-Wymagana siła: 6~
 
-@131 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć "żywe statuy" w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
+Wymagania:
+- Siła: 6
+
+Waga: 4~
+
+@131 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć „żywe statuy” w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +2, +4 przeciwko golemom
-TraK0: +2, +4 przeciwko golemom
-Typ obrażeń: obuchowe
 Specjalne:
- 10% szans na natychmiastowe zniszczenie Kamiennego, Glinianego oraz Piaskowego golema przy trafieniu
-Waga: 3
+- 10% szans na natychmiastowe zniszczenie kamiennego, glinianego oraz piaskowego golema, po trafieniu
+
+Obrażenia: 1k6 +2, +4 przeciw golemom
+TraK0: +2, +4 przeciw golemom
+Typ obrażeń: obuchowe
 Opóźnienie: 2
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@133 = ~Ten ceremonialny puklerz zdobiony jest magicznymi runami, które powszechnie związane są z Gaerdalem Żelazną Dłonią, gnomim bóstwem czujności i najbardziej bojowym patronem z panteonu gnomów. Szacunek zawdzięcza swej poważnej naturze, uczył bowiem gnomy jak walczyć z większymi od siebie wykorzystując swoją małą posturę i naturalne zdolności na swą korzyść. Gaerdal miał małą, ale gorliwą grupkę wyznawców spośród gnomich wojowników i tych odpowiedzialnych za eliminowanie zewnętrznego zagrożenia. Tym samym zdobył sobie szacunek Zapomnianego Ludu.
+Wymagania:
+- Siła: 5
 
-PARAMETRY:
+Waga: 3~
 
-Klasa Pancerza: +2
-Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- Zapewnia dodatkową premię +2 do KP przeciwko olbrzymom
-Waga: 2
-Wymagana siła: 4~
-
-@135 = ~Tego rodzaju poświęcone puklerze często stosowane są przez wysokich kapłanów oraz strażników świątyni Moradina, stwórcy krasnoludzkiej rasy. Kowal Dusz jest ucieleśnieniem potęgi oraz silnej woli, a każda broń, pancerz oraz narzędzie jest przedłużeniem jego boskiego wcielenia. Zaklęcia zawarte w tej tarczy obdarzają błogosławieństwem Moradina każdego, kto ją dzierży, prowadząc jego broń do pewnego uderzenia i ochrony przez wszelkimi urazami. Wiele takich puklerzy zaginęło podczas bitwy w Głębi Dorna po tym, jak najeżdżające orki zniszczyły i splądrowały potężną twierdzę krasnoludów.
+@133 = ~Ten ceremonialny puklerz zdobiony jest magicznymi runami, które powszechnie związane są z Gaerdalem Żelazną Dłonią, gnomim bóstwem czujności i najbardziej bojowym patronem z panteonu gnomów. Szacunek zawdzięcza swej poważnej naturze, uczył bowiem gnomy, jak walczyć z większymi od siebie wykorzystując na swą korzyść małą posturę i naturalne zdolności. Gaerdal miał małą, ale gorliwą grupkę wyznawców pośród gnomich wojowników oraz tych, którzy byli odpowiedzialni za eliminowanie zagrożeń z zewnątrz. Zdobył sobie tym samym szacunek Zapomnianego Ludu.
 
 PARAMETRY:
 
-Klasa Pancerza: +3
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- Noszący jest pod wpływem Błogosławieństwa
- Sanktuarium raz dziennie
-Waga: 2
-Wymagana siła: 4~
+- Klasa Pancerza: +2 (+4 przeciw olbrzymom)
+- Nie chroni przed obrażeniami kłutymi i pociskami
+
+Wymagania:
+- Siła: 4
+
+Waga: 2~
+
+@135 = ~Tego rodzaju poświęcone puklerze stosowane są często przez wysokich kapłanów oraz strażników świątyni Moradina, stwórcy krasnoludzkiej rasy. Kowal Dusz jest ucieleśnieniem potęgi oraz silnej woli, a każda broń, pancerz oraz narzędzie jest przedłużeniem jego boskiego wcielenia. Zaklęcia zawarte w tej tarczy obdarzają błogosławieństwem Moradina każdego, kto ją dzierży, prowadząc jego broń do pewnego uderzenia i ochrony przez wszelkimi urazami. Wiele takich puklerzy zaginęło podczas bitwy w Głębi Dorna po tym, jak najeżdżające orki zniszczyły i splądrowały potężną twierdzę krasnoludów.
+
+PARAMETRY:
+
+Specjalne:
+- Klasa Pancerza: +3
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Noszący znajduje się pod wpływem zaklęcia Błogosławieństwo
+- Sanktuarium, raz dziennie
+
+Wymagania:
+- Siła: 4
+
+Waga: 2~
 
 @137 = ~Kieszonki tego pasa wypełnione są mnóstwem mistrzowsko wykonanych przyrządów przydatnych w pracy ślusarza i zegarmistrza. Jednakże przedmioty te z łatwością można wykorzystać do niecnych celów, co czyni je pożądanymi pośród złodziei. Klamrę tego szczególnego pasa znaczy wygrawerowana litera G.
 
 PARAMETRY:
 
- +10% to Otwierania zamków, Wykrywania pułapek i Zastawiania pułapek
+Specjalne:
+- Otwieranie zamków: +10%
+- Znajdowanie pułapek: +10%
+- Zastawianie pułapek: +10%
 
 Waga: 2~
 
-@139 = ~Akram Maluzar był niesławnym zhentarimskim czarodziejem, obsesyjnie zgłębiającym tajemnice starożytnego Nethrilu. W trakcie wielu swych podróży po Wielkim Pustkowiu, trafił na system jaskiń, które jak twierdził, były częścią Netherilskiego miasta. Jego entuzjazm jednak opadł, gdy okazało się, że poza solidnymi drzwiami w ruinach aż roi się od iluzji i zabójczych pułapek. Możliwość przekroczenia wszystkich przeszkód była poza zdolnościami Akrama, który w akcie desperacji podjął nierozważne kroki. Nie chcąc się z nikim podzielić potęgą Nethrilian, zdecydował się skraść od innych wszystkie umiejętności, których sam nie posiadał. Obiecując świetny udział w zyskach, Akram wynajął trzech Calimshańskich złodziei - eksperta od wytrychów, mistrza pułapek oraz bystrego zwiadowcę. Zamiast wysłać ich do starożytnego miasta, Akram oszukał złodziei i uwięził ich wewnątrz szafirowego kamienia Ioun, nasycając w ten sposób kamień umiejętnościami, których pożądał. Zabieg zakończył się sukcesem i przez pewien czas udawało mu się pokonywać przeszkody bez większego trudu. W końcu, dusze uwięzionych złodziei wewnątrz kamienia Ioun zaczęły się buntować i powoli wysysały zdrowie z ciała czarodzieja, by przejąć jego ciało dla siebie. Kierowany żądzą potęgi Akram nie zwracał na to szczególnej uwagi, dopóki nie było za późno. Potwornie wyczerpany, upadł tuż przed Nethriliańską biblioteką i przez przypadek uruchomił pułapkę, która zawalając jaskinie odebrała mu życie. Cenny kamień Ioun Akrama został później odnaleziony przez wędrujący szczep koboldów, twierdząc że to zwyczajny klejnot, wymienili go na zapasy.
+@139 = ~Akram Maluzar był niesławnym zhentarimskim czarodziejem, obsesyjnie zgłębiającym tajemnice starożytnego Nethrilu. W trakcie wielu swych podróży po Wielkim Pustkowiu trafił na system jaskiń, które jak twierdził, były częścią netheryjskiego miasta. Jego entuzjazm opadł jednak gdy okazało się, że poza solidnymi drzwiami w ruinach aż roi się od iluzji i zabójczych pułapek. Możliwość przekroczenia wszystkich przeszkód była poza zasięgiem Akrama, który w akcie desperacji podjął nierozważne kroki. Nie chcąc dzielić się z nikim potęgą Netheryjczyków, zdecydował się skraść innym wszystkie umiejętności, których sam nie posiadał. Obiecując świetny udział w zyskach, Akram wynajął trzech calishyckich złodziei – eksperta od wytrychów, mistrza pułapek oraz bystrego zwiadowcę. Zamiast wysłać ich do starożytnego miasta, Akram oszukał złodziei i uwięził ich wewnątrz szafirowego kamienia Ioun, nasycając go w ten sposób umiejętnościami, których sam pożądał. Zabieg zakończył się sukcesem i przez pewien czas udawało mu się bez większego wysiłku pokonywać wszelkie przeszkody. W końcu, dusze uwięzionych wewnątrz kamienia Ioun złodziei zaczęły się buntować i wysysać powoli zdrowie z ciała czarodzieja, z zamiarem przejęcia jego ciało dla siebie. Kierowany żądzą potęgi Akram nie zwracał na to szczególnej uwagi, dopóki nie było zbyt późno. Potwornie wyczerpany, upadł tuż przed netheryjską biblioteką i przez przypadek uruchomił pułapkę, która zawalając jaskinię, odebrała mu życie. Cenny kamień Ioun, będący własnością Akrama, został później odnaleziony przez wędrujący szczep koboldów, którzy twierdząc, że to zwyczajny klejnot, wymienili go na zapasy.
 
-Uwaga: W celu pozyskania wiedzy w nim zawartej, właściciel musi wręcz zanurzyć się w świadomość uwięzionych w nim dusz. Proces ten może być bardzo obciążający. Im więcej się go używa, tym coraz to większe zmęczenie ogarnia właściciela. Jedyny sposobem na usunięcie zmęczenia jest całonocny odpoczynek.
-
-PARAMETRY:
-
-Specjalne:
- Szukanie pułapek, Otwarcie i Ujawnianie niewidzialnych 3 razy dziennie~
-
-@141 = ~Niegdyś cenna własność Gildii złodziei Xanathara, ten pozornie wyglądający kaptur został potraktowany magią w celu poprawienia bystrości i percepcji każdego, kto go założy. Zaginiony podczas najazdu na handlarzy niewolników Xanathara w Skullporcie, kaptur pojawił się niedawno w Calimporcie i pokonał długą drogę aż do Athkatli razem z wielką karawaną należącą do kompanii handlowej Syberytów.
+Uwaga: W celu pozyskania zawartej w kamieniu wiedzy, właściciel musi wręcz zanurzyć się w świadomość uwięzionych w nim dusz. Proces ten może być bardzo obciążający. Im więcej się go używa, tym coraz ogarniające właściciela zmęczenie jest coraz większe. Jedynym sposobem na zniwelowanie zmęczenia jest całonocny odpoczynek.
 
 PARAMETRY:
 
 Specjalne:
- Chroni przed trafieniami krytycznymi
- +15% do Wykrywania pułapek
- Infrawizja
- Odporność na oślepienie~
+- Znajdowanie pułapek, trzy razy dziennie
+- Otwarcie, trzy razy dziennie
+- Ujawnienie niewidzialnych, trzy razy dziennie~
+
+@141 = ~Niegdyś cenna własność Gildii złodziei Xanathara, ten pozornie wyglądający kaptur został potraktowany magią w celu poprawienia bystrości i percepcji każdego, kto go założy. Zaginiony podczas najazdu na handlarzy niewolników Xanathara w mieście Skullport, kaptur pojawił się niedawno w Calimporcie i pokonał długą drogę aż do Athkatli razem z wielką karawaną należącą do kompanii handlowej Syberytów.
+
+PARAMETRY:
+
+Specjalne:
+- Chroni przed trafieniami krytycznymi
+- Znajdowanie pułapek: +15%
+- Infrawizja
+- Niewrażliwość na wszelkie formy ślepoty~
 
 @143 = ~Harfa Greagana: Pojmana widownia
-Ta świetnie wykonana harfa jest powszechnie znana pośród ludu nomadów ze wschodu, bardziej jednak ze względu na jej właściciela, Greagana z Niskich Wzgórz. Był bardem, w pewnym sensie, bardziej znanym z jego umiłowania do ludzi niż do ciężkiej pracy. Rozkazał magowi skonstruować tę harfę, by jej magiczne moce ukryły jego brak talentu. Moc jej była jednak dużo większa niż się tego spodziewał, sprowadzając go na ścieżkę kradzieży używał "swej" muzyki do zniewolenia jego ofiar. Greagan ostatecznie zniknął kilka lat temu podążając za pogłoskami o szkole bardów wyjątkowo skłonnej do przemocy. Harfa wciąż działa, jednak każdy szanujący się trubadur wolałby wstrzymać się z jej użyciem dopóki nie będzie to konieczne.
+Ta świetnie wykonana harfa jest powszechnie znana pośród ludu nomadów ze wschodu, bardziej jednak ze względu na jej właściciela, Greagana z Niskich Wzgórz. Był bardem, w pewnym sensie, bardziej znanym z jego umiłowania do ludzi niż do ciężkiej pracy. Rozkazał magowi skonstruować tę harfę, by jej magiczne moce ukryły jego brak talentu. Jej moc była jednak dużo większa, niż się spodziewał, a on sam wykorzystywał ją do zwykłych kradzieży, używając „swojej” muzyki do niewolenia ofiar. Greagan zniknął ostatecznie kilka lat temu, podążając za pogłoskami o szkole bardów znanej z niecodziennej skłonności do przemocy. Harfa wciąż działa, jednak każdy szanujący się trubadur wolałby wstrzymać się z jej użyciem, dopóki nie będzie to konieczne.
 
 PARAMETRY:
 
 Specjalne:
- Dominacja 3 razy dziennie
+- Dominacja, trzy razy dziennie
+
 Waga: 3~
 
-@145 = ~Lady Laxaella Bronshield, burmistrz Tanistanu, kazała stworzyć tę harfę dla jej nadwornego błazna zanim wysłała go, wraz kompanią jej najlepszych żołnierzy, by rozprawił się z plaga Umbrowych kolosów w Ciernistym lesie. Na początku żołnierze byli zaskoczeni, że błazen ma im towarzyszyć w tym zadaniu, lekko wyśmiewając się z jego mizernej budowy ciała i jego pozornej głupoty, ale gdy natrafili na pierwszego Umbrowego kolosa, zrozumieli prawdziwe znaczenie jego osoby. Ku ich zaskoczeniu, błazen był całkowicie odporny na potworne spojrzenie Umbrowego kolosa, który wcześniej zamienił jednego z niezłomnych żołnierzy w bezmyślnego idiotę. Co więcej, dziwaczny dźwięk dochodzący z harfy zdawał się przeciwdziałać spojrzeniu bestii, przywracając rozsądek cierpiącego żołnierza. W końcu udało się oczyścić las z Umbrowych kolosów bez żadnych strat w ludziach i tylko z kilkoma obrażeniami. Podczas powrotu do domu, żołnierze nieśli błazna na swych ramionach, przez cały czas skandując na jego cześć.
+@145 = ~Lady Laxaella Bronshield, burmistrz Tanistanu, kazała stworzyć tę harfę dla jej nadwornego błazna, zanim wysłała go, wraz z kompanią jej najlepszych żołnierzy, by rozprawił się z plagą umbrowych kolosów w Ciernistym Lesie. Z początku żołnierze byli zaskoczeni, iż błazen ma im towarzyszyć w tym zadaniu, wyśmiewając się lekko z jego mizernej budowy ciała i pozornej głupoty, ale gdy natrafili na pierwszego umbrowego kolosa, zrozumieli prawdziwe znaczenie jego roli. Ku ich zaskoczeniu, błazen był całkowicie niewrażliwy na potworne spojrzenie umbrowego kolosa, który chwilę wcześniej zamienił jednego z niezłomnych żołnierzy w bezmyślnego idiotę. Co więcej, dziwaczny dźwięk dochodzący z harfy zdawał się przeciwdziałać spojrzeniu bestii, przywracając rozsądek cierpiącemu żołnierzowi. W końcu udało się oczyścić las z umbrowych kolosów bez żadnych strat w ludziach i tylko z kilkoma obrażeniami. Podczas powrotu do domu, żołnierze nieśli błazna na ramionach, przez cały czas skandując na jego cześć.
 
 PARAMETRY:
 
 Specjalne:
- Rozprasza Zamęt na jednym celu 3 razy dziennie
+- Rozprasza Zamęt, trzy razy dziennie
+Obszar działania: 1 istota
+
 Waga: 3~
 
-@147 = ~Gorące, niczym z lawy runy wyryte na ostrzu tego sztyletu wskazują na to, że został wykuty w Thay, prawdopodobnie dla wysoko postawionego członka frakcji badaczy. Choć ostrze może być używane przez każdego, tylko ci biegli w sztukach tajemnych potrafią wydobyć jego prawdziwy potencjał. Ta niewielkich rozmiarów broń wydaje się być nasycona zaklęciem wyostrzającym umysł dzierżącej go osoby, zwiększając zdolność zapamiętywania czarodzieja.
+@147 = ~Gorące, niczym lawa runy wyryte na ostrzu tego sztyletu wskazują na to, że został on wykuty w Thay, prawdopodobnie dla wysoko postawionego członka frakcji badaczy. Choć ostrze może być używane przez każdego, tylko biegli w sztukach tajemnych potrafią wydobyć jego prawdziwy potencjał. Ta niewielkich rozmiarów broń wydaje być nasycona zaklęciem wyostrzającym umysł dzierżącej go osoby, zwiększając zdolność zapamiętywania czarów przez czarodziejów.
 
 PARAMETRY:
 
-Obrażenia: 1K4 +3
+Specjalne:
+- Inteligencja: +1
+- Pozwala zapamiętać jedno dodatkowe zaklęcie 1. i 2. poziomu
+
+Obrażenia: 1k4 +3
 TraK0: +3
 Typ obrażeń: kłute
-Specjalne:
- +1 do Inteligencji
- Umożliwia zapamiętanie dodatkowego zaklęcia 1. i 2. poziomu
-Waga: 1
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
 Typ broni: 1-ręczna
-Wymagana siła: 3~
 
-@149 = ~Stworzona przez potężnego szamana Uthgardta, maczugę tę zaklęto, by obniżała możliwości bojowe przeciwnika. Używał jej herszt Aukthar z plemienia Czarnego Kruka w wielu starciach pomiędzy jego ludem a hordami orków, które regularnie próbowały najechać Kruczą Skałę, ich rodowy pagórek. Broń ta została utracona podczas jednej ze szczególnie zażartych bitew, kiedy okrzyki bojowe walczących wywołały ogromną lawinę, która zmiotła ich w przepaść.
+Wymagania:
+- Siła: 3
+
+Waga: 1~
+
+@149 = ~Tę stworzoną przez potężnego szamana z plemienia Uthgardt maczugę zaklęto tak, by obniżała możliwości bojowe przeciwnika. Była ona używana przez Aukthara, herszta plemienia Czarnego Kruka, który walczył nią w wielu potyczkach pomiędzy jego ludźmi a hordami orków, które regularnie próbowały najechać ich rodowy pagórek, Kruczą Skałę. Broń tę utracono podczas jednej ze szczególnie zażartych bitew, kiedy okrzyki bojowe walczących wywołały ogromną lawinę, która zmiotła wszystkich w przepaść.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +1
+Specjalne:
+- 25% szans na wywołanie zmęczenia u ofiary, po trafieniu (rzut obronny przeciw śmierci neguje)
+Uwaga: golemy, żywiołaki, galarety i nieumarli są niewrażliwe na efekt zmęczenia.
+
+Obrażenia: 1k6 +1
 TraK0: +1
 Typ obrażeń: obuchowe
-Specjalne:
- 25% szans na wywołanie zmęczenia u trafionego celu, jeśli nie powiedzie się mu rzut obronny przeciwko śmierci (golemy, żywiołaki, galarety i nieumarli są niewrażliwe na efekt zmęczenia)
-Waga: 3
 Opóźnienie: 3
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@151 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o sile większej bądź równej 16.
+Wymagania:
+- Siła: 5
+
+Waga: 3~
+
+@151 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o Sile większej bądź równej 16.
 
 PARAMETRY:
 
 Obrażenia: +1
-Waga: 2
 Opóźnienie: 6
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
 
-@153 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o sile większej bądź równej 16.
+Wymagania:
+- Siła: 16
+
+Waga: 2~
+
+@153 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o Sile większej bądź równej 16.
 
 PARAMETRY:
 
 Obrażenia: +2
 TraK0: +1
-Waga: 2
 Opóźnienie: 5
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
 
-@155 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o sile większej bądź równej 16.
+Wymagania:
+- Siła: 16
+
+Waga: 2~
+
+@155 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o Sile większej bądź równej 16.
 
 PARAMETRY:
 
 Obrażenia: +3
 TraK0: +2
-Waga: 2
 Opóźnienie: 4
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
 
-@157 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o sile większej bądź równej 16.
+Wymagania:
+- Siła: 16
+
+Waga: 2~
+
+@157 = ~Łuki refleksyjne to krótkie lub długie łuki, których drzewce wykonano z kilku rodzajów drewna. Dzięki temu są bardziej sprężyste, a wystrzelone z nich strzały zadają większe obrażenia. Łuk tego typu może być używany przez osoby o Sile większej bądź równej 16.
 
 PARAMETRY:
 
 Obrażenia: +4
 TraK0: +3
-Waga: 2
 Opóźnienie: 3
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
+
+Wymagania:
+- Siła: 16
+
+Waga: 2~
 
 @159 = ~Na pierwszy rzut oka przedmiot ten wygląda, jak zwykły ciemny kaptur, który zakrywa twarz noszącej go osoby, by była nie do rozpoznania. Gdy właściciel jednak natrafi na swej drodze stwory, które atakują spojrzeniem (jak bazyliszek, wampir, umbrowy kolos, tanar'ri) kaptur w magiczny sposób zakrywa oczy noszącej go osoby za każdym razem, gdy natrafią na spojrzenie stwora, chroniąc go tym samym przed szkodliwymi efektami. Niestety, z powodu zasłoniętych oczu trudniej jest walczyć z tego typu stworzeniami.
 
 PARAMETRY:
 
 Specjalne:
- +5% do Krycia się w cieniu
- Odporność na ataki oparte na spojrzeniu (Spojrzenie węża, Zamęt, Dominacja, Oczy śmierci, Piękno natury)
- Kara -2 do TraK0 przeciwko istotom używającym zdolności opartych na spojrzeniu (bazyliszek, qampir, umbrowy kolos, tanar'ri)~
+- Krycie się w cieniu: +5%
+- Niewrażliwość na ataki oparte na spojrzeniu (np. Spojrzenie węża, Zamęt, Dominacja, Oczy śmierci, Piękno natury)
+- Kara -2 do TraK0 przeciw istotom używającym zdolności opartych na spojrzeniu (np. bazyliszek, wampir, umbrowy kolos, tanar'ri)~
 
-@201 = ~Przez wiele pokoleń tarcza ta była przekazywana wybranym Najwyższym Jurystom Amaunatora, którzy przyjmowali na siebie obowiązek oczyszczania krain z wszelkich nieumarłych. Po zniknięciu Amaunatora i upadku Twierdzy wiekuistego słońca, olśniewające złotem wykończenia tarczy wypłowiały, a spowijające ją potężne zaklęcia uległy rozłożeniu. W końcu, ten niegdyś potężny artefakt, został sprowadzony do roli ozdoby naściennej. wraz z upływem czasu wśród wyznawców Amaunatora powoli zapanowała dezorganizacja i zaczęli się rozpraszać. Ta tarcza została ostatnio skradziona wraz z wieloma innymi pozostałościami z jednej z ich świątyń.
-
-PARAMETRY:
-
-Klasa Pancerza: +2
-Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- Każdy nieumarły, który trafi noszącego tarczę otrzyma 1K2 obrażeń od ognia i musi wykonać rzut obronny przeciwko czarom lub ulegnie oślepieniu na 2 rundy
-Waga: 2
-Wymagana siła: 4~
-
-@203 = ~Ten potężny amulet został wykonany w 727 roku KD przez mistrza zauroczeń Celemona z Calimportu, który zdołał przygotować dziesięć podobnych artefaktów, zanim został zabity przez zawistnych rywali, którzy potem próbowali odkryć tajniki procesu tworzenia amuletów. Niestety, nie byli oni równie utalentowani jak Celemon, dlatego w wyniku popełnionej pomyłki spowodowali wybuch, zabijając siebie samych i niszcząc przy tym laboratorium mistrza razem z tajemną formułą. Ten egzemplarz amuletu należał do elfiego maga-wojownika o imieniu Pelan Rainwind. Zaginął około 840 roku KD, kiedy jego właściciel poległ z rąk olbrzymów w górach Grzbiet Świata.
+@201 = ~Przez wiele pokoleń tarcza ta była przekazywana wybranym Najwyższym Jurystom Amaunatora, którzy przyjmowali na siebie obowiązek oczyszczania krain z wszelkich nieumarłych. Po zniknięciu Amaunatora i upadku Twierdzy wiekuistego słońca olśniewające złotem wykończenia tarczy wypłowiały, a spowijające ją potężne zaklęcia uległy rozłożeniu. W końcu ten niegdyś potężny artefakt został sprowadzony do roli ozdoby naściennej. Wraz z upływem czasu wśród wyznawców Amaunatora zapanowała powoli dezorganizacja i zaczęli się oni rozpraszać. Tarcza ta została ostatnio skradziona wraz z wieloma innymi pozostałościami z jednej z ich świątyń.
 
 PARAMETRY:
 
 Specjalne:
- 3 razy dziennie pozwala rzucić na użytkownika zaklęcia Kamienna skóra i Klosz niewrażliwości mniejszej jednocześnie~
+- Klasa Pancerza: +2
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Każdy nieumarły, który trafi noszącego tarczę, otrzyma 1k2 obrażeń od ognia i musi wykonać rzut obronny przeciwko czarom lub ulegnie oślepieniu na dwie rundy
 
-@205 = ~Te jaskrawo czerwone i zielone buty miał na swych nogach rzezimieszek Elpham z Perrywine. Elpham był kieszonkowcem o wyjątkowych uzdolnieniach, który kusił los, szydząc i naigrawając się ze swych ofiar wkrótce po tym, jak je obrabował. Kiedy został dwukrotnie złapany, postanowił zainwestować pieniądze w te właśnie buty. Naturalnie zmarł przedwcześnie, kiedy okradł znanego ze swej porywczości Czerwonego Maga z Thay, Xaina Morobdela. Elpham skradł sakiewkę pełną klejnotów wprost z pasa Xaina i odpłynął w tłum krzycząc: "A może będziesz mnie gonił aż do Priador, łysa pało? Cha, cha!" Xain, dusząc w sobie wściekłość, natychmiast wezwał czterech niewidzialnych myśliwych i rozkazał im zabić tego idiotę w czerwono-zielonych butach."
+Wymagania:
+- Siła: 4
+
+Waga: 2~
+
+@203 = ~Ten potężny amulet został wykonany w roku 727 KD przez mistrza zauroczeń Celemona z Calimportu. Zdołał on przygotować dziesięć podobnych artefaktów, nim został zabity przez zawistnych rywali, którzy próbowali następnie odkryć tajniki procesu tworzenia amuletów. Niestety, nie byli oni równie utalentowani, jak Celemon, dlatego w wyniku popełnionej pomyłki spowodowali wybuch, zabijając samych siebie i niszcząc przy tym laboratorium mistrza razem z tajemną formułą. Ten egzemplarz amuletu należał do elfiego maga-wojownika o imieniu Pelan Rainwind. Zaginął około roku 840 KD, kiedy jego właściciel poległ z rąk olbrzymów w górach Grzbietu Świata.
 
 PARAMETRY:
 
 Specjalne:
- +40% do szybkości
- +1 do Klasy Pancerza
+- Pozwala na jednoczesne rzucenie na użytkownika zaklęcia Kamienna skóra i Klosz niewrażliwości mniejszej, trzy razy dziennie~
+
+@205 = ~Te jaskrawo czerwone i zielone buty miał na swych nogach rzezimieszek Elpham z Perrywine. Elpham był kieszonkowcem o wyjątkowych uzdolnieniach, który kusił los, szydząc i naigrawając się ze swych ofiar wkrótce po tym, jak je obrabował. Kiedy został dwukrotnie złapany, postanowił zainwestować pieniądze w te właśnie buty. Naturalnie zmarł przedwcześnie, kiedy okradł znanego ze swej porywczości Czerwonego Maga z Thay, Xaina Morobdela. Elpham skradł sakiewkę pełną klejnotów wprost z pasa Xaina i odpłynął w tłum, krzycząc: „A może będziesz mnie gonił aż do Priador, łysa pało? Cha, cha!” Xain, dusząc w sobie wściekłość, natychmiast wezwał czterech niewidzialnych myśliwych i rozkazał im zabić tego idiotę w czerwono-zielonych butach.
+
+PARAMETRY:
+
+Specjalne:
+- Klasa Pancerza: +1
+- Zwiększona prędkość poruszania się
+
 Waga: 4~
 
-@207 = ~Ten doskonale wykonany topór posiada zaklęcie niezwykłego pochodzenia. Natychmiast po stworzeniu został wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kapłani oczekiwali na potężną nawałnicę, by się zgromadzić. Broń została umieszczona na żelaznym piedestale i wkrótce potem trafiona gromem. Dzięki umieszczonemu w niej wcześniej zaklęciu wchłonęła nieco z właściwości pioruna. Następnie została ofiarowana najwyższemu rangą krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach między hordami orków a kransoludami z Głębi Dorna. Atak, który nadszedł, był całkowicie nieoczekiwany. Pewnego ranka przybył zwiadowca z wieścią, że największa armia orków, jaką kiedykolwiek widział, jest tylko kilka godzin drogi stąd. Po krótkim czasie zużytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczęło wlewać się do Głębi. Krasnoludy zostały zmuszone do wycofania się w głąb swej cytadeli, jednak zdołały zawalić kluczowe przejścia, by ukryć swe ruchy i zyskać na czasie. Nawet w tak niesprzyjających okolicznościach, pozwoliło to krasnoludom wybierać miejsce i czas starć. Ponieważ walczyły na swoich warunkach, każda bitwa była drogo opłacana przez orki. Mimo to krasnoludy wciąż musiały się cofać dalej i dalej wgłąb Lodowca Ząb Wielkiego Gada. W końcu dzięki swojej olbrzymiej przewadze liczebnej, orki zdołały przełamać krasnoludzką obronę i splądrować ich domostwo.
+@207 = ~Ten doskonale wykonany topór posiada zaklęcie niezwykłego pochodzenia. Natychmiast po stworzeniu został wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kapłani oczekiwali na potężną nawałnicę, by się zgromadzić. Broń została umieszczona na żelaznym piedestale i wkrótce potem trafiona gromem. Dzięki umieszczonemu w niej wcześniej zaklęciu wchłonęła nieco z właściwości pioruna. Następnie została ofiarowana najwyższemu rangą krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach między hordami orków a krasnoludami z Głębi Dorna. Atak, który nadszedł, był całkowicie nieoczekiwany. Pewnego ranka przybył zwiadowca z wieścią, że największa armia orków, jaką kiedykolwiek widział, jest tylko kilka godzin drogi stąd. Po krótkim czasie zużytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczęło wlewać się do Głębi. Krasnoludy zostały zmuszone do wycofania się w głąb swej cytadeli, jednak zdołały zawalić kluczowe przejścia, by ukryć swe ruchy i zyskać na czasie. Nawet w tak niesprzyjających okolicznościach, pozwoliło to krasnoludom wybierać miejsce i czas starć. Ponieważ walczyły na swoich warunkach, każda bitwa była drogo opłacana przez orki. Mimo to krasnoludy wciąż musiały się cofać dalej i dalej w głąb Lodowca Ząb Wielkiego Gada. W końcu dzięki swojej olbrzymiej przewadze liczebnej, orki zdołały przełamać krasnoludzką obronę i splądrować ich domostwo.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +3, +1K3 pkt. od elektryczności
+Specjalne:
+- Odporność na elektryczność: +20%
+- 10% szans na ogłuszenie celu przez jedną runde, po trafieniu
+
+Obrażenia: 1k8 +3, +1k3 od elektryczności
 TraK0: +3
 Typ obrażeń: sieczne
-Specjalne:
- +20% odporności na elektryczność
- 10% szans, że trafiony cel zostanie ogłuszony na 1 rundę
-Waga: 5
 Opóźnienie: 4
 Rodzaj biegłości: topór
-Typ broni: 1-ręczna~
+Typ broni: 1-ręczna
+
+Waga: 5~
 
 @209 = ~Zhentarimski mag bojowy stworzył to ostrze w nadziei, że pomoże mu ono zwyciężyć w walce wręcz, gdy zostanie wyzwany na pojedynek. Ten potężny miecz miał parować większość otrzymywanych ciosów, obezwładniając jednocześnie wroga. Na swoje nieszczęście mag nie był zbyt wprawny w boju i z łatwością został pokonany przez swojego przeciwnika.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +3
+Specjalne:
+- Klasa Pancerza: +3 przeciw broniom siecznym
+- 10% szans na rzucenie zaklęcia Unieruchomienie potwora, po trafieniu
+
+Obrażenia: 1k8 +3
 TraK0: +3
 Typ obrażeń: sieczne
-Specjalne:
- +3 do Klasy Pancerza przeciwko broniom siecznym
- 10% szans na Unieruchomienie potwora przy trafieniu
-Waga: 2
 Opóźnienie: 2
-Rodzaj biegłości: długi miecz
-Typ broni: 1-ręczna~
+Rodzaj biegłości: miecz długi
+Typ broni: 1-ręczna
 
-@211 = ~Wielka tajemnica otacza tę zbroję i nikt nie ma pewności jak i gdzie powstała. Co jest wiadome, to fakt, iż została wycięta ze skóry abishai. Mimo iż nie jest możliwym określenie jakiego koloru było to stworzenie, to zbroja jest zabarwiona na najciemniejszą spośród czerni. W dodatku wydziela niezwykły, ledwie wyczuwalny zapach octu. Noszący ją otrzymuje niewielką odporność na obrażenia fizyczne oraz zdolność regeneracji ran. Nie można określić, czy właściwości te pochodzą z samej skóry czy też są wynikiem nałożonego na zbroję zaklęcia.
+Waga: 2~
+
+@211 = ~Wielka tajemnica otacza tę zbroję i nikt nie ma pewności jak i gdzie powstała. Co jest wiadome, to fakt, iż została wycięta ze skóry abishai. Mimo iż nie jest możliwym określenie, jakiego koloru było to stworzenie, to zbroja zabarwiona jest na najciemniejszą spośród czerni. W dodatku wydziela niezwykły, ledwie wyczuwalny zapach octu. Noszący ją otrzymuje niewielką odporność na obrażenia fizyczne oraz zdolność regeneracji ran. Nie można określić, czy właściwości te pochodzą z samej skóry, czy też są wynikiem nałożonego na zbroję zaklęcia.
 
 PARAMETRY:
+
+Specjalne:
+- Odporność na obrażenia fizyczne: +15%
+- Regeneracja punktów życia: 1/rundę
 
 Klasa Pancerza: 4
-Specjalne:
- +15% odporności na obrażenia fizyczne
- Regeneracja 1 PŻ na rundę
+
 Waga: 15~
 
-@213 = ~Fechtmistrz Naradon z Thesk był znany z tego, że potrafił szybko pokonać wrogich magów, nawet w obliczu przeważających sił nieprzyjaciela. Udawało mu się to dzięki trzem przedmiotom: miksturom szybkości, butom szybkości i dzięki swojemu mieczowi, Zagłuszaczowi Czarów. W przeciwieństwie do większości innych broni magicznych, historia Zagłuszacza nie jest ani mroczna, ani związana z niezliczonymi trupami. Naradon zrezygnował z wypraw w poszukiwaniu przygód, kiedy miał trzydzieści dwa lata. Nadużywanie mikstur szybkości dało się we znaki, kiedy umarł śmiercią starca cztery lata później. Jego jedyny spadkobierca nie miał w sobie żyłki poszukiwacza przygód, dlatego kilka lat po śmierci ojca sprzedał jego miecz pewnemu włamywaczowi. Broń Naradona można rozpoznać po wygrawerowanym wizerunku zimorodka.
+@213 = ~Fechmistrz Naradon z Thesk znany był z tego, że potrafił szybko pokonać wrogich magów, nawet w obliczu przeważających sił nieprzyjaciela. Udawało mu się to dzięki trzem przedmiotom: miksturom szybkości, butom szybkości i dzięki swojemu mieczowi, Zagłuszaczowi czarów. W przeciwieństwie do większości innych broni magicznych historia Zagłuszacza nie jest ani mroczna, ani związana z niezliczonymi trupami. Naradon zrezygnował z kariery poszukiwacza przygód w wieku trzydzieści dwóch lat. Nadużywanie mikstur szybkości dało mu się we znaki, kiedy umarł śmiercią starca cztery lata później. Jego jedyny spadkobierca nie miał w sobie żyłki poszukiwacza przygód, dlatego kilka lat po śmierci ojca sprzedał jego miecz pewnemu włamywaczowi. Broń Naradona można rozpoznać po wygrawerowanym wizerunku zimorodka.
 
 PARAMETRY:
 
-Obrażenia: 1K6+3
+Specjalne:
+- Cel ma 10% szans na nieudane rzucenie czaru przez trzy rundy (efekt kumulatywny), po trafieniu
+- Rzuty obronne: +1 przeciw czarom
+- Odporność na magię: +5%
+
+Obrażenia: 1k6 +3
 TraK0: +3
 Typ obrażeń: kłute
-Specjalne:
- Przy każdym trafieniu neutralizuje umiejętność rzucania czarów o 10% na 3 rundy
- +1 do rzutów obronnych przeciwko magii
- +5% odporności na magię
-Waga: 1
 Opóźnienie: 0
-Rodzaj biegłości: krótki miecz
-Typ broni: 1-ręczna~
+Rodzaj biegłości: miecz krótki
+Typ broni: 1-ręczna
+
+Waga: 1~
 
 @215 = ~Ten ciemnobrązowy kaptur przeznaczony jest do noszenia do głowie i ramionach. Wykonany został przez złodzieja gnoma i iluzjonistę Breina Kasztana. Brein używał tego kaptura w czasie swoich przygód przez kilka lat, do czasu, gdy jego ukochana z lat dziecinnych nie przekonała go, żeby się ustatkował. Kaptur przekazał bratankowi, Chirchetowi, który z kolei oddał go w zamian za duży obszar ziemi.
 
 PARAMETRY:
 
+Specjalne:
+- Krycie się w cieniu: +15%
+- Pozwala na jednoczesne rzucenie zaklęć Rozmycie i Lustrzane odbicia, trzy razy dziennie
+
 Klasa Pancerza: +1
- Specjalne:
- +15% do Krycia się w cieniu
- Trzy razy dziennie pozwala rzucić Rozmycie i Lustrzane odbicia jednocześnie
+
 Waga: 1~
 
-@217 = ~Ten miecz należał niegdyś do Vendurisa, przebiegłego zabójcy w służbie Cyrika - panującego Boga Mordu. Kiedy łotrzyk został wstępnie zaakceptowany w Zakonie Wybrańców Cyrika otrzymał małe, zwyczajnie wyglądające ostrze jako dar powitalny. Chociaż na miecz nałożone zostały tylko pomniejsze zaklęcia, jego moc i ostrość zauważalnie się zwiększały wraz z każdym dokonanym przez Vendurisa w imię swojego nowego mistrza mordem. Morderca lubił wypełniać swoje zadanie szybko i cicho, tak że jego ofiary na ogół nie były świadome zbliżającego się końca. Jednakże w przypadkach, gdy nieprzyjaciel szczególnie zirytował Księcia Kłamstw, Venduris przed zadaniem ciosu zwykł rozprowadzać na ostrzu zabójczą truciznę. Ofiara zaczynała się dusić, niezdolna do mówienia czy wezwania pomocy, podczas gdy Cyric śmiał się zadowolony widząc niemą twarz swojego przeciwnika wykrzywioną w bólu i agonii powodowanej przez następujące kolejno efekty trucizny, wiodące w końcu ku powolnej śmierci w męczarniach.
+@217 = ~Miecz ten należał niegdyś do Vendurisa, przebiegłego zabójcy w służbie Cyrika – aktualnie panującego Boga Mordu. Kiedy łotrzyk został wstępnie zaakceptowany w Zakonie Wybrańców Cyrika, otrzymał małe, zwyczajnie wyglądające ostrze jako dar powitalny. Chociaż na miecz nałożone zostały tylko pomniejsze zaklęcia, jego moc i ostrość zwiększały zauważalnie wraz z każdym mordem dokonanym przez Vendurisa w imię swojego nowego mistrza. Morderca lubił wypełniać swoje zadanie szybko i cicho, tak że jego ofiary na ogół nie były świadome zbliżającego się końca. Jednakże w przypadkach, gdy nieprzyjaciel szczególnie zirytował Księcia Kłamstw, Venduris przed zadaniem ciosu zwykł rozprowadzać na ostrzu zabójczą truciznę. Ofiara zaczynała się dusić, będąc niezdolną do mówienia, czy wezwania pomocy, podczas gdy Cyric śmiał się zadowolony, widząc niemą twarz swojego przeciwnika, wykrzywioną w bólu i agonii powodowanej przez następujące kolejno efekty trucizny, prowadzące w końcu ku powolnej śmierci w męczarniach.
+
 Ostrze to pulsuje przyćmioną, zielonkawą poświatą i emanuje potężną aurą zła. Szpic i krawędzie miecza są niezwykle ostre, a także nieustannie powleczone warstwą magicznej trucizny sprawiającej, że jego używanie bez przynoszenia sobie szkody jest niezwykle trudne. Tylko złodzieje o niebywałych umiejętnościach i wprawie mogą podjąć się dobycia tej broni.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +4
+Specjalne:
+- Cel otrzymuje 4 obrażenia od trucizny przez cztery sekundy
+- Cel zostaje uciszony na cztery rundy (rzut obronny przeciw zionięciom neguje)
+- 4% szans na to, że miecz przebije żywotne organy, redukując natychmiast punkty życia ofiary o 20%, po trafieniu
+
+Obrażenia: 1k6 +4
 TraK0: +4
 Typ obrażeń: kłute
-Specjalne:
- 4 pkt. trucizny przez 4 sekundy
- Cel musi wykonać rzut obronny przeciwko zionięciom lub zostanie uciszony na 4 rundy
- 4% szans na Przeszywające uderzenie - ofiara traci 20% PŻ
-Waga: 1
 Opóźnienie: 0
-Rodzaj biegłości: krótki miecz
+Rodzaj biegłości: miecz krótki
 Typ broni: 1-ręczna
-Wymagana zręczność: 15
-Wymagana inteligencja: 15~
 
-@219 = ~Po bliższym przyjrzeniu się tym butom, widać że zrobione są one z jakiegoś nieznanego materiału. Noszący je, będzie wydawał się tak cienisty, jak same buty, a dodatkowo nie będzie słychać jego kroków.
+Wymagania:
+- Zręczność: 15
+- Inteligencja: 15
+
+Waga: 1~
+
+@219 = ~Po bliższym przyjrzeniu się tym butom widać, że zrobione są one z jakiegoś nieznanego materiału. Noszący je będzie wydawał się tak cienisty, jak same buty, a dodatkowo nie będzie słychać jego kroków.
 
 PARAMETRY:
 
 Specjalne:
- +1 do Klasy Pancerza
- +15% do Krycia się w cieniu
- +10% do Cichego chodzenia
+- Klasa Pancerza: +1
+- Krycie się w cieniu: +15%
+- Ciche chodzenie: +10%
+
 Waga: 5~
 
-@221 = ~Ten złowieszczo wyglądający sztylet, posiadający mroczną historię, cieszy się uznaniem jako broń i jako przedmiot magiczny. Ostrze przypomina nieco sztylety egzotyczne i zakończone jest faliście, niczym kris, dwoma małymi punkcikami. Zaraz przy uchwycie, w klindze sztyletu, wtopiony jest mały kawałek obślizgłego, jasnoczerwonego języka żywej salamandry. Pulsuje i wije się bezładnie, bez udziału posiadacza.
-Dokładne pochodzenie sztyletu nie jest znane, ale powiada się, że pierwszym posiadaczem sztyletu był szanowany i budzący postrach gnomi złodziej i płatny zabójca z Bramy Zachodu imieniem Turlam Shallowhill. Został zabity w bójce przez niziołka Dedera Siedmiopalcego. Deder zatrzymał broń jako trofeum, nie wiedząc nic o jego mocy aż do chwili, gdy został wykradziony przez służącego, również niziołka, Kreshinala Blackhounda. Kreshinal umknął ze sztyletem do Selgauntu na pięć lat, ufając, że moc sztyletu ukryje go przed zdemaskowaniem. Stracił go na skutek własnego partactwa przy hazardzie i został zamordowany przez agentów Dedera w przeciągu miesiąca. Sam Deder próbował odzyskać sztylet z rąk sembiańskich przestępców, którzy weszli w jego posiadanie. Udało mu się pojmać złodziei i pozyskać sztylet, ale tak bardzo się na tym skoncentrował, że nie zauważył, iż owi kryminaliści zatrudnili kapłana Maska, aby przejrzał i zrujnował interesy Dedera w Bramie Zachodu. Wynikła stąd wojna pomiędzy stronnikami Bramy Zachodu a Selgauntu zakończyła się, gdy kapłan Maska, Pieter Słabowity, sprawił dzięki swej magii, że obie strony konfliktu doznały obłędu i same zniszczyły się od środka. Pieter zaś zabrał sztylet, kiedy nadarzyła się po temu okazja i uciekł do Hillsfar, przekonany, że niezorganizowani półludzie, będący zwolennikami Dedera Siedmiopalcego, nie pójdą za nim do miejsca tak bardzo wrogiego ich rasie.
-Następnie Pieter sprzedał sztylet Mulmasterowi Hawkowi, zaś na aukcję do Hillsfar zwabił innych potencjalnych nabywców. Tam, wraz ze swymi wspólnikami, zamordował niedoszłych kupców na niby-aukcji i uciekł z gotówką, kryjąc się pod opieką Amuletu Niewykrywalności. Mulmaster Hawk, który nabył sztylet, został wedle wszelkiego prawdopodobieństwa zamordowany przez kapłanki Umberlee, zagniewane, że zabójca odmówił zapłacenia daniny Królowej Suce. Lata walk frakcyjnych pomiędzy Umberlanami spowodowały, jak się przypuszcza, przemieszczenie się sztyletu aż trzy tysiące mil dalej od jego miejsca pochodzenia - Sambii. Nie wiadomo obecnie, gdzie podziewa się Pieter i jego kompani.
+@221 = ~Ten złowieszczo wyglądający i posiadający mroczną historię sztylet, cieszy się uznaniem, jako broń i przedmiot magiczny. Ostrze przypomina nieco egzotyczne sztylety i zakończone jest faliście niczym kris, dwoma małymi punkcikami. Zaraz przy uchwycie, w klingę sztyletu, wtopiony jest mały kawałek oślizgłego jasnoczerwonego języka żywej salamandry. Pulsuje on i wije się bezładnie, bez udziału posiadacza.
+
+Dokładne pochodzenie sztyletu nie jest znane, ale powiada się, że pierwszym jego posiadaczem był szanowany i budzący postrach gnomi złodziej i płatny zabójca z Wrót Zachodu imieniem Turlam Niskie Wzgórze. Został on zabity w bójce przez niziołka Dedera Siedmiopalcego. Deder zatrzymał broń jako trofeum, nie wiedząc nic o jego mocy aż do chwili, gdy został wykradziony przez służącego, również niziołka, Kreshinala Czarnego Ogara. Kreshinal umknął ze sztyletem do Selgauntu na pięć lat, ufając, że jego moc ukryje go przed zdemaskowaniem. Stracił jednak sztylet na skutek błędów popełnionych podczas gry hazardowej i został zamordowany przez agentów Dedera w ciągu miesiąca. Sam Deder próbował odzyskać sztylet z rąk sembijskich przestępców, którzy weszli w jego posiadanie. Udało mu się pojmać złodziei i pozyskać sztylet, ale tak bardzo się na tym skoncentrował, że nie zauważył, iż owi kryminaliści zatrudnili kapłana Maski, aby przejrzał i zrujnował interesy Dedera we Wrotach Zachodu. Wynikła z tego powodu wojna pomiędzy stronnikami Wrót Zachodu a Selgauntu zakończyła się, gdy kapłan Maski, Pieter Słabowity, sprawił dzięki swej magii, że obie strony konfliktu doznały obłędu i same zniszczyły się od środka. Pieter zaś zabrał sztylet, kiedy nadarzyła się po temu okazja i uciekł do Hillsfar, przekonany, że niezorganizowani półludzie, będący zwolennikami Dedera Siedmiopalcego, nie pójdą za nim do miejsca tak bardzo wrogiego ich rasie.
+
+Następnie Pieter sprzedał sztylet Mulmasterowi Hawkowi, zwabiając w międzyczasie na aukcję do Hillsfar innych potencjalnych nabywców. Tam, wraz ze swymi wspólnikami, zamordował niedoszłych kupców na niby-aukcji i uciekł z gotówką, kryjąc się pod opieką Amuletu niewykrywalności. Mulmaster Hawk, który nabył sztylet, został wedle wszelkiego prawdopodobieństwa zamordowany przez kapłanki Umberlee, rozgniewane, iż zabójca odmówił zapłacenia daniny Królowej Suce. Lata walk frakcyjnych pomiędzy wyznawcami Umberlee spowodowały, jak się przypuszcza, przemieszczenie sztyletu aż trzy tysiące mil dalej od jego miejsca pochodzenia – Sembii. Nie wiadomo, gdzie obecnie podziewa się Pieter i jego kompani.
 
 PARAMETRY:
 
-Obrażenia: 1K4 +3
+Specjalne:
+- Odporność na ogień: +10%
+- Rzuty obronne przeciw truciznom: +3
+- Użytkownik znajduje się pod wpływem Niewykrywalności
+- 50% szans na zadanie 1k2 obrażeń od ognia, po trafieniu
+- 30% szans na zadanie 2k2 obrażeń od ognia, po trafieniu
+- 15% szans na zadanie 3k2 obrażeń od ognia, po trafieniu
+- 5% szans na zadanie 4k2 obrażeń od ognia, po trafieniu
+
+Obrażenia: 1k4 +3
 TraK0: +3
 Typ obrażeń: kłute
-Specjalne:
- +10% do odporności na ogień
- +3 do rzutów obronnych przeciw truciznom
- 50% szans na zadanie 1k2 obrażeń od ognia
- 30% szans na zadanie 2k2 obrażeń od ognia
- 15% szans na zadanie 3k2 obrażeń od ognia
- 5% szans na zadanie 4k2 obrażeń od ognia
- Użytkownik znajduje się pod wpływem Niewykrywalności
-Waga: 1
 Opóźnienie: 0
 Rodzaj biegłości: sztylet
-Typ broni: 1-ręczna~
+Typ broni: 1-ręczna
 
-@223 = ~Te hełmy cieszyły się kiedyś wielką popularnością wśród reghedzkich barbarzyńców, którzy przybyli na tereny dzisiejszej Doliny Lodowego Wichru. Ich budowa jest dość prosta: składają się z hełmu z litego żelaza i płytki ochronnej spuszczanej na twarz. W czasie produkcji płatnerze umieszczają na tej płytce twarzowej wizerunek poległego wojownika, a na czole hełmu grawerują jego imię i jedno słowo opisujące sposób, w jaki zginął. Następnie hełm taki zostawiano w stosie kremacyjnym zmarłego. Kapłani wierzyli, że w ten sposób wojownik będzie mógł ukryć strach przed życiem pośmiertnym, kiedy Tempos będzie go sądził. Po upływie miesiąca hełmy najdzielniejszych wojowników były wyjmowane z grobów. Przez następne kilka lat kapłani czcili poległych wojowników w czasie codziennych modlitw. Legenda głosi, że jeśli Tempos uzna jakiegoś wojownika za prawdziwie walecznego, jego hełm nabierze mocy, która obdarzy tego, kto go będzie nosił, niewrażliwością na strach. Na tym konkretnym hełmie wyryto imię "Siglef" i słowo "Topór".
+Waga: 1~
+
+@223 = ~Hełmy te cieszyły się kiedyś wielką popularnością wśród reghedzkich barbarzyńców, którzy przybyli na tereny dzisiejszej Doliny Lodowego Wichru. Ich budowa jest dość prosta: składają się z hełmu z litego żelaza i płytki ochronnej spuszczanej na twarz. W czasie produkcji płatnerze umieszczają na tej płytce twarzowej wizerunek poległego wojownika, a na czole hełmu grawerują jego imię i jedno słowo opisujące sposób, w jaki zginął. Następnie hełm taki zostawiano w stosie kremacyjnym zmarłego. Kapłani wierzyli, że w ten sposób wojownik będzie mógł ukryć strach przed życiem pośmiertnym, kiedy Tempos będzie go sądził. Po upływie miesiąca hełmy najdzielniejszych wojowników były wyjmowane z grobów. Przez następne kilka lat kapłani czcili poległych wojowników w czasie codziennych modlitw. Legenda głosi, że jeśli Tempos uzna jakiegoś wojownika za prawdziwie walecznego, jego hełm nabierze mocy, która obdarzy tego, kto go będzie nosił, niewrażliwością na strach. Na tym konkretnym hełmie wyryto imię „Siglef” i słowo „Topór”.
 
 PARAMETRY:
 
-Klasa Pancerza: +1
 Specjalne:
- Odporność na strach i panikę
- -2 do Charyzmy
- Chroni przed trafieniami krytycznymi
+- Niewrażliwość na strach i panikę
+- Charyzma: -2
+- Chroni przed trafieniami krytycznymi
+
+Klasa Pancerza: +1
+
 Waga: 3~
 
-@225 = ~Ten wieniec z liści laurowych i róż był darem od kościoła Sune dla kapłanki Hanali Celanil z Dłoni Seldarine. Reprezentanci ludzkiej bogini miłości i piękna zostali dobrze przyjęci, a wysoka kapłanka Hanali Celanil nosiła ten laur za każdym razem, kiedy ludzie składali wizytę w Dłoni. Kiedy orki napadły i złupiły wieżę kapłanów, wyrzuciły wieniec, gdyż uznały go za przedmiot bezużyteczny.
+@225 = ~Ten wieniec z liści laurowych i róż był darem od kościoła Sune dla kapłanki Hanali Celanil z Dłoni Seldarine. Reprezentanci ludzkiej bogini miłości i piękna zostali dobrze przyjęci, a wysoka kapłanka Hanali Celanil nosiła ten laur za każdym razem, kiedy ludzie składali wizytę w Dłoni. Kiedy orkowie napadli i złupili wieżę kapłanów, wyrzucili wieniec, gdyż uznali go za przedmiot bezużyteczny.
 
 PARAMETRY:
 
-Klasa Pancerza: +1
 Specjalne:
- +1 do Charyzmy
- Chroni przed trafieniami krytycznymi
+- Charyzma: +1
+- Chroni przed trafieniami krytycznymi
+
+Klasa Pancerza: +1
+
 Waga: 1~
 
 @227 = ~Pierwotnie ukradziony nimfom z Burzowej Krainy, ten kamień Ioun przez ostatnie dziesięciolecie wbrew swej woli służył Vendurisowi. Zawarta w nim esencja szczęścia wykorzystywana była przez przesiąkniętego złem zabójcę do składania jego rąk ku najsłabszym punktom jego wrogów, zapewniając w ten sposób największą śmiertelność jego ataków. Niegdyś postrzegany był pięknym, przypominając promieniejący tęczowo zdobiony klejnot, jednak w miarę jak pod wpływem swego nowego właściciela stawała się zepsuta, magia zawarta w Kamieniu szczęścia zaczęła w końcu blaknąć. Wypełniająca go ciemność stanowi przypomnienie nikczemnych czynów Vendurisa.
@@ -755,175 +873,203 @@ Waga: 1~
 PARAMETRY:
 
 Specjalne:
- +3 do Szczęścia
- Chroni przed trafieniami krytycznymi
-Wymagana mądrość: 10~
+- Szczęście: +3
+- Chroni przed trafieniami krytycznymi
 
-@229 = ~Przedmiot ten pierwotnie został odebrany pewnemu nadmiernie ambitnemu iluzjoniście z Thay, który w jakiś sposób zdołał pokrzyżować plany Cyrika. Kiedy Venduris otrzymał zadanie pozbycia się maga, z jego osobistych skarbów wziął także i ten pierścień. Zabójca z uwagi na swe znaczne umiejętności w sztuce ukrywania się rzadko czuł potrzebę użycia go, jednak pierścień udowodnił swoją przydatność w tych kilku przypadkach, gdy miał pojmać swe ofiary żywcem i przywieść je z powrotem do świątyni swego mistrza w celu wypytania względnie torturowania bez narażania się na magiczne wykrycie.
+Wymagania:
+- Mądrość: 10~
+
+@229 = ~Przedmiot ten pierwotnie został odebrany pewnemu nadmiernie ambitnemu iluzjoniście z Thay, który w jakiś sposób zdołał pokrzyżować plany Cyrika. Kiedy Venduris otrzymał zadanie pozbycia się maga, z jego osobistych skarbów wziął także i ten pierścień. Zabójca z uwagi na swe znaczne umiejętności w sztuce ukrywania się rzadko czuł potrzebę użycia go, jednak pierścień udowodnił swoją przydatność w tych kilku przypadkach, gdy miał pojmać swe ofiary żywcem i przywieść je z powrotem do świątyni swego mistrza w celu wypytania, ewentualnie torturowania, bez narażania się na magiczne wykrycie.
 
 PARAMETRY:
 
 Specjalne:
- Noszący jest odporny na Wykrycie niewidzialnego, Ujawnianie niewidzialnych, Prawdziwe widzenie i podobne czary poznania, które usuwają niewidzialność
- Grupowa niewidzialność raz dziennie~
+- Użytkownik jest niewrażliwy na działanie następujących czarów: Wykrycie niewidzialnego, Ujawnienie niewidzialnych, Prawdziwe widzenie oraz podobnych zaklęć ze szkoły Poznania usuwających niewidzialność
+- Grupowa niewidzialność, raz dziennie~
 
 @231 = ~Ten magiczny zwój został znaleziony przy ciele łotrzyka Vendurisa. Napis widniejący na tej stronie wygląda na notatkę czarownika, który go stworzył, druga z kolei pokryta jest różnymi mistycznymi runami. Notatki brzmi następująco:
 
-"Jak sobie życzyłeś, Vendurisie, glify strażnicze, które spętają nasz cel, imieniem <CHARNAME>, łączą się bezpośrednio z runami na tym zwoju. Kiedy uparłeś się być jedynym, który winien znać hasło umożliwiające ich aktywację, na odwrocie u spodu znajdziesz pustą linię, w którą możesz je wpisać. Ostrzegam cię, kiedy już to uczynisz, upewnij się dokładnie, że zwój ten zawsze przechowywany jest w bezpiecznym i dobrze ukrytym miejscu. Z powodu tego niezwykłego sposobu rzucenia tego czaru, nie potrafię przewidzieć, co stanie się, gdy zwój zostanie uszkodzony lub zniszczony."
+„Jak sobie życzyłeś, Vendurisie, glify strażnicze, które spętają nasz cel, imieniem <CHARNAME>, łączą się bezpośrednio z runami na tym zwoju. Kiedy uparłeś się być jedynym, który winien znać hasło umożliwiające ich aktywację, na odwrocie u spodu znajdziesz pustą linię, w którą możesz je wpisać. Ostrzegam cię, kiedy już to uczynisz, upewnij się dokładnie, że zwój ten zawsze przechowywany jest w bezpiecznym i dobrze ukrytym miejscu. Z powodu tego niezwykłego sposobu rzucenia tego czaru, nie potrafię przewidzieć, co stanie się, gdy zwój zostanie uszkodzony lub zniszczony”.
 
 -S.~
 
-@233 = ~Magiczne próby ujawniają, że ten mroczny płaszcz początkowo spleciony został z esencji ektoplazmy oraz jedwabnej przędzy pająka przenikającego. Jego dalszego umagicznienia podjęli się kapłani Cyrika, by zapewnić najbardziej oddanym wyznawcom, zarówno ochronę, jak i dyskrecję. W trakcie noszenia płaszcza, myśli noszącego nie mogą zostać zbadane przy pomocy magicznych środków. Co więcej, z uwagi na magiczna naturę jego tkaniny, płaszcz ulepsza także umiejętność zlewania się z cieniami i czyni niemożliwymi do zauważenia czułe punkty, skutecznie chroniąc posiadacza przed jakąkolwiek próbą zasztyletowania go.
+@233 = ~Magiczne próby ujawniają, że ten mroczny płaszcz początkowo spleciony został z esencji ektoplazmy oraz jedwabnej przędzy pająka przenikającego. Jego dalszego umagicznienia podjęli się kapłani Cyrika, by zapewnić najbardziej oddanym wyznawcom, zarówno ochronę, jak i dyskrecję. W trakcie noszenia płaszcza, myśli noszącego nie mogą zostać zbadane przy pomocy magicznych środków. Co więcej, z uwagi na magiczną naturę jego tkaniny, płaszcz ulepsza także umiejętność zlewania się z cieniami i czyni niemożliwymi do zauważenia czułe punkty, skutecznie chroniąc posiadacza przed jakąkolwiek próbą zasztyletowania go.
 
 PARAMETRY:
 
 Specjalne:
- +1 do Klasy Pancerza
- +1 do rzutów obronnych
- +50% do Krycia się w cieniu
- Odporność na cios w plecy
- Noszący jest odporny na wykrycie charakteru
+- Klasa Pancerza: +1
+- Rzuty obronne: +1
+- Krycie się w cieniu: +50%
+- Niewrażliwość na cios w plecy
+- Użytkownik jest odporny na próby wykrycia charakteru
+
 Waga: 1~
 
-@235 = ~Ten krótki łuk kompozytowy promieniuje silnymi, nekromantycznymizaklęciami zwykle używanymi przez kapłanów Yuan-Ti. Kształt łuku przypomina dwa węże próbujące połknąć wyrzeźbioną na uchwycie gałkę oczną. Wzdłuż obu stron łęczyska wyryta jest sentencja "Niech wielkość Ssetha oślepi niewiernych!". Łuk pierwotnie używany był przez wartowników Yuan-Ti, by powstrzymać nieświadomych intruzów od odkrycia siedziby ukrytej świątyni, schowanej głęboko wewnątrz lasu Popielatej Doliny. Z jakiegoś powodu obserwatorzy i pokrewni im zdają się być bardzo podatni na dowolne strzały wypuszczane z tego łuku.
+@235 = ~Ten krótki łuk kompozytowy promieniuje silnymi, nekromantycznymi zaklęciami zwykle używanymi przez kapłanów yuan-ti. Kształt łuku przypomina dwa węże próbujące połknąć wyrzeźbioną na uchwycie gałkę oczną. Wzdłuż obu stron łęczyska wyryta jest sentencja „Niech wielkość Ssetha oślepi niewiernych!”. Łuk pierwotnie używany był przez wartowników yuan-ti, by powstrzymać nieświadomych intruzów od odkrycia siedziby ukrytej świątyni, schowanej głęboko wewnątrz lasu Popielatej Doliny. Z jakiegoś powodu obserwatorzy i pokrewni im zdają się bardzo podatni na dowolne strzały wypuszczane z tego łuku.
 
 PARAMETRY:
 
-Obrażenia: +4, +6 przeciwko obserwatorom
-TraK0: +3, +5 przeciwko obserwatorom
 Specjalne:
- 20% trafień oślepia ofiarę na 3 rundy (rzut obronny przeciwko czarom neguje, obserwatory wykonują rzut obronny z modyfikatorem -5)
-Waga: 1
+- 20% szans na oślepienie celu przez trzy rundy (rzut obronny przeciwko czarom neguje, obserwatory wykonują rzut obronny z modyfikatorem -5)
+
+Obrażenia: +4, +6 przeciw obserwatorom
+TraK0: +3, +5 przeciw obserwatorom
 Opóźnienie: 3
 Rodzaj biegłości: krótki łuk
 Typ broni: 2-ręczna
-Wymagana siła: 16~
+
+Wymagania:
+- Siła: 16
+
+Waga: 1~
 
 @237 = ~Delikatne, aczkolwiek wytrzymałe rzemiosło elfów pozwala im tworzyć wiele pięknych, a mimo to użytecznych przedmiotów. Wśród nich są kolczugi splecione tak misternie, że można nosić je pod zwykłym ubraniem, nie ujawniając ich obecności. To oraz ich lekkość pozwala nosić je złodziejom oraz wojownikom/magom z niewieloma ograniczeniami.
-Ten przedmiot, podobnie jak większość ekwipunku mrocznych elfów, stworzony został za pomocą adamantyny, stopu adamantytu, który szybko zmienia się w pył, gdy wyniesie się go z Podmroku.
+
+Ten przedmiot, podobnie jak większość ekwipunku drowów, stworzony został przy pomocy adamantyny, stopu adamantytu, który szybko zmienia się w pył, gdy wyniesie się go z Podmroku.
+
 Ta magiczna kolczuga drowów daje nosicielowi dodatkowe 5% odporności na magię i zwiększa szybkość rzucania wszystkich zaklęć.
 
 PARAMETRY:
 
-Klasa Pancerza: 4
 Specjalne:
- +5% odporności na magię
- Przyspiesza szybkość rzucania zaklęć o 1
-Waga: 7
-Wymagana siła: 5~
+- Odporność na magię: +5%
+- Zwiększa szybkość rzucania zaklęć o 1
+
+Klasa Pancerza: 4
+
+Wymagania:
+- Siła: 5
+
+Waga: 7~
 
 @239 = ~Pierścień czarów: Geminus
-Dawno temu krążyły pogłoski, że wielki mag z Amn przekroczył nałożone przez Mystrę granice arkanów magii. Powiadają, że mag ten potrafił rzucać czary bez ograniczeń w zapamiętywaniu. Ostatecznie okazało się, że jego moce pochodziły z kilku magicznych pierścieni, które sobie stworzył. Choć "pamięć wiekuista", którą się chełpił, stanowiła tylko mistyfikację, to wspomniane pierścienie w dalszym ciągu pozostają jednymi z najbardziej poszukiwanych przedmiotów w Krainach.
+Dawno temu krążyły pogłoski, że wielki mag z Amn przekroczył nałożone przez Mystrę granice arkanów magii. Powiadają, że mag ten potrafił rzucać czary bez ograniczeń w zapamiętywaniu. Ostatecznie okazało się, że jego moce pochodziły z kilku magicznych pierścieni, które sobie stworzył. Choć „pamięć wiekuista”, którą się chełpił, stanowiła tylko mistyfikację, to wspomniane pierścienie w dalszym ciągu pozostają jednymi z najbardziej poszukiwanych przedmiotów w Krainach.
 
 PARAMETRY:
 
 Specjalne:
- Podwaja liczbę czarów z poziomu 1. i 2.~
+ - Podwaja ilość czarów 1. i 2. poziomu, jaką mag może zapamiętać~
 
-@241 = ~Rillifane Rallathil jest obrońcą lasów i strażnikiem harmonii w naturze. Pan Liści jest często porównywany przez jego kapłanów do wielkiego, eterycznego dębu, tak olbrzymiego, że jego korzenie łączą się z korzeniami każdej innej rośliny w Krainach, pozostając jednocześnie w sercu Arvandoru, Strzelistej Puszczy Olimpu. To wielkie drzewo kieruje upływem pór roku i bytów w lasach zielonych elfów, jednocześnie chroniąc te ziemie i powstrzymując wszelkiego rodzaju choroby, grabieże i napaści. Na specjalne okazje, najwyżsi kapłani Rillifane'a pokazują swój szacunek Panu Liści przyozdabiając swe skronie dębowymi liśćmi w formie wieńców laurowych, które następnie są błogosławione i wzmacniane zaklęciami ochronnymi. Korony te rzadko opuszczają ziemie elfów, przede wszystkim z powodu swej magii, ściśle zestrojonej z samymi duszami Pięknego Ludu. Tylko odszczepieniec lub wygnaniec ośmieliłby się wynieść tak święty przedmiot poza społeczność elfów.
+@241 = ~Rillifane Rallathil jest obrońcą lasów i strażnikiem harmonii w naturze. Pan Liści jest często porównywany przez jego kapłanów do wielkiego, eterycznego dębu, tak olbrzymiego, że jego korzenie łączą się z korzeniami każdej innej rośliny w Krainach, pozostając jednocześnie w sercu Arvandoru, Strzelistej Puszczy Olimpu. To wielkie drzewo kieruje upływem pór roku i bytów w lasach zielonych elfów, jednocześnie chroniąc te ziemie i powstrzymując wszelkiego rodzaju choroby, grabieże i napaści. Na specjalne okazje, najwyżsi kapłani Rillifane'a pokazują swój szacunek Panu Liści, przyozdabiając swe skronie dębowymi liśćmi w formie wieńców laurowych, które następnie są błogosławione i wzmacniane zaklęciami ochronnymi. Korony te rzadko opuszczają ziemie elfów, przede wszystkim z powodu swej magii, ściśle zestrojonej z samymi duszami Pięknego Ludu. Tylko odszczepieniec lub wygnaniec ośmieliłby się wynieść tak święty przedmiot poza społeczność elfów.
 
 PARAMETRY:
 
-Klasa Pancerza: +1
 Specjalne:
- Błogosławieństwo
- Odporność na choroby i trucizny~
+- Błogosławieństwo
+- Niewrażliwość na choroby i trucizny
+
+Klasa Pancerza: +1~
 
 @720 = ~Różdżka strachu wypełnia przerażeniem serca wszystkich istot, które znajdują się w zasięgu jej działania. Panika ta nie jest jednak nie do odparcia, wyjątkowo dzielni bohaterowie mogą oprzeć się magii. Jak wszystkie różdżki, różdżka strachu może zostać użyta tylko ograniczoną ilość razy przed zniszczeniem.
 
 PARAMETRY:
 
 Specjalne:
- Sprawia, że wrogowie uciekają ze strachu, jeżeli nie powiedzie się im rzut obronny przeciwko magii
-Zasięg: 30 metrów
+ - Sprawia, że wrogowie uciekają ze strachu (rzut obronny przeciw różdżkom neguje)
+Zasięg: 33 metry
 Obszar działania: 6 metrów
-Czas trwania: 6 rund~
+Czas działania: 6 rund~
 
-@722 = ~Gdy Haz rozpoczął pierwszą produkcję swych golemów obronnych z rozkazu miejscowego Mistrza Płaszczy, kilku zaprzyjaźnionych Złodziei Cienia zasugerowało, aby mag zapewnił bezpieczny sposób na wyłączenie potężnych konstruktów, gdy to będzie konieczne. Haz odrzucił jednak ich spostrzeżenia uważając je za nieuzasadnione, ale po tym, jak kilku wysoko postawionych członków gildii zaczęło otwarcie wyrażać swoje obawy, jak i kwestionować jego motywy, Haz w końcu poddał się negatywnej opinii i stworzył kilka Bereł kontrolnych, które później wręczył głośno wyrażającym swą opinie niedowiarkom. Ściśle mówiąc, każdy kto jest w posiadaniu takiego Berła, może deaktywować każdego golema stworzonego przez Haza poprzez zwyczajne uniesienie Berła kontroli i wejście w zasięg widzenia danego konstrukta. Oczywiście, niemożliwym jest wyłączenie golema, gdy jest on w niewielkiej odległości od swego twórcy. Co więcej, instrukcja wyryta na trzonku berła wyraźnie ostrzega przed próbą ataku dezaktywowanego golema, wznowi to bowiem ich procedury obronne.
+@722 = ~Gdy Haz rozpoczął pierwszą produkcję swych golemów obronnych z rozkazu miejscowego Mistrza Płaszczy, kilku zaprzyjaźnionych Złodziei Cienia zasugerowało, aby mag zapewnił bezpieczny sposób na wyłączenie potężnych konstruktów, gdy to będzie konieczne. Haz odrzucił jednak ich spostrzeżenia, uważając je za nieuzasadnione, ale po tym, jak kilku wysoko postawionych członków gildii zaczęło otwarcie wyrażać swoje obawy, jak i kwestionować jego motywy, Haz w końcu poddał się negatywnej opinii i stworzył kilka Bereł kontrolnych, które później wręczył głośno wyrażającym swą opinię niedowiarkom. Ściśle mówiąc, każdy, kto posiada takie berło, może deaktywować każdego golema stworzonego przez Haza poprzez zwyczajne uniesienie berła kontroli i wejście w zasięg widzenia danego konstruktu. Oczywiście niemożliwe jest wyłączenie golema, gdy jest on w niewielkiej odległości od swego twórcy. Co więcej, instrukcja wyryta na trzonku berła wyraźnie ostrzega przed próbą ataku dezaktywowanego golema, wznowi to bowiem ich procedury obronne.
 
 PARAMETRY:
 
 Specjalne:
- Każdy golem stworzony przez Haza zostanie automatycznie dezaktywowany w obecności osoby trzymającej berło. W celu skutecznego działania, berło musi być wyposażone w widocznym miejscu a osoba, która go trzyma musi sama podejść do golema. Po wyłączeniu, golem pozostanie nieczynny tak długo, dopóki nie zostanie zaatakowany. Berło to nie będzie działać na żadnym golemie, jaki nie został stworzy przez Haza.~
+- Każdy golem stworzony przez Haza zostanie automatycznie dezaktywowany w obecności osoby trzymającej berło. W celu skutecznego działania berło musi być wyposażone w widocznym miejscu, a osoba, która go trzyma, musi sama podejść do golema. Po wyłączeniu golem pozostanie nieczynny dopóty, dopóki nie zostanie zaatakowany. Berło to nie będzie działać na żadnym golemie, który nie został stworzony przez Haza.~
 
   //RR Ulepszenia przedmiotów (5000-5999)
 
-@5001 = ~Przez wiele pokoleń tarcza ta była przekazywana wybranym Najwyższym Jurystom Amaunatora, którzy przyjmowali na siebie obowiązek oczyszczania krain z wszelkich nieumarłych. Po zniknięciu Amaunatora i upadku Twierdzy wiekuistego słońca, olśniewające złotem wykończenia tarczy wypłowiały, a spowijające ją potężne zaklęcia uległy rozłożeniu. W końcu, ten niegdyś potężny artefakt, został sprowadzony do roli ozdoby naściennej. wraz z upływem czasu wśród wyznawców Amaunatora powoli zapanowała dezorganizacja i zaczęli się rozpraszać. Ta tarcza została ostatnio skradziona wraz z wieloma innymi pozostałościami z jednej z ich świątyń.
+@5001 = ~Przez wiele pokoleń tarcza ta była przekazywana wybranym Najwyższym Jurystom Amaunatora, którzy przyjmowali na siebie obowiązek oczyszczania krain z wszelkich nieumarłych. Po zniknięciu Amaunatora i upadku Twierdzy wiekuistego słońca olśniewające złotem wykończenia tarczy wypłowiały, a spowijające ją potężne zaklęcia uległy rozłożeniu. W końcu ten niegdyś potężny artefakt został sprowadzony do roli ozdoby naściennej. Wraz z upływem czasu wśród wyznawców Amaunatora powoli zapanowała dezorganizacja i zaczęli się rozpraszać. Ta tarcza została ostatnio skradziona wraz z wieloma innymi pozostałościami z jednej z ich świątyń.
 
 Połączona ze Świętym symbolem Amaunatora, tarcza ponownie pulsuje energią. Została przywrócona także część dawnych mocy.
 
 PARAMETRY:
 
-Klasa Pancerza: +4
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- +2 do Klasy Pancerza przeciwko nieumarłym
- Każdy nieumarły, który trafi noszącego tarczę otrzyma 2K4 pkt. obrażeń od ognia i musi wykonać rzut obronny przeciwko czarom lub oślepnie na 4 rundy
- Raz dziennie pozwala rzucić Ogień słońca
-Waga: 2
-Wymagana siła: 4~
+- Klasa Pancerza: +4 (+6 przeciw nieumarłym)
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Każdy nieumarły, który trafi noszącego tarczę, otrzyma 2k4 obrażeń od ognia i musi wykonać rzut obronny przeciw czarom lub zostanie oślepiony na cztery rundy
+- Pozwala rzucić zaklęcie Ogień słońca, raz dziennie
 
-@5003 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Kniei Mir. Przy bliższym zbadaniu na powierzchni tarczy odkryć można potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się być bezpośrednio powiązane z mocą noszącego tarczę.
+Wymagania:
+- Siła: 4
+
+Waga: 2~
+
+@5003 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Lasu Mir. Przy bliższym zbadaniu na powierzchni tarczy odkryć można potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się bezpośrednio powiązane z mocą noszącego tarczę.
 
 PARAMETRY:
 
-Klasa Pancerza: +3
 Specjalne:
- +10 do maksymalnych punktów życia
- Regeneruje 2 punkty życia na rundę
- Raz dziennie pozwala przywołać Pokracznego kopca
-Waga: 1
-Wymagana mądrość: 12
-Wymagana charyzma: 15~
+- Klasa Pancerza: +3
+- +10 do maksymalnych punktów życia
+- Regeneracja punktów życia: 2/rundę
+- Wezwanie Pokracznego kopca, raz dziennie
 
-@5005 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Kniei Mir. Przy bliższym zbadaniu na powierzchni tarczy odkryć można potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się być bezpośrednio powiązane z mocą noszącego tarczę.
+Wymagania:
+- Mądrość: 12
+- Charyzma: 15
+
+Waga: 1~
+
+@5005 = ~Ta dziwnie wyglądająca tarcza wygląda, jakby w całości wykonana została z długich, stwardniałych liści. Niezwykły kształt i rozmiar liści nasuwa przypuszczenie, że należały one niegdyś do starożytnego dębu rosnącego w ostępach Lasu Mir. Przy bliższym zbadaniu na powierzchni tarczy odkryć można potężne druidyczne zaklęcia. Wygląda na to, że nieco wzmacniają one zdrowie ją dzierżącego. Ponadto sprawiają, że wszelkie otrzymane rany goją się szybciej. Każdego ranka o świcie na jedną chwilę jeden z liści rozżarza się delikatnie. Może wówczas zostać wyciągnięty i zasadzony w ziemi, podczas gdy na jego miejscu natychmiast wyrasta inny. Po wypowiedzeniu właściwej inkantacji zasadzony liść błyskawicznie rozrasta się w przerażający Pokraczny kopiec, którego siła i rozmiar wydają się bezpośrednio powiązane z mocą noszącego tarczę.
 
 PARAMETRY:
 
-Klasa Pancerza: +4
 Specjalne:
- +15 do maksymalnych punktów życia
- Regeneruje 3 punkty życia na rundę
- Raz dziennie pozwala przywołać Większego pokracznego kopca
-Waga: 1
-Wymagana mądrość: 12
-Wymagana charyzma: 15~
+- Klasa Pancerza: +4
+- +15 do maksymalnych punktów życia
+- Regeneracja punktów życia: 3/rundę
+- Wezwanie Większego pokracznego kopca, raz dziennie
 
-@5007 = ~Ten doskonale wykonany topór posiada zaklęcie niezwykłego pochodzenia. Natychmiast po stworzeniu został wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kapłani oczekiwali na potężną nawałnicę, by się zgromadzić. Broń została umieszczona na żelaznym piedestale i wkrótce potem trafiona gromem. Dzięki umieszczonemu w niej wcześniej zaklęciu wchłonęła nieco z właściwości pioruna. Następnie została ofiarowana najwyższemu rangą krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach między hordami orków a kransoludami z Głębi Dorna. Atak, który nadszedł, był całkowicie nieoczekiwany. Pewnego ranka przybył zwiadowca z wieścią, że największa armia orków, jaką kiedykolwiek widział, jest tylko kilka godzin drogi stąd. Po krótkim czasie zużytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczęło wlewać się do Głębi. Krasnoludy zostały zmuszone do wycofania się w głąb swej cytadeli, jednak zdołały zawalić kluczowe przejścia, by ukryć swe ruchy i zyskać na czasie. Nawet w tak niesprzyjających okolicznościach, pozwoliło to krasnoludom wybierać miejsce i czas starć. Ponieważ walczyły na swoich warunkach, każda bitwa była drogo opłacana przez orki. Mimo to krasnoludy wciąż musiały się cofać dalej i dalej w głąb Lodowca Ząb Wielkiego Gada. W końcu dzięki swojej olbrzymiej przewadze liczebnej, orki zdołały przełamać krasnoludzką obronę i splądrować ich domostwo.
+Wymagania:
+- Mądrość: 12
+- Charyzma: 15
+
+Waga: 1~
+
+@5007 = ~Ten doskonale wykonany topór posiada zaklęcie niezwykłego pochodzenia. Natychmiast po stworzeniu został wniesiony na szczyt wysokiej góry, gdzie krasnoludzcy kapłani oczekiwali na potężną nawałnicę, by się zgromadzić. Broń została umieszczona na żelaznym piedestale i wkrótce potem trafiona gromem. Dzięki umieszczonemu w niej wcześniej zaklęciu wchłonęła nieco z właściwości pioruna. Następnie została ofiarowana najwyższemu rangą krasnoludzkiemu dowódcy, jako wsparcie w kolejnych w walkach między hordami orków a krasnoludami z Głębi Dorna. Atak, który nadszedł, był całkowicie nieoczekiwany. Pewnego ranka przybył zwiadowca z wieścią, że największa armia orków, jaką kiedykolwiek widział, jest tylko kilka godzin drogi stąd. Po krótkim czasie zużytym na przygotowanie, krasnoludzcy wojownicy zostali najechani, a nieprzeliczone morze orków zaczęło wlewać się do Głębi. Krasnoludy zostały zmuszone do wycofania się w głąb swej cytadeli, jednak zdołały zawalić kluczowe przejścia, by ukryć swe ruchy i zyskać na czasie. Nawet w tak niesprzyjających okolicznościach, pozwoliło to krasnoludom wybierać miejsce i czas starć. Ponieważ walczyły na swoich warunkach, każda bitwa była drogo opłacana przez orki. Mimo to krasnoludy wciąż musiały się cofać dalej i dalej w głąb Lodowca Ząb Wielkiego Gada. W końcu dzięki swojej olbrzymiej przewadze liczebnej, orki zdołały przełamać krasnoludzką obronę i splądrować ich domostwo.
 
 Powleczenie pozaziemską Rudą z Gwiezdnego Kamienia i połączenie z esencją lapis lazuli sprawiło, że moc tej już wcześniej potężnej broni znacząco wzrosła.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +5, +1K6 pkt. od elektryczności
+Specjalne:
+- Odporność na elektryczność: +50%
+- 15% szans na ogłuszenie celu przez jedną rundę, po trafieniu
+- Wyładowanie statyczne, raz dziennie (10k6 obrażeń od elektryczności)
+
+Obrażenia: 1k8 +5, +1k6 od elektryczności
 TraK0: +5
 Typ obrażeń: sieczne
-Specjalne:
- Zapewnia 50% odporności na elektryczność
- 15% szans, że trafiona ofiara zostanie ogłuszona na 1 rundę
- Wyładowanie statyczne raz dziennie (10k6 pkt obrażeń od elektryczności)
-Waga: 5
 Opóźnienie: 2
-Rodzaj biegłości: topory
-Typ broni: 1-ręczna~
+Rodzaj biegłości: topór
+Typ broni: 1-ręczna
 
-@5009 = ~Cieniste Ostrze wykuto z myślą o zabójcy - miało być dla niego doskonałym narzędziem. Marzy o nim wielu lubiących rozstrzygać spory za pomocą ciosu w plecy. Niewielu jednak posiada ten miecz przez długi czas. W ręce dowolnej postaci miecz ten zachowuje się jak zwykła broń o umagicznieniu +5, jednak szczególnie potężna w dłoni złodzieja staje się wskutek zwiększenia szansy na trafienie krytyczne oraz podniesienia współczynnika ciosu w plecy.
+Waga: 5~
+
+@5009 = ~Cieniste ostrze wykuto z myślą o zabójcy – miało być dla niego doskonałym narzędziem. Marzy o nim wielu lubiących rozstrzygać spory za pomocą ciosu w plecy. Niewielu jednak posiada ten miecz przez długi czas. W ręce dowolnej postaci miecz ten zachowuje się jak zwykła broń o umagicznieniu +5, jednak szczególnie potężna w dłoni złodzieja staje się wskutek zwiększenia szansy na trafienie krytyczne oraz podniesienia współczynnika ciosu w plecy.
 
 Nasączone magiczną esencją kamieni łotrzyków, ostrze to stało się jeszcze potężniejszym w rękach złodzieja.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +5
+Specjalne (tylko złodzieje):
+- Mnożnik ciosu w plecy zwiększony o 1
+- Szansa na trafienie krytyczne zwiększona o 2
+
+Obrażenia: 1k6 +5
 TraK0: +5
 Typ obrażeń: kłute
-Specjalne:
- Mnożnik ciosu w plecy zwiększony o 1
- Zwiększona szansa o 2 na trafienia krytyczne
-Waga: 3
 Opóźnienie: 0
-Rodzaj biegłości: krótki miecz
+Rodzaj biegłości: miecz krótki
 Typ broni: 1-ręczna
-Wymagana siła: 5~
+
+Wymagania:
+- Siła: 5
+
+Waga: 3~
 
 @5011 = ~Kieszonki tego pasa wypełnione są mnóstwem mistrzowsko wykonanych przyrządów przydatnych w pracy ślusarza i zegarmistrza. Jednakże przedmioty te z łatwością można wykorzystać do niecnych celów, co czyni je pożądanymi pośród złodziei. Klamrę tego szczególnego pasa znaczy wygrawerowana litera G.
 
@@ -932,135 +1078,207 @@ Te doskonałe narzędzia zostały wypełnione esencją szczęścia i zaklęte ma
 PARAMETRY:
 
 Specjalne:
- +1 do Szczęścia
- +20% do Otwierania zamków, Wykrywania pułapek i Zakładania pułapek
+- Szczęście: +1
+- Otwieranie zamków: +20%
+- Znajdowanie pułapek: +20%
+- Zakładanie pułapek: +20%
+
 Waga: 2~
 
-@5013 = ~Powiadają, że pewna przebiegła kapłanka Auril stworzyła dziesiątki takich strzałek w celu zaopatrzenia świątynnych strażników w broń na czarną godzinę. Doskonałym narzędziem do tego wydawała się być właśnie strzałka, z uwagi na łatwość jej ukrycia. Pomniejsze zaklęcia, którymi została wzmocniona, sprawiają, że dosłownie zamraża ofiarę, a ponadto wraca do ręki posiadacza. Taka broń jest na ogół rzadko spotykana poza świątyniami Auril, których kilka usianych jest na ośnieżonych szczytach Doliny Lodowego Wichru. Jednakże w ostatnich latach kilku handlarzy z Dekapolis nabyło podejrzanie wielkie ilości tych strzałek od miejscowych drużyn poszukiwaczy przygód.
+@5013 = ~Powiadają, że pewna przebiegła kapłanka Auril stworzyła dziesiątki takich strzałek w celu zaopatrzenia świątynnych strażników w broń na czarną godzinę. Doskonałym narzędziem do tego wydawała się właśnie strzałka, z uwagi na łatwość jej ukrycia. Pomniejsze zaklęcia, którymi została wzmocniona, sprawiają, że dosłownie zamraża ofiarę, a ponadto wraca do ręki posiadacza. Taka broń jest na ogół rzadko spotykana poza świątyniami Auril, których kilka usianych jest na ośnieżonych szczytach Doliny Lodowego Wichru. Jednakże w ostatnich latach kilku handlarzy z Dekapolis nabyło podejrzanie wielkie ilości tych strzałek od miejscowych drużyn poszukiwaczy przygód.
 
-Wygląda na to, że mitrylowa powłoka w znacznym stopniu zwiększyła magiczne możliwości tej strzałki.
+Wygląda na to, że mitrhrilowa powłoka w znacznym stopniu zwiększyła magiczne możliwości tej strzałki.
 
 PARAMETRY:
 
-Obrażenia: 1K3 +3, +1K3 od zimna
-TraK0: +3
-Typ obrażeń: pocisk (kłute)
 Specjalne:
- Wraca po rzucie do właściciela
- 15% szans na to, że trafiony przeciwnik ulegnie spowolnieniu na 1 rundę
-Waga: 0
+- Po rzucie wraca do właściciela
+- 15% szans na spowolnienie celu przez jedną rundę, po trafieniu
+
+Obrażenia: 1k3 +3, +1k3 od zimna
+TraK0: +3
+Typ obrażeń: pocisk
 Opóźnienie: 1
 Rodzaj biegłości: strzałka
-Typ broni: 1-ręczna~
+Typ broni: 1-ręczna
 
-@5015 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć "żywe statuy" w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
+Waga: 0~
+
+@5015 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć „żywe statuy” w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
 
 Wskutek wzmocnienia jej kolejnymi, pochodzącymi z Podręcznika na temat golemów, zaklęciami, maczuga ta stała się jeszcze potężniejszą bronią przeciw tym przerażającym tworom.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +4, +6 przeciwko golemom
-TraK0: +4, +6 przeciwko golemom
-Typ obrażeń: obuchowe
 Specjalne:
- 20% szans na natychmiastowe zniszczenie Kamiennego, Glinianego oraz Piaskowego golema przy trafieniu
-Waga: 3
+- 20% szans na natychmiastowe zniszczenie kamiennego, glinianego oraz piaskowego golema, po trafieniu
+
+Obrażenia: 1k6 +4, +6 przeciw golemom
+TraK0: +4, +6 przeciw golemom
+Typ obrażeń: obuchowe
 Opóźnienie: 0
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 5~
+
+Wymagania:
+- Siła: 5
+
+Waga: 3~
 
 @5017 = ~Lapis lazuli to klejnoty o głębokiej, niebieskiej barwie z pirytowymi inkluzjami błyszczącymi jak małe gwiazdy. Ich niezwykły kolor jest często przyrównywany do ultramaryny. Niektórzy mędrcy przypuszczają, że klejnoty te mogą być używane do dalszego wzmacniania zaklęciami magicznych przedmiotów wykorzystujących moc wyładowań atmosferycznych.~
 
-@5020 = ~Ostrze to należało niegdyś do Lao-Tzu, samuraja pochodzącego z jednej z południowych prowincji Kara-Tur. Po zakończeniu szkolenia wojownik ten złożył przysięgę, że wreszcie uwolni swoje ziemie z bandytów i zbójców, którzy prześladowali jego lud przez całą minioną dekadę. Zadanie to jednakże okazało się trudne do zrealizowania, jego przeciwnicy bowiem byli przebiegli i atakowali wyłącznie późną nocą, zawsze przy tym nosząc kaptury i maski. Lao-Tzu zrozumiał, że bandyci ci pozbawieni są honoru i że równie dobrze mogą ukrywać się wśród ludu, który poprzysiągł chronić. Mimo to, nie ośmielił się działać spontanicznie, ponieważ jego kodeks postępowania nie pozwalał mu fałszywie oskarżać niewinnych. By pomóc sobie w tym zadaniu, odnalazł wielkiego mistrza Wu Jen i poprosił go o zaklęcie jego wakizashi zdolnością wyczuwania prawdziwych intencji ludzi, by niechybnie odnaleźć w tych bez honoru. Samuraj zorganizował ucztę dla ludu, by podnieść na duchu obrabowywanych oraz ujawnić bandytów. Ludzie skorzystali z jego zaproszenia, co ucieszyło Lao-Tzu. Korzystając z mocy swojej nowej broni doprowadził do oddzielenia sprytnych bandytów od zwykłych chłopów i posadzenia ich w osobnym pomieszczeniu. Kiedy już się tam zgromadzili, samuraj zablokował jedyne wyjście i samotnie stawił czoła tuzinowi łotrów. To on był zwycięzcą krótkiego starcia, jednak honor nie pozwolił mu zabić nawet tak niegodnych wrogów. Zamiast tego wygnał ich ze swojej prowincji, a jego lud wreszcie poznał pokój.
+@5020 = ~Ostrze to należało niegdyś do Lao-Tzu, samuraja pochodzącego z jednej z południowych prowincji Kara-Tur. Po zakończeniu szkolenia wojownik ten złożył przysięgę, że wreszcie uwolni swoje ziemie z bandytów i zbójców, którzy prześladowali jego lud przez całą minioną dekadę. Zadanie to jednakże okazało się trudne do zrealizowania, jego przeciwnicy bowiem byli przebiegli i atakowali wyłącznie późną nocą, zawsze przy tym nosząc kaptury i maski. Lao-Tzu zrozumiał, że bandyci ci pozbawieni są honoru i że równie dobrze mogą ukrywać się wśród ludu, który poprzysiągł chronić. Mimo to nie ośmielił się działać spontanicznie, ponieważ jego kodeks postępowania nie pozwalał mu fałszywie oskarżać niewinnych. By pomóc sobie w tym zadaniu, odnalazł wielkiego mistrza Wu Jen i poprosił go o zaklęcie jego wakizashi zdolnością wyczuwania prawdziwych intencji ludzi, by niechybnie odnaleźć w tych bez honoru. Samuraj zorganizował ucztę dla ludu, by podnieść na duchu obrabowywanych oraz ujawnić bandytów. Ludzie skorzystali z jego zaproszenia, co ucieszyło Lao-Tzu. Korzystając z mocy swojej nowej broni, doprowadził do oddzielenia sprytnych bandytów od zwykłych chłopów i posadzenia ich w osobnym pomieszczeniu. Kiedy już się tam zgromadzili, samuraj zablokował jedyne wyjście i samotnie stawił czoła tuzinowi łotrów. To on był zwycięzcą krótkiego starcia, jednak honor nie pozwolił mu zabić nawet tak niegodnych wrogów. Zamiast tego wygnał ich ze swojej prowincji, a jego lud wreszcie poznał pokój.
 
-Nasączone właściwościami Solnej mikstury, ostrze to stało się jeszcze bardziej efektywne w obliczu przeciwników o charakterze chaotycznym. Ponadto obecnie potrafi na krótki okres czasu chronić umysł przeciw magii opartej o chaos.
+Nasączone właściwościami Solnej mikstury, ostrze to stało się jeszcze bardziej efektywne w obliczu przeciwników o charakterze chaotycznym. Ponadto obecnie potrafi na krótki czas chronić umysł przeciw magii opartej o chaos.
 
 PARAMETRY:
 
-Obrażenia: 1K8 +3, +5 przeciwko chaotycznym
-TraK0: +3, +5 przeciwko chaotycznym
-Typ obrażeń: kłute
 Specjalne:
- +1 do KP, +3 przeciwko chaotycznym charakterom
- Poznanie charakteru 3 razy dziennie
- Chaotyczne rozkazy 1 raz dziennie
-Waga: 2
+- Klasa Pancerza: +1 (+3 przeciw istotom chaotycznym)
+- Poznanie charakteru, trzy razy dziennie
+- Chaotyczne rozkazy, raz dziennie
+
+Obrażenia: 1k8 +3, +5 przeciw istotom chaotycznym
+TraK0: +3, +5 przeciw istotom chaotycznym
+Typ obrażeń: kłute
 Opóźnienie: 0
 Rodzaj biegłości: sejmitar/wakizashi/ninja-to
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@5022 = ~Stworzona przez potężnego szamana Uthgardta, maczugę tę zaklęto, by obniżała możliwości bojowe przeciwnika. Używał jej herszt Aukthar z plemienia Czarnego Kruka w wielu starciach pomiędzy jego ludem a hordami orków, które regularnie próbowały najechać Kruczą Skałę, ich rodowy pagórek. Broń ta została utracona podczas jednej ze szczególnie zażartych bitew, kiedy okrzyki bojowe walczących wywołały ogromną lawinę, która zmiotła ich w przepaść.
-Nasączona sproszkowaną esencją beljurylu, broń ta stała się jeszcze bardziej efektywna w wywoływaniu zmęczenia. Co więcej, dzierżący ją staje się odporny na każdy nienaturalnie spowodowany efekt zmęczenia (np. następujący po skorzystaniu z zaklęcia Przyspieszenie), jednak wciąż jest podatny na zwykłe zmęczenie wynikające z braku snu.
+Wymagania:
+- Siła: 5
+
+Waga: 2~
+
+@5022 = ~Tę stworzoną przez potężnego szamana z plemienia Uthgardt maczugę zaklęto tak, by obniżała możliwości bojowe przeciwnika. Była ona używana przez Aukthara, herszta plemienia Czarnego Kruka, który walczył nią w wielu potyczkach pomiędzy jego ludźmi a hordami orków, które regularnie próbowały najechać ich rodowy pagórek, Kruczą Skałę. Broń tę utracono podczas jednej ze szczególnie zażartych bitew, kiedy okrzyki bojowe walczących wywołały ogromną lawinę, która zmiotła wszystkich w przepaść.
+
+Nasączona sproszkowaną esencją beljurylu, broń ta stała się jeszcze bardziej efektywna w wywoływaniu zmęczenia. Co więcej, dzierżący ją staje się niewrażliwy na każdy nienaturalnie spowodowany efekt zmęczenia (np. następujący po skorzystaniu z zaklęcia Przyspieszenie), wciąż jest jednak podatny na zwykłe zmęczenie wynikające z braku snu.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +3
+Specjalne:
+- Niewrażliwość na zmęczenie (z wyjątkiem tego, które wywołuje brak odpoczynku)
+- 50% szans na wywołanie zmęczenia u ofiary, po trafieniu (rzut obronny przeciw śmierci neguje)
+Uwaga: golemy, żywiołaki, galarety i nieumarli są niewrażliwe na efekt zmęczenia.
+
+Obrażenia: 1k6 +3
 TraK0: +3
 Typ obrażeń: obuchowe
-Specjalne:
- Odporność na zmęczenie (z wyjątkiem tego, które wywołuje brak odpoczynku)
- 50% szans, że trafiony cel znajdzie się pod wpływem zmęczenia, jeśli nie powiedzie się jej rzut obronny przeciwko śmierci (golemy, żywiołaki, galarety i nieumarli są odporni na efekty zmęczenia)
-Waga: 3
 Opóźnienie: 1
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 5~
 
-@5024 = ~Puklerz ten wykonany został ze stopu mrocznej stali, zabarwionej przez śladowe ilości mitrylu i srebra. Chociaż jego powierzchnia wygląda na doskonale wypolerowaną, wydaje się, że tarcza ta w jakiś sposób pochłania światło zamiast je odbijać. Przy bliższym badaniu można odkryć nałożonych kilka zaklęć charakterystycznych dla kapłanów Maska. Możliwe, że sam Pan Cienia osobiście pobłogosławił ten przedmiot swym dotykiem, obdarzając go mocą skrywania i wyprowadzania swych wyznawców z wszelkich opałów, w jakich mogą się znaleźć pałając się swoją ryzykowna profesją.
+Wymagania:
+- Siła: 5
+
+Waga: 3~
+
+@5024 = ~Puklerz ten wykonany został ze stopu mrocznej stali, zabarwionej przez śladowe ilości mithrilu i srebra. Chociaż jego powierzchnia wygląda na doskonale wypolerowaną, wydaje się, że tarcza ta w jakiś sposób pochłania światło, zamiast je odbijać. Przy bliższym badaniu można odkryć nałożonych kilka zaklęć charakterystycznych dla kapłanów Maski. Możliwe, że sam Pan Cienia osobiście pobłogosławił ten przedmiot swym dotykiem, obdarzając go mocą skrywania i wyprowadzania swych wyznawców z wszelkich opałów, w jakich mogą się znaleźć, pałając się swoją ryzykowna profesją.
 
 Nasączony magiczną esencją kamieni łotrzyków i powleczony cienką warstwą adamantytu, puklerz ten obecnie zapewnia jeszcze lepszą ochronę.
 
 PARAMETRY:
 
-Klasa Pancerza: +4
 Specjalne:
- Nie chroni przed obrażeniami kłutymi i pociskami
- +3 do rzutów obronnych przeciwko śmierci
- +15% do Krycia się w cieniu
- 3 razy dziennie pozwala rzucić Ulepszoną niewidzialność.
-Waga: 1
-Wymagana siła: 4~
+- Klasa Pancerza: +4
+- Nie chroni przed obrażeniami kłutymi i pociskami
+- Rzuty obronne: +3 przeciw śmierci
+- Krycie się w cieniu: +15%
+- Pozwala na rzucenie zaklęcia Ulepszona niewidzialność, trzy razy dziennie
 
-@5026 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć "żywe statuy" w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
+Wymagania:
+- Siła: 4
+
+Waga: 1~
+
+@5026 = ~Maczugę tę pokrywają mroczne orcze runy. Stanowi ona pozostałość po ostatniej wojnie między orkami a turmijskimi magami. Kiedy orcze plemiona zaczęły najeżdżać ich miasto, magowie stworzyli golemy o przerażającej mocy dla ochrony samych siebie. Widząc, że brutalna siła orczych wojowników jest niewystarczająca, wielki herszt orków Gull-Nar rozkazał swoim szamanom stworzyć broń umożliwiającą skruszyć „żywe statuy” w proch. Szamani użyli ksiąg ze splądrowanej wieży magów do zaczarowania ulubionej broni swojego herszta, olbrzymiej maczugi. Gull-Nar był tak zadowolony, że zdecydował się osobiście poprowadzić następny najazd, w jego czasie niszcząc golemy w pył, kiedy posuwał się w stronę centrum miasta. Zwycięstwo było na wyciągnięcie dłoni, kiedy samotny mag przywdziany w czerń pojawił się znikąd i rzucił potężny czar, który zwrócił wściekłe orki przeciw sobie. W parę minut ich armia została zdziesiątkowana, a sam Gull-Nar został zamordowany przez swoich najbardziej zaufanych wojowników.
 
 Wskutek wzmocnienia jej kolejnymi, pochodzącymi z Księgi budowy golemów, zaklęciami, maczuga ta stała się jeszcze potężniejszą bronią przeciw tym przerażającym tworom.
 
 PARAMETRY:
 
-Obrażenia: 1K6 +3, +5 przeciwko golemom
-TraK0: +3, +5 przeciwko golemom
-Typ obrażeń: obuchowe
 Specjalne:
- 15% szans na natychmiastowe zniszczenie Kamiennego, Glinianego oraz Piaskowego golema przy trafieniu
-Waga: 3
+ - 15% szans na natychmiastowe zniszczenie kamiennego, glinianego oraz piaskowego golema, po trafieniu
+
+Obrażenia: 1k6 +3, +5 przeciw golemom
+TraK0: +3, +5 przeciw golemom
+Typ obrażeń: obuchowe
 Opóźnienie: 1
 Rodzaj biegłości: maczuga
 Typ broni: 1-ręczna
-Wymagana siła: 5~
+
+Wymagania:
+- Siła: 5
+
+Waga: 3~
+
+// Strings missing from BGEE
+
+@10005 = ~Mimo że ten kaptur nie posiada żadnych odczuwalnych zalet, to można w nim wyczuć aurę skrytej magii.~ // #66466, without usability info
+@10014 = ~Puklerz jest bardzo małą tarczą wykonaną z drewna lub żelaza, którą mocuje się do przedramienia. Z powodu swojego rozmiaru jest bardzo lekki i praktycznie nie spowalnia ruchów. Ten ma w sobie pewnego rodzaju magię, która czyni go bardziej odpornym na ciosy.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +2
+– Nie chroni przed obrażeniami kłutymi i pociskami
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~ // #39970, without usability info
+@10019 = ~Wakizashi
+Wakizashi, czyli miecz pomocniczy, jest niezwykle ważny dla samuraja. Nosi się go przez cały czas, nawet w mieszkaniu, spoczywa blisko samuraja, gdy ten śpi. Wykonany z równą pieczołowitością co katana, krótszy miecz, długości trzydziestu pięciu do sześćdziesięciu centymetrów jest niebezpieczną bronią w rękach wyszkolonego szermierza.
+
+PARAMETRY:
+
+Obrażenia: 1k8
+Typ obrażeń: kłute
+Opóźnienie: 3
+Rodzaj biegłości: sejmitar/wakizashi/ninja-to
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 5
+
+Waga: 3~ // #36181, without usability info
+@10021 = ~Ninja-to
+Miecz ninja, zwany ninja-to, jest gorszej jakości niż inne klingi z Kara-Tur, takie jak katana. Ninja-to jest krótki i ma proste ostrze, co sprawia, że jest idealnym narzędziem podstępnych ninja. Ninja-to jest też lepszy do walki w zamkniętych przestrzeniach, dając czasem ninja przewagę nad samurajami uzbrojonymi w dłuższą broń.
+
+PARAMETRY:
+
+Obrażenia: 1k8
+Typ obrażeń: sieczne
+Opóźnienie: 4
+Rodzaj biegłości: sejmitar/wakizashi/ninja-to
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 6
+
+Waga: 5~ // #39467, without usability info
 
 // Ability descriptions (cropped from the kit descriptions)
 
-@11000 = ~Pokaz siły
-Wykonując pozy, w których fechtmistrz, jakby owija wokół siebie swe ostrza, może zaburzyć morale oraz odwagę innych. Taki pokaz umiejętności, precyzji i śmiertelnego wdzięku obniża morale przeciwnika (wrogowie muszą wykonać rzut obronny przeciw czarom, by uniknąć spadku morale) i jednocześnie inspiruje sojuszników, dodając +1 do ataku. Pokaz musi trwać całą rundę bez przerwania. Przez ten czas, każdy udany atak przeciwko fechtmistrzowi lub nieudany rzut obronny fechtmistrza przerywa pokaz. Pokaz siły jest niezwykłą (niemagiczną) umiejętnością, co za tym idzie, ignoruje wszelkie odporności magiczne stworów. Nieumarli, golemy, galarety, zwierzęta oraz demoniczne stworzenia są całkowicie odporne na Pokaz siły. Umiejętność ta nie może zadziałać na stwory, których maksymalna kostka ataku przewyższa poziom barda oraz stwory, których kostka ataku ma 20 i więcej są całkowicie odporne. Efekt oraz czas trwania tej umiejętności wzrasta z poziomem fechtmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiększają się o 1 na każde 10 poziomów fechtmistrza. Efekt Pokazu siły trwa jedną rundę na każdy poziom fechtmistrza.~
+@11000 = ~POKAZ SIŁY
+Wykonując pozy, w których fechmistrz, jakby owija wokół siebie swe ostrza, może zaburzyć morale oraz odwagę innych. Taki pokaz umiejętności, precyzji i śmiertelnego wdzięku obniża morale przeciwnika (wrogowie muszą wykonać rzut obronny przeciw czarom, by uniknąć spadku morale) i jednocześnie inspiruje sojuszników, dodając +1 do testów ataku. Pokaz musi trwać całą rundę bez przerwania. Przez ten czas, każdy udany atak przeciwko fechmistrzowi lub nieudany rzut obronny fechmistrza przerywa pokaz. Pokaz siły jest niezwykłą (niemagiczną) umiejętnością, co za tym idzie, ignoruje wszelkie odporności magiczne stworów. Nieumarli, golemy, galarety, zwierzęta oraz demoniczne stworzenia są całkowicie odporne na Pokaz siły. Umiejętność ta nie może zadziałać na stwory, których maksymalna kostka ataku przewyższa poziom barda oraz stwory, których kostka ataku ma 20 i więcej są całkowicie odporne. Efekt oraz czas działania tej umiejętności wzrasta z poziomem fechmistrza. Premia do ataku sojuszników oraz rzuty obronne zwiększają się o 1 na każde dziesięć poziomów fechmistrza. Efekt Pokazu siły trwa jedną rundę na każdy poziom fechmistrza.~
 
-@11001 = ~Zatrucie ostrza
-Z powodu wymagań, jakie narzuca nań jego profesja, Zabójca przywykł do pokrywania swej broni trucizną już na początku kariery. Każda broń w ten sposób przygotowana będzie zadawać dodatkowe 1K3 obrażeń od trucizny. W związku z czym, jeśli nie zostanie wykonany rzut obronny przeciw truciźnie, substancja przeniknie przez ranę do krwiobiegu ofiary zadając dodatkowe obrażenia na każdy poziom zabójcy (maksymalnie do poziomu 20). Trucizna odparowuje po 5 rundach od chwili nałożenia. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zatrute.~
+@11001 = ~ZATRUCIE OSTRZA
+Z powodu wymagań, jakie narzuca nań jego profesja, Zabójca przywykł do pokrywania swej broni trucizną już na początku kariery. Każda broń w ten sposób przygotowana będzie zadawać dodatkowe 1k3 obrażeń od trucizny. W związku z czym, jeśli nie zostanie wykonany rzut obronny przeciw truciźnie, substancja przeniknie przez ranę do krwiobiegu ofiary, zadając dodatkowe obrażenia na każdy poziom zabójcy (maksymalnie do 20. poziomu). Trucizna odparowuje po pięciu rundach od chwili nałożenia. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zatrute.~
 
-@11002 = ~Zabójczy atak
-Poprzez wnikliwe badanie słabości jego ofiary, Zabójca potrafi skupić swoją przebiegłość oraz ponadprzeciętne zdolności w jeden śmiertelny cios. Następny cios, który wyprowadza automatycznie staje się ciosem krytycznym, a jego ofiara musi wykonać rzut obronny przeciwko śmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skuteczność Zabójczego ataku rośnie. Rzuty obronne ofiary spadają o 1 na 24 poziomie, 2 na 32 i 3 na 40 poziomie. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zabite przy użyciu Zabójczego ataku.~
+@11002 = ~ZABÓJCZY ATAK
+Poprzez wnikliwe badanie słabości jego ofiary, Zabójca potrafi skupić swoją przebiegłość oraz ponadprzeciętne zdolności w jeden śmiertelny cios. Następny cios, który wyprowadza, staje się automatycznie ciosem krytycznym, a jego ofiara musi wykonać rzut obronny przeciwko śmierci, w przeciwnym wypadku zginie na miejscu. Wraz ze wzrostem poziomu zabójcy skuteczność Zabójczego ataku rośnie. Rzuty obronne ofiary spadają o 1 na 24. poziomie, 2 na 32. i 3 na 40. poziomie. Golemy, żywiołaki, galarety oraz nieumarli nie mogą zostać zabite przy użyciu Zabójczego ataku.~
 
-@11003 = ~Paraliżująca toksyna
-Skomplikowane pojmowanie alchemii, jak również zielarstwa pozwala łowcy nagród tworzyć substancje znacznie obniżające pracę mięśni po wprowadzeniu do krwiobiegu. Jest to przeźroczysta, pozbawiona zapachu ciecz, którą można bez obaw wykrycia nałożyć na ostrze broni. Po trafieniu taką bronią, ofiara musi wykonać rzut obronny przeciw paraliżowi, albo zostanie unieruchmiona przez rundę na każde 10 poziomów łowcy nagród. Niestety, po nałożeniu na ostrze, ciecz ta szybko się ulatnia, czyniąc go skutecznym tylko przez jedną rundę. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na działanie paraliżującej toksyny.~
+@11003 = ~PARALIZUJĄCA TOKSYNA
+Skomplikowane pojmowanie alchemii, jak również zielarstwa pozwala łowcy nagród tworzyć substancje znacznie obniżające pracę mięśni po wprowadzeniu do krwiobiegu. Jest to przeźroczysta, pozbawiona zapachu ciecz, którą można bez obaw wykrycia nałożyć na ostrze broni. Po trafieniu taką bronią, ofiara musi wykonać rzut obronny przeciw paraliżowi, albo zostanie unieruchomiona przez rundę na każde dziesięć poziomów łowcy nagród. Niestety, po nałożeniu na ostrze, ciecz ta szybko się ulatnia, czyniąc go skutecznym tylko przez jedną rundę. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na działanie paraliżującej toksyny.~
 
-@11004 = ~Pułapki alchemiczne
-Wynikiem połączenia niesamowitych umiejętności zastawiania sideł ze znajomością alchemii, łowca nagród potrafi stworzyć pułapki, które zamiast zabijać, są raczej zaprojektowane tak, by unieruchomić ofiarę. Efekt działania pułapki zależy od poziomu łowcy nagród, ale zawsze utrzymują się one przez 5 rund i mogą być zneutralizowane przez udany rzut obronny przeciw zionięciom:
+@11004 = ~PUŁAPKA ALCHEMICZNA
+Wynikiem połączenia niesamowitych umiejętności zastawiania sideł ze znajomością alchemii, łowca nagród potrafi stworzyć pułapki, które zamiast zabijać, są raczej zaprojektowane tak, by unieruchomić ofiarę. Efekt działania pułapki zależy od poziomu łowcy nagród, ale zawsze utrzymują się one przez pięć rund i mogą być zneutralizowane przez udany rzut obronny przeciw zionięciom:
 
-1 poziom - zadaje 1K4 obrażeń i oszałamia ofiarę
-6 poziom - zadaje 4k4 obrażeń i spowalnia ofiarę
-11 poziom - zadaje 6k4 obrażeń i oplata ofiarę
-16 poziom - zadaje 8k4 obrażeń i oślepia ofiarę
-21 poziom - zadaje 10k4 obrażeń i pozbawia ofiarę przytomności
+1. poziom - zadaje 2k4 obrażeń (stłuczenia) i oszałamia ofiarę
+6. poziom - zadaje 4k4 obrażeń (stłuczenia) i spowalnia ofiarę
+11. poziom - zadaje 6k4 obrażeń (stłuczenia) i oplątuje ofiarę
+16. poziom - zadaje 8k4 obrażeń (stłuczenia) i oślepia ofiarę
+21. poziom - zadaje 10k4 obrażeń (stłuczenia) i pozbawia ofiarę przytomności
 
-Uwaga: obrażenia pułapek alchemicznych nie zabijają ofiary, gdy ilość jej punktów życia spadnie poniżej 0, tylko pozbawiają ją przytomności. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie odporni na ten typ obrażeń.~
+Uwaga: Stłuczenia nie zabijają ofiary, gdy ilość jej punktów życia spadnie poniżej 0, tylko pozbawiają ją przytomności. Golemy, żywiołaki, galarety oraz nieumarli są całkowicie niewrażliwi na ten typ obrażeń.~

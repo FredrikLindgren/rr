@@ -1605,21 +1605,15 @@ ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 AND !GAME_IS ~iwdee~ BEGIN
           match_parameter2 = 0 // vs. all weapons
           parameter1 = 2 // set AC vs. all weapons to 2
       END
-      LPF ALTER_EFFECT
-        INT_VAR
-          check_globals = 1
-          check_headers = 0
-          match_opcode = 0 // AC
-          match_parameter2 = 2 // vs. missile weapons
-          parameter1 = "-2" // set AC vs. missile weapons to -2
-      END
-      LPF ALTER_EFFECT
-        INT_VAR
-          check_globals = 1
-          check_headers = 0
-          match_opcode = 0 // AC
-          match_parameter2 = 4 // vs. piercing weapons
-          parameter1 = "-2" // set AC vs. piercing weapons to -2
+      // Change AC vs. missile/piercing to -2
+      PATCH_WITH_SCOPE BEGIN
+        FOR (o = LONG_AT 0x6a; o < SOURCE_SIZE; o += 0x30) BEGIN
+          READ_SHORT o op
+          READ_LONG o + 0x8 p2
+          PATCH_IF op = 0 AND (p2 = BIT1 OR p2 = BIT2) BEGIN
+            WRITE_LONG o + 0x4 "-2"
+          END
+        END
       END
       LPF ADD_ITEM_EQEFFECT
         INT_VAR

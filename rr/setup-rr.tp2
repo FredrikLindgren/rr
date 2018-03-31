@@ -163,7 +163,7 @@ BUT_ONLY
 
 COPY ~RR/RR_CORE/SPELLS/RR#TAS2B.SPL~ override               // Poison Weapon second part (the actual ability)
 
-COPY_EXISTING SPCL423.SPL override                           // Poison Weapon Assassin ability
+COPY_EXISTING SPCL423.SPL ~override/fl#tas02.spl~            // Poison Weapon Assassin ability
   SAY UNIDENTIFIED_DESC @11001
   PATCH_FOR_EACH opcode IN
                  248
@@ -189,19 +189,20 @@ COPY_EXISTING SPCL423.SPL override                           // Poison Weapon As
         resist_dispel = 2
         insert_point = 0
       STR_VAR
-        resource = EVAL "%SOURCE_RES%"
+        resource = EVAL "%DEST_RES%"
     END
   END
 BUT_ONLY
 
 COPY_EXISTING CLABTH02.2DA override                           // Assassin kit ability table
-  REPLACE_TEXTUALLY ~AP_SPCL421~ ~GA_SPCL423~                 // Remove the Assassin's innate to hit and damage bonus
+  REPLACE_TEXTUALLY ~AP_SPCL421~ ~GA_fl#tas02~                // Remove the Assassin's innate to hit and damage bonus
   READ_2DA_ENTRY 5 1 1 entry
   PATCH_IF "%entry%" STRING_EQUAL_CASE GA_SPCL423 BEGIN
     SET_2DA_ENTRY 5 1 1 ~****~                                // Empty the first column of the row (contains leftover Poison Weapon use)
     SET_2DA_ENTRY 6 1 40 ~AP_SPCL332~                         // Grant a +1 bonus to backstab multiplier at level 1
     SET_2DA_ENTRY 1 21 40 ~****~                              // Remove the +1 bonus to backstab multiplier at level 21
   END
+  REPLACE_TEXTUALLY ~GA_SPCL423~ ~GA_fl#tas02~                // Custom ability for Assassins because resource is shared with Blackguards (EE)
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 8  f_Increment = 8 STR_VAR f_Entry = AP_RR#TAS00 END //Give the Assassin the save vs. poison bonus
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 16 f_Increment = 8 STR_VAR f_Entry = GA_RR#TAS01 END //Give the Assassin the Death Attack ability
   PRETTY_PRINT_2DA

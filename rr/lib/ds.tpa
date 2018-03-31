@@ -7,4 +7,5 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#DS.RR~ BEGIN                           // 
   INCLUDE ~%path%/ds.tph~
   LAF detectable_spells_setup STR_VAR path END
   LAF detectable_spells STR_VAR path table = ~cddetect.2da~ END
+  LAF detectable_spells STR_VAR path table = ~fldetect.2da~ END
 END

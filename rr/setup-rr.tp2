@@ -1747,19 +1747,31 @@ COMPILE ~RR/RR_CORE/COMPILE/RR#SHM.BAF~                      // Shambler's AI sc
 
 
 // Fix the wrong proficiency type, enchantment level and missing poison icon on the Dagger of Venom
-
-ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
-  COPY_EXISTING ~%tutu_var%misc75.itm~ override                // Dagger of Venom
+WITH_SCOPE BEGIN
+  LAF fl#bg1pal STR_VAR file = "misc75.itm" RET file END // Dagger of Venom
+  COPY_EXISTING "%file%" override
     WRITE_BYTE 0x31 96 // set proficiency to dagger
-    WRITE_LONG 0x60 2  // set enchantment level to 2
-    LPF CLONE_EFFECT
-      INT_VAR
-        check_globals = 0
-        check_headers = 1
-        match_opcode = 25 // poison
-        opcode = 142 // opcode: 142 (Display Special Effect Icon)
-        parameter1 = 0
-        parameter2 = 6 // Poisoned
+    WRITE_BYTE 0x60 2  // set enchantment level to 2
+    icon = 0
+    GET_OFFSET_ARRAY aa ITM_V10_HEADERS
+    PHP_EACH aa AS _ => off BEGIN
+      GET_OFFSET_ARRAY2 ea off ITM_V10_HEAD_EFFECTS
+      PHP_EACH ea AS _ => off BEGIN
+        READ_SHORT off op
+        READ_LONG  off + 0x8 p2
+        PATCH_IF op = 142 AND p2 = 6 BEGIN icon = 1 END
+      END
+    END
+    PATCH_IF !icon BEGIN
+      LPF CLONE_EFFECT
+        INT_VAR
+          check_globals = 0
+          check_headers = 1
+          match_opcode = 25 // poison
+          opcode = 142 // opcode: 142 (Display Special Effect Icon)
+          parameter1 = 0
+          parameter2 = 6 // Poisoned
+      END
     END
   BUT_ONLY
 END

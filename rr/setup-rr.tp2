@@ -295,7 +295,7 @@ COPY ~RR/RR_CORE/SPELLS/RR#TBH1B.SPL~ override                 // Alchemical Tra
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 14052 // "THAC0 Modification"
-      parameter1 = RESOLVE_STR_REF (@175) // Dazzled
+      parameter1 = RESOLVE_STR_REF (@715) // Dazzled
   END
   LPF ALTER_EFFECT
     INT_VAR

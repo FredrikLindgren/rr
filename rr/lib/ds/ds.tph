@@ -1,4 +1,4 @@
-// Detectable Spells v3
+// Detectable Spells v3-20180512
 //
 // Assembled by Ardanis/GeN1e, using DavidW's version (SCS) as a base
 //
@@ -353,6 +353,8 @@ DEFINE_PATCH_MACRO ds_eval BEGIN
       SPRINT $auxil("%i1%") ~%r1%~
     END
   END
+
+  SORT_ARRAY_INDICES auxil NUMERICALLY
 
   // insert or delete data
   local_delta=0

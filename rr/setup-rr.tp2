@@ -7,7 +7,7 @@
 
 BACKUP ~rr/backup~
 AUTHOR "Wisp, www.shsforums.net"
-VERSION ~v4.92~
+VERSION ~v4.93~
 
 ALWAYS
   INCLUDE ~rr/lib/rr#afix.tph~                                        // Include the Rogue Rebalancing Assorted Fixes macro
@@ -2258,7 +2258,7 @@ COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
       match_timing = 4 // delayed
       duration = 48
   END
-  LPF ALTER_EFFECT
+  /*LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
       check_headers = 1
@@ -2270,7 +2270,7 @@ COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
       duration = 1
     STR_VAR
       resource = ~SPNWCHRM~
-  END
+  END*/
 BUT_ONLY
 END // not on IWD:EE
 

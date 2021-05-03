@@ -622,7 +622,13 @@ ACTION_IF !GAME_IS ~iwdee~ BEGIN                              // don't change th
 // True Bard
 
 COPY_EXISTING ~CLABBA01.2DA~ override                         // True Bard ability table
-  SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                           // Assign the new song to the True Bard
+  LPF set_clab_2da_entries
+    INT_VAR
+      f_MinLevel = 1
+      f_MaxLevel = 1
+    STR_VAR
+      f_Entry = ~AP_RR#BDF01~                                 // Assign the new song to the True Bard
+  END
   PRETTY_PRINT_2DA
 BUT_ONLY
 END                                                           // ends IWD:EE check
@@ -709,14 +715,12 @@ LAF set_kit_description STR_VAR kit = blade desc END
 COPY ~RR/RR_CORE/SPELLS/RR#BSKIT.SPL~ override                // New innate traits for the Skald kit
 
 COPY_EXISTING ~CLABBA04.2DA~ override                         // Skald kit ability table
-  SET "rr#once" = "0"
-  COUNT_2DA_ROWS ~5~ "rows"
-  FOR ( index = 0 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "index" 1 5 "2datmp"
-     PATCH_IF (("%2datmp%" STRING_EQUAL_CASE ~****~) AND ("rr#once" = "0")) BEGIN    // find the first free entry in the first row
-       SET_2DA_ENTRY "index" 1 5 ~AP_RR#BSKIT~                                       // assign the file which grants the Skald his innate traits
-       SET "rr#once" = "1"
-     END
+  LPF set_clab_2da_entries
+    INT_VAR
+      f_MinLevel = 1
+      f_MaxLevel = 1
+    STR_VAR
+      f_Entry = ~AP_RR#BSKIT~
   END
   PRETTY_PRINT_2DA
 BUT_ONLY
@@ -785,14 +789,12 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJSIT.SPL~ override                // New innate trai
   END
 
 COPY_EXISTING ~CLABBA03.2DA~ override                         // Jester kit ability table
-  SET "rr#once" = "0"
-  COUNT_2DA_ROWS ~5~ "rows"
-  FOR ( index = 0 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "index" 1 5 "2datmp"
-    PATCH_IF (("%2datmp%" STRING_EQUAL_CASE ~****~) AND ("rr#once" = "0")) BEGIN    // find the first free entry in the first row
-      SET_2DA_ENTRY "index" 1 5 ~AP_RR#BJSIT~                                       // assign the file which grants the Jester his innate traits
-      SET "rr#once" = "1"
-    END
+  LPF set_clab_2da_entries
+    INT_VAR
+      f_MinLevel = 1
+      f_MaxLevel = 1
+    STR_VAR
+      f_Entry = ~AP_RR#BJSIT~
   END
   PRETTY_PRINT_2DA
 BUT_ONLY

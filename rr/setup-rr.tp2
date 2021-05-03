@@ -2260,18 +2260,37 @@ COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
       match_timing = 4 // delayed
       duration = 48
   END
-  LPF ALTER_EFFECT
+  LPF DELETE_EFFECT
     INT_VAR
-      check_globals = 0
       check_headers = 1
-      match_opcode = 141 // lighting effects
-      opcode = 215 // play 3D effect
-      parameter1 = 0
-      parameter2 = 1 // effect plays over target
-      timing = 0
-      duration = 1
-    STR_VAR
-      resource = ~SPNWCHRM~
+      match_opcode = 141
+  END
+  exists = 0
+  GET_OFFSET_ARRAY aos ITM_V10_HEADERS
+  PHP_EACH aos AS _ => ao BEGIN
+    GET_OFFSET_ARRAY2 eos ao ITM_V10_HEAD_EFFECTS
+    PHP_EACH eos AS _ => eo BEGIN
+      READ_SHORT eo op
+      READ_ASCII eo + 0x14 rr
+      PATCH_IF op = 215 AND "%rr%" STR_EQ spnwchrm BEGIN
+        exists = 1
+      END
+    END
+  END
+  PATCH_IF NOT exists BEGIN
+    LPF CLONE_EFFECT
+      INT_VAR
+        check_headers = 1
+        match_opcode = 5
+        opcode = 215
+        parameter1 = 0
+        parameter2 = 1
+        timing = 0
+        duration = 1
+      STR_VAR
+        insert = last
+        resource = SPNWCHRM
+    END
   END
 BUT_ONLY
 END // not on IWD:EE

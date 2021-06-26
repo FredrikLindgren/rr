@@ -663,8 +663,11 @@ COPY ~RR/RR_CORE/SPELLS/RR#BBLIT.SPL~ override                // New innate trai
 COPY_EXISTING ~CLABBA02.2DA~ override                         // Blade kit ability table
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability at level 1
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability
-  PATCH_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the Blade song on IWD:EE
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
+    PATCH_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the Blade song on IWD:EE
+    PATCH_IF INDEX_BUFFER (CASE_INSENSITIVE EXACT_MATCH AP_FJBLADE) >= 0 BEGIN // Swap BG2 Fixpack fix with RR song
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH AP_FJBLADE AP_RR#BBL01
+    END ELSE
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
   END                                                           // ends IWD:EE check
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBLIT END // Grant the Blade 3 points in TWF
   PRETTY_PRINT_2DA

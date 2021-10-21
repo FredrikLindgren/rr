@@ -1690,12 +1690,24 @@ COPY ~RR/RR_CORE/BAM/RR#GUARA.BAM~    override               // The Guardian ico
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARA.ITM~  override               // The Guardian
   SAY NAME2 @24 SAY DESC @25
+  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+    WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
+    WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+  END
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 (gained after summoning a Shambling Mound at Druid level 14)
   SAY NAME2 @5002 SAY DESC @5003
+  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+    WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
+    WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+  END
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~  override               // The Guardian +3 (gained after summoning a Shambling Mound at Druid level 25)
   SAY NAME2 @5004 SAY DESC @5005
+  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+    WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
+    WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+  END
 
 COPY ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~  override               // Lesser Shambler's weapon
      ~RR/RR_CORE/ITEMS/RR#SHM02.ITM~  override               // Shambling Mound's weapon
@@ -2352,6 +2364,8 @@ COPY ~RR/RR_CORE/BAM/RR#BOW02.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW02.ITM~ override
   SAY NAME2 @150 SAY DESC @151
+  WRITE_ASCII 0x22 ~BS~ #2	//Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8	// Short bow ground icon
 
 
 // PnP Composite Shortbow +1 (grants +2 damage, requires 16 strength)
@@ -2360,6 +2374,8 @@ COPY ~RR/RR_CORE/BAM/RR#BOW03.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW03.ITM~ override
   SAY NAME2 @152 SAY DESC @153
+  WRITE_ASCII 0x22 ~BS~ #2	//Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8	// Short bow ground icon
 
 
 // PnP Composite Shortbow +2 (grants +3 damage, requires 16 strength)
@@ -2368,6 +2384,8 @@ COPY ~RR/RR_CORE/BAM/RR#BOW04.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW04.ITM~ override
   SAY NAME2 @154 SAY DESC @155
+  WRITE_ASCII 0x22 ~BS~ #2	//Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8	// Short bow ground icon
 
 
 // PnP Composite Shortbow +3 (grants +4 damage, requires 16 strength)
@@ -2376,6 +2394,8 @@ COPY ~RR/RR_CORE/BAM/RR#BOW05.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW05.ITM~ override
   SAY NAME2 @156 SAY DESC @157
+  WRITE_ASCII 0x22 ~BS~ #2	//Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8	// Short bow ground icon
 
 // Sparkburst (Composite Shortbow +2)
 
@@ -2383,6 +2403,8 @@ COPY ~RR/RR_CORE/BAM/RR#BOW06.BAM~   override
 
 COPY ~RR/RR_CORE/ITEMS/RR#BOW06.ITM~ override
   SAY NAME2 @112 SAY DESC @113
+  WRITE_ASCII 0x22 ~BS~ #2	//Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8	// Short bow ground icon
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
@@ -3644,6 +3666,8 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#SCAXE.ITM~             override              // Storm
   SAY NAME2 @206 SAY DESC @207
 COPY ~RR/RR_CYRIC/ITEMS/RR#BOW01.ITM~             override              // Blindstrike Bow
   SAY NAME2 @234 SAY DESC @235
+  WRITE_ASCII 0x22 ~BS~ #2												// Short bow
+  WRITE_ASCII 0x44 ~GBOW02~ #8										    // Short bow ground icon
 COPY ~RR/RR_CYRIC/ITEMS/RR#BBOWH.EFF~             override              // Blindstrike Bow THAC0 vs. Beholders bonus
 COPY ~RR/RR_CYRIC/ITEMS/RR#BBOWD.EFF~             override              // Blindstrike Bow damage vs. Beholders bonus
 COPY ~RR/RR_CYRIC/ITEMS/RR#BBOWS.EFF~             override              // Blindstrike Bow Beholder saving throw penalty vs. blindness effect
@@ -3670,6 +3694,10 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#RNG01.ITM~             override              // Gemin
   SAY NAME2 @238  SAY DESC @239
 COPY ~RR/RR_CYRIC/ITEMS/RR#LCRWN.ITM~             override              // The Blessed Leaf Crown
   SAY NAME2 @240  SAY DESC @241
+  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 208 BEGIN
+    WRITE_ASCII 0x22 ~JB~ #2	// 1pp circlet band icon (JB)
+    WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
+  END
 COPY ~RR/RR_CYRIC/ITEMS/RR#SDEAT.ITM~             override              // Silent Death
   SAY NAME2 @216 SAY DESC @217
   LPF ALTER_EFFECT

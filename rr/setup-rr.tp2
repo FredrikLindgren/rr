@@ -622,8 +622,18 @@ ACTION_IF !GAME_IS ~iwdee~ BEGIN                              // don't change th
 // True Bard
 
 COPY_EXISTING ~CLABBA01.2DA~ override                         // True Bard ability table
-  SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                           // Assign the new song to the True Bard
-  PRETTY_PRINT_2DA
+  PATCH_IF INDEX_BUFFER (CASE_INSENSITIVE EXACT_MATCH AP_FJBLADE) >= 0 BEGIN // Swap BG2 Fixpack fix with RR song
+    REPLACE_TEXTUALLY "AP_fjbard" "AP_RR#BDF01"
+  END ELSE BEGIN 
+    LPF set_clab_2da_entries
+      INT_VAR
+        f_MinLevel = 1
+        f_MaxLevel = 1
+      STR_VAR
+        f_Entry = ~AP_RR#BDF01~                                 // Assign the new song to the True Bard
+    END
+    PRETTY_PRINT_2DA
+  END
 BUT_ONLY
 END                                                           // ends IWD:EE check
 
@@ -657,8 +667,11 @@ COPY ~RR/RR_CORE/SPELLS/RR#BBLIT.SPL~ override                // New innate trai
 COPY_EXISTING ~CLABBA02.2DA~ override                         // Blade kit ability table
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability at level 1
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_Increment = 10 STR_VAR f_Entry = GA_RR#WDIS END // Assign the Weapons Display ability
-  PATCH_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the Blade song on IWD:EE
-    LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
+    PATCH_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the Blade song on IWD:EE
+    PATCH_IF INDEX_BUFFER (CASE_INSENSITIVE EXACT_MATCH AP_FJBLADE) >= 0 BEGIN // Swap BG2 Fixpack fix with RR song
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH AP_FJBLADE AP_RR#BBL01
+    END ELSE
+      LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBL01 END // Grant the Blade his own version of the Bard song
   END                                                           // ends IWD:EE check
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1  f_MaxLevel = 1 STR_VAR f_Entry = AP_RR#BBLIT END // Grant the Blade 3 points in TWF
   PRETTY_PRINT_2DA
@@ -709,14 +722,12 @@ LAF set_kit_description STR_VAR kit = blade desc END
 COPY ~RR/RR_CORE/SPELLS/RR#BSKIT.SPL~ override                // New innate traits for the Skald kit
 
 COPY_EXISTING ~CLABBA04.2DA~ override                         // Skald kit ability table
-  SET "rr#once" = "0"
-  COUNT_2DA_ROWS ~5~ "rows"
-  FOR ( index = 0 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "index" 1 5 "2datmp"
-     PATCH_IF (("%2datmp%" STRING_EQUAL_CASE ~****~) AND ("rr#once" = "0")) BEGIN    // find the first free entry in the first row
-       SET_2DA_ENTRY "index" 1 5 ~AP_RR#BSKIT~                                       // assign the file which grants the Skald his innate traits
-       SET "rr#once" = "1"
-     END
+  LPF set_clab_2da_entries
+    INT_VAR
+      f_MinLevel = 1
+      f_MaxLevel = 1
+    STR_VAR
+      f_Entry = ~AP_RR#BSKIT~
   END
   PRETTY_PRINT_2DA
 BUT_ONLY
@@ -785,14 +796,12 @@ COPY ~RR/RR_CORE/SPELLS/RR#BJSIT.SPL~ override                // New innate trai
   END
 
 COPY_EXISTING ~CLABBA03.2DA~ override                         // Jester kit ability table
-  SET "rr#once" = "0"
-  COUNT_2DA_ROWS ~5~ "rows"
-  FOR ( index = 0 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "index" 1 5 "2datmp"
-    PATCH_IF (("%2datmp%" STRING_EQUAL_CASE ~****~) AND ("rr#once" = "0")) BEGIN    // find the first free entry in the first row
-      SET_2DA_ENTRY "index" 1 5 ~AP_RR#BJSIT~                                       // assign the file which grants the Jester his innate traits
-      SET "rr#once" = "1"
-    END
+  LPF set_clab_2da_entries
+    INT_VAR
+      f_MinLevel = 1
+      f_MaxLevel = 1
+    STR_VAR
+      f_Entry = ~AP_RR#BJSIT~
   END
   PRETTY_PRINT_2DA
 BUT_ONLY
@@ -1745,41 +1754,42 @@ COPY ~RR/RR_CORE/ACTORS/RR#SHM03.CRE~ override               // Greater Shambler
 
 COMPILE ~RR/RR_CORE/COMPILE/RR#SHM.BAF~                      // Shambler's AI script
 
-
-// Fix the wrong proficiency type, enchantment level and missing poison icon on the Dagger of Venom
-WITH_SCOPE BEGIN
-  LAF fl#bg1pal STR_VAR file = "misc75.itm" RET file END // Dagger of Venom
-  COPY_EXISTING "%file%" override
-    WRITE_BYTE 0x31 96 // set proficiency to dagger
-    WRITE_BYTE 0x60 2  // set enchantment level to 2
-    icon = 0
-    GET_OFFSET_ARRAY aa ITM_V10_HEADERS
-    PHP_EACH aa AS _ => off BEGIN
-      GET_OFFSET_ARRAY2 ea off ITM_V10_HEAD_EFFECTS
-      PHP_EACH ea AS _ => off BEGIN
-        READ_SHORT off op
-        READ_LONG  off + 0x8 p2
-        PATCH_IF op = 142 AND p2 = 6 BEGIN icon = 1 END
+ACTION_IF NOT MOD_IS_INSTALLED ITEM_REV.tp2 0 BEGIN  
+  // Fix the wrong proficiency type, enchantment level and missing poison icon on the Dagger of Venom
+  WITH_SCOPE BEGIN
+    LAF fl#bg1pal STR_VAR file = "misc75.itm" RET file END // Dagger of Venom
+    COPY_EXISTING "%file%" override
+      WRITE_BYTE 0x31 96 // set proficiency to dagger
+      WRITE_BYTE 0x60 2  // set enchantment level to 2
+      icon = 0
+      GET_OFFSET_ARRAY aa ITM_V10_HEADERS
+      PHP_EACH aa AS _ => off BEGIN
+        GET_OFFSET_ARRAY2 ea off ITM_V10_HEAD_EFFECTS
+        PHP_EACH ea AS _ => off BEGIN
+          READ_SHORT off op
+          READ_LONG  off + 0x8 p2
+          PATCH_IF op = 142 AND p2 = 6 BEGIN icon = 1 END
+        END
       END
-    END
-    PATCH_IF !icon BEGIN
-      LPF CLONE_EFFECT
-        INT_VAR
-          check_globals = 0
-          check_headers = 1
-          match_opcode = 25 // poison
-          opcode = 142 // opcode: 142 (Display Special Effect Icon)
-          parameter1 = 0
-          parameter2 = 6 // Poisoned
+      PATCH_IF !icon BEGIN
+        LPF CLONE_EFFECT
+          INT_VAR
+            check_globals = 0
+            check_headers = 1
+            match_opcode = 25 // poison
+            opcode = 142 // opcode: 142 (Display Special Effect Icon)
+            parameter1 = 0
+            parameter2 = 6 // Poisoned
+        END
       END
-    END
+    BUT_ONLY
+  END
+  
+  COPY_EXISTING ~%tutu_var%DAGG04.ITM~ override                     // Alter the Longtooth Dagger
+    WRITE_LONG 0x80 "01"                                            // Increase range to 1 (was 0)
+    WRITE_SHORT 0x42 60                                             // Require Lore value of 60 to identify (was 0 in BG2)
   BUT_ONLY
-END
-
-COPY_EXISTING ~%tutu_var%DAGG04.ITM~ override                     // Alter the Longtooth Dagger
-  WRITE_LONG 0x80 "01"                                            // Increase range to 1 (was 0)
-  WRITE_SHORT 0x42 60                                             // Require Lore value of 60 to identify (was 0 in BG2)
-BUT_ONLY
+END                                                                                // end Item Revisions check
 
 COPY ~RR/RR_CORE/BAM/RR#LYRE.BAM~    override                     // Lyre of Progression
 
@@ -2226,52 +2236,74 @@ ACTION_IF !GAME_IS ~iwdee~ BEGIN // not on IWD:EE
 COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
   SAY NAME2 @142 SAY DESC @143
   WRITE_ASCII 0x58 ~RR#CGREA~ #8                             // use the proper description icon (CMISC2P.BAM is missing in BG2)
-  LPF ALTER_ITEM_HEADER
-    INT_VAR
-      header_type = 3 // magical ability
-      primary_type = 4 // school: enchanter
-      secondary_type = 11 // disabling
-      charges = 3
-      drained = 3 // recharge
-      flag_recharge = 1 // recharge upon rest
-  END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opcode = 5 // charm creature
-      parameter2 = 0 // charmed, target neutral after effect ends
-      duration = 48
-  END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opcode = 142 // display special effect icon
-      duration = 48
-  END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opocode = 174 // play sound effect
-      match_timing = 4 // delayed
-      duration = 48
-  END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 0
-      check_headers = 1
-      match_opcode = 141 // lighting effects
-      opcode = 215 // play 3D effect
-      parameter1 = 0
-      parameter2 = 1 // effect plays over target
-      timing = 0
-      duration = 1
-    STR_VAR
-      resource = ~SPNWCHRM~
+  PATCH_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
+    LPF ALTER_ITEM_HEADER
+      INT_VAR
+        header_type = 3 // magical ability
+        primary_type = 4 // school: enchanter
+        secondary_type = 11 // disabling
+        charges = 3
+        drained = 3 // recharge
+        flag_recharge = 1 // recharge upon rest
+    END
+    LPF ALTER_EFFECT
+      INT_VAR
+        check_globals = 0
+        check_headers = 1
+        match_opcode = 5 // charm creature
+        parameter2 = 0 // charmed, target neutral after effect ends
+        duration = 48
+    END
+    LPF ALTER_EFFECT
+      INT_VAR
+        check_globals = 0
+        check_headers = 1
+        match_opcode = 142 // display special effect icon
+        duration = 48
+    END
+    LPF ALTER_EFFECT
+      INT_VAR
+        check_globals = 0
+        check_headers = 1
+        match_opocode = 174 // play sound effect
+        match_timing = 4 // delayed
+        duration = 48
+    END
+    LPF DELETE_EFFECT
+      INT_VAR
+        check_headers = 1
+        match_opcode = 141
+    END
+    exists = 0
+    GET_OFFSET_ARRAY aos ITM_V10_HEADERS
+    PHP_EACH aos AS _ => ao BEGIN
+      GET_OFFSET_ARRAY2 eos ao ITM_V10_HEAD_EFFECTS
+      PHP_EACH eos AS _ => eo BEGIN
+        READ_SHORT eo op
+        READ_ASCII eo + 0x14 rr
+        PATCH_IF op = 215 AND "%rr%" STR_EQ spnwchrm BEGIN
+          exists = 1
+        END
+      END
+    END
+    PATCH_IF NOT exists BEGIN
+      LPF CLONE_EFFECT
+        INT_VAR
+          check_headers = 1
+          match_opcode = 5
+          opcode = 215
+          parameter1 = 0
+          parameter2 = 1
+          timing = 0
+          duration = 1
+        STR_VAR
+          insert = last
+          resource = SPNWCHRM
+      END
+    END
   END
 BUT_ONLY
+
 END // not on IWD:EE
 
 
@@ -2282,6 +2314,7 @@ COPY ~RR/RR_CORE/BAM/RR#HRP01.BAM~      override
 COPY ~RR/RR_CORE/ITEMS/RR#HRP01.ITM~    override
   SAY NAME1 @10000 SAY UNIDENTIFIED_DESC @10001
   SAY NAME2 @144 SAY DESC @145
+  WRITE_ASCII 0x44 ~GMISC2P~ #8 // BG2 harp ground icon
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 0
@@ -2405,7 +2438,7 @@ COPY ~RR/RR_CORE/ITEMS/RR#SAP01.ITM~ override
 
 
 
-ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) OR GAME_IS ~iwdee~ BEGIN // Checks for IWD:EE, 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
+ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 206 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) OR GAME_IS ~iwdee~ BEGIN // Checks for IWD:EE, 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
 ACTION_FOR_EACH ~file~ IN
                 ~RR#BUC01~ // Fading Glory
                 ~RR#BUC02~ // Buckler +1
@@ -3311,7 +3344,7 @@ EXTEND_BOTTOM ~BOTSMITH.BCS~ ~RR/RR_UPGR/COMPILE/BOTSMITH.BAF~      // additions
 
 // Erephine's round buckler animations check
 // Should now automatically detect 1PP v2.6 and higher as well as the main component of Item Revisions
-ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 7 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) BEGIN // Checks for 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
+ACTION_IF (MOD_IS_INSTALLED 1PP.TP2 206 OR MOD_IS_INSTALLED ITEM_REV.TP2 0 OR FILE_MD5 ~override/wqld1g1.bam~ e1322a2c948b8997fe182603d6284f4a) BEGIN // Checks for 1PP v2.6+ and/or Item Revisions as well as the 1PP D1 standalone archive via MD5 checksum
   COPY_EXISTING ~RR#BUC11.ITM~ override                               // Blazing Glory
                 ~RR#RWAR2.ITM~ override                               // Rogue's Ward +3
     WRITE_ASCII 0x22 ~D1~ #2                                          // Set the animation to round buckler (D1)
@@ -4656,6 +4689,7 @@ END
 
 COPY ~RR/RR_STIM/ITEMS/RR#HGROD.ITM~    override               // Haz's Rod of Golem Control
   SAY NAME2 @721 SAY DESC @722
+  WRITE_ASCII 0x44 ~GBLUN06~ #8		// Rod ground icon
 
 // PnP Wand of Fear (for Guildhall Basement, Container 7)
 

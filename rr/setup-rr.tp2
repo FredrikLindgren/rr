@@ -1709,10 +1709,10 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
 	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
 	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 130 END
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 133 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 146 END
 	END
   END
 
@@ -1723,10 +1723,10 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~  override               // The Guardian +3 
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
 	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
 	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 130 END
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 133 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 146 END
 	END
   END
 

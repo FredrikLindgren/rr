@@ -1693,6 +1693,13 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARA.ITM~  override               // The Guardian
   PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
+	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 146 END
+	END
   END
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 (gained after summoning a Shambling Mound at Druid level 14)
@@ -1700,6 +1707,13 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 
   PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
+	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 130 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 133 END
+	END
   END
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~  override               // The Guardian +3 (gained after summoning a Shambling Mound at Druid level 25)
@@ -1707,6 +1721,13 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~  override               // The Guardian +3 
   PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
+	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
+	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 130 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 146 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 52 parameter1 = 133 END
+	END
   END
 
 COPY ~RR/RR_CORE/ITEMS/RR#SHM01.ITM~  override               // Lesser Shambler's weapon
@@ -3697,6 +3718,10 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#LCRWN.ITM~             override              // The B
   PATCH_IF MOD_IS_INSTALLED 1pp.tp2 208 BEGIN
     WRITE_ASCII 0x22 ~JB~ #2	// 1pp circlet band icon (JB)
     WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 END
+	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 130 END
+	END
   END
 COPY ~RR/RR_CYRIC/ITEMS/RR#SDEAT.ITM~             override              // Silent Death
   SAY NAME2 @216 SAY DESC @217

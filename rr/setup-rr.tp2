@@ -3709,6 +3709,14 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#HELMD.ITM~             override              // Dead 
   SAY NAME2 @222 SAY DESC @223
 COPY ~RR/RR_CYRIC/ITEMS/RR#HELMS.ITM~             override              // Sune's Laurel
   SAY NAME2 @224 SAY DESC @225
+  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 208 BEGIN
+    WRITE_ASCII 0x22 ~JB~ #2	// 1pp circlet band icon (JB)
+    WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 END
+	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 130 END
+	END
+  END 
 COPY ~RR/RR_CYRIC/ITEMS/RR#CHN01.ITM~             override              // Drow Elven Chain (Zaeron's armor)
   SAY NAME2 @236  SAY DESC @237
 COPY ~RR/RR_CYRIC/ITEMS/RR#RNG01.ITM~             override              // Geminus, the PnP Ring of Wizardry (doubles 1st and 2nd level mage spells)
@@ -3720,7 +3728,7 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#LCRWN.ITM~             override              // The B
     WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 END
 	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
-	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 130 END
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 133 END
 	END
   END
 COPY ~RR/RR_CYRIC/ITEMS/RR#SDEAT.ITM~             override              // Silent Death

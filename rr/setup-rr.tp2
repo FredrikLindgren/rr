@@ -1690,11 +1690,11 @@ COPY ~RR/RR_CORE/BAM/RR#GUARA.BAM~    override               // The Guardian ico
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARA.ITM~  override               // The Guardian
   SAY NAME2 @24 SAY DESC @25
-  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+  PATCH_IF MOD_IS_INSTALLED 1PP.TP2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
 	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
-	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	PATCH_IF MOD_IS_INSTALLED 1PP.TP2 103 BEGIN
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
@@ -1704,11 +1704,11 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARA.ITM~  override               // The Guardian
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 (gained after summoning a Shambling Mound at Druid level 14)
   SAY NAME2 @5002 SAY DESC @5003
-  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+  PATCH_IF MOD_IS_INSTALLED 1PP.TP2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
 	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
-	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	PATCH_IF MOD_IS_INSTALLED 1PP.TP2 103 BEGIN
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
@@ -1718,11 +1718,11 @@ COPY ~RR/RR_CORE/ITEMS/RR#GUARB.ITM~  override               // The Guardian +2 
 
 COPY ~RR/RR_CORE/ITEMS/RR#GUARC.ITM~  override               // The Guardian +3 (gained after summoning a Shambling Mound at Druid level 25)
   SAY NAME2 @5004 SAY DESC @5005
-  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 206 BEGIN
+  PATCH_IF MOD_IS_INSTALLED 1PP.TP2 206 BEGIN
     WRITE_ASCII 0x22 ~C7~ #2								 // Scale Shield
     WRITE_ASCII 0x44 ~GMSHLD~ #8							 // BG2 Medium Shield ground icon
 	LPF DELETE_EFFECT INT_VAR match_opcode = 7 match_parameter2 = 36 END
-	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	PATCH_IF MOD_IS_INSTALLED 1PP.TP2 103 BEGIN
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 37 parameter1 = 146 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 54 match_parameter2 = 33 parameter1 = 134 END
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 match_parameter1 = 53 parameter1 = 134 END
@@ -3709,11 +3709,11 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#HELMD.ITM~             override              // Dead 
   SAY NAME2 @222 SAY DESC @223
 COPY ~RR/RR_CYRIC/ITEMS/RR#HELMS.ITM~             override              // Sune's Laurel
   SAY NAME2 @224 SAY DESC @225
-  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 208 BEGIN
+  PATCH_IF MOD_IS_INSTALLED 1PP.TP2 208 BEGIN
     WRITE_ASCII 0x22 ~JB~ #2	// 1pp circlet band icon (JB)
     WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
-	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 END
-	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 target = 1 timing = 2 END
+	PATCH_IF MOD_IS_INSTALLED 1PP.TP2 103 BEGIN
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 130 END
 	END
   END 
@@ -3723,11 +3723,11 @@ COPY ~RR/RR_CYRIC/ITEMS/RR#RNG01.ITM~             override              // Gemin
   SAY NAME2 @238  SAY DESC @239
 COPY ~RR/RR_CYRIC/ITEMS/RR#LCRWN.ITM~             override              // The Blessed Leaf Crown
   SAY NAME2 @240  SAY DESC @241
-  PATCH_IF MOD_IS_INSTALLED 1pp.tp2 208 BEGIN
+  PATCH_IF MOD_IS_INSTALLED 1PP.TP2 208 BEGIN
     WRITE_ASCII 0x22 ~JB~ #2	// 1pp circlet band icon (JB)
     WRITE_ASCII 0x44 ~GAMUL02~ #8    // amulet ground icon
-	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 END
-	PATCH_IF MOD_IS_INSTALLED 1pp.tp2 103 BEGIN
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 7 parameter1 = 53 parameter2 = 52 target = 1 timing = 2 END
+	PATCH_IF MOD_IS_INSTALLED 1PP.TP2 103 BEGIN
 	  LPF ALTER_EFFECT INT_VAR match_opcode = 7 parameter1 = 133 END
 	END
   END

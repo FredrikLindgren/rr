@@ -2267,9 +2267,9 @@ COPY ~RR/RR_CORE/BAM/RR#CGREA.BAM~   override                // Greagan's Harp d
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN // not on IWD:EE
 COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
+  PATCH_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
   SAY NAME2 @142 SAY DESC @143
   WRITE_ASCII 0x58 ~RR#CGREA~ #8                             // use the proper description icon (CMISC2P.BAM is missing in BG2)
-  PATCH_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
     LPF ALTER_ITEM_HEADER
       INT_VAR
         header_type = 3 // magical ability

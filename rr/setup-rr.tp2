@@ -2266,77 +2266,9 @@ COPY ~RR/RR_CORE/BAM/RR#CGREA.BAM~   override                // Greagan's Harp d
      ~RR/RR_CORE/BAM/RR#HEL02.BAM~   override
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN // not on IWD:EE
-COPY_EXISTING ~%tutu_var%MISC2P.ITM~ override                // Greagan's Harp
-  PATCH_IF NOT MOD_IS_INSTALLED ITEM_REV.TP2 0 BEGIN
+COPY ~RR/RR_CORE/ITEMS/rr#gharp.ITM~ ~override/%tutu_var%MISC2P.ITM~     // rr's Greagan's Harp
   SAY NAME2 @142 SAY DESC @143
   WRITE_ASCII 0x58 ~RR#CGREA~ #8                             // use the proper description icon (CMISC2P.BAM is missing in BG2)
-    LPF ALTER_ITEM_HEADER
-      INT_VAR
-        header_type = 3 // magical ability
-        primary_type = 4 // school: enchanter
-        secondary_type = 11 // disabling
-        charges = 3
-        drained = 3 // recharge
-        flag_recharge = 1 // recharge upon rest
-    END
-    LPF ALTER_EFFECT
-      INT_VAR
-        check_globals = 0
-        check_headers = 1
-        match_opcode = 5 // charm creature
-        parameter2 = 0 // charmed, target neutral after effect ends
-        duration = 48
-    END
-    LPF ALTER_EFFECT
-      INT_VAR
-        check_globals = 0
-        check_headers = 1
-        match_opcode = 142 // display special effect icon
-        duration = 48
-    END
-    LPF ALTER_EFFECT
-      INT_VAR
-        check_globals = 0
-        check_headers = 1
-        match_opocode = 174 // play sound effect
-        match_timing = 4 // delayed
-        duration = 48
-    END
-    LPF DELETE_EFFECT
-      INT_VAR
-        check_headers = 1
-        match_opcode = 141
-    END
-    exists = 0
-    GET_OFFSET_ARRAY aos ITM_V10_HEADERS
-    PHP_EACH aos AS _ => ao BEGIN
-      GET_OFFSET_ARRAY2 eos ao ITM_V10_HEAD_EFFECTS
-      PHP_EACH eos AS _ => eo BEGIN
-        READ_SHORT eo op
-        READ_ASCII eo + 0x14 rr
-        PATCH_IF op = 215 AND "%rr%" STR_EQ spnwchrm BEGIN
-          exists = 1
-        END
-      END
-    END
-    PATCH_IF NOT exists BEGIN
-      LPF CLONE_EFFECT
-        INT_VAR
-          check_headers = 1
-          match_opcode = 5
-          opcode = 215
-          parameter1 = 0
-          parameter2 = 1
-          timing = 0
-          duration = 1
-        STR_VAR
-          insert = last
-          resource = SPNWCHRM
-      END
-    END
-  END
-BUT_ONLY
-
 END // not on IWD:EE
 
 

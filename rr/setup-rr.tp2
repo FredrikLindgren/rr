@@ -618,13 +618,16 @@ REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
-ACTION_IF !GAME_IS ~iwdee~ BEGIN                              // don't change the True Bard song on IWD:EE
-// True Bard
+ACTION_IF ((!GAME_IS ~iwdee~) OR                                                // don't change the True Bard song on IWD:EE 
+           (MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ ~50~)) BEGIN // or if bard songs from IWDification is installed
+           
+  // True Bard
 
-COPY_EXISTING ~CLABBA01.2DA~ override                         // True Bard ability table
-  SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                           // Assign the new song to the True Bard
-  PRETTY_PRINT_2DA
-BUT_ONLY
+  COPY_EXISTING ~CLABBA01.2DA~ override                         // True Bard ability table
+    SET_2DA_ENTRY 3 1 3 ~AP_RR#BDF01~                           // Assign the new song to the True Bard
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+  
 END                                                           // ends IWD:EE check
 
 COPY ~RR/RR_CORE/SPELLS/RR#BDF01.SPL~ override                // True Bard new song part 1

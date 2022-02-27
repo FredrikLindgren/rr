@@ -618,8 +618,8 @@ REQUIRE_PREDICATE ENGINE_IS ~tob bgee bg2ee iwdee~ @902
 
 LAUNCH_ACTION_MACRO ~RR#AFIX~
 
-ACTION_IF ((!GAME_IS ~iwdee~) OR                                                // don't change the True Bard song on IWD:EE 
-           (MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ ~50~)) BEGIN // or if bard songs from IWDification is installed
+ACTION_IF ((!GAME_IS ~iwdee~) AND                                                // don't change the True Bard song on IWD:EE 
+           (!MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ ~50~)) BEGIN // or if bard songs from IWDification is installed
            
   // True Bard
 

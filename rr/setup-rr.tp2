@@ -1555,16 +1555,17 @@ COPY_EXISTING ~MXSPLBRD.2DA~ override
   END
   READ_2DA_ENTRIES_NOW rows cols
   SET $level(9) = 0
+  SET $level(8) = 0
   FOR (i_0 = 0; i_0 < rows; i_0 += 1) BEGIN
     READ_2DA_ENTRY_FORMER rows i_0 0 level
-    SET $level(1) = level < 2  ? 0 : level < 3  ? 1 : level < 5  ? 2 : level < 16 ? 3 : level < 25 ? 4 : level < 28 ? 5 : level < 35 ? 6 : 7
-    SET $level(2) = level < 4  ? 0 : level < 6  ? 1 : level < 8  ? 2 : level < 17 ? 3 : level < 25 ? 4 : level < 29 ? 5 : level < 36 ? 6 : 7
-    SET $level(3) = level < 7  ? 0 : level < 9  ? 1 : level < 11 ? 2 : level < 18 ? 3 : level < 26 ? 4 : level < 30 ? 5 : level < 37 ? 6 : 7
-    SET $level(4) = level < 10 ? 0 : level < 12 ? 1 : level < 14 ? 2 : level < 19 ? 3 : level < 26 ? 4 : level < 31 ? 5 : level < 38 ? 6 : 7
-    SET $level(5) = level < 13 ? 0 : level < 15 ? 1 : level < 17 ? 2 : level < 20 ? 3 : level < 27 ? 4 : level < 32 ? 5 : level < 39 ? 6 : 7
-    SET $level(6) = level < 16 ? 0 : level < 18 ? 1 : level < 20 ? 2 : level < 21 ? 3 : level < 27 ? 4 : level < 33 ? 5 : level < 40 ? 6 : 7
-    SET $level(7) = level < 21 ? 0 : level < 22 ? 1 : level < 23 ? 2 : level < 24 ? 3 : level < 28 ? 4 : level < 34 ? 5 : 6
-    SET $level(8) = level < 29 ? 0 : level < 35 ? 1 : 2
+    SET $level(1) = level < 2  ? 0 : level < 3  ? 1 : level < 5  ? 2 : level < 16 ? 3 : level < 21 ? 4 : 5
+    SET $level(2) = level < 4  ? 0 : level < 6  ? 1 : level < 8  ? 2 : level < 17 ? 3 : level < 22 ? 4 : 5
+    SET $level(3) = level < 7  ? 0 : level < 9  ? 1 : level < 11 ? 2 : level < 18 ? 3 : level < 23 ? 4 : 5
+    SET $level(4) = level < 10 ? 0 : level < 12 ? 1 : level < 14 ? 2 : level < 19 ? 3 : level < 24 ? 4 : 5
+    SET $level(5) = level < 13 ? 0 : level < 15 ? 1 : level < 17 ? 2 : level < 20 ? 3 : level < 28 ? 4 : 5
+    SET $level(6) = level < 16 ? 0 : level < 18 ? 1 : level < 20 ? 2 : level < 30 ? 3 : level < 35 ? 4 : 5
+    SET $level(7) = level < 25 ? 0 : level < 31 ? 1 : level < 38 ? 2 : 3
+    // SET $level(8) = level < 33 ? 0 : level < 39 ? 1 : 2
     FOR (i_1 = 1; i_1 < cols; i_1 += 1) BEGIN
       SET_2DA_ENTRY_LATER mxsplbrd_set i_0 i_1 $level(~%i_1%~)
     END

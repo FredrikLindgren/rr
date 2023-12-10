@@ -416,7 +416,7 @@ EIGENSCHAFTEN:
 Bei jedem Treffer besteht eine 10%ige Chance das Ziel für 3 Runden mit einem Malus von +2 auf seine Rüstungklasse gegen Geschosse zu belegen.
 
 Schadensbonus:
- +3 (Geschoss)
+ +1 (Geschoss)
  +1W3 (Elektrizität)
 ETW0-Bonus: -2
 Gewicht: 2
@@ -766,7 +766,7 @@ Kann nicht verwendet werden von:
 
 EIGENSCHAFTEN:
 
-Schadensbonus: +2 (Geschoss)
+Schadensbonus: +1 (Geschoss)
 ETW0-Bonus: -1
 Gewicht: 2
 Initiativefaktor: 5
@@ -785,7 +785,7 @@ Kann nicht verwendet werden von:
 
 EIGENSCHAFTEN:
 
-Schadensbonus: +3 (Geschoss)
+Schadensbonus: +1 (Geschoss)
 ETW0-Bonus: -2
 Gewicht: 2
 Initiativefaktor: 4
@@ -804,7 +804,7 @@ Kann nicht verwendet werden von:
 
 EIGENSCHAFTEN:
 
-Schadensbonus: +4 (Geschoss)
+Schadensbonus: +1 (Geschoss)
 ETW0-Bonus: -3
 Gewicht: 2
 Initiativefaktor: 3
@@ -1225,7 +1225,7 @@ EIGENSCHAFTEN:
 
 Bei jedem Treffer besteht eine 25%ige Chance das Ziel für 5 Runden zu blenden (Rettungswurf gg. Zauber).
 
-Schadensbonus: +4 (Geschoss)
+Schadensbonus: +1 (Geschoss)
 ETW0-Bonus: -3
 Gewicht: 1
 Initiativefaktor: 3

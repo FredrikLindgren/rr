@@ -433,7 +433,7 @@ Habilidades de combate:
  Cada golpe acertado tiene un 10% de causar una penalización de -2 a la CA contra proyectiles durante los siguientes 3 asaltos
 
 THAC0: +2 bonificación
-Daño: +3 misiles, +1 eléctrico
+Daño: +1 misiles, +1 eléctrico
 Peso: 2
 Factor de velocidad: 4
 Tipo de talento: Arco corto
@@ -781,7 +781,7 @@ No permitido a:
 CARACTERÍSTICAS:
 
 THAC0: +1
-Daño: +2
+Daño: +1
 Peso: 2
 Factor de velocidad: 5
 Talento marcial: Arco corto
@@ -798,7 +798,7 @@ No permitido a:
 CARACTERÍSTICAS:
 
 THAC0: +2
-Daño: +3
+Daño: +1
 Peso: 2
 Factor de velocidad: 4
 Talento marcial: Arco corto
@@ -815,7 +815,7 @@ No permitido a:
 CARACTERÍSTICAS:
 
 THAC0: +3
-Daño: +4
+Daño: +1
 Peso: 2
 Factor de velocidad: 3
 Talento marcial: arco corto
@@ -1224,7 +1224,7 @@ Habilidades de combate:
 
 
 THAC0: +3 bonificación (+5 contra Contempladores)
-Daño +4 bonificación (+6 contra Contempladores)
+Daño +1 bonificación (+6 contra Contempladores)
 Peso: 1
 Factor de velocidad: 3
 Tipo de Talento: Arco corto

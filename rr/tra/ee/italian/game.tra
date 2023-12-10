@@ -303,7 +303,7 @@ Abilità in combattimento:
     Il 10% dei colpi a segno provoca 1d3 punti di danno elettrico e causa una penalità di 2 punti alla CA contro armi da lancio nel bersaglio per i successivi tre round
 
 THAC0: bonus +2
-Danno: bonus +3
+Danno: bonus +1
 Peso: 2
 Fattore-velocità: 4
 Tipo di competenza: Arco corto
@@ -593,7 +593,7 @@ Richiede:
 STATISTICHE:
 
 THAC0: +1
-Danno: +2
+Danno: +1
 Peso: 2
 Fattore-velocità: 5
 Tipo di competenza: Arco corto
@@ -606,7 +606,7 @@ Richiede:
 STATISTICHE:
 
 THAC0: +2
-Danno: +3
+Danno: +1
 Peso: 2
 Fattore-velocità: 4
 Tipo di competenza: Arco corto
@@ -619,7 +619,7 @@ Richiede:
 STATISTICHE:
 
 THAC0: +3
-Danno: +4
+Danno: +1
 Peso: 2
 Fattore-velocità: 3
 Tipo di competenza: Arco corto
@@ -871,7 +871,7 @@ Abilità in combattimento:
 20% di possibilità che ogni colpo a segno accechi il bersaglio per tre round a meno che non superi un tiro-salvezza contro incantesimi (ai beholder si applica una penalità di -5 al tiro-salvezza)
 
 THAC0: +3, +5 contro beholder
-Danno: +4, +6 contro beholder
+Danno: +1, +6 contro beholder
 Peso: 1
 Fattore-velocità: 3
 Tipo di competenza: Arco corto

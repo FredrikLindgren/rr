@@ -455,7 +455,7 @@ Capacité de combat :
  10% des attaques réussies infligent à la cible 1D3 dégâts électriques supplémentaires ainsi qu'un malus de 2 à la CA contre les projectiles durant les trois prochains rounds
 
 TAC0 : +2
-Dégâts : +3
+Dégâts : +1
 Poids : 2
 Facteur de vitesse : 4
 Type de compétence : arc court
@@ -801,7 +801,7 @@ Non utilisable par :
 PARAMETRES :
 
 TAC0 : +1
-Dégâts : +2
+Dégâts : +1
 Poids : 2
 Facteur de vitesse : 5
 Type de compétence : arc court
@@ -818,7 +818,7 @@ Non utiisable par :
 PARAMETRES :
 
 TAC0 : +2
-Dégâts : +3
+Dégâts : +1
 Poids : 2
 Facteur de vitesse : 4
 Type de compétence : arc court
@@ -835,7 +835,7 @@ Non utilisable par :
 PARAMETRES :
 
 TAC0 : +3
-Dégâts : +4
+Dégâts : +1
 Poids : 2
 Facteur de vitesse : 3
 Type de compétence : arc court
@@ -1265,7 +1265,7 @@ Capacités de combat :
 20% de chance que tous les coups aveuglent la cible pour 3 rounds (jet de sauvegarde contre les sorts pour annuler, les Spectateurs ont une pénalité de -5)
 
 TAC0 : +3 (+5 contre les Spectateurs)
-Dégâts : +4 (+6 contre les Spectateurs)
+Dégâts : +1 (+6 contre les Spectateurs)
 Poids : 1
 Facteur de vitesse : 3
 Type de compétence : arc court

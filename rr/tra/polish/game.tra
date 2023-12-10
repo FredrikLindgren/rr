@@ -437,7 +437,7 @@ Mag~
 
 PARAMETRY:
 
-Obra¿enia: +3
+Obra¿enia: +1
 TraK0: +2
  Specjalne:
  10% wszystkich trafieñ zadaje dodatkowe 1K3 pkt. od elektrycznoœci i pogarsza KP celu przeciwko pociskom o 2 przez 3 kolejne rundy
@@ -750,7 +750,7 @@ Nie mo¿e u¿ywaæ:
 
 PARAMETRY:
 
-Obra¿enia: +2
+Obra¿enia: +1
 TraK0: +1
 Waga: 2
 OpóŸnienie: 5
@@ -767,7 +767,7 @@ Nie mo¿e u¿ywaæ:
 
 PARAMETRY:
 
-Obra¿enia: +3
+Obra¿enia: +1
 TraK0: +2
 Waga: 2
 OpóŸnienie: 4
@@ -784,7 +784,7 @@ Nie mo¿e u¿ywaæ:
 
 PARAMETRY:
 
-Obra¿enia: +4
+Obra¿enia: +1
 TraK0: +3
 Waga: 2
 OpóŸnienie: 3
@@ -1178,7 +1178,7 @@ Mo¿e u¿ywaæ:
 
 PARAMETRY:
 
-Obra¿enia: +4, +6 przeciwko obserwatorom
+Obra¿enia: +1, +6 przeciwko obserwatorom
 TraK0: +3, +5 przeciwko obserwatorom
 Specjalne:
  20% trafieñ oœlepia ofiarê na 3 rundy (rzut obronny przeciwko czarom neguje, obserwatory wykonuj¹ rzut obronny z modyfikatorem -5)

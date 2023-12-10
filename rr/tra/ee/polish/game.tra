@@ -317,7 +317,7 @@ PARAMETRY:
 Specjalne:
 - 10% wszystkich trafień zadaje dodatkowo 1k3 obrażeń od elektryczności, a także pogarsza Klasę Pancerza celu przeciw pociskom o 2 przez kolejne trzy rundy
 
-Obrażenia: +3
+Obrażenia: +1
 TraK0: +2
 Opóźnienie: 4
 Rodzaj biegłości: krótki łuk
@@ -625,7 +625,7 @@ Waga: 2~
 
 PARAMETRY:
 
-Obrażenia: +2
+Obrażenia: +1
 TraK0: +1
 Opóźnienie: 5
 Rodzaj biegłości: krótki łuk
@@ -640,7 +640,7 @@ Waga: 2~
 
 PARAMETRY:
 
-Obrażenia: +3
+Obrażenia: +1
 TraK0: +2
 Opóźnienie: 4
 Rodzaj biegłości: krótki łuk
@@ -655,7 +655,7 @@ Waga: 2~
 
 PARAMETRY:
 
-Obrażenia: +4
+Obrażenia: +1
 TraK0: +3
 Opóźnienie: 3
 Rodzaj biegłości: krótki łuk
@@ -913,7 +913,7 @@ PARAMETRY:
 Specjalne:
 - 20% szans na oślepienie celu przez trzy rundy (rzut obronny przeciwko czarom neguje, obserwatory wykonują rzut obronny z modyfikatorem -5)
 
-Obrażenia: +4, +6 przeciw obserwatorom
+Obrażenia: +1, +6 przeciw obserwatorom
 TraK0: +3, +5 przeciw obserwatorom
 Opóźnienie: 3
 Rodzaj biegłości: krótki łuk

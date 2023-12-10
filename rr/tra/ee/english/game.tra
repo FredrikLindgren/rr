@@ -305,7 +305,7 @@ Combat Abilities:
     10% of all hits deal an extra 1d3 points of electrical damage and cause the target to suffer 2 point penalty to AC vs. missiles during the next 3 rounds
 
 THAC0: +2 bonus
-Damage:  +3 bonus
+Damage:  +1 bonus
 Weight: 2
 Speed Factor: 4
 Proficiency Type: Short Bow
@@ -590,7 +590,7 @@ Requires: 16 Strength~
 STATISTICS:
 
 THAC0: +1 bonus
-Damage:  +2 bonus
+Damage:  +1 bonus
 Weight: 2
 Speed Factor: 5
 Proficiency Type: Short Bow
@@ -602,7 +602,7 @@ Requires: 16 Strength~
 STATISTICS:
 
 THAC0: +2 bonus
-Damage:  +3 bonus
+Damage:  +1 bonus
 Weight: 2
 Speed Factor: 4
 Proficiency Type: Short Bow
@@ -614,7 +614,7 @@ Requires: 16 Strength~
 STATISTICS:
 
 THAC0: +3 bonus
-Damage:  +4 bonus
+Damage:  +1 bonus
 Weight: 2
 Speed Factor: 3
 Proficiency Type: Short Bow
@@ -875,7 +875,7 @@ Combat Abilities:
     20% of all hits blind the target for 3 rounds (save vs. spells negates, Beholders save with a -5 penalty)
 
 THAC0: +3 bonus (+5 vs. Beholders)
-Damage: +4 bonus (+6 vs. Beholders)
+Damage: +1 bonus (+6 vs. Beholders)
 Weight: 1
 Speed Factor: 3
 Proficiency Type: Short Bow
